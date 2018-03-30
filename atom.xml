@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-03-29T11:37:22.597Z</updated>
+  <updated>2018-03-30T09:11:33.843Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -17,21 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello</title>
-    <link href="http://huangyiblog.com/2018/03/29/hello/"/>
-    <id>http://huangyiblog.com/2018/03/29/hello/</id>
-    <published>2018-03-29T11:35:37.000Z</published>
-    <updated>2018-03-29T11:37:22.597Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>这是我的第一篇文章:)</p>]]></content>
+    <title>tags</title>
+    <link href="http://huangyiblog.com/2018/03/30/tags/"/>
+    <id>http://huangyiblog.com/2018/03/30/tags/</id>
+    <published>2018-03-30T09:11:33.000Z</published>
+    <updated>2018-03-30T09:11:33.843Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;你好&quot;&gt;&lt;a href=&quot;#你好&quot; class=&quot;headerlink&quot; title=&quot;你好&quot;&gt;&lt;/a&gt;你好&lt;/h1&gt;&lt;p&gt;这是我的第一篇文章:)&lt;/p&gt;
-
-      
     
     </summary>
     
@@ -39,19 +31,19 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://huangyiblog.com/2018/03/29/hello-world/"/>
-    <id>http://huangyiblog.com/2018/03/29/hello-world/</id>
-    <published>2018-03-29T11:30:14.621Z</published>
-    <updated>2018-03-29T11:30:14.624Z</updated>
+    <title>hello</title>
+    <link href="http://huangyiblog.com/2018/03/29/hello/"/>
+    <id>http://huangyiblog.com/2018/03/29/hello/</id>
+    <published>2018-03-29T11:35:37.000Z</published>
+    <updated>2018-03-30T09:23:55.861Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="你好-这是我的2016书单。"><a href="#你好-这是我的2016书单。" class="headerlink" title="你好,这是我的2016书单。"></a>你好,这是我的2016书单。</h1><p>1、《一句顶一万句》<br>2、《寻路中国》<br>3、《人类简史》<br>4、《一只特立独行的猪》<br>5、《三国演义》<br>6、《世说新语》<br>7、《战国策》<br>8、《春风沉醉的夜晚》<br>9、《水浒传》<br>10、《茶花女》<br>11、《天黑以后》<br>12、《悟空传》<br>13、《苦妓回忆录》<br>14、《不属于我们的世纪》<br>15、《身份的焦虑》<br>16、《追忆似水年华》<br>17、《约翰克里斯多夫》<br>18、《无名的裘德》<br>19、《高老头》<br>20、《浮生六记》<br>21、《二手时间》<br>22、《洗澡》<br>23、《爱情和其他魔鬼》<br>24、《芳华》<br>25、《冰与火之歌》<br>26、《远山淡影》<br>27、《目送》<br>28、《自深深处》<br>29、《巨人的陨落》<br>30、《余华短篇集》<br>31、《基督山伯爵》<br>32、《三个火枪手》<br>33、《和喜欢的一切在一起》<br>34、《弗兰克尔自传》<br>35、《重新认识你自己》<br>36、《二十四史》<br>37、《长恨歌》<br>38、《面包树上的女人》<br>39、《追随你的心》<br>40、《不能不去爱的两件事》<br>41、《在这复杂世界里》<br>42、《坏小孩》<br>43、《季羡林私人史》<br>44、《金瓶梅》<br>45、《孤独六讲》<br>46、《我们生活在巨大的差距里》<br>47、《分身》<br>48、《宿命》<br>49、《快乐是在心里》<br>50、《我的精神家园》<br>51、《万历十五年》<br>52、《撒切尔夫人传》<br>53、《飞鸟集》<br>54、《幻灭》<br>55、《当我跑步时我谈些什么》<br>56、《富爸爸、穷爸爸》<br>57、《雅舍小品》<br>58、《一个女子恋爱的时候》<br>59、《从一到无穷大》<br>60、《虚无的十字架》<br>61、《资本论》<br>62、《白说》<br>63、《在细雨中呼喊》</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h1 id=&quot;你好-这是我的2016书单。&quot;&gt;&lt;a href=&quot;#你好-这是我的2016书单。&quot; class=&quot;headerlink&quot; title=&quot;你好,这是我的2016书单。&quot;&gt;&lt;/a&gt;你好,这是我的2016书单。&lt;/h1&gt;&lt;p&gt;1、《一句顶一万句》&lt;br&gt;2、《寻路中国》
       
     
     </summary>
