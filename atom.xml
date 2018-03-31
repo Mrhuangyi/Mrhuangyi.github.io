@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>你的小黄^_^</title>
-  
+  <icon>https://www.gravatar.com/avatar/3a25a3ab34305615e80247defadfd4f6</icon>
   <subtitle>做一名有情怀的程序员</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://huangyiblog.com/"/>
+  <link href="https://huangyiblog.com/"/>
   <updated>2018-03-31T08:57:39.992Z</updated>
-  <id>http://huangyiblog.com/</id>
+  <id>https://huangyiblog.com/</id>
   
   <author>
     <name>Mr.Huangyi</name>
-    
+    <email>18757163093@163.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>C++字符串操作</title>
-    <link href="http://huangyiblog.com/2018/03/31/C++%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
-    <id>http://huangyiblog.com/2018/03/31/C++字符串操作/</id>
+    <link href="https://huangyiblog.com/2018/03/31/C++%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
+    <id>https://huangyiblog.com/2018/03/31/C++字符串操作/</id>
     <published>2018-03-31T08:55:28.000Z</published>
     <updated>2018-03-31T08:57:39.992Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="技术" scheme="http://huangyiblog.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://huangyiblog.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="C/C++" scheme="http://huangyiblog.com/tags/C-C/"/>
+      <category term="C/C++" scheme="https://huangyiblog.com/tags/C-C/"/>
     
   </entry>
   
   <entry>
     <title>我的2016电影</title>
-    <link href="http://huangyiblog.com/2018/03/31/%E6%88%91%E7%9A%842016%E7%94%B5%E5%BD%B1/"/>
-    <id>http://huangyiblog.com/2018/03/31/我的2016电影/</id>
+    <link href="https://huangyiblog.com/2018/03/31/%E6%88%91%E7%9A%842016%E7%94%B5%E5%BD%B1/"/>
+    <id>https://huangyiblog.com/2018/03/31/我的2016电影/</id>
     <published>2018-03-31T05:12:25.000Z</published>
     <updated>2018-03-31T05:28:48.297Z</updated>
     
@@ -59,17 +59,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="影单" scheme="http://huangyiblog.com/tags/%E5%BD%B1%E5%8D%95/"/>
+      <category term="影单" scheme="https://huangyiblog.com/tags/%E5%BD%B1%E5%8D%95/"/>
     
   </entry>
   
   <entry>
     <title>hello</title>
-    <link href="http://huangyiblog.com/2018/03/29/hello/"/>
-    <id>http://huangyiblog.com/2018/03/29/hello/</id>
+    <link href="https://huangyiblog.com/2018/03/29/hello/"/>
+    <id>https://huangyiblog.com/2018/03/29/hello/</id>
     <published>2018-03-29T11:35:37.000Z</published>
     <updated>2018-03-30T12:13:32.958Z</updated>
     
@@ -84,17 +84,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="书单" scheme="http://huangyiblog.com/tags/%E4%B9%A6%E5%8D%95/"/>
+      <category term="书单" scheme="https://huangyiblog.com/tags/%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
   <entry>
     <title>满江红</title>
-    <link href="http://huangyiblog.com/2018/03/29/%E6%BB%A1%E6%B1%9F%E7%BA%A2/"/>
-    <id>http://huangyiblog.com/2018/03/29/满江红/</id>
+    <link href="https://huangyiblog.com/2018/03/29/%E6%BB%A1%E6%B1%9F%E7%BA%A2/"/>
+    <id>https://huangyiblog.com/2018/03/29/满江红/</id>
     <published>2018-03-29T11:35:37.000Z</published>
     <updated>2018-03-31T05:30:27.421Z</updated>
     
@@ -113,10 +113,10 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="诗歌散文" scheme="http://huangyiblog.com/tags/%E8%AF%97%E6%AD%8C%E6%95%A3%E6%96%87/"/>
+      <category term="诗歌散文" scheme="https://huangyiblog.com/tags/%E8%AF%97%E6%AD%8C%E6%95%A3%E6%96%87/"/>
     
   </entry>
   
