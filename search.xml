@@ -1,107 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[归并排序]]></title>
-    <url>%2F2018%2F04%2F11%2F%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[归并排序 最基本的2-路归并排序。 原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并， 生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。 时间复杂度为O(nlogn)例：将序列{66,12,33,57,64,27,18}进行2路归并排序 第一趟 { { 12,66 },{ 33,57 },{ 27,64 },{ 18 } } 第二题 { { 12,33,57,66 },{ 18,27,64 } } 第三趟{12,18,27,33,57,64,66} 递归实现 1234567891011121314151617181920212223242526const int maxn=100;void merge(int a[],int l1,int r1,int l2,int r2)&#123; int i=l1,j=l2; int temp[maxn],index=0;//temp临时存放合并后的数组，index为其下标 while(i&lt;=r1&amp;&amp;j&lt;=r2)&#123; if(a[i]&lt;=a[j])&#123; temp[index++]=a[i++]; &#125; else&#123; temp[index++]=a[j++]; &#125; &#125; while(i&lt;=r1) temp[index++]=a[i++]; while(j&lt;=r2) temp[index++]=a[j++]; for(i=0;i&lt;index;i++)&#123; a[l1+i]=temp[i]; &#125;&#125;void mergeSort(int a[],int left,int right)&#123; if(left&lt;right)&#123; int mid=(left+right)/2; mergeSort(a,left,mid); //左子区间归并排序 mergeSort(a,mid+1,right);//右子区间归并排序 merge(a,left,mid,mid+1,right); 将左右子区间合并 &#125;&#125; 非递归实现 12345678910void mergeSort(int a[])&#123; for(int step=2;step/2&lt;=n;step*=2)&#123; for(int i=1;i&lt;=n;i+=step)&#123; int mid=i+step/2-1; if(mid+1&lt;=n)&#123; //sort(a+i,a+min(i+step,n+1)); merge(a,i,mid,mid+1,min(i+step-1,n)) &#125; &#125; &#125; &#125;]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>好了歌</title>
+      <link href="/2018/04/11/%E5%A5%BD%E4%BA%86%E6%AD%8C/"/>
+      <url>/2018/04/11/%E5%A5%BD%E4%BA%86%E6%AD%8C/</url>
+      <content type="html"><![CDATA[<h1 id="红楼梦原文"><a href="#红楼梦原文" class="headerlink" title="红楼梦原文"></a>红楼梦原文</h1><p>甄士隐知投人不著，心中未免悔恨，再兼上年惊唬，急忿怨痛已伤，暮年之人，贫病交攻，竟渐渐的露出那下世的光景来。可巧这日拄了拐杖挣到街前散散心时，忽见那边来了一个跛足道人，疯癫落拓，麻鞋鹑衣，口内念着几句言词道：</p><h3 id="世人都晓神仙好，惟有功名忘不了！"><a href="#世人都晓神仙好，惟有功名忘不了！" class="headerlink" title="世人都晓神仙好，惟有功名忘不了！"></a>世人都晓神仙好，惟有功名忘不了！</h3><h3 id="古今将相在何方？荒冢一堆草没了。"><a href="#古今将相在何方？荒冢一堆草没了。" class="headerlink" title="古今将相在何方？荒冢一堆草没了。"></a>古今将相在何方？荒冢一堆草没了。</h3><h3 id="世人都晓神仙好，只有金银忘不了！"><a href="#世人都晓神仙好，只有金银忘不了！" class="headerlink" title="世人都晓神仙好，只有金银忘不了！"></a>世人都晓神仙好，只有金银忘不了！</h3><h3 id="终朝只恨聚无多，及到多时眼闭了。"><a href="#终朝只恨聚无多，及到多时眼闭了。" class="headerlink" title="终朝只恨聚无多，及到多时眼闭了。"></a>终朝只恨聚无多，及到多时眼闭了。</h3><h3 id="世人都晓神仙好，只有娇妻忘不了！"><a href="#世人都晓神仙好，只有娇妻忘不了！" class="headerlink" title="世人都晓神仙好，只有娇妻忘不了！"></a>世人都晓神仙好，只有娇妻忘不了！</h3><h3 id="君生日日说恩情，君死又随人去了。"><a href="#君生日日说恩情，君死又随人去了。" class="headerlink" title="君生日日说恩情，君死又随人去了。"></a>君生日日说恩情，君死又随人去了。</h3><h3 id="世人都晓神仙好，只有儿孙忘不了！"><a href="#世人都晓神仙好，只有儿孙忘不了！" class="headerlink" title="世人都晓神仙好，只有儿孙忘不了！"></a>世人都晓神仙好，只有儿孙忘不了！</h3><h3 id="痴心父母古来多，孝顺儿孙谁见了？"><a href="#痴心父母古来多，孝顺儿孙谁见了？" class="headerlink" title="痴心父母古来多，孝顺儿孙谁见了？"></a>痴心父母古来多，孝顺儿孙谁见了？</h3><p>士隐听了，便迎上来道：“你满口说些甚么？只听见些‘好了’‘好了’。”那道人笑道：“你若果听见‘好了’二字，还算你明白。可知世上万般，好便是了，了便是好。若不了，便不好；若要好，须是了。我这歌儿便名《好了歌》。”士隐本是有夙慧的，一闻此言，心中早已彻悟，因笑道：“且住！待我将你这《好了歌》注解出来何如？”道人笑道：“你就请解。”士隐乃说道：<br>陋室空堂，当年笏满床。<br>衰草枯杨，曾为歌舞场。<br>蛛丝儿结满雕梁，绿纱今又糊在蓬窗上。<br>说甚么脂正浓、粉正香，如何两鬓又成霜？<br>昨日黄土陇头送白骨，今宵红灯帐底卧鸳鸯。<br>金满箱，银满箱，展眼乞丐人皆谤。<br>正叹他人命不长，那知自己归来丧！<br>训有方，保不定日后作强梁。<br>择膏粱，谁承望流落在烟花巷！<br>因嫌纱帽小，致使锁枷杠，<br>昨怜破袄寒，今嫌紫蟒长。<br>乱烘烘你方唱罢我登场，反认他乡是故乡。<br>甚荒唐，到头来都是为他人作嫁衣裳。</p>]]></content>
+      
       <categories>
-        <category>算法和数据结构</category>
+          
+          <category> 摘录 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[区间贪心]]></title>
-    <url>%2F2018%2F04%2F11%2F%E5%8C%BA%E9%97%B4%E8%B4%AA%E5%BF%83%2F</url>
-    <content type="text"><![CDATA[贪心 贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。 贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题： 给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。 首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容纳其他区间。 之后将所有开区间按左端点x从大到小排序，总是先选择左端点最大的区间。当然也可以考虑选择右端点最小的区间。123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=110;struct Inteval&#123; int x,y;&#125;q[maxn];bool cmp(Inteval a,Inteval b)&#123; if(a.x!=b.x) return a.x&gt;b.x; else return a.y&lt;b.y;&#125;int main()&#123; int n; while(scanf("%d",&amp;n),n!=0)&#123; for(int i=0;i&lt;n;i++)&#123; scanf("%d%d",&amp;q[i].x,&amp;q[i].y); &#125; sort(q,q+n,cmp); int ans = 1,lastx = q[0].x; for(int i=1;i&lt;n;i++)&#123; if(q[i].y&lt;=lastx)&#123; lastx=q[i].x; ans++; &#125; &#125; printf("%d\n",ans); &#125; return 0;&#125; 区间选点问题： 给出n个闭区间[x,y],求最少需要确定多少个点，才能使每个闭区间中都至少存在一个点。]]></content>
+      
+      
+        <tags>
+            
+            <tag> 阅读 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>归并排序</title>
+      <link href="/2018/04/11/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+      <url>/2018/04/11/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>  最基本的2-路归并排序。<br>  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，<br>  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。<br>  时间复杂度为O(nlogn)<br>例：将序列{66,12,33,57,64,27,18}进行2路归并排序</p><ol><li><p>第一趟</p>{ { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }</li><li><p>第二题</p>{ { 12,33,57,66 },{ 18,27,64 } }</li><li><p>第三趟{12,18,27,33,57,64,66}</p></li></ol><ul><li><p>递归实现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l1,<span class="keyword">int</span> r1,<span class="keyword">int</span> l2,<span class="keyword">int</span> r2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=l1,j=l2;</span><br><span class="line">    <span class="keyword">int</span> temp[maxn],index=<span class="number">0</span>;<span class="comment">//temp临时存放合并后的数组，index为其下标</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1&amp;&amp;j&lt;=r2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])&#123;</span><br><span class="line">            temp[index++]=a[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            temp[index++]=a[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1) temp[index++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r2) temp[index++]=a[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;index;i++)&#123;</span><br><span class="line">        a[l1+i]=temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">    <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">    mergeSort(a,left,mid); <span class="comment">//左子区间归并排序</span></span><br><span class="line">    mergeSort(a,mid+<span class="number">1</span>,right);<span class="comment">//右子区间归并排序</span></span><br><span class="line">    merge(a,left,mid,mid+<span class="number">1</span>,right); 将左右子区间合并</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>非递归实现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[])</span></span>&#123;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> step=<span class="number">2</span>;step/<span class="number">2</span>&lt;=n;step*=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=step)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=i+step/<span class="number">2</span><span class="number">-1</span>;  </span><br><span class="line">        <span class="keyword">if</span>(mid+<span class="number">1</span>&lt;=n)&#123;     <span class="comment">//sort(a+i,a+min(i+step,n+1));</span></span><br><span class="line">            merge(a,i,mid,mid+<span class="number">1</span>,min(i+step<span class="number">-1</span>,n))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
       <categories>
-        <category>算法和数据结构</category>
+          
+          <category> 算法和数据结构 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[ZCMU2034]]></title>
-    <url>%2F2018%2F04%2F11%2FZCMU-2034%2F</url>
-    <content type="text"><![CDATA[阶乘计算Time Limit: 1 Sec Memory Limit: 128 MBSubmit: 43 Solved: 34[Submit][Status][Web Board]Description输入一个正整数n，输出n!的值。其中n!=1 2 3 …n。算法描述n!可能很大，而计算机能表示的整数范围有限，需要使用高精度计算的方法。使用一个数组A来表示一个大整数a，A[0]表示a的个位，A[1]表示a的十位，依次类推。将a乘以一个整数k变为将数组A的每一个元素都乘以k，请注意处理相应的进位。首先将a设为1，然后乘2，乘3，当乘到n时，即得到了n!的值。 Input 输入包含一个正整数n，n&lt;=1000。 Output 输出n!的准确值。 Sample Input10Sample Output3628800HINTSource基础练习 相当于是大数的阶乘，也就是基本类型存不下，需要用数组来进行模拟。123456789101112131415161718192021222324252627#include&lt;stdio.h&gt; #include&lt;string.h&gt; int main() &#123; int a[3000],i,j,n; int c=0,s; memset(a,0,sizeof(a)); scanf("%d",&amp;n); a[0]=1; for(i=2;i&lt;=n;i++) &#123; for(j=0;j&lt;3000;j++) &#123; s=a[j]*i+c; a[j]=s%10; c=s/10;//保留进位 &#125; &#125; for(i=2999;i&gt;=0;i--) if(a[i]) break; for(j=i;j&gt;=0;j--) &#123; printf("%d",a[j]); &#125; return 0; &#125;]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>区间贪心</title>
+      <link href="/2018/04/11/%E5%8C%BA%E9%97%B4%E8%B4%AA%E5%BF%83/"/>
+      <url>/2018/04/11/%E5%8C%BA%E9%97%B4%E8%B4%AA%E5%BF%83/</url>
+      <content type="html"><![CDATA[<h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p>  贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。<br>  贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。</p><h2 id="区间不相交问题："><a href="#区间不相交问题：" class="headerlink" title="区间不相交问题："></a>区间不相交问题：</h2><p>  给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。<br>  首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容纳其他区间。<br>  之后将所有开区间按左端点x从大到小排序，总是先选择左端点最大的区间。当然也可以考虑选择右端点最小的区间。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Inteval</span>&#123;</span></span><br><span class="line">   <span class="keyword">int</span> x,y;</span><br><span class="line">&#125;q[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Inteval a,Inteval b)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a.x!=b.x) <span class="keyword">return</span> a.x&gt;b.x;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> a.y&lt;b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n),n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;q[i].x,&amp;q[i].y);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(q,q+n,cmp);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>,lastx = q[<span class="number">0</span>].x;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q[i].y&lt;=lastx)&#123;</span><br><span class="line">                lastx=q[i].x;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="区间选点问题："><a href="#区间选点问题：" class="headerlink" title="区间选点问题："></a>区间选点问题：</h2><p>  给出n个闭区间[x,y],求最少需要确定多少个点，才能使每个闭区间中都至少存在一个点。</p>]]></content>
+      
       <categories>
-        <category>算法和数据结构</category>
+          
+          <category> 算法和数据结构 </category>
+          
       </categories>
-      <tags>
-        <tag>ZCMU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ZCMU-1620]]></title>
-    <url>%2F2018%2F04%2F10%2FZCMU-1620%2F</url>
-    <content type="text"><![CDATA[1620: 全排列Time Limit: 1 Sec Memory Limit: 128 MBSubmit: 198 Solved: 89[Submit][Status][Web Board]Description给定n个数 a[0] , a[1] …….. a[n-1], 输出其全排列。 Input第一行输入一个数n，（n&lt;7） 接下来一行输入n个数。 Output按字典序从小到大输出全排列 Sample Input31 2 331 2 2Sample Output1 2 31 3 22 1 32 3 13 1 23 2 11 2 22 1 22 2 1HINT 全排列，枚举排列常用的方法有两种：一种是递归枚举，另一种是用STL中的next_permutation 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;void print_permutation(int n,int *p,int *a,int cur)&#123; if(cur==n) &#123; for(int i=0;i&lt;n-1;i++) &#123; printf("%d ",a[i]); &#125; printf("%d\n",a[n-1]); &#125; else for(int i=0;i&lt;n;i++) if(!i||p[i]!=p[i-1]) &#123; int ok=1; int c1=0,c2=0; for(int j=0;j&lt;cur;j++)if(a[j]==p[i]) c1++; for(int j=0;j&lt;n;j++) if(p[i]==p[j]) c2++; if(c1&lt;c2)&#123; a[cur]=p[i]; print_permutation(n,p,a,cur+1); &#125; &#125;&#125;int main()&#123; int n,p[10],a[1000]; while(~scanf("%d",&amp;n)) &#123; memset(a,0,sizeof(a)); for(int i=0;i&lt;n;i++) &#123; scanf("%d",&amp;p[i]); &#125; sort(p,p+n); print_permutation(n,p,a,0); &#125; return 0;&#125; 123456789101112131415161718#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n,a[10]; while(cin&gt;&gt;n) &#123; for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i]; sort(a,a+n); do &#123; for(int i=0;i&lt;n-1;i++) printf("%d ",a[i]); printf("%d\n",a[n-1]); &#125;while(next_permutation(a,a+n)); &#125; return 0;&#125;]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>ZCMU2034</title>
+      <link href="/2018/04/11/ZCMU-2034/"/>
+      <url>/2018/04/11/ZCMU-2034/</url>
+      <content type="html"><![CDATA[<h1 id="阶乘计算"><a href="#阶乘计算" class="headerlink" title="阶乘计算"></a>阶乘计算</h1><p>Time Limit: 1 Sec  Memory Limit: 128 MB<br>Submit: 43  Solved: 34<br>[Submit][Status][Web Board]<br>Description<br>输入一个正整数n，输出n!的值。<br>其中n!=1<em> 2 </em> 3 <em>…</em>n。<br>算法描述<br>n!可能很大，而计算机能表示的整数范围有限，需要使用高精度计算的方法。使用一个数组A来表示一个大整数a，A[0]表示a的个位，A[1]表示a的十位，依次类推。<br>将a乘以一个整数k变为将数组A的每一个元素都乘以k，请注意处理相应的进位。<br>首先将a设为1，然后乘2，乘3，当乘到n时，即得到了n!的值。</p><p>Input<br>　　输入包含一个正整数n，n&lt;=1000。</p><p>Output<br>　　输出n!的准确值。</p><p>Sample Input<br>10<br>Sample Output<br>3628800<br>HINT<br>Source<br>基础练习</p><p>相当于是大数的阶乘，也就是基本类型存不下，需要用数组来进行模拟。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">3000</span>],i,j,n;  </span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">0</span>,s;  </span><br><span class="line">    <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);  </span><br><span class="line">    a[<span class="number">0</span>]=<span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3000</span>;j++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            s=a[j]*i+c;  </span><br><span class="line">            a[j]=s%<span class="number">10</span>;  </span><br><span class="line">            c=s/<span class="number">10</span>;<span class="comment">//保留进位  </span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2999</span>;i&gt;=<span class="number">0</span>;i--)  </span><br><span class="line">        <span class="keyword">if</span>(a[i])  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">        <span class="keyword">for</span>(j=i;j&gt;=<span class="number">0</span>;j--)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[j]);  </span><br><span class="line">        &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
       <categories>
-        <category>算法和数据结构</category>
+          
+          <category> 算法和数据结构 </category>
+          
       </categories>
-      <tags>
-        <tag>ZCMU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《控方证人》观后感]]></title>
-    <url>%2F2018%2F04%2F03%2F%E3%80%8A%E6%8E%A7%E6%96%B9%E8%AF%81%E4%BA%BA%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F%2F</url>
-    <content type="text"><![CDATA[这个周末有点小忙哈哈，没办法，得准备Ｊａｖａ课件呀，好歹也是个愚人节呢，得让自己放松下，于是花了点时间看了部老电影《控方证人》，一部上世纪６０年代的电影，一部黑白片。我一般不大会特意去找某部电影，一些早已被广为认可的经典我会时不时抽几部欣赏欣赏，很少有令我失望过，当然，这次也不例外。 很好的一部剧情片，惊悚我倒没怎么感觉到，但不得不说，一流的演员以及一流的剧本让我佩服不已，至少我是被骗到了，结局在我的意料之外，当然中间确实有些困惑的地方，我很理解为什么沃尔的妻子竟然当起了控方证人。影片开始，个性鲜明的律师威尔弗里德爵士便出现在荧幕上，很有意思的一个家伙，一看到雪茄就耐不住想吸上一口，看似嘴不饶人，其实内心善良热诚。他身边的护士尽管一天到晚啰里啰嗦招人烦，却也是真正为威尔弗里德爵士的健康着想。紧接着，剧情展开，控方与被告的辩论也即将展开。 我为什么说我被骗到了，起初我真的认为沃尔是无辜的，是被冤枉的，富婆的死只是被某个入室抢劫犯误杀了，紧接着，伟大的威尔弗里德爵士作为正义的化身，冒着身体旧病复发的风险为沃尔展开辩护，然后一步步过关斩将，去的胜利，沃尔无罪释放！看，结局多么美好，但细想一番，若真是如此，这剧情片恐怕也难成为经典了。开头的警巡，包括之后的女佣，这两人的证词在我看来都很正常，警巡，按照职业习惯进行了正常的回答。至于女佣，势利的姿态可以说是展现的很充分，哈哈，这世上没有无缘无故的恨，沃尔的出现让本该属于她的遗产瞬间成为一场空，他恨透了沃尔，巴不得看着他上绞刑架．．但后一位控方证人让我难以理解，那就是沃尔的妻子克里斯汀，她的出现让我困惑，我相信威尔弗里德爵士当时也是和我相似的心情。看似恩爱的夫妻有什么理由说反目就反目呢，难道之前的感情本就是虚假的？没看到结尾，我真的没猜到这对夫妻竟然都在演戏，在法庭上演了一出精彩的戏。只不过人人喊打的克里斯汀确是陷入爱情的有心人，而看似无辜的沃尔才是花心大萝卜，才是真凶。法律规定，嫌疑人的妻子是无法为其辩护的，证词无效，于是克里斯汀就想到了该当控告，直到最后决定判决的那几分情书信纸，也不过只是她的计划一部分。好可怕的一个女人，竟然铁定了心犯伪证罪也要救这样一个花心大萝卜，难以理解。两个人一唱一和的一出戏，骗过了整个法庭，我没有想到，沃尔竟然真的杀了富婆，更没想到克里斯汀知道是他杀了富婆还要牺牲自己就他，更没想到两人的感情，谁是真心，谁是假意让我一脸蒙蔽，人生如戏，全靠演技呀！哈哈哈～～]]></content>
+      
+      
+        <tags>
+            
+            <tag> ZCMU </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>ZCMU-1620</title>
+      <link href="/2018/04/10/ZCMU-1620/"/>
+      <url>/2018/04/10/ZCMU-1620/</url>
+      <content type="html"><![CDATA[<h2 id="1620-全排列"><a href="#1620-全排列" class="headerlink" title="1620: 全排列"></a>1620: 全排列</h2><p>Time Limit: 1 Sec  Memory Limit: 128 MB<br>Submit: 198  Solved: 89<br>[Submit][Status][Web Board]<br>Description<br>给定n个数 a[0] , a[1] …….. a[n-1], 输出其全排列。</p><p>Input<br>第一行输入一个数n，（n&lt;7）</p><p>接下来一行输入n个数。</p><p>Output<br>按字典序从小到大输出全排列</p><p>Sample Input<br>3<br>1 2 3<br>3<br>1 2 2<br>Sample Output<br>1 2 3<br>1 3 2<br>2 1 3<br>2 3 1<br>3 1 2<br>3 2 1<br>1 2 2<br>2 1 2<br>2 2 1<br>HINT</p><ul><li><p>全排列，枚举排列常用的方法有两种：一种是递归枚举，另一种是用STL中的next_permutation</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_permutation</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> *p,<span class="keyword">int</span> *a,<span class="keyword">int</span> cur)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur==n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[n<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">if</span>(!i||p[i]!=p[i<span class="number">-1</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ok=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> c1=<span class="number">0</span>,c2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cur;j++)<span class="keyword">if</span>(a[j]==p[i]) c1++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) <span class="keyword">if</span>(p[i]==p[j]) c2++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(c1&lt;c2)&#123;</span><br><span class="line">            a[cur]=p[i];</span><br><span class="line">            print_permutation(n,p,a,cur+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,p[<span class="number">10</span>],a[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;p[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(p,p+n);</span><br><span class="line">        print_permutation(n,p,a,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        sort(a,a+n);</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[n<span class="number">-1</span>]);</span><br><span class="line">        &#125;<span class="keyword">while</span>(next_permutation(a,a+n));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
       <categories>
-        <category>随笔</category>
+          
+          <category> 算法和数据结构 </category>
+          
       </categories>
-      <tags>
-        <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[我的2017书单]]></title>
-    <url>%2F2018%2F04%2F01%2F%E6%88%91%E7%9A%842017%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[1、《平凡的世界》2、《霜冷长河》3、《霍乱时期的爱情》4、《文化苦旅》5、《千年一叹》6、《许三观卖血记》7、《白夜行》8、《嫌疑人X的献身》9、《解忧杂货店》10、《资治通鉴》11、《活着》12、《三体》13、《百年孤独》14、《活着为了讲述》15、《人生》16、《偷影子的人》17、《黄金时代》18、《无声告白》19、《小王子》20、《夜莺与玫瑰》21、《飘》22、《海边的卡夫卡》23、《东方快车上的谋杀案》24、《挪威的森林》25、《雪国》26、《不能承受的生命之轻》27、《恶意》28、《陶庵梦忆》29、《红楼梦》30、《沉默的大多数》31、《少年维特的烦恼》32、《傲慢与偏见》33、《麦田里的守望者》34、《北岛诗集》35、《顾城诗集》36、《海子诗集》37、《余光中散文诗集》38、《鳄鱼街》39、《自由在高处》40、《愿你与这世界温暖相拥》41、《很高兴见到你》42、《无证之罪》43、《白马山庄杀人事件》44、《浮士德》45、《老人与海》46、《北鸢》47、《菜根谭》48、《单恋》49、《鬼谷子》50、《人类群星闪耀时》51、《人间词话》52、《古文观止》53、《假面饭店》54、《幻夜》55、《看见》56、《撒哈拉的故事》57、《月亮和六便士》58、《漫漫自由路》59、《1984》60、《1980年代的爱情》61、《本草纲目》62、《傅雷家书》63、《我们三》64、《围城》65、《钱钟书传》66、《草房子》67、《我的职业是小说家》68、《爱你就像爱生命》69、《这些人那些事》70、《明朝那些事》]]></content>
+      
+      
+        <tags>
+            
+            <tag> ZCMU </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>《控方证人》观后感</title>
+      <link href="/2018/04/03/%E3%80%8A%E6%8E%A7%E6%96%B9%E8%AF%81%E4%BA%BA%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+      <url>/2018/04/03/%E3%80%8A%E6%8E%A7%E6%96%B9%E8%AF%81%E4%BA%BA%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/</url>
+      <content type="html"><![CDATA[<p><img src="/img/1522739023761.png" alt="Alt text"><br>  　　这个周末有点小忙哈哈，没办法，得准备Ｊａｖａ课件呀，好歹也是个愚人节呢，得让自己放松下，于是花了点时间看了部老电影《控方证人》，一部上世纪６０年代的电影，一部黑白片。我一般不大会特意去找某部电影，一些早已被广为认可的经典我会时不时抽几部欣赏欣赏，很少有令我失望过，当然，这次也不例外。<br>  　　很好的一部剧情片，惊悚我倒没怎么感觉到，但不得不说，一流的演员以及一流的剧本让我佩服不已，至少我是被骗到了，结局在我的意料之外，当然中间确实有些困惑的地方，我很理解为什么沃尔的妻子竟然当起了控方证人。影片开始，个性鲜明的律师威尔弗里德爵士便出现在荧幕上，很有意思的一个家伙，一看到雪茄就耐不住想吸上一口，看似嘴不饶人，其实内心善良热诚。他身边的护士尽管一天到晚啰里啰嗦招人烦，却也是真正为威尔弗里德爵士的健康着想。紧接着，剧情展开，控方与被告的辩论也即将展开。<br>  　　我为什么说我被骗到了，起初我真的认为沃尔是无辜的，是被冤枉的，富婆的死只是被某个入室抢劫犯误杀了，紧接着，伟大的威尔弗里德爵士作为正义的化身，冒着身体旧病复发的风险为沃尔展开辩护，然后一步步过关斩将，去的胜利，沃尔无罪释放！看，结局多么美好，但细想一番，若真是如此，这剧情片恐怕也难成为经典了。开头的警巡，包括之后的女佣，这两人的证词在我看来都很正常，警巡，按照职业习惯进行了正常的回答。至于女佣，势利的姿态可以说是展现的很充分，哈哈，这世上没有无缘无故的恨，沃尔的出现让本该属于她的遗产瞬间成为一场空，他恨透了沃尔，巴不得看着他上绞刑架．．但后一位控方证人让我难以理解，那就是沃尔的妻子克里斯汀，她的出现让我困惑，我相信威尔弗里德爵士当时也是和我相似的心情。看似恩爱的夫妻有什么理由说反目就反目呢，难道之前的感情本就是虚假的？没看到结尾，我真的没猜到这对夫妻竟然都在演戏，在法庭上演了一出精彩的戏。只不过人人喊打的克里斯汀确是陷入爱情的有心人，而看似无辜的沃尔才是花心大萝卜，才是真凶。法律规定，嫌疑人的妻子是无法为其辩护的，证词无效，于是克里斯汀就想到了该当控告，直到最后决定判决的那几分情书信纸，也不过只是她的计划一部分。好可怕的一个女人，竟然铁定了心犯伪证罪也要救这样一个花心大萝卜，难以理解。两个人一唱一和的一出戏，骗过了整个法庭，我没有想到，沃尔竟然真的杀了富婆，更没想到克里斯汀知道是他杀了富婆还要牺牲自己就他，更没想到两人的感情，谁是真心，谁是假意让我一脸蒙蔽，人生如戏，全靠演技呀！哈哈哈～～</p>]]></content>
+      
       <categories>
-        <category>随笔</category>
+          
+          <category> 随笔 </category>
+          
       </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C++字符串操作]]></title>
-    <url>%2F2018%2F03%2F31%2FC%2B%2B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[1）字符串操作strcpy(p, p1) 复制字符串strncpy(p, p1, n) 复制指定长度字符串strcat(p, p1) 附加字符串strncat(p, p1, n) 附加指定长度字符串strlen(p) 取字符串长度strcmp(p, p1) 比较字符串strcasecmp忽略大小写比较字符串strncmp(p, p1, n) 比较指定长度字符串strchr(p, c) 在字符串中查找指定字符strrchr(p, c) 在字符串中反向查找strstr(p, p1) 查找字符串strpbrk(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找该集合的任一元素strspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找不属于该集合的任一元素的偏移strcspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找属于该集合的任一元素的偏移 具有指定长度的字符串处理函数在已处理的字符串之后填补零结尾符 2）字符串到数值类型的转换strtod(p, ppend) 从字符串 p 中转换 double 类型数值，并将后续的字符串指针存储到 ppend 指向的 char* 类型存储。strtol(p, ppend, base) 从字符串 p 中转换 long 类型整型数值，base 显式设置转换的整型进制，设置为 0 以根据特定格式判断所用进制，0x, 0X 前缀以解释为十六进制格式整型，0 前缀以解释为八进制格式整型atoi(p) 字符串转换到 int 整型atof(p) 字符串转换到 double 符点数atol(p) 字符串转换到 long 整型 void memset(void dest, int c, size_t count);将dest前面count个字符置为字符c. 返回dest的值. void memmove(void dest, const void *src, size_t count);从src复制count字节的字符到dest. 如果src和dest出现重叠, 函数会自动处理. 返回dest的值. void memcpy(void dest, const void *src, size_t count);从src复制count字节的字符到dest. 与memmove功能一样, 只是不能处理src和dest出现重叠. 返回dest的值. void memchr(const void buf, int c, size_t count);在buf前面count字节中查找首次出现字符c的位置. 找到了字符c或者已经搜寻了count个字节, 查找即停止. 操作成功则返回buf中首次出现c的位置指针, 否则返回NULL. void _memccpy(void dest, const void *src, int c, size_t count);从src复制0个或多个字节的字符到dest. 当字符c被复制或者count个字符被复制时, 复制停止. 如果字符c被复制, 函数返回这个字符后面紧挨一个字符位置的指针. 否则返回NULL. /实现strcpy函数,将源串strSrc的内容复制到目标串strDest，返回值为指向目标串的指针/char strcpy(char strDest,const char strSrc)//源字符串+const，表明其为输入参数{ assert((strDest!=NULL&amp;&amp;(strSrc!=NULL))); //对源地址和目的地址加非0判断 char address=strDest; while((strDest++=strSrc++)!=’\0’); return address;}/实现strcat函数：将源串添加到str1的末尾，同时覆盖旧串末尾的’\0’,在新串末尾+’\0’,返回指向str1的指针。/char strcat(char str1,char str2){ char p=str1; assert((str1!=NULL)&amp;&amp;(str2!=NULL)); while(str1!=’\0’) str1++; while(str1++=str2++); return p;}/strcmp函数：比较str1和str2两个字符串的大小，若str1&gt;str2，则返回正数；若str1&lt;str2，则返回负数；若str1==str2，则返回0。/int strcmp(const char str1,const char str2){ assert((str1!=NULL)&amp;&amp;(str2!=NULL)); while(str1&amp;&amp;str2&amp;&amp;(str1==str2)) { str1++; str2++; } return str1-str2;}void memset(void s,int c,size_t n) //将已开辟内存空间s的首n个字节的值设为c{ assert(s!=NULL); char tmp=(char )s; while(n–) { tmp++=(char)c; } return s;}void memcpy(void dest,const void src,size_t n)//从源src所指的内存地址的起始位置开始拷贝n个字节到目标dest所指的内存地址的起始位置中{ assert(dest!=NULL&amp;&amp;src!=NULL); char tmpdest=(char )dest; char tmpsrc=(char )src; while(n– &gt;0) tmpdest++=*tmpsrc++; return dest;}]]></content>
+      
+      
+        <tags>
+            
+            <tag> 影视 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>我的2017书单</title>
+      <link href="/2018/04/01/%E6%88%91%E7%9A%842017%E4%B9%A6%E5%8D%95/"/>
+      <url>/2018/04/01/%E6%88%91%E7%9A%842017%E4%B9%A6%E5%8D%95/</url>
+      <content type="html"><![CDATA[<p>1、《平凡的世界》<br>2、《霜冷长河》<br>3、《霍乱时期的爱情》<br>4、《文化苦旅》<br>5、《千年一叹》<br>6、《许三观卖血记》<br>7、《白夜行》<br>8、《嫌疑人X的献身》<br>9、《解忧杂货店》<br>10、《资治通鉴》<br>11、《活着》<br>12、《三体》<br>13、《百年孤独》<br>14、《活着为了讲述》<br>15、《人生》<br>16、《偷影子的人》<br>17、《黄金时代》<br>18、《无声告白》<br>19、《小王子》<br>20、《夜莺与玫瑰》<br>21、《飘》<br>22、《海边的卡夫卡》<br>23、《东方快车上的谋杀案》<br>24、《挪威的森林》<br>25、《雪国》<br>26、《不能承受的生命之轻》<br>27、《恶意》<br>28、《陶庵梦忆》<br>29、《红楼梦》<br>30、《沉默的大多数》<br>31、《少年维特的烦恼》<br>32、《傲慢与偏见》<br>33、《麦田里的守望者》<br>34、《北岛诗集》<br>35、《顾城诗集》<br>36、《海子诗集》<br>37、《余光中散文诗集》<br>38、《鳄鱼街》<br>39、《自由在高处》<br>40、《愿你与这世界温暖相拥》<br>41、《很高兴见到你》<br>42、《无证之罪》<br>43、《白马山庄杀人事件》<br>44、《浮士德》<br>45、《老人与海》<br>46、《北鸢》<br>47、《菜根谭》<br>48、《单恋》<br>49、《鬼谷子》<br>50、《人类群星闪耀时》<br>51、《人间词话》<br>52、《古文观止》<br>53、《假面饭店》<br>54、《幻夜》<br>55、《看见》<br>56、《撒哈拉的故事》<br>57、《月亮和六便士》<br>58、《漫漫自由路》<br>59、《1984》<br>60、《1980年代的爱情》<br>61、《本草纲目》<br>62、《傅雷家书》<br>63、《我们三》<br>64、《围城》<br>65、《钱钟书传》<br>66、《草房子》<br>67、《我的职业是小说家》<br>68、《爱你就像爱生命》<br>69、《这些人那些事》<br>70、《明朝那些事》</p>]]></content>
+      
       <categories>
-        <category>技术</category>
+          
+          <category> 随笔 </category>
+          
       </categories>
-      <tags>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[我的2016电影]]></title>
-    <url>%2F2018%2F03%2F31%2F%E6%88%91%E7%9A%842016%E7%94%B5%E5%BD%B1%2F</url>
-    <content type="text"><![CDATA[1、《马力和马克思》2、《怦然心动》3、《天堂电影院》4、《海上钢琴师》5、《教父系列》6、《控方证人》7、《千与千寻》8、《从你的全世界路过》9、《战狼2》10、《金刚狼3》11、《大话西游系列》12、《鬼子来了》13、《让子弹飞》14、《天才枪手》15、《比利比恩的中场战事》16、《麦兜的故事》17、《美国丽人》18、《泰坦尼克号》19、《阿飞正传》20、《x森林系列》21、《辩护人》22、《记忆碎片》23、《哈尔的移动城堡》24、《烈日灼心》25、《一条狗的使命》26、《致命魔术》27、《星际穿越》28、《驯龙高手》29、《幸福终点站》30、《时空恋旅人》31、《致命ID》32、《你的名字》33、《幽灵公主》34、《盗梦空间》]]></content>
+      
+      
+        <tags>
+            
+            <tag> 阅读 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>C++字符串操作</title>
+      <link href="/2018/03/31/C++%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
+      <url>/2018/03/31/C++%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<p>1）字符串操作<br>strcpy(p, p1) 复制字符串<br>strncpy(p, p1, n) 复制指定长度字符串<br>strcat(p, p1) 附加字符串<br>strncat(p, p1, n) 附加指定长度字符串<br>strlen(p) 取字符串长度<br>strcmp(p, p1) 比较字符串<br>strcasecmp忽略大小写比较字符串<br>strncmp(p, p1, n) 比较指定长度字符串<br>strchr(p, c) 在字符串中查找指定字符<br>strrchr(p, c) 在字符串中反向查找<br>strstr(p, p1) 查找字符串<br>strpbrk(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找该集合的任一元素<br>strspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找不属于该集合的任一元素的偏移<br>strcspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找属于该集合的任一元素的偏移  </p><ul><li>具有指定长度的字符串处理函数在已处理的字符串之后填补零结尾符 </li></ul><p>2）字符串到数值类型的转换<br>strtod(p, ppend) 从字符串 p 中转换 double 类型数值，并将后续的字符串指针存储到 ppend 指向的 char* 类型存储。<br>strtol(p, ppend, base) 从字符串 p 中转换 long 类型整型数值，base 显式设置转换的整型进制，设置为 0 以根据特定格式判断所用进制，0x, 0X 前缀以解释为十六进制格式整型，0    前缀以解释为八进制格式整型<br>atoi(p) 字符串转换到 int 整型<br>atof(p) 字符串转换到 double 符点数<br>atol(p) 字符串转换到 long 整型 </p><p>void <em>memset(void </em>dest, int c, size_t count);<br>将dest前面count个字符置为字符c.  返回dest的值. </p><p>void <em>memmove(void </em>dest, const void *src, size_t count);<br>从src复制count字节的字符到dest. 如果src和dest出现重叠, 函数会自动处理.  返回dest的值. </p><p>void <em>memcpy(void </em>dest, const void *src, size_t count);<br>从src复制count字节的字符到dest. 与memmove功能一样, 只是不能处理src和dest出现重叠.  返回dest的值. </p><p>void <em>memchr(const void </em>buf, int c, size_t count);<br>在buf前面count字节中查找首次出现字符c的位置. 找到了字符c或者已经搜寻了count个字节, 查找即停止. 操作成功则返回buf中首次出现c的位置指针, 否则返回NULL. </p><p>void <em>_memccpy(void </em>dest, const void *src, int c, size_t count);<br>从src复制0个或多个字节的字符到dest. 当字符c被复制或者count个字符被复制时, 复制停止. </p><p>如果字符c被复制, 函数返回这个字符后面紧挨一个字符位置的指针. 否则返回NULL. </p><p>/<em>实现strcpy函数,将源串strSrc的内容复制到目标串strDest，返回值为指向目标串的指针</em>/<br>char <em>strcpy(char </em>strDest,const char <em>strSrc)//源字符串+const，表明其为输入参数<br>{<br>    assert((strDest!=NULL&amp;&amp;(strSrc!=NULL)));<br>    //对源地址和目的地址加非0判断<br>    char </em>address=strDest;<br>    while((<em>strDest++=</em>strSrc++)!=’\0’);<br>    return address;<br>}<br>/<em>实现strcat函数：将源串添加到str1的末尾，同时覆盖旧串末尾的’\0’,在新串末尾+’\0’,返回指向str1的指针。</em>/<br>char <em>strcat(char </em>str1,char <em>str2)<br>{<br>    char </em>p=str1;<br>    assert((str1!=NULL)&amp;&amp;(str2!=NULL));<br>    while(<em>str1!=’\0’)<br>        str1++;<br>    while(</em>str1++=<em>str2++);<br>    return p;<br>}<br>/</em>strcmp函数：比较str1和str2两个字符串的大小，若str1&gt;str2，则返回正数；若str1&lt;str2，则返回负数；若str1==str2，则返回0。<em>/<br>int strcmp(const char </em>str1,const char <em>str2)<br>{<br>    assert((str1!=NULL)&amp;&amp;(str2!=NULL));<br>    while(</em>str1&amp;&amp;<em>str2&amp;&amp;(</em>str1==<em>str2))<br>    {<br>        str1++;<br>        str2++;<br>    }<br>    return </em>str1-<em>str2;<br>}<br>void memset(void </em>s,int c,size_t n) //将已开辟内存空间s的首n个字节的值设为c<br>{<br>    assert(s!=NULL);<br>    char <em>tmp=(char </em>)s;<br>    while(n–)<br>    {<br>        <em>tmp++=(char)c;<br>    }<br>    return s;<br>}<br>void memcpy(void </em>dest,const void <em>src,size_t n)//从源src所指的内存地址的起始位置开始拷贝n个字节到目标dest所指的内存地址的起始位置中<br>{<br>    assert(dest!=NULL&amp;&amp;src!=NULL);<br>    char </em>tmpdest=(char <em>)dest;<br>    char </em>tmpsrc=(char <em>)src;<br>    while(n– &gt;0)        </em>tmpdest++=*tmpsrc++;<br>    return dest;<br>}</p>]]></content>
+      
       <categories>
-        <category>随笔</category>
+          
+          <category> 技术 </category>
+          
       </categories>
-      <tags>
-        <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F2018%2F03%2F29%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>我的2016电影</title>
+      <link href="/2018/03/31/%E6%88%91%E7%9A%842016%E7%94%B5%E5%BD%B1/"/>
+      <url>/2018/03/31/%E6%88%91%E7%9A%842016%E7%94%B5%E5%BD%B1/</url>
+      <content type="html"><![CDATA[<p>1、《马力和马克思》<br>2、《怦然心动》<br>3、《天堂电影院》<br>4、《海上钢琴师》<br>5、《教父系列》<br>6、《控方证人》<br>7、《千与千寻》<br>8、《从你的全世界路过》<br>9、《战狼2》<br>10、《金刚狼3》<br>11、《大话西游系列》<br>12、《鬼子来了》<br>13、《让子弹飞》<br>14、《天才枪手》<br>15、《比利比恩的中场战事》<br>16、《麦兜的故事》<br>17、《美国丽人》<br>18、《泰坦尼克号》<br>19、《阿飞正传》<br>20、《x森林系列》<br>21、《辩护人》<br>22、《记忆碎片》<br>23、《哈尔的移动城堡》<br>24、《烈日灼心》<br>25、《一条狗的使命》<br>26、《致命魔术》<br>27、《星际穿越》<br>28、《驯龙高手》<br>29、《幸福终点站》<br>30、《时空恋旅人》<br>31、《致命ID》<br>32、《你的名字》<br>33、《幽灵公主》<br>34、《盗梦空间》</p>]]></content>
+      
       <categories>
-        <category>随笔</category>
+          
+          <category> 随笔 </category>
+          
       </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F2018%2F03%2F29%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+      
+      
+        <tags>
+            
+            <tag> 影视 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>满江红</title>
+      <link href="/2018/03/29/%E6%BB%A1%E6%B1%9F%E7%BA%A2/"/>
+      <url>/2018/03/29/%E6%BB%A1%E6%B1%9F%E7%BA%A2/</url>
+      <content type="html"><![CDATA[<h1 id="满江红–岳飞"><a href="#满江红–岳飞" class="headerlink" title="　　　　满江红–岳飞"></a>　　　　满江红–岳飞</h1><p>　　　　　　　　怒发冲冠，<br>　　　　　　凭栏处，潇潇雨歇。<br>　　　　　　　　抬望眼，<br>　　　　　　　　仰天长啸，<br>　　　　　　　　壮怀激烈。<br>　　　　　　　三十功名尘与土，<br>　　　　　　　八千里路云和月。<br>　　　　　　某等闲，白了少年头，<br>　　　　　　　　　空悲切，<br>　　　　　　　　　靖康耻，<br>　　　　　　　　　犹未雪。<br>　　　　　　　　　臣子恨，<br>　　　　　　　　　何时灭！<br>　　　　　　　　　驾长车，<br>　　　　　　　　踏破贺兰山缺。<br>　　　　　　　　壮志饥餐胡虏肉，<br>　　　　　　　　笑谈渴饮匈奴血。<br>　　　　　　　待从头，收拾旧山河，<br>　　　　　　　　　朝天阙。</p>]]></content>
+      
       <categories>
-        <category>随笔</category>
+          
+          <category> 随笔 </category>
+          
       </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 阅读 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>我的2016书单</title>
+      <link href="/2018/03/29/%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95/"/>
+      <url>/2018/03/29/%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95/</url>
+      <content type="html"><![CDATA[<h1 id="你好-这是我的2016书单。"><a href="#你好-这是我的2016书单。" class="headerlink" title="你好,这是我的2016书单。"></a>你好,这是我的2016书单。</h1><p>1、《一句顶一万句》<br>2、《寻路中国》<br>3、《人类简史》<br>4、《一只特立独行的猪》<br>5、《三国演义》<br>6、《世说新语》<br>7、《战国策》<br>8、《春风沉醉的夜晚》<br>9、《水浒传》<br>10、《茶花女》<br>11、《天黑以后》<br>12、《悟空传》<br>13、《苦妓回忆录》<br>14、《不属于我们的世纪》<br>15、《身份的焦虑》<br>16、《追忆似水年华》<br>17、《约翰克里斯多夫》<br>18、《无名的裘德》<br>19、《高老头》<br>20、《浮生六记》<br>21、《二手时间》<br>22、《洗澡》<br>23、《爱情和其他魔鬼》<br>24、《芳华》<br>25、《冰与火之歌》<br>26、《远山淡影》<br>27、《目送》<br>28、《自深深处》<br>29、《巨人的陨落》<br>30、《余华短篇集》<br>31、《基督山伯爵》<br>32、《三个火枪手》<br>33、《和喜欢的一切在一起》<br>34、《弗兰克尔自传》<br>35、《重新认识你自己》<br>36、《二十四史》<br>37、《长恨歌》<br>38、《面包树上的女人》<br>39、《追随你的心》<br>40、《不能不去爱的两件事》<br>41、《在这复杂世界里》<br>42、《坏小孩》<br>43、《季羡林私人史》<br>44、《金瓶梅》<br>45、《孤独六讲》<br>46、《我们生活在巨大的差距里》<br>47、《分身》<br>48、《宿命》<br>49、《快乐是在心里》<br>50、《我的精神家园》<br>51、《万历十五年》<br>52、《撒切尔夫人传》<br>53、《飞鸟集》<br>54、《幻灭》<br>55、《当我跑步时我谈些什么》<br>56、《富爸爸、穷爸爸》<br>57、《雅舍小品》<br>58、《一个女子恋爱的时候》<br>59、《从一到无穷大》<br>60、《虚无的十字架》<br>61、《资本论》<br>62、《白说》<br>63、《在细雨中呼喊》</p>]]></content>
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 阅读 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
