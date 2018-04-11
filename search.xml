@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[zcmu2034]]></title>
+    <title><![CDATA[区间贪心“ hexo new 区间贪心]]></title>
+    <url>%2F2018%2F04%2F11%2F%E5%8C%BA%E9%97%B4%E8%B4%AA%E5%BF%83%2F</url>
+    <content type="text"><![CDATA[贪心 贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。 贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题： 给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。 首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容纳其他区间。 之后将所有开区间按左端点x从大到小排序，总是先选择左端点最大的区间。当然也可以考虑选择右端点最小的区间。123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=110;struct Inteval&#123; int x,y;&#125;q[maxn];bool cmp(Inteval a,Inteval b)&#123; if(a.x!=b.x) return a.x&gt;b.x; else return a.y&lt;b.y;&#125;int main()&#123; int n; while(scanf("%d",&amp;n),n!=0)&#123; for(int i=0;i&lt;n;i++)&#123; scanf("%d%d",&amp;q[i].x,&amp;q[i].y); &#125; sort(q,q+n,cmp); int ans = 1,lastx = q[0].x; for(int i=1;i&lt;n;i++)&#123; if(q[i].y&lt;=lastx)&#123; lastx=q[i].x; ans++; &#125; &#125; printf("%d\n",ans); &#125; return 0;&#125; 区间选点问题： 给出n个闭区间[x,y],求最少需要确定多少个点，才能使每个闭区间中都至少存在一个点。]]></content>
+      <categories>
+        <category>算法和数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ZCMU2034]]></title>
     <url>%2F2018%2F04%2F11%2FZCMU-2034%2F</url>
     <content type="text"><![CDATA[阶乘计算Time Limit: 1 Sec Memory Limit: 128 MBSubmit: 43 Solved: 34[Submit][Status][Web Board]Description输入一个正整数n，输出n!的值。其中n!=1 2 3 …n。算法描述n!可能很大，而计算机能表示的整数范围有限，需要使用高精度计算的方法。使用一个数组A来表示一个大整数a，A[0]表示a的个位，A[1]表示a的十位，依次类推。将a乘以一个整数k变为将数组A的每一个元素都乘以k，请注意处理相应的进位。首先将a设为1，然后乘2，乘3，当乘到n时，即得到了n!的值。 Input 输入包含一个正整数n，n&lt;=1000。 Output 输出n!的准确值。 Sample Input10Sample Output3628800HINTSource基础练习 相当于是大数的阶乘，也就是基本类型存不下，需要用数组来进行模拟。123456789101112131415161718192021222324252627#include&lt;stdio.h&gt; #include&lt;string.h&gt; int main() &#123; int a[3000],i,j,n; int c=0,s; memset(a,0,sizeof(a)); scanf("%d",&amp;n); a[0]=1; for(i=2;i&lt;=n;i++) &#123; for(j=0;j&lt;3000;j++) &#123; s=a[j]*i+c; a[j]=s%10; c=s/10;//保留进位 &#125; &#125; for(i=2999;i&gt;=0;i--) if(a[i]) break; for(j=i;j&gt;=0;j--) &#123; printf("%d",a[j]); &#125; return 0; &#125;]]></content>
       <categories>
