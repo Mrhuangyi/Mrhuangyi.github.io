@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[区间贪心“ hexo new 区间贪心]]></title>
+    <title><![CDATA[归并排序]]></title>
+    <url>%2F2018%2F04%2F11%2F%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[归并排序 最基本的2-路归并排序。 原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并， 生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。 时间复杂度为O(nlogn)例：将序列{66,12,33,57,64,27,18}进行2路归并排序 第一趟 { { 12,66 },{ 33,57 },{ 27,64 },{ 18 } } 第二题 { { 12,33,57,66 },{ 18,27,64 } } 第三趟{12,18,27,33,57,64,66} 递归实现 1234567891011121314151617181920212223242526const int maxn=100;void merge(int a[],int l1,int r1,int l2,int r2)&#123; int i=l1,j=l2; int temp[maxn],index=0;//temp临时存放合并后的数组，index为其下标 while(i&lt;=r1&amp;&amp;j&lt;=r2)&#123; if(a[i]&lt;=a[j])&#123; temp[index++]=a[i++]; &#125; else&#123; temp[index++]=a[j++]; &#125; &#125; while(i&lt;=r1) temp[index++]=a[i++]; while(j&lt;=r2) temp[index++]=a[j++]; for(i=0;i&lt;index;i++)&#123; a[l1+i]=temp[i]; &#125;&#125;void mergeSort(int a[],int left,int right)&#123; if(left&lt;right)&#123; int mid=(left+right)/2; mergeSort(a,left,mid); //左子区间归并排序 mergeSort(a,mid+1,right);//右子区间归并排序 merge(a,left,mid,mid+1,right); 将左右子区间合并 &#125;&#125; 非递归实现 12345678910void mergeSort(int a[])&#123; for(int step=2;step/2&lt;=n;step*=2)&#123; for(int i=1;i&lt;=n;i+=step)&#123; int mid=i+step/2-1; if(mid+1&lt;=n)&#123; //sort(a+i,a+min(i+step,n+1)); merge(a,i,mid,mid+1,min(i+step-1,n)) &#125; &#125; &#125; &#125;]]></content>
+      <categories>
+        <category>算法和数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[区间贪心]]></title>
     <url>%2F2018%2F04%2F11%2F%E5%8C%BA%E9%97%B4%E8%B4%AA%E5%BF%83%2F</url>
     <content type="text"><![CDATA[贪心 贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。 贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题： 给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。 首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容纳其他区间。 之后将所有开区间按左端点x从大到小排序，总是先选择左端点最大的区间。当然也可以考虑选择右端点最小的区间。123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=110;struct Inteval&#123; int x,y;&#125;q[maxn];bool cmp(Inteval a,Inteval b)&#123; if(a.x!=b.x) return a.x&gt;b.x; else return a.y&lt;b.y;&#125;int main()&#123; int n; while(scanf("%d",&amp;n),n!=0)&#123; for(int i=0;i&lt;n;i++)&#123; scanf("%d%d",&amp;q[i].x,&amp;q[i].y); &#125; sort(q,q+n,cmp); int ans = 1,lastx = q[0].x; for(int i=1;i&lt;n;i++)&#123; if(q[i].y&lt;=lastx)&#123; lastx=q[i].x; ans++; &#125; &#125; printf("%d\n",ans); &#125; return 0;&#125; 区间选点问题： 给出n个闭区间[x,y],求最少需要确定多少个点，才能使每个闭区间中都至少存在一个点。]]></content>
       <categories>

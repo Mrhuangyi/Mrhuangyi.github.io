@@ -133,17 +133,17 @@
 
 
 
-<meta name="description" content="终于活成了别人喜欢的样子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="guestbook">
-<meta property="og:url" content="https://huangyiblog.com/guestbook/index.html">
+<meta name="description" content="归并排序  最基本的2-路归并排序。  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。  时间复杂度为O(nlogn)例：将序列{66,12,33,57,64,27,18}进行2路归并排序  第一趟  { { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }">
+<meta property="og:type" content="article">
+<meta property="og:title" content="归并排序">
+<meta property="og:url" content="https://huangyiblog.com/2018/04/11/归并排序/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="终于活成了别人喜欢的样子">
+<meta property="og:description" content="归并排序  最基本的2-路归并排序。  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。  时间复杂度为O(nlogn)例：将序列{66,12,33,57,64,27,18}进行2路归并排序  第一趟  { { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T08:20:52.818Z">
+<meta property="og:updated_time" content="2018-04-11T10:38:56.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="guestbook">
-<meta name="twitter:description" content="终于活成了别人喜欢的样子">
+<meta name="twitter:title" content="归并排序">
+<meta name="twitter:description" content="归并排序  最基本的2-路归并排序。  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。  时间复杂度为O(nlogn)例：将序列{66,12,33,57,64,27,18}进行2路归并排序  第一趟  { { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }">
 
 
 
@@ -173,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="https://huangyiblog.com/guestbook/"/>
+  <link rel="canonical" href="https://huangyiblog.com/2018/04/11/归并排序/"/>
 
 
 
 
 
-  <title>guestbook | 你的小黄^_^</title>
+  <title>归并排序 | 你的小黄^_^</title>
   
 
 
@@ -497,33 +497,201 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/2018/04/11/归并排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Huangyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你的小黄^_^">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">guestbook</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">归并排序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T18:23:35+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法和数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">算法和数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>  最基本的2-路归并排序。<br>  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，<br>  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。<br>  时间复杂度为O(nlogn)<br>例：将序列{66,12,33,57,64,27,18}进行2路归并排序</p>
+<ol>
+<li><p>第一趟</p>
+
+{ { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }
+
+</li>
+<li><p>第二题</p>
+
+{ { 12,33,57,66 },{ 18,27,64 } }
+
+</li>
+<li><p>第三趟{12,18,27,33,57,64,66}</p>
+</li>
+</ol>
+<ul>
+<li><p>递归实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l1,<span class="keyword">int</span> r1,<span class="keyword">int</span> l2,<span class="keyword">int</span> r2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=l1,j=l2;</span><br><span class="line">    <span class="keyword">int</span> temp[maxn],index=<span class="number">0</span>;<span class="comment">//temp临时存放合并后的数组，index为其下标</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1&amp;&amp;j&lt;=r2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])&#123;</span><br><span class="line">            temp[index++]=a[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            temp[index++]=a[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1) temp[index++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r2) temp[index++]=a[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;index;i++)&#123;</span><br><span class="line">        a[l1+i]=temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">    <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">    mergeSort(a,left,mid); <span class="comment">//左子区间归并排序</span></span><br><span class="line">    mergeSort(a,mid+<span class="number">1</span>,right);<span class="comment">//右子区间归并排序</span></span><br><span class="line">    merge(a,left,mid,mid+<span class="number">1</span>,right); 将左右子区间合并</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非递归实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[])</span></span>&#123;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> step=<span class="number">2</span>;step/<span class="number">2</span>&lt;=n;step*=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=step)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=i+step/<span class="number">2</span><span class="number">-1</span>;  </span><br><span class="line">        <span class="keyword">if</span>(mid+<span class="number">1</span>&lt;=n)&#123;     <span class="comment">//sort(a+i,a+min(i+step,n+1));</span></span><br><span class="line">            merge(a,i,mid,mid+<span class="number">1</span>,min(i+step<span class="number">-1</span>,n))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     
     
     
+	  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/11/区间贪心/" rel="next" title="区间贪心">
+                <i class="fa fa-chevron-left"></i> 区间贪心
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ac1ddccf8800ae7" async = "async" ></script>
+</div>
+
+      
+    </div>
   </div>
 
 
@@ -556,8 +724,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -689,6 +866,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-number">1.</span> <span class="nav-text">归并排序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
