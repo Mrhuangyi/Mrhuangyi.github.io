@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[zcmu2034]]></title>
+    <url>%2F2018%2F04%2F11%2FZCMU-2034%2F</url>
+    <content type="text"><![CDATA[#2034: 阶乘计算Time Limit: 1 Sec Memory Limit: 128 MBSubmit: 43 Solved: 34[Submit][Status][Web Board]Description输入一个正整数n，输出n!的值。其中n!=123…n。算法描述n!可能很大，而计算机能表示的整数范围有限，需要使用高精度计算的方法。使用一个数组A来表示一个大整数a，A[0]表示a的个位，A[1]表示a的十位，依次类推。将a乘以一个整数k变为将数组A的每一个元素都乘以k，请注意处理相应的进位。首先将a设为1，然后乘2，乘3，当乘到n时，即得到了n!的值。 Input 输入包含一个正整数n，n&lt;=1000。 Output 输出n!的准确值。 Sample Input10Sample Output3628800HINTSource基础练习 相当于是大数的阶乘，也就是基本类型存不下，需要用数组来进行模拟。123456789101112131415161718192021222324252627#include&lt;stdio.h&gt; #include&lt;string.h&gt; int main() &#123; int a[3000],i,j,n; int c=0,s; memset(a,0,sizeof(a)); scanf("%d",&amp;n); a[0]=1; for(i=2;i&lt;=n;i++) &#123; for(j=0;j&lt;3000;j++) &#123; s=a[j]*i+c; a[j]=s%10; c=s/10;//保留进位 &#125; &#125; for(i=2999;i&gt;=0;i--) if(a[i]) break; for(j=i;j&gt;=0;j--) &#123; printf("%d",a[j]); &#125; return 0; &#125;]]></content>
+      <categories>
+        <category>算法和数据结构</category>
+      </categories>
+      <tags>
+        <tag>ZCMU</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ZCMU-1620]]></title>
     <url>%2F2018%2F04%2F10%2FZCMU-1620%2F</url>
     <content type="text"><![CDATA[1620: 全排列Time Limit: 1 Sec Memory Limit: 128 MBSubmit: 198 Solved: 89[Submit][Status][Web Board]Description给定n个数 a[0] , a[1] …….. a[n-1], 输出其全排列。 Input第一行输入一个数n，（n&lt;7） 接下来一行输入n个数。 Output按字典序从小到大输出全排列 Sample Input31 2 331 2 2Sample Output1 2 31 3 22 1 32 3 13 1 23 2 11 2 22 1 22 2 1HINT 全排列，枚举排列常用的方法有两种：一种是递归枚举，另一种是用STL中的next_permutation 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;void print_permutation(int n,int *p,int *a,int cur)&#123; if(cur==n) &#123; for(int i=0;i&lt;n-1;i++) &#123; printf("%d ",a[i]); &#125; printf("%d\n",a[n-1]); &#125; else for(int i=0;i&lt;n;i++) if(!i||p[i]!=p[i-1]) &#123; int ok=1; int c1=0,c2=0; for(int j=0;j&lt;cur;j++)if(a[j]==p[i]) c1++; for(int j=0;j&lt;n;j++) if(p[i]==p[j]) c2++; if(c1&lt;c2)&#123; a[cur]=p[i]; print_permutation(n,p,a,cur+1); &#125; &#125;&#125;int main()&#123; int n,p[10],a[1000]; while(~scanf("%d",&amp;n)) &#123; memset(a,0,sizeof(a)); for(int i=0;i&lt;n;i++) &#123; scanf("%d",&amp;p[i]); &#125; sort(p,p+n); print_permutation(n,p,a,0); &#125; return 0;&#125; 123456789101112131415161718#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n,a[10]; while(cin&gt;&gt;n) &#123; for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i]; sort(a,a+n); do &#123; for(int i=0;i&lt;n-1;i++) printf("%d ",a[i]); printf("%d\n",a[n-1]); &#125;while(next_permutation(a,a+n)); &#125; return 0;&#125;]]></content>
