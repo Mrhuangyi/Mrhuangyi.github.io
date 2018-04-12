@@ -141,16 +141,17 @@
 
 
 
-<meta name="description" content="终于活成了别人喜欢的样子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="你的小黄^_^">
-<meta property="og:url" content="http://huangyiblog.com/archives/2018/04/page/2/index.html">
+<meta name="description" content="贪心  贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。  贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题：  给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。  首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区间贪心">
+<meta property="og:url" content="http://huangyiblog.com/算法和数据结构/区间贪心/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="终于活成了别人喜欢的样子">
+<meta property="og:description" content="贪心  贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。  贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题：  给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。  首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-11T09:53:13.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你的小黄^_^">
-<meta name="twitter:description" content="终于活成了别人喜欢的样子">
+<meta name="twitter:title" content="区间贪心">
+<meta name="twitter:description" content="贪心  贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。  贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。 区间不相交问题：  给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。  首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容">
 
 
 
@@ -180,13 +181,13 @@
 
 
 
-  <link rel="canonical" href="http://huangyiblog.com/archives/2018/04/page/2/"/>
+  <link rel="canonical" href="http://huangyiblog.com/算法和数据结构/区间贪心/"/>
 
 
 
 
 
-  <title>归档 | 你的小黄^_^</title>
+  <title>区间贪心 | 你的小黄^_^</title>
   
 
 
@@ -205,7 +206,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Mrhuangyi" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -511,115 +512,188 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/区间贪心/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Huangyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你的小黄^_^">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/随笔/《控方证人》观后感/" itemprop="url">
-              
-                <span itemprop="name">《控方证人》观后感</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">区间贪心</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-03T14:41:00+08:00"
-              content="2018-04-03" >
-          04-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T17:44:16+08:00">
+                2018-04-11
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法和数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">算法和数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/随笔/我的2017书单/" itemprop="url">
-              
-                <span itemprop="name">我的2017书单</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-01T11:00:34+08:00"
-              content="2018-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p>  贪心是用来解决一类最优化问题，并希望由局部最优策略来推得全局最优结果的算法思想。<br>  贪心算法使用的问题一定满足最优子结构性质，即一个问题的最优解可以由它的子问题的最优解有效地构造出来。</p>
+<h2 id="区间不相交问题："><a href="#区间不相交问题：" class="headerlink" title="区间不相交问题："></a>区间不相交问题：</h2><p>  给出n个开区间(x,y),从中选择尽可能多的区间，使得这些开区间两两没有交集。<br>  首先考虑最简单的情况，即开区间I1被开区间I2包含，那么I1显然是最好的选择，因为这样就有更大的空间去容纳其他区间。<br>  之后将所有开区间按左端点x从大到小排序，总是先选择左端点最大的区间。当然也可以考虑选择右端点最小的区间。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Inteval</span>&#123;</span></span><br><span class="line">   <span class="keyword">int</span> x,y;</span><br><span class="line">&#125;q[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Inteval a,Inteval b)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a.x!=b.x) <span class="keyword">return</span> a.x&gt;b.x;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> a.y&lt;b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n),n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;q[i].x,&amp;q[i].y);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(q,q+n,cmp);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>,lastx = q[<span class="number">0</span>].x;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q[i].y&lt;=lastx)&#123;</span><br><span class="line">                lastx=q[i].x;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="区间选点问题："><a href="#区间选点问题：" class="headerlink" title="区间选点问题："></a>区间选点问题：</h2><p>  给出n个闭区间[x,y],求最少需要确定多少个点，才能使每个闭区间中都至少存在一个点。</p>
+
+      
     </div>
+    
+    
+    
+	  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/算法和数据结构/ZCMU-2034/" rel="next" title="ZCMU2034">
+                <i class="fa fa-chevron-left"></i> ZCMU2034
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/算法和数据结构/归并排序/" rel="prev" title="归并排序">
+                归并排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/04/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/04/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ac1ddccf8800ae7" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -627,6 +701,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -647,8 +725,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -780,6 +867,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#贪心"><span class="nav-number">1.</span> <span class="nav-text">贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#区间不相交问题："><span class="nav-number">1.1.</span> <span class="nav-text">区间不相交问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间选点问题："><span class="nav-number">1.2.</span> <span class="nav-text">区间选点问题：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -947,6 +1050,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
