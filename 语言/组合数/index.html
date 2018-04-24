@@ -128,7 +128,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -141,17 +141,20 @@
 
 
 
-<meta name="description" content="终于活成了别人喜欢的样子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://huangyiblog.com/tags/index.html">
+<meta name="description" content="例1：求n！中有多少质因子p  直观想法：计算从1~n的每个数各有多少个质因子p，然后将结果累加，时间复杂度为O(nlogn).123456789101112131415161718192021222324int cal(int n,int p)&amp;#123;    int ans=0;    for(int i=2;i&amp;lt;=n;i++)&amp;#123;        int temp=i;">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组合数">
+<meta property="og:url" content="http://huangyiblog.com/语言/组合数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="终于活成了别人喜欢的样子">
+<meta property="og:description" content="例1：求n！中有多少质因子p  直观想法：计算从1~n的每个数各有多少个质因子p，然后将结果累加，时间复杂度为O(nlogn).123456789101112131415161718192021222324int cal(int n,int p)&amp;#123;    int ans=0;    for(int i=2;i&amp;lt;=n;i++)&amp;#123;        int temp=i;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-31T09:45:27.191Z">
+<meta property="og:image" content="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D219/sign=001e9280d1b44aed5d4eb9e58a1d876a/279759ee3d6d55fb34fde7ec66224f4a21a4ddc5.jpg">
+<meta property="og:updated_time" content="2018-04-24T06:38:20.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="终于活成了别人喜欢的样子">
+<meta name="twitter:title" content="组合数">
+<meta name="twitter:description" content="例1：求n！中有多少质因子p  直观想法：计算从1~n的每个数各有多少个质因子p，然后将结果累加，时间复杂度为O(nlogn).123456789101112131415161718192021222324int cal(int n,int p)&amp;#123;    int ans=0;    for(int i=2;i&amp;lt;=n;i++)&amp;#123;        int temp=i;">
+<meta name="twitter:image" content="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D219/sign=001e9280d1b44aed5d4eb9e58a1d876a/279759ee3d6d55fb34fde7ec66224f4a21a4ddc5.jpg">
 
 
 
@@ -181,13 +184,13 @@
 
 
 
-  <link rel="canonical" href="http://huangyiblog.com/tags/"/>
+  <link rel="canonical" href="http://huangyiblog.com/语言/组合数/"/>
 
 
 
 
 
-  <title>tags | 你的小黄^_^</title>
+  <title>组合数 | 你的小黄^_^</title>
   
 
 
@@ -514,40 +517,195 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/语言/组合数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Huangyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你的小黄^_^">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 5 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/C/" style="font-size: 30px; color: #111">C++</a> <a href="/tags/ZCMU/" style="font-size: 16.5px; color: #9d9d9d">ZCMU</a> <a href="/tags/java/" style="font-size: 12px; color: #ccc">java</a> <a href="/tags/影视/" style="font-size: 21px; color: #6f6f6f">影视</a> <a href="/tags/阅读/" style="font-size: 25.5px; color: #404040">阅读</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">组合数</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T14:34:22+08:00">
+                2018-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/语言/" itemprop="url" rel="index">
+                    <span itemprop="name">语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="例1：求n！中有多少质因子p"><a href="#例1：求n！中有多少质因子p" class="headerlink" title="例1：求n！中有多少质因子p"></a>例1：求n！中有多少质因子p</h3><p>  直观想法：计算从1~n的每个数各有多少个质因子p，然后将结果累加，时间复杂度为O(nlogn).<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=i;</span><br><span class="line">        <span class="keyword">while</span>(temp%p==<span class="number">0</span>)&#123;</span><br><span class="line">            ans++;</span><br><span class="line">            temp/=p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///O(logn)的算法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    whil(n)&#123;</span><br><span class="line">    ans+=n/p;</span><br><span class="line">    n/=p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;p) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> n/p+cal(n/p,p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="组合数的计算"><a href="#组合数的计算" class="headerlink" title="组合数的计算"></a>组合数的计算</h2><p><img src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D219/sign=001e9280d1b44aed5d4eb9e58a1d876a/279759ee3d6d55fb34fde7ec66224f4a21a4ddc5.jpg" alt="Alt text"><br>互补性质</p>
+<p>即从m个不同元素中取出n个元素的组合数=从m个不同元素中取出 (m-n) 个元素的组合数；</p>
+<p>这个性质很容易理解，例如C(9,2)=C(9,7)，即从9个元素里选择2个元素的方法与从9个元素里选择7个元素的方法是相等的。<br>规定：C(n,0)=1<br>2.组合恒等式<br>若表示在 n 个物品中选取 m 个物品，则如存在下述公式：C(n,m)=C(n,n-m)=C(n-1,m-1)+C(n-1,m)。</p>
+<h3 id="通过定义直接计算"><a href="#通过定义直接计算" class="headerlink" title="通过定义直接计算"></a>通过定义直接计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">c</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans =<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        ans*=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        ans/=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=n-m;i++)&#123;</span><br><span class="line">        ans/=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过递推公式计算"><a href="#通过递推公式计算" class="headerlink" title="通过递推公式计算"></a>通过递推公式计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> res[<span class="number">67</span>][<span class="number">67</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">c</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> m)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(m==<span class="number">0</span>||m==n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">if</span>(res[n][m]!=<span class="number">0</span>) <span class="keyword">return</span> res[n][m];</span><br><span class="line">   <span class="keyword">return</span> res[n][m]=c(n<span class="number">-1</span>,m)+c(n<span class="number">-1</span>,m<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///打表计算</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">60</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        res[i][<span class="number">0</span>]=res[i][i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i/<span class="number">2</span>;j++)&#123;</span><br><span class="line">            res[i][j]=res[i<span class="number">-1</span>][j]+res[i<span class="number">-1</span>][j<span class="number">-1</span>];<span class="comment">///递推计算c(i,j)</span></span><br><span class="line">            res[i][i-j]=res[i][j];<span class="comment">///c(i,i-j)=c(i,j)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过定义式的变形计算"><a href="#通过定义式的变形计算" class="headerlink" title="通过定义式的变形计算"></a>通过定义式的变形计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">c</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> m)</span></span>&#123;</span><br><span class="line">   <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    ans=ans*(n-m+i)/i;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="计算C-n-m-p"><a href="#计算C-n-m-p" class="headerlink" title="计算C(n,m)%p"></a>计算C(n,m)%p</h1><h3 id="通过递推公式计算-1"><a href="#通过递推公式计算-1" class="headerlink" title="通过递推公式计算"></a>通过递推公式计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">递归：</span><br><span class="line"><span class="keyword">int</span> res[<span class="number">1010</span>][<span class="number">1010</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">c</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m==<span class="number">0</span>||m==n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(res[n][m]!=<span class="number">0</span>) <span class="keyword">return</span> res[n][m];</span><br><span class="line">    <span class="keyword">return</span> res[n][m]=(c(n<span class="number">-1</span>,m)+c(n<span class="number">-1</span>,m<span class="number">-1</span>))%p;</span><br><span class="line">&#125;</span><br><span class="line">递推：</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    res[i][<span class="number">0</span>]=res[i][i]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i/<span class="number">2</span>;j++)&#123;</span><br><span class="line">        res[i][j]=(res[i<span class="number">-1</span>][j]+res[i<span class="number">-1</span>][j<span class="number">-1</span>])%p;</span><br><span class="line">        res[i][i-j]=res[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="根据定义式计算"><a href="#根据定义式计算" class="headerlink" title="根据定义式计算"></a>根据定义式计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> prime[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">c</span><span class="params">(<span class="keyword">int</span> ,n,<span class="keyword">int</span> m,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;prime[i]&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> c=cal(n,prime[i])-cal(m,prime[i])-cal(n-m,prime[i]);</span><br><span class="line">        ans=ans*binaryPow(prime[i],c,p)%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="根据定义式的变形计算"><a href="#根据定义式的变形计算" class="headerlink" title="根据定义式的变形计算"></a>根据定义式的变形计算</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///求c(n,m)%p,且m&lt;p,p为素数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">c</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        ans=ans*(n-m+<span class="number">1</span>)%p;</span><br><span class="line">        ans=ans*inverse(i,p)%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///求c(n,m)%p,m任意,p为素数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">c</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">1</span>,nump=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=n-m+i;</span><br><span class="line">        <span class="keyword">while</span>(temp%p==<span class="number">0</span>)&#123;</span><br><span class="line">            nump++;</span><br><span class="line">            temp/=p;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=ans*temp%p;</span><br><span class="line">        temp=i;</span><br><span class="line">        <span class="keyword">while</span>(temp%p==<span class="number">0</span>)&#123;</span><br><span class="line">            nump--;</span><br><span class="line">            temp/=p;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=ans*inverse(temp,p)%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(nump&gt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Lucas定理<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Lucas</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> c(n%p,m%p)*Lucas(n/p,m/p)%p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
     
     
+	  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/语言/algorithm头文件下常用函数/" rel="next" title="algorithm头文件下常用函数">
+                <i class="fa fa-chevron-left"></i> algorithm头文件下常用函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ac1ddccf8800ae7" async = "async" ></script>
+</div>
+
+      
+    </div>
   </div>
 
 
@@ -556,6 +714,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -576,8 +738,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -709,6 +880,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#例1：求n！中有多少质因子p"><span class="nav-number">1.</span> <span class="nav-text">例1：求n！中有多少质因子p</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合数的计算"><span class="nav-number"></span> <span class="nav-text">组合数的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过定义直接计算"><span class="nav-number">1.</span> <span class="nav-text">通过定义直接计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过递推公式计算"><span class="nav-number">2.</span> <span class="nav-text">通过递推公式计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过定义式的变形计算"><span class="nav-number">3.</span> <span class="nav-text">通过定义式的变形计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算C-n-m-p"><span class="nav-number"></span> <span class="nav-text">计算C(n,m)%p</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过递推公式计算-1"><span class="nav-number">1.</span> <span class="nav-text">通过递推公式计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据定义式计算"><span class="nav-number">2.</span> <span class="nav-text">根据定义式计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据定义式的变形计算"><span class="nav-number">3.</span> <span class="nav-text">根据定义式的变形计算</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
