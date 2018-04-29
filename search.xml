@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二叉树的遍历]]></title>
+    <url>%2F%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[二叉树的遍历二叉树的遍历是指通过一定的顺序访问二叉树的所有结点。一般包括：先序遍历、中序遍历、后序遍历、层次遍历先序、中序、后序的遍历一般通过深度优先搜索实现，层次遍历一般通过广度优先搜索实现。 1. 先序遍历遍历顺序：根结点-&gt;左子树-&gt;右子树12345678void preorder(node* root)&#123; if(root==NULL)&#123; return; &#125; printf("%d\n",root-&gt;data); preorder(root-&gt;lchild); preorder(root-&gt;rchild);&#125; 2. 中序遍历遍历顺序：左子树-&gt;根结点-&gt;右子树12345678void inorder(node* root)&#123; if(root==NULL)&#123; return; &#125; inorder(root-&gt;lchild); printf("%d\n",root-&gt;data); inorder(root-&gt;rchild);&#125; 3. 后序遍历遍历顺序：左子树-&gt;右子树-&gt;根结点12345678void postorder(node* root)&#123; if(root==NULL)&#123; return; &#125; postorder(root-&gt;lchild); postorder(root-&gt;rchild); printf("%d\n",root-&gt;data);&#125; 4. 层序遍历层序遍历指按层次的顺序从根结点向下逐层进行遍历，且对同一层的节点为从左到右遍历。基本思路：从根结点开始广度优先搜索 将根结点root加入队列 取出队首结点，访问它 如果该结点有左孩子，将左孩子入队。 如果该结点有右孩子，将右孩子入队 返回第二步，直到队列为空 1234567891011void LayerOrder(node* root)&#123; queue&lt;node*&gt; q; q.push(root); while(!q.empty())&#123; node* now = q.front(); q.pop(); printf("%d",noe-&gt;data); if(now-&gt;lchild!=NULL) q.push(now-&gt;lchild); if(now-&gt;rchild!=NULL) q.push(now-&gt;rchild); &#125;&#125; 如果题目要求计算每个结点所处层次，可以在二叉树结点的定义中添加一个记录层次的layer变量。 1234567891011121314151617181920212223242526struct node&#123; int data; int layer; node* lchild; node* rchild;&#125;;void LayerOrder(node* root)&#123; queue&lt;node*&gt; q; root-&gt;layer=1; q.push(root); while(!q.empty())&#123; node* now = q.front(); q.pop(); printf("%d",noe-&gt;data); if(now-&gt;lchild!=NULL)&#123; now-&gt;lchild-&gt;layer=now-&gt;layer+1; q.push(now-&gt;lchild); &#125; if(now-&gt;rchild!=NULL) &#123; now-&gt;rchild-&gt;layer=now-&gt;layer+1; q.push(now-&gt;rchild); &#125; &#125;&#125; 问题：给定一棵二叉树的先序遍历序列和中序遍历序列（或者给定后序序列和中序序列），要求重建这棵二叉树。 中序序列(确定左右子树)可以与先序序列、后序序列、层序序列（确定根结点）中的任意一个来构建唯一地二叉树，后三者任意搭配都不能构建唯一的二叉树假设已知先序序列为pre1,pre2……中序序列为in1,in2……则先序序列中的第一个元素pre1是当前二叉树的根结点当前二叉树的根结点又将中序序列划分为左子树和右子树，在中序序列中找到某个结点ink，使得ink=pre1。左子树结点个数numLeft=k-1，同时可得出左右子树的先序和中序序列区间。递归边界：先序序列的长度小于等于0 1234567891011121314151617node* create(int prel ,int prer,int inl,int inr)&#123; if(prel&lt;prer)&#123; return NULL; &#125; node* root=new node; root-&gt;data=pre[prel]; int k; for(k=inl;k&lt;=inr;k++)&#123; if(in[k]==pre[prel])&#123; break; &#125; &#125; int numLeft=k-inl; root-&gt;lchild=create(prel+1,prel+numLeft,inl,k-1); root-&gt;rchild=create(prel+numLeft+1,prer,k+1,inr); return root;&#125; 二叉树的静态实现不用指针，只用数组实现二叉树基本操作 静态二叉链表123456789101112struct node&#123; typename data; int lchild; int rchild;&#125;Node[maxn];int index=0;int newNode(int v)&#123; Node[index].data=v; Node[index].lchild=-1; Node[index].rchild=-1; return index++;&#125; 二叉树的查找、插入、建立root为根结点在数组中的下标12345678910111213141516171819202122232425262728void search(int root,int x,int newdata)&#123; if(root==-1)&#123; return; &#125; if(Node[root].data==x)&#123; Node[root].data=newdata; &#125; search(Node[root].lchild,x,newdata); search(Node[root].rchil,x,newdata);&#125;void insert(int &amp;root,int x)&#123; if(root==-1)&#123; root==newNode(x); return; &#125; if(x插在左子树)&#123; insert(Node[root].lchild,x); &#125;else&#123; insert(Node[root].rchild,x); &#125;&#125;void create(int data[],int n)&#123; int root=-1; for(int i=0;i&lt;n;i++)&#123; insert(root,data[i]); &#125; return root;&#125; 二叉树的遍历123456789101112131415161718192021222324252627282930313233343536373839//先序遍历void preorder(int root)&#123; if(root==-1)&#123; return; &#125; printf("%d\n",Node[root].data); preorder(Node[root].lchild); preorder(Node[root].rchild);&#125;//中序遍历void inorder(int root)&#123; if(root==-1)&#123; return; &#125; inorder(Node[root].lchild); printf("%d\n",Node[root].data); inorder(Node[root].rchild);&#125;//后序遍历void postorder(int root)&#123; if(root==-1)&#123; return ; &#125; postorder(Node[root].lchild); postorder(Node[root].rchild); printf("%d\n",Node[root].data);&#125;//层序遍历void LayerOrder(int root)&#123; queue&lt;int&gt; q; q.push(root); while(!q.empty())&#123; int now=q.front(); q.pop(); printf("%d ",Node[now].data); if(Node[now].lchild!=-1) q.push(Node[now].lchild); if(Node[now].rchild!=-1) q.push(Node[now].rchild); &#125;&#125;]]></content>
+      <categories>
+        <category>算法和数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[《素媛》与《熔炉》]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E3%80%8A%E7%B4%A0%E5%AA%9B%E3%80%8B%E4%B8%8E%E3%80%8A%E7%86%94%E7%82%89%E3%80%8B%2F</url>
+    <content type="text"><![CDATA[现实依旧残酷 最近看了两部韩国电影，正好五一假期有空，想写点什么。在知乎上看过一个话题，人开始废掉的标志是什么？记得有人答说当一个人沉迷于短期便可轻易获得快感的事物时，有人答说当一个开始拒绝输出的时候便是废掉的开始。我感到恐慌，我意识到尽管一天到晚都在读书，在听歌看电影，在接受各种信息，但我不能一位接收而不输出，其实这也是我搞这个静态博客的初衷。我知道自己文笔不行，但我还是想写点东西，想记录点生活。论文学，读了《红楼梦》便知道什么才是大家之作，这样的奇书需要怎么的积淀才能写就。很明显，一般人都达不到这样的高度，但这并不妨碍我继续输出自己的想法，学编程也一样，当一个人学编程只看书看视频听课，却从不自己不敲代码，那么注定是失败的学习者，而敲代码的过程，其实也就是输出的过程。 回到正题，为什么要把素媛和熔炉放到一起，一个显然的原因就是这两部都是反映未成年人被性侵的黑现实题材，我不清楚是因为自己接触的电影太少，还是不了解国内状况，为什么中国相应的题材电影没有令我印象深刻的，难道我们国家已经社会和谐，大家都生活在了一个幸福美满的国度里了吗，甚至已经没必要在去关注未成年人的成长问题？素媛和熔炉都是根据真实事件改编的电影，韩国在反映黑暗面现实题材的电影方面似乎做得比较好，有些放在国内怕是审批都过不了，两部电影最后的结局让人痛心与无奈，但这也是电影出彩的一个方面之一吧。以往很多电影，剧情发展到后期，基本就是坏蛋绳之以法，恶有恶报。但不得不承认，现实中很多人的恶报来的并没那么快，被害人可能死不瞑目，犯人却依旧逍遥法外的情况并不少，冤判，错判，更恶劣的，权钱交易，有钱有势的才是爹，普通人的生命就如草芥一般。寒假看的红楼梦，其实曹公也写到了很多底层人的生活，起初读红楼梦可能只关注到宝玉、宝钗、黛玉三者恋为主线的少男少女之间的情情爱爱，但这其实就低估了曹公的作品了，从繁华到幻灭，情确实是红楼梦的一大主题，但其实里面写到了很多卑微者的命运，很多人无力反抗这样命运，最终只能认命。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>影视</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[葬花词]]></title>
     <url>%2F%E6%91%98%E5%BD%95%2F%E8%91%AC%E8%8A%B1%E8%AF%8D%2F</url>
     <content type="text"><![CDATA[程高通行本《葬花吟》 花谢花飞花满天，红消香断有谁怜？ 游丝软系飘春榭，落絮轻沾扑绣帘。 闺中女儿惜春暮，愁绪满怀无释处。 手把花锄出绣帘，忍踏落花来复去。 柳丝榆荚自芳菲，不管桃飘与李飞； 桃李明年能再发，明年闺中知有谁？ 三月香巢已垒成，梁间燕子太无情！ 明年花发虽可啄，却不道人去梁空巢也倾。 一年三百六十日，风刀霜剑严相逼； 明媚鲜妍能几时，一朝漂泊难寻觅。 花开易见落难寻，阶前愁杀葬花人， 独倚花锄泪暗洒，洒上空枝见血痕。 杜鹃无语正黄昏，荷锄归去掩重门； 青灯照壁人初睡，冷雨敲窗被未温。 怪奴底事倍伤神？半为怜春半恼春。 怜春忽至恼忽去，至又无言去未闻。 昨宵庭外悲歌发，知是花魂与鸟魂？ 花魂鸟魂总难留，鸟自无言花自羞； 愿侬此日生双翼，随花飞到天尽头。 天尽头，何处有香丘？ 未若锦囊收艳骨，一抔净土掩风流3。 质本洁来还洁去，强于污淖陷渠沟。 尔今死去侬收葬，未卜侬身何日丧？ 侬今葬花人笑痴，他年葬侬知是谁？ 试看春残花渐落，便是红颜老死时； 一朝春尽红颜老，花落人亡两不知！]]></content>
@@ -288,9 +307,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -299,9 +318,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
