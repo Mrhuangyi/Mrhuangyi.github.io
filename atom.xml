@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-04-28T13:32:05.458Z</updated>
+  <updated>2018-04-29T04:58:42.529Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>葬花词</title>
+    <link href="http://huangyiblog.com/%E6%91%98%E5%BD%95/%E8%91%AC%E8%8A%B1%E8%AF%8D/"/>
+    <id>http://huangyiblog.com/摘录/葬花词/</id>
+    <published>2018-04-29T04:50:41.000Z</published>
+    <updated>2018-04-29T04:58:42.529Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="程高通行本《葬花吟》"><a href="#程高通行本《葬花吟》" class="headerlink" title="　　　程高通行本《葬花吟》"></a>　　　程高通行本《葬花吟》</h1><p><img src="./黛玉葬花.jpg" alt="Alt text"></p><p>　　　　　　　　　花谢花飞花满天，红消香断有谁怜？<br>　　　　　　　　　游丝软系飘春榭，落絮轻沾扑绣帘。<br>　　　　　　　　　闺中女儿惜春暮，愁绪满怀无释处。<br>　　　　　　　　　手把花锄出绣帘，忍踏落花来复去。<br>　　　　　　　　　柳丝榆荚自芳菲，不管桃飘与李飞；<br>　　　　　　　　　桃李明年能再发，明年闺中知有谁？<br>　　　　　　　　　三月香巢已垒成，梁间燕子太无情！<br>　　　　　　　　　明年花发虽可啄，却不道人去梁空巢也倾。<br>　　　　　　　　　一年三百六十日，风刀霜剑严相逼；<br>　　　　　　　　　明媚鲜妍能几时，一朝漂泊难寻觅。<br>　　　　　　　　　花开易见落难寻，阶前愁杀葬花人，<br>　　　　　　　　　独倚花锄泪暗洒，洒上空枝见血痕。<br>　　　　　　　　　杜鹃无语正黄昏，荷锄归去掩重门；<br>　　　　　　　　　青灯照壁人初睡，冷雨敲窗被未温。<br>　　　　　　　　　怪奴底事倍伤神？半为怜春半恼春。<br>　　　　　　　　　怜春忽至恼忽去，至又无言去未闻。<br>　　　　　　　　　昨宵庭外悲歌发，知是花魂与鸟魂？<br>　　　　　　　　　花魂鸟魂总难留，鸟自无言花自羞；<br>　　　　　　　　　愿侬此日生双翼，随花飞到天尽头。<br>　　　　　　　　　天尽头，何处有香丘？<br>　　　　　　　　　未若锦囊收艳骨，一抔净土掩风流3。<br>　　　　　　　　　质本洁来还洁去，强于污淖陷渠沟。<br>　　　　　　　　　尔今死去侬收葬，未卜侬身何日丧？<br>　　　　　　　　　侬今葬花人笑痴，他年葬侬知是谁？<br>　　　　　　　　　试看春残花渐落，便是红颜老死时；<br>　　　　　　　　　一朝春尽红颜老，花落人亡两不知！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;程高通行本《葬花吟》&quot;&gt;&lt;a href=&quot;#程高通行本《葬花吟》&quot; class=&quot;headerlink&quot; title=&quot;　　　程高通行本《葬花吟》&quot;&gt;&lt;/a&gt;　　　程高通行本《葬花吟》&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;./黛玉葬花.jpg&quot; alt=&quot;Alt t
+      
+    
+    </summary>
+    
+      <category term="摘录" scheme="http://huangyiblog.com/categories/%E6%91%98%E5%BD%95/"/>
+    
+    
+      <category term="阅读" scheme="http://huangyiblog.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>树的定义与性质</title>
@@ -498,29 +523,6 @@
     
     
       <category term="阅读" scheme="http://huangyiblog.com/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>归并排序</title>
-    <link href="http://huangyiblog.com/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    <id>http://huangyiblog.com/算法和数据结构/归并排序/</id>
-    <published>2018-04-11T10:23:35.000Z</published>
-    <updated>2018-04-11T10:38:56.724Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>  最基本的2-路归并排序。<br>  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归并，<br>  生成[n/4]个组，组内在单独排序；以此内推，直到只剩下一个组为止。<br>  时间复杂度为O(nlogn)<br>例：将序列{66,12,33,57,64,27,18}进行2路归并排序</p><ol><li><p>第一趟</p>{ { 12,66 },{ 33,57 },{ 27,64 },{ 18 } }</li><li><p>第二题</p>{ { 12,33,57,66 },{ 18,27,64 } }</li><li><p>第三趟{12,18,27,33,57,64,66}</p></li></ol><ul><li><p>递归实现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l1,<span class="keyword">int</span> r1,<span class="keyword">int</span> l2,<span class="keyword">int</span> r2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=l1,j=l2;</span><br><span class="line">    <span class="keyword">int</span> temp[maxn],index=<span class="number">0</span>;<span class="comment">//temp临时存放合并后的数组，index为其下标</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1&amp;&amp;j&lt;=r2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])&#123;</span><br><span class="line">            temp[index++]=a[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            temp[index++]=a[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=r1) temp[index++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r2) temp[index++]=a[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;index;i++)&#123;</span><br><span class="line">        a[l1+i]=temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">    <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">    mergeSort(a,left,mid); <span class="comment">//左子区间归并排序</span></span><br><span class="line">    mergeSort(a,mid+<span class="number">1</span>,right);<span class="comment">//右子区间归并排序</span></span><br><span class="line">    merge(a,left,mid,mid+<span class="number">1</span>,right); 将左右子区间合并</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>非递归实现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[])</span></span>&#123;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> step=<span class="number">2</span>;step/<span class="number">2</span>&lt;=n;step*=<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=step)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=i+step/<span class="number">2</span><span class="number">-1</span>;  </span><br><span class="line">        <span class="keyword">if</span>(mid+<span class="number">1</span>&lt;=n)&#123;     <span class="comment">//sort(a+i,a+min(i+step,n+1));</span></span><br><span class="line">            merge(a,i,mid,mid+<span class="number">1</span>,min(i+step<span class="number">-1</span>,n))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h1&gt;&lt;p&gt;  最基本的2-路归并排序。&lt;br&gt;  原理：将序列两两分组，将序列归并为[n/2]个组，组内单独排序；然后将这些组再两两归
-      
-    
-    </summary>
-    
-      <category term="算法和数据结构" scheme="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
     
   </entry>
   
