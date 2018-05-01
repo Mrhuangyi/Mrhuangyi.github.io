@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-04-30T12:14:03.868Z</updated>
+  <updated>2018-05-01T13:40:25.115Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉查找树</title>
+    <link href="http://huangyiblog.com/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/"/>
+    <id>http://huangyiblog.com/算法和数据结构/二叉查找树/</id>
+    <published>2018-05-01T13:38:15.000Z</published>
+    <updated>2018-05-01T13:40:25.115Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h1><h2 id="二叉查找树的定义"><a href="#二叉查找树的定义" class="headerlink" title="二叉查找树的定义"></a>二叉查找树的定义</h2><p>二叉查找树是一种特殊的二叉树，又称二叉排序树、二叉搜索树。<br>二叉查找树的递归定义：</p><ol><li>二叉查找树要么为一棵空树。</li><li>二叉查找树要么为由根结点、左子树、右子树组成，其中左子树和右子树都是二叉查找树，<br>且左子树上所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大于等于根节点的数据域。</li></ol><p>二叉查找树其实是一棵数据有序的树。即对树上的每个结点，都满足其左子树上所有结点的数据域均小于或等于根结点的数据域，<br>右子树上所有结点的数据域均大于根结点的数据域。</p><h1 id="二叉查找树的基本操作"><a href="#二叉查找树的基本操作" class="headerlink" title="二叉查找树的基本操作"></a>二叉查找树的基本操作</h1><ol><li>查找操作<br>由二叉查找树的性质得：可以只选择一棵子树进行遍历，因此查找将会是从树根到查找结点的一条路径，<br>故最坏时间复杂度为O(h),h为二叉查找树高度<br>基本思路：</li><li>如果当前根结点为空，则查找失败，返回</li><li>如果需要查找的值x等于当前根结点的数据域root-&gt;data，说明查找成功，访问</li><li>如果需要查找的值x小于当前根结点的数据域root-&gt;data,则向左子树root-&gt;lchild递归查找</li><li><p>如果需要查找的值x大于当前根结点的数据域root-&gt;data,则向右子树root-&gt;rchild递归查找</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">search</span><span class="params">(node* root,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"search failed\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x==root-&gt;data)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,root-&gt;data);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(x&lt;root-&gt;data)&#123;</span><br><span class="line">        search(root-&gt;lchild,x);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        search(root-&gt;rchild,x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>插入操作<br>对一棵二叉查找树来说，查找某个数据域的结点一定是沿着确定的路径进行的。<br>当某个需要查找的值在二叉查找树中查找成功，说明结点已经存在；<br>反之，查找失败的地方一定是结点需要插入的位置。<br>插入操作的时间复杂对也是O(h)</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node* &amp;root,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            root=newNode(x);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(x==root-&gt;data)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(x&lt;root-&gt;data)&#123;</span><br><span class="line">        insert(root-&gt;lchild,x);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        insert(root-&gt;rchild,x);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>二叉查找树的建立<br>建立一棵二叉查找树就是先后插入n个结点的过程。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">node* <span class="title">Create</span><span class="params">(<span class="keyword">int</span> data[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    node* root=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        insert(root,data[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>二叉查找树的删除（确保删除后仍是一棵二叉查找树）<br>一般有两种做法，时间复杂度都为O(h)<br>删除操作的基本思路：</p></li><li>如果当前结点root为空，说明不存在权值为x的结点，返回</li><li>如果当前结点root的权值恰为给定的权值x，说明找到了想要删除的结点，进入删除处理<br>a. 如果当前结点root不存在左右孩子，说明是叶子结点，直接删除<br>b. 如果当前结点root存在左孩子，那么在左子树中寻找结点前驱pre，然后让pre的数据覆盖root，接着在右子树中删除节点next<br>c. 如果当前结点root存在右孩子，那么在右子树中寻找结点后继next，然后让next的数据覆盖root，接着在右子树中删除节点next</li><li>如果当前结点root的权值大于给定的权值x，则在左子树中递归删除权值为x的结点</li><li>如果当前结点root的权值大于給定的权值x，则在右子树中递归删除权值为x的结点<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寻找以root为根结点的树中的最大权值结点</span></span><br><span class="line"><span class="function">node* <span class="title">findMax</span><span class="params">(node* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(root-&gt;rchild!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        root=root-&gt;rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//寻找以root为根结点的树中权值最小的结点</span></span><br><span class="line"><span class="function">node* <span class="title">findMin</span><span class="params">(node* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(root-&gt;lchild!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        root=root-&gt;lchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(node* &amp;root,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(root-&gt;data==x)&#123;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;lchild==<span class="literal">NULL</span>&amp;&amp;root-&gt;rchild==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            root=<span class="literal">NULL</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;lchild!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        node* pre=findMax(root-&gt;lchild);</span><br><span class="line">        root-&gt;data=pre-&gt;data;</span><br><span class="line">        deleteNode(root-&gt;lchild,pre-&gt;data);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        node* next=findMin(root-&gt;rchild);</span><br><span class="line">        root-&gt;data=next-&gt;data;</span><br><span class="line">        deleteNode(root-&gt;rchild,next-&gt;data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;data&gt;x)&#123;</span><br><span class="line">    deleteNode(root-&gt;lchild,x);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    deleteNode(root-&gt;rchild,x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h2 id="二叉查找树的性质"><a href="#二叉查找树的性质" class="headerlink" title="二叉查找树的性质"></a>二叉查找树的性质</h2><p>对二叉查找树进行中序遍历，遍历的结果是有序的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;二叉查找树&quot;&gt;&lt;a href=&quot;#二叉查找树&quot; class=&quot;headerlink&quot; title=&quot;二叉查找树&quot;&gt;&lt;/a&gt;二叉查找树&lt;/h1&gt;&lt;h2 id=&quot;二叉查找树的定义&quot;&gt;&lt;a href=&quot;#二叉查找树的定义&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="算法和数据结构" scheme="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>树的遍历</title>
@@ -481,39 +504,6 @@
     
       <category term="算法和数据结构" scheme="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>My movie list of 2017</title>
-    <link href="http://huangyiblog.com/%E9%9A%8F%E7%AC%94/My-movie-list-of-2017/"/>
-    <id>http://huangyiblog.com/随笔/My-movie-list-of-2017/</id>
-    <published>2018-04-16T08:18:54.000Z</published>
-    <updated>2018-04-16T08:22:49.617Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>《肖申克的救赎》</li><li>《海边的曼彻斯特》</li><li>《梦与狂想的王国》</li><li>《辛德勒的名单》</li><li>《至爱梵高》</li><li>《熔炉》</li><li>《窃听风暴》</li><li>《美丽心灵》</li><li>《v字仇杀队》</li><li>《忠犬八公的故事》</li><li>《春光乍泄》</li><li>《钢琴家》</li><li>《阿甘正传》</li><li>《霸王别姬》</li><li>《沉默的羔羊系列》</li><li>《蝴蝶效应系列》</li><li>《杀人游戏》</li><li>《海洋》</li><li>《千钧一发》</li><li>《源代码》</li><li>《超脱》</li><li>《猫鼠游戏》</li><li>《心迷宫》</li><li>《寻梦环游记》</li><li>《猫妖记》</li><li>《芳华》</li><li>《奇幻森林》</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;《肖申克的救赎》&lt;/li&gt;
-&lt;li&gt;《海边的曼彻斯特》&lt;/li&gt;
-&lt;li&gt;《梦与狂想的王国》&lt;/li&gt;
-&lt;li&gt;《辛德勒的名单》&lt;/li&gt;
-&lt;li&gt;《至爱梵高》&lt;/li&gt;
-&lt;li&gt;《熔炉》&lt;/li&gt;
-&lt;li&gt;《窃听风暴》&lt;/li&gt;
-&lt;li&gt;《美丽心灵》&lt;/li&gt;
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="影视" scheme="http://huangyiblog.com/tags/%E5%BD%B1%E8%A7%86/"/>
     
   </entry>
   
