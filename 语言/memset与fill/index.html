@@ -141,18 +141,18 @@
 
 
 
-<meta name="description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值，第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); voi">
+<meta name="description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值， 第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); vo">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="memset与fill">
 <meta property="og:url" content="http://huangyiblog.com/语言/memset与fill/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值，第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); voi">
+<meta property="og:description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值， 第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); vo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-10T04:46:47.910Z">
+<meta property="og:updated_time" content="2018-05-10T04:53:18.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="memset与fill">
-<meta name="twitter:description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值，第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); voi">
+<meta name="twitter:description" content="memsetmemset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值， 第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。 头文件:memory.h或string.h 函    数：void *memset 原    型 (void *s,int ch,size_t n); vo">
 
 
 
@@ -621,22 +621,36 @@
       
 
       
-        <h1 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h1><p>memset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值，<br>第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。</p>
+        <h1 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h1><p>memset是计算机中C/C++语言函数。将s所指向的某一块内存中的后n个 字节的内容全部设置为ch指定的ASCII值，</p>
+<p>第一个值为指定的内存地址，块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为s。</p>
 <p>头文件:memory.h或string.h</p>
 <p>函    数：void *memset</p>
 <p>原    型 (void *s,int ch,size_t n);</p>
 <p>void <em>memset(void </em>s, int ch, size_t n);</p>
-<p>函数解释：将s中当前位置后面的n个字节 （typedef unsigned int size_t ）用 ch 替换并返回 s 。<br>memset：作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法</p>
+<p>函数解释：将s中当前位置后面的n个字节 （typedef unsigned int size_t ）用 ch 替换并返回 s 。</p>
+<p>memset：作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法</p>
 <h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>第一：memset函数按字节对内存块进行初始化，所以不能用它将int数组初始化为0和-1之外的其他值（除非该值高字节和低字节相同）。</p>
-<p>第二：memset(void <em>s, int ch,size_tn);中key实际范围应该在0~~255，<br>因为该函数只能取ch的后八位赋值给你所输入的范围的每个字节，<br>比如int a[5]赋值memset（a,-1,sizeof(int )</em>5）与memset（a,511,sizeof(int )*5） 所赋值的结果是一样的都为-1；<br>因为-1的二进制码为（11111111 11111111 11111111 11111111）而511的二进制码为（00000000 00000000 00000001 11111111）后八位都为（11111111)，<br>所以数组中每个字节，如a[0]含四个字节都被赋值为（11111111），其结果为a[0]（11111111 11111111 11111111 11111111），<br>及a[0]=-1，因此无论ch多大只有后八位二进制有效，而八位二进制 [2]  的范围（0~255）YKQ改。<br>而对字符数组操作时则取后八位赋值给字符数组，其八位值作为ASCII [3]  码。</p>
-<p>第三： 搞反了 ch 和 n 的位置.<br>一定要记住如果要把一个char a[20]清零，一定是 memset(a,0,20<em>sizeof(char));<br>而不是 memset(a,20</em>sizeof(char),0);</p>
+<p>第二：memset(void *s, int ch,size_tn);中key实际范围应该在0~~255，</p>
+<p>因为该函数只能取ch的后八位赋值给你所输入的范围的每个字节，</p>
+<p>比如int a[5]赋值memset（a,-1,sizeof(int )<em>5）与memset（a,511,sizeof(int )</em>5） 所赋值的结果是一样的都为-1；</p>
+<p>因为-1的二进制码为（11111111 11111111 11111111 11111111）而511的二进制码为（00000000 00000000 00000001 11111111）后八位都为（11111111)，</p>
+<p>所以数组中每个字节，如a[0]含四个字节都被赋值为（11111111），其结果为a[0]（11111111 11111111 11111111 11111111），</p>
+<p>及a[0]=-1，因此无论ch多大只有后八位二进制有效，而八位二进制 [2]  的范围（0~255）YKQ改。</p>
+<p>而对字符数组操作时则取后八位赋值给字符数组，其八位值作为ASCII [3]  码。</p>
+<p>第三： 搞反了 ch 和 n 的位置.</p>
+<p>一定要记住如果要把一个char a[20]清零，一定是 memset(a,0,20*sizeof(char));</p>
+<p>而不是 memset(a,20*sizeof(char),0);</p>
 <h1 id="fill-函数"><a href="#fill-函数" class="headerlink" title="fill()函数"></a>fill()函数</h1><p>用途：</p>
 <ul>
-<li>按照单元赋值，将一个区间的元素都赋同一个值</li>
-<li>fill(arr, arr + n, 要填入的内容);<br>头文件：<algorithm><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">10</span>];    fill(arr, arr + <span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
-</algorithm></li>
+<li><p>按照单元赋值，将一个区间的元素都赋同一个值</p>
+</li>
+<li><p>fill(arr, arr + n, 要填入的内容);</p>
+</li>
 </ul>
-<h2 id="与memset-函数的区别："><a href="#与memset-函数的区别：" class="headerlink" title="与memset()函数的区别："></a>与memset()函数的区别：</h2><p>两者都可以用来对数组填充，memset是对按照字节来填充的，所以一般用来填充char型数组，也经常用于填充int型的全0或全-1操作。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">memset</span>(arr,<span class="number">0</span>,<span class="keyword">sizeof</span>(arr));</span><br></pre></td></tr></table></figure></p>
+<p>头文件：<algorithm></algorithm></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">10</span>];    fill(arr, arr + <span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="与memset-函数的区别："><a href="#与memset-函数的区别：" class="headerlink" title="与memset()函数的区别："></a>与memset()函数的区别：</h2><p>两者都可以用来对数组填充，memset是对按照字节来填充的，所以一般用来填充char型数组，也经常用于填充int型的全0或全-1操作。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">memset</span>(arr,<span class="number">0</span>,<span class="keyword">sizeof</span>(arr));</span><br></pre></td></tr></table></figure>
 <p>fill是按照单元来填充的，所以可以填充一个区间的任意值。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>];</span><br><span class="line">fill(arr,arr+<span class="number">10</span>,<span class="number">65</span>);</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;fill(arr.begin(),arr.end(),<span class="number">65</span>);</span><br></pre></td></tr></table></figure></p>
 
       
