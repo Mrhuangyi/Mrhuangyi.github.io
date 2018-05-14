@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[最长公共子序列]]></title>
+    <url>%2F%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[最长公共子序列最长公共子序列问题描述：给定两个字符串（或数字序列）A和B,求一个字符串，使得这个字符串是A和B的最长公共部分（子序列可以不连续） 暴力解法设字符串A和B的长度分别是n和m，那么对两个字符串中的每个字符，分别有选与不选两个决策，而得到子序列后比较两个子序列是否相同有需要O(max(m,n))，这样总的复杂度就会达到O(2^(m+n)*max(m,n))，无法承受较大数据 动态规划解法令dp[i][j]表示字符串A的i号位和字符串B的j号位之前的LCS长度（下标从1开始）两种决策如下： 若A[i]==B[j]则字符串A与字符串B的LCS增加了1位，即dp[i][j]=dp[i-1][j-1]+! 若A[i]!=B[j]，则字符串A的i号位和字符串B的j号位之前的LCS无法延长，因此dp[i][j]将会继承dp[i-1][j]与dp[i][j-1]z中的较大值，即dp[i][j]= max{dp[i-1][j],dp[i][j-1]} 由此可以得到状态转移方程：dp[i][j]= dp[i-1][j-1]+1,A[i]==B[j] max{dp[i-1][j],dp[i][j-1]},A[i]!=B[j]边界：dp[i][0]=dp[0][j]=0(0&lt;=i&lt;=n,0&lt;=j&lt;=m)时间复杂度为O(nm)12345678910111213141516171819202122232425262728293031#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int N = 100;char A[N],B[N];int dp[N][N];int main()&#123; int n; gets(A+1);//从下标为1开始读入 gets(B+1); int lenA = strlen(A+1); int lenB = strlen(B+1); for(int i=0;i&lt;=lenA;i++)&#123; dp[i][0] = 0; &#125; for(int j=0;j&lt;=lenB;j++)&#123; dp[0][j] = 0; &#125; for(int i=1;i&lt;=lenA;i++)&#123; for(int j=1;j&lt;=lenB;j++)&#123; if(A[i]==B[j])&#123; dp[i][j] = dp[i-1][j-1]+1; &#125;else&#123; dp[i][j] = max(dp[i-1][j],dp[i][j-1]); &#125; &#125; &#125; printf("%d\n",dp[lenA][lenB]); return 0;&#125;]]></content>
+      <categories>
+        <category>算法和数据结构</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[最长不下降子序列]]></title>
     <url>%2F%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F%E6%9C%80%E9%95%BF%E4%B8%8D%E4%B8%8B%E9%99%8D%E5%AD%90%E5%BA%8F%E5%88%97%2F</url>
     <content type="text"><![CDATA[最长不下降子序列LIS问题：在一个数字序列中，找到一个最长的子序列（可以不连续），使得这个子序列是不下降的 原始方法枚举每种情况，即对于每个元素有取和不取两种选择，然后判断序列是否为不下降序列。如果是不下降序列，则更新最大长度，直到枚举完所有情况并得到最大长度。但这种做法时间复杂度将达到O(2^n)显然不可取 动态规划解法用dp[i]表示以A[i]结尾的最长不下降子序列长度，则A[i]有两种情况 如果存在A[i]之前的元素Aj，使得A[j]&lt;=A[i]且dp[j]+1&gt;dp[i]（即把A[i]跟以A[j]结尾的LIS后面时能比当前以A[i]结尾的LIS长度更长），那么就把A[i]跟在以A[j]结尾的LIS后面，形成一条更长的不下降子序列，（令dp[i]=dp[j]+1） 如果A[i]之前的元素都比A[i]大，那么A[i]就只好自己形成一条LIS,但是长度为1，即这个子序列里面只有一个A[i] 最后以A[i]结尾的LIS长度就是上述两点中能形成的最大长度 由此写出状态转移方程：dp[i] = max{1,dp[j]+1}(j=1,2,…i-1&amp;&amp;A[j]&lt;A[i])边界dp[i] = 1(1&lt;=i&lt;=n)整体复杂度为O(n^2)123456789101112131415161718192021222324#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int N = 100;int A[N],dp[N];int main()&#123; int n; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;A[i]); &#125; int ans = -1; for(int i=1;i&lt;=n;i++)&#123; dp[i] = 1; for(int j=1;j&lt;i;j++)&#123; if(A[i]&gt;=A[j]&amp;&amp;(dp[j]+1&gt;dp[i]))&#123; dp[i] = dp[j]+1; &#125; &#125; ans = max(ans,dp[i]); &#125; printf("%d",ans); return 0;&#125;]]></content>
