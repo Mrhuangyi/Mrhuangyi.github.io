@@ -141,19 +141,17 @@
 
 
 
-<meta name="description" content="最长回文子串问题描述：给出一个字符串S，求S的最长回文子串的长度。 暴力解法枚举子串的两个端点i和j，判断[i,j]区间内的子串是否回文。其中枚举端点需要O(n^2),判断回文需要O(n)因此总的复杂度为O(n^3) 动态规划解法时间复杂度为O(n^2)令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串，是则为1，不是为0.根据S[i]是否等于S[j]，将转移情况分为两类：  若S">
+<meta name="description" content="完全背包问题有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件。 完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。 令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值 对每种物品有两种策略：  不放第i件物品，那么dp[i]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最长回文子串">
-<meta property="og:url" content="http://huangyiblog.com/算法和数据结构/最长回文子串/index.html">
+<meta property="og:title" content="完全背包">
+<meta property="og:url" content="http://huangyiblog.com/算法和数据结构/完全背包/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="最长回文子串问题描述：给出一个字符串S，求S的最长回文子串的长度。 暴力解法枚举子串的两个端点i和j，判断[i,j]区间内的子串是否回文。其中枚举端点需要O(n^2),判断回文需要O(n)因此总的复杂度为O(n^3) 动态规划解法时间复杂度为O(n^2)令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串，是则为1，不是为0.根据S[i]是否等于S[j]，将转移情况分为两类：  若S">
+<meta property="og:description" content="完全背包问题有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件。 完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。 令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值 对每种物品有两种策略：  不放第i件物品，那么dp[i]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000014416801?w=590&h=190/view">
-<meta property="og:updated_time" content="2018-05-15T06:41:28.054Z">
+<meta property="og:updated_time" content="2018-05-16T11:47:06.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最长回文子串">
-<meta name="twitter:description" content="最长回文子串问题描述：给出一个字符串S，求S的最长回文子串的长度。 暴力解法枚举子串的两个端点i和j，判断[i,j]区间内的子串是否回文。其中枚举端点需要O(n^2),判断回文需要O(n)因此总的复杂度为O(n^3) 动态规划解法时间复杂度为O(n^2)令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串，是则为1，不是为0.根据S[i]是否等于S[j]，将转移情况分为两类：  若S">
-<meta name="twitter:image" content="https://segmentfault.com/img/remote/1460000014416801?w=590&h=190/view">
+<meta name="twitter:title" content="完全背包">
+<meta name="twitter:description" content="完全背包问题有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件。 完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。 令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值 对每种物品有两种策略：  不放第i件物品，那么dp[i]">
 
 
 
@@ -183,13 +181,13 @@
 
 
 
-  <link rel="canonical" href="http://huangyiblog.com/算法和数据结构/最长回文子串/"/>
+  <link rel="canonical" href="http://huangyiblog.com/算法和数据结构/完全背包/"/>
 
 
 
 
 
-  <title>最长回文子串 | 你的小黄^_^</title>
+  <title>完全背包 | 你的小黄^_^</title>
   
 
 
@@ -528,7 +526,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最长回文子串/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/完全背包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -545,7 +543,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最长回文子串</h1>
+          <h1 class="post-title" itemprop="name headline">完全背包</h1>
         
 
         <div class="post-meta">
@@ -557,8 +555,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T14:40:37+08:00">
-                2018-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T19:45:25+08:00">
+                2018-05-16
               </time>
             
 
@@ -622,30 +620,37 @@
       
 
       
-        <h1 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h1><p>问题描述：<br>给出一个字符串S，求S的最长回文子串的长度。</p>
-<h2 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h2><p>枚举子串的两个端点i和j，判断[i,j]区间内的子串是否回文。<br>其中枚举端点需要O(n^2),判断回文需要O(n)因此总的复杂度为O(n^3)</p>
-<h2 id="动态规划解法"><a href="#动态规划解法" class="headerlink" title="动态规划解法"></a>动态规划解法</h2><p>时间复杂度为O(n^2)<br>令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串，是则为1，不是为0.<br>根据S[i]是否等于S[j]，将转移情况分为两类：</p>
+        <h1 id="完全背包问题"><a href="#完全背包问题" class="headerlink" title="完全背包问题"></a>完全背包问题</h1><p>有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，<br>使得背包内物品的总价值最大。其中每种物品都有无穷件。</p>
+<p>完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。</p>
+<p>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p>
+<p>对每种物品有两种策略：</p>
 <ol>
-<li>若S[i]==S[j]，只要S[i+1]到S[j-1]是回文子串，那么S[i]到S[j]就是回文子串；<br>否则，就不是。</li>
-<li>若S[i]!=S[j]那么S[i]到S[j]一定不是回文子串。<br>由此得出状态转移方程：</li>
+<li>不放第i件物品，那么dp[i][v] = dp[i-1][v]</li>
+<li>放第i件物品。dp[i][v] = dp[i][v-w[i]]+c[i]<br>由此得出状态转移方程：<pre><code>**dp[i][v] = max(dp[i-1][v],dp[i][v-w[i]]+c[i]) (1&lt;=i&lt;=n,w[i]&lt;=v&lt;=V)**
+边界：dp[0][v] = 0(0&lt;=v&lt;=V)
+</code></pre>改写成一维形式：<pre><code>**dp[v] = max(dp[v],dp[v-w[i]]+c[i]) (1&lt;=i&lt;=n,w[i]&lt;=v&lt;=V)**
+边界：dp[v] = 0(0&lt;=v&lt;=V)
+</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> v=w[i];v&lt;=V;v++)&#123;</span><br><span class="line">    dp[v] = max(dp[v],dp[v-w[i]]+c[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>dp[i][j]= dp[i+1][j-1],S[i]==S[j]<br>          0,S[i]!=S[j]<br>边界：dp[i][i] = 1,dp[i][i+1] = (S[i]==S[i+1)?1:0</p>
-<p>但是不能按照i和j从小到大进行枚举子串两个端点然后更新dp[i][j]，因为无法保证<br>dp[i+1][j-1]已经被计算过，从而无法得到正确的dp[i][j]</p>
-<p>由于边界表示的是长度为1和2的子串，且每次转移时都对子串的长度减1，因此考虑按子串的长度和子串的初始位置进行枚举<br>即第一遍将长度为3的子串的dp值全部求出，第二遍通过第一遍结果计算长度为4的子串的值<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">char</span> S[maxn];</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    gets(S);</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(S),ans = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        dp[i][i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;len<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(S[i]==S[i+<span class="number">1</span>])&#123;</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                ans = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">3</span>;t&lt;=len;t++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i+t<span class="number">-1</span>&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = i+t<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(S[i]==S[j]&amp;&amp;dp[i+<span class="number">1</span>][j<span class="number">-1</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                ans = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="字符串哈希-二分解法"><a href="#字符串哈希-二分解法" class="headerlink" title="字符串哈希+二分解法"></a>字符串哈希+二分解法</h2><p>时间复杂度为O(nlogn)<br>对给定的字符串str，可以先求出其字符串hash数组h1，然后再将str反转，<br>求出反转字符串rstr的hash数组h2，接着按回文串的奇偶情况讨论</p>
-<ul>
-<li><p>回文串的长度是奇数：枚举回文中心点i，二分子串的半径k，找到最大的使子串[i-k,i+k]是回文串的k。</p>
+<h1 id="常见dp问题的模型总结"><a href="#常见dp问题的模型总结" class="headerlink" title="常见dp问题的模型总结"></a>常见dp问题的模型总结</h1><ol>
+<li><p>最大连续子列和<br>令dp[i]表示以A[i]作为末尾的连续序列的最大和。</p>
 </li>
-<li><p>回文串的长度是偶数：枚举回文空隙点，令i表示空隙左边第一个元素的下标，二分子串的半径k，找到最大的使子串<br>[i-k+1,i+k]是回文串的k。</p>
+<li><p>最长不下降子序列（LIS）<br>令dp[i]表示以A[i]结尾的最长不下降子序列长度</p>
 </li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">const</span> ll p = <span class="number">10000019</span>;</span><br><span class="line"><span class="keyword">const</span> ll maxn = <span class="number">200010</span>;</span><br><span class="line">ll powp[maxn],h1[maxn],h2[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    powp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;maxn;i++)&#123;</span><br><span class="line">        powp[i] = (powp[i<span class="number">-1</span>]*p)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calh</span><span class="params">(ll h[],<span class="built_in">string</span> &amp;str)</span></span>&#123;</span><br><span class="line">    h[<span class="number">0</span>] = str[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;str.length();i++)&#123;</span><br><span class="line">        h[i] = (h[i<span class="number">-1</span>]*p+str[i])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calSingleSubh</span><span class="params">(ll h[],<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">0</span>) <span class="keyword">return</span> h[j];</span><br><span class="line">    <span class="keyword">return</span> ((h[j]-h[i<span class="number">-1</span>]*powp[j-i+<span class="number">1</span>])%mod+mod)%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> len,<span class="keyword">int</span> i,<span class="keyword">int</span> isEven)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l+r)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> h1l = i-mid+isEven,h1r = i;</span><br><span class="line">        <span class="keyword">int</span> h2l = len<span class="number">-1</span>-(i+mid),h2r = len<span class="number">-1</span>-(i+isEven);</span><br><span class="line">        <span class="keyword">int</span> hashl = calSingleSubh(h1,h1l,h1r);</span><br><span class="line">        <span class="keyword">int</span> hashr = calSingleSubh(h2,h2l,h2r);</span><br><span class="line">        <span class="keyword">if</span>(hashl!=hashr) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">    getline(<span class="built_in">cin</span>,str);</span><br><span class="line">    calh(h1,str);</span><br><span class="line">    reverse(str.begin(),str.end());</span><br><span class="line">    calh(h2,str);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> maxlen = min(i,(<span class="keyword">int</span>)str.length()<span class="number">-1</span>-i)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> k = binarySearch(<span class="number">0</span>,maxlen,str.length(),i,<span class="number">0</span>);</span><br><span class="line">        ans = max(ans,k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> maxlen = min(i+<span class="number">1</span>,(<span class="keyword">int</span>)str.length()<span class="number">-1</span>-i)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> k = binarySearch(<span class="number">0</span>,maxlen,str.length(),i,<span class="number">1</span>);</span><br><span class="line">        ans = max(ans,k*<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Manacher算法"><a href="#Manacher算法" class="headerlink" title="Manacher算法"></a>Manacher算法</h1><p>时间复杂度为O(n)<br>算法分析：<br>由于回文分为偶回文（比如 bccb）和奇回文（比如 bcacb），而在处理奇偶问题上会比较繁琐，所以这里我们使用一个技巧，具体做法是：在字符串首尾，及各字符间各插入一个字符（前提这个字符未出现在串里）。</p>
-<p>举个例子：s=”abbahopxpo”，转换为s_new=”$#a#b#b#a#h#o#p#x#p#o#”（这里的字符 $ 只是为了防止越界，下面代码会有说明），如此，s 里起初有一个偶回文abba和一个奇回文opxpo，被转换为#a#b#b#a#和#o#p#x#p#o#，长度都转换成了奇数。</p>
-<p>定义一个辅助数组int p[]，其中p[i]表示以 i 为中心的最长回文的半径<br>p[i] - 1正好是原字符串中最长回文串的长度。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000014416801?w=590&amp;h=190/view" alt="Alt txt"><br>设置两个变量，mx 和 id 。mx 代表以 id 为中心的最长回文的右边界，也就是mx = id + p[id]。</p>
-<p>假设我们现在求p[i]，也就是以 i 为中心的最长回文半径，如果i &lt; mx，如上图，那么：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &lt; mx)  </span><br><span class="line">    p[i] = min(p[<span class="number">2</span> * id - i], mx - i);</span><br></pre></td></tr></table></figure></p>
-<p>2 * id - i为 i 关于 id 的对称点，即上图的 j 点，而p[j]表示以 j 为中心的最长回文半径，因此我们可以利用p[j]来加快查找。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findBMstr</span><span class="params">(<span class="built_in">string</span>&amp; str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>[str.size() + <span class="number">1</span>];</span><br><span class="line">    <span class="built_in">memset</span>(p, <span class="number">0</span>, <span class="keyword">sizeof</span>(p));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">0</span>, id = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=  str.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mx &gt; i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[i] = (p[<span class="number">2</span>*id - i] &lt; (mx - i) ? p[<span class="number">2</span>*id - i] : (mx - i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(str[i - p[i]] == str[i + p[i]])</span><br><span class="line">            p[i]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(i + p[i] &gt; mx)</span><br><span class="line">        &#123;</span><br><span class="line">            mx = i + p[i];</span><br><span class="line">            id = i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>, ii;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; str.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(p[i] &gt; max)</span><br><span class="line">        &#123;</span><br><span class="line">            ii = i;</span><br><span class="line">            max = p[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    max--;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> start = ii - max ;</span><br><span class="line">    <span class="keyword">int</span> end = ii + max;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt;= end; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i] != <span class="string">'#'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; str[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span>  p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"12212321"</span>;</span><br><span class="line">    <span class="built_in">string</span> str0;</span><br><span class="line">    str0 += <span class="string">"$#"</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        str0 += str[i];</span><br><span class="line">        str0 += <span class="string">"#"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; str0 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    findBMstr(str0);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<li><p>最长公共子序列（LCS）<br>令dp[i][j]表示字符串A的i号位和字符串B的j号位之前的LCS长度</p>
+</li>
+<li><p>最长回文子串<br>令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串</p>
+</li>
+<li><p>数塔dp<br>令dp[i][j]表示从第i行第j个数字出发的到达最底层的所有路径上所能得到的最大和</p>
+</li>
+<li><p>DAG最长路<br>令dp[i]表示从i号顶点出发能获得的最长路径长度</p>
+</li>
+<li><p>01背包<br>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p>
+</li>
+<li><p>完全背包<br>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p>
+</li>
+</ol>
 
       
     </div>
@@ -678,8 +683,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/算法和数据结构/最长公共子序列/" rel="next" title="最长公共子序列">
-                <i class="fa fa-chevron-left"></i> 最长公共子序列
+              <a href="/算法和数据结构/01背包/" rel="next" title="01背包">
+                <i class="fa fa-chevron-left"></i> 01背包
               </a>
             
           </div>
@@ -687,10 +692,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/算法和数据结构/LeetCode-5-最长回文子串/" rel="prev" title="LeetCode 5. 最长回文子串">
-                LeetCode 5. 最长回文子串 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -900,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最长回文子串"><span class="nav-number">1.</span> <span class="nav-text">最长回文子串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力解法"><span class="nav-number">1.1.</span> <span class="nav-text">暴力解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划解法"><span class="nav-number">1.2.</span> <span class="nav-text">动态规划解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串哈希-二分解法"><span class="nav-number">1.3.</span> <span class="nav-text">字符串哈希+二分解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Manacher算法"><span class="nav-number">2.</span> <span class="nav-text">Manacher算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#完全背包问题"><span class="nav-number">1.</span> <span class="nav-text">完全背包问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见dp问题的模型总结"><span class="nav-number">2.</span> <span class="nav-text">常见dp问题的模型总结</span></a></li></ol></div>
             
 
           </div>
