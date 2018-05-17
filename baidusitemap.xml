@@ -4,6 +4,166 @@
 
     
   <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-35-%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/</loc>
+    <lastmod>2018-05-17T08:17:54.744Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 35. 搜索插入位置</title>
+        <pubTime>2018-05-17T08:14:52.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</loc>
+    <lastmod>2018-05-17T08:17:48.722Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 26. 删除排序数组中的重复项</title>
+        <pubTime>2018-05-17T08:05:52.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</loc>
+    <lastmod>2018-05-17T08:12:32.992Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 27. 移除元素</title>
+        <pubTime>2018-05-17T08:11:15.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</loc>
+    <lastmod>2018-05-17T07:58:32.002Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 21. 合并两个有序链表</title>
+        <pubTime>2018-05-17T07:57:02.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-204-%E8%AE%A1%E6%95%B0%E8%B4%A8%E6%95%B0/</loc>
+    <lastmod>2018-05-17T07:53:07.699Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 204. 计数质数</title>
+        <pubTime>2018-05-17T07:52:19.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-II-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2018-05-17T07:49:55.463Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 167. 两数之和 II - 输入有序数组</title>
+        <pubTime>2018-05-17T07:49:13.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-136-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/</loc>
+    <lastmod>2018-05-17T07:47:02.421Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 136.只出现一次的数字</title>
+        <pubTime>2018-05-17T07:46:22.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
+    <lastmod>2018-05-17T07:39:46.410Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode 1.两数之和</title>
+        <pubTime>2018-05-17T07:38:09.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解集" url="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF%E4%B9%A6%E5%8D%95%E7%B3%BB%E5%88%972/</loc>
     <lastmod>2018-05-17T06:44:02.636Z</lastmod>
     <data>
