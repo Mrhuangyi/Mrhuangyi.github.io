@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff2bff;
+  background: #ff00db;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2955,12 +2955,12 @@ hr {
 }
 .site-meta {
   margin-left: 0px;
-  text-align: center;
+text-align
 }
 .site-meta .site-title {
   font-size: 28px;
   font-family: 'Comic Sans MS', sans-serif;
-  color: #fff;
+  color: #000;
 }
 .footer {
   background: none;
@@ -2973,7 +2973,7 @@ hr {
 }
 .site-author-name {
   margin: 48px 0 0;
-  color: #090909;
+  color: #fff;
   font-family: 'Comic Sans MS', sans-serif;
 }
 .links-of-blogroll {
