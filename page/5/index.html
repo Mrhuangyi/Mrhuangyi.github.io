@@ -526,7 +526,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最短路问题/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最长公共子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -545,7 +545,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/最短路问题/" itemprop="url">最短路问题</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/最长公共子序列/" itemprop="url">最长公共子序列</a></h1>
         
 
         <div class="post-meta">
@@ -557,8 +557,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T19:45:53+08:00">
-                2018-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T15:47:17+08:00">
+                2018-05-14
               </time>
             
 
@@ -619,12 +619,12 @@
       
         
           
-          最短路径最短路径是图论中的一个经典问题：给定图G(v,e)，求一条从起点到终点的路径，使得这条路径上经过的所有边的边权之和最小。
-即解决如下问题：对任意给出的图G（v，e）和起点s，终点t，如何求从s到t的最短路径解决最短路径的常用算法有Dijkstra算法、Bellman-Ford算法，SPFA算
+          最长公共子序列最长公共子序列问题描述：给定两个字符串（或数字序列）A和B,求一个字符串，使得这个字符串是A和B的最长公共部分（子序列可以不连续）
+暴力解法设字符串A和B的长度分别是n和m，那么对两个字符串中的每个字符，分别有选与不选两个决策，而得到子序列后比较两个子序列是否相同有需要O(max(m,
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/最短路问题/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/最长公共子序列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -677,7 +677,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/图的存储和遍历/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最长不下降子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -696,7 +696,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/图的存储和遍历/" itemprop="url">图的存储和遍历</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/最长不下降子序列/" itemprop="url">最长不下降子序列</a></h1>
         
 
         <div class="post-meta">
@@ -708,8 +708,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T17:10:20+08:00">
-                2018-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T15:25:42+08:00">
+                2018-05-14
               </time>
             
 
@@ -770,12 +770,12 @@
       
         
           
-          图的存储图的存储一般有两种方式：邻接矩阵和邻接表
-邻接矩阵设图G(V,E)的顶点标号为0,1，……n-1，则令二维数组G[n][n]的两维分别表示图的顶点标号。即如果G[i][j]等于1，指顶点i和顶点j之间有边，如果G[i][j]等于0，指顶点i和顶点j之间没有边，如果为有权图，则令G[i][j]
+          最长不下降子序列LIS问题：在一个数字序列中，找到一个最长的子序列（可以不连续），使得这个子序列是不下降的
+原始方法枚举每种情况，即对于每个元素有取和不取两种选择，然后判断序列是否为不下降序列。如果是不下降序列，则更新最大长度，直到枚举完所有情况并得到最大长度。但这种做法时间复杂度将达到O(2^n)
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/图的存储和遍历/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/最长不下降子序列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -828,7 +828,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/堆的简介/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最大连续子列和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -847,7 +847,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/堆的简介/" itemprop="url">堆的简介</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/最大连续子列和/" itemprop="url">最大连续子列和</a></h1>
         
 
         <div class="post-meta">
@@ -859,8 +859,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T19:53:51+08:00">
-                2018-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T11:57:35+08:00">
+                2018-05-13
               </time>
             
 
@@ -921,11 +921,13 @@
       
         
           
-          堆的定义与基本操作堆是一棵完全二叉树，树中每个结点的值都不小于（或不大于）其左右孩子结点的值。如果父亲结点的值大于或等于孩子结点的值，则称这样的堆为大顶堆，这时每个结点的值都是以它为根结点的子树的最大值；如果父亲结点的值小于或等于孩子结点的值，则称这样的堆为小顶堆，这时每个结点的值都是以它为根结点的
+          最大连续子列和问题给定一个数字序列A1，A2，……An,求i，j(1&lt;=i&lt;=j&lt;=n),使得Ai+….Aj最大，输出这个最大和。
+方法一：暴力枚举枚举左端点和右端点（即枚举i和j），需要O(n^2)的复杂度，求和有需要O(n)的复杂度，因此总复杂度为O(n^3)
+方法二：预处理记
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/堆的简介/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/最大连续子列和/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -978,7 +980,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/并查集/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/dp简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -997,7 +999,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/并查集/" itemprop="url">并查集</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/dp简介/" itemprop="url">dp简介</a></h1>
         
 
         <div class="post-meta">
@@ -1009,8 +1011,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T19:49:07+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T16:43:12+08:00">
+                2018-05-12
               </time>
             
 
@@ -1071,18 +1073,12 @@
       
         
           
-          并查集的定义并查集是一种维护集合的数据结构：合并（Union）、查找（Find）、集合（Set）并查集支持以下两个操作：
-
-合并：合并两个集合
-查找：判断两个元素是否在一个集合通过数组即可实现并查集基本操作
-
-
-初始化
-123for(int i=1;i&lt;=n;i++)&#123;  fathe
+          动态规划的递归写法和递推写法动态规划是一种算法思想，没有固定写法，十分灵活，需要具体问题具体分析
+动态规划是一种用来解决一类最优化问题的算法思想。即将一个复杂的问题分解成若干个子问题，通过综合子问题的最优解来得到原问题的最优解。动态规划会将每个求解过的子问题的解记录下来，这样当下一次碰到同样的子问题
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/并查集/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/dp简介/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1135,7 +1131,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/平衡二叉树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/拓扑排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1154,7 +1150,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/平衡二叉树/" itemprop="url">平衡二叉树</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/拓扑排序/" itemprop="url">拓扑排序</a></h1>
         
 
         <div class="post-meta">
@@ -1166,8 +1162,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T19:14:55+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T21:09:24+08:00">
+                2018-05-11
               </time>
             
 
@@ -1228,11 +1224,14 @@
       
         
           
-          平衡二叉树的定义当使用序列{1,2,3,4,5}构建二叉查找树，会得到一棵长链条式的树，此时对这棵树中的结点进行查找，时间复杂度会达到O(n)，为了优化数据查询，需要对树的结构进行调整，使树的高度在每次插入元素后仍能保持O(logn)的级别，这样能让查询操作仍然为O(logn)的时间复杂度AVL树仍
+          有向无环图如果一个有向图的任意顶点都无法通过一些有向边回到自身，那么称这个有向图为有向无环图。
+拓扑排序拓扑排序是将有向无环图G的所有顶点排成一个线性序列，使得对图G中的任意两个顶点u，v，如果存在边u-&gt;v,那么在序列中u一定在v前面。该序列被称为拓扑序列。求解拓扑序列：
+
+定义一个队列q,
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/平衡二叉树/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/拓扑排序/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1285,7 +1284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/二叉查找树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/最小生成树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1304,7 +1303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/算法和数据结构/二叉查找树/" itemprop="url">二叉查找树</a></h1>
+                <a class="post-title-link" href="/算法和数据结构/最小生成树/" itemprop="url">最小生成树</a></h1>
         
 
         <div class="post-meta">
@@ -1316,8 +1315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:38:15+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T20:21:08+08:00">
+                2018-05-10
               </time>
             
 
@@ -1378,14 +1377,15 @@
       
         
           
-          二叉查找树二叉查找树的定义二叉查找树是一种特殊的二叉树，又称二叉排序树、二叉搜索树。二叉查找树的递归定义：
+          最小生成树最小生成树（MST）是在一个給定的无向图G(v,e)中求一棵树T，使得这棵树拥有图G中的所有顶点，且所有边都是来自图G中的边，并且满足整棵树的边权之和最小。
+三个重要性质
 
-二叉查找树要么为一棵空树。
-二叉查找树要么为由根结点、左子树、右子树组成，其中左子树和右子树都是二叉查找树，且左子树上所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大
+最小生成树是树，因此其边数等于顶点数减1，且树内一定不会有环。
+对給定的图G（v,e），其最小生成树可以不唯一，但其
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/算法和数据结构/二叉查找树/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/最小生成树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1429,7 +1429,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1479,7 +1479,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
