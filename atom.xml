@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-05-18T04:26:09.235Z</updated>
+  <updated>2018-05-18T11:49:08.006Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>L1-002 打印沙漏（20 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-002-%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-002-打印沙漏（20-分）/</id>
+    <published>2018-05-18T11:48:13.000Z</published>
+    <updated>2018-05-18T11:49:08.006Z</updated>
+    
+    <content type="html"><![CDATA[<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure><p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p><p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p><p>输入格式：</p><p>输入在一行给出1个正整数N（&lt;=1000）和一个符号，中间以空格分隔。</p><p>输出格式：</p><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p><p>输入样例：</p><p>19 *<br>输出样例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br><span class="line">2</span><br></pre></td></tr></table></figure></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> i,line=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;c;</span><br><span class="line">    line=(<span class="keyword">int</span>)<span class="built_in">sqrt</span>(<span class="number">2</span>*n+<span class="number">2</span>)<span class="number">-1</span>;</span><br><span class="line">    line=(line<span class="number">-1</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=line;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=line-i;k&gt;=<span class="number">1</span>;k--)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i*<span class="number">2</span>+<span class="number">1</span>;j&gt;=<span class="number">1</span>;j--)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;c;&#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;line;i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=line;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=line-i;k&gt;=<span class="number">1</span>;k--)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i*<span class="number">2</span>+<span class="number">1</span>;j&gt;=<span class="number">1</span>;j--)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;c;&#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;(n-(<span class="number">2</span>*line*(line+<span class="number">2</span>)+<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-001 Hello World（5 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-001-Hello-World%EF%BC%885-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-001-Hello-World（5-分）/</id>
+    <published>2018-05-18T11:41:55.000Z</published>
+    <updated>2018-05-18T11:42:48.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-001 Hello World（5 分）<br>这道超级简单的题目没有任何输入。</p><p>你只需要在一行中输出著名短句“Hello World!”就可以了。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-001 Hello World（5 分）&lt;br&gt;这道超级简单的题目没有任何输入。&lt;/p&gt;
+&lt;p&gt;你只需要在一行中输出著名短句“Hello World!”就可以了。&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 9. 回文数</title>
@@ -515,55 +568,6 @@
     
     
       <category term="Github" scheme="http://huangyiblog.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>技术书单系列1</title>
-    <link href="http://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E6%8A%80%E6%9C%AF%E4%B9%A6%E5%8D%95%E7%B3%BB%E5%88%971/"/>
-    <id>http://huangyiblog.com/随笔/技术书单系列1/</id>
-    <published>2018-05-16T12:22:08.000Z</published>
-    <updated>2018-05-16T12:24:06.846Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="我眼中的阅读"><a href="#我眼中的阅读" class="headerlink" title="我眼中的阅读"></a>我眼中的阅读</h1><p>有这么一句话：看一个人，只需看他读什么书，与什么交往。</p><p>但不知为什么，估计是我的社交圈太小的原因吧，大学里面认识的同学，目前没有几个是真正热爱阅读的，不论是带有功利性质的技能书还是休闲性质的杂书。注意，我没有过分强调读书的功利作用，我从不认为不读书的人就怎么怎么没素养，不读书就不能有大的作为。很多时候这也不过是一种爱好，一种消磨时间的途径而已。所以爱读书的也不必故作清高，但不爱读书的，也请将你的读书无用论收一收，不读书的一个巨大遗憾就是让你们产生了这样的眼界。</p><p>对我来说，书的魅力是巨大的，起初和很多人一样，一看到书就头疼，会有种读不下去的感觉，尤其是面对一些字典般大小的恐龙书。因此很多时候，读书也得讲策略，不是任何一本书都得一字一句的啃下去，有选择有针对性的扩展广度，当发现一本内容精致的好书在一遍遍精读也不迟。这里又提到了选书的问题，其实人这一生，你再怎么努力，能读的书终究是有限的，因此选择成了至关重要的一环，门外汉建议还是根据口碑选择较为靠谱，数年积累的业内口碑一般都不是没有理由的，经典之所以能成为经典，必然是经过一代代人的筛选与淘汰留下的宝藏。</p><p>说起自己，倒也误区多多，一方面，关于买书，我明显对技术书籍有了歧视，至今我买的纸质书里面，大多以古今中外文学名著小说诗歌居多，然而技术书却是能用指头就点的过来的寥寥几本。其中，我可能嫌一些技术书价格过高，网上的pdf版本一搜一大把，何苦花这冤枉钱。但后面意识到，很多技术书却是值这个价，内容对一些原理和思维剖析深刻到位，总之纸质书的阅读感很多时候还是电子书无法取代的。我目前两种媒介都不拒绝，大多时候不方便的话，kindle带在身边就是了，方便的话，翻开纸质书就是撸。另外，在读书笔记方面我做的也是有很大欠缺的，一本书读完，或者一部电影看完，只要不是内容空洞话作品，多多少少也该有点自己的理解与总结吧。转眼已到大二下半年，紧迫感似乎越来越强，面对学业上的考核，大三的实习校招，貌似留给我的阅读时间越来越少，且行且珍惜把。</p><p>中学，在高考中考的指挥棒下，自主时间实在有限，以后工作想必时间上的安排也必然紧张。粗想一下，大学貌似是我人生中为数不多的可以有大把时间读书，大把时间旅游，大把时间培养自主习惯的时候了，生活已经不易，希望有更多的人愿意与我一同追逐心中的书和远方。</p><h1 id="刘大佬认为的面试微软10本必读书"><a href="#刘大佬认为的面试微软10本必读书" class="headerlink" title="刘大佬认为的面试微软10本必读书"></a>刘大佬认为的面试微软10本必读书</h1><ol><li>Code: The Hidden Language of Computer Hardware and Software （《编码的奥秘》）</li><li>Computer System: A Programmer’s Perspective （《深入理解计算机系统》） / Windows via C/C++ （《Windows核心编程》 / 《程序员的自我修养》</li><li>Code Complete 2（《代码大全》）/ The Pragmatic Programmer （《程序员修炼之道》，我也把这本书称为《代码小全》）</li><li>Programming Pearls （《编程珠玑》） / Algorithms / Algorithm Design / 《编程之美》</li><li>The C Programming Language</li><li>The C++ Programming Language / Programming: Principles and Practice Using C++ / Accelerated C++</li><li>The Structure and Interpretation of Computer Programs （《计算机程序的构造和解释》）</li><li>Clean Code / Implementation Patterns</li><li>Design Patterns （《设计模式》） / Agile Software Development, Principles, Patterns, and Practices</li><li>Refactoring （《重构》）</li></ol><h1 id="云风的书单（中国游戏编程先行者，前网易游戏部门资深程序员，简悦创始人）"><a href="#云风的书单（中国游戏编程先行者，前网易游戏部门资深程序员，简悦创始人）" class="headerlink" title="云风的书单（中国游戏编程先行者，前网易游戏部门资深程序员，简悦创始人）"></a>云风的书单（中国游戏编程先行者，前网易游戏部门资深程序员，简悦创始人）</h1><ol><li>C++编程思想</li><li>Effective C++</li><li>深度探索C++对象模型</li><li>C++语言的设计和演化</li><li>C专家编程</li><li>C陷阱与缺陷</li><li>C语言接口与实现</li><li>Lua程序设计</li><li>Linkers and Loaders</li><li>COM本质论</li><li>Windows核心编程</li><li>深入解析Windows操作系统</li><li>程序员修炼之道</li><li>代码大全</li><li>UNIX编程艺术</li><li>设计模式</li><li>代码优化：有效使用内存</li><li>深入理解计算机系统</li><li>深入理解LINUX内核</li><li>TCP/IP 详解</li></ol><h1 id="来自stackoverflow的一个帖子"><a href="#来自stackoverflow的一个帖子" class="headerlink" title="来自stackoverflow的一个帖子"></a>来自stackoverflow的一个帖子</h1><ul><li><a href="https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read" target="_blank" rel="noopener">原网址</a></li></ul><ol><li>Code Complete (2nd edition) by Steve McConnell</li><li>The Pragmatic Programmer</li><li>Structure and Interpretation of Computer Programs</li><li>The C Programming Language by Kernighan and Ritchie</li><li>Introduction to Algorithms by Cormen, Leiserson, Rivest &amp; Stein</li><li>Design Patterns by the Gang of Four</li><li>Refactoring: Improving the Design of Existing Code</li><li>The Mythical Man Month</li><li>The Art of Computer Programming by Donald Knuth</li><li>Compilers: Principles, Techniques and Tools by Alfred V. Aho, Ravi Sethi and Jeffrey D. Ullman</li><li>Gödel, Escher, Bach by Douglas Hofstadter</li><li>Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin</li><li>Effective C++</li><li>More Effective C++</li><li>CODE by Charles Petzold</li><li>Programming Pearls by Jon Bentley</li><li>Working Effectively with Legacy Code by Michael C. Feathers</li><li>Peopleware by Demarco and Lister</li><li>Coders at Work by Peter Seibel</li><li>Surely You’re Joking, Mr. Feynman!</li><li>Effective Java 2nd edition</li><li>Patterns of Enterprise Application Architecture by Martin Fowler</li><li>The Little Schemer</li><li>The Seasoned Schemer</li><li>Why’s (Poignant) Guide to Ruby</li><li>The Inmates Are Running The Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity</li><li>The Art of Unix Programming</li><li>Test-Driven Development: By Example by Kent Beck</li><li>Practices of an Agile Developer</li><li>Don’t Make Me Think</li><li>Agile Software Development, Principles, Patterns, and Practices by Robert C. Martin</li><li>Domain Driven Designs by Eric Evans</li><li>The Design of Everyday Things by Donald Norman</li><li>Modern C++ Design by Andrei Alexandrescu</li><li>Best Software Writing I by Joel Spolsky</li><li>The Practice of Programming by Kernighan and Pike</li><li>Pragmatic Thinking and Learning: Refactor Your Wetware by Andy Hunt</li><li>Software Estimation: Demystifying the Black Art by Steve McConnel</li><li>The Passionate Programmer (My Job Went To India) by Chad Fowler</li><li>Hackers: Heroes of the Computer Revolution</li><li>Algorithms + Data Structures = Programs</li><li>Writing Solid Code</li><li>JavaScript - The Good Parts</li><li>Getting Real by 37 Signals</li><li>Foundations of Programming by Karl Seguin</li><li>Computer Graphics: Principles and Practice in C (2nd Edition)</li><li>Thinking in Java by Bruce Eckel</li><li>The Elements of Computing Systems</li><li>Refactoring to Patterns by Joshua Kerievsky</li><li>Modern Operating Systems by Andrew S. Tanenbaum</li><li>The Annotated Turing</li><li>Things That Make Us Smart by Donald Norman</li><li>The Timeless Way of Building by Christopher Alexander</li><li>The Deadline: A Novel About Project Management by Tom DeMarco</li><li>The C++ Programming Language (3rd edition) by Stroustrup</li><li>Patterns of Enterprise Application Architecture</li><li>Computer Systems - A Programmer’s Perspective</li><li>Agile Principles, Patterns, and Practices in C# by Robert C. Martin</li><li>Growing Object-Oriented Software, Guided by Tests</li><li>Framework Design Guidelines by Brad Abrams</li><li>Object Thinking by Dr. David West</li><li>Advanced Programming in the UNIX Environment by W. Richard Stevens</li><li>Hackers and Painters: Big Ideas from the Computer Age</li><li>The Soul of a New Machine by Tracy Kidder</li><li>CLR via C# by Jeffrey Richter</li><li>The Timeless Way of Building by Christopher Alexander</li><li>Design Patterns in C# by Steve Metsker</li><li>Alice in Wonderland by Lewis Carol</li><li>Zen and the Art of Motorcycle Maintenance by Robert M. Pirsig</li><li>About Face - The Essentials of Interaction Design</li><li>Here Comes Everybody: The Power of Organizing Without Organizations by Clay Shirky</li><li>The Tao of Programming</li><li>Computational Beauty of Nature</li><li>Writing Solid Code by Steve Maguire</li><li>Philip and Alex’s Guide to Web Publishing</li><li>Object-Oriented Analysis and Design with Applications by Grady Booch</li><li>Effective Java by Joshua Bloch</li><li>Computability by N. J. Cutland</li><li>Masterminds of Programming</li><li>The Tao Te Ching</li><li>The Productive Programmer</li><li>The Art of Deception by Kevin Mitnick</li><li>The Career Programmer: Guerilla Tactics for an Imperfect World by Christopher Duncan</li><li>Paradigms of Artificial Intelligence Programming: Case studies in Common Lisp</li><li>Masters of Doom</li><li>Pragmatic Unit Testing in C# with NUnit by Andy Hunt and Dave Thomas with Matt Hargett</li><li>How To Solve It by George Polya</li><li>The Alchemist by Paulo Coelho</li><li>Smalltalk-80: The Language and its Implementation</li><li>Writing Secure Code (2nd Edition) by Michael Howard</li><li>Introduction to Functional Programming by Philip Wadler and Richard Bird</li><li>No Bugs! by David Thielen</li><li>Rework by Jason Freid and DHH</li><li>JUnit in Action</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;我眼中的阅读&quot;&gt;&lt;a href=&quot;#我眼中的阅读&quot; class=&quot;headerlink&quot; title=&quot;我眼中的阅读&quot;&gt;&lt;/a&gt;我眼中的阅读&lt;/h1&gt;&lt;p&gt;有这么一句话：看一个人，只需看他读什么书，与什么交往。&lt;/p&gt;
-&lt;p&gt;但不知为什么，估计是我的社交圈太小的原
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="阅读" scheme="http://huangyiblog.com/tags/%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>完全背包</title>
-    <link href="http://huangyiblog.com/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85/"/>
-    <id>http://huangyiblog.com/算法和数据结构/完全背包/</id>
-    <published>2018-05-16T11:45:25.000Z</published>
-    <updated>2018-05-16T11:47:06.471Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="完全背包问题"><a href="#完全背包问题" class="headerlink" title="完全背包问题"></a>完全背包问题</h1><p>有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，<br>使得背包内物品的总价值最大。其中每种物品都有无穷件。</p><p>完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。</p><p>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p><p>对每种物品有两种策略：</p><ol><li>不放第i件物品，那么dp[i][v] = dp[i-1][v]</li><li>放第i件物品。dp[i][v] = dp[i][v-w[i]]+c[i]<br>由此得出状态转移方程：<pre><code>**dp[i][v] = max(dp[i-1][v],dp[i][v-w[i]]+c[i]) (1&lt;=i&lt;=n,w[i]&lt;=v&lt;=V)**边界：dp[0][v] = 0(0&lt;=v&lt;=V)</code></pre>改写成一维形式：<pre><code>**dp[v] = max(dp[v],dp[v-w[i]]+c[i]) (1&lt;=i&lt;=n,w[i]&lt;=v&lt;=V)**边界：dp[v] = 0(0&lt;=v&lt;=V)</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> v=w[i];v&lt;=V;v++)&#123;</span><br><span class="line">    dp[v] = max(dp[v],dp[v-w[i]]+c[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h1 id="常见dp问题的模型总结"><a href="#常见dp问题的模型总结" class="headerlink" title="常见dp问题的模型总结"></a>常见dp问题的模型总结</h1><ol><li><p>最大连续子列和<br>令dp[i]表示以A[i]作为末尾的连续序列的最大和。</p></li><li><p>最长不下降子序列（LIS）<br>令dp[i]表示以A[i]结尾的最长不下降子序列长度</p></li><li><p>最长公共子序列（LCS）<br>令dp[i][j]表示字符串A的i号位和字符串B的j号位之前的LCS长度</p></li><li><p>最长回文子串<br>令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串</p></li><li><p>数塔dp<br>令dp[i][j]表示从第i行第j个数字出发的到达最底层的所有路径上所能得到的最大和</p></li><li><p>DAG最长路<br>令dp[i]表示从i号顶点出发能获得的最长路径长度</p></li><li><p>01背包<br>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p></li><li><p>完全背包<br>令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;完全背包问题&quot;&gt;&lt;a href=&quot;#完全背包问题&quot; class=&quot;headerlink&quot; title=&quot;完全背包问题&quot;&gt;&lt;/a&gt;完全背包问题&lt;/h1&gt;&lt;p&gt;有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，&lt;
-      
-    
-    </summary>
-    
-      <category term="算法和数据结构" scheme="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
     
   </entry>
   
