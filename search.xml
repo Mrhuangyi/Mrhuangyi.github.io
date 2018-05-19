@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-012 计算指数（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-012-%E8%AE%A1%E7%AE%97%E6%8C%87%E6%95%B0%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-012 计算指数（5 分）真的没骗你，这道才是简单题 —— 对任意给定的不超过10的正整数n，要求你输出2^n^。不难吧？ 输入格式： 输入在一行中给出一个不超过10的正整数n。 输出格式： 在一行中按照格式“2\^n = 计算结果”输出2^n^的值。 输入样例： 5输出样例： 2^5 = 32 12345678910#include&lt;stdio.h&gt;#include&lt;math.h&gt;int main()&#123; int n,t; scanf("%d",&amp;n); t=pow(2,n); printf("2^%d = %d",n,t); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-011 A-B（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-011-A-B%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-011 A-B（20 分）本题要求你计算A-B。不过麻烦的是，A和B都是字符串 —— 即从字符串A中把字符串B所包含的字符全删掉，剩下的字符组成的就是字符串A-B。 输入格式： 输入在2行中先后给出字符串A和B。两字符串的长度都不超过10^4^，并且保证每个字符串都是由可见的ASCII码和空白字符组成，最后以换行符结束。 输出格式： 在一行中打印出A-B的结果字符串。 输入样例： I love GPLT! It’s a fun game!aeiou输出样例： I lv GPLT! It’s fn gm! 123456789101112131415161718#include &lt;iostream&gt;using namespace std;int book[256];int main() &#123; string s, a; getline(cin, s); getline(cin, a); for(int i = 0; i &lt; a.length(); i++) &#123; book[a[i]] = 1; &#125; for(int i = 0; i &lt; s.length(); i++) &#123; if(book[s[i]] == 1) &#123; continue; &#125; cout &lt;&lt; s[i]; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-010 比较大小（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-010-%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-010 比较大小（10 分）本题要求将输入的任意3个整数从小到大输出。 输入格式： 输入在一行中给出3个整数，其间以空格分隔。 输出格式： 在一行中将3个整数从小到大输出，其间以“-&gt;”相连。 输入样例： 4 2 8输出样例： 2-&gt;4-&gt;8 12345678910111213#include&lt;stdio.h&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123; int a[3],i,j; for(i=0;i&lt;3;i++)&#123; scanf("%d",&amp;a[i]); &#125; sort(a,a+3); printf("%d-&gt;%d-&gt;%d",a[0],a[1],a[2]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-009 N个数求和（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-009-N%E4%B8%AA%E6%95%B0%E6%B1%82%E5%92%8C%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-009 N个数求和（20 分）本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数“分子/分母”的形式给出的，你输出的和也必须是有理数的形式。 输入格式： 输入第一行给出一个正整数N（&lt;=100）。随后一行按格式“a1/b1 a2/b2 …”给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。 输出格式： 输出上述数字和的最简形式 —— 即将结果写成“整数部分 分数部分”，其中分数部分写成“分子/分母”，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。 输入样例1： 52/5 4/15 1/30 -2/60 8/3输出样例1： 3 1/3输入样例2： 24/3 2/3输出样例2： 2输入样例3： 31/3 -1/6 1/8输出样例3： 7/24 多个分数求和的问题，需要注意输出格式12345678910111213141516171819202122232425262728293031323334353637#include&lt;stdio.h&gt;typedef long long ll;ll gcd(ll a,ll b)&#123;return b==0?a:gcd(b,a%b);&#125;int main()&#123; int n; ll lcp,a,b,c,d; int i=1; scanf("%d",&amp;n); scanf("%lld/%lld",&amp;a,&amp;b); int t=gcd(a,b); if(a)&#123; a/=t; b/=t; &#125; while(i&lt;n)&#123; scanf("%lld/%lld",&amp;c,&amp;d); lcp=b/gcd(b,d)*d; a=a*lcp/b+c*lcp/d; b=lcp; int t=gcd(a,b); if(t)&#123; a/=t; b/=t; &#125; i++; &#125; if(a&amp;&amp;a/b==0) printf("%lld/%lld",a%b,b); else if(a%b==0) printf("%lld\n",a/b); else printf("%lld %lld/%lld\n",a/b,a%b,b); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-008 求整数段和（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-008-%E6%B1%82%E6%95%B4%E6%95%B0%E6%AE%B5%E5%92%8C%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-008 求整数段和（10 分）给定两个整数A和B，输出从A到B的所有整数以及这些数的和。 输入格式： 输入在一行中给出2个整数A和B，其中-100&lt;=A&lt;=B&lt;=100，其间以空格分隔。 输出格式： 首先顺序输出从A到B的所有整数，每5个数字占一行，每个数字占5个字符宽度，向右对齐。最后在一行中输出全部数字的和。 输入样例： -3 8输出样例： -3 -2 -1 0 1 2 3 4 5 6 7 8Sum = 30 123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int a,b,sum,t; scanf("%d %d",&amp;a,&amp;b); sum=t=0; for(int i=a;i&lt;=b;i++) &#123; sum+=i; printf("%5d",i); t++; if(t%5==0&amp;&amp;i!=b) &#123; printf("\n"); t=0; &#125; &#125; printf("\n"); printf("Sum = %d\n",sum); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-007 念数字（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-007-%E5%BF%B5%E6%95%B0%E5%AD%97%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[输入一个整数，输出每个数字对应的拼音。当整数为负数时，先输出“fu”字。十个数字对应的拼音如下： 0: ling1: yi2: er3: san4: si5: wu6: liu7: qi8: ba9: jiu输入格式： 输入在一行中给出一个整数，如： 1234 。 提示：整数包括负数、零和正数。 输出格式： 在一行中输出这个整数对应的拼音，每个数字的拼音之间用空格分开，行末没有最后的空格。如 yi er san si。 输入样例： -600输出样例： fu liu ling ling 1234567891011121314151617181920212223242526272829#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; int n; scanf("%d",&amp;n); if(n&lt;0)&#123; printf("fu "); n=-n; &#125; int t=n,mask=1; while(t&gt;9) &#123; t/=10; mask*=10; &#125; char *s[] = &#123;"ling","yi","er","san","si","wu","liu","qi","ba","jiu"&#125;; int d; while(mask&gt;0)&#123; d=n/mask; printf("%s",s[d]); if(mask&gt;9)&#123; printf(" "); &#125; n%=mask; mask/=10; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-006 连续因子（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-006-%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-006 连续因子（20 分）一个正整数N的因子中可能存在若干连续的数字。例如630可以分解为356*7，其中5、6、7就是3个连续的数字。给定任一正整数N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。输入格式： 输入在一行中给出一个正整数N(1&lt; N&lt;2^31) 输出格式： 首先在第1行输出最长连续因子的个数；然后在第2行中按“因子1因子2……*因子k”的格式输出最小的连续因子序列，其中因子按递增顺序输出，1不算在内。 输入样例： 630输出样例： 3567 123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;cstring&gt;#define LL long longusing namespace std;int main()&#123; LL n,a,b,x,y=-1,i,j; scanf("%lld",&amp;n); LL m=(LL)sqrt(n); x=n; for(i=2; i&lt;=m; i++) &#123; if(n%i!=0) continue; a=1; for(j=i; j&lt;=m; j++) &#123; if(n%(a*j)!=0||a*j&gt;n) break; a*=j; &#125; if(j-i&gt;y) &#123;y=j-i; x=i;&#125; &#125; if(y==-1) y=1; printf("%lld\n",y); printf("%lld",x); for(LL t=x+1; t&lt;y+x; t++) printf("*%lld",t); printf("\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-005 考试座位号（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-005-%E8%80%83%E8%AF%95%E5%BA%A7%E4%BD%8D%E5%8F%B7%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-005 考试座位号（15 分）每个PAT考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些考生迟到了，试机已经结束，他们只能拿着领到的试机座位号码求助于你，从后台查出他们的考试座位号码。 输入格式： 输入第一行给出一个正整数N（&lt;=1000），随后N行，每行给出一个考生的信息：“准考证号 试机座位号 考试座位号”。其中准考证号由14位数字组成，座位从1到N编号。输入保证每个人的准考证号都不同，并且任何时候都不会把两个人分配到同一个座位上。 考生信息之后，给出一个正整数M（&lt;=N），随后一行中给出M个待查询的试机座位号码，以空格分隔。 输出格式： 对应每个需要查询的试机座位号码，在一行中输出对应考生的准考证号和考试座位号码，中间用1个空格分隔。 输入样例： 410120150912233 2 410120150912119 4 110120150912126 1 310120150912002 3 223 4输出样例： 10120150912002 210120150912119 1 123456789101112131415161718192021222324252627282930313233343536#include&lt;bits/stdc++.h&gt;using namespace std;struct stu &#123;string s;int one;int two;&#125;;int main()&#123; int n; cin&gt;&gt;n; stu *a=new stu[n]; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;a[i].s; cin&gt;&gt;a[i].one; cin&gt;&gt;a[i].two; &#125; int m; cin&gt;&gt;m; int temp; for(int i=0;i&lt;m;i++) &#123; cin&gt;&gt;temp; for(int j=0;j&lt;n;j++) &#123; if(a[j].one==temp) &#123; cout&lt;&lt;a[j].s&lt;&lt;" "; cout&lt;&lt;a[j].two&lt;&lt;endl; // break; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-004 计算摄氏温度（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-004-%E8%AE%A1%E7%AE%97%E6%91%84%E6%B0%8F%E6%B8%A9%E5%BA%A6%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-004 计算摄氏温度（5 分）给定一个华氏温度F，本题要求编写程序，计算对应的摄氏温度C。计算公式：C = 5*(F-32)/9。题目保证输入与输出均在整型范围内。 输入格式： 输入在一行中给出一个华氏温度。 输出格式： 在一行中按照格式“Celsius = C”输出对应的摄氏温度C的整数值。 输入样例： 150输出样例： Celsius = 65 水题，直接带公式… 12345678910#include&lt;stdio.h&gt;int main()&#123; int f; int c; scanf("%d",&amp;f); c=int(5*(f-32)/9.0); printf("Celsius = %d",c); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-003 个位数统计（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-003-%E4%B8%AA%E4%BD%8D%E6%95%B0%E7%BB%9F%E8%AE%A1%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[给定一个k位整数N = d~k-1~10^k-1^ + … + d~1~10^1^ + d~0~ (0&lt;=d~i~&lt;=9, i=0,…,k-1, d~k-1~&gt;0)，请编写程序统计每种不同的个位数字出现的次数。例如：给定N = 100311，则有2个0，3个1，和1个3。 输入格式： 每个输入包含1个测试用例，即一个不超过1000位的正整数N。 输出格式： 对N中每一种不同的个位数字，以D:M的格式在一行中输出该位数字D及其在N中出现的次数M。要求按D的升序输出。 输入样例： 100311输出样例： 0:21:33:1 统计一个整数中各个数字出现的次数，可以用数组映射， 123456789101112131415161718192021222324252627#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#define MAXN 1000+1char array[MAXN];int main()&#123; char c; int i=0; int a[10] = &#123;0&#125;; while(scanf("%c",&amp;c)!= EOF)&#123; array[i] = c; i++; &#125;//i 为数组中有内容的位数 int j = 0; for(; j &lt; i-1; j++)&#123; int temp = array[j]-'0'; a[temp]++; &#125; for(j = 0; j &lt; 10; j++)&#123; if(a[j]==0) continue; printf("%d:%d\n",j,a[j]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-002 打印沙漏（20 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-002-%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印 12345***** *** * ******** 所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。 给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。 输入格式： 输入在一行给出1个正整数N（&lt;=1000）和一个符号，中间以空格分隔。 输出格式： 首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。 输入样例： 19 *输出样例：123456***** *** * ********2 12345678910111213141516171819202122232425262728293031323334#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;cmath&gt;using namespace std;int main()&#123; int n; char c; int i,line=0; cin&gt;&gt;n&gt;&gt;c; line=(int)sqrt(2*n+2)-1; line=(line-1)/2; for(i=line;i&gt;=1;i--) &#123; for(int k=line-i;k&gt;=1;k--) cout&lt;&lt;" "; for(int j=i*2+1;j&gt;=1;j--)&#123; cout&lt;&lt;c;&#125; cout&lt;&lt;endl; &#125; for(i=0;i&lt;line;i++)&#123; cout&lt;&lt;" ";&#125; cout&lt;&lt;c&lt;&lt;endl; for(i=1;i&lt;=line;i++) &#123; for(int k=line-i;k&gt;=1;k--) cout&lt;&lt;" "; for(int j=i*2+1;j&gt;=1;j--)&#123; cout&lt;&lt;c;&#125; cout&lt;&lt;endl; &#125; cout&lt;&lt;(n-(2*line*(line+2)+1)); return 0;&#125;]]></content>
@@ -710,9 +820,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -721,9 +831,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
