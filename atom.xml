@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-05-22T07:34:42.987Z</updated>
+  <updated>2018-05-22T09:30:57.511Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,222 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>L1-029 是不是太胖了（5 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-029-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E8%83%96%E4%BA%86%EF%BC%885-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-029-是不是太胖了（5-分）/</id>
+    <published>2018-05-22T09:30:32.000Z</published>
+    <updated>2018-05-22T09:30:57.511Z</updated>
+    
+    <content type="html"><![CDATA[<p>据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。已知市斤是公斤的两倍。现给定某人身高，请你计算其标准体重应该是多少？（顺便也悄悄给自己算一下吧……）</p><p>输入格式：</p><p>输入第一行给出一个正整数H（100 &lt; H &lt;= 300），为某人身高。</p><p>输出格式：</p><p>在一行中输出对应的标准体重，单位为市斤，保留小数点后1位。</p><p>输入样例：</p><p>169<br>输出样例：</p><p>124.2</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> h,w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;h);</span><br><span class="line">    w=(h<span class="number">-100</span>)*<span class="number">1.8</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.1f"</span>,w);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。已知市斤是公斤的两倍。现给定某人身高，请你计算其标准体重应该是多少？（顺便也悄悄给自己算一下吧……）&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入第一行给出一个正整数H（100 &amp;lt; 
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-028 判断素数（10 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-028-%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-028-判断素数（10-分）/</id>
+    <published>2018-05-22T09:28:33.000Z</published>
+    <updated>2018-05-22T09:29:10.280Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-028 判断素数（10 分）<br>本题的目标很简单，就是判断一个给定的正整数是否素数。</p><p>输入格式：</p><p>输入在第一行给出一个正整数N（&lt;=10），随后N行，每行给出一个小于2^31^的需要判断的正整数。</p><p>输出格式：</p><p>对每个需要判断的正整数，如果它是素数，则在一行中输出“Yes”，否则输出“No”。</p><p>输入样例：</p><p>2<br>11<br>111<br>输出样例：</p><p>Yes<br>No</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">prime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,t;</span><br><span class="line">    t=<span class="built_in">sqrt</span>(n);</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;t;i++)</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">           <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">        <span class="keyword">if</span>(prime(t)==<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-028 判断素数（10 分）&lt;br&gt;本题的目标很简单，就是判断一个给定的正整数是否素数。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入在第一行给出一个正整数N（&amp;lt;=10），随后N行，每行给出一个小于2^31^的需要判断的正整数。&lt;/p&gt;
+&lt;p&gt;输出格式：&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-027 出租（20 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-027-%E5%87%BA%E7%A7%9F%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-027-出租（20-分）/</id>
+    <published>2018-05-22T09:26:36.000Z</published>
+    <updated>2018-05-22T09:27:21.908Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-027 出租（20 分）<br>下面是新浪微博上曾经很火的一张图：</p><p>一时间网上一片求救声，急问这个怎么破。其实这段代码很简单，index数组就是arr数组的下标，index[0]=2 对应 arr[2]=1，index[1]=0 对应 arr[0]=8，index[2]=3 对应 arr[3]=0，以此类推…… 很容易得到电话号码是18013820100。</p><p>本题要求你编写一个程序，为任何一个电话号码生成这段代码 —— 事实上，只要生成最前面两行就可以了，后面内容是不变的。</p><p>输入格式：</p><p>输入在一行中给出一个由11位数字组成的手机号码。</p><p>输出格式：</p><p>为输入的号码生成代码的前两行，其中arr中的数字必须按递减顺序给出。</p><p>输入样例：</p><p>18013820100<br>输出样例：</p><p>int[] arr = new int[]{8,3,2,1,0};<br>int[] index = new int[]{3,0,4,3,1,0,2,4,3,4,4};</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">12</span>];</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;,index[<span class="number">10</span>],num;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,str);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">11</span>;i++)&#123;</span><br><span class="line">        arr[str[i]-<span class="string">'0'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"int[] arr = new int[]&#123;"</span>);</span><br><span class="line">    num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">9</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        <span class="keyword">if</span>(arr[i]) a[num]=i,num++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[i]);</span><br><span class="line">        <span class="keyword">if</span>(i&lt;num<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">","</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"&#125;;\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"int[] index = new int[]&#123;"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">11</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;num;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>((str[i]-<span class="string">'0'</span>)==a[j])&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d"</span>,j);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="number">10</span>) <span class="built_in">printf</span>(<span class="string">","</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"&#125;;\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-027 出租（20 分）&lt;br&gt;下面是新浪微博上曾经很火的一张图：&lt;/p&gt;
+&lt;p&gt;一时间网上一片求救声，急问这个怎么破。其实这段代码很简单，index数组就是arr数组的下标，index[0]=2 对应 arr[2]=1，index[1]=0 对应 arr[0]=8，
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-026 I Love GPLT（5 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-026-I-Love-GPLT%EF%BC%885-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-026-I-Love-GPLT（5-分）/</id>
+    <published>2018-05-22T09:24:03.000Z</published>
+    <updated>2018-05-22T09:24:48.105Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-026 I Love GPLT（5 分）<br>这道超级简单的题目没有任何输入。</p><p>你只需要把这句很重要的话 —— “I Love GPLT”——竖着输出就可以了。</p><p>所谓“竖着输出”，是指每个字符占一行（包括空格），即每行只能有1个字符和回车。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> n,i;</span><br><span class="line">   <span class="keyword">char</span> a[]=&#123;<span class="string">"I Love GPLT"</span>&#125;;</span><br><span class="line">   n=<span class="built_in">strlen</span>(a);</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">"%c\n"</span>,a[i]);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-026 I Love GPLT（5 分）&lt;br&gt;这道超级简单的题目没有任何输入。&lt;/p&gt;
+&lt;p&gt;你只需要把这句很重要的话 —— “I Love GPLT”——竖着输出就可以了。&lt;/p&gt;
+&lt;p&gt;所谓“竖着输出”，是指每个字符占一行（包括空格），即每行只能有1个字符和回车
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-025 正整数A+B（15 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-025-%E6%AD%A3%E6%95%B4%E6%95%B0A-B%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-025-正整数A-B（15-分）/</id>
+    <published>2018-05-22T09:22:16.000Z</published>
+    <updated>2018-05-22T09:22:49.419Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-025 正整数A+B（15 分）<br>本题的目标很简单，就是求两个正整数A和B的和，其中A和B都在区间[1,1000]。稍微有点麻烦的是，输入并不保证是两个正整数。</p><p>输入格式：</p><p>输入在一行给出A和B，其间以空格分开。问题是A和B不一定是满足要求的正整数，有时候可能是超出范围的数字、负数、带小数点的实数、甚至是一堆乱码。</p><p>注意：我们把输入中出现的第1个空格认为是A和B的分隔。题目保证至少存在一个空格，并且B不是一个空字符串。</p><p>输出格式：</p><p>如果输入的确是两个正整数，则按格式“A + B = 和”输出。如果某个输入不合要求，则在相应位置输出“?”，显然此时和也是“?”。</p><p>输入样例1：</p><p>123 456<br>输出样例1：</p><p>123 + 456 = 579<br>输入样例2：</p><ol start="22"><li>18<br>输出样例2：</li></ol><p>? + 18 = ?<br>输入样例3：</p><p>-100 blabla bla…33<br>输出样例3：</p><p>? + ? = ?</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;str[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i]&gt;=<span class="string">'0'</span>&amp;&amp;str[i]&lt;=<span class="string">'9'</span>)</span><br><span class="line">            sum=sum*<span class="number">10</span>+str[i]-<span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum&gt;=<span class="number">1</span>&amp;&amp;sum&lt;=<span class="number">1000</span>)</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">10000</span>],b[<span class="number">10000</span>];</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s "</span>,&amp;a);</span><br><span class="line">    gets(b);</span><br><span class="line">    n=check(a);</span><br><span class="line">    m=check(b);</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"? + "</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d + "</span>,n);</span><br><span class="line">    <span class="keyword">if</span>(m==<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"? = "</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d = "</span>,m);</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">-1</span>||m==<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"?\n"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n+m);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-025 正整数A+B（15 分）&lt;br&gt;本题的目标很简单，就是求两个正整数A和B的和，其中A和B都在区间[1,1000]。稍微有点麻烦的是，输入并不保证是两个正整数。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入在一行给出A和B，其间以空格分开。问题是A和B不一定是满
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-024 后天（5 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-024-%E5%90%8E%E5%A4%A9%EF%BC%885-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-024-后天（5-分）/</id>
+    <published>2018-05-22T09:19:48.000Z</published>
+    <updated>2018-05-22T09:20:22.173Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-024 后天（5 分）<br>如果今天是星期三，后天就是星期五；如果今天是星期六，后天就是星期一。我们用数字1到7对应星期一到星期日。给定某一天，请你输出那天的“后天”是星期几。</p><p>输入格式：</p><p>输入第一行给出一个正整数D（1 &lt;= D &lt;=7），代表星期里的某一天。</p><p>输出格式：</p><p>在一行中输出D天的后天是星期几。</p><p>输入样例：</p><p>3<br>输出样例：</p><p>5</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line"> <span class="keyword">int</span> a[<span class="number">7</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line"> <span class="keyword">if</span>(n&gt;=<span class="number">1</span>&amp;&amp;n&lt;=<span class="number">5</span>)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[n+<span class="number">1</span>]);</span><br><span class="line"> <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">6</span>)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"1"</span>);</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"2"</span>);</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-024 后天（5 分）&lt;br&gt;如果今天是星期三，后天就是星期五；如果今天是星期六，后天就是星期一。我们用数字1到7对应星期一到星期日。给定某一天，请你输出那天的“后天”是星期几。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入第一行给出一个正整数D（1 &amp;lt;= D 
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-023 输出GPLT（20 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-023-%E8%BE%93%E5%87%BAGPLT%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-023-输出GPLT（20-分）/</id>
+    <published>2018-05-22T09:17:45.000Z</published>
+    <updated>2018-05-22T09:18:16.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-023 输出GPLT（20 分）<br>给定一个长度不超过10000的、仅由英文字母构成的字符串。请将字符重新调整顺序，按“GPLTGPLT….”这样的顺序输出，并忽略其它字符。当然，四种字符（不区分大小写）的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍按GPLT的顺序打印，直到所有字符都被输出。</p><p>输入格式：</p><p>输入在一行中给出一个长度不超过10000的、仅由英文字母构成的非空字符串。</p><p>输出格式：</p><p>在一行中按题目要求输出排序后的字符串。题目保证输出非空。</p><p>输入样例：</p><p>pcTclnGloRgLrtLhgljkLhGFauPewSKgt<br>输出样例：</p><p>GPLTGPLTGLTGLGLL</p><p>题目要求按gplt的顺序输出原字符串中所含有的对应字符个数，<br>因为不区分大小写，所以可以将原字符串都转为大写字母，然后分别计数<br>之后用一个循环遍历输出<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      <span class="built_in">string</span> s;</span><br><span class="line">      <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">      <span class="keyword">int</span> g,p,l,t;</span><br><span class="line">      g=p=l=t=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">      &#123;</span><br><span class="line">          s[i]=<span class="built_in">toupper</span>(s[i]);</span><br><span class="line">          <span class="keyword">if</span>(s[i]==<span class="string">'G'</span>)</span><br><span class="line">            g++;</span><br><span class="line">          <span class="keyword">if</span>(s[i]==<span class="string">'P'</span>)</span><br><span class="line">            p++;</span><br><span class="line">          <span class="keyword">if</span>(s[i]==<span class="string">'L'</span>)</span><br><span class="line">            l++;</span><br><span class="line">          <span class="keyword">if</span>(s[i]==<span class="string">'T'</span>)</span><br><span class="line">            t++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">while</span>(g||p||l||t)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">if</span>(g)</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"G"</span>;</span><br><span class="line">              g--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span>(p)</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"P"</span>;</span><br><span class="line">              p--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span>(l)</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"L"</span>;</span><br><span class="line">              l--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span>(t)</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"T"</span>;</span><br><span class="line">              t--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-023 输出GPLT（20 分）&lt;br&gt;给定一个长度不超过10000的、仅由英文字母构成的字符串。请将字符重新调整顺序，按“GPLTGPLT….”这样的顺序输出，并忽略其它字符。当然，四种字符（不区分大小写）的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>14. 最长公共前缀</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/14-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/"/>
+    <id>http://huangyiblog.com/题解集/14-最长公共前缀/</id>
+    <published>2018-05-22T09:11:55.000Z</published>
+    <updated>2018-05-22T09:12:42.959Z</updated>
+    
+    <content type="html"><![CDATA[<p>编写一个函数来查找字符串数组中的最长公共前缀。</p><p>如果不存在公共前缀，返回空字符串 “”。</p><p>示例 1:</p><p>输入: [“flower”,”flow”,”flight”]<br>输出: “fl”<br>示例 2:</p><p>输入: [“dog”,”racecar”,”car”]<br>输出: “”<br>解释: 输入不存在公共前缀。<br>说明:</p><p>所有输入只包含小写字母 a-z 。</p><p>可以采用纵向扫描或横向扫描<br>纵向扫描，就从位置0开始，对每一个位置比较所有的字符串，直到遇到不匹配的字符为止。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(strs.empty()) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;strs[<span class="number">0</span>].size();++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;strs.size();++j)&#123;</span><br><span class="line">                <span class="keyword">if</span>(strs[j][i]!=strs[<span class="number">0</span>][i]) <span class="keyword">return</span> strs[<span class="number">0</span>].substr(<span class="number">0</span>,i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;编写一个函数来查找字符串数组中的最长公共前缀。&lt;/p&gt;
+&lt;p&gt;如果不存在公共前缀，返回空字符串 “”。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;p&gt;输入: [“flower”,”flow”,”flight”]&lt;br&gt;输出: “fl”&lt;br&gt;示例 2:&lt;/p&gt;
+&lt;p&gt;输入: [“
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>202. 快乐数</title>
@@ -333,220 +549,6 @@
 &lt;p&gt;示例 1:&lt;/p&gt;
 &lt;p&gt;输入: 3&lt;br&gt;输出: 0&lt;br&gt;解释: 3! = 6, 尾数中没有零。&lt;br&gt;示例 2:&lt;/p&gt;
 &lt;p&gt;输入: 5&lt;br&gt;输出: 1&lt;br&gt;解释: 5! = 120, 尾数中有 
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树状数组</title>
-    <link href="http://huangyiblog.com/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    <id>http://huangyiblog.com/算法和数据结构/树状数组/</id>
-    <published>2018-05-21T05:59:31.000Z</published>
-    <updated>2018-05-21T06:00:14.945Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="lowbit运算"><a href="#lowbit运算" class="headerlink" title="lowbit运算"></a>lowbit运算</h1><p>lowbit运算属于二进制的一个经典应用：<br>lowbit(x) = x &amp; (-x)</p><p>整数在计算机中一般采用的是补码存储，而把一个补码表示的整数x变成其相反数-x的过程相当于把x的二进制的每一位<br>都取反，然后末位+1.这又等价于直接把x的二进制最右边的1左边的每一位都取反。</p><p>所以lowbit(x) = x &amp; (-x)其实就是取x的二进制最右边的1和它右边所有0.<br>lowbit(x)也可以理解为能整除x的最大2的幂次。</p><h1 id="树状数组及其应用"><a href="#树状数组及其应用" class="headerlink" title="树状数组及其应用"></a>树状数组及其应用</h1><p>例题导入：给出一个整数序列A，元素个数为N(N&lt;=10^5),接下来查询K次（K&lt;=10^5）,每次查询将给出一个正整数（x）(x&lt;=N)<br>,求前x个整数之和。</p><p>一般做法是开一个sum数组，其中sum[i]表示前i个整数之和（数组下标从1开始），这样sum数组就可以在输入N个整数时<br>就预处理出来。接着每次查询前x个整数之和时，输出sum[x]就行。每次查询复杂度为O(1),查询总复杂度为O(K)</p><p>问题升级：假设在查询的过程中可能随时给第x个整数加上一个整数v，要求在查询中能实时输出前x个整数之和<br>（更新操作和查询操作的次数总和为K次）。若按照原先的思路，操作的总复杂度会达到O(KN).</p><h2 id="BIT树状数组解法"><a href="#BIT树状数组解法" class="headerlink" title="BIT树状数组解法"></a>BIT树状数组解法</h2><p>树状数组其实仍然是一个数组，是一个用来记录和的数组，只不过它存放的不是前i个整数之和，而是在i号位之前<br>（含i号位）lowbit(i)个整数之和。<br>用数组C表示树状数组，其中C[i]存放数组A中i号位之前lowbit(i)个元素之和，C[i]和覆盖长度为lowbit(i)<br>lowbit(i)是2的幂次</p><p><img src="https://github.com/Mrhuangyi/Algorithm-and-data-structure/blob/master/Advanced-Algorithm/BIT1.PNG" alt="Alt"></p><p><strong>树状数组的下标必须从1开始</strong></p><h3 id="设计函数getSum-x-返回前x个数之和A-i-……-A-x"><a href="#设计函数getSum-x-返回前x个数之和A-i-……-A-x" class="headerlink" title="设计函数getSum(x) ,返回前x个数之和A[i]+……+A[x]"></a>设计函数getSum(x) ,返回前x个数之和A[i]+……+A[x]</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;<span class="number">0</span>;i-=lowbit(i))&#123;</span><br><span class="line">    sum+=c[i];</span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="设计函数update-x-y-实现将第x个数加上一个数v的功能，即A-x-v"><a href="#设计函数update-x-y-实现将第x个数加上一个数v的功能，即A-x-v" class="headerlink" title="设计函数update(x,y),实现将第x个数加上一个数v的功能，即A[x]+=v."></a>设计函数update(x,y),实现将第x个数加上一个数v的功能，即A[x]+=v.</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updata</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=N;i+=lowbit(i))&#123;</span><br><span class="line">        c[i]+=v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="树状数组经典应用"><a href="#树状数组经典应用" class="headerlink" title="树状数组经典应用"></a>树状数组经典应用</h1><p>统计序列中在元素左边比该元素小的元素个数<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(i) ((i)&amp;(-i))</span></span><br><span class="line"><span class="keyword">int</span> c[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;maxn;i+=lowbit(i))&#123;</span><br><span class="line">        c[i]+=v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;<span class="number">0</span>;i-=lowbit(i))&#123;</span><br><span class="line">        sum+=c[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span>(c));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        update(x,<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,getSum(x<span class="number">-1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">离散化代码</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(i) ((i)&amp;(-i))</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">int</span> pos;</span><br><span class="line">&#125;temp[maxn];</span><br><span class="line"><span class="keyword">int</span> A[maxn];</span><br><span class="line"><span class="keyword">int</span> c[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;maxn;i+=lowbit(i))&#123;</span><br><span class="line">        c[i]+=v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;<span class="number">0</span>;i-=lowbit(i))&#123;</span><br><span class="line">        sum+=c[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node a,Node b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.val&lt;b.val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span>(c));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp[i].val);</span><br><span class="line">        temp[i].pos=i;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(temp,temp+n,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>||temp[i].val!=temp[i<span class="number">-1</span>].val)&#123;</span><br><span class="line">            A[temp[i].pos] = i+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            A[temp[i].pos] = A[temp[i<span class="number">-1</span>].pos];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        update(A[i],<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,getSum(A[i]<span class="number">-1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;lowbit运算&quot;&gt;&lt;a href=&quot;#lowbit运算&quot; class=&quot;headerlink&quot; title=&quot;lowbit运算&quot;&gt;&lt;/a&gt;lowbit运算&lt;/h1&gt;&lt;p&gt;lowbit运算属于二进制的一个经典应用：&lt;br&gt;lowbit(x) = x &amp;amp; (
-      
-    
-    </summary>
-    
-      <category term="算法和数据结构" scheme="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>L1-016 查验身份证（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-016-%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-016-查验身份证（15-分）/</id>
-    <published>2018-05-20T05:57:30.000Z</published>
-    <updated>2018-05-20T05:58:08.328Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-016 查验身份证（15 分）<br>一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：</p><p>首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值：</p><p>Z：0 1 2 3 4 5 6 7 8 9 10\ M：1 0 X 9 8 7 6 5 4 3 2</p><p>现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。</p><p>输入格式：</p><p>输入第一行给出正整数N（&lt;= 100）是输入的身份证号码的个数。随后N行，每行给出1个18位身份证号码。</p><p>输出格式：</p><p>按照输入的顺序每行输出1个有问题的身份证号码。这里并不检验前17位是否合理，只检查前17位是否全为数字且最后1位校验码计算准确。如果所有号码都正常，则输出“All passed”。</p><p>输入样例1：</p><p>4<br>320124198808240056<br>12010X198901011234<br>110108196711301866<br>37070419881216001X<br>输出样例1：</p><p>12010X198901011234<br>110108196711301866<br>37070419881216001X<br>输入样例2：</p><p>2<br>320124198808240056<br>110108196711301862<br>输出样例2：</p><p>All passed</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">     <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        <span class="keyword">if</span>(check(s))</span><br><span class="line">            flag++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"All passed"</span>;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>,z;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">18</span>];</span><br><span class="line">    <span class="keyword">int</span> b[<span class="number">17</span>]=&#123;<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">17</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">isdigit</span>(s[i]))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i]=s[i]-<span class="string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">17</span>]==<span class="string">'X'</span>)</span><br><span class="line">        a[<span class="number">17</span>]=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        a[<span class="number">17</span>]=s[<span class="number">17</span>]-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">17</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=a[i]*b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    z=sum%<span class="number">11</span>;</span><br><span class="line">   <span class="keyword">int</span> c[<span class="number">11</span>]=&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>&#125; ;</span><br><span class="line">   <span class="keyword">if</span>(c[z]!=a[<span class="number">17</span>])</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">17</span>;i++)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>(a[<span class="number">17</span>]!=<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[<span class="number">17</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">       <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"X"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-016 查验身份证（15 分）&lt;br&gt;一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：&lt;/p&gt;
-&lt;p&gt;首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-015 跟奥巴马一起画方块（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-015-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%94%BB%E6%96%B9%E5%9D%97%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-015-跟奥巴马一起画方块（15-分）/</id>
-    <published>2018-05-20T05:55:07.000Z</published>
-    <updated>2018-05-20T05:55:42.265Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-015 跟奥巴马一起画方块（15 分）<br>美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！</p><p>输入格式：</p><p>输入在一行中给出正方形边长N（3&lt;=N&lt;=21）和组成正方形边的某种字符C，间隔一个空格。</p><p>输出格式：</p><p>输出由给定字符C画出的正方形。但是注意到行间距比列间距大，所以为了让结果看上去更像正方形，我们输出的行数实际上是列数的50%（四舍五入取整）。</p><p>输入样例：</p><p>10 a<br>输出样例：</p><p>aaaaaaaaaa<br>aaaaaaaaaa<br>aaaaaaaaaa<br>aaaaaaaaaa<br>aaaaaaaaaa<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> n,x;</span><br><span class="line">   <span class="keyword">char</span> a;</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">"%d %c"</span>,&amp;n,&amp;a);</span><br><span class="line">   <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">    x=n/<span class="number">2</span>;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">    x=n/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;x;i++)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">"%c"</span>,a);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-015 跟奥巴马一起画方块（15 分）&lt;br&gt;美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-014 简单题（5 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-014-%E7%AE%80%E5%8D%95%E9%A2%98%EF%BC%885-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-014-简单题（5-分）/</id>
-    <published>2018-05-20T05:52:51.000Z</published>
-    <updated>2018-05-20T05:53:31.429Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-014 简单题（5 分）<br>这次真的没骗你 —— 这道超级简单的题目没有任何输入。</p><p>你只需要在一行中输出事实：“This is a simple problem.”就可以了。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"This is a simple problem."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-014 简单题（5 分）&lt;br&gt;这次真的没骗你 —— 这道超级简单的题目没有任何输入。&lt;/p&gt;
-&lt;p&gt;你只需要在一行中输出事实：“This is a simple problem.”就可以了。&lt;/p&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;ta
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-013 计算阶乘和（10 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-013-%E8%AE%A1%E7%AE%97%E9%98%B6%E4%B9%98%E5%92%8C%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-013-计算阶乘和（10-分）/</id>
-    <published>2018-05-20T05:50:46.000Z</published>
-    <updated>2018-05-20T05:51:39.675Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-013 计算阶乘和（10 分）<br>对于给定的正整数N，需要你计算 S = 1! + 2! + 3! + … + N!。</p><p>输入格式：</p><p>输入在一行中给出一个不超过10的正整数N。</p><p>输出格式：</p><p>在一行中输出S的值。</p><p>输入样例：</p><p>3<br>输出样例：</p><p>9</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jie</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,t;</span><br><span class="line">    t=<span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    t*=i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i,n,sum;</span><br><span class="line">   sum=<span class="number">0</span>;</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">   &#123;</span><br><span class="line">       sum+=jie(i);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"%d"</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-013 计算阶乘和（10 分）&lt;br&gt;对于给定的正整数N，需要你计算 S = 1! + 2! + 3! + … + N!。&lt;/p&gt;
-&lt;p&gt;输入格式：&lt;/p&gt;
-&lt;p&gt;输入在一行中给出一个不超过10的正整数N。&lt;/p&gt;
-&lt;p&gt;输出格式：&lt;/p&gt;
-&lt;p&gt;在一行中输出S的值。
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode191. 位1的个数</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>http://huangyiblog.com/题解集/LeetCode191-位1的个数/</id>
-    <published>2018-05-20T05:46:58.000Z</published>
-    <updated>2018-05-20T05:47:33.802Z</updated>
-    
-    <content type="html"><![CDATA[<p>编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。</p><p>示例 :</p><p>输入: 11<br>输出: 3<br>解释: 整数 11 的二进制表示为 00000000000000000000000000001011</p><p>示例 2:</p><p>输入: 128<br>输出: 1<br>解释: 整数 128 的二进制表示为 00000000000000000000000010000000<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            ans +=n%<span class="number">2</span>;</span><br><span class="line">            n/=<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。&lt;/p&gt;
-&lt;p&gt;示例 :&lt;/p&gt;
-&lt;p&gt;输入: 11&lt;br&gt;输出: 3&lt;br&gt;解释: 整数 11 的二进制表示为 0000000000000000000000000000
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode169. 求众数</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode169-%E6%B1%82%E4%BC%97%E6%95%B0/"/>
-    <id>http://huangyiblog.com/题解集/LeetCode169-求众数/</id>
-    <published>2018-05-20T05:44:44.000Z</published>
-    <updated>2018-05-20T05:45:21.724Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。</p><p>你可以假设数组是非空的，并且给定的数组总是存在众数。</p><p>示例 1:</p><p>输入: [3,2,3]<br>输出: 3<br>示例 2:</p><p>输入: [2,2,1,1,1,2,2]<br>输出: 2<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">return</span> nums[n/<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。&lt;/p&gt;
-&lt;p&gt;你可以假设数组是非空的，并且给定的数组总是存在众数。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;p&gt;输入: [3,2,3]&lt;br&gt;输出: 3&lt;br&gt;示例 2:&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode121. 买卖股票的最佳时机</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode121-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"/>
-    <id>http://huangyiblog.com/题解集/LeetCode121-买卖股票的最佳时机/</id>
-    <published>2018-05-20T05:42:45.000Z</published>
-    <updated>2018-05-20T05:43:32.715Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p><p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p><p>注意你不能在买入股票前卖出股票。</p><p>示例 1:</p><p>输入: [7,1,5,3,6,4]<br>输出: 5<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。<br>     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。<br>示例 2:</p><p>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</p><p><strong>分析：</strong><br>考察贪心思想，分别找到价格最高最低和最高的一天，并且保证最低的一天在最高的一天之前<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()&lt;<span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minm = prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;prices.size();i++)&#123;</span><br><span class="line">            profit = max(profit,prices[i]-minm);</span><br><span class="line">            minm = min(minm,prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。&lt;/p&gt;
-&lt;p&gt;如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。&lt;/p&gt;
-&lt;p&gt;注意你不能在买入股票前卖出股票。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;p&gt;输入: [
       
     
     </summary>

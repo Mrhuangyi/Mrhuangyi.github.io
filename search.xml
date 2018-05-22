@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-029 是不是太胖了（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-029-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E8%83%96%E4%BA%86%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。已知市斤是公斤的两倍。现给定某人身高，请你计算其标准体重应该是多少？（顺便也悄悄给自己算一下吧……） 输入格式： 输入第一行给出一个正整数H（100 &lt; H &lt;= 300），为某人身高。 输出格式： 在一行中输出对应的标准体重，单位为市斤，保留小数点后1位。 输入样例： 169输出样例： 124.2 123456789#include&lt;stdio.h&gt;int main()&#123; double h,w; scanf("%lf",&amp;h); w=(h-100)*1.8; printf("%.1f",w); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-028 判断素数（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-028-%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-028 判断素数（10 分）本题的目标很简单，就是判断一个给定的正整数是否素数。 输入格式： 输入在第一行给出一个正整数N（&lt;=10），随后N行，每行给出一个小于2^31^的需要判断的正整数。 输出格式： 对每个需要判断的正整数，如果它是素数，则在一行中输出“Yes”，否则输出“No”。 输入样例： 211111输出样例： YesNo 123456789101112131415161718192021222324252627#include&lt;stdio.h&gt;#include&lt;math.h&gt;int prime(int n)&#123; int i,t; t=sqrt(n); if(n==1) return 0; else for(i=2;i&lt;t;i++) if(n%i==0) return 0; return 1;&#125;int main()&#123; int n,t; scanf("%d",&amp;n); while(n--)&#123; scanf("%d",&amp;t); if(prime(t)==1) printf("Yes\n"); else printf("No\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-027 出租（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-027-%E5%87%BA%E7%A7%9F%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-027 出租（20 分）下面是新浪微博上曾经很火的一张图： 一时间网上一片求救声，急问这个怎么破。其实这段代码很简单，index数组就是arr数组的下标，index[0]=2 对应 arr[2]=1，index[1]=0 对应 arr[0]=8，index[2]=3 对应 arr[3]=0，以此类推…… 很容易得到电话号码是18013820100。 本题要求你编写一个程序，为任何一个电话号码生成这段代码 —— 事实上，只要生成最前面两行就可以了，后面内容是不变的。 输入格式： 输入在一行中给出一个由11位数字组成的手机号码。 输出格式： 为输入的号码生成代码的前两行，其中arr中的数字必须按递减顺序给出。 输入样例： 18013820100输出样例： int[] arr = new int[]{8,3,2,1,0};int[] index = new int[]{3,0,4,3,1,0,2,4,3,4,4}; 123456789101112131415161718192021222324252627282930313233#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; char str[12]; int arr[10]=&#123;0&#125;,index[10],num; scanf("%s",str); for(int i=0;i&lt;11;i++)&#123; arr[str[i]-'0']++; &#125; printf("int[] arr = new int[]&#123;"); num = 0; int a[10]; for(int i=9;i&gt;=0;i--) if(arr[i]) a[num]=i,num++; for(int i=0;i&lt;num;i++)&#123; printf("%d",a[i]); if(i&lt;num-1) printf(","); &#125; printf("&#125;;\n"); printf("int[] index = new int[]&#123;"); for(int i=0;i&lt;11;i++)&#123; for(int j=0;j&lt;num;j++)&#123; if((str[i]-'0')==a[j])&#123; printf("%d",j); break; &#125; &#125; if(i&lt;10) printf(","); &#125; printf("&#125;;\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-026 I Love GPLT（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-026-I-Love-GPLT%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-026 I Love GPLT（5 分）这道超级简单的题目没有任何输入。 你只需要把这句很重要的话 —— “I Love GPLT”——竖着输出就可以了。 所谓“竖着输出”，是指每个字符占一行（包括空格），即每行只能有1个字符和回车。 12345678910111213#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; int n,i; char a[]=&#123;"I Love GPLT"&#125;; n=strlen(a); for(i=0;i&lt;n;i++) &#123; printf("%c\n",a[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-025 正整数A+B（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-025-%E6%AD%A3%E6%95%B4%E6%95%B0A-B%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-025 正整数A+B（15 分）本题的目标很简单，就是求两个正整数A和B的和，其中A和B都在区间[1,1000]。稍微有点麻烦的是，输入并不保证是两个正整数。 输入格式： 输入在一行给出A和B，其间以空格分开。问题是A和B不一定是满足要求的正整数，有时候可能是超出范围的数字、负数、带小数点的实数、甚至是一堆乱码。 注意：我们把输入中出现的第1个空格认为是A和B的分隔。题目保证至少存在一个空格，并且B不是一个空字符串。 输出格式： 如果输入的确是两个正整数，则按格式“A + B = 和”输出。如果某个输入不合要求，则在相应位置输出“?”，显然此时和也是“?”。 输入样例1： 123 456输出样例1： 123 + 456 = 579输入样例2： 18输出样例2： ? + 18 = ?输入样例3： -100 blabla bla…33输出样例3： ? + ? = ? 12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int check(const char *str)&#123; int sum=0; for(int i=0;str[i]!='\0';i++) &#123; if(str[i]&gt;='0'&amp;&amp;str[i]&lt;='9') sum=sum*10+str[i]-'0'; else return -1; &#125; if(sum&gt;=1&amp;&amp;sum&lt;=1000) return sum; else return -1;&#125;int main()&#123; char a[10000],b[10000]; int n,m; scanf("%s ",&amp;a); gets(b); n=check(a); m=check(b); if(n==-1) printf("? + "); else printf("%d + ",n); if(m==-1) printf("? = "); else printf("%d = ",m); if(n==-1||m==-1) printf("?\n"); else printf("%d\n",n+m); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-024 后天（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-024-%E5%90%8E%E5%A4%A9%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-024 后天（5 分）如果今天是星期三，后天就是星期五；如果今天是星期六，后天就是星期一。我们用数字1到7对应星期一到星期日。给定某一天，请你输出那天的“后天”是星期几。 输入格式： 输入第一行给出一个正整数D（1 &lt;= D &lt;=7），代表星期里的某一天。 输出格式： 在一行中输出D天的后天是星期几。 输入样例： 3输出样例： 5 123456789101112131415#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; int n; int a[7]=&#123;1,2,3,4,5,6,7&#125;; scanf("%d",&amp;n); if(n&gt;=1&amp;&amp;n&lt;=5) printf("%d",a[n+1]); else if(n==6) printf("1"); else printf("2"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-023 输出GPLT（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-023-%E8%BE%93%E5%87%BAGPLT%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-023 输出GPLT（20 分）给定一个长度不超过10000的、仅由英文字母构成的字符串。请将字符重新调整顺序，按“GPLTGPLT….”这样的顺序输出，并忽略其它字符。当然，四种字符（不区分大小写）的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍按GPLT的顺序打印，直到所有字符都被输出。 输入格式： 输入在一行中给出一个长度不超过10000的、仅由英文字母构成的非空字符串。 输出格式： 在一行中按题目要求输出排序后的字符串。题目保证输出非空。 输入样例： pcTclnGloRgLrtLhgljkLhGFauPewSKgt输出样例： GPLTGPLTGLTGLGLL 题目要求按gplt的顺序输出原字符串中所含有的对应字符个数，因为不区分大小写，所以可以将原字符串都转为大写字母，然后分别计数之后用一个循环遍历输出1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;iostream&gt;#include&lt;set&gt;#include&lt;cstring&gt;using namespace std;int main()&#123; string s; cin&gt;&gt;s; int g,p,l,t; g=p=l=t=0; for(int i=0;i&lt;s.size();i++) &#123; s[i]=toupper(s[i]); if(s[i]=='G') g++; if(s[i]=='P') p++; if(s[i]=='L') l++; if(s[i]=='T') t++; &#125; while(g||p||l||t) &#123; if(g) &#123; cout&lt;&lt;"G"; g--; &#125; if(p) &#123; cout&lt;&lt;"P"; p--; &#125; if(l) &#123; cout&lt;&lt;"L"; l--; &#125; if(t) &#123; cout&lt;&lt;"T"; t--; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[14. 最长公共前缀]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F14-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80%2F</url>
+    <content type="text"><![CDATA[编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 “”。 示例 1: 输入: [“flower”,”flow”,”flight”]输出: “fl”示例 2: 输入: [“dog”,”racecar”,”car”]输出: “”解释: 输入不存在公共前缀。说明: 所有输入只包含小写字母 a-z 。 可以采用纵向扫描或横向扫描纵向扫描，就从位置0开始，对每一个位置比较所有的字符串，直到遇到不匹配的字符为止。123456789101112class Solution &#123;public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) &#123; if(strs.empty()) return ""; for(int i=0;i&lt;strs[0].size();++i)&#123; for(int j=1;j&lt;strs.size();++j)&#123; if(strs[j][i]!=strs[0][i]) return strs[0].substr(0,i); &#125; &#125; return strs[0]; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[202. 快乐数]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F202-%E5%BF%AB%E4%B9%90%E6%95%B0%2F</url>
     <content type="text"><![CDATA[编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例: 输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1 我们可以建立一个集合，将循环中计算得到的数组存入集合，如果算得结果为1，则为快乐数，相反如果有某个数重复出现，那么必然不是快乐数 不是快乐数的数称为不快乐数（unhappy number），所有不快乐数的数位平方和计算，最后都会进入 4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4 的循环中。维基百科中有关于快乐数比较详细的介绍快乐数12345678910111213141516171819202122class Solution &#123;public: bool isHappy(int n) &#123; set&lt;int&gt; st; while(1)&#123; n = numSquareSum(n); if(n==1) return true; if(st.find(n)!=st.end()) return false; st.insert(n); &#125; &#125; int numSquareSum(int n)&#123; int squareSum = 0; while(n)&#123; squareSum +=(n%10)*(n%10); n /=10; &#125; return squareSum; &#125;&#125;;]]></content>
@@ -1081,9 +1169,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -1092,9 +1180,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
