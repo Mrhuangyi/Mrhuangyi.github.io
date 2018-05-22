@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-05-21T07:35:06.097Z</updated>
+  <updated>2018-05-22T07:34:42.987Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202. 快乐数</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/202-%E5%BF%AB%E4%B9%90%E6%95%B0/"/>
+    <id>http://huangyiblog.com/题解集/202-快乐数/</id>
+    <published>2018-05-22T07:33:24.000Z</published>
+    <updated>2018-05-22T07:34:42.987Z</updated>
+    
+    <content type="html"><![CDATA[<p>编写一个算法来判断一个数是不是“快乐数”。</p><p>一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。</p><p>示例: </p><p>输入: 19<br>输出: true<br>解释:<br>12 + 92 = 82<br>82 + 22 = 68<br>62 + 82 = 100<br>12 + 02 + 02 = 1</p><p>我们可以建立一个集合，将循环中计算得到的数组存入集合，如果算得结果为1，则为快乐数，相反如果有某个数重复出现，那么必然不是快乐数</p><p><strong>不是快乐数的数称为不快乐数（unhappy number），所有不快乐数的数位平方和计算，最后都会进入 4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4 的循环中。</strong><br>维基百科中有关于快乐数比较详细的介绍<br><a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank" rel="noopener">快乐数</a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            n = numSquareSum(n);</span><br><span class="line">            <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(st.find(n)!=st.end())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            st.insert(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSquareSum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> squareSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            squareSum +=(n%<span class="number">10</span>)*(n%<span class="number">10</span>);</span><br><span class="line">            n /=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> squareSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;编写一个算法来判断一个数是不是“快乐数”。&lt;/p&gt;
+&lt;p&gt;一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。&lt;/p&gt;
+&lt;p&gt;示例:
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>203. 删除链表中的节点</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/203-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/"/>
+    <id>http://huangyiblog.com/题解集/203-删除链表中的节点/</id>
+    <published>2018-05-22T07:04:58.000Z</published>
+    <updated>2018-05-22T07:05:48.221Z</updated>
+    
+    <content type="html"><![CDATA[<p>删除链表中等于给定值 val 的所有节点。</p><p>示例:</p><p>输入: 1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, val = 6<br>输出: 1-&gt;2-&gt;3-&gt;4-&gt;5<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">NULL</span>) <span class="keyword">return</span> head;<span class="comment">//检查链表是否为空</span></span><br><span class="line">        ListNode *p = head,*tmp = head,*dum = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">        dum-&gt;next = head;</span><br><span class="line">        p = dum;</span><br><span class="line">        <span class="keyword">while</span>(p-&gt;next!=<span class="literal">NULL</span>)&#123;<span class="comment">//遍历整个链表</span></span><br><span class="line">            <span class="keyword">if</span>(p-&gt;next-&gt;val==val)&#123;<span class="comment">//删除与给定值相等的结点</span></span><br><span class="line">                tmp = p-&gt;next;</span><br><span class="line">                p-&gt;next = tmp-&gt;next;</span><br><span class="line">                <span class="keyword">delete</span> tmp;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                p = p-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        head = dum-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> dum;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;删除链表中等于给定值 val 的所有节点。&lt;/p&gt;
+&lt;p&gt;示例:&lt;/p&gt;
+&lt;p&gt;输入: 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, val = 6&lt;br&gt;输出: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5&lt;br&gt;&lt;figure cl
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>L1-022 奇偶分家（10 分）</title>
@@ -493,63 +547,6 @@
 &lt;p&gt;注意你不能在买入股票前卖出股票。&lt;/p&gt;
 &lt;p&gt;示例 1:&lt;/p&gt;
 &lt;p&gt;输入: [
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode104. 二叉树的最大深度</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/"/>
-    <id>http://huangyiblog.com/题解集/LeetCode104-二叉树的最大深度/</id>
-    <published>2018-05-20T05:40:30.000Z</published>
-    <updated>2018-05-20T05:41:17.552Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个二叉树，找出其最大深度。</p><p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p><p>说明: 叶子节点是指没有子节点的节点。</p><p>示例：<br>给定二叉树 [3,9,20,null,null,15,7]，</p><pre><code>3</code></pre><p>   / \<br>  9  20<br>    /  \<br>   15   7<br>返回它的最大深度 3 。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left),maxDepth(root-&gt;right))+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个二叉树，找出其最大深度。&lt;/p&gt;
-&lt;p&gt;二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。&lt;/p&gt;
-&lt;p&gt;说明: 叶子节点是指没有子节点的节点。&lt;/p&gt;
-&lt;p&gt;示例：&lt;br&gt;给定二叉树 [3,9,20,null,null,15,7]，&lt;/p&gt;
-&lt;pre&gt;&lt;co
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode100. 相同的树</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/LeetCode100-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91/"/>
-    <id>http://huangyiblog.com/题解集/LeetCode100-相同的树/</id>
-    <published>2018-05-20T05:38:23.000Z</published>
-    <updated>2018-05-20T05:39:06.605Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定两个二叉树，编写一个函数来检验它们是否相同。</p><p>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p><p>示例 1:</p><p>输入:       1         1<br>          / \       / \<br>         2   3     2   3</p><pre><code>[1,2,3],   [1,2,3]</code></pre><p>输出: true<br>示例 2:</p><p>输入:      1          1<br>          /           \<br>         2             2</p><pre><code>[1,2],     [1,null,2]</code></pre><p>输出: false<br>示例 3:</p><p>输入:       1         1<br>          / \       / \<br>         2   1     1   2</p><pre><code>[1,2,1],   [1,1,2]</code></pre><p>输出: false<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> 递归写法：</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!p&amp;&amp;!q) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//终止</span></span><br><span class="line">        <span class="keyword">if</span>(!p||!q) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//剪枝</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;val==q-&gt;val&amp;&amp;(isSameTree(p-&gt;left,q-&gt;left))&amp;&amp;isSameTree(p-&gt;right,q-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">迭代写法</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">        s.push(p);</span><br><span class="line">        s.push(q);</span><br><span class="line">        <span class="keyword">while</span>(!s.empty())&#123;</span><br><span class="line">            p = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            q = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="keyword">if</span>(!p&amp;&amp;!q) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(!p||!q) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;val!=q-&gt;val) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            s.push(p-&gt;left);</span><br><span class="line">            s.push(q-&gt;left);</span><br><span class="line">            s.push(p-&gt;right);</span><br><span class="line">            s.push(q-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定两个二叉树，编写一个函数来检验它们是否相同。&lt;/p&gt;
-&lt;p&gt;如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;p&gt;输入:       1         1&lt;br&gt;          / \       / \&lt;br
       
     
     </summary>
