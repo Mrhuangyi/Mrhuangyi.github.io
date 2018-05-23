@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[189. 旋转数组]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F189-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。 示例 1: 输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]示例 2: 输入: [-1,-100,3,99] 和 k = 2输出: [3,99,-1,-100]解释:向右旋转 1 步: [99,-1,-100,3]向右旋转 2 步: [3,99,-1,-100]说明: 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。要求使用空间复杂度为 O(1) 的原地算法。 方法一：最简单的想法，进行k次循环，每次循环转移所有元素时间复杂度O(n*k)空间复杂度O(1)1234567891011121314class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; int temp,previous; for(int i=0;i&lt;k;i++)&#123; previous = nums[nums.size()-1]; for(int j=0;j&lt;nums.size();j++)&#123; temp = nums[j]; nums[j] = previous; previous = temp; &#125; &#125; &#125;&#125;; 方法二：用一个额外的数组Array[Accepted]另开一个数组，将每一个元素按正确的位置赋值给新数组，最后将新数组复制到原数组。时间复杂度为O(n)空间复杂度为O(n)123456789101112class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; vector&lt;int&gt; a(nums.size()); for(int i=0;i&lt;nums.size();i++)&#123; a[(i+k)%nums.size()] = nums[i]; &#125; for(int i=0;i&lt;nums.size();i++)&#123; nums[i] = a[i]; &#125; &#125;&#125;; 方法三：Using Cyclic Replacements [Accepted]我们可以直接将阵列的每个数字放置在所需的正确位置。但如果我们这样做，我们将破坏原始元素。因此，我们需要将被替换的数字存储在temptemp变量中。然后，我们可以将替换的数字（temptemp）放在正确的位置Look at the following example to clarify the process: nums: [1, 2, 3, 4, 5, 6] k: 2时间复杂度为O(n)空间复杂度为O(1) 12345678910111213141516171819class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; k = k%nums.size(); int count = 0; for(int start=0;count&lt;nums.size();start++)&#123; int current = start; int prev = nums[start]; do&#123; int next = (current+k)%nums.size(); int temp = nums[next]; nums[next] = prev; prev = temp; current = next; count++; &#125;while(start!=current); &#125; &#125;&#125;; 方法四：用reverse函数时间复杂度为O(n)空间复杂度为O(1)例如：Original List : 1 2 3 4 5 6 7After reversing all numbers : 7 6 5 4 3 2 1After reversing first k numbers : 5 6 7 4 3 2 1After revering last n-k numbers : 5 6 7 1 2 3 4 –&gt; Result12345678910111213141516171819class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; k = k%nums.size(); reverse(nums,0,nums.size()-1); reverse(nums,0,k-1); reverse(nums,k,nums.size()-1); &#125; public: void reverse(vector&lt;int&gt;&amp; nums,int start,int end)&#123; while(start&lt;end)&#123; int temp = nums[start]; nums[start] = nums[end]; nums[end] = temp; start++; end--; &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[66. 加一]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F66-%E5%8A%A0%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[给定一个非负整数组成的非空数组，在该数的基础上加一，返回一个新的数组。 最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。 你可以假设除了整数 0 之外，这个整数不会以零开头。 示例 1: 输入: [1,2,3]输出: [1,2,4]解释: 输入数组表示数字 123。示例 2: 输入: [4,3,2,1]输出: [4,3,2,2]解释: 输入数组表示数字 4321。1234567891011121314151617class Solution &#123;public: vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) &#123; vector&lt;int&gt; res(digits.size(),0); int sum = 0; int one = 1; for(int i=digits.size()-1;i&gt;=0;i--)&#123; sum = one+digits[i]; one = sum/10; res[i] = sum%10; &#125; if(one&gt;0)&#123; res.insert(res.begin(),one); &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-029 是不是太胖了（5 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-029-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E8%83%96%E4%BA%86%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。已知市斤是公斤的两倍。现给定某人身高，请你计算其标准体重应该是多少？（顺便也悄悄给自己算一下吧……） 输入格式： 输入第一行给出一个正整数H（100 &lt; H &lt;= 300），为某人身高。 输出格式： 在一行中输出对应的标准体重，单位为市斤，保留小数点后1位。 输入样例： 169输出样例： 124.2 123456789#include&lt;stdio.h&gt;int main()&#123; double h,w; scanf("%lf",&amp;h); w=(h-100)*1.8; printf("%.1f",w); return 0;&#125;]]></content>
@@ -1169,9 +1191,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -1180,9 +1202,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
