@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-05-23T05:39:26.158Z</updated>
+  <updated>2018-05-23T07:17:27.112Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,215 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>L1-037 A除以B（10 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-037-A%E9%99%A4%E4%BB%A5B%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-037-A除以B（10-分）/</id>
+    <published>2018-05-23T07:16:54.000Z</published>
+    <updated>2018-05-23T07:17:27.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-037 A除以B（10 分）<br>真的是简单题哈 —— 给定两个绝对值不超过100的整数A和B，要求你按照“A/B=商”的格式输出结果。</p><p>输入格式：</p><p>输入在第一行给出两个整数A和B（-100 &lt;= A, B, &lt;= 100），数字间以空格分隔。</p><p>输出格式：</p><p>在一行中输出结果：如果分母是正数，则输出“A/B=商”；如果分母是负数，则要用括号把分母括起来输出；如果分母为零，则输出的商应为“Error”。输出的商应保留小数点后2位。</p><p>输入样例1：</p><p>-1 2<br>输出样例1：</p><p>-1/2=-0.50<br>输入样例2：</p><p>1 -3<br>输出样例2：</p><p>1/(-3)=-0.33<br>输入样例3：</p><p>5 0<br>输出样例3：</p><p>5/0=Error</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    x=<span class="number">1.0</span>*a/b;</span><br><span class="line">    <span class="keyword">if</span>(b&gt;<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d/%d=%.2f"</span>,a,b,x);</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d/%d=Error"</span>,a,b);</span><br><span class="line">    <span class="keyword">if</span>(b&lt;<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d/(%d)=%.2f"</span>,a,b,x);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-037 A除以B（10 分）&lt;br&gt;真的是简单题哈 —— 给定两个绝对值不超过100的整数A和B，要求你按照“A/B=商”的格式输出结果。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入在第一行给出两个整数A和B（-100 &amp;lt;= A, B, &amp;lt;= 100），
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-036 A乘以B（5 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-036-A%E4%B9%98%E4%BB%A5B%EF%BC%885-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-036-A乘以B（5-分）/</id>
+    <published>2018-05-23T07:15:11.000Z</published>
+    <updated>2018-05-23T07:24:17.235Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-036 A乘以B（5 分）<br>看我没骗你吧 —— 这是一道你可以在10秒内完成的题：给定两个绝对值不超过100的整数A和B，输出A乘以B的值。</p><p>输入格式：</p><p>输入在第一行给出两个整数A和B（-100 &lt;= A, B, &lt;= 100），数字间以空格分隔。</p><p>输出格式：</p><p>在一行中输出A乘以B的值。</p><p>输入样例：</p><p>-8 13<br>输出样例：</p><p>-104</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a*b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-036 A乘以B（5 分）&lt;br&gt;看我没骗你吧 —— 这是一道你可以在10秒内完成的题：给定两个绝对值不超过100的整数A和B，输出A乘以B的值。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p&gt;输入在第一行给出两个整数A和B（-100 &amp;lt;= A, B, &amp;lt;= 1
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-035 情人节（15 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-035-%E6%83%85%E4%BA%BA%E8%8A%82%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-035-情人节（15-分）/</id>
+    <published>2018-05-23T07:13:29.000Z</published>
+    <updated>2018-05-23T07:13:57.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-035 情人节（15 分）</p><p>以上是朋友圈中一奇葩贴：“2月14情人节了，我决定造福大家。第2个赞和第14个赞的，我介绍你俩认识…………咱三吃饭…你俩请…”。现给出此贴下点赞的朋友名单，请你找出那两位要请客的倒霉蛋。</p><p>输入格式：</p><p>输入按照点赞的先后顺序给出不知道多少个点赞的人名，每个人名占一行，为不超过10个英文字母的非空单词，以回车结束。一个英文句点“.”标志输入的结束，这个符号不算在点赞名单里。</p><p>输出格式：</p><p>根据点赞情况在一行中输出结论：若存在第2个人A和第14个人B，则输出“A and B are inviting you to dinner…”；若只有A没有B，则输出“A is the only one for you…”；若连A都没有，则输出“Momo… No one is for you …”。</p><p>输入样例1：</p><p>GaoXZh<br>Magi<br>Einst<br>Quark<br>LaoLao<br>FatMouse<br>ZhaShen<br>fantacy<br>latesum<br>SenSen<br>QuanQuan<br>whatever<br>whenever<br>Potaty<br>hahaha<br>.<br>输出样例1：</p><p>Magi and Potaty are inviting you to dinner…<br>输入样例2：</p><p>LaoLao<br>FatMouse<br>whoever<br>.<br>输出样例2：</p><p>FatMouse is the only one for you…<br>输入样例3：</p><p>LaoLao<br>.<br>输出样例3：</p><p>Momo… No one is for you …</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s,s1,s2;</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'.'</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span>(count==<span class="number">2</span>)</span><br><span class="line">            s1=s;</span><br><span class="line">        <span class="keyword">if</span>(count==<span class="number">14</span>)</span><br><span class="line">            s2=s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count&gt;=<span class="number">14</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s1&lt;&lt;<span class="string">" and "</span>&lt;&lt;s2&lt;&lt;<span class="string">" are inviting you to dinner..."</span>;</span><br><span class="line">     <span class="keyword">if</span>(count&gt;=<span class="number">2</span>&amp;&amp;count&lt;<span class="number">14</span>)</span><br><span class="line">      <span class="built_in">cout</span>&lt;&lt;s1&lt;&lt;<span class="string">" is the only one for you..."</span>;</span><br><span class="line">     <span class="keyword">if</span>(count&lt;<span class="number">2</span>)</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">"Momo... No one is for you ..."</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-035 情人节（15 分）&lt;/p&gt;
+&lt;p&gt;以上是朋友圈中一奇葩贴：“2月14情人节了，我决定造福大家。第2个赞和第14个赞的，我介绍你俩认识…………咱三吃饭…你俩请…”。现给出此贴下点赞的朋友名单，请你找出那两位要请客的倒霉蛋。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-034 点赞（20 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-034-%E7%82%B9%E8%B5%9E%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-034-点赞（20-分）/</id>
+    <published>2018-05-23T07:10:45.000Z</published>
+    <updated>2018-05-23T07:24:26.750Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-034 点赞（20 分）<br>微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。</p><p>输入格式：</p><p>输入在第一行给出一个正整数N（&lt;=1000），是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为“K F~1~ … F~K~”，其中 1&lt;=K&lt;=10，F~i~（i=1, …, K）是特性标签的编号，我们将所有特性标签从1到1000编号。数字间以空格分隔。</p><p>输出格式：</p><p>统计所有被点赞的博文中最常出现的那个特性标签，在一行中输出它的编号和出现次数，数字间隔1个空格。如果有并列，则输出编号最大的那个。</p><p>输入样例：</p><p>4<br>3 889 233 2<br>5 100 3 233 2 73<br>4 3 73 889 2<br>2 233 123<br>输出样例：</p><p>233 3</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k,x,a[<span class="number">1000</span>],b[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">    <span class="built_in">memset</span>(b,<span class="number">0</span>,<span class="keyword">sizeof</span>(b));</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">        <span class="keyword">while</span>(k--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            a[x]++;</span><br><span class="line">            b[x]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+<span class="number">1000</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1000</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b[i]==a[<span class="number">0</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">" "</span>&lt;&lt;b[i];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-034 点赞（20 分）&lt;br&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-033 出生年（15 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-033-%E5%87%BA%E7%94%9F%E5%B9%B4%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-033-出生年（15-分）/</id>
+    <published>2018-05-23T07:08:24.000Z</published>
+    <updated>2018-05-23T07:08:51.307Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-033 出生年（15 分）</p><p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于y年，直到x岁才遇到n个数字都不相同的年份”这句话。</p><p>输入格式：</p><p>输入在一行中给出出生年份y和目标年份中不同数字的个数n，其中y在[1, 3000]之间，n可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p><p>输出格式：</p><p>根据输入，输出x和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“n个数字都不相同”是指不同的数字正好是n个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p><p>输入样例1：</p><p>1988 4<br>输出样例1：</p><p>25 2013<br>输入样例2：</p><p>1 2<br>输出样例2：</p><p>0 0001</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findy</span><span class="params">(<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="keyword">int</span> count=<span class="number">0</span>,t,i=<span class="number">0</span>;</span><br><span class="line"> <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line"><span class="keyword">while</span>(y!=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">t=y%<span class="number">10</span>;</span><br><span class="line">a.insert(t);</span><br><span class="line">y/=<span class="number">10</span>;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">for</span>(it=a.begin();it!=a.end();it++)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(i&lt;=<span class="number">3</span>&amp;&amp;a.find(<span class="number">0</span>)==a.end())&#123;</span><br><span class="line">count++;&#125;</span><br><span class="line"><span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n,m,x,y,b;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;y&gt;&gt;n;</span><br><span class="line">    b=findy(y);</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(b==n)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"0 "</span>;</span><br><span class="line"><span class="keyword">if</span>(y&lt;<span class="number">10</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"000"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">10</span>&amp;&amp;y&lt;<span class="number">100</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"00"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">100</span>&amp;&amp;y&lt;<span class="number">1000</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">1000</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">while</span>(b!=n)</span><br><span class="line">&#123;</span><br><span class="line">y++;</span><br><span class="line">a++;</span><br><span class="line">b=findy(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" "</span>;</span><br><span class="line"><span class="keyword">if</span>(y&lt;<span class="number">10</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"000"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">10</span>&amp;&amp;y&lt;<span class="number">100</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"00"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">100</span>&amp;&amp;y&lt;<span class="number">1000</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>&lt;&lt;y;</span><br><span class="line"><span class="keyword">if</span>(y&gt;=<span class="number">1000</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-033 出生年（15 分）&lt;/p&gt;
+&lt;p&gt;以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于y年，直到x岁才遇到n个数字都不相同的年份
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-031 到底是不是太胖了（10 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-031-%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E8%83%96%E4%BA%86%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-031-到底是不是太胖了（10-分）/</id>
+    <published>2018-05-23T07:04:58.000Z</published>
+    <updated>2018-05-23T07:05:39.272Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-031 到底是不是太胖了（10 分）<br>据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。真实体重与标准体重误差在10%以内都是完美身材（即 |真实体重-标准体重| &lt; 标准体重x10%）。已知1市斤=0.5公斤。现给定一群人的身高和实际体重，请你告诉他们是否太胖或太瘦了。</p><p>输入格式：</p><p>输入第一行给出一个正整数N（&lt;= 20）。随后N行，每行给出两个整数，分别是一个人的身高H（120 &lt; H &lt; 200；单位：厘米）和真实体重W（50 &lt; W &lt;= 300；单位：市斤），其间以空格分隔。</p><p>输出格式：</p><p>为每个人输出一行结论：如果是完美身材，输出“You are wan mei!”；如果太胖了，输出“You are tai pang le!”；否则输出“You are tai shou le!”。</p><p>输入样例：</p><p>3<br>169 136<br>150 81<br>178 155<br>输出样例：</p><p>You are wan mei!<br>You are tai shou le!<br>You are tai pang le!</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"><span class="keyword">float</span> height, weight;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; height &gt;&gt; weight;</span><br><span class="line"><span class="keyword">float</span> stan = (height - <span class="number">100</span>) * <span class="number">0.9</span> * <span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">abs</span>(stan - weight) &lt; stan * <span class="number">0.1</span>) &#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"You are wan mei!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(stan &gt; weight) &#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"You are tai shou le!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"You are tai pang le!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-031 到底是不是太胖了（10 分）&lt;br&gt;据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。真实体重与标准体重误差在10%以内都是完美身材（即 |真实体重-标准体重| &amp;lt; 标准体重x10%）。已知1市斤=0.5公斤。现给定一
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-030 一帮一（15 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-030-%E4%B8%80%E5%B8%AE%E4%B8%80%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-030-一帮一（15-分）/</id>
+    <published>2018-05-23T07:02:41.000Z</published>
+    <updated>2018-05-23T07:03:05.032Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-030 一帮一（15 分）<br>“一帮一学习小组”是中小学中常见的学习组织方式，老师把学习成绩靠前的学生跟学习成绩靠后的学生排在一组。本题就请你编写程序帮助老师自动完成这个分配工作，即在得到全班学生的排名后，在当前尚未分组的学生中，将名次最靠前的学生与名次最靠后的异性学生分为一组。</p><p>输入格式：</p><p>输入第一行给出正偶数N（&lt;=50），即全班学生的人数。此后N行，按照名次从高到低的顺序给出每个学生的性别（0代表女生，1代表男生）和姓名（不超过8个英文字母的非空字符串），其间以1个空格分隔。这里保证本班男女比例是1:1，并且没有并列名次。</p><p>输出格式：</p><p>每行输出一组两个学生的姓名，其间以1个空格分隔。名次高的学生在前，名次低的学生在后。小组的输出顺序按照前面学生的名次从高到低排列。</p><p>输入样例：</p><p>8<br>0 Amy<br>1 Tom<br>1 Bill<br>0 Cindy<br>0 Maya<br>1 John<br>1 Jack<br>0 Linda<br>输出样例：</p><p>Amy Jack<br>Tom Linda<br>Bill Maya<br>Cindy John</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> sex;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    student stu[n];</span><br><span class="line">    <span class="keyword">int</span> vis[n]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;stu[i].sex&gt;&gt;stu[i].name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n/<span class="number">2</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;stu[i].name&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=n<span class="number">-1</span>;j&gt;=n/<span class="number">2</span>;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(vis[j]==<span class="number">0</span>&amp;&amp;stu[j].sex!=stu[i].sex)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;stu[j].name&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">                vis[j]=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-030 一帮一（15 分）&lt;br&gt;“一帮一学习小组”是中小学中常见的学习组织方式，老师把学习成绩靠前的学生跟学习成绩靠后的学生排在一组。本题就请你编写程序帮助老师自动完成这个分配工作，即在得到全班学生的排名后，在当前尚未分组的学生中，将名次最靠前的学生与名次最靠后的异
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L1-032 Left-pad（20 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-032-Left-pad%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L1-032-Left-pad（20-分）/</id>
+    <published>2018-05-23T07:00:09.000Z</published>
+    <updated>2018-05-23T07:01:15.449Z</updated>
+    
+    <content type="html"><![CDATA[<p>L1-032 Left-pad（20 分）<br>根据新浪微博上的消息，有一位开发者不满NPM（Node Package Manager）的做法，收回了自己的开源代码，其中包括一个叫left-pad的模块，就是这个模块把javascript里面的React/Babel干瘫痪了。这是个什么样的模块？就是在字符串前填充一些东西到一定的长度。例如用“*”去填充字符串“GPLT”，使之长度为10，调用left-pad的结果就应该是“<strong>**</strong>GPLT”。Node社区曾经对left-pad紧急发布了一个替代，被严重吐槽。下面就请你来实现一下这个模块。</p><p>输入格式：</p><p>输入在第一行给出一个正整数N（&lt;=10^4^）和一个字符，分别是填充结果字符串的长度和用于填充的字符，中间以1个空格分开。第二行给出原始的非空字符串，以回车结束。</p><p>输出格式：</p><p>在一行中输出结果字符串。</p><p>输入样例1：</p><p>15 _<br>I love GPLT<br>输出样例1：</p><p>____I love GPLT<br>输入样例2：</p><p>4 *<br>this is a sample for cut<br>输出样例2：</p><p> cut</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;  </span></span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> N,i,lenth;  </span><br><span class="line">    <span class="keyword">char</span> c;  </span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">40000</span>];  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %c"</span>,&amp;N,&amp;c);  </span><br><span class="line">    getchar();  </span><br><span class="line">    gets(a);  </span><br><span class="line">    lenth = <span class="built_in">strlen</span>(a);  </span><br><span class="line">    <span class="keyword">if</span>(lenth &gt;= N)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">for</span>(i=lenth-N;i&lt;lenth;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="built_in">putchar</span>(a[i]);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">else</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N-lenth;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="built_in">putchar</span>(c);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="built_in">puts</span>(a);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L1-032 Left-pad（20 分）&lt;br&gt;根据新浪微博上的消息，有一位开发者不满NPM（Node Package Manager）的做法，收回了自己的开源代码，其中包括一个叫left-pad的模块，就是这个模块把javascript里面的React/Babel干瘫痪
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>189. 旋转数组</title>
@@ -331,221 +540,6 @@
         &lt;p&gt;删除链表中等于给定值 val 的所有节点。&lt;/p&gt;
 &lt;p&gt;示例:&lt;/p&gt;
 &lt;p&gt;输入: 1-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;6, val = 6&lt;br&gt;输出: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5&lt;br&gt;&lt;figure cl
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-022 奇偶分家（10 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-022-%E5%A5%87%E5%81%B6%E5%88%86%E5%AE%B6%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-022-奇偶分家（10-分）/</id>
-    <published>2018-05-21T07:29:50.000Z</published>
-    <updated>2018-05-21T07:35:06.097Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-022 奇偶分家（10 分）<br>给定N个正整数，请统计奇数和偶数各有多少个？</p><p>输入格式：</p><p>输入第一行给出一个正整N（&lt;= 1000）；第2行给出N个正整数，以空格分隔。</p><p>输出格式：</p><p>在一行中先后输出奇数的个数、偶数的个数。中间以1个空格分隔。</p><p>输入样例：</p><p>9<br>88 74 101 26 15 0 34 22 77<br>输出样例：</p><p>3 6</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    x=y=<span class="number">0</span>;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line"> <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">    <span class="keyword">if</span>(m%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">        x++;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        y++;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,x,y);</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-022 奇偶分家（10 分）&lt;br&gt;给定N个正整数，请统计奇数和偶数各有多少个？&lt;/p&gt;
-&lt;p&gt;输入格式：&lt;/p&gt;
-&lt;p&gt;输入第一行给出一个正整N（&amp;lt;= 1000）；第2行给出N个正整数，以空格分隔。&lt;/p&gt;
-&lt;p&gt;输出格式：&lt;/p&gt;
-&lt;p&gt;在一行中先后输出奇数
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-021 重要的话说三遍（5 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-021-%E9%87%8D%E8%A6%81%E7%9A%84%E8%AF%9D%E8%AF%B4%E4%B8%89%E9%81%8D%EF%BC%885-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-021-重要的话说三遍（5-分）/</id>
-    <published>2018-05-21T07:28:07.000Z</published>
-    <updated>2018-05-21T07:28:39.384Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-021 重要的话说三遍（5 分）<br>这道超级简单的题目没有任何输入。</p><p>你只需要把这句很重要的话 —— “I’m gonna WIN!”——连续输出三遍就可以了。</p><p>注意每遍占一行，除了每行的回车不能有任何多余字符。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">int</span> n;</span><br><span class="line">  n=<span class="number">3</span>;</span><br><span class="line">  <span class="keyword">char</span> a[]=&#123;<span class="string">"I'm gonna WIN!"</span>&#125;;</span><br><span class="line">  <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,a);</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-021 重要的话说三遍（5 分）&lt;br&gt;这道超级简单的题目没有任何输入。&lt;/p&gt;
-&lt;p&gt;你只需要把这句很重要的话 —— “I’m gonna WIN!”——连续输出三遍就可以了。&lt;/p&gt;
-&lt;p&gt;注意每遍占一行，除了每行的回车不能有任何多余字符。&lt;/p&gt;
-&lt;figure
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-020 帅到没朋友（20 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-020-%E5%B8%85%E5%88%B0%E6%B2%A1%E6%9C%8B%E5%8F%8B%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-020-帅到没朋友（20-分）/</id>
-    <published>2018-05-21T07:25:07.000Z</published>
-    <updated>2018-05-21T07:26:56.397Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-020 帅到没朋友（20 分）<br>当芸芸众生忙着在朋友圈中发照片的时候，总有一些人因为太帅而没有朋友。本题就要求你找出那些帅到没有朋友的人。</p><p>输入格式：</p><p>输入第一行给出一个正整数N（&lt;=100），是已知朋友圈的个数；随后N行，每行首先给出一个正整数K（&lt;=1000），为朋友圈中的人数，然后列出一个朋友圈内的所有人——为方便起见，每人对应一个ID号，为5位数字（从00000到99999），ID间以空格分隔；之后给出一个正整数M（&lt;=10000），为待查询的人数；随后一行中列出M个待查询的ID，以空格分隔。</p><p>注意：没有朋友的人可以是根本没安装“朋友圈”，也可以是只有自己一个人在朋友圈的人。虽然有个别自恋狂会自己把自己反复加进朋友圈，但题目保证所有K超过1的朋友圈里都至少有2个不同的人。</p><p>输出格式：</p><p>按输入的顺序输出那些帅到没朋友的人。ID间用1个空格分隔，行的首尾不得有多余空格。如果没有人太帅，则输出“No one is handsome”。</p><p>注意：同一个人可以被查询多次，但只输出一次。</p><p>输入样例1：</p><p>3<br>3 11111 22222 55555<br>2 33333 44444<br>4 55555 66666 99999 77777<br>8<br>55555 44444 10000 88888 22222 11111 23333 88888<br>输出样例1：</p><p>10000 88888 23333<br>输入样例2：</p><p>3<br>3 11111 22222 55555<br>2 33333 44444<br>4 55555 66666 99999 77777<br>4<br>55555 44444 22222 11111<br>输出样例2：</p><p>No one is handsome</p><p>这道题应该有好几种解法吧，很明显的，并查集解法，另外用c++stl里的集合set也可以做，将朋友圈人数&gt;=2的插入set，然后查找，这是用另一个set存放已经输出的，用于判断，以免重复输出、</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,i,m,t;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">      <span class="keyword">if</span>(n&gt;=<span class="number">2</span>)&#123;</span><br><span class="line">      <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">          a.insert(s);</span><br><span class="line">      &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">      &#123;</span><br><span class="line">          <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">      <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">          <span class="keyword">if</span>(a.find(s)==a.end()&amp;&amp;b.find(s)==b.end())</span><br><span class="line">          &#123;</span><br><span class="line">              b.insert(s);</span><br><span class="line">              <span class="keyword">if</span>(flag)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;s;</span><br><span class="line">              flag=<span class="number">1</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(!flag)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"No one is handsome"</span>;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-020 帅到没朋友（20 分）&lt;br&gt;当芸芸众生忙着在朋友圈中发照片的时候，总有一些人因为太帅而没有朋友。本题就要求你找出那些帅到没有朋友的人。&lt;/p&gt;
-&lt;p&gt;输入格式：&lt;/p&gt;
-&lt;p&gt;输入第一行给出一个正整数N（&amp;lt;=100），是已知朋友圈的个数；随后N行，每行
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-019 谁先倒（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-019-%E8%B0%81%E5%85%88%E5%80%92%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-019-谁先倒（15-分）/</id>
-    <published>2018-05-21T07:22:50.000Z</published>
-    <updated>2018-05-21T07:23:27.807Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-019 谁先倒（15 分）<br>划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就输了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。</p><p>下面给出甲、乙两人的酒量（最多能喝多少杯不倒）和划拳记录，请你判断两个人谁先倒。</p><p>输入格式：</p><p>输入第一行先后给出甲、乙两人的酒量（不超过100的非负整数），以空格分隔。下一行给出一个正整数N（&lt;=100），随后N行，每行给出一轮划拳的记录，格式为：</p><p>甲喊 甲划 乙喊 乙划</p><p>其中“喊”是喊出的数字，“划”是划出的数字，均为不超过100的正整数（两只手一起划）。</p><p>输出格式：</p><p>在第一行中输出先倒下的那个人：A代表甲，B代表乙。第二行中输出没倒的那个人喝了多少杯。题目保证有一个人倒下。注意程序处理到有人倒下就终止，后面的数据不必处理。</p><p>输入样例：</p><p>1 1<br>6<br>8 10 9 12<br>5 10 5 10<br>3 8 5 12<br>12 18 1 13<br>4 16 12 15<br>15 1 1 16<br>输出样例：</p><p>A<br>1<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> jia, yi, n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; jia &gt;&gt; yi &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> cnta = jia, cntb = yi;</span><br><span class="line">    <span class="keyword">int</span> jiahan, jiahua, yihan, yihua;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; jiahan &gt;&gt; jiahua &gt;&gt; yihan &gt;&gt; yihua;</span><br><span class="line">        <span class="keyword">if</span> (jiahan + yihan == jiahua &amp;&amp; yihan + jiahan != yihua)</span><br><span class="line">            cnta--;</span><br><span class="line">        <span class="keyword">if</span> (jiahan + yihan != jiahua &amp;&amp; yihan + jiahan == yihua)</span><br><span class="line">            cntb--;</span><br><span class="line">        <span class="keyword">if</span>(cnta == <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"A"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; yi - cntb;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(cntb == <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"B"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; jia - cnta;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-019 谁先倒（15 分）&lt;br&gt;划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就输了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-018 大笨钟（10 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-018-%E5%A4%A7%E7%AC%A8%E9%92%9F%EF%BC%8810-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-018-大笨钟（10-分）/</id>
-    <published>2018-05-21T07:20:22.000Z</published>
-    <updated>2018-05-21T07:20:59.400Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-018 大笨钟（10 分）<br>微博上有个自称“大笨钟V”的家伙，每天敲钟催促码农们爱惜身体早点睡觉。不过由于笨钟自己作息也不是很规律，所以敲钟并不定时。一般敲钟的点数是根据敲钟时间而定的，如果正好在某个整点敲，那么“当”数就等于那个整点数；如果过了整点，就敲下一个整点数。另外，虽然一天有24小时，钟却是只在后半天敲1~12下。例如在23:00敲钟，就是“当当当当当当当当当当当”，而到了23:01就会是“当当当当当当当当当当当当”。在午夜00:00到中午12:00期间（端点时间包括在内），笨钟是不敲的。</p><p>下面就请你写个程序，根据当前时间替大笨钟敲钟。</p><p>输入格式：</p><p>输入第一行按照“hh:mm”的格式给出当前时间。其中hh是小时，在00到23之间；mm是分钟，在00到59之间。</p><p>输出格式：</p><p>根据当前时间替大笨钟敲钟，即在一行中输出相应数量个“Dang”。如果不是敲钟期，则输出：</p><p>Only hh:mm.  Too early to Dang.<br>其中“hh:mm”是输入的时间。</p><p>输入样例1：</p><p>19:05<br>输出样例1：</p><p>DangDangDangDangDangDangDangDang<br>输入样例2：</p><p>07:05<br>输出样例2：</p><p>Only 07:05.  Too early to Dang.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d:%d"</span>,&amp;a,&amp;b);</span><br><span class="line">    <span class="keyword">if</span>(a&lt;<span class="number">12</span>||(a==<span class="number">12</span>&amp;&amp;b==<span class="number">0</span>))&#123;</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">10</span>&amp;&amp;b&gt;<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Only 0%d:%d.  Too early to Dang.\n"</span>,a,b);</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">10</span>&amp;&amp;b&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Only 0%d:0%d.  Too early to Dang.\n"</span>,a,b);</span><br><span class="line">            <span class="keyword">if</span>(a&gt;<span class="number">10</span>&amp;&amp;b&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Only %d:0%d.  Too early to Dang.\n"</span>,a,b);</span><br><span class="line">            <span class="keyword">if</span>(a&gt;<span class="number">10</span>&amp;&amp;b&gt;<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Only %d:%d.  Too early to Dang.\n"</span>,a,b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="keyword">if</span>(b==<span class="number">00</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a<span class="number">-12</span>;i++)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"Dang"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a<span class="number">-11</span>;i++)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"Dang"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-018 大笨钟（10 分）&lt;br&gt;微博上有个自称“大笨钟V”的家伙，每天敲钟催促码农们爱惜身体早点睡觉。不过由于笨钟自己作息也不是很规律，所以敲钟并不定时。一般敲钟的点数是根据敲钟时间而定的，如果正好在某个整点敲，那么“当”数就等于那个整点数；如果过了整点，就敲下一个
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-017 到底有多二（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-017-%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E4%BA%8C%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-017-到底有多二（15-分）/</id>
-    <published>2018-05-21T07:17:20.000Z</published>
-    <updated>2018-05-21T07:17:55.283Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-017 到底有多二（15 分）<br>一个整数“犯二的程度”定义为该数字中包含2的个数与其位数的比值。如果这个数是负数，则程度增加0.5倍；如果还是个偶数，则再增加1倍。例如数字“-13142223336”是个11位数，其中有3个2，并且是负数，也是偶数，则它的犯二程度计算为：3/11<em>1.5</em>2*100%，约为81.82%。本题就请你计算一个给定整数到底有多二。</p><p>输入格式：</p><p>输入第一行给出一个不超过50位的整数N。</p><p>输出格式：</p><p>在一行中输出N犯二的程度，保留小数点后两位。</p><p>输入样例：</p><p>-13142223336<br>输出样例：</p><p>81.82%</p><p>需要注意 负数情况的判断<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">int</span> a,b,t;</span><br><span class="line">    x=<span class="number">0</span>,a=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    t=s.size();</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'-'</span>)</span><br><span class="line">        b=s.size()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        b=s.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'2'</span>)</span><br><span class="line">        a++;</span><br><span class="line">    &#125;</span><br><span class="line">    x=<span class="number">1.0</span>*a/b;</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'-'</span>) x*=<span class="number">1.5</span>;</span><br><span class="line">    <span class="keyword">if</span>((s[t<span class="number">-1</span>]-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>) x*=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f%%\n"</span>,x*<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-017 到底有多二（15 分）&lt;br&gt;一个整数“犯二的程度”定义为该数字中包含2的个数与其位数的比值。如果这个数是负数，则程度增加0.5倍；如果还是个偶数，则再增加1倍。例如数字“-13142223336”是个11位数，其中有3个2，并且是负数，也是偶数，则它的犯二程
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>28. 实现strStr()</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/28-%E5%AE%9E%E7%8E%B0strStr/"/>
-    <id>http://huangyiblog.com/题解集/28-实现strStr/</id>
-    <published>2018-05-21T07:13:30.000Z</published>
-    <updated>2018-05-21T07:14:11.305Z</updated>
-    
-    <content type="html"><![CDATA[<p>实现 strStr() 函数。</p><p>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。</p><p>示例 1:</p><p>输入: haystack = “hello”, needle = “ll”<br>输出: 2<br>示例 2:</p><p>输入: haystack = “aaaaa”, needle = “bba”<br>输出: -1<br>说明:</p><p>当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。</p><p>对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。</p><p>一道字符串匹配的问题：<br>方法一：暴力解法，时间复杂度O(m*n)</p><p>方法二：KMP算法</p><p>方法三：Boyer-Mooer算法</p><p>方法四：Rabin-Karp算法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i, j, lenh = haystack.length(), lenn = needle.length();</span><br><span class="line">        <span class="keyword">if</span> (lenn == <span class="number">0</span>)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= lenh - lenn; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; lenn; j++) </span><br><span class="line">                <span class="keyword">if</span> (haystack[i + j] !=  needle[j]) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 匹配成功</span></span><br><span class="line">            <span class="keyword">if</span> (j == lenn)  <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// KMP解法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; KMPpreprocessing(<span class="built_in">string</span> s) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; match(n,<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; s[i]!=s[j+<span class="number">1</span>]) j = match[j];</span><br><span class="line">            <span class="keyword">if</span>(s[i]==s[j+<span class="number">1</span>]) j++;</span><br><span class="line">            match[i] = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> match;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="built_in">string</span> haystack, <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(haystack.empty()) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> m = haystack.size(), n = needle.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; match = KMPpreprocessing(needle);</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; haystack[i]!=needle[j+<span class="number">1</span>]) j = match[j];</span><br><span class="line">            <span class="keyword">if</span>(haystack[i]==needle[j+<span class="number">1</span>]) j++;</span><br><span class="line">            <span class="keyword">if</span>(j==n<span class="number">-1</span>) <span class="keyword">return</span> (i-n+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;实现 strStr() 函数。&lt;/p&gt;
-&lt;p&gt;给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;p&gt;输入:
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20. 有效的括号</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"/>
-    <id>http://huangyiblog.com/题解集/20-有效的括号/</id>
-    <published>2018-05-21T06:51:29.000Z</published>
-    <updated>2018-05-21T06:52:06.999Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p><p>有效字符串需满足：</p><p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。<br>注意空字符串可被认为是有效字符串。</p><p>示例 1:</p><p>输入: “()”<br>输出: true<br>示例 2:</p><p>输入: “()[]{}”<br>输出: true<br>示例 3:</p><p>输入: “(]”<br>输出: false<br>示例 4:</p><p>输入: “([)]”<br>输出: false<br>示例 5:</p><p>输入: “{[]}”<br>输出: true<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> left = <span class="string">"([&#123;"</span>;</span><br><span class="line">        <span class="built_in">string</span> right = <span class="string">")]&#125;"</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; stk;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(left.find(c)!=<span class="built_in">string</span>::npos)&#123;</span><br><span class="line">                stk.push(c);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(stk.empty()||stk.top()!=left[right.find(c)])</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    stk.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stk.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。&lt;/p&gt;
-&lt;p&gt;有效字符串需满足：&lt;/p&gt;
-&lt;p&gt;左括号必须用相同类型的右括号闭合。&lt;br&gt;左括号必须以正确的顺序闭合。&lt;br&gt;注意空字符串可被认为是有效字符串。&lt;/p&gt;
-&lt;p&gt;示
       
     
     </summary>

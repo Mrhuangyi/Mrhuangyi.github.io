@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-037 A除以B（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-037-A%E9%99%A4%E4%BB%A5B%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-037 A除以B（10 分）真的是简单题哈 —— 给定两个绝对值不超过100的整数A和B，要求你按照“A/B=商”的格式输出结果。 输入格式： 输入在第一行给出两个整数A和B（-100 &lt;= A, B, &lt;= 100），数字间以空格分隔。 输出格式： 在一行中输出结果：如果分母是正数，则输出“A/B=商”；如果分母是负数，则要用括号把分母括起来输出；如果分母为零，则输出的商应为“Error”。输出的商应保留小数点后2位。 输入样例1： -1 2输出样例1： -1/2=-0.50输入样例2： 1 -3输出样例2： 1/(-3)=-0.33输入样例3： 5 0输出样例3： 5/0=Error 12345678910111213141516#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int a,b; scanf("%d%d",&amp;a,&amp;b); float x; x=1.0*a/b; if(b&gt;0) printf("%d/%d=%.2f",a,b,x); if(b==0) printf("%d/%d=Error",a,b); if(b&lt;0) printf("%d/(%d)=%.2f",a,b,x); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-036 A乘以B（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-036-A%E4%B9%98%E4%BB%A5B%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-036 A乘以B（5 分）看我没骗你吧 —— 这是一道你可以在10秒内完成的题：给定两个绝对值不超过100的整数A和B，输出A乘以B的值。 输入格式： 输入在第一行给出两个整数A和B（-100 &lt;= A, B, &lt;= 100），数字间以空格分隔。 输出格式： 在一行中输出A乘以B的值。 输入样例： -8 13输出样例： -104 123456789#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int a,b; cin&gt;&gt;a&gt;&gt;b; cout&lt;&lt;a*b; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-035 情人节（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-035-%E6%83%85%E4%BA%BA%E8%8A%82%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-035 情人节（15 分） 以上是朋友圈中一奇葩贴：“2月14情人节了，我决定造福大家。第2个赞和第14个赞的，我介绍你俩认识…………咱三吃饭…你俩请…”。现给出此贴下点赞的朋友名单，请你找出那两位要请客的倒霉蛋。 输入格式： 输入按照点赞的先后顺序给出不知道多少个点赞的人名，每个人名占一行，为不超过10个英文字母的非空单词，以回车结束。一个英文句点“.”标志输入的结束，这个符号不算在点赞名单里。 输出格式： 根据点赞情况在一行中输出结论：若存在第2个人A和第14个人B，则输出“A and B are inviting you to dinner…”；若只有A没有B，则输出“A is the only one for you…”；若连A都没有，则输出“Momo… No one is for you …”。 输入样例1： GaoXZhMagiEinstQuarkLaoLaoFatMouseZhaShenfantacylatesumSenSenQuanQuanwhateverwheneverPotatyhahaha.输出样例1： Magi and Potaty are inviting you to dinner…输入样例2： LaoLaoFatMousewhoever.输出样例2： FatMouse is the only one for you…输入样例3： LaoLao.输出样例3： Momo… No one is for you … 123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; string s,s1,s2; int count=0; while(cin&gt;&gt;s) &#123; if(s[0]=='.') break; count++; if(count==2) s1=s; if(count==14) s2=s; &#125; if(count&gt;=14) cout&lt;&lt;s1&lt;&lt;" and "&lt;&lt;s2&lt;&lt;" are inviting you to dinner..."; if(count&gt;=2&amp;&amp;count&lt;14) cout&lt;&lt;s1&lt;&lt;" is the only one for you..."; if(count&lt;2) cout&lt;&lt;"Momo... No one is for you ..."; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-034 点赞（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-034-%E7%82%B9%E8%B5%9E%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-034 点赞（20 分）微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。本题就要求你写个程序，通过统计一个人点赞的纪录，分析这个人的特性。 输入格式： 输入在第一行给出一个正整数N（&lt;=1000），是该用户点赞的博文数量。随后N行，每行给出一篇被其点赞的博文的特性描述，格式为“K F~1~ … F~K~”，其中 1&lt;=K&lt;=10，F~i~（i=1, …, K）是特性标签的编号，我们将所有特性标签从1到1000编号。数字间以空格分隔。 输出格式： 统计所有被点赞的博文中最常出现的那个特性标签，在一行中输出它的编号和出现次数，数字间隔1个空格。如果有并列，则输出编号最大的那个。 输入样例： 43 889 233 25 100 3 233 2 734 3 73 889 22 233 123输出样例： 233 3 123456789101112131415161718192021222324252627282930313233#include&lt;bits/stdc++.h&gt;using namespace std;bool cmp(int a,int b)&#123; return a&gt;b;&#125;int main()&#123; int n,k,x,a[1000],b[1000]; memset(a,0,sizeof(a)); memset(b,0,sizeof(b)); cin&gt;&gt;n; while(n--) &#123; cin&gt;&gt;k; while(k--) &#123; cin&gt;&gt;x; a[x]++; b[x]++; &#125; &#125; sort(a,a+1000,cmp); for(int i=1000;i&gt;0;i--) &#123; if(b[i]==a[0]) &#123; cout&lt;&lt;i&lt;&lt;" "&lt;&lt;b[i]; break; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-033 出生年（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-033-%E5%87%BA%E7%94%9F%E5%B9%B4%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-033 出生年（15 分） 以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于y年，直到x岁才遇到n个数字都不相同的年份”这句话。 输入格式： 输入在一行中给出出生年份y和目标年份中不同数字的个数n，其中y在[1, 3000]之间，n可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。 输出格式： 根据输入，输出x和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“n个数字都不相同”是指不同的数字正好是n个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。 输入样例1： 1988 4输出样例1： 25 2013输入样例2： 1 2输出样例2： 0 0001 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;bits/stdc++.h&gt;using namespace std;int findy(int y)&#123; int count=0,t,i=0; set&lt;int&gt; a;while(y!=0)&#123; t=y%10; a.insert(t); y/=10; i++;&#125;set&lt;int&gt;::iterator it;for(it=a.begin();it!=a.end();it++)&#123; count++;&#125;if(i&lt;=3&amp;&amp;a.find(0)==a.end())&#123;count++;&#125;return count;&#125;int main()&#123; int n,m,x,y,b; cin&gt;&gt;y&gt;&gt;n; b=findy(y); int a=0; if(b==n) &#123; cout&lt;&lt;"0 "; if(y&lt;10) cout&lt;&lt;"000"&lt;&lt;y; if(y&gt;=10&amp;&amp;y&lt;100) cout&lt;&lt;"00"&lt;&lt;y; if(y&gt;=100&amp;&amp;y&lt;1000) cout&lt;&lt;"0"&lt;&lt;y; if(y&gt;=1000) cout&lt;&lt;y; &#125; else&#123; while(b!=n) &#123; y++; a++; b=findy(y); &#125; cout&lt;&lt;a&lt;&lt;" "; if(y&lt;10) cout&lt;&lt;"000"&lt;&lt;y; if(y&gt;=10&amp;&amp;y&lt;100) cout&lt;&lt;"00"&lt;&lt;y; if(y&gt;=100&amp;&amp;y&lt;1000) cout&lt;&lt;"0"&lt;&lt;y; if(y&gt;=1000) cout&lt;&lt;y; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-031 到底是不是太胖了（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-031-%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E8%83%96%E4%BA%86%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-031 到底是不是太胖了（10 分）据说一个人的标准体重应该是其身高（单位：厘米）减去100、再乘以0.9所得到的公斤数。真实体重与标准体重误差在10%以内都是完美身材（即 |真实体重-标准体重| &lt; 标准体重x10%）。已知1市斤=0.5公斤。现给定一群人的身高和实际体重，请你告诉他们是否太胖或太瘦了。 输入格式： 输入第一行给出一个正整数N（&lt;= 20）。随后N行，每行给出两个整数，分别是一个人的身高H（120 &lt; H &lt; 200；单位：厘米）和真实体重W（50 &lt; W &lt;= 300；单位：市斤），其间以空格分隔。 输出格式： 为每个人输出一行结论：如果是完美身材，输出“You are wan mei!”；如果太胖了，输出“You are tai pang le!”；否则输出“You are tai shou le!”。 输入样例： 3169 136150 81178 155输出样例： You are wan mei!You are tai shou le!You are tai pang le! 1234567891011121314151617181920#include &lt;iostream&gt;#include &lt;cmath&gt;using namespace std;int main() &#123; int n; cin &gt;&gt; n; for(int i = 0; i &lt; n; i++) &#123; float height, weight; cin &gt;&gt; height &gt;&gt; weight; float stan = (height - 100) * 0.9 * 2; if(abs(stan - weight) &lt; stan * 0.1) &#123; cout &lt;&lt; "You are wan mei!" &lt;&lt; endl; &#125; else if(stan &gt; weight) &#123; cout &lt;&lt; "You are tai shou le!" &lt;&lt; endl; &#125; else &#123; cout &lt;&lt; "You are tai pang le!" &lt;&lt; endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-030 一帮一（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-030-%E4%B8%80%E5%B8%AE%E4%B8%80%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-030 一帮一（15 分）“一帮一学习小组”是中小学中常见的学习组织方式，老师把学习成绩靠前的学生跟学习成绩靠后的学生排在一组。本题就请你编写程序帮助老师自动完成这个分配工作，即在得到全班学生的排名后，在当前尚未分组的学生中，将名次最靠前的学生与名次最靠后的异性学生分为一组。 输入格式： 输入第一行给出正偶数N（&lt;=50），即全班学生的人数。此后N行，按照名次从高到低的顺序给出每个学生的性别（0代表女生，1代表男生）和姓名（不超过8个英文字母的非空字符串），其间以1个空格分隔。这里保证本班男女比例是1:1，并且没有并列名次。 输出格式： 每行输出一组两个学生的姓名，其间以1个空格分隔。名次高的学生在前，名次低的学生在后。小组的输出顺序按照前面学生的名次从高到低排列。 输入样例： 80 Amy1 Tom1 Bill0 Cindy0 Maya1 John1 Jack0 Linda输出样例： Amy JackTom LindaBill MayaCindy John 123456789101112131415161718192021222324252627282930313233343536#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;struct student&#123; int sex; string name;&#125;;int main()&#123; int n,a; string s; scanf("%d",&amp;n); student stu[n]; int vis[n]=&#123;0&#125;; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;stu[i].sex&gt;&gt;stu[i].name; &#125; for(int i=0;i&lt;n/2;i++) &#123; cout&lt;&lt;stu[i].name&lt;&lt;" "; for(int j=n-1;j&gt;=n/2;j--) &#123; if(vis[j]==0&amp;&amp;stu[j].sex!=stu[i].sex) &#123; cout&lt;&lt;stu[j].name&lt;&lt;endl; vis[j]=1; break; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-032 Left-pad（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-032-Left-pad%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-032 Left-pad（20 分）根据新浪微博上的消息，有一位开发者不满NPM（Node Package Manager）的做法，收回了自己的开源代码，其中包括一个叫left-pad的模块，就是这个模块把javascript里面的React/Babel干瘫痪了。这是个什么样的模块？就是在字符串前填充一些东西到一定的长度。例如用“*”去填充字符串“GPLT”，使之长度为10，调用left-pad的结果就应该是“**GPLT”。Node社区曾经对left-pad紧急发布了一个替代，被严重吐槽。下面就请你来实现一下这个模块。 输入格式： 输入在第一行给出一个正整数N（&lt;=10^4^）和一个字符，分别是填充结果字符串的长度和用于填充的字符，中间以1个空格分开。第二行给出原始的非空字符串，以回车结束。 输出格式： 在一行中输出结果字符串。 输入样例1： 15 _I love GPLT输出样例1： ____I love GPLT输入样例2： 4 *this is a sample for cut输出样例2： cut 1234567891011121314151617181920212223242526272829#include &lt;stdio.h&gt; #include &lt;string.h&gt; int main() &#123; int N,i,lenth; char c; char a[40000]; scanf("%d %c",&amp;N,&amp;c); getchar(); gets(a); lenth = strlen(a); if(lenth &gt;= N) &#123; for(i=lenth-N;i&lt;lenth;i++) &#123; putchar(a[i]); &#125; &#125; else &#123; for(i=0;i&lt;N-lenth;i++) &#123; putchar(c); &#125; puts(a); &#125; return 0; &#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[189. 旋转数组]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F189-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%2F</url>
     <content type="text"><![CDATA[给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。 示例 1: 输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]示例 2: 输入: [-1,-100,3,99] 和 k = 2输出: [3,99,-1,-100]解释:向右旋转 1 步: [99,-1,-100,3]向右旋转 2 步: [3,99,-1,-100]说明: 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。要求使用空间复杂度为 O(1) 的原地算法。 方法一：最简单的想法，进行k次循环，每次循环转移所有元素时间复杂度O(n*k)空间复杂度O(1)1234567891011121314class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; int temp,previous; for(int i=0;i&lt;k;i++)&#123; previous = nums[nums.size()-1]; for(int j=0;j&lt;nums.size();j++)&#123; temp = nums[j]; nums[j] = previous; previous = temp; &#125; &#125; &#125;&#125;; 方法二：用一个额外的数组Array[Accepted]另开一个数组，将每一个元素按正确的位置赋值给新数组，最后将新数组复制到原数组。时间复杂度为O(n)空间复杂度为O(n)123456789101112class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; vector&lt;int&gt; a(nums.size()); for(int i=0;i&lt;nums.size();i++)&#123; a[(i+k)%nums.size()] = nums[i]; &#125; for(int i=0;i&lt;nums.size();i++)&#123; nums[i] = a[i]; &#125; &#125;&#125;; 方法三：Using Cyclic Replacements [Accepted]我们可以直接将阵列的每个数字放置在所需的正确位置。但如果我们这样做，我们将破坏原始元素。因此，我们需要将被替换的数字存储在temptemp变量中。然后，我们可以将替换的数字（temptemp）放在正确的位置Look at the following example to clarify the process: nums: [1, 2, 3, 4, 5, 6] k: 2时间复杂度为O(n)空间复杂度为O(1) 12345678910111213141516171819class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; k = k%nums.size(); int count = 0; for(int start=0;count&lt;nums.size();start++)&#123; int current = start; int prev = nums[start]; do&#123; int next = (current+k)%nums.size(); int temp = nums[next]; nums[next] = prev; prev = temp; current = next; count++; &#125;while(start!=current); &#125; &#125;&#125;; 方法四：用reverse函数时间复杂度为O(n)空间复杂度为O(1)例如：Original List : 1 2 3 4 5 6 7After reversing all numbers : 7 6 5 4 3 2 1After reversing first k numbers : 5 6 7 4 3 2 1After revering last n-k numbers : 5 6 7 1 2 3 4 –&gt; Result12345678910111213141516171819class Solution &#123;public: void rotate(vector&lt;int&gt;&amp; nums, int k) &#123; k = k%nums.size(); reverse(nums,0,nums.size()-1); reverse(nums,0,k-1); reverse(nums,k,nums.size()-1); &#125; public: void reverse(vector&lt;int&gt;&amp; nums,int start,int end)&#123; while(start&lt;end)&#123; int temp = nums[start]; nums[start] = nums[end]; nums[end] = temp; start++; end--; &#125; &#125;&#125;;]]></content>
