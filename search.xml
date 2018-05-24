@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-043 阅览室（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-043-%E9%98%85%E8%A7%88%E5%AE%A4%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-043 阅览室（20 分）天梯图书阅览室请你编写一个简单的图书借阅统计程序。当读者借书时，管理员输入书号并按下S键，程序开始计时；当读者还书时，管理员输入书号并按下E键，程序结束计时。书号为不超过1000的正整数。当管理员将0作为书号输入时，表示一天工作结束，你的程序应输出当天的读者借书次数和平均阅读时间。 注意：由于线路偶尔会有故障，可能出现不完整的纪录，即只有S没有E，或者只有E没有S的纪录，系统应能自动忽略这种无效纪录。另外，题目保证书号是书的唯一标识，同一本书在任何时间区间内只可能被一位读者借阅。 输入格式： 输入在第一行给出一个正整数N（&lt;= 10），随后给出N天的纪录。每天的纪录由若干次借阅操作组成，每次操作占一行，格式为： 书号（[1, 1000]内的整数） 键值（“S”或“E”） 发生时间（hh:mm，其中hh是[0,23]内的整数，mm是[0, 59]内整数） 每一天的纪录保证按时间递增的顺序给出。 输出格式： 对每天的纪录，在一行中输出当天的读者借书次数和平均阅读时间（以分钟为单位的精确到个位的整数时间）。 输入样例： 31 S 08:102 S 08:351 E 10:002 E 13:160 S 17:000 S 17:003 E 08:101 S 08:202 S 09:001 E 09:200 E 17:00输出样例： 2 1960 01 60 1234567891011121314151617181920212223242526272829303132333435363738394041424344#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; int id=-1; double time=0; int num=0; int mint[2001]=&#123;0&#125;; bool flag[2001]; memset(flag,false,sizeof(flag)); while(id!=0)&#123; char a; int h,m; scanf("%d %c %d:%d",&amp;id,&amp;a,&amp;h,&amp;m); if(id==0)&#123; break; &#125; else if(a=='S')&#123; mint[id]=h*60+m; flag[id]=true; &#125; else if(a=='E')&#123; if(flag[id])&#123; flag[id]=false; time+=h*60+m-mint[id]; mint[id]=0; num++; &#125; &#125; &#125; int t; if(num!=0)&#123; time/=num; &#125; t=time+0.5f; printf("%d %d\n",num,t); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-042 日期格式化（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-042-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-042 日期格式化（5 分）世界上不同国家有不同的写日期的习惯。比如美国人习惯写成“月-日-年”，而中国人习惯写成“年-月-日”。下面请你写个程序，自动把读入的美国格式的日期改写成中国习惯的日期。 输入格式： 输入在一行中按照“mm-dd-yyyy”的格式给出月、日、年。题目保证给出的日期是1900年元旦至今合法的日期。 输出格式： 在一行中按照“yyyy-mm-dd”的格式给出年、月、日。 输入样例： 03-15-2017输出样例： 2017-03-15 12345678910#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;int main()&#123; char s[10]; scanf("%s",s); printf("%c%c%c%c%c%c%c%c%c%c",s[6],s[7],s[8],s[9],s[5],s[0],s[1],s[2],s[3],s[4]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-041 寻找250（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-041-%E5%AF%BB%E6%89%BE250%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-041 寻找250（10 分） 对方不想和你说话，并向你扔了一串数…… 而你必须从这一串数字中找到“250”这个高大上的感人数字。 输入格式： 输入在一行中给出不知道多少个绝对值不超过1000的整数，其中保证至少存在一个“250”。 输出格式： 在一行中输出第一次出现的“250”是对方扔过来的第几个数字（计数从1开始）。题目保证输出的数字在整型范围内。 输入样例： 888 666 123 -233 250 13 250 -222输出样例： 5 12345678910111213141516171819#include&lt;cstdio&gt;#include&lt;vector&gt;&gt;#include&lt;iostream&gt;using namespace std;int main()&#123; vector&lt;int&gt; a; int x,t=0,flag=1; while(flag) &#123; scanf("%d",&amp;x); t++; if(x==250)&#123; printf("%d\n",t); break; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-040 最佳情侣身高差（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-040-%E6%9C%80%E4%BD%B3%E6%83%85%E4%BE%A3%E8%BA%AB%E9%AB%98%E5%B7%AE%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-040 最佳情侣身高差（10 分）专家通过多组情侣研究数据发现，最佳的情侣身高差遵循着一个公式：（女方的身高）×1.09=（男方的身高）。如果符合，你俩的身高差不管是牵手、拥抱、接吻，都是最和谐的差度。 下面就请你写个程序，为任意一位用户计算他/她的情侣的最佳身高。 输入格式： 输入第一行给出正整数N（&lt;=10），为前来查询的用户数。随后N行，每行按照“性别 身高”的格式给出前来查询的用户的性别和身高，其中“性别”为“F”表示女性、“M”表示男性；“身高”为区间 [1.0, 3.0] 之间的实数。 输出格式： 对每一个查询，在一行中为该用户计算出其情侣的最佳身高，保留小数点后2位。 输入样例： 2M 1.75F 1.8输出样例： 1.611.96 123456789101112131415161718#include&lt;stdio.h&gt;int main()&#123; int N; scanf("%d",&amp;N); float x,y; char c; while(N--) &#123;getchar(); scanf("%c%f",&amp;c,&amp;x); if(c=='M') printf("%.2f\n",x/1.09); if(c=='F') printf("%.2f\n",x*1.09); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-039 古风排版（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-039-%E5%8F%A4%E9%A3%8E%E6%8E%92%E7%89%88%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-039 古风排版（20 分）中国的古人写文字，是从右向左竖向排版的。本题就请你编写程序，把一段文字按古风排版。 输入格式： 输入在第一行给出一个正整数N（&lt;100），是每一列的字符数。第二行给出一个长度不超过1000的非空字符串，以回车结束。 输出格式： 按古风格式排版给定的字符串，每列N个字符（除了最后一列可能不足N个） 输入样例： 4This is a test case输出样例： asa Tst ihe tsi ce s 123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;int main()&#123; int n,m; scanf("%d",&amp;n); getchar(); char s[1001],a[101][101]; gets(s); int len=strlen(s),t=0; m=(len+n-1)/n; for(int j=m-1;j&gt;=0;j--) &#123; for(int i=0;i&lt;n;i++) &#123; if(t&lt;len) a[i][j]=s[t++]; else a[i][j]=' '; &#125; &#125; for(int j=0;j&lt;n;j++) &#123; for(int i=0;i&lt;m;i++) printf("%c",a[j][i]); printf("\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-038 新世界（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-038-%E6%96%B0%E4%B8%96%E7%95%8C%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-038 新世界（5 分）这道超级简单的题目没有任何输入。 你只需要在第一行中输出程序员钦定名言“Hello World”，并且在第二行中输出更新版的“Hello New World”就可以了。 1234567#include&lt;stdio.h&gt;int main()&#123; printf("Hello World\n"); printf("Hello New World\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[13. 罗马数字转整数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F13-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。 字符 数值I 1V 5X 10L 50C 100D 500M 1000例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。 通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况： I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。 示例 1: 输入: “III”输出: 3示例 2: 输入: “IV”输出: 4示例 3: 输入: “IX”输出: 9示例 4: 输入: “LVIII”输出: 58解释: C = 100, L = 50, XXX = 30, III = 3.示例 5: 输入: “MCMXCIV”输出: 1994解释: M = 1000, CM = 900, XC = 90, IV = 4.1234567891011121314151617181920212223242526class Solution &#123;public: int romanToInt(string s) &#123; int ans = 0; ans = toInt(s[0]); for(int i=1;i&lt;s.length();i++)&#123; ans +=toInt(s[i]); if(toInt(s[i-1])&lt;toInt(s[i]))&#123; ans -=toInt(s[i-1])*2; &#125; &#125; return ans; &#125; int toInt(char c)&#123; switch(c)&#123; case 'I':return 1; case 'V':return 5; case 'X':return 10; case 'L':return 50; case 'C':return 100; case 'D':return 500; case 'M':return 1000; &#125; return 0; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[122. 买卖股票的最佳时机 II]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II%2F</url>
+    <content type="text"><![CDATA[给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。 示例 1: 输入: [7,1,5,3,6,4]输出: 7解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。 随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。示例 2: 输入: [1,2,3,4,5]输出: 4解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。 注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。 因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。示例 3: 输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。 用贪心的思想，低进高出，只要相邻两天有差价就相加，因为题中没有限制交易次数。12345678910111213141516class Solution &#123;public: int maxProfit(vector&lt;int&gt;&amp; prices) &#123; int len = prices.size(); if(len&lt;=1)&#123; return 0; &#125; int sum = 0; for(int i=1;i&lt;len;i++)&#123; if(prices[i]-prices[i-1]&gt;0)&#123; sum+=prices[i]-prices[i-1]; &#125; &#125; return sum; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[111. 二叉树的最小深度]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，找出其最小深度。 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。 说明: 叶子节点是指没有子节点的节点。 示例: 给定二叉树 [3,9,20,null,null,15,7], 3 / \ 9 20 / \ 15 7返回它的最小深度 2. 递归写法：1234567891011121314151617181920/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int minDepth(TreeNode* root) &#123; return minDepth(root,false); &#125;private: static int minDepth(TreeNode *root,bool hasbrother)&#123; if(!root) return hasbrother ? INT_MAX:0; return 1+min(minDepth(root-&gt;left,root-&gt;right!=NULL),minDepth(root-&gt;right,root-&gt;left!=NULL)); &#125;&#125;; 迭代写法：1234567891011121314151617181920212223242526272829303132333435/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int minDepth(TreeNode* root) &#123; if(root==nullptr)&#123; return 0; &#125; int result = INT_MAX; stack&lt;pair&lt;TreeNode*,int&gt;&gt; s; s.push(make_pair(root,1)); while(!s.empty())&#123; auto node = s.top().first; auto depth = s.top().second; s.pop(); if(node-&gt;left==nullptr&amp;&amp;node-&gt;right==nullptr)&#123; result = min(result,depth); &#125; if(node-&gt;left&amp;&amp;result&gt;depth)&#123; s.push(make_pair(node-&gt;left,depth+1)); &#125; if(node-&gt;right&amp;&amp;result&gt;depth)&#123; s.push(make_pair(node-&gt;right,depth+1)); &#125; &#125; return result; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[119. 杨辉三角 II]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F119-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92-II%2F</url>
+    <content type="text"><![CDATA[给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。 在杨辉三角中，每个数是它左上方和右上方的数的和。 示例: 输入: 3输出: [1,3,3,1]进阶： 你可以优化你的算法到 O(k) 空间复杂度吗？ 解法：滚动数组 我们知道，帕斯卡三角的计算公式是这样的，A[k][n] = A[k-1][n-1] + A[k-1][n]。假设现在数组存放的第3层的数据，[1, 3, 3, 1]，如果我们需要计算第4层的数据， 如果我们从前往后计算，譬如A[4][2]= A[3][1] + A[3][2]，也就是4，但是因为只有一 个数组，所以需要将4这个值覆盖到2这个位置，那么我们计算A[4][3]的时候就会出 现问题了，因为这时候A[3][2]不是3，而是4了。为了解决这个问题，我们只能从后往前计算，仍然是上面那个例子，我们实现计算 A[4][3] = A[3][2] + A[3][3]，也就是6，我们将6直接覆盖到3这个位置，但不会影响 我们计算A[4][2]，因为A[4][2] = A[3][1] + A[3][2]，已经不会涉及到3这个位置了。1234567891011121314class Solution &#123;public: vector&lt;int&gt; getRow(int rowIndex) &#123; vector&lt;int&gt; array; for(int i=0;i&lt;=rowIndex;i++)&#123; for (int j = i - 1; j &gt; 0; j--)&#123; array[j] = array[j - 1] + array[j]; &#125; array.push_back(1); &#125; return array; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-037 A除以B（10 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-037-A%E9%99%A4%E4%BB%A5B%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[L1-037 A除以B（10 分）真的是简单题哈 —— 给定两个绝对值不超过100的整数A和B，要求你按照“A/B=商”的格式输出结果。 输入格式： 输入在第一行给出两个整数A和B（-100 &lt;= A, B, &lt;= 100），数字间以空格分隔。 输出格式： 在一行中输出结果：如果分母是正数，则输出“A/B=商”；如果分母是负数，则要用括号把分母括起来输出；如果分母为零，则输出的商应为“Error”。输出的商应保留小数点后2位。 输入样例1： -1 2输出样例1： -1/2=-0.50输入样例2： 1 -3输出样例2： 1/(-3)=-0.33输入样例3： 5 0输出样例3： 5/0=Error 12345678910111213141516#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int a,b; scanf("%d%d",&amp;a,&amp;b); float x; x=1.0*a/b; if(b&gt;0) printf("%d/%d=%.2f",a,b,x); if(b==0) printf("%d/%d=Error",a,b); if(b&lt;0) printf("%d/(%d)=%.2f",a,b,x); return 0;&#125;]]></content>
