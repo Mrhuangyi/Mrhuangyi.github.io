@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-048 矩阵A乘以B（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-048-%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-048 矩阵A乘以B（15 分）给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。 输入格式： 输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。 输出格式： 若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出“Error: Ca != Rb”，其中Ca是A的列数，Rb是B的行数。 输入样例1： 2 31 2 34 5 63 47 8 9 0-1 -2 -3 -45 6 7 8输出样例1： 2 420 22 24 1653 58 63 28输入样例2： 3 238 2643 -50 173 2-11 5799 6881 72输出样例2： Error: 2 != 3 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int ra,ca,rb,cb; scanf("%d%d",&amp;ra,&amp;ca); int a[ra][ca]; for(int i=0;i&lt;ra;i++) &#123; for(int j=0;j&lt;ca;j++) &#123; scanf("%d",&amp;a[i][j]); &#125; &#125; scanf("%d%d",&amp;rb,&amp;cb); int b[rb][cb]; for(int i=0;i&lt;rb;i++) &#123; for(int j=0;j&lt;cb;j++) &#123; scanf("%d",&amp;b[i][j]); &#125; &#125; if(ca!=rb)&#123; printf("Error: %d != %d",ca,rb); &#125; else&#123; printf("%d %d\n",ra,cb); int c[ra][cb]; for(int i=0;i&lt;ra;i++)&#123; for(int j=0;j&lt;cb;j++)&#123; int sum=0; for(int k=0;k&lt;ca;k++)&#123; sum+=a[i][k]*b[k][j]; &#125; if(j&lt;cb-1) printf("%d ",sum); else printf("%d\n",sum); &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-047 装睡（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-047-%E8%A3%85%E7%9D%A1%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-047 装睡（10 分）你永远叫不醒一个装睡的人 —— 但是通过分析一个人的呼吸频率和脉搏，你可以发现谁在装睡！医生告诉我们，正常人睡眠时的呼吸频率是每分钟15-20次，脉搏是每分钟50-70次。下面给定一系列人的呼吸频率与脉搏，请你找出他们中间有可能在装睡的人，即至少一项指标不在正常范围内的人。 输入格式： 输入在第一行给出一个正整数N（&lt;= 10）。随后N行，每行给出一个人的名字（仅由英文字母组成的、长度不超过3个字符的串）、其呼吸频率和脉搏（均为不超过100的正整数）。 输出格式： 按照输入顺序检查每个人，如果其至少一项指标不在正常范围内，则输出其名字，每个名字占一行。 输入样例： 4Amy 15 70Tom 14 60Joe 18 50Zoe 21 71输出样例： TomZoe 123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;using namespace std;struct zhuangshui&#123; char name[3]; int huxi; int maibo;&#125;a[111];int main()&#123; int n; cin&gt;&gt;n; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;a[i].name&gt;&gt;a[i].huxi&gt;&gt;a[i].maibo; if(a[i].huxi&lt;15||a[i].huxi&gt;20||a[i].maibo&gt;70||a[i].maibo&lt;50) cout&lt;&lt;a[i].name&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-046 整除光棍（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-046-%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-046 整除光棍（20 分）这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。 提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。 输入格式： 输入在一行中给出一个不以5结尾的正奇数x（&lt; 1000）。 输出格式： 在一行中输出相应的最小的s和n，其间以1个空格分隔。 输入样例： 31输出样例： 3584229390681 15 12345678910111213141516171819202122232425#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int n; char str[1001]; scanf("%d",&amp;n); int p=0,now=1,len=0; while(true)&#123; if(p||now/n)&#123; str[p++]='0'+now/n; &#125; len++; now%=n; if(now==0) &#123; str[p]=0; printf("%s %d\n",str,len); break; &#125; now=now*10+1; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-045 宇宙无敌大招呼（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-045-%E5%AE%87%E5%AE%99%E6%97%A0%E6%95%8C%E5%A4%A7%E6%8B%9B%E5%91%BC%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-045 宇宙无敌大招呼（5 分）据说所有程序员学习的第一个程序都是在屏幕上输出一句“Hello World”，跟这个世界打个招呼。作为天梯赛中的程序员，你写的程序得高级一点，要能跟任意指定的星球打招呼。 输入格式： 输入在第一行给出一个星球的名字S，是一个由不超过7个英文字母组成的单词，以回车结束。 输出格式： 在一行中输出“Hello S”，跟输入的S星球打个招呼。 输入样例： Mars输出样例： Hello Mars 12345678910#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; string s; cin&gt;&gt;s; cout&lt;&lt;"Hello "&lt;&lt;s&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-044 稳赢（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-044-%E7%A8%B3%E8%B5%A2%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-044 稳赢（15 分）大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示： 现要求你编写一个稳赢不输的程序，根据对方的出招，给出对应的赢招。但是！为了不让对方输得太惨，你需要每隔K次就让一个平局。 输入格式： 输入首先在第一行给出正整数K（&lt;=10），即平局间隔的次数。随后每行给出对方的一次出招：“ChuiZi”代表“锤子”、“JianDao”代表“剪刀”、“Bu”代表“布”。“End”代表输入结束，这一行不要作为出招处理。 输出格式： 对每一个输入的出招，按要求输出稳赢或平局的招式。每招占一行。 输入样例： 2ChuiZiJianDaoBuJianDaoBuChuiZiChuiZiEnd输出样例： BuChuiZiBuChuiZiJianDaoChuiZiBu 1234567891011121314151617181920212223242526272829#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int k,q; string s; cin&gt;&gt;k; q=0; while(cin&gt;&gt;s) &#123; if(s=="End") break; q++; if(q%k==1&amp;&amp;q!=1)&#123; cout&lt;&lt;s&lt;&lt;endl; q=0; &#125; else &#123; if(s=="Bu") cout&lt;&lt;"JianDao"&lt;&lt;endl; if(s=="ChuiZi") cout&lt;&lt;"Bu"&lt;&lt;endl; if(s=="JianDao") cout&lt;&lt;"ChuiZi"&lt;&lt;endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[155. 最小栈]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F155-%E6%9C%80%E5%B0%8F%E6%A0%88%2F</url>
+    <content type="text"><![CDATA[设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minStack.push(0);minStack.push(-3);minStack.getMin(); –&gt; 返回 -3.minStack.pop();minStack.top(); –&gt; 返回 0.minStack.getMin(); –&gt; 返回 -2. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657class MinStack &#123;public: /** initialize your data structure here. */ stack&lt;int&gt; st; stack&lt;int&gt; minSt; MinStack() &#123; while(!st.empty())&#123; st.pop(); &#125; while(!minSt.empty())&#123; minSt.pop(); &#125; &#125; void push(int x) &#123; st.push(x); if(minSt.size()==0)&#123; minSt.push(x); &#125;else&#123; if(x&lt;=minSt.top())&#123; minSt.push(x); &#125;else&#123; minSt.push(minSt.top()); &#125; &#125; &#125; void pop() &#123; if(st.size()!=0)&#123; st.pop(); minSt.pop(); &#125; &#125; int top() &#123; if(st.size()==0)&#123; return -1; &#125; return st.top(); &#125; int getMin() &#123; if(minSt.size()==0)&#123; return -1; &#125; return minSt.top(); &#125;&#125;;/** * Your MinStack object will be instantiated and called as such: * MinStack obj = new MinStack(); * obj.push(x); * obj.pop(); * int param_3 = obj.top(); * int param_4 = obj.getMin(); */]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[168. Excel表列名称]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F168-Excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B0%2F</url>
+    <content type="text"><![CDATA[给定一个正整数，返回它在 Excel 表中相对应的列名称。 例如， 1 -&gt; A 2 -&gt; B 3 -&gt; C ... 26 -&gt; Z 27 -&gt; AA 28 -&gt; AB ... 示例 1: 输入: 1输出: “A”示例 2: 输入: 28输出: “AB”示例 3: 输入: 701输出: “ZY”1234567891011class Solution &#123;public: string convertToTitle(int n) &#123; string ans; while(n)&#123; ans = char((n-1)%26+'A')+ans; n = (n-1)/26; &#125; return ans; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[171. Excel表列序号]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F171-Excel%E8%A1%A8%E5%88%97%E5%BA%8F%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[给定一个Excel表格中的列名称，返回其相应的列序号。 例如， A -&gt; 1 B -&gt; 2 C -&gt; 3 ... Z -&gt; 26 AA -&gt; 27 AB -&gt; 28 ... 示例 1: 输入: “A”输出: 1示例 2: 输入: “AB”输出: 28示例 3: 输入: “ZY”输出: 70112345678910class Solution &#123;public: int titleToNumber(string s) &#123; int result = 0; for(int i=0;i&lt;s.size();i++)&#123; result = result*26+(s[i]-'A'+1); &#125; return result; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[205. 同构字符串]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F205-%E5%90%8C%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1: 输入: s = “egg”, t = “add”输出: true示例 2: 输入: s = “foo”, t = “bar”输出: false示例 3: 输入: s = “paper”, t = “title”输出: true说明:你可以假设 s 和 t 具有相同的长度。 用两个HashMap维护字符的映射关系，时间复杂度O(n)，空间复杂度O(n)。12345678910111213141516171819202122class Solution &#123; public boolean isIsomorphic(String s, String t) &#123; if(s.length()!=t.length()) return false; final Map&lt;Character,Character&gt; map1 = new HashMap&lt;&gt;(); final Map&lt;Character,Character&gt; map2 = new HashMap&lt;&gt;(); for(int i=0;i&lt;s.length();i++)&#123; final char c1 = s.charAt(i); final char c2 = t.charAt(i); if(map1.containsKey(c1))&#123; if(map1.get(c1)!=c2) return false; &#125;else&#123; map1.put(c1,c2); &#125; if(map2.containsKey(c2))&#123; if(map2.get(c2)!=c1) return false; &#125;else&#123; map2.put(c2,c1); &#125; &#125; return true; &#125;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[125. 验证回文串]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F125-%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1: 输入: “A man, a plan, a canal: Panama”输出: true示例 2: 输入: “race a car”输出: false transform函数的作用是：将某操作应用于指定范围的每个元素123456789101112//C++transform|C++tolower|C++toupper|C++字母转大写|C++字母转小写#include&lt;string&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;usingnamespacestd;voidmain()&#123;string s("WelcomeToWebSite!");cout&lt;&lt;s&lt;&lt;endl;transform(s.begin(),s.end(),s.begin(),::tolower);//字母转小写cout&lt;&lt;s&lt;&lt;endl;transform(s.begin(),s.end(),s.begin(),::toupper);//字母转大写cout&lt;&lt;s&lt;&lt;endl;&#125; 123456789101112131415161718192021222324class Solution &#123;public: bool isPalindrome(string s) &#123; if(s.size()==0)&#123; return true; &#125; string res = ""; for(int i=0;i&lt;s.size();i++)&#123; if((s[i]&gt;='0'&amp;&amp;s[i]&lt;='9')||(s[i]&gt;='a'&amp;&amp;s[i]&lt;='z')||(s[i]&gt;='A'&amp;&amp;s[i]&lt;='Z'))&#123; res+=s[i]; &#125; &#125; transform(res.begin(),res.end(),res.begin(),::tolower); int i=0,j=res.size()-1; while(i&lt;j)&#123; if(res[i]!=res[j])&#123; return false; &#125; i++; j--; &#125; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-043 阅览室（20 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-043-%E9%98%85%E8%A7%88%E5%AE%A4%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[L1-043 阅览室（20 分）天梯图书阅览室请你编写一个简单的图书借阅统计程序。当读者借书时，管理员输入书号并按下S键，程序开始计时；当读者还书时，管理员输入书号并按下E键，程序结束计时。书号为不超过1000的正整数。当管理员将0作为书号输入时，表示一天工作结束，你的程序应输出当天的读者借书次数和平均阅读时间。 注意：由于线路偶尔会有故障，可能出现不完整的纪录，即只有S没有E，或者只有E没有S的纪录，系统应能自动忽略这种无效纪录。另外，题目保证书号是书的唯一标识，同一本书在任何时间区间内只可能被一位读者借阅。 输入格式： 输入在第一行给出一个正整数N（&lt;= 10），随后给出N天的纪录。每天的纪录由若干次借阅操作组成，每次操作占一行，格式为： 书号（[1, 1000]内的整数） 键值（“S”或“E”） 发生时间（hh:mm，其中hh是[0,23]内的整数，mm是[0, 59]内整数） 每一天的纪录保证按时间递增的顺序给出。 输出格式： 对每天的纪录，在一行中输出当天的读者借书次数和平均阅读时间（以分钟为单位的精确到个位的整数时间）。 输入样例： 31 S 08:102 S 08:351 E 10:002 E 13:160 S 17:000 S 17:003 E 08:101 S 08:202 S 09:001 E 09:200 E 17:00输出样例： 2 1960 01 60 1234567891011121314151617181920212223242526272829303132333435363738394041424344#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; int id=-1; double time=0; int num=0; int mint[2001]=&#123;0&#125;; bool flag[2001]; memset(flag,false,sizeof(flag)); while(id!=0)&#123; char a; int h,m; scanf("%d %c %d:%d",&amp;id,&amp;a,&amp;h,&amp;m); if(id==0)&#123; break; &#125; else if(a=='S')&#123; mint[id]=h*60+m; flag[id]=true; &#125; else if(a=='E')&#123; if(flag[id])&#123; flag[id]=false; time+=h*60+m-mint[id]; mint[id]=0; num++; &#125; &#125; &#125; int t; if(num!=0)&#123; time/=num; &#125; t=time+0.5f; printf("%d %d\n",num,t); &#125; return 0;&#125;]]></content>
