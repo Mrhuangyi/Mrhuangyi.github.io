@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L1-054 福到了（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-054-%E7%A6%8F%E5%88%B0%E4%BA%86%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-054 福到了（15 分）“福”字倒着贴，寓意“福到”。不论到底算不算民俗，本题且请你编写程序，把各种汉字倒过来输出。这里要处理的每个汉字是由一个 N x N 的网格组成的，网格中的元素或者为字符“@”或者为空格。而倒过来的汉字所用的字符由裁判指定。 输入格式： 输入在第一行中给出倒过来的汉字所用的字符、以及网格的规模 N （不超过100的正整数），其间以 1 个空格分隔；随后 N 行，每行给出 N 个字符，或者为“@”或者为空格。 输出格式： 输出倒置的网格，如样例所示。但是，如果这个字正过来倒过去是一样的，就先输出“bu yong dao le”，然后再用输入指定的字符将其输出。 输入样例 1：12345678910$ 9 @ @@@@@@@@ @@@ @ @ @ @@@ @@@ @@@ @@@@@@@@ @ @ @@@@ @@@@@ @ @ @ @ @ @@@@@ 输出样例 1：$$$$$ $$ $ $ $$$$$$ $$$$ $ $ $$$$$$$$ $$$ $$$ $$$ $ $ $ $$$ $$$$$$$$ $ 12 输入样例 2：&amp; 3@@@ @@@@输出样例 2： bu yong dao le&amp;&amp;&amp; &amp;&amp;&amp;&amp;1234567891011121314151617181920212223242526272829303132333435363738394041424344```cpp#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; char c; int n; string s[111]; scanf(&quot;%c %d&quot;,&amp;c,&amp;n); getchar(); for(int i=0;i&lt;n;i++)&#123; getline(cin,s[i]); &#125; bool isSame =true; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; int i2=n-i-1; int j2=n-j-1; if(s[i2][j2]!=s[i][j]) isSame=false; &#125; &#125; if(isSame)&#123; printf(&quot;bu yong dao le\n&quot;); for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; if(s[i][j]==&apos; &apos;) printf(&quot; &quot;); else printf(&quot;%c&quot;,c); &#125; printf(&quot;\n&quot;); &#125; return 0; &#125; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; int i2=n-i-1; int j2=n-j-1; if(s[i2][j2]==&apos; &apos;) printf(&quot; &quot;); else printf(&quot;%c&quot;,c); &#125; printf(&quot;\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-053 电子汪（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-053-%E7%94%B5%E5%AD%90%E6%B1%AA%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-053 电子汪（10 分）据说汪星人的智商能达到人类4岁儿童的水平，更有些聪明汪会做加法计算。比如你在地上放两堆小球，分别有1只球和2只球，聪明汪就会用“汪！汪！汪！”表示1加2的结果是3。 本题要求你为电子宠物汪做一个模拟程序，根据电子眼识别出的两堆小球的个数，计算出和，并且用汪星人的叫声给出答案。 输入格式： 输入在一行中给出两个[1, 9]区间内的正整数A和B，用空格分隔。 输出格式： 在一行中输出A+B个“Wang!”。 输入样例： 2 1输出样例： Wang!Wang!Wang! 12345678910111213#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int a,b; string s="Wang!"; scanf("%d%d",&amp;a,&amp;b); int c=a+b; while(c--)&#123; cout&lt;&lt;s; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-052 2018我们要赢（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-052-2018%E6%88%91%E4%BB%AC%E8%A6%81%E8%B5%A2%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-052 2018我们要赢（5 分）2018年天梯赛的注册邀请码是“2018wmyy”，意思就是“2018我们要赢”。本题就请你用汉语拼音输出这句话。 输入格式： 本题没有输入。 输出格式： 在第一行中输出：“2018”；第二行中输出：“wo3 men2 yao4 ying2 !”。 输入样例： 本题没有输入。输出样例： 2018wo3 men2 yao4 ying2 ! 1234567#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; printf("2018\nwo3 men2 yao4 ying2 !"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-051 打折（5 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-051-%E6%89%93%E6%8A%98%EF%BC%885-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-051 打折（5 分）去商场淘打折商品时，计算打折以后的价钱是件颇费脑子的事情。例如原价 ￥988，标明打 7 折，则折扣价应该是 ￥988 x 70% = ￥691.60。本题就请你写个程序替客户计算折扣价。 输入格式： 输入在一行中给出商品的原价（不超过1万元的正整数）和折扣（为[1, 9]区间内的整数），其间以空格分隔。 输出格式： 在一行中输出商品的折扣价，保留小数点后 2 位。 输入样例： 988 7输出样例： 691.60 1234567891011#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int a,b; double c; scanf("%d %d",&amp;a,&amp;b); c=double(a*b*10.0/100); printf("%.2lf",c); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-050 倒数第N个字符串（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-050-%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-050 倒数第N个字符串（15 分）给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。 输入格式： 输入在一行中给出两个正整数 L（2 &lt;= L &lt;= 6）和 N（&lt;= 10^5^）。 输出格式： 在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。 输入样例： 3 7417输出样例： pat 1234567891011121314151617181920212223242526#include&lt;bits/stdc++.h&gt;using namespace std;int f(int x)&#123; int sum=1; for(int i=0;i&lt;x;i++)&#123; sum=sum*26; &#125; return sum;&#125;int main()&#123; int l,n; char a[10]; scanf("%d %d",&amp;l,&amp;n); int ll=f(l); int x=ll-n,j=0; for(int i=l-1;i&gt;=0;i--)&#123; a[j]=x/f(i)+'a'; x=x%f(i); j++; &#125; for(int i=0;i&lt;l;i++) printf("%c",a[i]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-049 天梯赛座位分配（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-049-%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%BA%A7%E4%BD%8D%E5%88%86%E9%85%8D%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-049 天梯赛座位分配（20 分）天梯赛每年有大量参赛队员，要保证同一所学校的所有队员都不能相邻，分配座位就成为一件比较麻烦的事情。为此我们制定如下策略：假设某赛场有 N 所学校参赛，第 i 所学校有 M[i] 支队伍，每队 10 位参赛选手。令每校选手排成一列纵队，第 i+1 队的选手排在第 i 队选手之后。从第 1 所学校开始，各校的第 1 位队员顺次入座，然后是各校的第 2 位队员…… 以此类推。如果最后只剩下 1 所学校的队伍还没有分配座位，则需要安排他们的队员隔位就坐。本题就要求你编写程序，自动为各校生成队员的座位号，从 1 开始编号。 输入格式： 输入在一行中给出参赛的高校数 N （不超过100的正整数）；第二行给出 N 个不超过10的正整数，其中第 i 个数对应第 i 所高校的参赛队伍数，数字间以空格分隔。 输出格式： 从第 1 所高校的第 1 支队伍开始，顺次输出队员的座位号。每队占一行，座位号间以 1 个空格分隔，行首尾不得有多余空格。另外，每所高校的第一行按“#X”输出该校的编号X，从 1 开始。 输入样例： 33 4 2输出样例： #11 4 7 10 13 16 19 22 25 2831 34 37 40 43 46 49 52 55 5861 63 65 67 69 71 73 75 77 79 #22 5 8 11 14 17 20 23 26 2932 35 38 41 44 47 50 53 56 5962 64 66 68 70 72 74 76 78 8082 84 86 88 90 92 94 96 98 100 #33 6 9 12 15 18 21 24 27 3033 36 39 42 45 48 51 54 57 60 123456789101112131415161718192021222324252627282930313233343536#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n,num=0,s[111]; bool over[111]=&#123;false&#125;; vector&lt;int&gt; a[111]; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;s[i]); s[i]*=10; &#125; int k=1; while(num&lt;n)&#123; for(int i=1;i&lt;=n;i++)&#123; if(a[i].size()&lt;s[i])&#123; a[i].push_back(k); if(num==n-1) k+=2; else k++; &#125; if(a[i].size()==s[i]&amp;&amp;over[i]==false)&#123; over[i]=true; num++; &#125; &#125; &#125; for(int j=1;j&lt;=n;j++)&#123; printf("#%d\n",j); for(int l=0;l&lt;a[j].size();l++)&#123; if(l!=0&amp;&amp;(l+1)%10==0) printf("%d\n",a[j][l]); else printf("%d ",a[j][l]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[108. 将有序数组转换为二叉搜索树]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F108-%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。 示例: 给定有序数组: [-10,-3,0,5,9], 一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树： 0 / \ -3 9 / / -10 5 因为给出的是有序数组，所以数组的中间元素就是二叉搜索树的根结点，然后分治去递归1234567891011121314151617181920212223/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* sortedArrayToBST(vector&lt;int&gt;&amp; nums) &#123; return sortedArrayToBST(nums,0,nums.size()); &#125; TreeNode* sortedArrayToBST(vector&lt;int&gt; &amp;nums,int start,int end)&#123; if(start&gt;=end) return NULL; int mid = (end+start)/2; TreeNode *root = new TreeNode(nums[mid]); root-&gt;left = sortedArrayToBST(nums,start,mid); root-&gt;right = sortedArrayToBST(nums,mid+1,end); return root; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[101. 对称二叉树]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1 / \ 2 2 / \ / \3 4 4 3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1 / \ 2 2 \ \ 3 3说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。12345678910111213141516171819202122递归写法：/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: bool isSymmetric(TreeNode* root) &#123; if(root==nullptr) return true; return isSymmetric(root-&gt;left,root-&gt;right); &#125; bool isSymmetric(TreeNode *p,TreeNode *q)&#123; if(p==nullptr&amp;&amp;q==nullptr) return true; if(p==nullptr||q==nullptr) return false; return p-&gt;val==q-&gt;val&amp;&amp;isSymmetric(p-&gt;left,q-&gt;right)&amp;&amp;isSymmetric(p-&gt;right,q-&gt;left); &#125;&#125;; 123456789101112131415161718192021222324252627282930313233迭代写法：/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: bool isSymmetric(TreeNode* root) &#123; if(!root) return true; stack&lt;TreeNode*&gt; s; s.push(root-&gt;left); s.push(root-&gt;right); while(!s.empty())&#123; auto p = s.top(); s.pop(); auto q = s.top(); s.pop(); if(!q&amp;&amp;!p) continue; if(!p||!q) return false; if(p-&gt;val!=q-&gt;val) return false; s.push(p-&gt;left); s.push(q-&gt;right); s.push(p-&gt;right); s.push(q-&gt;left); &#125; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[198. 打家劫舍]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F198-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%2F</url>
+    <content type="text"><![CDATA[你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。 给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。 示例 1: 输入: [1,2,3,1]输出: 4解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。 偷窃到的最高金额 = 1 + 3 = 4 。示例 2: 输入: [2,7,9,3,1]输出: 12解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。 偷窃到的最高金额 = 2 + 9 + 1 = 12 。考虑动态规划解法，关键在于得到dp转移方程dp[i] = max(dp[i-2]+nums[i],dp[i-1]);123456789101112131415161718class Solution &#123;public: int rob(vector&lt;int&gt;&amp; nums) &#123; if(nums.size()==0)&#123; return 0; &#125; if(nums.size()==1)&#123; return nums[0]; &#125; vector&lt;int&gt; dp(nums.size()); dp[0] = nums[0]; dp[1] = max(nums[0],nums[1]); for(int i=2;i&lt;nums.size();i++)&#123; dp[i] = max(dp[i-2]+nums[i],dp[i-1]); &#125; return dp[nums.size()-1]; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[67. 二进制求和]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F67-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[给定两个二进制字符串，返回他们的和（用二进制表示）。 输入为非空字符串且只包含数字 1 和 0。 示例 1: 输入: a = “11”, b = “1”输出: “100”示例 2: 输入: a = “1010”, b = “1011”输出: “10101” 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950class Solution &#123;public: string addBinary(string a, string b) &#123; int len1 = a.size(); int len2 = b.size(); if(len1==0)&#123; return b; &#125; if(len2==0)&#123; return a; &#125; string ret; int carry = 0; int index1 = len1-1; int index2 = len2-1; while(index1&gt;=0&amp;&amp;index2&gt;=0)&#123; int num = (a[index1]-'0')+(b[index2]-'0')+carry; carry = num/2; num = num%2; index1--; index2--; ret.insert(ret.begin(),num+'0'); &#125; if(index1&lt;0&amp;&amp;index2&lt;0)&#123; if(carry==1)&#123; ret.insert(ret.begin(),carry+'0'); return ret; &#125; &#125; while(index1&gt;=0)&#123; int num = (a[index1]-'0')+carry; carry = num/2; num = num%2; index1--; ret.insert(ret.begin(),num+'0'); &#125; while(index2&gt;=0)&#123; int num = (b[index2]-'0')+carry; carry = num/2; num = num%2; index2--; ret.insert(ret.begin(),num+'0'); &#125; if(carry==1)&#123; ret.insert(ret.begin(),carry+'0'); &#125; return ret; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-048 矩阵A乘以B（15 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-048-%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[L1-048 矩阵A乘以B（15 分）给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。 输入格式： 输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。 输出格式： 若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出“Error: Ca != Rb”，其中Ca是A的列数，Rb是B的行数。 输入样例1： 2 31 2 34 5 63 47 8 9 0-1 -2 -3 -45 6 7 8输出样例1： 2 420 22 24 1653 58 63 28输入样例2： 3 238 2643 -50 173 2-11 5799 6881 72输出样例2： Error: 2 != 3 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int ra,ca,rb,cb; scanf("%d%d",&amp;ra,&amp;ca); int a[ra][ca]; for(int i=0;i&lt;ra;i++) &#123; for(int j=0;j&lt;ca;j++) &#123; scanf("%d",&amp;a[i][j]); &#125; &#125; scanf("%d%d",&amp;rb,&amp;cb); int b[rb][cb]; for(int i=0;i&lt;rb;i++) &#123; for(int j=0;j&lt;cb;j++) &#123; scanf("%d",&amp;b[i][j]); &#125; &#125; if(ca!=rb)&#123; printf("Error: %d != %d",ca,rb); &#125; else&#123; printf("%d %d\n",ra,cb); int c[ra][cb]; for(int i=0;i&lt;ra;i++)&#123; for(int j=0;j&lt;cb;j++)&#123; int sum=0; for(int k=0;k&lt;ca;k++)&#123; sum+=a[i][k]*b[k][j]; &#125; if(j&lt;cb-1) printf("%d ",sum); else printf("%d\n",sum); &#125; &#125; &#125; return 0;&#125;]]></content>
@@ -1499,9 +1609,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -1510,9 +1620,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
