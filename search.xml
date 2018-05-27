@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L2-003 月饼（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-003-%E6%9C%88%E9%A5%BC%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-003 月饼（25 分）月饼是中国人在中秋佳节时吃的一种传统食品，不同地区有许多不同风味的月饼。现给定所有种类月饼的库存量、总售价、以及市场的最大需求量，请你计算可以获得的最大收益是多少。 注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有3种月饼，其库存量分别为18、15、10万吨，总售价分别为75、72、45亿元。如果市场的最大需求量只有20万吨，那么我们最大收益策略应该是卖出全部15万吨第2种月饼、以及5万吨第3种月饼，获得 72 + 45/2 = 94.5（亿元）。 输入格式： 每个输入包含1个测试用例。每个测试用例先给出一个不超过1000的正整数N表示月饼的种类数、以及不超过500（以万吨为单位）的正整数D表示市场最大需求量。随后一行给出N个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出N个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。 输出格式： 对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后2位。 输入样例： 3 2018 15 1075 72 45输出样例： 94.50 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;stdio.h&gt;#include&lt;algorithm&gt;using namespace std;struct E&#123; float amount; float price; float avg;&#125;buf[1111];bool cmp(E a,E b)&#123; return a.avg&gt;b.avg;&#125;int main()&#123; int n,m,t,i; float sum; sum=t=0; scanf("%d%d",&amp;n,&amp;m); for(i=0;i&lt;n;i++) &#123; scanf("%f",&amp;buf[i].amount); &#125; for(i=0;i&lt;n;i++) &#123; scanf("%f",&amp;buf[i].price); &#125; for(i=0;i&lt;n;i++) &#123; buf[i].avg=buf[i].price/buf[i].amount; &#125; sort(buf,buf+n,cmp); for(i=0;i&lt;n;i++) &#123;if(buf[i].amount&lt;=m)&#123; sum+=buf[i].price;&#125; else &#123; sum+=buf[i].avg*m; break; &#125; m=m-buf[i].amount; &#125; printf("%.2f",sum); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-056 猜数字（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-056-%E7%8C%9C%E6%95%B0%E5%AD%97%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-056 猜数字（20 分）一群人坐在一起，每人猜一个 100 以内的数，谁的数字最接近大家平均数的一半就赢。本题就要求你找出其中的赢家。 输入格式： 输入在第一行给出一个正整数N（&lt;= 10^4^）。随后 N 行，每行给出一个玩家的名字（由不超过8个英文字母组成的字符串）和其猜的正整数（&lt;= 100）。 输出格式： 在一行中顺序输出：大家平均数的一半（只输出整数部分）、赢家的名字，其间以空格分隔。题目保证赢家是唯一的。 输入样例： 7Bob 35Amy 28James 98Alice 11Jack 45Smith 33Chris 62输出样例： 22 Amy 12345678910111213141516171819202122232425#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;using namespace std;struct E&#123;char name[11];int num;&#125;a[10001];int main()&#123; int n,sum=0; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%s%d",a[i].name,&amp;a[i].num); sum+=a[i].num; &#125; int avg=(sum/n)/2,minm=11111,tag; for(int i=0;i&lt;n;i++)&#123; if(abs(avg-a[i].num)&lt;minm)&#123; minm=abs(avg-a[i].num); tag=i; &#125; &#125; printf("%d %s\n",avg,a[tag].name); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L1-055 谁是赢家（10 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-055-%E8%B0%81%E6%98%AF%E8%B5%A2%E5%AE%B6%EF%BC%8810-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L1-055 谁是赢家（10 分）某电视台的娱乐节目有个表演评审环节，每次安排两位艺人表演，他们的胜负由观众投票和3名评委投票两部分共同决定。规则为：如果一位艺人的观众票数高，且得到至少1名评委的认可，该艺人就胜出；或艺人的观众票数低，但得到全部评委的认可，也可以胜出。节目保证投票的观众人数为奇数，所以不存在平票的情况。本题就请你用程序判断谁是赢家。 输入格式： 输入第一行给出 2 个不超过 1000 的正整数 Pa 和 Pb，分别是艺人 a 和艺人 b 得到的观众票数。题目保证这两个数字不相等。随后第二行给出 3 名评委的投票结果。数字 0 代表投票给 a，数字 1 代表投票给 b，其间以一个空格分隔。 输出格式： 按以下格式输出赢家： The winner is x: P1 + P2 其中 x 是代表赢家的字母，P1 是赢家得到的观众票数，P2 是赢家得到的评委票数。 输入样例： 327 1291 0 1输出样例： The winner is a: 327 + 1 123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int pa,pb; int x,a=0,b=0; scanf("%d %d",&amp;pa,&amp;pb); for(int i=0;i&lt;3;i++)&#123; scanf("%d",&amp;x); if(x==0)&#123; a++; &#125; else&#123; b++; &#125; &#125; if(pa&gt;pb&amp;&amp;a!=0)&#123; printf("The winner is a: %d + %d\n",pa,a); &#125; else if(pa&lt;pb&amp;&amp;b!=0)&#123; printf("The winner is b: %d + %d\n",pb,b); &#125; else if(pa&lt;pb&amp;&amp;a==3)&#123; printf("The winner is a: %d + %d\n",pa,a); &#125; else if(pb&lt;pa&amp;&amp;b==3)&#123; printf("The winner is b: %d + %d\n",pb,b); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[258. 各位相加]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F258-%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0%2F</url>
+    <content type="text"><![CDATA[给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。 示例: 输入: 38输出: 2解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？12345678910111213141516171819202122class Solution &#123;public: int addDigits(int num) &#123; return num-9*((num-1)/9); &#125;&#125;;class Solution &#123;public: int addDigits(int num) &#123; int sum = 0; while(num!=0)&#123; sum+=num%10; num/=10; &#125; if(sum&lt;10)&#123; return sum; &#125;else&#123; return addDigits(sum); &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[292. Nim游戏]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F292-Nim%E6%B8%B8%E6%88%8F%2F</url>
+    <content type="text"><![CDATA[你和你的朋友，两个人一起玩Nim游戏：桌子上有一堆石头，每次你们轮流拿掉 1 - 3 块石头。 拿掉最后一块石头的人就是获胜者。你作为先手。 你们是聪明人，每一步都是最优解。 编写一个函数，来判断你是否可以在给定石头数量的情况下赢得游戏。 示例: 输入: 4输出: false解释: 如果堆中有 4 块石头，那么你永远不会赢得比赛； 因为无论你拿走 1块、2块 还是 3块石头，最后一块石头总是会被你的朋友拿走。 找规律发现，只要是4的倍数就一定会输 class Solution {public: bool canWinNim(int n) { return (n%4!=0); }};]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[344. 反转字符串]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[请编写一个函数，其功能是将输入的字符串反转过来。 示例： 输入：s = “hello”返回：”olleh”12345678910111213141516171819class Solution &#123;public: string reverseString(string s) &#123; reverse(s.begin(),s.end()); return s; &#125;&#125;;class Solution &#123;public: string reverseString(string s) &#123; string res; for (int nIdx = 0; nIdx &lt; s.length(); nIdx++) &#123; res += s[s.length() - nIdx - 1]; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[268. 缺失数字]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F268-%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1: 输入: [3,0,1]输出: 2示例 2: 输入: [9,6,4,2,3,5,7,0,1]输出: 8说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &#123;public: int missingNumber(vector&lt;int&gt;&amp; nums) &#123; sort(nums.begin(),nums.end()); int j; for(int i=0;i&lt;nums.size();i++)&#123; if(nums[i]!=i)&#123; return i; &#125; j=i; &#125; return j+1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[231. 2的幂]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F231-2%E7%9A%84%E5%B9%82%2F</url>
+    <content type="text"><![CDATA[给定一个整数，写一个函数来判断它是否是 2 的幂次方。 示例 1: 输入: 1输出: true示例 2: 输入: 16输出: true示例 3: 输入: 218输出: false 分析： 负数一定不是2的幂 2的整数次幂对应的二进制数只含有0个或者1个1 时间复杂度：O(n) 空间复杂度：O(1) 123456789101112131415161718class Solution &#123;public: bool isPowerOfTwo(int n) &#123; if(n&lt;0) return false; bool hasOne = false; while(n&gt;0)&#123; if(n&amp;1)&#123; if(hasOne)&#123; return false; &#125;else&#123; hasOne = true; &#125; &#125; n&gt;&gt;=1; &#125; return hasOne; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[217. 存在重复元素]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[给定一个整数数组，判断是否存在重复元素。 如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。 示例 1: 输入: [1,2,3,1]输出: true示例 2: 输入: [1,2,3,4]输出: false示例 3: 输入: [1,1,1,3,3,4,3,2,4,2]输出: true12345678910111213141516class Solution &#123;public: bool containsDuplicate(vector&lt;int&gt;&amp; nums) &#123; if(nums.size()&lt;=1)&#123; return false; &#125; sort(nums.begin(),nums.end()); for(int i=0;i&lt;nums.size();i++)&#123; if(nums[i]==nums[i+1])&#123; return true; break; &#125; &#125; return false; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L1-054 福到了（15 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL1-054-%E7%A6%8F%E5%88%B0%E4%BA%86%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[L1-054 福到了（15 分）“福”字倒着贴，寓意“福到”。不论到底算不算民俗，本题且请你编写程序，把各种汉字倒过来输出。这里要处理的每个汉字是由一个 N x N 的网格组成的，网格中的元素或者为字符“@”或者为空格。而倒过来的汉字所用的字符由裁判指定。 输入格式： 输入在第一行中给出倒过来的汉字所用的字符、以及网格的规模 N （不超过100的正整数），其间以 1 个空格分隔；随后 N 行，每行给出 N 个字符，或者为“@”或者为空格。 输出格式： 输出倒置的网格，如样例所示。但是，如果这个字正过来倒过去是一样的，就先输出“bu yong dao le”，然后再用输入指定的字符将其输出。 输入样例 1：12345678910$ 9 @ @@@@@@@@ @@@ @ @ @ @@@ @@@ @@@ @@@@@@@@ @ @ @@@@ @@@@@ @ @ @ @ @ @@@@@ 输出样例 1：$$$$$ $$ $ $ $$$$$$ $$$$ $ $ $$$$$$$$ $$$ $$$ $$$ $ $ $ $$$ $$$$$$$$ $ 12 输入样例 2：&amp; 3@@@ @@@@输出样例 2： bu yong dao le&amp;&amp;&amp; &amp;&amp;&amp;&amp;1234567891011121314151617181920212223242526272829303132333435363738394041424344```cpp#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; char c; int n; string s[111]; scanf(&quot;%c %d&quot;,&amp;c,&amp;n); getchar(); for(int i=0;i&lt;n;i++)&#123; getline(cin,s[i]); &#125; bool isSame =true; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; int i2=n-i-1; int j2=n-j-1; if(s[i2][j2]!=s[i][j]) isSame=false; &#125; &#125; if(isSame)&#123; printf(&quot;bu yong dao le\n&quot;); for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; if(s[i][j]==&apos; &apos;) printf(&quot; &quot;); else printf(&quot;%c&quot;,c); &#125; printf(&quot;\n&quot;); &#125; return 0; &#125; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;n;j++)&#123; int i2=n-i-1; int j2=n-j-1; if(s[i2][j2]==&apos; &apos;) printf(&quot; &quot;); else printf(&quot;%c&quot;,c); &#125; printf(&quot;\n&quot;); &#125; return 0;&#125;]]></content>
@@ -1609,9 +1708,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -1620,9 +1719,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
