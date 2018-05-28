@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-05-27T07:49:14.569Z</updated>
+  <updated>2018-05-28T09:07:00.392Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>110. 平衡二叉树</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/110-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>http://huangyiblog.com/题解集/110-平衡二叉树/</id>
+    <published>2018-05-28T09:06:25.000Z</published>
+    <updated>2018-05-28T09:07:00.392Z</updated>
+    
+    <content type="html"><![CDATA[<p>给定一个二叉树，判断它是否是高度平衡的二叉树。</p><p>本题中，一棵高度平衡二叉树定义为：</p><p>一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。</p><p>示例 1:</p><p>给定二叉树 [3,9,20,null,null,15,7]</p><pre><code>3</code></pre><p>   / \<br>  9  20<br>    /  \<br>   15   7<br>返回 true 。</p><p>示例 2:</p><p>给定二叉树 [1,2,2,3,3,null,null,4,4]</p><pre><code>   1  / \ 2   2/ \</code></pre><p>   3   3<br>  / \<br> 4   4<br>返回 false 。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> balanceHeight(root)&gt;=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//假如是平衡二叉树，则返回root的高度，否则返回-1</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">balanceHeight</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = balanceHeight(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> right = balanceHeight(root-&gt;right);</span><br><span class="line">        <span class="keyword">if</span>(left&lt;<span class="number">0</span>||right&lt;<span class="number">0</span>||(<span class="built_in">abs</span>(left-right)&gt;<span class="number">1</span>)) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> max(left,right)+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;给定一个二叉树，判断它是否是高度平衡的二叉树。&lt;/p&gt;
+&lt;p&gt;本题中，一棵高度平衡二叉树定义为：&lt;/p&gt;
+&lt;p&gt;一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;p&gt;给定二叉树 [3,9,20,null,null,15,7]&lt;
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>L2-003 月饼（25 分）</title>
@@ -527,33 +556,6 @@
     
     
       <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L1-048 矩阵A乘以B（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L1-048-%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L1-048-矩阵A乘以B（15-分）/</id>
-    <published>2018-05-25T09:14:38.000Z</published>
-    <updated>2018-05-25T09:15:03.922Z</updated>
-    
-    <content type="html"><![CDATA[<p>L1-048 矩阵A乘以B（15 分）<br>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p><p>输入格式：</p><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p><p>输出格式：</p><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出“Error: Ca != Rb”，其中Ca是A的列数，Rb是B的行数。</p><p>输入样例1：</p><p>2 3<br>1 2 3<br>4 5 6<br>3 4<br>7 8 9 0<br>-1 -2 -3 -4<br>5 6 7 8<br>输出样例1：</p><p>2 4<br>20 22 24 16<br>53 58 63 28<br>输入样例2：</p><p>3 2<br>38 26<br>43 -5<br>0 17<br>3 2<br>-11 57<br>99 68<br>81 72<br>输出样例2：</p><p>Error: 2 != 3</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ra,ca,rb,cb;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;ra,&amp;ca);</span><br><span class="line">    <span class="keyword">int</span> a[ra][ca];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ra;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;ca;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;rb,&amp;cb);</span><br><span class="line">    <span class="keyword">int</span> b[rb][cb];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;rb;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cb;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ca!=rb)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Error: %d != %d"</span>,ca,rb);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,ra,cb);</span><br><span class="line">        <span class="keyword">int</span> c[ra][cb];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ra;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cb;j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;ca;k++)&#123;</span><br><span class="line">        sum+=a[i][k]*b[k][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j&lt;cb<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,sum);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L1-048 矩阵A乘以B（15 分）&lt;br&gt;给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。&lt;/p&gt;
-&lt;p&gt;输入格式：&lt;/p&gt;
-&lt;p&gt;输入先
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
     
   </entry>
   
