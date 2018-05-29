@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[107. 二叉树的层次遍历 II]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F107-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86-II%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历） 例如：给定二叉树 [3,9,20,null,null,15,7], 3 / \ 9 20 / \ 15 7返回其自底向上的层次遍历为： [ [15,7], [9,20], [3]]题目要求：给定一颗二叉树， 返回一个二维数组，这个二维数组要满足这个条件， 二维数组的第一个一维数组要是这可二叉树的最下面一层，之后以此类推1234567891011121314151617181920212223242526272829303132333435363738/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) &#123; int depth = getHeight(root); vector&lt;vector&lt;int&gt;&gt; ret(depth); if(depth==0)&#123; return ret; &#125; dfs(ret,ret.size()-1,root); return ret; &#125; void dfs(vector&lt;vector&lt;int&gt;&gt;&amp; ret,int level,TreeNode* root)&#123; if(root==NULL)&#123; return ; &#125; ret[level].push_back(root-&gt;val); dfs(ret,level-1,root-&gt;left); dfs(ret,level-1,root-&gt;right); &#125; int getHeight(TreeNode* root)&#123; if(root==NULL)&#123; return 0; &#125; int lside = getHeight(root-&gt;left); int rside = getHeight(root-&gt;right); int height = (lside&gt;rside?lside:rside)+1; return height; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1005 继续(3n+1)猜想 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1005-%E7%BB%A7%E7%BB%AD-3n-1-%E7%8C%9C%E6%83%B3-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1005 继续(3n+1)猜想 (25)（25 分）卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。 当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆盖”的数。我们称一个数列中的某个数n为“关键数”，如果n不能被数列中的其他数字所覆盖。 现在给定一系列待验证的数字，我们只需要验证其中的几个关键数，就可以不必再重复验证余下的数字。你的任务就是找出这些关键数字，并按从大到小的顺序输出它们。 输入格式：每个测试输入包含1个测试用例，第1行给出一个正整数K(&amp;lt100)，第2行给出K个互不相同的待验证的正整数n(1&amp;ltn&lt;=100)的值，数字间用空格隔开。 输出格式：每个测试用例的输出占一行，按从大到小的顺序输出关键数字。数字间用1个空格隔开，但一行中最后一个数字后没有空格。 输入样例： 63 5 6 7 8 11输出样例： 7 6 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;string.h&gt;using namespace std;bool cmp(int a,int b)&#123; return a&gt;b;&#125;int main()&#123; int i,j,x,k,a[111],b[11011],c[10011],d[111]; scanf("%d",&amp;k); memset(b,0,sizeof(b)); memset(c,0,sizeof(c)); x=1; for(i=1;i&lt;=k;i++) &#123; scanf("%d",&amp;a[i]); d[x]=a[i]; x++; &#125; for(i=1;i&lt;=k;i++) &#123;if(b[a[i]]==0)&#123; while(a[i]&gt;1) &#123; if(a[i]%2==0)&#123; b[a[i]/2]=1; a[i]=a[i]/2; &#125; else&#123; b[(a[i]*3+1)/2]=1; a[i]=(a[i]*3+1)/2; &#125; &#125; &#125; &#125; j=0; for(i=1;i&lt;=k;i++) &#123; if(b[d[i]]==0)&#123; c[j]=d[i]; j++; &#125; &#125; sort(c,c+j,cmp); for(i=0;i&lt;j-1;i++) &#123;printf("%d ",c[i]); &#125; printf("%d",c[j-1]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1004 成绩排名 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1004-%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1004 成绩排名 (20)（20 分）读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。 输入格式：每个测试输入包含1个测试用例，格式为\ 第1行：正整数n 第2行：第1个学生的姓名 学号 成绩 第3行：第2个学生的姓名 学号 成绩 … … … 第n+1行：第n个学生的姓名 学号 成绩其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。 输出格式：对每个测试用例输出2行，第1行是成绩最高学生的姓名和学号，第2行是成绩最低学生的姓名和学号，字符串间有1空格。 输入样例： 3Joe Math990112 89Mike CS991301 100Mary EE990830 95输出样例： Mike CS991301Joe Math990112 12345678910111213141516171819202122232425262728#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;string&gt;using namespace std;struct student&#123; string name; string number; int grade;&#125;;bool cmp(student a,student b)&#123; return a.grade&lt;b.grade;&#125;int main()&#123; student a[1110]; int n; cin&gt;&gt;n; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;a[i].name&gt;&gt;a[i].number&gt;&gt;a[i].grade; &#125; sort(a,a+n,cmp); cout&lt;&lt;a[n-1].name&lt;&lt;" "&lt;&lt;a[n-1].number&lt;&lt;endl; cout&lt;&lt;a[0].name&lt;&lt;" "&lt;&lt;a[0].number&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1003 我要通过！(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1003-%E6%88%91%E8%A6%81%E9%80%9A%E8%BF%87%EF%BC%81-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1003 我要通过！(20)（20 分）“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。 得到“答案正确”的条件是： 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；\ 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；\如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。 输入格式： 每个测试输入包含1个测试用例。第1行给出一个自然数n (&amp;lt10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。 输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。 输入样例： 8PATPAATAAPATAAAAPAATAAAAxPATxPTWhateverAPAAATAA输出样例： YESYESYESYESNONONONO 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; int n,i,j; char a[111]; scanf("%d",&amp;n); while(n--) &#123; int x=0,y=0,z=0,flag1=0,flag2=0,flag3=0,len; scanf("%s",a); len=strlen(a); int count1=0,count2=0,count3=0; if(len&lt;3) printf("NO\n"); else&#123; if(a[0]=='P'&amp;&amp;a[len-1]=='T')&#123; flag1=1; for(i=1;i&lt;=len-2;i++) &#123; if(a[i]=='A') flag1=1; else &#123; flag1=0; break; &#125; &#125; if(flag1==1) printf("YES\n"); else printf("NO\n"); &#125; else&#123; if(a[0]=='A') for(i=0;i&lt;len;i++) &#123; if(a[i]=='P') flag2=i; if(a[i]=='T') flag3=i; &#125; for(i=0;i&lt;flag2;i++) &#123; if(a[i]=='A')&#123; x=1; count1++; &#125; else &#123; x=0; break; &#125; &#125; for(i=flag2+1;i&lt;flag3;i++) &#123; if(a[i]=='A')&#123; y=1; count2++; &#125; else &#123; y=0; break; &#125; &#125; for(i=flag3+1;i&lt;len;i++) &#123; if(a[i]=='A')&#123; z=1; count3++; &#125; else &#123; z=0; break; &#125; &#125; if(x==1&amp;&amp;y==1&amp;&amp;z==1&amp;&amp;count1*count2==count3) printf("YES\n"); else printf("NO\n"); &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1002 写出这个数 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1002-%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1002 写出这个数 (20)（20 分）读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。 输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10^100^。 输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。 输入样例： 1234567890987654321123456789输出样例： yi san wu 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; char a[10000]; int s[1000]; scanf("%s",a); int len,i,sum,j,t; len=strlen(a); j=sum=0; for(i=0;i&lt;len;i++)&#123; sum+=a[i]-'0'; &#125; while(sum!=0)&#123; j++; t=sum%10; sum=sum/10; s[j]=t; &#125; for(i=j;i&gt;=1;i--)&#123; if(i&gt;1)&#123; if(s[i]==1) printf("yi "); else if(s[i]==2) printf("er "); else if(s[i]==3) printf("san "); else if(s[i]==4) printf("si "); else if(s[i]==5) printf("wu "); else if(s[i]==6) printf("liu "); else if(s[i]==7) printf("qi "); else if(s[i]==8) printf("ba "); else if(s[i]==9) printf("jiu "); else if(s[i]==0) printf("ling "); &#125; if(i==1) &#123; if(s[i]==1) printf("yi"); else if(s[i]==2) printf("er"); else if(s[i]==3) printf("san"); else if(s[i]==4) printf("si"); else if(s[i]==5) printf("wu"); else if(s[i]==6) printf("liu"); else if(s[i]==7) printf("qi"); else if(s[i]==8) printf("ba"); else if(s[i]==9) printf("jiu"); else if(s[i]==0) printf("ling"); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1001 害死人不偿命的(3n+1)猜想 (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1001-%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84-3n-1-%E7%8C%9C%E6%83%B3-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1001 害死人不偿命的(3n+1)猜想 (15)（15 分）卡拉兹(Callatz)猜想： 对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展…… 我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？ 输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。 输出格式：输出从n计算到1需要的步数。 输入样例： 3输出样例： 5 12345678910111213141516#include&lt;stdio.h&gt;int main()&#123; int n,t; scanf("%d",&amp;n); t=0; while(n!=1)&#123; if(n%2==0) n=n/2; else n=(3*n+1)/2; t++; &#125; printf("%d",t); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-008 最长对称子串（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-008-%E6%9C%80%E9%95%BF%E5%AF%B9%E7%A7%B0%E5%AD%90%E4%B8%B2%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-008 最长对称子串（25 分）对给定的字符串，本题要求你输出最长对称子串的长度。例如，给定”Is PAT&amp;TAP symmetric?”，最长对称子串为”s PAT&amp;TAP s”，于是你应该输出11。 输入格式： 输入在一行中给出长度不超过1000的非空字符串。 输出格式： 在一行中输出最长对称子串的长度。 输入样例： Is PAT&amp;TAP symmetric?输出样例： 11 12345678910111213141516171819202122232425262728293031#include&lt;cstdio&gt;#include&lt;cstring&gt;const int maxn = 1010;char S[maxn];int dp[maxn][maxn];int main()&#123; gets(S); int len = strlen(S),ans = 1; memset(dp,0,sizeof(dp)); for(int i=0;i&lt;len;i++)&#123; dp[i][i] = 1; if(i&lt;len-1)&#123; if(S[i]==S[i+1])&#123; dp[i][i+1] = 1; ans = 2; &#125; &#125; &#125; for(int t=3;t&lt;=len;t++)&#123; for(int i=0;i+t-1&lt;len;i++)&#123; int j = i+t-1; if(S[i]==S[j]&amp;&amp;dp[i+1][j-1]==1)&#123; dp[i][j] = 1; ans = t; &#125; &#125; &#125; printf("%d\n",ans); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-006 树的遍历（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-006-%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-006 树的遍历（25 分）给定一棵二叉树的后序遍历和中序遍历，请你输出其层序遍历的序列。这里假设键值都是互不相等的正整数。 输入格式： 输入第一行给出一个正整数N（&lt;=30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。 输出格式： 在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。 输入样例： 72 3 1 5 7 6 41 2 3 4 5 6 7输出样例： 4 1 6 3 5 7 2 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;queue&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=50;struct node&#123; int data; node* lchild; node* rchild;&#125;;int pre[maxn],in[maxn],post[maxn];int n;node* create(int postl,int postr,int inl,int inr)&#123; if(postl&gt;postr)&#123; return NULL; &#125; node* root = new node; root-&gt;data=post[postr]; int k; for(k=inl;k&lt;=inr;k++)&#123; if(in[k]==post[postr])&#123; break; &#125; &#125; int numLeft=k-inl; root-&gt;lchild=create(postl,postl+numLeft-1,inl,k-1); root-&gt;rchild=create(postl+numLeft,postr-1,k+1,inr); return root;&#125;int num=0;void bfs(node* root)&#123; queue&lt;node*&gt; q; q.push(root); while(!q.empty())&#123; node* now=q.front(); q.pop(); printf("%d",now-&gt;data); num++; if(num&lt;n) printf(" "); if(now-&gt;lchild!=NULL) q.push(now-&gt;lchild); if(now-&gt;rchild!=NULL) q.push(now-&gt;rchild); &#125;&#125;int main()&#123; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;post[i]); &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;in[i]); &#125; node* root=create(0,n-1,0,n-1); bfs(root); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-002 链表去重（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-002-%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-002 链表去重（25 分）给定一个带整数键值的单链表L，本题要求你编写程序，删除那些键值的绝对值有重复的结点。即对任意键值K，只有键值或其绝对值等于K的第一个结点可以被保留。同时，所有被删除的结点必须被保存在另外一个链表中。例如：另L为21→-15→-15→-7→15，则你必须输出去重后的链表21→-15→-7、以及被删除的链表-15→15。 输入格式： 输入第一行包含链表第一个结点的地址、以及结点个数N（&lt;= 10^5^ 的正整数）。结点地址是一个非负的5位整数，NULL指针用-1表示。 随后N行，每行按下列格式给出一个结点的信息： Address Key Next 其中Address是结点的地址，Key是绝对值不超过10^4^的整数，Next是下一个结点的地址。 输出格式： 首先输出去重后的链表，然后输出被删除结点组成的链表。每个结点占一行，按输入的格式输出。 输入样例： 00100 599999 -7 8765423854 -15 0000087654 15 -100000 -15 9999900100 21 23854输出样例： 00100 21 2385423854 -15 9999999999 -7 -100000 -15 8765487654 15 -1 题目要求删除键值的绝对值有重复的结点，然后先输出删除后的链表，在输出被删除的链表 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxn = 1e5;struct Node&#123; int address; int key; int next; int num;&#125;node[maxn];bool vis[maxn];bool cmp(Node a,Node b)&#123; return a.num&lt;b.num;&#125;int main()&#123; int head,n,a; scanf("%d%d",&amp;head,&amp;n); int k1=0,k2=0; for(int i=0;i&lt;maxn;i++)&#123; node[i].num=2*maxn; &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a); scanf("%d%d",&amp;node[a].key,&amp;node[a].next); node[a].address=a; &#125; for(int i=head;i!=-1;i=node[i].next)&#123; if(!vis[abs(node[i].key)])&#123; vis[abs(node[i].key)]=true; node[i].num=k1; k1++; &#125;else&#123; node[i].num=maxn+k2; k2++; &#125; &#125; sort(node,node+maxn,cmp); int k=k1+k2; for(int i=0;i&lt;k;i++)&#123; if(i!=k1-1&amp;&amp;i!=k-1)&#123; printf("%05d %d %05d\n",node[i].address,node[i].key,node[i+1].address); &#125;else&#123; printf("%05d %d -1\n",node[i].address,node[i].key); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-001 紧急救援（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-001-%E7%B4%A7%E6%80%A5%E6%95%91%E6%8F%B4%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-001 紧急救援（25 分）作为一个城市的应急救援队伍的负责人，你有一张特殊的全国地图。在地图上显示有多个分散的城市和一些连接城市的快速道路。每个城市的救援队数量和每一条连接两个城市的快速道路长度都标在地图上。当其他城市有紧急求助电话给你的时候，你的任务是带领你的救援队尽快赶往事发地，同时，一路上召集尽可能多的救援队。 输入格式： 输入第一行给出4个正整数N、M、S、D，其中N（2&lt;=N&lt;=500）是城市的个数，顺便假设城市的编号为0~(N-1)；M是快速道路的条数；S是出发地的城市编号；D是目的地的城市编号。第二行给出N个正整数，其中第i个数是第i个城市的救援队的数目，数字间以空格分隔。随后的M行中，每行给出一条快速道路的信息，分别是：城市1、城市2、快速道路的长度，中间用空格分开，数字均为整数且不超过500。输入保证救援可行且最优解唯一。 输出格式： 第一行输出不同的最短路径的条数和能够召集的最多的救援队数量。第二行输出从S到D的路径中经过的城市编号。数字间以空格分隔，输出首尾不能有多余空格。 输入样例： 4 5 0 320 30 40 100 1 11 3 20 3 30 2 22 3 2输出样例： 2 600 1 3求最短路径条数以及相应的路径编号，调用一遍Dijstra算法123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxv = 510;const int inf = 0x3fffffff;int n,m,st,ed,G[maxv][maxv],weight[maxv];int d[maxv],w[maxv],num[maxv],pre[510];bool vis[maxv]=&#123;false&#125;;void printpath(int v)&#123; if(v==st)&#123; printf("%d",v); return; &#125; printpath(pre[v]); printf(" %d",v);&#125;void Dijstra(int s)&#123; fill(d,d+maxv,inf); memset(num,0,sizeof(num)); memset(w,0,sizeof(w)); d[s]=0; w[s]=weight[s]; num[s]=1; for(int i=0;i&lt;n;i++)&#123; int u=-1,minm=inf; for(int j=0;j&lt;n;j++)&#123; if(vis[j]==false&amp;&amp;d[j]&lt;minm)&#123; u=j; minm=d[j]; &#125; &#125; if(u==-1)&#123; return ; &#125; vis[u]=true; for(int v=0;v&lt;n;v++)&#123; if(vis[v]==false&amp;&amp;G[u][v]!=inf)&#123; if(d[u]+G[u][v]&lt;d[v])&#123; d[v]=d[u]+G[u][v]; w[v]=w[u]+weight[v]; num[v]=num[u]; pre[v]=u; &#125;else if(d[u]+G[u][v]==d[v])&#123; if(w[u]+weight[v]&gt;w[v])&#123; w[v]=w[u]+weight[v]; pre[v]=u; &#125; num[v]+=num[u]; &#125; &#125; &#125; &#125;&#125;int main()&#123; scanf("%d%d%d%d",&amp;n,&amp;m,&amp;st,&amp;ed); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;weight[i]); &#125; int u,v; fill(G[0],G[0]+maxv*maxv,inf); for(int i=0;i&lt;m;i++)&#123; scanf("%d%d",&amp;u,&amp;v); scanf("%d",&amp;G[u][v]); G[v][u]=G[u][v]; &#125; Dijstra(st); printf("%d %d\n",num[ed],w[ed]); printpath(ed); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[110. 平衡二叉树]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F110-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
     <content type="text"><![CDATA[给定一个二叉树，判断它是否是高度平衡的二叉树。 本题中，一棵高度平衡二叉树定义为： 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。 示例 1: 给定二叉树 [3,9,20,null,null,15,7] 3 / \ 9 20 / \ 15 7返回 true 。 示例 2: 给定二叉树 [1,2,2,3,3,null,null,4,4] 1 / \ 2 2 / \ 3 3 / \ 4 4返回 false 。 1234567891011121314151617181920212223/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: bool isBalanced(TreeNode* root) &#123; return balanceHeight(root)&gt;=0; &#125; //假如是平衡二叉树，则返回root的高度，否则返回-1 int balanceHeight(TreeNode* root)&#123; if(root==nullptr) return 0; int left = balanceHeight(root-&gt;left); int right = balanceHeight(root-&gt;right); if(left&lt;0||right&lt;0||(abs(left-right)&gt;1)) return -1; return max(left,right)+1; &#125;&#125;;]]></content>
@@ -1719,9 +1829,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -1730,9 +1840,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
