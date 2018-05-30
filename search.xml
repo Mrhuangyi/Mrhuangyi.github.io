@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1010 一元多项式求导 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1010-%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B1%82%E5%AF%BC-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1010 一元多项式求导 (25)（25 分）设计函数求一元多项式的导数。（注：x^n^（n为整数）的一阶导数为n*x^n-1^。） 输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。 输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。 输入样例： 3 4 -5 2 6 1 -2 0输出样例： 12 3 -10 1 6 0 12345678910111213141516171819#include&lt;stdio.h&gt;int main()&#123; int a,b; bool isfirst=true; while(~scanf("%d %d",&amp;a,&amp;b)) &#123; if(b==0) break; if(!isfirst) printf(" "); else isfirst=false; printf("%d %d",a*b,b-1); &#125; if(isfirst) printf("0 0"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1009 说反话 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1009-%E8%AF%B4%E5%8F%8D%E8%AF%9D-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1009 说反话 (20)（20 分）给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。 输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。 输出格式：每个测试用例的输出占一行，输出倒序后的句子。 输入样例： Hello World Here I Come输出样例： Come I Here World Hello 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123; char a[111]; int i,len,x,j,b[100]; gets(a); memset(b,0,sizeof(b)); len=strlen(a); j=0; for(i=len-1;i&gt;=0;i--) &#123; if(a[i]==' ')&#123; b[j]=i; j++; &#125; &#125; x=j-1; if(j==0) &#123; printf("%s",a); &#125; else&#123; for(i=b[0]+1;i&lt;=len-1;i++) &#123; printf("%c",a[i]); &#125; printf(" "); j=1; while(j&lt;=x) &#123; for(i=b[j]+1;;i++)&#123; printf("%c",a[i]); if(a[i+1]==' ') break; &#125; printf(" "); j++; &#125; for(i=0;i&lt;b[x];i++) &#123; printf("%c",a[i]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1008 数组元素循环右移问题 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1008-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E9%97%AE%E9%A2%98-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1008 数组元素循环右移问题 (20)（20 分）一个数组A中存有N（N&amp;gt0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（M&gt;=0）个位置，即将A中的数据由（A~0~ A~1~……A~N-1~）变换为（A~N-M~ …… A~N-1~ A~0~ A~1~……A~N-M-1~）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？ 输入格式：每个输入包含一个测试用例，第1行输入N ( 1&lt;=N&lt;=100)、M（M&gt;=0）；第2行输入N个整数，之间用空格分隔。 输出格式：在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。 输入样例： 6 21 2 3 4 5 6输出样例： 5 6 1 2 3 4 123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;using namespace std;int main()&#123; int a[105]; int count=0; int n,m; cin&gt;&gt;n&gt;&gt;m; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;a[i]; &#125; m=n-m%n; for(int j=m;j&lt;n;j++) &#123; cout&lt;&lt;a[j]; count++; if(count!=n) cout&lt;&lt;" "; &#125; for(int k=0;k&lt;m;k++) &#123; cout&lt;&lt;a[k]; count++; if(count!=n) cout&lt;&lt;" "; &#125; cout&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1007 素数对猜想 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1007-%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1007 素数对猜想 (20)（20 分）让我们定义 d~n~ 为：d~n~ = p~n+1~ - p~n~，其中 p~i~ 是第i个素数。显然有 d~1~=1 且对于n&amp;gt1有 d~n~ 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。 现给定任意正整数N (&lt; 10^5^)，请计算不超过N的满足猜想的素数对的个数。 输入格式：每个测试输入包含1个测试用例，给出正整数N。 输出格式：每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。 输入样例： 20输出样例： 4先打素数表，然后遍历计数123456789101112131415161718192021222324252627282930#include&lt;stdio.h&gt;#include&lt;math.h&gt;int a[100000];int main()&#123; int n,i,t,j,k; scanf("%d",&amp;n); k=0; for(i=2;i&lt;=n;i++) &#123; for(j=2;j&lt;=sqrt(i);j++) &#123; if(i%j==0) break; &#125; if(j&gt;sqrt(i)) &#123; a[k++]=i; &#125; &#125; t=0; for(i=1;i&lt;=n;i++) &#123; if(a[i+1]-a[i]==2)&#123; t++; &#125; &#125; printf("%d",t); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1006 换个格式输出整数 (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1006-%E6%8D%A2%E4%B8%AA%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E6%95%B4%E6%95%B0-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1006 换个格式输出整数 (15)（15 分）让我们用字母B来表示“百”、字母S表示“十”，用“12…n”来表示个位数字n（&amp;lt10），换个格式来输出任一个不超过3位的正整数。例如234应该被输出为BBSSS1234，因为它有2个“百”、3个“十”、以及个位的4。 输入格式：每个测试输入包含1个测试用例，给出正整数n（&amp;lt1000）。 输出格式：每个测试用例的输出占一行，用规定的格式输出n。 输入样例1： 234输出样例1： BBSSS1234输入样例2： 23输出样例2： SS123我的想法就是分情况讨论，按照n是1位数2位数还是大于2位数来分情况进行输出123456789101112131415161718192021222324252627#include&lt;stdio.h&gt;int main()&#123; int n,t,m,a,i; scanf("%d",&amp;n); if(n&gt;=100)&#123; t=n/100; n=n%100; m=n/10; a=n%10; while(t--)&#123;printf("B");&#125; while(m--)&#123;printf("S");&#125; for(i=1;i&lt;=a;i++)&#123;printf("%d",i);&#125;&#125;else if(n&lt;100&amp;&amp;n&gt;=10)&#123; t=n/10; a=n%10; while(t--)&#123;printf("S");&#125; for(i=1;i&lt;=a;i++)&#123;printf("%d",i);&#125;&#125;else if(n&lt;10)&#123; for(i=1;i&lt;=n;i++)&#123;printf("%d",i);&#125;&#125;return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[141. 环形链表]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[给定一个链表，判断链表中是否有环。 进阶：你能否不使用额外空间解决此题？ 可以用一个哈希表···cpp unordered_map&lt; int,bool&gt; visited···来标记每个元素是否被访问过，若某个元素被重复访问，则存在环。 最好的方法是用快慢指针，快指针每次走两步，慢指针每次走一步，只要快慢指针相遇，则肯定有环。 1234567891011121314151617181920212223242526/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: bool hasCycle(ListNode *head) &#123; if(head==NULL||head-&gt;next==NULL)&#123; return false; &#125; ListNode* fast = head; ListNode* slow = head; while(fast-&gt;next!=NULL&amp;&amp;fast-&gt;next-&gt;next!=NULL)&#123; fast = fast-&gt;next-&gt;next; slow = slow-&gt;next; if(slow==fast)&#123; return true; &#125; &#125; return false; &#125;&#125;;]]></content>
