@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L2-009 抢红包（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-009-%E6%8A%A2%E7%BA%A2%E5%8C%85%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-009 抢红包（25 分）没有人没抢过红包吧…… 这里给出N个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。 输入格式： 输入第一行给出一个正整数N（&lt;= 10^4^），即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下： K N~1~ P~1~ … N~K~ P~K~ 其中K（0 &lt;= K &lt;= 20）是发出去的红包个数，N~i~是抢到红包的人的编号，P~i~（&gt; 0）是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。 输出格式： 按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。 输入样例： 103 2 22 10 58 8 1255 1 345 3 211 5 233 7 13 8 1011 7 88002 1 1000 2 10002 4 250 10 3206 5 11 9 22 8 33 7 44 10 55 4 21 3 88002 1 23 2 1231 8 2504 2 121 4 516 7 112 9 10输出样例： 1 11.632 3.638 3.633 2.117 1.696 -1.679 -2.1810 -3.265 -3.264 -12.32 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;cstdio&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;struct X&#123; int id,sum,num;&#125;;bool cmp(X a,X b)&#123; if(a.sum!=b.sum)&#123; return a.sum&gt;b.sum; &#125;else if(a.num!=b.num)&#123; return a.num&gt;b.num; &#125;else&#123; return a.id&lt;b.id; &#125;&#125;int main()&#123; int n,k,a,b; scanf("%d",&amp;n); vector&lt;X&gt; v(n+1); for(int i=1;i&lt;=n;i++)&#123; v[i].id = i; scanf("%d",&amp;k); for(int j=0;j&lt;k;j++)&#123; scanf("%d%d",&amp;a,&amp;b); v[a].sum+=b; v[a].num++; v[i].sum-=b; &#125; &#125; sort(v.begin()+1,v.end(),cmp); for(int i=1;i&lt;=n;i++)&#123; double res = (double)(v[i].sum*1.0/100); printf("%d %.2f\n",v[i].id,res); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1015 德才论 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1015-%E5%BE%B7%E6%89%8D%E8%AE%BA-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1015 德才论 (25)（25 分）宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。” 现给出一批考生的德才分数，请根据司马光的理论给出录取排名。 输入格式： 输入第1行给出3个正整数，分别为：N（&lt;=10^5^），即考生总数；L（&gt;=60），为录取最低分数线，即德分和才分均不低于L的考生才有资格被考虑录取；H（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于H，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线L的考生也按总分排序，但排在第三类考生之后。 随后N行，每行给出一位考生的信息，包括：准考证号、德分、才分，其中准考证号为8位整数，德才分为区间[0, 100]内的整数。数字间以空格分隔。 输出格式： 输出第1行首先给出达到最低分数线的考生人数M，随后M行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。 输入样例： 14 60 8010000001 64 9010000002 90 6010000011 85 8010000003 85 8010000004 80 8510000005 82 7710000006 83 7610000007 90 7810000008 75 7910000009 59 9010000010 88 4510000012 80 10010000013 90 9910000014 66 60输出样例： 1210000013 90 9910000012 80 10010000003 85 8010000011 85 8010000004 80 8510000007 90 7810000006 83 7610000005 82 7710000002 90 6010000014 66 6010000008 75 7910000001 64 90 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;#include&lt;cstdio&gt;using namespace std;struct node&#123;int num;int de;int cai;&#125;;int cmp(struct node a,struct node b)&#123; if((a.de+a.cai)!=(b.de+b.cai)) return(a.de+a.cai)&gt;(b.de+b.cai); else if(a.de!=b.de) return a.de&gt;b.de; else return a.num&lt;b.num;&#125;int main()&#123; int n,low,high; scanf("%d %d %d",&amp;n,&amp;low,&amp;high); vector&lt;node&gt; v[4]; node temp; int total=n; for(int i=0;i&lt;n;i++) &#123; scanf("%d %d %d",&amp;temp.num,&amp;temp.de,&amp;temp.cai); if(temp.de&lt;low||temp.cai&lt;low) total--; else if(temp.de&gt;=high&amp;&amp;temp.cai&gt;=high) v[0].push_back(temp); else if(temp.de&gt;=high&amp;&amp;temp.cai&lt;high) v[1].push_back(temp); else if(temp.de&lt;high&amp;&amp;temp.cai&lt;high&amp;&amp;temp.de&gt;=temp.cai) v[2].push_back(temp); else v[3].push_back(temp); &#125; printf("%d\n",total); for(int i=0;i&lt;4;i++) &#123; sort(v[i].begin(),v[i].end(),cmp); for(int j=0;j&lt;v[i].size();j++) printf("%d %d %d\n",v[i][j].num,v[i][j].de,v[i][j].cai); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1014 福尔摩斯的约会 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1014-%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E7%9A%84%E7%BA%A6%E4%BC%9A-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1014 福尔摩斯的约会 (20)（20 分）大侦探福尔摩斯接到一张奇怪的字条：“我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;hgsfdk d&amp;Hyscvnm”。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间“星期四 14:04”，因为前面两字符串中第1对相同的大写英文字母（大小写有区分）是第4个字母’D’，代表星期四；第2对相同的字符是’E’，那是第5个英文字母，代表一天里的第14个钟头（于是一天的0点到23点由数字0到9、以及大写字母A到N表示）；后面两字符串第1对相同的英文字母’s’出现在第4个位置（从0开始计数）上，代表第4分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。 输入格式： 输入在4行中分别给出4个非空、不包含空格、且长度不超过60的字符串。 输出格式： 在一行中输出约会的时间，格式为“DAY HH:MM”，其中“DAY”是某星期的3字符缩写，即MON表示星期一，TUE表示星期二，WED表示星期三，THU表示星期四，FRI表示星期五，SAT表示星期六，SUN表示星期日。题目输入保证每个测试存在唯一解。 输入样例： 3485djDkxh4hhGE2984akDfkkkkggEdsbs&amp;hgsfdkd&amp;Hyscvnm输出样例： THU 14:04 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;iostream&gt;using namespace std;int main()&#123; string a,b,c,d; int flag=0; string week[7]=&#123;"MON","TUE","WED","THU","FRI","SAT","SUN"&#125;; cin&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d; int length1=a.length()&gt;b.length()?b.length():a.length(); for(int i=0;i&lt;length1;i++) &#123; //寻找第一个相同的大写字母，因为对应的是星期几，所以只找前7个即可 if(a[i]==b[i]&amp;&amp;(a[i]&gt;=65&amp;&amp;a[i]&lt;=71)&amp;&amp;flag==0) &#123; flag=1; cout&lt;&lt;week[a[i]-65]&lt;&lt;" "; i++; &#125;//注意找第二对相同的字符的时候，是从第一队相同大写字母后面找 //因为样例中8相同，但是他却说E是相同的字符，其次该字符必须在 //0-9或者A-N之间才行。 if(flag==1&amp;&amp;a[i]==b[i]) &#123; if(a[i]&gt;='0'&amp;&amp;a[i]&lt;='9') &#123; cout&lt;&lt;"0"&lt;&lt;a[i]-'0'&lt;&lt;":"; break; &#125; if(a[i]&gt;='A'&amp;&amp;a[i]&lt;='N') &#123; cout&lt;&lt;a[i]-65+10&lt;&lt;":"; break; &#125; &#125; &#125; int length2=c.length()&gt;d.length()?d.length():c.length(); for(int i=0;i&lt;length2;i++) &#123; //后两字符串必须满足是两个英文字母相等才可以 if(c[i]==d[i]&amp;&amp;((c[i]&gt;=65&amp;&amp;c[i]&lt;=90)||(c[i]&gt;=97&amp;&amp;c[i]&lt;=122))) &#123; if(i&lt;=9) //不足两位数补0 &#123; cout&lt;&lt;"0"&lt;&lt;i&lt;&lt;endl; break; &#125; else &#123; cout&lt;&lt;i&lt;&lt;endl; break; &#125; &#125; &#125; return 0; &#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1013 数素数 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1013-%E6%95%B0%E7%B4%A0%E6%95%B0-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1013 数素数 (20)（20 分）令P~i~表示第i个素数。现任给两个正整数M &lt;= N &lt;= 10^4^，请输出P~M~到P~N~的所有素数。 输入格式： 输入在一行中给出M和N，其间以空格分隔。 输出格式： 输出从P~M~到P~N~的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。 输入样例： 5 27输出样例： 11 13 17 19 23 29 31 37 41 4347 53 59 61 67 71 73 79 83 8997 101 103 1234567891011121314151617181920212223242526272829303132#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;vector&gt;#include&lt;cmath&gt;using namespace std;bool isprime(int a)&#123; for(int i=2;i*i&lt;=a;i++) if(a%i==0) return false; return true;&#125;int main()&#123; int m,n,num=2,cnt=0; cin&gt;&gt;m&gt;&gt;n; vector&lt;int&gt; v; while(cnt&lt;n)&#123; if(isprime(num))&#123; cnt++; if(cnt&gt;=m) v.push_back(num); &#125; num++; &#125; cnt=0; for(int i=0;i&lt;v.size();i++)&#123; cnt++; if(cnt%10!=1) printf(" "); printf("%d",v[i]); if(cnt%10==0) printf("\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1012 数字分类 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1012-%E6%95%B0%E5%AD%97%E5%88%86%E7%B1%BB-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1012 数字分类 (20)（20 分）给定一系列正整数，请按要求对数字进行分类，并输出以下5个数字： A1 = 能被5整除的数字中所有偶数的和； A2 = 将被5除后余1的数字按给出顺序进行交错求和，即计算n1-n2+n3-n4…； A3 = 被5除后余2的数字的个数； A4 = 被5除后余3的数字的平均数，精确到小数点后1位； A5 = 被5除后余4的数字中最大数字。 输入格式： 每个输入包含1个测试用例。每个测试用例先给出一个不超过1000的正整数N，随后给出N个不超过1000的待分类的正整数。数字间以空格分隔。 输出格式： 对给定的N个正整数，按题目要求计算A1~A5并在一行中顺序输出。数字间以空格分隔，但行末不得有多余空格。 若其中某一类数字不存在，则在相应位置输出“N”。 输入样例1： 13 1 2 3 4 5 6 7 8 9 10 20 16 18输出样例1： 30 11 2 9.7 9输入样例2： 8 1 2 4 5 6 7 9 16输出样例2： N 11 2 N 9 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;stdio.h&gt;int main()&#123; int i,n,a[1001],sum1,sum2,count1,count2; scanf("%d",&amp;n); sum1=sum2=count1=count2=0; double avg,sum3=0; int flag=1,max=0,t=0; for(i=1;i&lt;=n;i++) &#123; scanf("%d",&amp;a[i]); if(a[i]%5==0&amp;&amp;a[i]%2==0) sum1+=a[i]; if(a[i]%5==1)&#123; sum2+=a[i]*flag; flag=flag*-1; t++; &#125; if(a[i]%5==2) count1++; if(a[i]%5==3)&#123; sum3+=a[i]; count2++; &#125; if(a[i]%5==4) &#123; if(a[i]&gt;max) max=a[i]; &#125; &#125; avg=sum3/count2; if(sum1==0) printf("N "); else printf("%d ",sum1); if(t==0) printf("N "); else printf("%d ",sum2); if(count1==0) printf("N "); else printf("%d ",count1); if(count2==0) printf("N "); else printf("%.1lf ",avg); if(max==0) printf("N"); else printf("%d",max); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1011 A+B和C (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1011-A-B%E5%92%8CC-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1011 A+B和C (15)（15 分）给定区间[-2^31^, 2^31^]内的3个整数A、B和C，请判断A+B是否大于C。 输入格式： 输入第1行给出正整数T(&lt;=10)，是测试用例的个数。随后给出T组测试用例，每组占一行，顺序给出A、B和C。整数间以空格分隔。 输出格式： 对每组测试用例，在一行中输出“Case #X: true”如果A+B&gt;C，否则输出“Case #X: false”，其中X是测试用例的编号（从1开始）。 输入样例： 41 2 32 3 42147483647 0 21474836460 -2147483648 -2147483647输出样例： Case #1: falseCase #2: trueCase #3: trueCase #4: false 12345678910111213141516#include&lt;stdio.h&gt;int main()&#123; long long i,t,x,a,b,c; scanf("%lld",&amp;t); x=t; for(i=1;i&lt;=x;i++)&#123; scanf("%lld%lld%lld",&amp;a,&amp;b,&amp;c); if(a+b&gt;c) printf("Case #%d: true\n",i); else printf("Case #%d: false\n",i); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[190. 颠倒二进制位]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%2F</url>
     <content type="text"><![CDATA[颠倒给定的 32 位无符号整数的二进制位。 示例: 输入: 43261596输出: 964176192解释: 43261596 的二进制表示形式为 00000010100101000001111010011100 ， 返回 964176192，其二进制表示形式为 00111001011110000010100101000000 。进阶:如果多次调用这个函数，你将如何优化你的算法？ 方法一：遍历整数的所有位。 如果第i个位置的一个位置在I / P编号中。然后将该位设置为（NO_OF_BITS - 1） - i in o / p。 NO_OF_BITS是给定数字中存在的位数。12345678910111213141516class Solution &#123;public: uint32_t reverseBits(uint32_t n) &#123; unsigned int NO_OF_BITS = sizeof(n) * 8; unsigned int reverse_num = 0, i, temp; for (i = 0; i &lt; NO_OF_BITS; i++) &#123; temp = (n &amp; (1 &lt;&lt; i)); if(temp) reverse_num |= (1 &lt;&lt; ((NO_OF_BITS - 1) - i)); &#125; return reverse_num; &#125;&#125;; 时间复杂度：O(logn)空间复杂度：O(1)方法二：保持reversenum每一位与给定num相等直到num变成0，之后反向移动剩余的位123456789101112131415161718class Solution &#123;public: uint32_t reverseBits(uint32_t n) &#123; unsigned int count = sizeof(n) * 8 - 1; unsigned int reverse_num = n; n &gt;&gt;= 1; while(n) &#123; reverse_num &lt;&lt;= 1; reverse_num |= n &amp; 1; n &gt;&gt;= 1; count--; &#125; reverse_num &lt;&lt;= count; return reverse_num; &#125;&#125;; 时间复杂度：O(logn)空间复杂度：O(1)]]></content>
