@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[190. 颠倒二进制位]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%2F</url>
+    <content type="text"><![CDATA[颠倒给定的 32 位无符号整数的二进制位。 示例: 输入: 43261596输出: 964176192解释: 43261596 的二进制表示形式为 00000010100101000001111010011100 ， 返回 964176192，其二进制表示形式为 00111001011110000010100101000000 。进阶:如果多次调用这个函数，你将如何优化你的算法？ 方法一：遍历整数的所有位。 如果第i个位置的一个位置在I / P编号中。然后将该位设置为（NO_OF_BITS - 1） - i in o / p。 NO_OF_BITS是给定数字中存在的位数。12345678910111213141516class Solution &#123;public: uint32_t reverseBits(uint32_t n) &#123; unsigned int NO_OF_BITS = sizeof(n) * 8; unsigned int reverse_num = 0, i, temp; for (i = 0; i &lt; NO_OF_BITS; i++) &#123; temp = (n &amp; (1 &lt;&lt; i)); if(temp) reverse_num |= (1 &lt;&lt; ((NO_OF_BITS - 1) - i)); &#125; return reverse_num; &#125;&#125;; 时间复杂度：O(logn)空间复杂度：O(1)方法二：保持reversenum每一位与给定num相等直到num变成0，之后反向移动剩余的位123456789101112131415161718class Solution &#123;public: uint32_t reverseBits(uint32_t n) &#123; unsigned int count = sizeof(n) * 8 - 1; unsigned int reverse_num = n; n &gt;&gt;= 1; while(n) &#123; reverse_num &lt;&lt;= 1; reverse_num |= n &amp; 1; n &gt;&gt;= 1; count--; &#125; reverse_num &lt;&lt;= count; return reverse_num; &#125;&#125;; 时间复杂度：O(logn)空间复杂度：O(1)]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[160. 相交链表]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[编写一个程序，找到两个单链表相交的起始节点。 例如，下面的两个链表： A: a1 → a2 ↘ c1 → c2 → c3 ↗B: b1 → b2 → b3在节点 c1 开始相交。 注意： 如果两个链表没有交点，返回 null. 在返回结果后，两个链表仍须保持原有的结构。 可假定整个链表结构中没有循环。 程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。 用环的思想来做，我们让两条链表分别从各自的开头开始往后遍历，当其中一条遍历到末尾时，我们跳到另一个条链表的开头继续遍历。两个指针最终会相等，而且只有两种情况，一种情况是在交点处相遇，另一种情况是在各自的末尾的空节点处相等。123456789101112131415161718192021/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123; if(!headA||!headB) return NULL; ListNode *a = headA; ListNode *b = headB; while(a!=b)&#123; a = a ? a-&gt;next : headB; b = b ? b-&gt;next : headA; &#125; return a; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1010 一元多项式求导 (25)（25 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1010-%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B1%82%E5%AF%BC-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[1010 一元多项式求导 (25)（25 分）设计函数求一元多项式的导数。（注：x^n^（n为整数）的一阶导数为n*x^n-1^。） 输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。 输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。 输入样例： 3 4 -5 2 6 1 -2 0输出样例： 12 3 -10 1 6 0 12345678910111213141516171819#include&lt;stdio.h&gt;int main()&#123; int a,b; bool isfirst=true; while(~scanf("%d %d",&amp;a,&amp;b)) &#123; if(b==0) break; if(!isfirst) printf(" "); else isfirst=false; printf("%d %d",a*b,b-1); &#125; if(isfirst) printf("0 0"); return 0;&#125;]]></content>
