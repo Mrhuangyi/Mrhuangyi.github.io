@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[206. 反转链表]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[反转一个单链表。 示例: 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL进阶:你可以迭代或递归地反转链表。你能否用两种方法解决这道题？ 迭代法：1234567891011121314151617181920212223/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* reverseList(ListNode* head) &#123; ListNode *prev = NULL; ListNode *curr = head; while(curr!=NULL)&#123; ListNode *temp = curr-&gt;next; curr-&gt;next = prev; prev = curr; curr = temp; &#125; head = prev; return head; &#125;&#125;; 递归法： 递归的终止步分三种情况讨论： 原链表为空，直接返回空链表即可。 原链表仅有一个元素，返回该元素。 原链表有两个以上元素，由于是单链表，故翻转需要自尾部向首部逆推。1234567891011121314151617181920212223/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* reverseList(ListNode* head) &#123; if(head==NULL)&#123; return head; &#125; if(head-&gt;next==NULL)&#123; return head; &#125; ListNode *newHead = reverseList(head-&gt;next); head-&gt;next-&gt;next = head; head-&gt;next = NULL; return newHead; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1020 月饼 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1020-%E6%9C%88%E9%A5%BC-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1020 月饼 (25)（25 分）月饼是中国人在中秋佳节时吃的一种传统食品，不同地区有许多不同风味的月饼。现给定所有种类月饼的库存量、总售价、以及市场的最大需求量，请你计算可以获得的最大收益是多少。 注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有3种月饼，其库存量分别为18、15、10万吨，总售价分别为75、72、45亿元。如果市场的最大需求量只有20万吨，那么我们最大收益策略应该是卖出全部15万吨第2种月饼、以及5万吨第3种月饼，获得 72 + 45/2 = 94.5（亿元）。 输入格式： 每个输入包含1个测试用例。每个测试用例先给出一个不超过1000的正整数N表示月饼的种类数、以及不超过500（以万吨为单位）的正整数D表示市场最大需求量。随后一行给出N个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出N个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。 输出格式： 对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后2位。 输入样例： 3 2018 15 1075 72 45输出样例： 94.50 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;stdio.h&gt;#include&lt;algorithm&gt;using namespace std;struct E&#123; float amount; float price; float avg;&#125;buf[1111];bool cmp(E a,E b)&#123; return a.avg&gt;b.avg;&#125;int main()&#123; int n,m,t,i; float sum; sum=t=0; scanf("%d%d",&amp;n,&amp;m); for(i=0;i&lt;n;i++) &#123; scanf("%f",&amp;buf[i].amount); &#125; for(i=0;i&lt;n;i++) &#123; scanf("%f",&amp;buf[i].price); &#125; for(i=0;i&lt;n;i++) &#123; buf[i].avg=buf[i].price/buf[i].amount; &#125; sort(buf,buf+n,cmp); for(i=0;i&lt;n;i++) &#123;if(buf[i].amount&lt;=m)&#123; sum+=buf[i].price;&#125; else &#123; sum+=buf[i].avg*m; break; &#125; m=m-buf[i].amount; &#125; printf("%.2f",sum); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1019 数字黑洞 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1019-%E6%95%B0%E5%AD%97%E9%BB%91%E6%B4%9E-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1019 数字黑洞 (20)（20 分）给定任一个各位数字不完全相同的4位正整数，如果我们先把4个数字按非递增排序，再按非递减排序，然后用第1个数字减第2个数字，将得到一个新的数字。一直重复这样做，我们很快会停在有“数字黑洞”之称的6174，这个神奇的数字也叫Kaprekar常数。 例如，我们从6767开始，将得到 7766 - 6677 = 1089\ 9810 - 0189 = 9621\ 9621 - 1269 = 8352\ 8532 - 2358 = 6174\ 7641 - 1467 = 6174\ … … 现给定任意4位正整数，请编写程序演示到达黑洞的过程。 输入格式： 输入给出一个(0, 10000)区间内的正整数N。 输出格式： 如果N的4位数字全相等，则在一行内输出“N - N = 0000”；否则将计算的每一步在一行内输出，直到6174作为差出现，输出格式见样例。注意每个数字按4位数格式输出。 输入样例1： 6767输出样例1： 7766 - 6677 = 10899810 - 0189 = 96219621 - 1269 = 83528532 - 2358 = 6174输入样例2： 2222输出样例2： 2222 - 2222 = 0000 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;bool cmp(int a,int b)&#123; return a&gt;b;&#125;///递减排序void to_array(int n,int num[])&#123;///将n的每一位存到num数组 for(int i=0;i&lt;4;i++)&#123; num[i]=n%10; n/=10; &#125;&#125;int to_number(int num[])&#123;///将num数组转换为数字 int sum=0; for(int i=0;i&lt;4;i++) &#123; sum=sum*10+num[i]; &#125; return sum;&#125;int main()&#123; int n,minm,maxm; scanf("%d",&amp;n); int num[5]; while(1)&#123; to_array(n,num); sort(num,num+4); minm=to_number(num); sort(num,num+4,cmp); maxm=to_number(num); n=maxm-minm; printf("%04d - %04d = %04d\n",maxm,minm,n); if(n==0||n==6174) break; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1018 锤子剪刀布 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1018-%E9%94%A4%E5%AD%90%E5%89%AA%E5%88%80%E5%B8%83-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1018 锤子剪刀布 (20)（20 分）大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示： 现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。 输入格式： 输入第1行给出正整数N（&lt;=10^5^），即双方交锋的次数。随后N行，每行给出一次交锋的信息，即甲、乙双方同时给出的的手势。C代表“锤子”、J代表“剪刀”、B代表“布”，第1个字母代表甲方，第2个代表乙方，中间有1个空格。 输出格式： 输出第1、2行分别给出甲、乙的胜、平、负次数，数字间以1个空格分隔。第3行给出两个字母，分别代表甲、乙获胜次数最多的手势，中间有1个空格。如果解不唯一，则输出按字母序最小的解。 输入样例： 10C JJ BC BB BB CC CC BJ BB CJ J输出样例： 5 3 22 3 5B B 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;int main()&#123; int n; char a,b,q1,q2; scanf("%d",&amp;n); int c1,c2,c3,d1,d2,d3,x1,y1,z1,x2,y2,z2; c1=c2=c3=d1=d2=d3=x1=y1=z1=x2=y2=z2=0; d2=n; while(n--) &#123; getchar(); scanf("%c %c",&amp;a,&amp;b); if(a=='C'&amp;&amp;b=='J')&#123;c1++,x1++;&#125; if(a=='B'&amp;&amp;b=='C')&#123;c1++,y1++;&#125; if(a=='J'&amp;&amp;b=='B')&#123;c1++,z1++;&#125; if(a=='C'&amp;&amp;b=='C')c2++; if(a=='B'&amp;&amp;b=='B')c2++; if(a=='J'&amp;&amp;b=='J')c2++; if(b=='C'&amp;&amp;a=='J')&#123;d1++,x2++;&#125; if(b=='B'&amp;&amp;a=='C')&#123;d1++,y2++;&#125; if(b=='J'&amp;&amp;a=='B')&#123;d1++,z2++;&#125; &#125; c3=d2-c1-c2; d3=d2-d1-c2; if(x1&gt;y1&amp;&amp;x1&gt;z1) q1='C'; else if(y1&gt;x1&amp;&amp;y1&gt;z1) q1='B'; else if(z1&gt;x1&amp;&amp;z1&gt;y1) q1='J'; else if(x1==y1&amp;&amp;x1&gt;z1) q1='B'; else if(y1==z1&amp;&amp;y1&gt;x1) q1='B'; else if(x1==z1&amp;&amp;x1&gt;y1) q1='C'; else q1='B'; if(x2&gt;y2&amp;&amp;x2&gt;z2) q2='C'; else if(y2&gt;x2&amp;&amp;y2&gt;z2) q2='B'; else if(z2&gt;x2&amp;&amp;z2&gt;y2) q2='J'; else if(x2==y2&amp;&amp;x2&gt;z2) q2='B'; else if(y2==z2&amp;&amp;y2&gt;x2) q2='B'; else if(x2==z2&amp;&amp;x2&gt;y2) q2='C'; else q2='B'; printf("%d %d %d\n",c1,c2,c3); printf("%d %d %d\n",d1,c2,d3); printf("%c %c",q1,q2);&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1017 A除以B (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1017-A%E9%99%A4%E4%BB%A5B-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1017 A除以B (20)（20 分）本题要求计算A/B，其中A是不超过1000位的正整数，B是1位正整数。你需要输出商数Q和余数R，使得A = B * Q + R成立。 输入格式： 输入在1行中依次给出A和B，中间以1空格分隔。 输出格式： 在1行中依次输出Q和R，中间以1空格分隔。 输入样例： 123456789050987654321 7输出样例： 17636684150141093474 3 1234567891011121314151617181920#include&lt;iostream&gt;using namespace std;int main()&#123; string s; int a,t=0,temp=0; cin&gt;&gt;s&gt;&gt;a; int len=s.length(); t=(s[0]-'0')/a; if((t!=0&amp;&amp;len&gt;1)||len==1) cout&lt;&lt;t; temp=(s[0]-'0')%a; for(int i=1;i&lt;len;i++)&#123; t=(temp*10+s[i]-'0')/a; cout&lt;&lt;t; temp=(temp*10+s[i]-'0')%a; &#125; cout&lt;&lt;" "&lt;&lt;temp; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1016 部分A+B (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1016-%E9%83%A8%E5%88%86A-B-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1016 部分A+B (15)（15 分）正整数A的“D~A~（为1位整数）部分”定义为由A中所有D~A~组成的新整数P~A~。例如：给定A = 3862767，D~A~ = 6，则A的“6部分”P~A~是66，因为A中有2个6。 现给定A、D~A~、B、D~B~，请编写程序计算P~A~ + P~B~。 输入格式： 输入在一行中依次给出A、D~A~、B、D~B~，中间以空格分隔，其中0 &lt; A, B &lt; 10^10^。 输出格式： 在一行中输出P~A~ + P~B~的值。 输入样例1： 3862767 6 13530293 3输出样例1： 399输入样例2： 3862767 1 13530293 8输出样例2： 0 12345678910111213141516171819202122232425262728293031323334353637#include&lt;stdio.h&gt;#include&lt;string.h&gt;char a[100000],b[1000000];int main()&#123; int da,db; scanf("%s%d%s%d",a,&amp;da,b,&amp;db); int n,m,t1,t2,i,j,y,x,sum1,sum2,sum; n=strlen(a); m=strlen(b); t1=t2=sum1=sum2=sum=0; for(i=0;i&lt;=n;i++) &#123; if(a[i]-'0'==da) t1++; &#125; for(j=0;j&lt;=m;j++) &#123; if(b[j]-'0'==db) t2++; &#125; if(t1==0&amp;&amp;t2==0) printf("0"); else&#123; while(t1--)&#123; sum1+=da; da*=10; &#125; while(t2--) &#123; sum2+=db; db*=10; &#125; printf("%d",sum1+sum2); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L2-009 抢红包（25 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-009-%E6%8A%A2%E7%BA%A2%E5%8C%85%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[L2-009 抢红包（25 分）没有人没抢过红包吧…… 这里给出N个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。 输入格式： 输入第一行给出一个正整数N（&lt;= 10^4^），即参与发红包和抢红包的总人数，则这些人从1到N编号。随后N行，第i行给出编号为i的人发红包的记录，格式如下： K N~1~ P~1~ … N~K~ P~K~ 其中K（0 &lt;= K &lt;= 20）是发出去的红包个数，N~i~是抢到红包的人的编号，P~i~（&gt; 0）是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。 输出格式： 按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。 输入样例： 103 2 22 10 58 8 1255 1 345 3 211 5 233 7 13 8 1011 7 88002 1 1000 2 10002 4 250 10 3206 5 11 9 22 8 33 7 44 10 55 4 21 3 88002 1 23 2 1231 8 2504 2 121 4 516 7 112 9 10输出样例： 1 11.632 3.638 3.633 2.117 1.696 -1.679 -2.1810 -3.265 -3.264 -12.32 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;cstdio&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;struct X&#123; int id,sum,num;&#125;;bool cmp(X a,X b)&#123; if(a.sum!=b.sum)&#123; return a.sum&gt;b.sum; &#125;else if(a.num!=b.num)&#123; return a.num&gt;b.num; &#125;else&#123; return a.id&lt;b.id; &#125;&#125;int main()&#123; int n,k,a,b; scanf("%d",&amp;n); vector&lt;X&gt; v(n+1); for(int i=1;i&lt;=n;i++)&#123; v[i].id = i; scanf("%d",&amp;k); for(int j=0;j&lt;k;j++)&#123; scanf("%d%d",&amp;a,&amp;b); v[a].sum+=b; v[a].num++; v[i].sum-=b; &#125; &#125; sort(v.begin()+1,v.end(),cmp); for(int i=1;i&lt;=n;i++)&#123; double res = (double)(v[i].sum*1.0/100); printf("%d %.2f\n",v[i].id,res); &#125; return 0;&#125;]]></content>
