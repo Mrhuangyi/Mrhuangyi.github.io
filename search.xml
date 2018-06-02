@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[232. 用栈实现队列]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F232-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[使用栈实现队列的下列操作： push(x) – 将一个元素放入队列的尾部。pop() – 从队列首部移除元素。peek() – 返回队列首部的元素。empty() – 返回队列是否为空。示例: MyQueue queue = new MyQueue(); queue.push(1);queue.push(2);queue.peek(); // 返回 1queue.pop(); // 返回 1queue.empty(); // 返回 false说明: 你只能使用标准的栈操作 – 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162class MyQueue &#123;public: stack&lt;int&gt; st,temp; /** Initialize your data structure here. */ MyQueue() &#123; &#125; /** Push element x to the back of queue. */ void push(int x) &#123; st.push(x); &#125; /** Removes the element from in front of queue and returns that element. */ int pop() &#123; int val; if(temp.empty())&#123; while(!st.empty()) &#123; val = st.top(); temp.push(val); st.pop(); &#125; &#125; int res = temp.top(); temp.pop(); return res; &#125; /** Get the front element. */ int peek() &#123; while(!st.empty()) &#123; int val = st.top(); temp.push(val); st.pop(); &#125; int ans = temp.top(); while(!temp.empty()) &#123; int val = temp.top(); st.push(val); temp.pop(); &#125; return ans; &#125; /** Returns whether the queue is empty. */ bool empty() &#123; return st.empty()&amp;&amp;temp.empty(); &#125;&#125;;/** * Your MyQueue object will be instantiated and called as such: * MyQueue obj = new MyQueue(); * obj.push(x); * int param_2 = obj.pop(); * int param_3 = obj.peek(); * bool param_4 = obj.empty(); */]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[225. 用队列实现栈]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F225-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88%2F</url>
+    <content type="text"><![CDATA[使用队列实现栈的下列操作： push(x) – 元素 x 入栈pop() – 移除栈顶元素top() – 获取栈顶元素empty() – 返回栈是否为空注意: 你只能使用队列的基本操作– 也就是 push to back, peek/pop from front, size, 和 is empty 这些操作是合法的。你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950class MyStack &#123; private: queue&lt;int&gt; st,st2;public: /** Initialize your data structure here. */ MyStack() &#123; &#125; /** Push element x onto stack. */ void push(int x) &#123; st.push(x); &#125; /** Removes the element on top of the stack and returns that element. */ int pop() &#123; auto result = top(); st.pop(); return result; &#125; /** Get the top element. */ int top() &#123; if(empty())&#123; throw runtime_error("stack is empty."); &#125; if(st.empty())&#123; swap(st,st2); &#125; while(st.size()&gt;1)&#123; st2.push(st.front()); st.pop(); &#125; return st.front(); &#125; /** Returns whether the stack is empty. */ bool empty() &#123; return st.empty()&amp;&amp;st2.empty(); &#125;&#125;;/** * Your MyStack object will be instantiated and called as such: * MyStack obj = new MyStack(); * obj.push(x); * int param_2 = obj.pop(); * int param_3 = obj.top(); * bool param_4 = obj.empty(); */]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-010 排座位（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-010-%E6%8E%92%E5%BA%A7%E4%BD%8D%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-010 排座位（25 分）布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。 输入格式： 输入第一行给出3个正整数：N（&lt;= 100），即前来参宴的宾客总人数，则这些人从1到N编号；M为已知两两宾客之间的关系数；K为查询的条数。随后M行，每行给出一对宾客之间的关系，格式为：“宾客1 宾客2 关系”，其中“关系”为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后K行，每行给出一对需要查询的宾客编号。 这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。 输出格式： 对每个查询输出一行结果：如果两位宾客之间是朋友，且没有敌对关系，则输出“No problem”；如果他们之间并不是朋友，但也不敌对，则输出“OK”；如果他们之间有敌对，然而也有共同的朋友，则输出“OK but…”；如果他们之间只有敌对关系，则输出“No way”。 输入样例： 7 8 45 6 12 7 -11 3 13 4 16 7 -11 2 11 4 12 3 -13 45 72 37 2输出样例： No problemOKOK but…No way 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;cstdio&gt;#include&lt;vector&gt;using namespace std;vector&lt;int&gt; friendd;int enemy[111][111];int findfriend(int x)&#123; while(x!=friendd[x])&#123; x = friendd[x]; &#125; return x;&#125;void Union(int a,int b)&#123; int frienda = findfriend(a); int friendb = findfriend(b); if(frienda!=friendb)&#123; friendd[frienda] = friendb; &#125;&#125;int main()&#123; int n,m,k,a,b,c; scanf("%d %d %d",&amp;n,&amp;m,&amp;k); friendd.resize(n+1); for(int i=1;i&lt;=n;i++)&#123; friendd[i] = i; &#125; for(int i=0;i&lt;m;i++)&#123; scanf("%d %d %d",&amp;a,&amp;b,&amp;c); if(c==1)&#123; Union(a,b); &#125;else&#123; enemy[a][b] = 1; enemy[b][a] = 1; &#125; &#125; for(int i=0;i&lt;k;i++)&#123; scanf("%d %d",&amp;a,&amp;b); if(findfriend(a)==findfriend(b)&amp;&amp;enemy[a][b]==0)&#123; printf("No problem\n"); &#125;else if(findfriend(a)!=findfriend(b)&amp;&amp;enemy[a][b]==0)&#123; printf("OK\n"); &#125;else if(findfriend(a)==findfriend(b)&amp;&amp;enemy[a][b]==1)&#123; printf("OK but...\n"); &#125;else if(enemy[a][b]==1)&#123; printf("No way\n"); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1025 反转链表 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1025-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1025 反转链表 (25)（25 分）给定一个常数K以及一个单链表L，请编写程序将L中每K个结点反转。例如：给定L为1→2→3→4→5→6，K为3，则输出应该为3→2→1→6→5→4；如果K为4，则输出应该为4→3→2→1→5→6，即最后不到K个元素不反转。 输入格式： 每个输入包含1个测试用例。每个测试用例第1行给出第1个结点的地址、结点总个数正整数N(&lt;= 10^5^)、以及正整数K(&lt;=N)，即要求反转的子链结点的个数。结点的地址是5位非负整数，NULL地址用-1表示。 接下来有N行，每行格式为： Address Data Next 其中Address是结点地址，Data是该结点保存的整数数据，Next是下一结点的地址。 输出格式： 对每个测试用例，顺序输出反转后的链表，其上每个结点占一行，格式与输入相同。 输入样例： 00100 6 400000 4 9999900100 1 1230968237 6 -133218 3 0000099999 5 6823712309 2 33218输出样例： 00000 4 3321833218 3 1230912309 2 0010000100 1 9999999999 5 6823768237 6 -1 1234567891011121314151617181920212223242526272829#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxn = 100005;int data[maxn];int list[maxn];int main()&#123; int next[maxn]; int first,k,n,temp,sum=0; scanf("%d%d%d",&amp;first,&amp;n,&amp;k); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;temp); scanf("%d %d",&amp;data[temp],&amp;next[temp]); &#125; while(first!=-1)&#123; list[sum++] = first; first = next[first]; &#125; for(int i=0;i&lt;(sum-sum%k);i+=k)&#123; reverse(begin(list) + i, begin(list) + i + k); &#125; for(int i=0;i&lt;sum-1;i++)&#123; printf("%05d %d %05d\n",list[i],data[list[i]],list[i+1]); &#125; printf("%05d %d -1",list[sum-1],data[list[sum-1]]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1024 科学计数法 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1024-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1024 科学计数法 (20)（20 分）科学计数法是科学家用来表示很大或很小的数字的一种方便的方法，其满足正则表达式[+-][1-9]”.”[0-9]+E[+-][0-9]+，即数字的整数部分只有1位，小数部分至少有1位，该数字及其指数部分的正负号即使对正数也必定明确给出。 现以科学计数法的格式给出实数A，请编写程序按普通数字表示法输出A，并保证所有有效位都被保留。 输入格式： 每个输入包含1个测试用例，即一个以科学计数法表示的实数A。该数字的存储长度不超过9999字节，且其指数的绝对值不超过9999。 输出格式： 对每个测试用例，在一行中按普通数字表示法输出A，并保证所有有效位都被保留，包括末尾的0。 输入样例1： +1.23400E-03输出样例1： 0.00123400输入样例2： -1.2E+10输出样例2： -120000000001024 科学计数法 (20)（20 分）科学计数法是科学家用来表示很大或很小的数字的一种方便的方法，其满足正则表达式[+-][1-9]”.”[0-9]+E[+-][0-9]+，即数字的整数部分只有1位，小数部分至少有1位，该数字及其指数部分的正负号即使对正数也必定明确给出。 现以科学计数法的格式给出实数A，请编写程序按普通数字表示法输出A，并保证所有有效位都被保留。 输入格式： 每个输入包含1个测试用例，即一个以科学计数法表示的实数A。该数字的存储长度不超过9999字节，且其指数的绝对值不超过9999。 输出格式： 对每个测试用例，在一行中按普通数字表示法输出A，并保证所有有效位都被保留，包括末尾的0。 输入样例1： +1.23400E-03输出样例1： 0.00123400输入样例2： -1.2E+10输出样例2： -12000000000 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;int main()&#123; char str[10010]; gets(str); int len = strlen(str); if(str[0]=='-') printf("-"); int pos = 0; while(str[pos]!='E')&#123; pos++; &#125; int exp = 0; for(int i=pos+2;i&lt;len;i++)&#123; exp=exp*10+(str[i]-'0'); &#125; if(exp==0)&#123; for(int i=1;i&lt;pos;i++)&#123; printf("%c",str[i]); &#125; &#125; if(str[pos]=='-')&#123; printf("0."); for(int i=0;i&lt;exp-1;i++)&#123; printf("0"); &#125; printf("%c",str[1]); for(int i=3;i&lt;pos;i++)&#123; printf("%c",str[i]); &#125; &#125; else &#123; for(int i=1;i&lt;pos;i++)&#123; if(str[i]=='.') continue; printf("%c",str[i]); if(i==exp+2&amp;&amp;pos-3!=exp)&#123; printf("."); &#125; &#125; for(int i=0;i&lt;exp-(pos-3);i++)&#123; printf("0"); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1023 组个最小数 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1023-%E7%BB%84%E4%B8%AA%E6%9C%80%E5%B0%8F%E6%95%B0-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1023 组个最小数 (20)（20 分）给定数字0-9各若干个。你可以以任意顺序排列这些数字，但必须全部使用。目标是使得最后得到的数尽可能小（注意0不能做首位）。例如：给定两个0，两个1，三个5，一个8，我们得到的最小的数就是10015558。 现给定数字，请编写程序输出能够组成的最小的数。 输入格式： 每个输入包含1个测试用例。每个测试用例在一行中给出10个非负整数，顺序表示我们拥有数字0、数字1、……数字9的个数。整数间用一个空格分隔。10个数字的总个数不超过50，且至少拥有1个非0的数字。 输出格式： 在一行中输出能够组成的最小的数。 输入样例： 2 2 0 0 0 3 0 0 1 0输出样例： 10015558 123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;stdio.h&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123; int a[11],b[55]; int j=0,x,i; for(i=0;i&lt;10;i++) &#123; scanf("%d",&amp;a[i]); while(a[i]!=0) &#123; b[j]=i; a[i]--; j++; &#125; &#125; sort(b,b+j); if(b[0]!=0) &#123; for(i=0;i&lt;j;i++) printf("%d",b[i]); &#125; else &#123; for(i=0;i&lt;j;i++) &#123; if(b[i]!=0) &#123; x=i; b[0]=b[x]; b[x]=0; break; &#125; &#125; for(i=0;i&lt;j;i++) &#123; printf("%d",b[i]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1022 D进制的A+B (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1022-D%E8%BF%9B%E5%88%B6%E7%9A%84A-B-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1022 D进制的A+B (20)（20 分）输入两个非负10进制整数A和B(&lt;=2^30^-1)，输出A+B的D (1 &lt; D &lt;= 10)进制数。 输入格式： 输入在一行中依次给出3个整数A、B和D。 输出格式： 输出A+B的D进制数。 输入样例： 123 456 8输出样例： 1103 123456789101112131415161718192021222324#include&lt;iostream&gt;using namespace std;int main()&#123; int t,a,b,d; cin&gt;&gt;a&gt;&gt;b&gt;&gt;d; t=a+b; int s[111]; int i=0; if(t==0) cout&lt;&lt;0; else&#123; while(t!=0) &#123; s[i++]=t%d; t=t/d; &#125; &#125; for(int j=i-1;j&gt;=0;j--) &#123; cout&lt;&lt;s[j]; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1021 个位数统计 (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1021-%E4%B8%AA%E4%BD%8D%E6%95%B0%E7%BB%9F%E8%AE%A1-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1021 个位数统计 (15)（15 分）给定一个k位整数N = d~k-1~10^k-1^ + … + d~1~10^1^ + d~0~ (0&lt;=d~i~&lt;=9, i=0,…,k-1, d~k-1~&gt;0)，请编写程序统计每种不同的个位数字出现的次数。例如：给定N = 100311，则有2个0，3个1，和1个3。 输入格式： 每个输入包含1个测试用例，即一个不超过1000位的正整数N。 输出格式： 对N中每一种不同的个位数字，以D:M的格式在一行中输出该位数字D及其在N中出现的次数M。要求按D的升序输出。 输入样例： 100311输出样例： 0:21:33:1 123456789101112131415161718192021222324252627282930313233343536#include&lt;stdio.h&gt;#include&lt;string.h&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123; char s[1111]; scanf("%s",s); int len,i,j,a[1111],b[1111],c[11]; len=strlen(s); memset(b,0,sizeof(b)); memset(c,-1,sizeof(c)); for(i=0;i&lt;len;i++) &#123; a[i]=s[i]-'0'; &#125; sort(a,a+len); j=0; for(i=0;i&lt;len;i++) &#123; if(a[i]!=a[i+1]) &#123; c[j]=a[i]; j++; &#125; &#125; for(i=0;i&lt;len;i++) &#123; b[a[i]]++; &#125; for(i=0;i&lt;j;i++) &#123; printf("%d:%d\n",c[i],b[c[i]]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[钱钟书和杨绛]]></title>
     <url>%2F%E9%9A%8F%E7%AC%94%2F%E9%92%B1%E9%92%9F%E4%B9%A6%E5%92%8C%E6%9D%A8%E7%BB%9B%2F</url>
     <content type="text"><![CDATA[说起来，真正了解到钱杨二人还是在我中学时期的语文课堂上，当时正在学一篇杨绛的散文《老王》，经过老师的介绍，我对她的丈夫也表现出兴趣。高中的学业很紧张，每周只有半天的假期，同学们都很珍惜这短暂的自由时间，而我一般都会跑去镇上的新华书店，看看有没有自己想要读的书，有一次，就遇到了展架上包装精致的《围城》，毫不犹豫便买下了，读了一些他们的作品，简直令人眼前一亮，这对夫妻的才华在书中，在字里行间都能令人叹服。无奈，高中时间实在太紧，没有机会去读太多的杂书。到了大学，大一在富春的图书馆，有一个学校推荐的必读书架，当时注意到了一本钱钟书传，虽说挺薄的，但也让我了解到了不少关于钱钟书的品性。钱钟书生于书香世家，最大的爱好便是读书，在清华的时候就已经崭露头角，骨子里透着一股傲气。到后来能成为学贯中西的著名学者，与他的性格，习惯都是分不开的。我到了大学，最开心的就是有更多属于自己支配的时间了，我陆陆续续也读了不少杂书。小说，散文，诗歌，传记，技术通吃。《钱钟书传》之后，我也读了些关于杨绛的作品，包括《洗澡》，《生命的烤火者：杨绛传》等，杨绛的《我们三》也深深打动了我，两人回国后，环境其实十分艰难，磕磕绊绊也遇到了许多阻碍，尤其是文化大革命期间，当时他们的好友傅雷夫妇不愿苟活，选择了投井自杀，而他们选择了隐忍，熬了过去。在这之后，钱钟书的《管锥编》，杨绛翻译的《堂吉诃德》相继出版，二人的名气也急剧飙升，然后这并不是他们所在意的，钱钟书的追求其实很简单，这辈子只想做做学问，贡献一生。两人的淡定从容实在难能可贵，可惜好景不长，病魔接踵而至，先是带走了女儿圆圆，之后钱钟书也走了，只剩下了杨绛一人。没有切身体会，很难想象杨绛当时是怎么熬过来的，之后她在《走在人生边上》也提到：人生实苦。但我相信，这点苦对他们来说不算什么，因为他们在一起的时光都是辛福的。多少人究其一生也没能遇到自己钟意的爱人，而他们，从开始相爱，就一直甜蜜到了最后。 相识：两人一见钟情《圣经》有言：“有的时候，人和人的缘分，一面就足够了。因为，他就是你前世的人。”文坛伉俪钱钟书和杨绛的爱情便应了这句话。 世间最好的爱情，就是我叫杨绛，你叫钱钟书 1932年3月的一天，风和日丽，幽香袭人。杨绛在清华大学古月堂的门口，幸运地结识了大名鼎鼎的清华才子钱钟书。当时钱钟书穿着青布大褂，脚穿一双毛布底鞋，戴一副老式眼镜，目光炯炯有神，谈吐机智幽默，满身浸润着儒雅气质。 两人一见如故，侃侃而谈。钱钟书急切地澄清：“外界传说我已经订婚，这不是事实，请你不要相信。”杨绛也趁机说明：“坊间传闻追求我的男孩子有孔门弟子‘七十二人’之多，也有人说费孝通是我的男朋友，这也不是事实。”恰巧两人在文学上有共同的爱好和追求，这一切使他们怦然心动，一见钟情。 相恋：琴瑟和弦，鸾凤和鸣在二十世纪的中国，杨绛与钱钟书是天造地设的绝配。胡河清曾赞叹：“钱锺书、杨绛伉俪，可说是当代文学中的一双名剑。钱锺书如英气流动之雄剑，常常出匣自鸣，语惊天下；杨绛则如青光含藏之雌剑，大智若愚，不显刀刃。”在这样一个单纯温馨的学者家庭，两人过着“琴瑟和弦，鸾凤和鸣”的围城生活。 1935年，杨绛陪夫君去英国牛津就读。初到牛津，杨绛很不习惯异国的生活，又乡愁迭起。一天早上，杨绛还在睡梦中，钱钟书早已在厨房忙活开了，平日里“拙手笨脚”的他煮了鸡蛋，烤了面包，热了牛奶，还做了醇香的红茶。睡眼惺忪的杨绛被钱钟书叫醒，他把一张用餐小桌支在床上，把美味的早餐放在小桌上，这样杨绛就可以坐在床上随意享用了。吃着夫君亲自做的饭，杨绛幸福地说：“这是我吃过的最香的早饭”，听到爱妻满意的回答，钱钟书欣慰地笑了。 学习之余，杨绛和钱钟书还展开读书竞赛，比谁读的书多。通常情况下，两人所读的册数不相上下。有一次，钱钟书和杨绛交流阅读心得：“一本书，第二遍再读，总会发现读第一遍时会有许多疏忽。最精彩的句子，要读几遍之后才会发现。”杨绛不以为然，说：“这是你的读法。我倒是更随性，好书多看几遍，不感兴趣的书则浏览一番即可。”读读写写，嘻嘻闹闹，两人的婚姻生活倒充满了悠悠情趣，羡煞旁人。 相守：只求在一起，各自做力所能及的事两人恋爱时，除了约会，就是通信。有一次，杨绛的回信落在了钱钟书父亲钱基博老先生的手里。钱父好奇心突发，悄悄拆开信件，看完喜不自禁。原来，杨绛在信中说：“现在吾两人快乐无用，须两家父母兄弟皆大欢喜，吾两人之快乐乃彻始彻终不受障碍”，钱父大赞：“此诚聪明人语！”在钱父看来，杨绛思维缜密，办事周到，这对于不谙世事的儿子，是可遇不可求的贤内助。1935年，两人完婚，牵手走入围城。 爱女阿圆出生时，钱钟书致“欢迎辞”：“这是我的女儿，我喜欢的。”杨绛说女儿是自己“平生唯一的杰作”。 回国后，这个三口之家一直居无定所。1962年8月，一家人迁居干面胡同新建的宿舍，有四个房间，还有一个阳台，他们又添置了家具，终于有了个舒适的家。 那时，钱钟书经常带着妻女去饭馆吃饭，有一次，在等待上菜的空挡，钱钟书和阿圆一直在观察其他饭桌上吃客的言谈举止，并且像看戏一样很是着迷。杨绛奇怪地问：“你们这是干嘛啊？”阿圆说：“观察生活是件很有趣的事，你看那一桌两个人是夫妻，在吵架，那一桌是在宴请亲戚……”杨绛明白了，这父女俩是在看戏呢。待到吃完饭的时候，有的戏已经下场，有的戏正在上演。这三人在一起，总有无穷的趣味，平淡的生活充满了温情。 这个三口之家，很朴素，很单纯，温馨如饴，只求相守在一起，各自做力所能及的事……时光静静流逝着，再美好的故事总有谢幕的一天，杨绛在《我们仨》里写道：“1997年早春，阿媛去世。1998年岁末，钟书去世。我们三人就此失散了。现在，只剩下我一个。”]]></content>
