@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[226. 翻转二叉树]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[翻转一棵二叉树。 示例： 输入： 4 / \ 2 7 / \ / \1 3 6 9输出： 4 / \ 7 2 / \ / \9 6 3 1备注:这个问题是受到 Max Howell 的 原问题 启发的 ： 谷歌：我们90％的工程师使用您编写的软件(Homebrew)，但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。 递归写法： 翻转一棵空树结果还是一棵空树，但必须判断。之后递归交换左右结点。时间复杂度O(n)空间复杂度O(n)12345678910111213141516171819202122/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* invertTree(TreeNode* root) &#123; if(root==NULL)&#123; return NULL; &#125; TreeNode* right = invertTree(root-&gt;right); TreeNode* left = invertTree(root-&gt;left); root-&gt;left = right; root-&gt;right = left; return root; &#125;&#125;; 迭代写法： 123456789101112131415161718192021222324252627282930313233/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* invertTree(TreeNode* root) &#123; if(root==NULL)&#123; return NULL; &#125; queue&lt;TreeNode* &gt; q; q.push(root); while(!q.empty())&#123; TreeNode *current = q.front(); q.pop(); TreeNode *temp = current-&gt;left; current-&gt;left = current-&gt;right; current-&gt;right = temp; if(current-&gt;left!=NULL)&#123; q.push(current-&gt;left); &#125; if(current-&gt;right!=NULL)&#123; q.push(current-&gt;right); &#125; &#125; return root; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1030 完美数列(25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1030-%E5%AE%8C%E7%BE%8E%E6%95%B0%E5%88%97-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1030 完美数列(25)（25 分）给定一个正整数数列，和正整数p，设这个数列中的最大值是M，最小值是m，如果M &lt;= m * p，则称这个数列是完美数列。 现在给定参数p和一些正整数，请你从中选择尽可能多的数构成一个完美数列。 输入格式： 输入第一行给出两个正整数N和p，其中N（&lt;= 10^5^）是输入的正整数的个数，p（&lt;= 10^9^）是给定的参数。第二行给出N个正整数，每个数不超过10^9^。 输出格式： 在一行中输出最多可以选择多少个数可以用它们组成一个完美数列。 输入样例： 10 82 3 20 4 5 1 6 7 8 9输出样例： 8思路：对一个已经排序好的数列，找出这个数列小于等于这个数列最小元素*p的元素个数p与最小数相乘会超出int范围，所以不能用int定义数组 123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;double a[100100];int main()&#123; int n,p; scanf("%d %d",&amp;n,&amp;p); for(int i=0;i&lt;n;i++)&#123; scanf("%lf",&amp;a[i]); &#125; int i,j,maxm = 0,cnt = 0; sort(a,a+n); double temp; for( i=0;i&lt;n;i++)&#123; temp = a[i]*p;//遍历，将a[i]作为最小数 for( j=cnt;j&lt;n;j++)&#123; if(a[j]&gt;temp)&#123;//如果不满足条件了，则将下一个元素最为最小值 break; &#125; if(j-i&gt;=maxm)&#123;//如果此次的长度大于上一次，更新数列长度 maxm = j-i+1; &#125; &#125; cnt = j; &#125; printf("%d",maxm); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1029 旧键盘(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1029-%E6%97%A7%E9%94%AE%E7%9B%98-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1029 旧键盘(20)（20 分）旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及实际被输入的文字，请你列出肯定坏掉的那些键。 输入格式： 输入在2行中分别给出应该输入的文字、以及实际被输入的文字。每段文字是不超过80个字符的串，由字母A-Z（包括大、小写）、数字0-9、以及下划线“_”（代表空格）组成。题目保证2个字符串均非空。 输出格式： 按照发现顺序，在一行中输出坏掉的键。其中英文字母只输出大写，每个坏键只输出一次。题目保证至少有1个坏键。 输入样例： 7_This_is_a_test_hs_s_a_es输出样例： 7TI 1234567891011121314#include&lt;iostream&gt;#include&lt;cctype&gt;using namespace std;int main()&#123; string s1,s2,ans; cin&gt;&gt;s1&gt;&gt;s2; for(int i=0;i&lt;s1.length();i++)&#123; if(s2.find(s1[i])==string::npos&amp;&amp;ans.find(toupper(s1[i]))==string::npos) ans+=toupper(s1[i]); &#125; cout&lt;&lt;ans; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1028 人口普查(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1028-%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1028 人口普查(20)（20 分）某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。 这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过200岁的老人，而今天是2014年9月6日，所以超过200岁的生日和未出生的生日都是不合理的，应该被过滤掉。 输入格式： 输入在第一行给出正整数N，取值在(0, 10^5^]；随后N行，每行给出1个人的姓名（由不超过5个英文字母组成的字符串）、以及按“yyyy/mm/dd”（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。 输出格式： 在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。 输入样例： 5John 2001/05/12Tom 1814/09/06Ann 2121/01/30James 1814/09/05Steve 1967/11/20输出样例： 3 Tom John 1234567891011121314151617181920212223242526272829303132333435#include&lt;stdio.h&gt;#include&lt;string.h&gt;using namespace std;typedef long long ll;int main()&#123; int n; int year,month,day; char name[6],maxname[6],minname[6]; ll maxAge=20140907,minAge=18140905; scanf("%d",&amp;n); int Count=0; for(int i=0;i&lt;n;i++)&#123; scanf("%s %d/%d/%d",name,&amp;year,&amp;month,&amp;day); ll birth=year*10000+month*100+day; if(birth&gt;=18140906&amp;&amp;birth&lt;=20140906)&#123; Count++; if(birth&lt;maxAge)&#123; strcpy(maxname,name); maxAge=birth; &#125; if(birth&gt;minAge)&#123; strcpy(minname,name); minAge=birth; &#125; &#125; &#125; if(Count)&#123; printf("%d %s %s\n",Count,maxname,minname); &#125; else&#123; printf("0\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1027 打印沙漏(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1027-%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1027 打印沙漏(20)（20 分）本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印12345***** *** * ******** 所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。 给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。 输入格式： 输入在一行给出1个正整数N（&lt;=1000）和一个符号，中间以空格分隔。 输出格式： 首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。 输入样例： 19 *输出样例：123456***** *** * ********2 12345678910111213141516171819202122232425262728293031323334#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;cmath&gt;using namespace std;int main()&#123; int n; char c; int i,line=0; cin&gt;&gt;n&gt;&gt;c; line=(int)sqrt(2*n+2)-1; line=(line-1)/2; for(i=line;i&gt;=1;i--) &#123; for(int k=line-i;k&gt;=1;k--) cout&lt;&lt;" "; for(int j=i*2+1;j&gt;=1;j--)&#123; cout&lt;&lt;c;&#125; cout&lt;&lt;endl; &#125; for(i=0;i&lt;line;i++)&#123; cout&lt;&lt;" ";&#125; cout&lt;&lt;c&lt;&lt;endl; for(i=1;i&lt;=line;i++) &#123; for(int k=line-i;k&gt;=1;k--) cout&lt;&lt;" "; for(int j=i*2+1;j&gt;=1;j--)&#123; cout&lt;&lt;c;&#125; cout&lt;&lt;endl; &#125; cout&lt;&lt;(n-(2*line*(line+2)+1)); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1026 程序运行时间(15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1026-%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1026 程序运行时间(15)（15 分）要获得一个C语言程序的运行时间，常用的方法是调用头文件time.h，其中提供了clock()函数，可以捕捉从程序开始运行到clock()被调用时所耗费的时间。这个时间单位是clock tick，即“时钟打点”。同时还有一个常数CLK_TCK，给出了机器时钟每秒所走的时钟打点数。于是为了获得一个函数f的运行时间，我们只要在调用f之前先调用clock()，获得一个时钟打点数C1；在f执行完成后再调用clock()，获得另一个时钟打点数C2；两次获得的时钟打点数之差(C2-C1)就是f运行所消耗的时钟打点数，再除以常数CLK_TCK，就得到了以秒为单位的运行时间。 这里不妨简单假设常数CLK_TCK为100。现给定被测函数前后两次获得的时钟打点数，请你给出被测函数运行的时间。 输入格式： 输入在一行中顺序给出2个整数C1和C2。注意两次获得的时钟打点数肯定不相同，即C1 &lt; C2，并且取值在[0, 10^7^]。 输出格式： 在一行中输出被测函数运行的时间。运行时间必须按照“hh:mm:ss”（即2位的“时:分:秒”）格式输出；不足1秒的时间四舍五入到秒。 输入样例： 123 4577973输出样例： 12:42:59 1234567891011121314#include&lt;stdio.h&gt;#define tck 100int main()&#123; int c1,c2,h,m,s,c; scanf("%d%d",&amp;c1,&amp;c2); c=(c2-c1+50)/tck; h=c/3600; c=c%3600; m=c/60; s=c%60; printf("%02d:%02d:%02d", h, m, s); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[232. 用栈实现队列]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F232-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%2F</url>
     <content type="text"><![CDATA[使用栈实现队列的下列操作： push(x) – 将一个元素放入队列的尾部。pop() – 从队列首部移除元素。peek() – 返回队列首部的元素。empty() – 返回队列是否为空。示例: MyQueue queue = new MyQueue(); queue.push(1);queue.push(2);queue.peek(); // 返回 1queue.pop(); // 返回 1queue.empty(); // 返回 false说明: 你只能使用标准的栈操作 – 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162class MyQueue &#123;public: stack&lt;int&gt; st,temp; /** Initialize your data structure here. */ MyQueue() &#123; &#125; /** Push element x to the back of queue. */ void push(int x) &#123; st.push(x); &#125; /** Removes the element from in front of queue and returns that element. */ int pop() &#123; int val; if(temp.empty())&#123; while(!st.empty()) &#123; val = st.top(); temp.push(val); st.pop(); &#125; &#125; int res = temp.top(); temp.pop(); return res; &#125; /** Get the front element. */ int peek() &#123; while(!st.empty()) &#123; int val = st.top(); temp.push(val); st.pop(); &#125; int ans = temp.top(); while(!temp.empty()) &#123; int val = temp.top(); st.push(val); temp.pop(); &#125; return ans; &#125; /** Returns whether the queue is empty. */ bool empty() &#123; return st.empty()&amp;&amp;temp.empty(); &#125;&#125;;/** * Your MyQueue object will be instantiated and called as such: * MyQueue obj = new MyQueue(); * obj.push(x); * int param_2 = obj.pop(); * int param_3 = obj.peek(); * bool param_4 = obj.empty(); */]]></content>
