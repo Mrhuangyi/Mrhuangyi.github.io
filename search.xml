@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[383. 赎金信]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F383-%E8%B5%8E%E9%87%91%E4%BF%A1%2F</url>
+    <content type="text"><![CDATA[给定一个赎金信 (ransom) 字符串和一个杂志(magazine)字符串，判断第一个字符串ransom能不能由第二个字符串magazines里面的字符构成。如果可以构成，返回 true ；否则返回 false。 (题目说明：为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，组成单词来表达意思。) 注意： 你可以假设两个字符串均只含有小写字母。 canConstruct(“a”, “b”) -&gt; falsecanConstruct(“aa”, “ab”) -&gt; falsecanConstruct(“aa”, “aab”) -&gt; true123456789101112class Solution &#123;public: bool canConstruct(string ransomNote, string magazine) &#123; unordered_map&lt;char, int&gt; map(26); for (int i = 0; i &lt; magazine.size(); ++i) ++map[magazine[i]]; for (int j = 0; j &lt; ransomNote.size(); ++j) if (--map[ransomNote[j]] &lt; 0) return false; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1035 插入与归并(25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1035-%E6%8F%92%E5%85%A5%E4%B8%8E%E5%BD%92%E5%B9%B6-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1035 插入与归并(25)（25 分）根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下1个有序的序列。 现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？ 输入格式： 输入在第一行给出正整数N (&lt;=100)；随后一行给出原始序列的N个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。 输出格式： 首先在第1行中输出“Insertion Sort”表示插入排序、或“Merge Sort”表示归并排序；然后在第2行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行末不得有多余空格。 输入样例1： 103 1 2 8 7 5 9 4 6 01 2 3 7 8 5 9 4 6 0输出样例1： Insertion Sort1 2 3 5 7 8 9 4 6 0输入样例2： 103 1 2 8 7 5 9 4 0 61 3 2 8 5 7 4 9 0 6输出样例2： Merge Sort1 2 3 8 4 5 7 9 0 6 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstdio&gt;using namespace std;bool cmp(int a,int b)&#123; return a&lt;b;&#125;int main()&#123; int n; scanf("%d",&amp;n); int *a = new int[n]; int *b = new int[n]; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a[i]); &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;b[i]); &#125; int i,j; for(i=0;i&lt;n-1&amp;&amp;b[i]&lt;=b[i+1];i++); for(j=i+1;a[j]==b[j]&amp;&amp;j&lt;n;j++); if(j==n)&#123; printf("Insertion Sort\n"); sort(a,a+i+2,cmp); &#125;else&#123; printf("Merge Sort\n"); int k=1,flag=1; while(flag)&#123; flag=0; for(i=0;i&lt;n;i++)&#123; if(a[i]!=b[i])&#123; flag=1; &#125; &#125; k=k*2; for(i=0;i&lt;n/k;i++) sort(a+i*k,a+(i+1)*k,cmp); sort(a+n/k*k,a+n,cmp); &#125; &#125; for(j=0;j&lt;n-1;j++)&#123; printf("%d ",a[j]); &#125; printf("%d",a[n-1]); delete []a; delete []b; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1034 有理数四则运算(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1034-%E6%9C%89%E7%90%86%E6%95%B0%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1034 有理数四则运算(20)（20 分）本题要求编写程序，计算2个有理数的和、差、积、商。 输入格式： 输入在一行中按照“a1/b1 a2/b2”的格式给出两个分数形式的有理数，其中分子和分母全是整型范围内的整数，负号只可能出现在分子前，分母不为0。 输出格式： 分别在4行中按照“有理数1 运算符 有理数2 = 结果”的格式顺序输出2个有理数的和、差、积、商。注意输出的每个有理数必须是该有理数的最简形式“k a/b”，其中k是整数部分，a/b是最简分数部分；若为负数，则须加括号；若除法分母为0，则输出“Inf”。题目保证正确的输出中没有超过整型范围的整数。 输入样例1： 2/3 -4/2输出样例1： 2/3 + (-2) = (-1 1/3)2/3 - (-2) = 2 2/32/3 * (-2) = (-1 1/3)2/3 / (-2) = (-1/3)输入样例2： 5/3 0/6输出样例2： 1 2/3 + 0 = 1 2/31 2/3 - 0 = 1 2/31 2/3 * 0 = 01 2/3 / 0 = Inf123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135#include &lt;iostream&gt;#include &lt;cmath&gt;using namespace std;//辗转相除法int gcd(long long a, long long b)&#123; return b == 0 ? a : gcd(b, a % b);&#125;void print(long long a, long long b)&#123; long long c = 0; //带分数前面的整数部分，默认是0 if(a &gt; 0)&#123; //正数 if(b == 1)&#123; //形如3/1 printf("%lld", a); &#125; else if(a &gt; b)&#123; //形如5/3 c = a / b; a -= b * c; printf("%lld %lld/%lld", c, a, b); &#125; else&#123; //真分数 形如3/5 printf("%lld/%lld", a, b); &#125; &#125; else if(a == 0)&#123; //形如0/3 printf("%c", '0'); &#125; else&#123; //负数 if(b == 1)&#123; //形如-3/1 printf("(%lld)", a); &#125; else if(-1 * a &gt; b)&#123; //形如-5/3 c = a / b; a = (-1 * a) % b; printf("(%lld %lld/%lld)", c, a, b); &#125; else&#123; //真分数 printf("(%lld/%lld)", a, b); &#125; &#125;&#125;void add(long long a1, long long b1, long long a2, long long b2)&#123; print(a1, b1); printf(" + "); print(a2, b2); printf(" = "); long long a3 = a1 * b2 + a2 * b1; long long b3 = b1 * b2; //化简到最简形式，非带分数形式 long long gcd3 = abs(gcd(a3, b3)); a3 /= gcd3; b3 /= gcd3; print(a3, b3); printf("\n");&#125;void subtract(long long a1, long long b1, long long a2, long long b2)&#123; print(a1, b1); printf(" - "); print(a2, b2); printf(" = "); long long a3 = a1 * b2 - a2 * b1; long long b3 = b1 * b2; //化简到最简形式，非带分数形式 long long gcd3 = abs(gcd(a3, b3)); a3 /= gcd3; b3 /= gcd3; print(a3, b3); printf("\n");&#125;void multiply(long long a1, long long b1, long long a2, long long b2)&#123; print(a1, b1); printf(" * "); print(a2, b2); printf(" = "); long long a3 = a1 * a2; long long b3 = b1 * b2; //化简到最简形式，非带分数形式 long long gcd3 = abs(gcd(a3, b3)); a3 /= gcd3; b3 /= gcd3; print(a3, b3); printf("\n");&#125;void divide(long long a1, long long b1, long long a2, long long b2)&#123; print(a1, b1); printf(" / "); print(a2, b2); printf(" = "); if(a2 == 0)&#123; printf("Inf"); &#125; else if(a2 &lt; 0)&#123; long long a3 = -1 * a1 * b2; long long b3 = -1 * b1 * a2; //化简到最简形式，非带分数形式 long long gcd3 = abs(gcd(a3, b3)); a3 /= gcd3; b3 /= gcd3; print(a3, b3); &#125; else&#123; long long a3 = a1 * b2; long long b3 = b1 * a2; //化简到最简形式，非带分数形式 long long gcd3 = abs(gcd(a3, b3)); a3 /= gcd3; b3 /= gcd3; print(a3, b3); &#125; printf("\n");&#125;int main()&#123; long long a1, b1, a2, b2; long long c1 = 0, c2 = 0; scanf("%lld/%lld %lld/%lld", &amp;a1, &amp;b1, &amp;a2, &amp;b2); //先化简到最简形式，非带分数形式 long long gcd1 = abs(gcd(a1, b1)); a1 /= gcd1; b1 /= gcd1; long long gcd2 = abs(gcd(a2, b2)); a2 /= gcd2; b2 /= gcd2; //统一用最简形式参与运算 add(a1, b1, a2, b2); subtract(a1, b1, a2, b2); multiply(a1, b1, a2, b2); divide(a1, b1, a2, b2); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[浅谈深度学习]]></title>
+    <url>%2F%E6%8A%80%E6%9C%AF%E6%89%A9%E5%B1%95%2F%E6%B5%85%E8%B0%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>技术扩展</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[看不见的客人]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%AE%A2%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[昨晚看的一部电影《看不见的客人》，比我预想中的要好得多。其实和之前看的一部《控方证人》有异曲同工之处，但还是不得不承认这部剧的剧本够精彩。影片的主线围绕着一位律师和男主的谈话展开，一次次叙述的转变，层层反转，层层递进，吸引着观众紧跟节奏，直至结尾，真相揭露，给人豁然一击，人心叵测，人性慎测，莫过于此。 为什么说情节，布局十分巧妙。暂且撇开律师是死者母亲假扮这一点，说实话，在影片结尾这位母亲摘下假发，取下隐形镜片之前，我并没有看出来这位律师就是由死者母亲假扮的，当然，若是结合之前的一些对话以及言行，确实有很多地方与之相呼应，不然很难理解一位普通的花钱请来办事的普通律师会有很多奇怪的表现。例如，他为何一开始将一枚时钟摆在桌子上，表明只有３个小时的对话时间。另外，提现这部剧不是一部脑残剧的很大一点，便是这部剧剧情能吸引观众一步步深入，而不是一眼就让你看透结局。如何做到这一点的呢？首先影片是以律师和男主两人之间的对话展开的，这场对话实际上在我看来就是一场审判，一场拷问，关乎人性，关乎讽刺。因为对话的一方其实已经知道真相，而另一方却仍旧在重重伪装。而这位律师要做的便是层层诱导，让男主亲口一部部走入律师的陷阱，直至说出全部真相。剧情优秀的电影会让人觉得这是经得住推敲的，而这部电影恰好就是一部逻辑十分严密的电影。男主和律师其实是在进行一场博弈，尽管律师已经得知大部分真相，但她的目的是为了证据，他需要男主亲口说出自己的罪行，但显然，对男主这样一个内心防线严密的人来说这不是一件容易的事，他一次次叙述，一次次被律师推翻，就是想掩盖真相。你会发现，男主的每一次叙述，叙述中加入情节展现，你会发现竟然都是合情合理的，由此可以想象他的心理防线多么巨大，换言之，他的自私自利，泯灭良知已经到了何种程度。 接下来来看看男主的叙述，第一步，撇开车祸，撇开一切罪行喊冤，说明了自己在一个酒店莫名被人栽赃了，有人杀人劫财，并且嫁祸给他，一场密室杀人，所有证据都指向他，百口莫辩。然而，这场叙述不到10分钟就结束了，这样的话，律师简直听都不想听，于是让他别再浪费时间了，把该说的说出来才有辩护成功的希望，慢慢，男主有点服软，开始了他的第二个版本的叙述，这一次，他讲矛头指向了他的情人，劳拉。总之，他绝不会轻易说出自己的黑暗面，毕竟，他可是众人眼中的精英，万众瞩目，事业有成的成功企业家。男主将黑暗面加在了自己的情人劳拉身上，表明自己是身不由己，一时糊涂，听了情人劳拉的怂恿犯下大错，包括后面对死于车祸的男孩的陷害。然而律师一直不停的强调，注重细节，细节能救你，同时也能要了你的命。之后，男主一步步走入律师的圈套。最后，男主发现中计的时候，那种表情，绝对是被拷问后的表情，是被人对灵魂深深的拷问！让人难以想象的是男主为了自己所谓的前途竟然可以不择手段到这种程度，后面得知他的情人内心愧疚难安的了焦虑症，希望男主拿钱弥补死去男孩的父母并告知他们男孩尸体的位置，没想到男主一念之下杀了劳拉，更令人难以容忍的是，他在得知出了车祸的男孩还有一口气之时，他不是尽力去挽救，而是用力盖上了后备箱，视而不见，将车沉入湖底，实在难以想象但凡有一点良知的人能做得如此心狠手辣。 影片的讽刺方面直指一些现实社会中的“精英”，“名流”，尽管光环四射，衣着光鲜亮丽，成功，优秀都是他们的代名词，然而，有的人却被这些身外之物完全束缚了，私欲无限膨胀，完全以自我为中心，视他人如蝼蚁，视生命如蝼蚁，什么？出事了，我的前途怎么办，我的妻子女儿怎么办，我的事业刚刚达到巅峰，我怎能在这时出问题，一切都得为我开路，不能被这些碍手碍脚的家伙挡住我的美好前程。 另外，这部电影的正面主角，便是死者父母，用一句话来形容他们的内心“当你失去了至爱之人，便已无所畏惧”。他们为了给自己无辜的儿子，给死去的劳拉讨回一个公道，与男主不断周旋，收集各种资料，以谎言制服谎言，这也成就了这部电影最大的一个反转，长时间与恶龙搏斗，自身也会如同恶龙般强大，无所畏惧。 人心莫测，莫过于此，对《看不见的客人》而言，电影的画龙点睛之笔并不在于悬疑，更在于它深攫以了谎言这一人类用来满足自我私欲的本质，并在最后用打动人心的情感完成了这一内在的升华。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>影视</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1033 旧键盘打字(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1033-%E6%97%A7%E9%94%AE%E7%9B%98%E6%89%93%E5%AD%97-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1033 旧键盘打字(20)（20 分）旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？ 输入格式： 输入在2行中分别给出坏掉的那些键、以及应该输入的文字。其中对应英文字母的坏键以大写给出；每段文字是不超过10^5^个字符的串。可用的字符包括字母[a-z, A-Z]、数字0-9、以及下划线“_”（代表空格）、“,”、“.”、“-”、“+”（代表上档键）。题目保证第2行输入的文字串非空。 注意：如果上档键坏掉了，那么大写的英文字母无法被打出。 输出格式： 在一行中输出能够被打出的结果文字。如果没有一个字符能被打出，则输出空行。 输入样例： 7+IE.7_This_is_a_test.输出样例： _hs_s_a_tst 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; string s1,s2; int tag=0; vector&lt;char&gt; s3; map&lt;char,int&gt; p; getline(cin,s1); getline(cin,s2); if(s1.length()==0)&#123; cout&lt;&lt;s2; return 0; &#125; for(int i=0;i&lt;s1.size();i++)&#123; if(s1[i]=='+')&#123; tag=1; &#125; if(s1[i]&gt;='A'&amp;&amp;s1[i]&lt;='Z') p[s1[i]+32]=p[s1[i]]=1; else p[s1[i]]=1; &#125; for(int i=0;i&lt;s2.size();i++)&#123; if(tag==1)&#123; if(s2[i]&gt;='A'&amp;&amp;s2[i]&lt;='Z')&#123; p[s2[i]]=1; &#125;&#125; if(p[s2[i]]!=1)&#123; s3.push_back(s2[i]); &#125; &#125; if(!s3.empty())&#123; for(int i=0;i&lt;s3.size();i++) cout&lt;&lt;s3[i]; &#125; else printf("\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1032 挖掘机技术哪家强(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1032 挖掘机技术哪家强(20)（20 分）为了用事实说明挖掘机技术到底哪家强，PAT组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。 输入格式： 输入在第1行给出不超过10^5^的正整数N，即参赛人数。随后N行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从1开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。 输出格式： 在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。 输入样例： 63 652 801 1002 703 403 0输出样例： 2 150 1234567891011121314151617181920212223#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int a[100001]=&#123;0&#125;;int main()&#123; int n,bianhao,score,max=0,j; cin&gt;&gt;n; while(n--)&#123; cin&gt;&gt;bianhao&gt;&gt;score; a[bianhao]+=score; &#125; for(int i=0;i&lt;100000;i++) &#123; if(a[i]&gt;max) &#123; max=a[i]; j=i; &#125; &#125; cout&lt;&lt;j&lt;&lt;" "&lt;&lt;max; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1031 查验身份证(15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1031-%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1031 查验身份证(15)（15 分）一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下： 首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值： Z：0 1 2 3 4 5 6 7 8 9 10\ M：1 0 X 9 8 7 6 5 4 3 2 现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。 输入格式： 输入第一行给出正整数N（&lt;= 100）是输入的身份证号码的个数。随后N行，每行给出1个18位身份证号码。 输出格式： 按照输入的顺序每行输出1个有问题的身份证号码。这里并不检验前17位是否合理，只检查前17位是否全为数字且最后1位校验码计算准确。如果所有号码都正常，则输出“All passed”。 输入样例1： 432012419880824005612010X19890101123411010819671130186637070419881216001X输出样例1： 12010X19890101123411010819671130186637070419881216001X输入样例2： 2320124198808240056110108196711301862输出样例2： All passed 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;iostream&gt;using namespace std; int weight[17]=&#123;7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2&#125;;int test[11]=&#123;1,0,10,9,8,7,6,5,4,3,2&#125;;bool isright(string ss)&#123; int sum=0; for(int i=0;i&lt;17;i++) &#123; if(ss[i]&lt;'0'||ss[i]&gt;'9') return false; else&#123; sum+=(ss[i]-'0')*weight[i]; &#125; &#125; int x=0; if(ss[17]=='X') x=10; else x=ss[17]-'0'; if(test[sum%11]==x) return true; else return false;&#125;int main()&#123; int n,ans=0; string s; cin&gt;&gt;n; while(n--)&#123; cin&gt;&gt;s; if(!isright(s)) &#123; cout&lt;&lt;s&lt;&lt;endl; ans++; &#125; &#125; if(ans==0) cout&lt;&lt;"All passed"&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[263. 丑数]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F263-%E4%B8%91%E6%95%B0%2F</url>
     <content type="text"><![CDATA[编写一个程序判断给定的数是否为丑数。 丑数就是只包含质因数 2, 3, 5 的正整数。 示例 1: 输入: 6输出: true解释: 6 = 2 × 3示例 2: 输入: 8输出: true解释: 8 = 2 × 2 × 2示例 3: 输入: 14输出: false解释: 14 不是丑数，因为它包含了另外一个质因数 7。说明： 1 是丑数。输入不会超过 32 位有符号整数的范围: [−231, 231 − 1]。 1234567891011121314151617181920class Solution &#123;public: bool isUgly(int num) &#123; if(num==0) return false; if(num==1) return true; if(num%2==0)&#123; num=num/2; return isUgly(num); &#125; if(num%3==0)&#123; num=num/3; return isUgly(num); &#125; if(num%5==0)&#123; num=num/5; return isUgly(num); &#125; return false; &#125;&#125;;]]></content>
