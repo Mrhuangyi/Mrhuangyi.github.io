@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a67f26;
+  background: #968e4e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2934,29 +2934,6 @@ hr {
 }
 .ds-top-threads li a:hover {
   border-left: 8px solid #4d768c;
-}
-.header {
-  background: url("/images/header-bk.jpg");
-}
-.site-meta {
-  float: none;
-}
-.menu {
-  float: none;
-}
-.logo-line-before,
-.logo-line-after {
-  display: none;
-}
-.menu .menu-item a {
-  font-size: 14px;
-  color: #0f2e41;
-  border-radius: 4px;
-}
-.site-meta .site-title {
-  font-size: 28px;
-  font-family: 'Comic Sans MS', sans-serif;
-  color: #000;
 }
 .footer {
   background: none;
