@@ -3020,3 +3020,4 @@ a {
 .post-button a:hover {
   color: #7784ba;
 }
+#feedAv{ margin-top: -250px!important;transform: scale(0);}
