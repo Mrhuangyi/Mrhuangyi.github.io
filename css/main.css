@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #46e02a;
+  background: #bd2ba2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3019,4 +3019,12 @@ a {
 }
 .post-button a:hover {
   color: #7784ba;
+}
+#feedAv {
+  margin-top: -250px !important;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
 }
