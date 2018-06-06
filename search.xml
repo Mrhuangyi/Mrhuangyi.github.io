@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1045 快速排序(25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1045-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1045 快速排序(25)（25 分）著名的快速排序算法里有一个经典的划分过程：我们通常采用某种方法取一个元素作为主元，通过交换，把比主元小的元素放到它的左边，比主元大的元素放到它的右边。 给定划分后的N个互不相同的正整数的排列，请问有多少个元素可能是划分前选取的主元？ 例如给定N = 5, 排列是1、3、2、4、5。则： 1的左边没有元素，右边的元素都比它大，所以它可能是主元；\ 尽管3的左边元素都比它小，但是它右边的2它小，所以它不能是主元；\ 尽管2的右边元素都比它大，但其左边的3比它大，所以它不能是主元；\ 类似原因，4和5都可能是主元。 因此，有3个元素可能是主元。 输入格式： 输入在第1行中给出一个正整数N（&lt;= 10^5^）； 第2行是空格分隔的N个不同的正整数，每个数不超过10^9^。 输出格式： 在第1行中输出有可能是主元的元素个数；在第2行中按递增顺序输出这些元素，其间以1个空格分隔，行末不得有多余空格。 输入样例： 51 3 2 4 5输出样例： 31 4 5 利用主元位置不变来做 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxm = 100010;int a[maxm],b[maxm],c[maxm];int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a[i]); b[i] = a[i]; &#125; int max = 0,d = 0; sort(b,b+n); for(int i=0;i&lt;n;i++)&#123; if(max&lt;a[i])&#123; max = a[i]; &#125; if(a[i]==b[i]&amp;&amp;a[i]==max)&#123; c[d++] = a[i]; &#125; &#125; printf("%d\n",d); for(int i=0;i&lt;d;i++)&#123; if(i==0)&#123; printf("%d",c[i]); &#125;else&#123; printf(" %d",c[i]); &#125; &#125; printf("\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1044 火星数字(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1044-%E7%81%AB%E6%98%9F%E6%95%B0%E5%AD%97-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1044 火星数字(20)（20 分）火星人是以13进制计数的： 地球人的0被火星人称为tret。地球人数字1到12的火星文分别为：jan, feb, mar, apr, may, jun, jly, aug, sep, oct, nov, dec。火星人将进位以后的12个高位数字分别称为：tam, hel, maa, huh, tou, kes, hei, elo, syy, lok, mer, jou。例如地球人的数字“29”翻译成火星文就是“hel mar”；而火星文“elo nov”对应地球数字“115”。为了方便交流，请你编写程序实现地球和火星数字之间的互译。 输入格式： 输入第一行给出一个正整数N（&lt;100），随后N行，每行给出一个[0, 169)区间内的数字 —— 或者是地球文，或者是火星文。 输出格式： 对应输入的每一行，在一行中输出翻译后的另一种语言的数字。 输入样例： 4295elo novtam输出样例： hel marmay11513 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;cstdio&gt;#include&lt;cctype&gt;using namespace std;string a[13] = &#123;"tret", "jan", "feb", "mar", "apr", "may", "jun", "jly", "aug", "sep", "oct", "nov", "dec"&#125;;string b[13] = &#123;"", "tam", "hel", "maa", "huh", "tou", "kes", "hei", "elo", "syy", "lok", "mer", "jou"&#125;;void trans1(string s)&#123; int len = s.length(); int num = 0; for(int i=0;i&lt;len;i++)&#123; num = num*10+(s[i]-'0'); &#125; cout&lt;&lt;b[num/13]; if((num%13)&amp;&amp;(num/13))&#123; cout&lt;&lt;" "&lt;&lt;a[num%13]; &#125;else if(num%13)&#123; cout&lt;&lt;a[num%13]; &#125;else if(num==0)&#123; cout&lt;&lt;a[num%13]; &#125;&#125;void trans2(string s)&#123; int len = s.length(); int num = 0; if(len==4)&#123; printf("0"); return ; &#125;else if(len==3)&#123; for(int i=1;i&lt;=12;i++)&#123; if(s==a[i])&#123; printf("%d",i); return ; &#125; if(s==b[i])&#123; printf("%d",i*13); return ; &#125; &#125; &#125;else&#123; string temp1 = s.substr(0,3); string temp2 = s.substr(4,3); for(int i=1;i&lt;=12;i++)&#123; if(temp1==b[i])&#123; num+=i*13; &#125; if(temp2==a[i])&#123; num+=i; &#125; &#125; printf("%d",num); &#125; return ;&#125;int main()&#123; int n; scanf("%d",&amp;n); getchar(); for(int i=0;i&lt;n;i++)&#123; string s; getline(cin,s); if(isdigit(s[0]))&#123; trans1(s); &#125;else&#123; trans2(s); &#125; printf("\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1043 输出PATest(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1043-%E8%BE%93%E5%87%BAPATest-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1043 输出PATest(20)（20 分）给定一个长度不超过10000的、仅由英文字母构成的字符串。请将字符重新调整顺序，按“PATestPATest….”这样的顺序输出，并忽略其它字符。当然，六种字符的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍按PATest的顺序打印，直到所有字符都被输出。 输入格式： 输入在一行中给出一个长度不超过10000的、仅由英文字母构成的非空字符串。 输出格式： 在一行中按题目要求输出排序后的字符串。题目保证输出非空。 输入样例： redlesPayBestPATTopTeePHPereatitAPPT输出样例： PATestPATestPTetPTePePee 123456789101112131415161718#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;int main()&#123; int mapp[128] =&#123;0&#125;,c; while((c=cin.get())!=EOF) mapp[c]++; while(mapp['P']&gt;0||mapp['A']&gt;0||mapp['T']&gt;0||mapp['e']&gt;0||mapp['s']&gt;0||mapp['t']&gt;0)&#123; if(mapp['P']--&gt;0) cout&lt;&lt;'P'; if(mapp['A']--&gt;0) cout&lt;&lt;'A'; if(mapp['T']--&gt;0) cout&lt;&lt;'T'; if(mapp['e']--&gt;0) cout&lt;&lt;'e'; if(mapp['s']--&gt;0) cout&lt;&lt;'s'; if(mapp['t']--&gt;0) cout&lt;&lt;'t'; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1042 字符统计(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1042-%E5%AD%97%E7%AC%A6%E7%BB%9F%E8%AE%A1-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1042 字符统计(20)（20 分）请编写程序，找出一段给定文字中出现最频繁的那个英文字母。 输入格式： 输入在一行中给出一个长度不超过1000的字符串。字符串由ASCII码表中任意可见字符及空格组成，至少包含1个英文字母，以回车结束（回车不算在内）。 输出格式： 在一行中输出出现频率最高的那个英文字母及其出现次数，其间以空格分隔。如果有并列，则输出按字母序最小的那个字母。统计时不区分大小写，输出小写字母。 输入样例： This is a simple TEST. There ARE numbers and other symbols 1&amp;2&amp;3………..输出样例： e 7 123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;int main()&#123; int num[128]=&#123;0&#125;; string c; getline(cin,c); int len=c.length(); for(int i=0;i&lt;len;i++) &#123; if(c[i]&gt;='a'&amp;&amp;c[i]&lt;='z') num[c[i]]++; else if(c[i]&gt;='A'&amp;&amp;c[i]&lt;='Z') &#123; c[i]=c[i]-'A'+'a'; num[c[i]]++; &#125; &#125; int maxm=0; char ch; for(int i='a';i&lt;='z';i++) &#123; if(num[i]&gt;maxm) &#123; maxm=num[i]; ch=char(i); &#125; &#125; cout&lt;&lt;ch&lt;&lt;" "&lt;&lt;maxm&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1041 考试座位号(15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1041-%E8%80%83%E8%AF%95%E5%BA%A7%E4%BD%8D%E5%8F%B7-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1041 考试座位号(15)（15 分）每个PAT考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些考生迟到了，试机已经结束，他们只能拿着领到的试机座位号码求助于你，从后台查出他们的考试座位号码。 输入格式： 输入第一行给出一个正整数N（&lt;=1000），随后N行，每行给出一个考生的信息：“准考证号 试机座位号 考试座位号”。其中准考证号由14位数字组成，座位从1到N编号。输入保证每个人的准考证号都不同，并且任何时候都不会把两个人分配到同一个座位上。 考生信息之后，给出一个正整数M（&lt;=N），随后一行中给出M个待查询的试机座位号码，以空格分隔。 输出格式： 对应每个需要查询的试机座位号码，在一行中输出对应考生的准考证号和考试座位号码，中间用1个空格分隔。 输入样例： 410120150912233 2 410120150912119 4 110120150912126 1 310120150912002 3 2 23 4输出样例： 10120150912002 210120150912119 1 1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;struct pat&#123;char zhunkao[14];int shiji;int kaoshi;&#125;a[1001];int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++) &#123; scanf("%s%d%d",a[i].zhunkao,&amp;a[i].shiji,&amp;a[i].kaoshi); &#125; int m; int shiji2; scanf("%d",&amp;m); for(int j=0;j&lt;m;j++) &#123; scanf("%d",&amp;shiji2); for(int i=0;i&lt;n;i++) &#123; if(a[i].shiji==shiji2) &#123; printf("%s %d\n",a[i].zhunkao,a[i].kaoshi); &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[242. 有效的字母异位词]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%2F</url>
     <content type="text"><![CDATA[给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。 示例 1: 输入: s = “anagram”, t = “nagaram”输出: true示例 2: 输入: s = “rat”, t = “car”输出: false说明:你可以假设字符串只包含小写字母。 进阶:如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？ 12345678910111213141516171819class Solution &#123;public: bool isAnagram(string s, string t) &#123; if(s.length()!=t.length())&#123; return false; &#125; int counter[27]=&#123;0&#125;; for(int i=0;i&lt;s.length();i++)&#123; counter[s[i]-'a']++; counter[t[i]-'a']--; &#125; for(int i=0;i&lt;26;i++)&#123; if(counter[i]!=0)&#123; return false; &#125; &#125; return true; &#125;&#125;;]]></content>
@@ -2378,7 +2433,7 @@
         <category>算法和数据结构</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
