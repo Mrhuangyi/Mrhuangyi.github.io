@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bd2ba2;
+  background: #38abd6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2913,6 +2913,14 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+#feedAv {
+  margin-top: -250px !important;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
 }
 * {
   cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
