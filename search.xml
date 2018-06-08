@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[257. Binary Tree Paths]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F257-Binary-Tree-Paths%2F</url>
+    <content type="text"><![CDATA[Given a binary tree, return all root-to-leaf paths. Note: A leaf is a node with no children. Example: Input: 1 / \2 3 \ 5 Output: [“1-&gt;2-&gt;5”, “1-&gt;3”] Explanation: All root-to-leaf paths are: 1-&gt;2-&gt;5, 1-&gt;3 题目要求：给定一棵二叉树，返回所有从根结点到叶结点的路径 分析：采用深度优先搜索，递归访问每个结点的子结点，如果遇到叶结点，则输出所记录的路径。然后返回上一层 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) &#123; vector&lt;string&gt; result; if(root==nullptr)&#123; return result; &#125; vector&lt;int&gt; path; dfs(root,path,result); return result; &#125;private: void dfs(TreeNode* node,vector&lt;int&gt;&amp; path,vector&lt;string&gt;&amp; result)&#123; if(node==nullptr)&#123; return ; &#125; path.push_back(node-&gt;val); if(node-&gt;left==nullptr&amp;&amp;node-&gt;right==nullptr)&#123; result.push_back(generatePath(path)); &#125;else&#123; if(node-&gt;left!=nullptr)&#123; dfs(node-&gt;left,path,result); path.pop_back(); &#125; if(node-&gt;right!=nullptr)&#123; dfs(node-&gt;right,path,result); path.pop_back(); &#125; &#125; &#125; string generatePath(vector&lt;int&gt; path)&#123; stringstream ss; int i; for(i=0;i&lt;path.size()-1;i++)&#123; ss&lt;&lt;path[i]&lt;&lt;"-&gt;"; &#125; ss&lt;&lt;path[i]; return ss.str(); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-015 互评成绩（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-015-%E4%BA%92%E8%AF%84%E6%88%90%E7%BB%A9%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-015 互评成绩（25 分）学生互评作业的简单规则是这样定的：每个人的作业会被k个同学评审，得到k个成绩。系统需要去掉一个最高分和一个最低分，将剩下的分数取平均，就得到这个学生的最后成绩。本题就要求你编写这个互评系统的算分模块。 输入格式： 输入第一行给出3个正整数N（3&lt; N &lt;= 10^4^，学生总数）、k（3&lt;= k &lt;= 10，每份作业的评审数）、M（&lt;= 20，需要输出的学生数）。随后N行，每行给出一份作业得到的k个评审成绩（在区间[0, 100]内），其间以空格分隔。 输出格式： 按非递减顺序输出最后得分最高的M个成绩，保留小数点后3位。分数间有1个空格，行首尾不得有多余空格。 输入样例： 6 5 388 90 85 99 6067 60 80 76 7090 93 96 99 9978 65 77 70 7288 88 88 88 8855 55 55 55 55输出样例： 87.667 88.000 96.000 12345678910111213141516171819202122232425262728293031323334#include&lt;iostream&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;bool cmp(double a,double b)&#123; return a&gt;b;&#125;int main()&#123; int n,k,m; scanf("%d %d %d",&amp;n,&amp;k,&amp;m); vector&lt;double&gt; sum; for(int i=0;i&lt;n;i++)&#123; vector&lt;double&gt; v(k); double maxm=-1,minm=101,average=0.0; for(int j=0;j&lt;k;j++)&#123; scanf("%lf",&amp;v[j]); maxm=max(maxm,v[j]); minm=min(minm,v[j]); average+=v[j]; &#125; average=average-minm-maxm; average=average/(k-2); sum.push_back(average); &#125; sort(sum.begin(),sum.end(),cmp); if(m!=0)&#123; printf("%.3f",sum[m-1]); &#125; for(int i=m-2;i&gt;=0;i--)&#123; printf("% .3f",sum[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1045 快速排序(25)（25 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1045-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[1045 快速排序(25)（25 分）著名的快速排序算法里有一个经典的划分过程：我们通常采用某种方法取一个元素作为主元，通过交换，把比主元小的元素放到它的左边，比主元大的元素放到它的右边。 给定划分后的N个互不相同的正整数的排列，请问有多少个元素可能是划分前选取的主元？ 例如给定N = 5, 排列是1、3、2、4、5。则： 1的左边没有元素，右边的元素都比它大，所以它可能是主元；\ 尽管3的左边元素都比它小，但是它右边的2它小，所以它不能是主元；\ 尽管2的右边元素都比它大，但其左边的3比它大，所以它不能是主元；\ 类似原因，4和5都可能是主元。 因此，有3个元素可能是主元。 输入格式： 输入在第1行中给出一个正整数N（&lt;= 10^5^）； 第2行是空格分隔的N个不同的正整数，每个数不超过10^9^。 输出格式： 在第1行中输出有可能是主元的元素个数；在第2行中按递增顺序输出这些元素，其间以1个空格分隔，行末不得有多余空格。 输入样例： 51 3 2 4 5输出样例： 31 4 5 利用主元位置不变来做 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;const int maxm = 100010;int a[maxm],b[maxm],c[maxm];int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a[i]); b[i] = a[i]; &#125; int max = 0,d = 0; sort(b,b+n); for(int i=0;i&lt;n;i++)&#123; if(max&lt;a[i])&#123; max = a[i]; &#125; if(a[i]==b[i]&amp;&amp;a[i]==max)&#123; c[d++] = a[i]; &#125; &#125; printf("%d\n",d); for(int i=0;i&lt;d;i++)&#123; if(i==0)&#123; printf("%d",c[i]); &#125;else&#123; printf(" %d",c[i]); &#125; &#125; printf("\n"); return 0;&#125;]]></content>

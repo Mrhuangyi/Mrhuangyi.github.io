@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-06-06T06:52:36.496Z</updated>
+  <updated>2018-06-08T05:11:01.595Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>257. Binary Tree Paths</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/257-Binary-Tree-Paths/"/>
+    <id>http://huangyiblog.com/题解集/257-Binary-Tree-Paths/</id>
+    <published>2018-06-08T05:07:30.000Z</published>
+    <updated>2018-06-08T05:11:01.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>Given a binary tree, return all root-to-leaf paths.</p><p>Note: A leaf is a node with no children.</p><p>Example:</p><p>Input:</p><p>   1<br> /   \<br>2     3<br> \<br>  5</p><p>Output: [“1-&gt;2-&gt;5”, “1-&gt;3”]</p><p>Explanation: All root-to-leaf paths are: 1-&gt;2-&gt;5, 1-&gt;3</p><p>题目要求：给定一棵二叉树，返回所有从根结点到叶结点的路径</p><p>分析：采用深度优先搜索，递归访问每个结点的子结点，如果遇到叶结点，则输出所记录的路径。然后返回上一层</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; binaryTreePaths(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">        dfs(root,path,result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode* node,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; path,<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node==<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node-&gt;val);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;left==<span class="literal">nullptr</span>&amp;&amp;node-&gt;right==<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            result.push_back(generatePath(path));</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(node-&gt;left!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">                dfs(node-&gt;left,path,result);</span><br><span class="line">                path.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node-&gt;right!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">                dfs(node-&gt;right,path,result);</span><br><span class="line">                path.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">generatePath</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path)</span></span>&#123;</span><br><span class="line">        <span class="built_in">stringstream</span> ss;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;path.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            ss&lt;&lt;path[i]&lt;&lt;<span class="string">"-&gt;"</span>;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        ss&lt;&lt;path[i];</span><br><span class="line">        <span class="keyword">return</span> ss.str();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Given a binary tree, return all root-to-leaf paths.&lt;/p&gt;
+&lt;p&gt;Note: A leaf is a node with no children.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;p&gt;Input:&lt;/p&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L2-015 互评成绩（25 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L2-015-%E4%BA%92%E8%AF%84%E6%88%90%E7%BB%A9%EF%BC%8825-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L2-015-互评成绩（25-分）/</id>
+    <published>2018-06-08T02:08:09.000Z</published>
+    <updated>2018-06-08T02:08:42.922Z</updated>
+    
+    <content type="html"><![CDATA[<p>L2-015 互评成绩（25 分）<br>学生互评作业的简单规则是这样定的：每个人的作业会被k个同学评审，得到k个成绩。系统需要去掉一个最高分和一个最低分，将剩下的分数取平均，就得到这个学生的最后成绩。本题就要求你编写这个互评系统的算分模块。</p><p>输入格式：</p><p>输入第一行给出3个正整数N（3&lt; N &lt;= 10^4^，学生总数）、k（3&lt;= k &lt;= 10，每份作业的评审数）、M（&lt;= 20，需要输出的学生数）。随后N行，每行给出一份作业得到的k个评审成绩（在区间[0, 100]内），其间以空格分隔。</p><p>输出格式：</p><p>按非递减顺序输出最后得分最高的M个成绩，保留小数点后3位。分数间有1个空格，行首尾不得有多余空格。</p><p>输入样例：</p><p>6 5 3<br>88 90 85 99 60<br>67 60 80 76 70<br>90 93 96 99 99<br>78 65 77 70 72<br>88 88 88 88 88<br>55 55 55 55 55<br>输出样例：</p><p>87.667 88.000 96.000</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;n,&amp;k,&amp;m);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; sum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; v(k);</span><br><span class="line">        <span class="keyword">double</span> maxm=<span class="number">-1</span>,minm=<span class="number">101</span>,average=<span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;v[j]);</span><br><span class="line">            maxm=max(maxm,v[j]);</span><br><span class="line">            minm=min(minm,v[j]);</span><br><span class="line">            average+=v[j];</span><br><span class="line">        &#125;</span><br><span class="line">        average=average-minm-maxm;</span><br><span class="line">        average=average/(k<span class="number">-2</span>);</span><br><span class="line">        sum.push_back(average);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(sum.begin(),sum.end(),cmp);</span><br><span class="line">    <span class="keyword">if</span>(m!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.3f"</span>,sum[m<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=m<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"% .3f"</span>,sum[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L2-015 互评成绩（25 分）&lt;br&gt;学生互评作业的简单规则是这样定的：每个人的作业会被k个同学评审，得到k个成绩。系统需要去掉一个最高分和一个最低分，将剩下的分数取平均，就得到这个学生的最后成绩。本题就要求你编写这个互评系统的算分模块。&lt;/p&gt;
+&lt;p&gt;输入格式：&lt;/p
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>1045 快速排序(25)（25 分）</title>
@@ -486,58 +541,6 @@
     
     
       <category term="深度学习" scheme="http://huangyiblog.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>看不见的客人</title>
-    <link href="http://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%AE%A2%E4%BA%BA/"/>
-    <id>http://huangyiblog.com/随笔/看不见的客人/</id>
-    <published>2018-06-04T08:59:45.000Z</published>
-    <updated>2018-06-04T11:36:46.276Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　昨晚看的一部电影《看不见的客人》，比我预想中的要好得多。其实和之前看的一部《控方证人》有异曲同工之处，但还是不得不承认这部剧的剧本够精彩。影片的主线围绕着一位律师和男主的谈话展开，一次次叙述的转变，层层反转，层层递进，吸引着观众紧跟节奏，直至结尾，真相揭露，给人豁然一击，人心叵测，人性慎测，莫过于此。<br>　　为什么说情节，布局十分巧妙。暂且撇开律师是死者母亲假扮这一点，说实话，在影片结尾这位母亲摘下假发，取下隐形镜片之前，我并没有看出来这位律师就是由死者母亲假扮的，当然，若是结合之前的一些对话以及言行，确实有很多地方与之相呼应，不然很难理解一位普通的花钱请来办事的普通律师会有很多奇怪的表现。例如，他为何一开始将一枚时钟摆在桌子上，表明只有３个小时的对话时间。另外，提现这部剧不是一部脑残剧的很大一点，便是这部剧剧情能吸引观众一步步深入，而不是一眼就让你看透结局。如何做到这一点的呢？首先影片是以律师和男主两人之间的对话展开的，这场对话实际上在我看来就是一场审判，一场拷问，关乎人性，关乎讽刺。因为对话的一方其实已经知道真相，而另一方却仍旧在重重伪装。而这位律师要做的便是层层诱导，让男主亲口一部部走入律师的陷阱，直至说出全部真相。剧情优秀的电影会让人觉得这是经得住推敲的，而这部电影恰好就是一部逻辑十分严密的电影。男主和律师其实是在进行一场博弈，尽管律师已经得知大部分真相，但她的目的是为了证据，他需要男主亲口说出自己的罪行，但显然，对男主这样一个内心防线严密的人来说这不是一件容易的事，他一次次叙述，一次次被律师推翻，就是想掩盖真相。你会发现，男主的每一次叙述，叙述中加入情节展现，你会发现竟然都是合情合理的，由此可以想象他的心理防线多么巨大，换言之，他的自私自利，泯灭良知已经到了何种程度。<br>　　<img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=835ef35add88d43fe4a499a01c77b97e/43a7d933c895d143d216b00c78f082025aaf07b8.jpg" alt="alt"><br>　　<br>　　接下来来看看男主的叙述，第一步，撇开车祸，撇开一切罪行喊冤，说明了自己在一个酒店莫名被人栽赃了，有人杀人劫财，并且嫁祸给他，一场密室杀人，所有证据都指向他，百口莫辩。然而，这场叙述不到10分钟就结束了，这样的话，律师简直听都不想听，于是让他别再浪费时间了，把该说的说出来才有辩护成功的希望，慢慢，男主有点服软，开始了他的第二个版本的叙述，这一次，他讲矛头指向了他的情人，劳拉。总之，他绝不会轻易说出自己的黑暗面，毕竟，他可是众人眼中的精英，万众瞩目，事业有成的成功企业家。男主将黑暗面加在了自己的情人劳拉身上，表明自己是身不由己，一时糊涂，听了情人劳拉的怂恿犯下大错，包括后面对死于车祸的男孩的陷害。然而律师一直不停的强调，注重细节，细节能救你，同时也能要了你的命。之后，男主一步步走入律师的圈套。最后，男主发现中计的时候，那种表情，绝对是被拷问后的表情，是被人对灵魂深深的拷问！让人难以想象的是男主为了自己所谓的前途竟然可以不择手段到这种程度，后面得知他的情人内心愧疚难安的了焦虑症，希望男主拿钱弥补死去男孩的父母并告知他们男孩尸体的位置，没想到男主一念之下杀了劳拉，更令人难以容忍的是，他在得知出了车祸的男孩还有一口气之时，他不是尽力去挽救，而是用力盖上了后备箱，视而不见，将车沉入湖底，实在难以想象但凡有一点良知的人能做得如此心狠手辣。<br>　　<img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=1f47a808743e6709aa0d4dad5aaef458/0b7b02087bf40ad1da1893cc5c2c11dfa9ecce25.jpg" alt="Alt"><br>　　影片的讽刺方面直指一些现实社会中的“精英”，“名流”，尽管光环四射，衣着光鲜亮丽，成功，优秀都是他们的代名词，然而，有的人却被这些身外之物完全束缚了，私欲无限膨胀，完全以自我为中心，视他人如蝼蚁，视生命如蝼蚁，什么？出事了，我的前途怎么办，我的妻子女儿怎么办，我的事业刚刚达到巅峰，我怎能在这时出问题，一切都得为我开路，不能被这些碍手碍脚的家伙挡住我的美好前程。<br>　　另外，这部电影的正面主角，便是死者父母，用一句话来形容他们的内心“当你失去了至爱之人，便已无所畏惧”。他们为了给自己无辜的儿子，给死去的劳拉讨回一个公道，与男主不断周旋，收集各种资料，以谎言制服谎言，这也成就了这部电影最大的一个反转，长时间与恶龙搏斗，自身也会如同恶龙般强大，无所畏惧。<br>　　人心莫测，莫过于此，对《看不见的客人》而言，电影的画龙点睛之笔并不在于悬疑，更在于它深攫以了谎言这一人类用来满足自我私欲的本质，并在最后用打动人心的情感完成了这一内在的升华。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;　　昨晚看的一部电影《看不见的客人》，比我预想中的要好得多。其实和之前看的一部《控方证人》有异曲同工之处，但还是不得不承认这部剧的剧本够精彩。影片的主线围绕着一位律师和男主的谈话展开，一次次叙述的转变，层层反转，层层递进，吸引着观众紧跟节奏，直至结尾，真相揭露，给人豁然一击
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="影视" scheme="http://huangyiblog.com/tags/%E5%BD%B1%E8%A7%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1033 旧键盘打字(20)（20 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/1033-%E6%97%A7%E9%94%AE%E7%9B%98%E6%89%93%E5%AD%97-20-%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/1033-旧键盘打字-20-（20-分）/</id>
-    <published>2018-06-04T08:54:51.000Z</published>
-    <updated>2018-06-04T08:55:21.955Z</updated>
-    
-    <content type="html"><![CDATA[<p>1033 旧键盘打字(20)（20 分）<br>旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？</p><p>输入格式：</p><p>输入在2行中分别给出坏掉的那些键、以及应该输入的文字。其中对应英文字母的坏键以大写给出；每段文字是不超过10^5^个字符的串。可用的字符包括字母[a-z, A-Z]、数字0-9、以及下划线“_”（代表空格）、“,”、“.”、“-”、“+”（代表上档键）。题目保证第2行输入的文字串非空。</p><p>注意：如果上档键坏掉了，那么大写的英文字母无法被打出。</p><p>输出格式：</p><p>在一行中输出能够被打出的结果文字。如果没有一个字符能被打出，则输出空行。</p><p>输入样例：</p><p>7+IE.<br>7_This_is_a_test.<br>输出样例：</p><p>_hs_s_a_tst</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s1,s2;</span><br><span class="line">    <span class="keyword">int</span> tag=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; s3;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; p;</span><br><span class="line">    getline(<span class="built_in">cin</span>,s1);</span><br><span class="line">    getline(<span class="built_in">cin</span>,s2);</span><br><span class="line">    <span class="keyword">if</span>(s1.length()==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s2;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s1.size();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1[i]==<span class="string">'+'</span>)&#123;</span><br><span class="line">            tag=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s1[i]&gt;=<span class="string">'A'</span>&amp;&amp;s1[i]&lt;=<span class="string">'Z'</span>)</span><br><span class="line">        p[s1[i]+<span class="number">32</span>]=p[s1[i]]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            p[s1[i]]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s2.size();i++)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(tag==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s2[i]&gt;=<span class="string">'A'</span>&amp;&amp;s2[i]&lt;=<span class="string">'Z'</span>)&#123;</span><br><span class="line">            p[s2[i]]=<span class="number">1</span>;</span><br><span class="line">        &#125;&#125;</span><br><span class="line">        <span class="keyword">if</span>(p[s2[i]]!=<span class="number">1</span>)&#123;</span><br><span class="line">            s3.push_back(s2[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!s3.empty())&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s3.size();i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s3[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1033 旧键盘打字(20)（20 分）&lt;br&gt;旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？&lt;/p&gt;
-&lt;p&gt;输入格式：&lt;/p&gt;
-&lt;p&gt;输入在2行中分别给出坏掉的那些键、以及应该输入的
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
     
   </entry>
   
