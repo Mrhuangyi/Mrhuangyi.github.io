@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[234. Palindrome Linked List]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F234-Palindrome-Linked-List%2F</url>
+    <content type="text"><![CDATA[Given a singly linked list, determine if it is a palindrome. Example 1: Input: 1-&gt;2Output: falseExample 2: Input: 1-&gt;2-&gt;2-&gt;1Output: trueFollow up:Could you do it in O(n) time and O(1) space? 题目要求就是给定一个单链表，让你判断是不是回文链表，最好时间复杂度控制在O(n),空间复杂度控制在O(1) 思路：第一步：两个指针都从头出发，快指针每次两步，慢指针每次一步，这样快指针的下一个或下下个为空时，慢指针就在链表正中间那个节点了（如果链表有偶数个节点则在靠近头那侧的）。第二步：从慢指针的下一个开始，把后面的链表都反转（Reverse Linked List），第三步：然后我们再从头和从尾同时向中间前进，就可以判断该链表是不是回文了。12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: bool isPalindrome(ListNode* head) &#123; if(head==NULL||head-&gt;next==NULL)&#123; return true; &#125; ListNode* mid = findMid(head); mid-&gt;next = reverse(mid-&gt;next); mid = mid-&gt;next; while(head!=NULL&amp;&amp;mid!=NULL)&#123; if(head-&gt;val!=mid-&gt;val)&#123; return false; &#125; head = head-&gt;next; mid = mid-&gt;next; &#125; return true; &#125; ListNode* findMid(ListNode* now)&#123; ListNode* slow = now; ListNode* fast = now-&gt;next; while(fast!=NULL&amp;&amp;fast-&gt;next!=NULL)&#123; slow = slow-&gt;next; fast = fast-&gt;next-&gt;next; &#125; return slow; &#125; ListNode* reverse(ListNode* now)&#123; ListNode* pre = NULL; while(now!=NULL)&#123; ListNode* temp = now-&gt;next; now-&gt;next = pre; pre = now; now = temp; &#125; return pre; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[257. Binary Tree Paths]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F257-Binary-Tree-Paths%2F</url>
     <content type="text"><![CDATA[Given a binary tree, return all root-to-leaf paths. Note: A leaf is a node with no children. Example: Input: 1 / \2 3 \ 5 Output: [“1-&gt;2-&gt;5”, “1-&gt;3”] Explanation: All root-to-leaf paths are: 1-&gt;2-&gt;5, 1-&gt;3 题目要求：给定一棵二叉树，返回所有从根结点到叶结点的路径 分析：采用深度优先搜索，递归访问每个结点的子结点，如果遇到叶结点，则输出所记录的路径。然后返回上一层 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;string&gt; binaryTreePaths(TreeNode* root) &#123; vector&lt;string&gt; result; if(root==nullptr)&#123; return result; &#125; vector&lt;int&gt; path; dfs(root,path,result); return result; &#125;private: void dfs(TreeNode* node,vector&lt;int&gt;&amp; path,vector&lt;string&gt;&amp; result)&#123; if(node==nullptr)&#123; return ; &#125; path.push_back(node-&gt;val); if(node-&gt;left==nullptr&amp;&amp;node-&gt;right==nullptr)&#123; result.push_back(generatePath(path)); &#125;else&#123; if(node-&gt;left!=nullptr)&#123; dfs(node-&gt;left,path,result); path.pop_back(); &#125; if(node-&gt;right!=nullptr)&#123; dfs(node-&gt;right,path,result); path.pop_back(); &#125; &#125; &#125; string generatePath(vector&lt;int&gt; path)&#123; stringstream ss; int i; for(i=0;i&lt;path.size()-1;i++)&#123; ss&lt;&lt;path[i]&lt;&lt;"-&gt;"; &#125; ss&lt;&lt;path[i]; return ss.str(); &#125;&#125;;]]></content>
