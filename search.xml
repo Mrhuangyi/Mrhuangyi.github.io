@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1055 集体照 (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1055-%E9%9B%86%E4%BD%93%E7%85%A7-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1055 集体照 (25)（25 分）拍集体照时队形很重要，这里对给定的N个人K排的队形设计排队规则如下： 每排人数为N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为m/2+1，其中m为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。 输入格式： 每个输入包含1个测试用例。每个测试用例第1行给出两个正整数N（&lt;=10000，总人数）和K（&lt;=10，总排数）。随后N行，每行给出一个人的名字（不包含空格、长度不超过8个英文字母）和身高（[30, 300]区间内的整数）。 输出格式： 输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。 输入样例： 10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例： Bob Tom Joe NickAnn Mike EvaTim Amy John 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;cctype&gt;using namespace std;struct node&#123; string name; int height;&#125;inf[100000];int n,k;bool cmp(struct node a,struct node b)&#123; if(a.height!=b.height)&#123; return a.height&gt;b.height; &#125; return a.name&lt;b.name;&#125;void print(int index,int n)&#123; int a[n]; a[n/2] = index; int left = n/2-1,right = n/2+1,i = index+1; while(left&gt;=0||right&lt;n)&#123; if(left&gt;=0)&#123; a[left--] = i++; &#125; if(right&lt;n)&#123; a[right++] = i++; &#125; &#125; for(int i=0;i&lt;n;i++)&#123; cout &lt;&lt; inf[a[i]].name; if(i+1&lt;n)&#123; printf(" "); &#125; &#125; printf("\n");&#125;void solve()&#123; sort(inf,inf+n,cmp); print(0,n/k+n%k); for(int i=n/k+n%k;i&lt;n;i+=n/k)&#123; print(i,n/k); &#125;&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;k); for(int i=0;i&lt;n;i++)&#123; cin &gt;&gt; inf[i].name &gt;&gt; inf[i].height; &#125; solve(); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1054 求平均值 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1054-%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1054 求平均值 (20)（20 分）本题的基本要求非常简单：给定N个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是[-1000，1000]区间内的实数，并且最多精确到小数点后2位。当你计算平均值的时候，不能把那些非法的数据算在内。 输入格式： 输入第一行给出正整数N（&lt;=100）。随后一行给出N个实数，数字间以一个空格分隔。 输出格式： 对每个非法输入，在一行中输出“ERROR: X is not a legal number”，其中X是输入。最后在一行中输出结果：“The average of K numbers is Y”，其中K是合法输入的个数，Y是它们的平均值，精确到小数点后2位。如果平均值无法计算，则用“Undefined”替换Y。如果K为1，则输出“The average of 1 number is Y”。 输入样例1： 75 -3.2 aaa 9999 2.3.4 7.123 2.35输出样例1： ERROR: aaa is not a legal numberERROR: 9999 is not a legal numberERROR: 2.3.4 is not a legal numberERROR: 7.123 is not a legal numberThe average of 3 numbers is 1.38输入样例2： 2aaa -9999输出样例2： ERROR: aaa is not a legal numberERROR: -9999 is not a legal numberThe average of 0 numbers is Undefined 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;cctype&gt;using namespace std;int n;char str[101][101];bool check(char s[])&#123; int i = 0; if(s[0]=='-')&#123; i++; &#125; for(;s[i]&amp;&amp;s[i]!='.';i++)&#123; if(!isdigit(s[i]))&#123; return false; &#125; &#125; if(s[i]=='.')&#123; for(int j=i+1;s[j];j++)&#123; if(!isdigit(s[j])||j-i&gt;2)&#123; return false; &#125; &#125; &#125; double a = fabs(atof(s)); if(a&gt;1000.0)&#123; return false; &#125; return true;&#125;void solve()&#123; int ans = 0; double sum = 0; for(int i=0;i&lt;n;i++)&#123; if(check(str[i]))&#123; ans++; sum += atof(str[i]); &#125;else&#123; printf("ERROR: %s is not a legal number\n",str[i]); &#125; &#125; if(ans)&#123; if(ans==1)&#123; printf("The average of 1 number is %.2lf\n",sum); &#125;else&#123; printf("The average of %d numbers is %.2f\n",ans,sum/ans); &#125; &#125;else&#123; printf("The average of 0 numbers is Undefined\n"); &#125;&#125;int main()&#123; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%s",str[i]); &#125; solve(); return 0; &#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1053 住房空置率 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1053-%E4%BD%8F%E6%88%BF%E7%A9%BA%E7%BD%AE%E7%8E%87-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1053 住房空置率 (20)（20 分）在不打扰居民的前提下，统计住房空置率的一种方法是根据每户用电量的连续变化规律进行判断。判断方法如下： 在观察期内，若存在超过一半的日子用电量低于某给定的阈值e，则该住房为“可能空置”；若观察期超过某给定阈值D天，且满足上一个条件，则该住房为“空置”。现给定某居民区的住户用电量数据，请你统计“可能空置”的比率和“空置”比率，即以上两种状态的住房占居民区住房总套数的百分比。 输入格式： 输入第一行给出正整数N（&lt;=1000），为居民区住房总套数；正实数e，即低电量阈值；正整数D，即观察期阈值。随后N行，每行按以下格式给出一套住房的用电量数据： K E~1~ E~2~ … E~K~ 其中K为观察的天数，E~i~为第i天的用电量。 输出格式： 在一行中输出“可能空置”的比率和“空置”比率的百分比值，其间以一个空格分隔，保留小数点后1位。 输入样例： 5 0.5 106 0.3 0.4 0.5 0.2 0.8 0.610 0.0 0.1 0.2 0.3 0.0 0.8 0.6 0.7 0.0 0.55 0.4 0.3 0.5 0.1 0.711 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.111 2 2 2 1 1 0.1 1 0.1 0.1 0.1 0.1输出样例： 40.0% 20.0%（样例解释：第2、3户为“可能空置”，第4户为“空置”，其他户不是空置。） 123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int n,d; double e; scanf("%d %lf %d",&amp;n,&amp;e,&amp;d); int k,sum1=0,cnt1=0,cnt2=0; double e2; double t = n; while(n--)&#123; scanf("%d",&amp;k); sum1=0; for(int i=0;i&lt;k;i++)&#123; scanf("%lf",&amp;e2); if(e2&lt;e)&#123; sum1++; &#125; &#125; if(k&lt;=d&amp;&amp;sum1&gt;k/2)&#123; cnt1++; &#125; if(k&gt;d&amp;&amp;sum1&gt;k/2)&#123; cnt2++; &#125; &#125; printf("%.1f%% %.1f%%",cnt1/t*100.0,cnt2/t*100.0); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1052 卖个萌 (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1052-%E5%8D%96%E4%B8%AA%E8%90%8C-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1052 卖个萌 (20)（20 分）萌萌哒表情符号通常由“手”、“眼”、“口”三个主要部分组成。简单起见，我们假设一个表情符号是按下列格式输出的： 左手[右手]现给出可选用的符号集合，请你按用户的要求输出表情。 输入格式： 输入首先在前三行顺序对应给出手、眼、口的可选符号集。每个符号括在一对方括号[]内。题目保证每个集合都至少有一个符号，并不超过10个符号；每个符号包含1到4个非空字符。 之后一行给出一个正整数K，为用户请求的个数。随后K行，每行给出一个用户的符号选择，顺序为左手、左眼、口、右眼、右手——这里只给出符号在相应集合中的序号（从1开始），数字间以空格分隔。 输出格式： 对每个用户请求，在一行中输出生成的表情。若用户选择的序号不存在，则输出“Are you kidding me? @\/@”。 输入样例： [╮][╭][o][~][/~] [&lt;][&gt;] [╯][╰][^][-][=][&gt;][&lt;][@][⊙][Д][▽][_][ε][^] …41 1 2 2 26 8 1 5 53 3 4 3 32 10 3 9 3输出样例： ╮(╯▽╰)╭&lt;(@Д=)/~o(^ε^)oAre you kidding me? @\/@ 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;vector&gt;using namespace std;vector&lt;string&gt; get(string s)&#123; vector&lt;string&gt; v; string temp = ""; v.push_back(temp); bool flag = false; for(int i=0;i&lt;s.length();i++)&#123; if(s[i]=='[')&#123; flag = true; &#125;else&#123; if(s[i]==']')&#123; v.push_back(temp); flag = false; temp = ""; &#125;else if(flag)&#123; temp +=s[i]; &#125; &#125; &#125; return v;&#125;int main()&#123; string s; getline(cin,s); vector&lt;string&gt; hand = get(s); getline(cin,s); vector&lt;string&gt; eye = get(s); getline(cin,s); vector&lt;string&gt; mouth = get(s); int k; scanf("%d",&amp;k); int a,b,c,d,e; for(int i=0;i&lt;k;i++)&#123; scanf("%d %d %d %d %d",&amp;a,&amp;b,&amp;c,&amp;d,&amp;e); if(a&gt;=hand.size()||a&lt;1||e&gt;=hand.size()||e&lt;1||b&gt;=eye.size()||b&lt;1||d&gt;=eye.size()||d&lt;1||c&gt;=mouth.size()||c&lt;1)&#123; printf("Are you kidding me? @\\/@\n"); continue; &#125; cout&lt;&lt;hand[a]&lt;&lt;"("&lt;&lt;eye[b]&lt;&lt;mouth[c]&lt;&lt;eye[d]&lt;&lt;")"&lt;&lt;hand[e]&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1051 复数乘法 (15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1051-%E5%A4%8D%E6%95%B0%E4%B9%98%E6%B3%95-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1051 复数乘法 (15)（15 分）复数可以写成(A + Bi)的常规形式，其中A是实部，B是虚部，i是虚数单位，满足i^2^ = -1；也可以写成极坐标下的指数形式(R*e^(Pi)^)，其中R是复数模，P是辐角，i是虚数单位，其等价于三角形式 R(cos(P) + isin(P))。 现给定两个复数的R和P，要求输出两数乘积的常规形式。 输入格式： 输入在一行中依次给出两个复数的R1, P1, R2, P2，数字间以空格分隔。 输出格式： 在一行中按照“A+Bi”的格式输出两数乘积的常规形式，实部和虚部均保留2位小数。注意：如果B是负数，则应该写成“A-|B|i”的形式。 输入样例： 2.3 3.5 5.2 0.4输出样例： -8.68-8.23i 123456789101112131415161718192021#include&lt;iostream&gt;#include&lt;cmath&gt;using namespace std;int main()&#123; double r1,p1,r2,p2,a,b; scanf("%lf%lf%lf%lf",&amp;r1,&amp;p1,&amp;r2,&amp;p2); a=r1*r2*cos(p1+p2); b=r1*r2*sin(p1+p2); if(a+0.005&gt;=0&amp;&amp;a&lt;0) printf("0.00"); else printf("%.2f",a); if(b&gt;=0) printf("+%.2fi",b); else if(b+0.005&gt;=0&amp;&amp;b&lt;0) printf("+0.00i"); else printf("%.2fi",b); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[371. 两整数之和]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F371-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[不使用运算符 + 和-，计算两整数a 、b之和。 示例：若 a = 1 ，b = 2，返回 3。123456789101112131415161718192021222324252627282930class Solution &#123;public: int getSum(int a, int b) &#123; int sum = 0 ; int carry = 0; for(int i = 0;i&lt; 32 ;i++)&#123; int a1 = a &amp; 1; int b1 = b &amp; 1; int val = 0 ; if(a1 == 0 &amp;&amp; b1 == 0 &amp;&amp; carry == 0)&#123; val = 0; carry = 0; &#125;else if(a1 == 1 &amp;&amp; b1 == 1 &amp;&amp; carry == 1)&#123; val = 1; carry = 1; &#125;else if(a1==0 &amp;&amp; b1 ==0 || a1 ==0 &amp;&amp; carry ==0 || b1 ==0 &amp;&amp; carry ==0)&#123; val = 1; carry = 0; &#125;else&#123; val = 0; carry = 1; &#125; val = val &lt;&lt; i; sum = sum | val; a = a &gt;&gt; 1; b = b &gt;&gt; 1; &#125; return sum; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[345. 反转字符串中的元音字母]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F345-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D%2F</url>
+    <content type="text"><![CDATA[编写一个函数，以字符串作为输入，反转该字符串中的元音字母。 示例 1：给定 s = “hello”, 返回 “holle”. 示例 2：给定 s = “leetcode”, 返回 “leotcede”. 注意:元音字母不包括 “y”. 思路分析：如果考虑一个更简单的问题：如何反转一个字符串，相信大家都能马上想到算法，因为我们知道每个位置的字符在反转后会出现在什么位置。方法一：翻转ID本题中只需要反转元音字母，同样的，我们希望知道每个元音字母在反转后应该出现在什么位置。因此我们用一个position数组记录元音字母的位置，然后进行反转即可。算法复杂度为O(N)，N是字符串长度。 12345678910111213141516171819202122232425262728293031class Solution &#123;public: string reverseVowels(string s) &#123; vector&lt;int&gt; pos(s.size()); set&lt;char&gt; vowel; int cnt = 0; vowel.insert('a'); vowel.insert('e'); vowel.insert('i'); vowel.insert('o'); vowel.insert('u'); vowel.insert('A'); vowel.insert('E'); vowel.insert('I'); vowel.insert('O'); vowel.insert('U'); string ans = ""; for(int i=0;i&lt;s.size();i++)&#123; if(vowel.count(s[i]))&#123; pos[cnt] = i; cnt++; &#125; ans += s[i]; &#125; for(int i=0;i&lt;cnt;i++)&#123; ans[pos[i]] = s[pos[cnt-i-1]]; &#125; return ans; &#125;&#125;; 方法二： 双指针法 本题还有另外一种思路，那就是two pointer。一个指针从前往后扫描，一个指针从后往前扫描，遇到元音字母是进行交换，直到两个指针相遇，算法终止。算法复杂度同样是O(N)。 1234567891011121314151617181920212223242526class Solution &#123;public: string reverseVowels(string s) &#123; int left = 0, right= s.size() - 1; while (left &lt; right) &#123; if (isVowel(s[left]) &amp;&amp; isVowel(s[right])) &#123; swap(s[left++], s[right--]); &#125; else if (isVowel(s[left])) &#123; --right; &#125; else &#123; ++left; &#125; &#125; return s; &#125; bool isVowel(char c) &#123; return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[350. 两个数组的交集 II]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F350-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86-II%2F</url>
     <content type="text"><![CDATA[给定两个数组，写一个方法来计算它们的交集。 例如:给定 nums1 = [1, 2, 2, 1], nums2 = [2, 2], 返回 [2, 2]. 注意： 输出结果中每个元素出现的次数，应与元素在两个数组中出现的次数一致。 我们可以不考虑输出结果的顺序。跟进: 如果给定的数组已经排好序呢？你将如何优化你的算法？如果 nums1 的大小比 nums2 小很多，哪种方法更优？如果nums2的元素存储在磁盘上，内存是有限的，你不能一次加载所有的元素到内存中，你该怎么办？ 1234567891011121314151617181920212223class Solution &#123;public: vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123; vector&lt;int&gt; res; sort(nums1.begin(),nums1.end()); sort(nums2.begin(),nums2.end()); int len1 = nums1.size(); int len2 = nums2.size(); int i = 0,j = 0; while(i&lt;len1&amp;&amp;j&lt;len2)&#123; if(nums1[i]&lt;nums2[j])&#123; i++; &#125;else if(nums1[i]&gt;nums2[j])&#123; j++; &#125;else&#123; res.push_back(nums1[i]); i++; j++; &#125; &#125; return res; &#125;&#125;;]]></content>
@@ -2717,9 +2794,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -2728,9 +2805,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
