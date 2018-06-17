@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[290. 单词模式]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F290-%E5%8D%95%E8%AF%8D%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[给定一种 pattern(模式) 和一个字符串 str ，判断 str 是否遵循相同的模式。 这里的遵循指完全匹配，例如， pattern 里的每个字母和字符串 str 中的每个非空单词之间存在着双向连接的对应模式。 示例1: 输入: pattern = “abba”, str = “dog cat cat dog”输出: true示例 2: 输入:pattern = “abba”, str = “dog cat cat fish”输出: false示例 3: 输入: pattern = “aaaa”, str = “dog cat cat dog”输出: false示例 4: 输入: pattern = “abba”, str = “dog dog dog dog”输出: false说明:你可以假设 pattern 只包含小写字母， str 包含了由单个空格分隔的小写字母。12345678910111213141516171819class Solution &#123;public: bool wordPattern(string pattern, string str) &#123; unordered_map&lt;char,int&gt; m1; unordered_map&lt;string,int&gt; m2; istringstream in(str); int i = 0; for(string word;in&gt;&gt;word;++i)&#123; if(m1.find(pattern[i])!=m1.end()||m2.find(word)!=m2.end())&#123; if(m1[pattern[i]]!=m2[word])&#123; return false; &#125; &#125;else&#123; m1[pattern[i]] = m2[word] = i+1; &#125; &#125; return i==pattern.size(); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[278. 第一个错误的版本]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F278-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。 假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。 示例: 给定 n = 5，并且 version = 4 是第一个错误的版本。 调用 isBadVersion(3) -&gt; false调用 isBadVersion(5) -&gt; true调用 isBadVersion(4) -&gt; true 所以，4 是第一个错误的版本。 1234567891011121314151617181920212223// Forward declaration of isBadVersion API.bool isBadVersion(int version);class Solution &#123;public: int firstBadVersion(int n) &#123; if(n==1)&#123; return 1; &#125; int high = n; int low = 1; while(low&lt;high)&#123; int mid = low+(high-low)/2; int temp = isBadVersion(mid); if(temp)&#123; high = mid; &#125;else&#123; low = mid+1; &#125; &#125; return low; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1065 单身狗(25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1065-%E5%8D%95%E8%BA%AB%E7%8B%97-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1065 单身狗(25)（25 分）“单身狗”是中文对于单身人士的一种爱称。本题请你从上万人的大型派对中找出落单的客人，以便给予特殊关爱。 输入格式： 输入第一行给出一个正整数N（&lt;=50000），是已知夫妻/伴侣的对数；随后N行，每行给出一对夫妻/伴侣——为方便起见，每人对应一个ID号，为5位数字（从00000到99999），ID间以空格分隔；之后给出一个正整数M（&lt;=10000），为参加派对的总人数；随后一行给出这M位客人的ID，以空格分隔。题目保证无人重婚或脚踩两条船。 输出格式： 首先第一行输出落单客人的总人数；随后第二行按ID递增顺序列出落单的客人。ID间用1个空格分隔，行的首尾不得有多余空格。 输入样例： 311111 2222233333 4444455555 66666755555 44444 10000 88888 22222 11111 23333输出样例： 510000 23333 44444 55555 88888 123456789101112131415161718192021222324252627282930313233343536#include&lt;iostream&gt;#include&lt;set&gt;#include&lt;cstdio&gt;using namespace std;const int maxm = 100005;int main()&#123; int n,m,man,woman,table[maxm]=&#123;-1&#125;,List[maxm]=&#123;0&#125;,guest[10005]=&#123;0&#125;; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d%d",&amp;man,&amp;woman); table[man] = woman; table[woman] = man; &#125; scanf("%d",&amp;m); set&lt;int&gt; s; for(int i=0;i&lt;m;i++)&#123; scanf("%d",&amp;guest[i]); if(table[guest[i]]!=-1)&#123; List[table[guest[i]]] = 1; &#125; &#125; for(int i=0;i&lt;m;i++)&#123; if(!List[guest[i]])&#123; s.insert(guest[i]); &#125; &#125; printf("%d\n",s.size()); for(set&lt;int&gt;::iterator it = s.begin();it!=s.end();it++)&#123; if(it!=s.begin())&#123; printf(" "); &#125; printf("%05d",*it); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1063 计算谱半径(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1063-%E8%AE%A1%E7%AE%97%E8%B0%B1%E5%8D%8A%E5%BE%84-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1063 计算谱半径(20)（20 分）在数学中，矩阵的“谱半径”是指其特征值的模集合的上确界。换言之，对于给定的n个复数空间的特征值{a~1~+b~1~i, …, a~n~+b~n~i}，它们的模为实部与虚部的平方和的开方，而“谱半径”就是最大模。 现在给定一些复数空间的特征值，请你计算并输出这些特征值的谱半径。 输入格式： 输入第一行给出正整数N（&lt;= 10000）是输入的特征值的个数。随后N行，每行给出1个特征值的实部和虚部，其间以空格分隔。注意：题目保证实部和虚部均为绝对值不超过1000的整数。 输出格式： 在一行中输出谱半径，四舍五入保留小数点后2位。 输入样例： 50 12 0-1 03 30 -3输出样例： 4.24 123456789101112131415161718#include&lt;iostream&gt;#include&lt;cmath&gt;using namespace std;int main()&#123; int n; scanf("%d",&amp;n); float maxm = 0; for(int i=0;i&lt;n;i++)&#123; float a,b,ans; scanf("%f%f",&amp;a,&amp;b); ans = sqrt(a*a+b*b); if(ans&gt;maxm)&#123; maxm = ans; &#125; &#125; printf("%.2f",maxm); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1061 判断题(15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1061-%E5%88%A4%E6%96%AD%E9%A2%98-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1061 判断题(15)（15 分）判断题的评判很简单，本题就要求你写个简单的程序帮助老师判题并统计学生们判断题的得分。 输入格式： 输入在第一行给出两个不超过100的正整数N和M，分别是学生人数和判断题数量。第二行给出M个不超过5的正整数，是每道题的满分值。第三行给出每道题对应的正确答案，0代表“非”，1代表“是”。随后N行，每行给出一个学生的解答。数字间均以空格分隔。 输出格式： 按照输入的顺序输出每个学生的得分，每个分数占一行。 输入样例： 3 62 1 3 3 4 50 0 1 0 1 10 1 1 0 0 11 0 1 0 1 01 1 0 0 1 1输出样例： 131112 1234567891011121314151617181920212223#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int n,m,a[101],b[101],c[101],sum[101]=&#123;0&#125;; scanf("%d%d",&amp;n,&amp;m); for(int i=0;i&lt;m;i++)&#123; scanf("%d",&amp;a[i]); &#125; for(int i=0;i&lt;m;i++)&#123; scanf("%d",&amp;b[i]); &#125; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;m;j++)&#123; scanf("%d",&amp;c[j]); if(c[j]==b[j]) sum[i]+=a[j]; &#125; printf("%d\n",sum[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1064 朋友数(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1064-%E6%9C%8B%E5%8F%8B%E6%95%B0-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1064 朋友数(20)（20 分）如果两个整数各位数字的和是一样的，则被称为是“朋友数”，而那个公共的和就是它们的“朋友证号”。例如123和51就是朋友数，因为1+2+3 = 5+1 = 6，而6就是它们的朋友证号。给定一些整数，要求你统计一下它们中有多少个不同的朋友证号。注意：我们默认一个整数自己是自己的朋友。 输入格式： 输入第一行给出正整数N。随后一行给出N个正整数，数字间以空格分隔。题目保证所有数字小于10^4^。 输出格式： 首先第一行输出给定数字中不同的朋友证号的个数；随后一行按递增顺序输出这些朋友证号，数字间隔一个空格，且行末不得有多余空格。 输入样例： 8123 899 51 998 27 33 36 12输出样例： 43 6 9 26 12345678910111213141516171819202122232425262728293031323334#include&lt;iostream&gt;#include&lt;set&gt;#include&lt;cstdio&gt;using namespace std;int cal(int num)&#123; int res = 0; while(num)&#123; int t = num%10; res += t; num = num/10; &#125; return res;&#125;int main()&#123; int n,x; set&lt;int&gt; result; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;x); result.insert(cal(x)); &#125; set&lt;int&gt;::iterator it; printf("%d\n",result.size()); for(it=result.begin();it!=result.end();it++)&#123; if(it==result.begin())&#123; printf("%d",*it); &#125;else&#123; printf(" %d",*it); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1062 最简分数(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1062-%E6%9C%80%E7%AE%80%E5%88%86%E6%95%B0-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1062 最简分数(20)（20 分）一个分数一般写成两个整数相除的形式：N/M，其中M不为0。最简分数是指分子和分母没有公约数的分数表示形式。 现给定两个不相等的正分数 N~1~/M~1~ 和 N~2~/M~2~，要求你按从小到大的顺序列出它们之间分母为K的最简分数。 输入格式： 输入在一行中按N/M的格式给出两个正分数，随后是一个正整数分母K，其间以空格分隔。题目保证给出的所有整数都不超过1000。 输出格式： 在一行中按N/M的格式列出两个给定分数之间分母为K的所有最简分数，按从小到大的顺序，其间以1个空格分隔。行首尾不得有多余空格。题目保证至少有1个输出。 输入样例： 7/18 13/20 12输出样例： 5/12 7/12 分析：从1~k-1进行遍历，判断每个分数是否在指定区间内，再判断他们的最大公约数是否不等于1(以此判断是否是最简分数)即可。还有一个需要注意的是，输入中的两个分数并没有说第一个一定小于第二个，如果不是，需要进行交换。 123456789101112131415161718192021222324252627282930313233343536#include&lt;iostream&gt;#include&lt;vector&gt;#include&lt;cstdio&gt;using namespace std;int gcd(int a,int b)&#123; return b==0?a:gcd(b,a%b);&#125;int main()&#123; vector&lt;int&gt; ans; int n1,m1,n2,m2,k; scanf("%d/%d %d/%d %d",&amp;n1,&amp;m1,&amp;n2,&amp;m2,&amp;k); if(n1*m2&gt;n2*m1)&#123; int tmpn,tmpm; tmpn = n1; tmpm = m1; n1 = n2; m1 = m2; n2 = tmpn; m2 = tmpm; &#125; for(int i=1;i&lt;k;i++)&#123; if(i*m1&gt;k*n1&amp;&amp;i*m2&lt;k*n2&amp;&amp;gcd(k,i)==1)&#123; ans.push_back(i); &#125; &#125; bool flag = false; for(int i=0;i&lt;ans.size();i++)&#123; if(flag)&#123; printf(" "); &#125; flag = true; printf("%d/%d",ans[i],k); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[《无题》北岛]]></title>
+    <url>%2F%E6%91%98%E5%BD%95%2F%E3%80%8A%E6%97%A0%E9%A2%98%E3%80%8B%E5%8C%97%E5%B2%9B%2F</url>
+    <content type="text"><![CDATA[对于世界 我永远是个陌生人 我不懂它的言语 他不懂我的沉默 我们交换的 只是一点轻蔑 如同相逢在镜子里 对于自己 我永远是个陌生人 我畏惧黑暗 却用身体挡住了 那唯一的灯 我的影子是我的情人 心是仇敌 北岛的诗集里面，这首是我蛮喜欢的一首。 我爱诗愛词，爱李白的浪漫豪放，爱杜甫的忧国忧民，我爱古典诗，我也爱现代诗。 我遗憾，我遗憾自己的无才无能，遗憾自己不能像诗人般脱口成诗，吟唱古今。 “对于世界，我永远是个陌生人”，难道不是吗，地球没了我照样转，世界没了我，并不会就此停滞。我只是个路人，和所有人一样，来这世上走一遭，来看看这世界，尽管世界不会记得我来过。 “我们交换的，只是一点轻蔑，如同相逢在镜子里”我无法容忍这狭隘、势利的世界，世界眼中又何曾有过我，互相的轻蔑吧。 “我畏惧黑暗，却用身体挡住了，那唯一的灯”我的矛盾，我的孤独，哎，我不愿与这世界妥协，不愿与自己妥协，让我独自挣扎吧，让我独自探索吧。]]></content>
+      <categories>
+        <category>摘录</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[414. 第三大的数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F414-%E7%AC%AC%E4%B8%89%E5%A4%A7%E7%9A%84%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。 示例 1: 输入: [3, 2, 1] 输出: 1 解释: 第三大的数是 1.示例 2: 输入: [1, 2] 输出: 2 解释: 第三大的数不存在, 所以返回最大的数 2 .示例 3: 输入: [2, 2, 3, 1] 输出: 1 解释: 注意，要求返回第三大的数，是指第三大且唯一出现的数。存在两个值为2的数，它们都排第二。 返回第三大且又是唯一出现的数，这里涉及到了排序和去重，所以想到用set来做，因为set是自动去重并升序的容器，但有一点，访问set集合里的元素只能通过迭代器的形式进行访问，而不能通过下标。123456789101112131415161718class Solution &#123;public: int thirdMax(vector&lt;int&gt;&amp; nums) &#123; set&lt;int&gt; res; for(int i=0;i&lt;nums.size();i++)&#123; res.insert(nums[i]); int len = res.size(); if(len&gt;3)&#123; res.erase(res.begin()); &#125; &#125; if(res.size()==3)&#123; return *res.begin(); &#125;else&#123; return *res.rbegin(); &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[412. Fizz Buzz]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F412-Fizz-Buzz%2F</url>
+    <content type="text"><![CDATA[写一个程序，输出从 1 到 n 数字的字符串表示。 如果 n 是3的倍数，输出“Fizz”； 如果 n 是5的倍数，输出“Buzz”； 3.如果 n 同时是3和5的倍数，输出 “FizzBuzz”。 示例： n = 15, 返回:[ “1”, “2”, “Fizz”, “4”, “Buzz”, “Fizz”, “7”, “8”, “Fizz”, “Buzz”, “11”, “Fizz”, “13”, “14”, “FizzBuzz”] 123456789101112131415161718192021class Solution &#123;public: vector&lt;string&gt; fizzBuzz(int n) &#123; vector&lt;string&gt; res; while(n!=0)&#123; if(n%5==0&amp;&amp;n%3==0)&#123; res.push_back("FizzBuzz"); &#125;else if(n%5==0&amp;&amp;n%3!=0)&#123; res.push_back("Buzz"); &#125;else if(n%5!=0&amp;&amp;n%3==0)&#123; res.push_back("Fizz"); &#125;else&#123; string s = to_string(n); res.push_back(s); &#125; n--; &#125; reverse(res.begin(),res.end()); return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[389. 找不同]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F389-%E6%89%BE%E4%B8%8D%E5%90%8C%2F</url>
     <content type="text"><![CDATA[给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例: 输入：s = “abcd”t = “abcde” 输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1234567891011121314class Solution &#123;public: char findTheDifference(string s, string t) &#123; int sum1 = 0,sum2 = 0,dif = 0; for(int i=0;i&lt;s.size();i++)&#123; sum1 += s[i]; &#125; for(int i=0;i&lt;t.size();i++)&#123; sum2 += t[i]; &#125; dif = sum2-sum1; return (char)dif; &#125;&#125;;]]></content>
