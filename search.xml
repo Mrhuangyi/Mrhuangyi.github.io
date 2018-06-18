@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[400. 第N个数字]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F400-%E7%AC%ACN%E4%B8%AA%E6%95%B0%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[在无限的整数序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …中找到第 n 个数字。 注意:n 是正数且在32为整形范围内 ( n &lt; 231)。 示例 1: 输入:3 输出:3示例 2: 输入:11 输出:0 说明:第11个数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, … 里是0，它是10的一部分。 将整数序列划分为下列区间：1234567891 1-92 10-993 100-9994 1000-99995 10000-999996 100000-9999997 1000000-99999998 10000000-999999999 100000000-99999999 1234567891011121314151617class Solution &#123;public: int findNthDigit(int n) &#123; int len = 1, base = 1; while(n&gt;9L*base*len)&#123; n -= 9*base*len; len++; base *= 10; &#125; int curNum = (n-1)/len + base, digit = 0; for(int i=(n-1)%len;i&lt;len;++i)&#123; digit = curNum%10; curNum /= 10; &#125; return digit; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[405. 数字转换为十六进制数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F405-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[给定一个整数，编写一个算法将这个数转换为十六进制数。对于负整数，我们通常使用 补码运算 方法。 注意: 十六进制中所有字母(a-f)都必须是小写。十六进制字符串中不能包含多余的前导零。如果要转化的数为0，那么以单个字符’0’来表示；对于其他情况，十六进制字符串中的第一个字符将不会是0字符。给定的数确保在32位有符号整数范围内。不能使用任何由库提供的将数字直接转换或格式化为十六进制的方法。示例 1： 输入:26 输出:“1a”示例 2： 输入:-1 输出:“ffffffff”要将一个十进制数转换为十六进制数，不管其是正数还是负数，都只需要将其二进制表示每四位分成一个单元，将其取出后计算这四位二进制数代表的十进制数，与0~f之间的数字做一个映射即可。要把每四位取出也很简单，与0xf进行AND运算即可。在C++中，左移是逻辑移位，也就是说在数字后面补0，右移运算符是算术移位，也就是在左侧补符号位(正数补0，负数补112345678910111213141516class Solution &#123;public: string toHex(int num) &#123; string res; int low=0,high=0; if(num==0)&#123; return "0"; &#125; char map[16]=&#123;'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'&#125;; while(num&amp;&amp;res.size()&lt;8)&#123; res=map[(num&amp;0xf)]+res; num=num&gt;&gt;4; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[404. 左叶子之和]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F404-%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[计算给定二叉树的所有左叶子之和。 示例： 3 / \ 9 20 / \ 15 7 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24 递归写法： /** Definition for a binary tree node. struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };/class Solution {public: int sumOfLeftLeaves(TreeNode root) {int sum = 0; if(root==NULL){ return 0; } if(root-&gt;left!=NULL&amp;&amp;root-&gt;left-&gt;left==NULL&amp;&amp;root-&gt;left-&gt;right==NULL){ sum += root-&gt;left-&gt;val; }else{ sum += sumOfLeftLeaves(root-&gt;left); } sum += sumOfLeftLeaves(root-&gt;right); return sum; }}; 迭代写法： /** Definition for a binary tree node. struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };/class Solution {public: int sumOfLeftLeaves(TreeNode root) {int sum = 0; if(root==NULL){ return 0; } queue&lt;TreeNode*&gt; q; q.push(root); while(!q.empty()){ TreeNode* temp = q.front(); q.pop(); if(temp==NULL){ break; } if(temp-&gt;left){ q.push(temp-&gt;left); if(temp-&gt;left-&gt;left==NULL&amp;&amp;temp-&gt;left-&gt;right==NULL){ sum += temp-&gt;left-&gt;val; } } if(temp-&gt;right){ q.push(temp-&gt;right); } } return sum; }};]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1068 万绿丛中一点红(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1068-%E4%B8%87%E7%BB%BF%E4%B8%9B%E4%B8%AD%E4%B8%80%E7%82%B9%E7%BA%A2-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1068 万绿丛中一点红(20)（20 分）对于计算机而言，颜色不过是像素点对应的一个24位的数值。现给定一幅分辨率为MxN的画，要求你找出万绿丛中的一点红，即有独一无二颜色的那个像素点，并且该点的颜色与其周围8个相邻像素的颜色差充分大。 输入格式： 输入第一行给出三个正整数，分别是M和N（&lt;= 1000），即图像的分辨率；以及TOL，是所求像素点与相邻点的颜色差阈值，色差超过TOL的点才被考虑。随后N行，每行给出M个像素的颜色值，范围在[0, 2^24^)内。所有同行数字间用空格或TAB分开。 输出格式： 在一行中按照“(x, y): color”的格式输出所求像素点的位置以及颜色值，其中位置x和y分别是该像素在图像矩阵中的列、行编号（从1开始编号）。如果这样的点不唯一，则输出“Not Unique”；如果这样的点不存在，则输出“Not Exist”。 输入样例1： 8 6 2000 0 0 0 0 0 0 065280 65280 65280 16711479 65280 65280 65280 6528016711479 65280 65280 65280 16711680 65280 65280 6528065280 65280 65280 65280 65280 65280 165280 16528065280 65280 16777015 65280 65280 165280 65480 16528016777215 16777215 16777215 16777215 16777215 16777215 16777215 16777215输出样例1： (5, 3): 16711680输入样例2： 4 5 20 0 0 00 0 3 00 0 0 00 5 0 00 0 0 0输出样例2： Not Unique输入样例3： 3 3 51 2 33 4 55 6 7输出样例3： Not Exist 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;map&gt;using namespace std;int graph[1005][1005] = &#123;0&#125;;int main()&#123; map&lt;int,int&gt; vis; int m,n,tol,x=-1,y=-1,cnt=0; scanf("%d%d%d",&amp;m,&amp;n,&amp;tol); for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;m;j++)&#123; scanf("%d",&amp;graph[i][j]); vis[graph[i][j]]++; &#125; &#125; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;m;j++)&#123; if(vis[graph[i][j]]==1)&#123; if (i - 1 &gt;= 0 &amp;&amp; j - 1 &gt;= 0)//左上 &#123; if (abs(graph[i][j] - graph[i - 1][j - 1]) &lt;= tol) continue; &#125; if (i - 1 &gt;= 0) //上 &#123; if (abs(graph[i][j] - graph[i - 1][j]) &lt;= tol) continue; &#125; if (i - 1 &gt;= 0 &amp;&amp; j + 1 &lt; m) //右上 &#123; if (abs(graph[i][j] - graph[i - 1][j + 1]) &lt;= tol) continue; &#125; if (j + 1 &lt; m) //右 &#123; if (abs(graph[i][j] - graph[i][j + 1]) &lt;= tol) continue; &#125; if (i + 1 &lt; n &amp;&amp; j + 1 &lt; m)//右下 &#123; if (abs(graph[i][j] - graph[i + 1][j + 1]) &lt;= tol) continue; &#125; if (i + 1 &lt; n) //下 &#123; if (abs(graph[i][j] - graph[i + 1][j]) &lt;= tol) continue; &#125; if (i + 1 &lt; n &amp;&amp; j - 1 &gt;= 0)//左下 &#123; if (abs(graph[i][j] - graph[i + 1][j - 1]) &lt;= tol) continue; &#125; if (j - 1 &gt;= 0) //左 &#123; if (abs(graph[i][j] - graph[i][j - 1]) &lt;= tol) continue; &#125; x = i; y = j; ++cnt; &#125; &#125; &#125; if(cnt==0)&#123; printf("Not Exist\n"); &#125;else if(cnt==1)&#123; printf("(%d, %d): %d",y+1,x+1,graph[x][y]); &#125;else&#123; printf("Not Unique\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1070 结绳(25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1070-%E7%BB%93%E7%BB%B3-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1070 结绳(25)（25 分）给定一段一段的绳子，你需要把它们串成一条绳。每次串连的时候，是把两段绳子对折，再如下图所示套接在一起。这样得到的绳子又被当成是另一段绳子，可以再次对折去跟另一段绳子串连。每次串连后，原来两段绳子的长度就会减半。 给定N段绳子的长度，你需要找出它们能串成的绳子的最大长度。 输入格式： 每个输入包含1个测试用例。每个测试用例第1行给出正整数N (2 &lt;= N &lt;= 10^4^)；第2行给出N个正整数，即原始绳段的长度，数字间以空格分隔。所有整数都不超过10^4^。 输出格式： 在一行中输出能够串成的绳子的最大长度。结果向下取整，即取为不超过最大长度的最近整数。 输入样例： 810 15 12 3 4 13 1 15输出样例： 14 123456789101112131415161718192021#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;int main()&#123; int n,x; scanf("%d",&amp;n); vector&lt;int&gt; v; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;x); v.push_back(x); &#125; sort(v.begin(),v.end()); int result=v[0]; for(int i=1;i&lt;n;i++)&#123; result=(result+v[i])/2; &#125; printf("%d",result); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1069 微博转发抽奖(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1069-%E5%BE%AE%E5%8D%9A%E8%BD%AC%E5%8F%91%E6%8A%BD%E5%A5%96-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1069 微博转发抽奖(20)（20 分）小明PAT考了满分，高兴之余决定发起微博转发抽奖活动，从转发的网友中按顺序每隔N个人就发出一个红包。请你编写程序帮助他确定中奖名单。 输入格式： 输入第一行给出三个正整数M（&lt;= 1000）、N和S，分别是转发的总量、小明决定的中奖间隔、以及第一位中奖者的序号（编号从1开始）。随后M行，顺序给出转发微博的网友的昵称（不超过20个字符、不包含空格回车的非空字符串）。 注意：可能有人转发多次，但不能中奖多次。所以如果处于当前中奖位置的网友已经中过奖，则跳过他顺次取下一位。 输出格式： 按照输入的顺序输出中奖名单，每个昵称占一行。如果没有人中奖，则输出“Keep going…”。 输入样例1： 9 3 2Imgonnawin!PickMePickMeMeMeeeLookHereImgonnawin!TryAgainAgainTryAgainAgainImgonnawin!TryAgainAgain输出样例1： PickMeImgonnawin!TryAgainAgain输入样例2： 2 3 5Imgonnawin!PickMe输出样例2： Keep going… 123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;#include&lt;cstring&gt;#include&lt;map&gt;using namespace std;int main()&#123; int m,n,start; string s; map&lt;string,int&gt; count; cin&gt;&gt;m&gt;&gt;n&gt;&gt;start; vector&lt;string&gt; v; v.push_back(" "); for(int i=0;i&lt;m;i++)&#123; cin&gt;&gt;s; v.push_back(s); &#125; if(start&gt;m)&#123; cout&lt;&lt;"Keep going..."&lt;&lt;endl; &#125; else &#123; for(int i=start;i&lt;=m;i+=n)&#123; while(count[v[i]]&gt;=1)&#123; i++; &#125; count[v[i]]++; cout&lt;&lt;v[i]&lt;&lt;endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1067 试密码(20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1067-%E8%AF%95%E5%AF%86%E7%A0%81-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1067 试密码(20)（20 分）当你试图登录某个系统却忘了密码时，系统一般只会允许你尝试有限多次，当超出允许次数时，账号就会被锁死。本题就请你实现这个小功能。 输入格式： 输入在第一行给出一个密码（长度不超过20的、不包含空格、Tab、回车的非空字符串）和一个正整数N（&lt;= 10），分别是正确的密码和系统允许尝试的次数。随后每行给出一个以回车结束的非空字符串，是用户尝试输入的密码。输入保证至少有一次尝试。当读到一行只有单个#字符时，输入结束，并且这一行不是用户的输入。 输出格式： 对用户的每个输入，如果是正确的密码且尝试次数不超过N，则在一行中输出“Welcome in”，并结束程序；如果是错误的，则在一行中按格式输出“Wrong password: 用户输入的错误密码”；当错误尝试达到N次时，再输出一行“Account locked”，并结束程序。 输入样例1： Correct%pw 3correct%pwCorrect@PWwhatisthepassword!Correct%pw#输出样例1： Wrong password: correct%pwWrong password: Correct@PWWrong password: whatisthepassword!Account locked输入样例2： cool@gplt 3coolman@gpltcoollady@gpltcool@gplttry again#输出样例2： Wrong password: coolman@gpltWrong password: coollady@gpltWelcome in 读入用户输入的密码要用getline，不能直接cin，123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; string s1,s2,s3; int n; while(cin&gt;&gt;s1&gt;&gt;n)&#123; getchar(); int m = 0; while(getline(cin,s2))&#123; if(s2=="#")&#123; break; &#125; m++; if(m&lt;=n&amp;&amp;s1==s2)&#123; cout&lt;&lt;"Welcome in"&lt;&lt;endl; break; &#125; if(m&lt;=n&amp;&amp;s2!=s1)&#123; cout&lt;&lt;"Wrong password: "&lt;&lt;s2&lt;&lt;endl; if(m==n)&#123; cout&lt;&lt;"Account locked"; break; &#125; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1066 图像过滤(15)（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1066-%E5%9B%BE%E5%83%8F%E8%BF%87%E6%BB%A4-15-%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1066 图像过滤(15)（15 分）图像过滤是把图像中不重要的像素都染成背景色，使得重要部分被凸显出来。现给定一幅黑白图像，要求你将灰度值位于某指定区间内的所有像素颜色都用一种指定的颜色替换。 输入格式： 输入在第一行给出一幅图像的分辨率，即两个正整数M和N（0 &lt; M, N &lt;= 500），另外是待过滤的灰度值区间端点A和B（0 &lt;= A &lt; B &lt;= 255）、以及指定的替换灰度值。随后M行，每行给出N个像素点的灰度值，其间以空格分隔。所有灰度值都在[0, 255]区间内。 输出格式： 输出按要求过滤后的图像。即输出M行，每行N个像素灰度值，每个灰度值占3位（例如黑色要显示为000），其间以一个空格分隔。行首尾不得有多余空格。 输入样例： 3 5 100 150 03 189 254 101 119150 233 151 99 10088 123 149 0 255输出样例： 003 189 254 000 000000 233 151 099 000088 000 000 000 255 123456789101112131415161718192021#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; int m,n,a,b,num,temp; scanf("%d%d%d%d%d",&amp;m,&amp;n,&amp;a,&amp;b,&amp;num); for(int i=0;i&lt;m;i++)&#123; for(int j=0;j&lt;n;j++) &#123; scanf("%d",&amp;temp); if(temp&gt;=a&amp;&amp;temp&lt;=b)&#123; temp=num; &#125; if(j) printf(" "); printf("%03d",temp); &#125; printf("\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[387. 字符串中的第一个唯一字符]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F387-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%2F</url>
+    <content type="text"><![CDATA[给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例: s = “leetcode”返回 0. s = “loveleetcode”,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &#123;public: int firstUniqChar(string s) &#123; int a[300]=&#123;0&#125;; for(int i=0;i&lt;s.length();i++)&#123; a[s[i]]++; &#125; for(int i=0;i&lt;s.length();i++)&#123; if(a[s[i]]==1)&#123; return i; &#125; &#125; return -1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[303. 区域和检索 - 数组不可变]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F303-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2-%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98%2F</url>
+    <content type="text"><![CDATA[给定一个整数数组 nums，求出数组从索引 i 到 j (i ≤ j) 范围内元素的总和，包含 i, j 两点。 示例： 给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange() sumRange(0, 2) -&gt; 1sumRange(2, 5) -&gt; -1sumRange(0, 5) -&gt; -3说明: 你可以假设数组不可变。会多次调用 sumRange 方法。 新建一个dp数组，用来保存相应前个数的和 123456789101112131415161718192021class NumArray &#123;public: NumArray(vector&lt;int&gt; nums) &#123; dp.resize(nums.size()+1,0); for(int i=1;i&lt;=nums.size();++i)&#123; dp[i] = dp[i-1]+nums[i-1]; &#125; &#125; int sumRange(int i, int j) &#123; return dp[j+1]-dp[i]; &#125; private: vector&lt;int&gt; dp;&#125;;/** * Your NumArray object will be instantiated and called as such: * NumArray obj = new NumArray(nums); * int param_1 = obj.sumRange(i,j); */]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[290. 单词模式]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F290-%E5%8D%95%E8%AF%8D%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[给定一种 pattern(模式) 和一个字符串 str ，判断 str 是否遵循相同的模式。 这里的遵循指完全匹配，例如， pattern 里的每个字母和字符串 str 中的每个非空单词之间存在着双向连接的对应模式。 示例1: 输入: pattern = “abba”, str = “dog cat cat dog”输出: true示例 2: 输入:pattern = “abba”, str = “dog cat cat fish”输出: false示例 3: 输入: pattern = “aaaa”, str = “dog cat cat dog”输出: false示例 4: 输入: pattern = “abba”, str = “dog dog dog dog”输出: false说明:你可以假设 pattern 只包含小写字母， str 包含了由单个空格分隔的小写字母。12345678910111213141516171819class Solution &#123;public: bool wordPattern(string pattern, string str) &#123; unordered_map&lt;char,int&gt; m1; unordered_map&lt;string,int&gt; m2; istringstream in(str); int i = 0; for(string word;in&gt;&gt;word;++i)&#123; if(m1.find(pattern[i])!=m1.end()||m2.find(word)!=m2.end())&#123; if(m1[pattern[i]]!=m2[word])&#123; return false; &#125; &#125;else&#123; m1[pattern[i]] = m2[word] = i+1; &#125; &#125; return i==pattern.size(); &#125;&#125;;]]></content>
@@ -2992,9 +3102,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -3003,9 +3113,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
