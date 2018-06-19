@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[434. 字符串中的单词数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F434-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。 请注意，你可以假定字符串里不包括任何不可打印的字符。 示例: 输入: “Hello, my name is John”输出: 5 1234567891011121314class Solution &#123;public: int countSegments(string s) &#123; int res = 0, n = s.size(); for(int i=0;i&lt;n;i++)&#123; if(s[i]==' ')&#123; continue; &#125; res++; while(i&lt;n&amp;&amp;s[i]!=' ')&#123;i++;&#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[415. 字符串相加]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0%2F</url>
+    <content type="text"><![CDATA[给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。 注意： num1 和num2 的长度都小于 5100.num1 和num2 都只包含数字 0-9.num1 和num2 都不包含任何前导零。你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式。 字符串相加，类似二进制链表的相加，一位一位计算，然后逐为求和求进位，根据进位判断是否需要补高位、12345678910111213141516171819202122232425262728class Solution &#123;public: string addStrings(string num1, string num2) &#123; string res = ""; int m = num1.size(),n = num2.size(),i=m-1,j = n-1,carry=0; while(i&gt;=0||j&gt;=0)&#123; int a , b; if(i&gt;=0)&#123; a = num1[i--]-'0'; &#125;else&#123; a = 0; &#125; if(j&gt;=0)&#123; b = num2[j--]-'0'; &#125;else&#123; b = 0; &#125; int sum = a+b+carry; res.insert(res.begin(),sum%10+'0'); carry = sum/10; &#125; if(carry)&#123; return "1"+res; &#125;else&#123; return res; &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1075 链表元素分类（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1075-%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1075 链表元素分类（25 分）给定一个单链表，请编写程序将链表元素进行分类排列，使得所有负值元素都排在非负值元素的前面，而 [0, K] 区间内的元素都排在大于 K 的元素前面。但每一类内部元素的顺序是不能改变的。例如：给定链表为 18→7→-4→0→5→-6→10→11→-2，K 为 10，则输出应该为 -4→-6→-2→7→0→5→10→18→11。 输入格式：每个输入包含一个测试用例。每个测试用例第 1 行给出：第 1 个结点的地址；结点总个数，即正整数N (≤10​5​​ )；以及正整数K (≤10​3​​ )。结点的地址是 5 位非负整数，NULL 地址用 −1 表示。 接下来有 N 行，每行格式为： Address Data Next其中 Address 是结点地址；Data 是该结点保存的数据，为 [−10​5​​ ,10​5​​ ] 区间内的整数；Next 是下一结点的地址。题目保证给出的链表不为空。 输出格式：对每个测试用例，按链表从头到尾的顺序输出重排后的结果链表，其上每个结点占一行，格式与输入相同。 输入样例：00100 9 1023333 10 2777700000 0 9999900100 18 1230968237 -6 2333333218 -4 0000048652 -2 -199999 5 6823727777 11 4865212309 7 33218输出样例：33218 -4 6823768237 -6 4865248652 -2 1230912309 7 0000000000 0 9999999999 5 2333323333 10 0010000100 18 2777727777 11 -1 12345678910111213141516171819202122232425262728293031323334353637383940414243#include&lt;iostream&gt;#include&lt;vector&gt;using namespace std;struct node&#123; int data,next;&#125;list[100000];vector&lt;int&gt; v[3];int main()&#123; int start,n,k,a; scanf("%d%d%d",&amp;start,&amp;n,&amp;k); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a); scanf("%d%d",&amp;list[a].data,&amp;list[a].next); &#125; int p = start; while(p!=-1)&#123; int data = list[p].data; if(data&lt;0)&#123; v[0].push_back(p); &#125; else if(data&gt;=0&amp;&amp;data&lt;=k)&#123; v[1].push_back(p); &#125; else&#123; v[2].push_back(p); &#125; p=list[p].next; &#125; int flag = 0; for(int i = 0;i &lt; 3;i++)&#123; for(int j = 0;j &lt; v[i].size();j++)&#123; if(flag==0)&#123; printf("%05d %d ",v[i][j],list[v[i][j]].data); flag = 1; &#125;else&#123; printf("%05d\n%05d %d ",v[i][j],v[i][j],list[v[i][j]].data); &#125; &#125; &#125; printf("-1"); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1074 宇宙无敌加法器（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1074-%E5%AE%87%E5%AE%99%E6%97%A0%E6%95%8C%E5%8A%A0%E6%B3%95%E5%99%A8%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1074 宇宙无敌加法器（20 分）地球人习惯使用十进制数，并且默认一个数字的每一位都是十进制的。而在 PAT 星人开挂的世界里，每个数字的每一位都是不同进制的，这种神奇的数字称为“PAT数”。每个 PAT 星人都必须熟记各位数字的进制表，例如“……0527”就表示最低位是 7 进制数、第 2 位是 2 进制数、第 3 位是 5 进制数、第 4 位是 10 进制数，等等。每一位的进制 d 或者是 0（表示十进制）、或者是 [2，9] 区间内的整数。理论上这个进制表应该包含无穷多位数字，但从实际应用出发，PAT 星人通常只需要记住前 20 位就够用了，以后各位默认为 10 进制。 在这样的数字系统中，即使是简单的加法运算也变得不简单。例如对应进制表“0527”，该如何计算“6203 + 415”呢？我们得首先计算最低位：3 + 5 = 8；因为最低位是 7 进制的，所以我们得到 1 和 1 个进位。第 2 位是：0 + 1 + 1（进位）= 2；因为此位是 2 进制的，所以我们得到 0 和 1 个进位。第 3 位是：2 + 4 + 1（进位）= 7；因为此位是 5 进制的，所以我们得到 2 和 1 个进位。第 4 位是：6 + 1（进位）= 7；因为此位是 10 进制的，所以我们就得到 7。最后我们得到：6203 + 415 = 7201。 输入格式：输入首先在第一行给出一个 N 位的进制表（0 &lt; N ≤ 20），以回车结束。 随后两行，每行给出一个不超过 N 位的非负的 PAT 数。 输出格式：在一行中输出两个 PAT 数之和。 输入样例：3052706203415输出样例：7201 分析：以字符串读入的两个数位数可能不同，首先补充前导0保证位数相同。然后按照相应的进制加到结果字符串。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;const int maxm = 30;int main()&#123; char ans[maxm],num1[maxm],num2[maxm],tmp1[maxm],tmp2[maxm],res[maxm]; ans[0] = '0'; scanf("%s",ans+1); scanf("%s",tmp1); scanf("%s",tmp2); int len =strlen(ans),i,j; for(i=0;i&lt;len;i++)&#123; num1[i] = '0'; num2[i] = '0'; res[i] = '0'; &#125; i = len-1; for(j=strlen(tmp1)-1;j&gt;=0;j--)&#123; num1[i--] = tmp1[j]; &#125; num1[len] = '\0'; i = len-1; for(j=strlen(tmp2)-1;j&gt;=0;j--)&#123; num2[i--] = tmp2[j]; &#125; num2[len] = '\0'; int cur; int carry = 0; int jinzhi; for(i=len-1;i&gt;=0;i--)&#123; if(ans[i]=='0')&#123; jinzhi = 10; &#125;else&#123; jinzhi = ans[i]-'0'; &#125; cur = (num1[i]-'0')+(num2[i]-'0')+carry; if(cur&lt;jinzhi)&#123; res[i] = cur+'0'; carry = 0; &#125;else&#123; carry = 1; res[i] = cur-jinzhi+'0'; &#125; &#125; for(i=0;i&lt;len;i++)&#123; if(res[i]!='0')&#123; break; &#125; &#125; if(i==len)&#123; printf("0"); &#125;else&#123; for(;i&lt;len;i++)&#123; printf("%c",res[i]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1073 多选题常见计分法（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1073-%E5%A4%9A%E9%80%89%E9%A2%98%E5%B8%B8%E8%A7%81%E8%AE%A1%E5%88%86%E6%B3%95%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1073 多选题常见计分法（20 分）批改多选题是比较麻烦的事情，有很多不同的计分方法。有一种最常见的计分方法是：如果考生选择了部分正确选项，并且没有选择任何错误选项，则得到 50% 分数；如果考生选择了任何一个错误的选项，则不能得分。本题就请你写个程序帮助老师批改多选题，并且指出哪道题的哪个选项错的人最多。 输入格式：输入在第一行给出两个正整数 N（≤1000）和 M（≤100），分别是学生人数和多选题的个数。随后 M 行，每行顺次给出一道题的满分值（不超过 5 的正整数）、选项个数（不少于 2 且不超过 5 的正整数）、正确选项个数（不超过选项个数的正整数）、所有正确选项。注意每题的选项从小写英文字母 a 开始顺次排列。各项间以 1 个空格分隔。最后 N 行，每行给出一个学生的答题情况，其每题答案格式为 (选中的选项个数 选项1 ……)，按题目顺序给出。注意：题目保证学生的答题情况是合法的，即不存在选中的选项数超过实际选项数的情况。 输出格式：按照输入的顺序给出每个学生的得分，每个分数占一行，输出小数点后 1 位。最后输出错得最多的题目选项的信息，格式为：错误次数 题目编号（题目按照输入的顺序从1开始编号）-选项号。如果有并列，则每行一个选项，按题目编号递增顺序输出；再并列则按选项号递增顺序输出。行首尾不得有多余空格。如果所有题目都没有人错，则在最后一行输出 Too simple。 输入样例 1：3 43 4 2 a c2 5 1 b5 3 2 b c1 5 4 a b d e(2 a c) (3 b d e) (2 a c) (3 a b e)(2 a c) (1 b) (2 a b) (4 a b d e)(2 b d) (1 e) (1 c) (4 a b c d)输出样例 1：3.56.02.52 2-e2 3-a2 3-b输入样例 2：2 23 4 2 a c2 5 1 b(2 a c) (1 b)(2 a c) (1 b)输出样例 2：5.05.0Too simple 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;struct title&#123; int fullScore,choiceNum,rightchoiceNum; int choice[5] = &#123;0&#125;;&#125;s[111];int mis[111][5],maxNum;int main()&#123; int n,m,nn,rightNum,falseNum; int ti[5]; double score; char ch; scanf("%d%d",&amp;n,&amp;m); for(int i=0;i&lt;m;i++)&#123; scanf("%d%d%d",&amp;s[i].fullScore,&amp;s[i].choiceNum,&amp;s[i].rightchoiceNum); for(int j=0;j&lt;s[i].rightchoiceNum;j++)&#123; scanf(" %c",&amp;ch); s[i].choice[ch-'a'] = 1; &#125; &#125; for(int i=0;i&lt;n;i++)&#123; score = 0; for(int j=0;j&lt;m;j++)&#123; rightNum = falseNum = 0; getchar(); getchar(); scanf("%d",&amp;nn); memset(ti,0,sizeof(ti)); for(int k=0;k&lt;nn;k++)&#123; scanf(" %c",&amp;ch); ti[ch-'a'] = 1; if(s[j].choice[ch-'a'])&#123; rightNum++; &#125;else&#123; falseNum++; maxNum = max(maxNum,++mis[j][ch-'a']); &#125; &#125; getchar(); if(!falseNum)&#123; if(rightNum==s[j].rightchoiceNum)&#123; score+=s[j].fullScore; &#125;else if(rightNum)&#123; score += s[j].fullScore/2.0; &#125; &#125; for(int k=0;k&lt;5;k++)&#123; if(s[j].choice[k]&amp;&amp;!ti[k])&#123; maxNum = max(maxNum,++mis[j][k]); &#125; &#125; &#125; printf("%.1f\n",score); &#125; if(maxNum==0)&#123; printf("Too simple\n"); &#125;else&#123; for(int i=0;i&lt;m;i++)&#123; for(int j=0;j&lt;5;j++)&#123; if(mis[i][j]==maxNum)&#123; printf("%d %d-%c\n",maxNum,i+1,j+'a'); &#125; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1072 开学寄语（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1072-%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1072 开学寄语（20 分）下图是上海某校的新学期开学寄语：天将降大任于斯人也，必先删其微博，卸其 QQ，封其电脑，夺其手机，收其 ipad，断其 wifi，使其百无聊赖，然后，净面、理发、整衣，然后思过、读书、锻炼、明智、开悟、精进。而后必成大器也！ 本题要求你写个程序帮助这所学校的老师检查所有学生的物品，以助其成大器。 输入格式：输入第一行给出两个正整数 N（≤ 1000）和 M（≤ 6），分别是学生人数和需要被查缴的物品种类数。第二行给出 M 个需要被查缴的物品编号，其中编号为 4 位数字。随后 N 行，每行给出一位学生的姓名缩写（由 1-4 个大写英文字母组成）、个人物品数量 K（0 ≤ K ≤ 10）、以及 K 个物品的编号。 输出格式：顺次检查每个学生携带的物品，如果有需要被查缴的物品存在，则按以下格式输出该生的信息和其需要被查缴的物品的信息（注意行末不得有多余空格）： 姓名缩写: 物品编号1 物品编号2 ……最后一行输出存在问题的学生的总人数和被查缴物品的总数。 输入样例：4 22333 6666CYLL 3 1234 2345 3456U 4 9966 6666 8888 6666GG 2 2333 7777JJ 3 0012 6666 2333输出样例：U: 6666 6666GG: 2333JJ: 6666 23333 5 123456789101112131415161718192021222324252627282930313233343536373839#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n,m,bianhao,cnt,number,count1=0,count2=0; map&lt;int,int&gt; q; string name; vector&lt;int&gt; p; cin&gt;&gt;n&gt;&gt;m; while(m--)&#123; cin&gt;&gt;bianhao; q[bianhao]=1; &#125; while(n--)&#123; int tag=0; cin&gt;&gt;name&gt;&gt;cnt; while(cnt--)&#123; cin&gt;&gt;number; if(q[number]==1)&#123; tag=1; count1++; p.push_back(number); &#125; &#125; if(tag)&#123; int x=p.size(); count2++; cout&lt;&lt;name&lt;&lt;":"; for(int i =0;i&lt;p.size();i++)&#123; printf(" %04d",p[i]); &#125; printf("\n"); p.clear(); &#125; &#125; cout&lt;&lt;count2&lt;&lt;" "&lt;&lt;count1; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1071 小赌怡情（15 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1071-%E5%B0%8F%E8%B5%8C%E6%80%A1%E6%83%85%EF%BC%8815-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1071 小赌怡情（15 分）常言道“小赌怡情”。这是一个很简单的小游戏：首先由计算机给出第一个整数；然后玩家下注赌第二个整数将会比第一个数大还是小；玩家下注 t 个筹码后，计算机给出第二个数。若玩家猜对了，则系统奖励玩家 t 个筹码；否则扣除玩家 t 个筹码。 注意：玩家下注的筹码数不能超过自己帐户上拥有的筹码数。当玩家输光了全部筹码后，游戏就结束。 输入格式：输入在第一行给出 2 个正整数 T 和 K（≤ 100），分别是系统在初始状态下赠送给玩家的筹码数、以及需要处理的游戏次数。随后 K 行，每行对应一次游戏，顺序给出 4 个数字： n1 b t n2其中 n1 和 n2 是计算机先后给出的两个[0, 9]内的整数，保证两个数字不相等。b 为 0 表示玩家赌小，为 1 表示玩家赌大。t 表示玩家下注的筹码数，保证在整型范围内。 输出格式：对每一次游戏，根据下列情况对应输出（其中 t 是玩家下注量，x 是玩家当前持有的筹码量）： 玩家赢，输出 Win t! Total = x.；玩家输，输出 Lose t. Total = x.；玩家下注超过持有的筹码量，输出 Not enough tokens. Total = x.；玩家输光后，输出 Game Over. 并结束程序。输入样例 1：100 48 0 100 23 1 50 15 1 200 67 0 200 8输出样例 1：Win 100! Total = 200.Lose 50. Total = 150.Not enough tokens. Total = 150.Not enough tokens. Total = 150.输入样例 2：100 48 0 100 23 1 200 15 1 200 67 0 200 8输出样例 2：Win 100! Total = 200.Lose 200. Total = 0.Game Over. 12345678910111213141516171819202122232425262728293031#include&lt;stdio.h&gt;#include&lt;string.h&gt;using namespace std;typedef long long ll;int main()&#123; int T,k; scanf("%d %d",&amp;T,&amp;k); int n1,b,t,n2; while(k--)&#123; scanf("%d %d %d %d",&amp;n1,&amp;b,&amp;t,&amp;n2); if(t&gt;T&amp;&amp;T!=0)&#123; printf("Not enough tokens. Total = %d.\n",T); &#125; else&#123; if((b==0&amp;&amp;n2&lt;n1)||(b==1&amp;&amp;n2&gt;n1))&#123; T+=t; printf("Win %d! Total = %d.\n",t,T); &#125; else&#123; T-=t; printf("Lose %d. Total = %d.\n",t,T); &#125; if(T==0)&#123; printf("Game Over.\n"); break; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[400. 第N个数字]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F400-%E7%AC%ACN%E4%B8%AA%E6%95%B0%E5%AD%97%2F</url>
     <content type="text"><![CDATA[在无限的整数序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …中找到第 n 个数字。 注意:n 是正数且在32为整形范围内 ( n &lt; 231)。 示例 1: 输入:3 输出:3示例 2: 输入:11 输出:0 说明:第11个数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, … 里是0，它是10的一部分。 将整数序列划分为下列区间：1234567891 1-92 10-993 100-9994 1000-99995 10000-999996 100000-9999997 1000000-99999998 10000000-999999999 100000000-99999999 1234567891011121314151617class Solution &#123;public: int findNthDigit(int n) &#123; int len = 1, base = 1; while(n&gt;9L*base*len)&#123; n -= 9*base*len; len++; base *= 10; &#125; int curNum = (n-1)/len + base, digit = 0; for(int i=(n-1)%len;i&lt;len;++i)&#123; digit = curNum%10; curNum /= 10; &#125; return digit; &#125;&#125;;]]></content>
@@ -25,7 +102,7 @@
   <entry>
     <title><![CDATA[404. 左叶子之和]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F404-%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[计算给定二叉树的所有左叶子之和。 示例： 3 / \ 9 20 / \ 15 7 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24 递归写法： /** Definition for a binary tree node. struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };/class Solution {public: int sumOfLeftLeaves(TreeNode root) {int sum = 0; if(root==NULL){ return 0; } if(root-&gt;left!=NULL&amp;&amp;root-&gt;left-&gt;left==NULL&amp;&amp;root-&gt;left-&gt;right==NULL){ sum += root-&gt;left-&gt;val; }else{ sum += sumOfLeftLeaves(root-&gt;left); } sum += sumOfLeftLeaves(root-&gt;right); return sum; }}; 迭代写法： /** Definition for a binary tree node. struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };/class Solution {public: int sumOfLeftLeaves(TreeNode root) {int sum = 0; if(root==NULL){ return 0; } queue&lt;TreeNode*&gt; q; q.push(root); while(!q.empty()){ TreeNode* temp = q.front(); q.pop(); if(temp==NULL){ break; } if(temp-&gt;left){ q.push(temp-&gt;left); if(temp-&gt;left-&gt;left==NULL&amp;&amp;temp-&gt;left-&gt;right==NULL){ sum += temp-&gt;left-&gt;val; } } if(temp-&gt;right){ q.push(temp-&gt;right); } } return sum; }};]]></content>
+    <content type="text"><![CDATA[计算给定二叉树的所有左叶子之和。 示例： 3 / \ 9 20 / \ 15 7 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24 递归写法：12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int sumOfLeftLeaves(TreeNode* root) &#123; int sum = 0; if(root==NULL)&#123; return 0; &#125; if(root-&gt;left!=NULL&amp;&amp;root-&gt;left-&gt;left==NULL&amp;&amp;root-&gt;left-&gt;right==NULL)&#123; sum += root-&gt;left-&gt;val; &#125;else&#123; sum += sumOfLeftLeaves(root-&gt;left); &#125; sum += sumOfLeftLeaves(root-&gt;right); return sum; &#125;&#125;; 迭代写法：12345678910111213141516171819202122232425262728293031323334353637/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int sumOfLeftLeaves(TreeNode* root) &#123; int sum = 0; if(root==NULL)&#123; return 0; &#125; queue&lt;TreeNode*&gt; q; q.push(root); while(!q.empty())&#123; TreeNode* temp = q.front(); q.pop(); if(temp==NULL)&#123; break; &#125; if(temp-&gt;left)&#123; q.push(temp-&gt;left); if(temp-&gt;left-&gt;left==NULL&amp;&amp;temp-&gt;left-&gt;right==NULL)&#123; sum += temp-&gt;left-&gt;val; &#125; &#125; if(temp-&gt;right)&#123; q.push(temp-&gt;right); &#125; &#125; return sum; &#125;&#125;;]]></content>
       <categories>
         <category>题解集</category>
       </categories>
