@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-06-21T05:45:23.300Z</updated>
+  <updated>2018-06-22T04:36:18.475Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>771. 宝石与石头</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4/"/>
+    <id>http://huangyiblog.com/题解集/771-宝石与石头/</id>
+    <published>2018-06-22T04:35:56.000Z</published>
+    <updated>2018-06-22T04:36:18.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。</p><p>J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。</p><p>示例 1:</p><p>输入: J = “aA”, S = “aAAbbbb”<br>输出: 3<br>示例 2:</p><p>输入: J = “z”, S = “ZZ”<br>输出: 0<br>注意:</p><p>S 和 J 最多含有50个字母。<br> J 中的字符不重复。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numJewelsInStones</span><span class="params">(<span class="built_in">string</span> J, <span class="built_in">string</span> S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;J.size();i++)&#123;</span><br><span class="line">            hash[J[i]] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;S.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash[S[j]])&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。&lt;/p&gt;
+&lt;p&gt;J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。&lt;/p
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>728. 自除数</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/728-%E8%87%AA%E9%99%A4%E6%95%B0/"/>
+    <id>http://huangyiblog.com/题解集/728-自除数/</id>
+    <published>2018-06-22T04:23:12.000Z</published>
+    <updated>2018-06-22T04:26:43.215Z</updated>
+    
+    <content type="html"><![CDATA[<p>自除数 是指可以被它包含的每一位数除尽的数。</p><p>例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。</p><p>还有，自除数不允许包含 0 。</p><p>给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。</p><p>示例 1：</p><p>输入：<br>上边界left = 1, 下边界right = 22<br>输出： [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]<br>注意：</p><p>每个输入参数的边界满足 1 &lt;= left &lt;= right &lt;= 10000。</p><p>题目要求求出某个区间内的自除数，直接遍历整个区间就可以，并根据定义写一个判断是否为自除数的函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; selfDividingNumbers(<span class="keyword">int</span> left, <span class="keyword">int</span> right) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n = left;n &lt;= right;n++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(selfDividing(n))&#123;</span><br><span class="line">                res.push_back(n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span>: <span class="function"><span class="keyword">bool</span> <span class="title">selfDividing</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="built_in">string</span> s = to_string(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">'0'</span>||(n%(s[i]-<span class="string">'0'</span>)&gt;<span class="number">0</span>))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;自除数 是指可以被它包含的每一位数除尽的数。&lt;/p&gt;
+&lt;p&gt;例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。&lt;/p&gt;
+&lt;p&gt;还有，自除数不允许包含 0 。&lt;/p&gt;
+&lt;p&gt;给定上边界和下边界数字，输出一个列表，列
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>852. 山脉数组的峰顶索引</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/852-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95/"/>
+    <id>http://huangyiblog.com/题解集/852-山脉数组的峰顶索引/</id>
+    <published>2018-06-22T04:10:45.000Z</published>
+    <updated>2018-06-22T04:12:03.200Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们把符合下列属性的数组 A 称作山脉：</p><p>A.length &gt;= 3<br>存在 0 &lt; i &lt; A.length - 1 使得A[0] &lt; A[1] &lt; … A[i-1] &lt; A[i] &gt; A[i+1] &gt; … &gt; A[A.length - 1]<br>给定一个确定为山脉的数组，返回任何满足 A[0] &lt; A[1] &lt; … A[i-1] &lt; A[i] &gt; A[i+1] &gt; … &gt; A[A.length - 1] 的 i 的值。</p><p>示例 1：</p><p>输入：[0,1,0]<br>输出：1<br>示例 2：</p><p>输入：[0,2,1,0]<br>输出：1</p><p>提示：</p><p>3 &lt;= A.length &lt;= 10000<br>0 &lt;= A[i] &lt;= 10^6<br>A 是如上定义的山脉</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">peakIndexInMountainArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;A.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i]&gt;A[i+<span class="number">1</span>])&#123;</span><br><span class="line">                 temp = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我们把符合下列属性的数组 A 称作山脉：&lt;/p&gt;
+&lt;p&gt;A.length &amp;gt;= 3&lt;br&gt;存在 0 &amp;lt; i &amp;lt; A.length - 1 使得A[0] &amp;lt; A[1] &amp;lt; … A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; …
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>L2-021 点赞狂魔（25 分）</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L2-021-%E7%82%B9%E8%B5%9E%E7%8B%82%E9%AD%94%EF%BC%8825-%E5%88%86%EF%BC%89/"/>
+    <id>http://huangyiblog.com/题解集/L2-021-点赞狂魔（25-分）/</id>
+    <published>2018-06-22T03:53:12.000Z</published>
+    <updated>2018-06-22T03:56:50.559Z</updated>
+    
+    <content type="html"><![CDATA[<p>L2-021 点赞狂魔（25 分）<br>微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。</p><p>输入格式：</p><p>输入在第一行给出一个正整数N（&lt;=100），是待统计的用户数。随后N行，每行列出一位用户的点赞标签。格式为“Name K F~1~ … F~K~”，其中 Name 是不超过8个英文小写字母的非空用户名，1&lt;=K&lt;=1000，F~i~（i=1, …, K）是特性标签的编号，我们将所有特性标签从1到10^7^编号。数字间以空格分隔。</p><p>输出格式：</p><p>统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用“-”补齐缺失，例如“mike jenny -”就表示只有2人。</p><p>输入样例：</p><p>5<br>bob 11 101 102 103 104 105 106 107 108 108 107 107<br>peter 8 1 2 3 4 3 2 5 1<br>chris 12 1 2 3 4 5 6 7 8 9 1 2 3<br>john 10 8 7 6 5 4 3 2 1 7 5<br>jack 9 6 7 8 9 10 11 12 13 14<br>输出样例：</p><p>jack chris john<br>分析：创建一个关于点赞人的结构体，然后对其根据不同标签数和出现次数平均值最小进行排序，不同标签数可以用set计算，出现次数平均最小即每次k最小。排序后根据是否满足3人分类输出。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">people</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">int</span> cnt,num;</span><br><span class="line">&#125;a[<span class="number">1111</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(people a,people b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.cnt!=b.cnt)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.cnt&gt;b.cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.num&lt;b.num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k,n,x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a[i].name);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">            s.insert(x);</span><br><span class="line">        &#125;</span><br><span class="line">        a[i].cnt = s.size();</span><br><span class="line">        a[i].num = k;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+n,cmp);</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;min(n,<span class="number">3</span>);i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s"</span>,a[i].name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;L2-021 点赞狂魔（25 分）&lt;br&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>657. 判断路线成圈</title>
@@ -431,106 +536,6 @@
       
       
         &lt;p&gt;1080 MOOC期终成绩（25 分）&lt;br&gt;对于在中国大学MOOC（&lt;a href=&quot;http://www.icourse163.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1079 延迟的回文数（20 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/1079-%E5%BB%B6%E8%BF%9F%E7%9A%84%E5%9B%9E%E6%96%87%E6%95%B0%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/1079-延迟的回文数（20-分）/</id>
-    <published>2018-06-20T02:21:39.000Z</published>
-    <updated>2018-06-20T02:23:50.777Z</updated>
-    
-    <content type="html"><![CDATA[<p>1079 延迟的回文数（20 分）<br>给定一个 k+1 位的正整数 N，写成 a<br>​k<br>​​ ⋯a<br>​1<br>​​ a<br>​0<br>​​  的形式，其中对所有 i 有 0≤a<br>​i<br>​​ <10 且="" a="" ​k="" ​​="">0。N 被称为一个回文数，当且仅当对所有 i 有 a<br>​i<br>​​ =a<br>​k−i<br>​​ 。零也被定义为一个回文数。</10></p><p>非回文数也可以通过一系列操作变出回文数。首先将该数字逆转，再将逆转数与该数相加，如果和还不是一个回文数，就重复这个逆转再相加的操作，直到一个回文数出现。如果一个非回文数可以变出回文数，就称这个数为延迟的回文数。（定义翻译自 <a href="https://en.wikipedia.org/wiki/Palindromic_number" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Palindromic_number</a> ）</p><p>给定任意一个正整数，本题要求你找到其变出的那个回文数。</p><p>输入格式：<br>输入在一行中给出一个不超过1000位的正整数。</p><p>输出格式：<br>对给定的整数，一行一行输出其变出回文数的过程。每行格式如下</p><p>A + B = C<br>其中 A 是原始的数字，B 是 A 的逆转数，C 是它们的和。A 从输入的整数开始。重复操作直到 C 在 10 步以内变成回文数，这时在一行中输出 C is a palindromic number.；或者如果 10 步都没能得到回文数，最后就在一行中输出 Not found in 10 iterations.。</p><p>输入样例 1：<br>97152<br>输出样例 1：<br>97152 + 25179 = 122331<br>122331 + 133221 = 255552<br>255552 is a palindromic number.<br>输入样例 2：<br>196<br>输出样例 2：<br>196 + 691 = 887<br>887 + 788 = 1675<br>1675 + 5761 = 7436<br>7436 + 6347 = 13783<br>13783 + 38731 = 52514<br>52514 + 41525 = 94039<br>94039 + 93049 = 187088<br>187088 + 880781 = 1067869<br>1067869 + 9687601 = 10755470<br>10755470 + 07455701 = 18211171<br>Not found in 10 iterations.</p><p>分析：分别编写两个函数，一个函数用于判断是否为回文数，另一个函数用于字符串相加。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPal</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,k=s.length()<span class="number">-1</span>;i&lt;=(k+<span class="number">1</span>)/<span class="number">2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]!=s[k-i])</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> a,<span class="built_in">string</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.length();i++)&#123;</span><br><span class="line">        t=t+a[i]-<span class="string">'0'</span>+b[i]-<span class="string">'0'</span>;</span><br><span class="line">        a[i]=<span class="string">'0'</span>+t%<span class="number">10</span>;</span><br><span class="line">        t/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t&gt;<span class="number">0</span>) a+=<span class="string">"1"</span>;</span><br><span class="line">    reverse(a.begin(),a.end());</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a,b,c;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">    <span class="keyword">if</span>(isPal(a))&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" is a palindromic number."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            c=a;</span><br><span class="line">        reverse(c.begin(),c.end());</span><br><span class="line">        b=c;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" + "</span>&lt;&lt;b&lt;&lt;<span class="string">" = "</span>;</span><br><span class="line">        a=add(a,b);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>(isPal(a))&#123;</span><br><span class="line">             <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" is a palindromic number."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Not found in 10 iterations.\n"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1079 延迟的回文数（20 分）&lt;br&gt;给定一个 k+1 位的正整数 N，写成 a&lt;br&gt;​k&lt;br&gt;​​ ⋯a&lt;br&gt;​1&lt;br&gt;​​ a&lt;br&gt;​0&lt;br&gt;​​  的形式，其中对所有 i 有 0≤a&lt;br&gt;​i&lt;br&gt;​​ &lt;10 且=&quot;&quot; a=&quot;&quot; ​k=&quot;&quot; ​​
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1078 字符串压缩与解压（20 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/1078-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/1078-字符串压缩与解压（20-分）/</id>
-    <published>2018-06-20T02:20:04.000Z</published>
-    <updated>2018-06-20T02:20:57.988Z</updated>
-    
-    <content type="html"><![CDATA[<p>1078 字符串压缩与解压（20 分）<br>文本压缩有很多种方法，这里我们只考虑最简单的一种：把由相同字符组成的一个连续的片段用这个字符和片段中含有这个字符的个数来表示。例如 ccccc 就用 5c 来表示。如果字符没有重复，就原样输出。例如 aba 压缩后仍然是 aba。</p><p>解压方法就是反过来，把形如 5c 这样的表示恢复为 ccccc。</p><p>本题需要你根据压缩或解压的要求，对给定字符串进行处理。这里我们简单地假设原始字符串是完全由英文字母和空格组成的非空字符串。</p><p>输入格式：<br>输入第一行给出一个字符，如果是 C 就表示下面的字符串需要被压缩；如果是 D 就表示下面的字符串需要被解压。第二行给出需要被压缩或解压的不超过 1000 个字符的字符串，以回车结尾。题目保证字符重复个数在整型范围内，且输出文件不超过 1MB。</p><p>输出格式：<br>根据要求压缩或解压字符串，并在一行中输出结果。</p><p>输入样例 1：<br>C<br>TTTTThhiiiis isssss a   tesssst CAaaa as<br>输出样例 1：<br>5T2h4is i5s a3 te4st CA3a as<br>输入样例 2：<br>D<br>5T2h4is i5s a3 te4st CA3a as10Z<br>输出样例 2：<br>TTTTThhiiiis isssss a   tesssst CAaaa asZZZZZZZZZZ</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> type;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;type);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    getchar();</span><br><span class="line">    getline(<span class="built_in">cin</span>,s);</span><br><span class="line">    <span class="keyword">if</span>(type==<span class="string">'C'</span>)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span>(s[i]==s[i+<span class="number">1</span>])</span><br><span class="line">        i++,cnt++;</span><br><span class="line">       <span class="keyword">if</span>(cnt!=<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;cnt+<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">             <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(s[i]&lt;=<span class="string">'9'</span>&amp;&amp;s[i]&gt;=<span class="string">'0'</span>)</span><br><span class="line">        cnt=cnt*<span class="number">10</span>+s[i++]-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cnt;j++)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">    <span class="keyword">if</span>(cnt==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1078 字符串压缩与解压（20 分）&lt;br&gt;文本压缩有很多种方法，这里我们只考虑最简单的一种：把由相同字符组成的一个连续的片段用这个字符和片段中含有这个字符的个数来表示。例如 ccccc 就用 5c 来表示。如果字符没有重复，就原样输出。例如 aba 压缩后仍然是 aba
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1077 互评成绩计算（20 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/1077-%E4%BA%92%E8%AF%84%E6%88%90%E7%BB%A9%E8%AE%A1%E7%AE%97%EF%BC%8820-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/1077-互评成绩计算（20-分）/</id>
-    <published>2018-06-20T02:15:52.000Z</published>
-    <updated>2018-06-20T02:18:44.520Z</updated>
-    
-    <content type="html"><![CDATA[<p>1077 互评成绩计算（20 分）<br>在浙大的计算机专业课中，经常有互评分组报告这个环节。一个组上台介绍自己的工作，其他组在台下为其表现评分。最后这个组的互评成绩是这样计算的：所有其他组的评分中，去掉一个最高分和一个最低分，剩下的分数取平均分记为 G<br>​1<br>​​ ；老师给这个组的评分记为 G<br>​2<br>​​ 。该组得分为 (G<br>​1<br>​​ +G<br>​2<br>​​ )/2，最后结果四舍五入后保留整数分。本题就要求你写个程序帮助老师计算每个组的互评成绩。</p><p>输入格式：<br>输入第一行给出两个正整数 N（&gt; 3）和 M，分别是分组数和满分，均不超过 100。随后 N 行，每行给出该组得到的 N 个分数（均保证为整型范围内的整数），其中第 1 个是老师给出的评分，后面 N−1 个是其他组给的评分。合法的输入应该是 [0,M] 区间内的整数，若不在合法区间内，则该分数须被忽略。题目保证老师的评分都是合法的，并且每个组至少会有 3 个来自同学的合法评分。</p><p>输出格式：<br>为每个组输出其最终得分。每个得分占一行。</p><p>输入样例：<br>6 50<br>42 49 49 35 38 41<br>36 51 50 28 -1 30<br>40 36 41 33 47 49<br>30 250 -25 27 45 31<br>48 0 0 50 50 1234<br>43 41 36 29 42 29<br>输出样例：<br>42<br>33<br>41<br>31<br>37<br>39</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,g1,g2,x,temp;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;g1;</span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">-2</span>,maxn=<span class="number">-1</span>,minm=m+<span class="number">1</span>,sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            <span class="keyword">if</span>(x&gt;=<span class="number">0</span>&amp;&amp;x&lt;=m)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(x&lt;minm) minm=x;</span><br><span class="line">                <span class="keyword">if</span>(x&gt;maxn) maxn=x;</span><br><span class="line">                sum+=x;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"> <span class="built_in">cout</span>&lt;&lt;<span class="keyword">int</span>((((sum-maxn-minm)*<span class="number">1.0</span>/cnt)+g1)/<span class="number">2</span>+<span class="number">0.5</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1077 互评成绩计算（20 分）&lt;br&gt;在浙大的计算机专业课中，经常有互评分组报告这个环节。一个组上台介绍自己的工作，其他组在台下为其表现评分。最后这个组的互评成绩是这样计算的：所有其他组的评分中，去掉一个最高分和一个最低分，剩下的分数取平均分记为 G&lt;br&gt;​1&lt;br&gt;
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1076 Wifi密码（15 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/1076-Wifi%E5%AF%86%E7%A0%81%EF%BC%8815-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/1076-Wifi密码（15-分）/</id>
-    <published>2018-06-20T02:14:43.000Z</published>
-    <updated>2018-06-20T02:15:10.156Z</updated>
-    
-    <content type="html"><![CDATA[<p>1076 Wifi密码（15 分）<br>下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且只有 1 个正确答案。</p><p><img src="https://images.ptausercontent.com/7e56be3f-caba-45f1-b9cb-38a96d44de76.jpg" alt="img"></p><p>输入格式：<br>输入第一行给出一个正整数 N（≤ 100），随后 N 行，每行按照 编号-答案 的格式给出一道题的 4 个选项，T 表示正确选项，F 表示错误选项。选项间用空格分隔。</p><p>输出格式：<br>在一行中输出 wifi 密码。</p><p>输入样例：<br>8<br>A-T B-F C-F D-F<br>C-T B-F A-F D-F<br>A-F D-F C-F B-T<br>B-T A-F C-F D-F<br>B-F D-T A-F C-F<br>A-T C-F B-F D-F<br>D-T B-F C-F A-F<br>C-T A-F B-F D-F<br>输出样例：<br>13224143</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size()==<span class="number">3</span>&amp;&amp;s[<span class="number">2</span>]==<span class="string">'T'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;s[<span class="number">0</span>]-<span class="string">'A'</span>+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1076 Wifi密码（15 分）&lt;br&gt;下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们
       
     
     </summary>

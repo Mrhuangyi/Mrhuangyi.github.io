@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[771. 宝石与石头]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4%2F</url>
+    <content type="text"><![CDATA[给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。 J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。 示例 1: 输入: J = “aA”, S = “aAAbbbb”输出: 3示例 2: 输入: J = “z”, S = “ZZ”输出: 0注意: S 和 J 最多含有50个字母。 J 中的字符不重复。 12345678910111213141516class Solution &#123;public: int numJewelsInStones(string J, string S) &#123; int hash[256] = &#123;0&#125;; int count = 0; for(int i=0;i&lt;J.size();i++)&#123; hash[J[i]] = 1; &#125; for(int j = 0;j&lt;S.size();j++)&#123; if(hash[S[j]])&#123; count++; &#125; &#125; return count; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[728. 自除数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F728-%E8%87%AA%E9%99%A4%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1： 输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]注意： 每个输入参数的边界满足 1 &lt;= left &lt;= right &lt;= 10000。 题目要求求出某个区间内的自除数，直接遍历整个区间就可以，并根据定义写一个判断是否为自除数的函数。123456789101112131415161718192021class Solution &#123;public: vector&lt;int&gt; selfDividingNumbers(int left, int right) &#123; vector&lt;int&gt; res; for(int n = left;n &lt;= right;n++)&#123; if(selfDividing(n))&#123; res.push_back(n); &#125; &#125; return res; &#125; public: bool selfDividing(int n)&#123; string s = to_string(n); for(int i=0;i&lt;s.size();i++)&#123; if(s[i]=='0'||(n%(s[i]-'0')&gt;0))&#123; return false; &#125; &#125; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[852. 山脉数组的峰顶索引]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F852-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[我们把符合下列属性的数组 A 称作山脉： A.length &gt;= 3存在 0 &lt; i &lt; A.length - 1 使得A[0] &lt; A[1] &lt; … A[i-1] &lt; A[i] &gt; A[i+1] &gt; … &gt; A[A.length - 1]给定一个确定为山脉的数组，返回任何满足 A[0] &lt; A[1] &lt; … A[i-1] &lt; A[i] &gt; A[i+1] &gt; … &gt; A[A.length - 1] 的 i 的值。 示例 1： 输入：[0,1,0]输出：1示例 2： 输入：[0,2,1,0]输出：1 提示： 3 &lt;= A.length &lt;= 100000 &lt;= A[i] &lt;= 10^6A 是如上定义的山脉 1234567891011121314class Solution &#123;public: int peakIndexInMountainArray(vector&lt;int&gt;&amp; A) &#123; int temp = 0; for(int i = 0;i&lt;A.size();i++)&#123; if(A[i]&gt;A[i+1])&#123; temp = i; break; &#125; &#125; return temp; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-021 点赞狂魔（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-021-%E7%82%B9%E8%B5%9E%E7%8B%82%E9%AD%94%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-021 点赞狂魔（25 分）微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。 输入格式： 输入在第一行给出一个正整数N（&lt;=100），是待统计的用户数。随后N行，每行列出一位用户的点赞标签。格式为“Name K F~1~ … F~K~”，其中 Name 是不超过8个英文小写字母的非空用户名，1&lt;=K&lt;=1000，F~i~（i=1, …, K）是特性标签的编号，我们将所有特性标签从1到10^7^编号。数字间以空格分隔。 输出格式： 统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用“-”补齐缺失，例如“mike jenny -”就表示只有2人。 输入样例： 5bob 11 101 102 103 104 105 106 107 108 108 107 107peter 8 1 2 3 4 3 2 5 1chris 12 1 2 3 4 5 6 7 8 9 1 2 3john 10 8 7 6 5 4 3 2 1 7 5jack 9 6 7 8 9 10 11 12 13 14输出样例： jack chris john分析：创建一个关于点赞人的结构体，然后对其根据不同标签数和出现次数平均值最小进行排序，不同标签数可以用set计算，出现次数平均最小即每次k最小。排序后根据是否满足3人分类输出。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;set&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;struct people&#123; char name[11]; int cnt,num;&#125;a[1111];bool cmp(people a,people b)&#123; if(a.cnt!=b.cnt)&#123; return a.cnt&gt;b.cnt; &#125; return a.num&lt;b.num;&#125;int main()&#123; int k,n,x; scanf("%d",&amp;n); set&lt;int&gt; s; for(int i=0;i&lt;n;i++)&#123; scanf("%s",a[i].name); scanf("%d",&amp;k); s.clear(); for(int j=0;j&lt;k;j++)&#123; scanf("%d",&amp;x); s.insert(x); &#125; a[i].cnt = s.size(); a[i].num = k; &#125; sort(a,a+n,cmp); bool flag = false; for(int i=0;i&lt;min(n,3);i++)&#123; if(flag)&#123; printf(" "); &#125; flag = true; printf("%s",a[i].name); &#125; for(int i=n;i&lt;3;i++)&#123; if(flag)&#123; printf(" "); &#125; printf("-"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[657. 判断路线成圈]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F657-%E5%88%A4%E6%96%AD%E8%B7%AF%E7%BA%BF%E6%88%90%E5%9C%88%2F</url>
     <content type="text"><![CDATA[初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1: 输入: “UD”输出: true示例 2: 输入: “LL”输出: false 分析：要求能回到原位置，那么左右 和上下所移动的步数必须对应相等。12345678910111213141516171819202122class Solution &#123;public: bool judgeCircle(string moves) &#123; int L=0,R=0,U=0,D=0; for(int i=0;i&lt;moves.size();i++)&#123; if(moves[i]=='L')&#123; L++; &#125;else if(moves[i]=='R')&#123; R++; &#125;else if(moves[i]=='U')&#123; U++; &#125;else if(moves[i]=='D')&#123; D++; &#125; &#125; if(L==R&amp;&amp;U==D)&#123; return true; &#125;else&#123; return false; &#125; &#125;&#125;;]]></content>
@@ -3399,9 +3443,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -3410,9 +3454,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
