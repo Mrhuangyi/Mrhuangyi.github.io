@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[455. 分发饼干]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F455-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2%2F</url>
+    <content type="text"><![CDATA[假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。对每个孩子 i ，都有一个胃口值 gi ，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j ，都有一个尺寸 sj 。如果 sj &gt;= gi ，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。 注意： 你可以假设胃口值为正。一个小朋友最多只能拥有一块饼干。 示例 1:12345678输入: [1,2,3], [1,1]输出: 1解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。所以你应该输出1。 示例 2:12345678输入: [1,2], [1,2,3]输出: 2解释: 你有两个孩子和三块小饼干，2个孩子的胃口值分别是1,2。你拥有的饼干数量和尺寸都足以让所有孩子满足。所以你应该输出2. 分析：给定一个关于饼干的数组和一个关于胃口的数组，要求尽可能满足多的孩子，那么需要先对连个数组进行排序，尽可能让小饼干满足小胃口的，而不是那一块大饼干满足小胃口的，以此进行遍历计数 123456789101112131415161718class Solution &#123;public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) &#123; int res = 0,index = 0; sort(g.begin(),g.end()); sort(s.begin(),s.end()); for(int i=0;i&lt;s.size();i++)&#123; if(s[i]&gt;=g[index])&#123; res++; index++; if(index&gt;=g.size())&#123; break; &#125; &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[453. 最小移动次数使数组元素相等]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F453-%E6%9C%80%E5%B0%8F%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%E4%BD%BF%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9B%B8%E7%AD%89%2F</url>
+    <content type="text"><![CDATA[给定一个长度为 n 的非空整数数组，找到让数组所有元素相等的最小移动次数。每次移动可以使 n - 1 个元素增加 1。 示例:12345678910输入:[1,2,3]输出:3解释:只需要3次移动（注意每次移动会增加两个元素的值）：[1,2,3] =&gt; [2,3,3] =&gt; [3,4,3] =&gt; [4,4,4] 分析：逆向思考，每次移动让剩余的n-1个数加1，相当于每次移动让选定的那个数减1，所以最少移动次数其实就是所有元素减去最小元素的和 12345678910111213class Solution &#123;public: int minMoves(vector&lt;int&gt;&amp; nums) &#123; int min = INT_MAX,sum = 0,res = 0; for(int i=0;i&lt;nums.size();i++)&#123; sum += nums[i]; if(nums[i]&lt;min)&#123; min = nums[i]; &#125; &#125; return sum-min*nums.size(); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-013 红色警报（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-013-%E7%BA%A2%E8%89%B2%E8%AD%A6%E6%8A%A5%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-013 红色警报（25 分）战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。 输入格式： 输入在第一行给出两个整数N（0 &lt; N &lt;=500）和M（&lt;=5000），分别为城市个数（于是默认城市从0到N-1编号）和连接两城市的通路条数。随后M行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数K和随后的K个被攻占的城市的编号。 注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。 输出格式： 对每个被攻占的城市，如果它会改变整个国家的连通性，则输出“Red Alert: City k is lost!”，其中k是该城市的编号；否则只输出“City k is lost.”即可。如果该国失去了最后一个城市，则增加一行输出“Game Over.”。 输入样例： 5 40 11 33 00 451 2 0 4 3输出样例： City 1 is lost.City 2 is lost.Red Alert: City 0 is lost!City 4 is lost.City 3 is lost.Game Over. 方法一：用dfs判断是否连通并且计算连通数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;const int maxm = 550;int edge[maxm][maxm];int visit[maxm],n;void dfs(int x)&#123; visit[x] = 1; for(int i=0;i&lt;n;i++)&#123; if(!visit[i]&amp;&amp;edge[x][i])&#123; dfs(i); &#125; &#125;&#125;int Calcnt()&#123; int cnt = 0; for(int i=0;i&lt;n;i++)&#123; if(!visit[i])&#123; dfs(i); cnt++; &#125; &#125; return cnt;&#125;int main()&#123; int m; scanf("%d%d",&amp;n,&amp;m); memset(edge,0,sizeof(edge)); memset(visit,0,sizeof(visit)); for(int i=0;i&lt;m;i++)&#123; int a,b; scanf("%d%d",&amp;a,&amp;b); edge[a][b] = 1; edge[b][a] = 1; &#125; int cntt = Calcnt(); int k,city; scanf("%d",&amp;k); for(int i=0;i&lt;k;i++)&#123; scanf("%d",&amp;city); for(int j=0;j&lt;n;j++)&#123; if(edge[city][j])&#123; edge[city][j] = 0; edge[j][city] = 0; &#125; &#125; memset(visit,0,sizeof(visit)); int temp = Calcnt(); if(temp&gt;cntt+1)&#123; printf("Red Alert: City %d is lost!\n",city); &#125;else&#123; printf("City %d is lost.\n",city); &#125; cntt = temp; &#125; if(k==n)&#123; printf("Game Over.\n"); &#125; return 0;&#125; 方法二：并查集 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384#include&lt;iostream&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;const int maxm = 550;int n,m;struct node&#123; int u,v;&#125;edge[5005];int visit[maxm],fa[maxm];int Find(int x)&#123; if(x==fa[x])&#123; return fa[x]; &#125;else&#123; return Find(fa[x]); &#125;&#125;void Union(int x,int y)&#123; int xc = Find(x); int yc = Find(y); if(xc!=yc)&#123; fa[xc] = yc; &#125;&#125;int main()&#123; int k,u,v; scanf("%d%d",&amp;n,&amp;m); for(int i=0;i&lt;n;i++)&#123; fa[i] = i; &#125; for(int i=0;i&lt;m;i++)&#123; scanf("%d%d",&amp;u,&amp;v); edge[i].u = u; edge[i].v = v; Union(u,v); &#125; int num1 = 0,num2; for(int i=0;i&lt;n;i++)&#123; if(fa[i]==i)&#123; num1++; &#125; &#125; memset(visit,0,sizeof(visit)); scanf("%d",&amp;k); for(int j=0;j&lt;k;j++)&#123; num2 = 0; for(int i=0;i&lt;n;i++)&#123; fa[i] = i; &#125; int city; scanf("%d",&amp;city); visit[city] = 1; for(int i=0;i&lt;m;i++)&#123; if(visit[edge[i].u]==1||visit[edge[i].v]==1)&#123; continue; &#125;else&#123; Union(edge[i].u,edge[i].v); &#125; &#125; for(int i=0;i&lt;n;i++)&#123; if(fa[i]==i)&#123; num2++; &#125; &#125; if(num1==num2||num1+1==num2)&#123; printf("City %d is lost.\n",city); &#125;else&#123; printf("Red Alert: City %d is lost!\n",city); &#125; num1 = num2; &#125; num1 = 0; for(int i=0;i&lt;n;i++)&#123; if(visit[i]==1)&#123; num1++; &#125; &#125; if(num1==n)&#123; printf("Game Over.\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-014 列车调度（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-014-%E5%88%97%E8%BD%A6%E8%B0%83%E5%BA%A6%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-014 列车调度（25 分）火车站的列车调度铁轨的结构如下图所示。 \ Figure 两端分别是一条入口（Entrance）轨道和一条出口（Exit）轨道，它们之间有N条平行的轨道。每趟列车从入口可以选择任意一条轨道进入，最后从出口离开。在图中有9趟列车，在入口处按照{8，4，2，5，3，9，1，6，7}的顺序排队等待进入。如果要求它们必须按序号递减的顺序从出口离开，则至少需要多少条平行铁轨用于调度？ 输入格式： 输入第一行给出一个整数N (2 &lt;= N &lt;= 10^5^)，下一行给出从1到N的整数序号的一个重排列。数字间以空格分隔。 输出格式： 在一行中输出可以将输入的列车按序号递减的顺序调离所需要的最少的铁轨条数。 输入样例： 98 4 2 5 3 9 1 6 7输出样例： 4 分析：求最少下降子序列数，即求最长上升子序列长度关于 Dilworth定理：Dilworth定理根据序列划分的最小数量的链描述了任何有限偏序集的宽度。定理内容：反链是一种偏序集，其任意两个元素不可比；而链则是一种任意两个元素可比的偏序集。Dilworth定理说明，存在一个反链A与一个将序列划分为链族P的划分，使得划分中链的数量等于集合A的基数。当存在这种情况时，对任何至多能包含来自P中每一个成员一个元素的反链，A一定是此序列中的最大反链。同样地，对于任何最少包含A中的每一个元素的一个链的划分，P也一定是序列可以划分出的最小链族。偏序集的宽度被定义为A与P的共同大小。另一种Dilworth定理的等价表述是：在有穷偏序集中，任何反链最大元素数目等于任何将集合到链的划分中链的最小数目。一个关于无限偏序集的理论指出，在此种情况下，一个偏序集具有有限的宽度w，当且仅当它可以划分为最少w条链。123456789101112131415161718192021222324252627#include&lt;iostream&gt;#include&lt;set&gt;#include&lt;cstdio&gt;using namespace std;int main()&#123; set&lt;int&gt; s; int n,d; scanf("%d",&amp;n); while(n--)&#123; scanf("%d",&amp;d); if(s.empty())&#123; s.insert(d); &#125;else&#123; set&lt;int&gt;::iterator it; it = s.lower_bound(d); if(it==s.end())&#123; s.insert(d); &#125;else&#123; s.erase(it); s.insert(d); &#125; &#125; &#125; printf("%d",s.size()); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[771. 宝石与石头]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4%2F</url>
     <content type="text"><![CDATA[给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。 J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。 示例 1: 输入: J = “aA”, S = “aAAbbbb”输出: 3示例 2: 输入: J = “z”, S = “ZZ”输出: 0注意: S 和 J 最多含有50个字母。 J 中的字符不重复。 12345678910111213141516class Solution &#123;public: int numJewelsInStones(string J, string S) &#123; int hash[256] = &#123;0&#125;; int count = 0; for(int i=0;i&lt;J.size();i++)&#123; hash[J[i]] = 1; &#125; for(int j = 0;j&lt;S.size();j++)&#123; if(hash[S[j]])&#123; count++; &#125; &#125; return count; &#125;&#125;;]]></content>
