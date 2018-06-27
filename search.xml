@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[747. 至少是其他数字两倍的最大数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F747-%E8%87%B3%E5%B0%91%E6%98%AF%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E4%B8%A4%E5%80%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[在一个给定的数组nums中，总是存在一个最大元素 。 查找数组中的最大元素是否至少是数组中每个其他数字的两倍。 如果是，则返回最大元素的索引，否则返回-1。 示例 1: 输入: nums = [3, 6, 1, 0]输出: 1解释: 6是最大的整数, 对于数组中的其他整数,6大于数组中其他元素的两倍。6的索引是1, 所以我们返回1. 示例 2: 输入: nums = [1, 2, 3, 4]输出: -1解释: 4没有超过3的两倍大, 所以我们返回 -1. 提示: nums 的长度范围在[1, 50].每个 nums[i] 的整数范围在 [0, 99]. 1234567891011121314151617class Solution &#123;public: int dominantIndex(vector&lt;int&gt;&amp; nums) &#123; int maxm =0,x = nums.size(); unordered_map&lt;int,int&gt; m; for(int i=0;i&lt;nums.size();i++)&#123; m[nums[i]] = i; &#125; sort(nums.begin(),nums.end()); maxm = nums[x-1]; if(maxm&gt;=nums[x-2]*2)&#123; return m[maxm]; &#125;else&#123; return -1; &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[561. 数组拆分 I]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F561-%E6%95%B0%E7%BB%84%E6%8B%86%E5%88%86-I%2F</url>
+    <content type="text"><![CDATA[给定长度为 2n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), …, (an, bn) ，使得从1 到 n 的 min(ai, bi) 总和最大。 示例 1: 输入: [1,4,3,2] 输出: 4解释: n 等于 2, 最大总和为 4 = min(1, 2) + min(3, 4).提示: n 是正整数,范围在 [1, 10000].数组中的元素范围在 [-10000, 10000]. 1234567891011121314class Solution &#123;public: int arrayPairSum(vector&lt;int&gt;&amp; nums) &#123; int res =0; if(nums.size()==0)&#123; return 0; &#125; sort(nums.begin(),nums.end()); for(int i=0;i&lt;nums.size();i+=2)&#123; res += nums[i]; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[532. 数组中的K-diff数对]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F532-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84K-diff%E6%95%B0%E5%AF%B9%2F</url>
+    <content type="text"><![CDATA[给定一个整数数组和一个整数 k, 你需要在数组里找到不同的 k-diff 数对。这里将 k-diff 数对定义为一个整数对 (i, j), 其中 i 和 j 都是数组中的数字，且两数之差的绝对值是 k. 示例 1:123输入: [3, 1, 4, 1, 5], k = 2输出: 2解释: 数组中有两个 2-diff 数对, (1, 3) 和 (3, 5)。 尽管数组中有两个1，但我们只应返回不同的数对的数量。示例 2:123输入:[1, 2, 3, 4, 5], k = 1输出: 4解释: 数组中有四个 1-diff 数对, (1, 2), (2, 3), (3, 4) 和 (4, 5)。 示例 3:123输入: [1, 3, 1, 5, 4], k = 0输出: 1解释: 数组中只有一个 0-diff 数对，(1, 1)。 注意: 数对 (i, j) 和数对 (j, i) 被算作同一数对。数组的长度不超过10,000。所有输入的整数的范围在 [-1e7, 1e7]。分析，题目要求差为k的数对有多少对，这里当k为0时，数组里某个数出现大于2都算做1个数对，当k大于0，也需要去重，所以我用了两个容器，map用来映射计数，set用来结果去重。123456789101112131415161718192021222324252627282930class Solution &#123;public: int findPairs(vector&lt;int&gt;&amp; nums, int k) &#123; if(nums.size()==0||k&lt;0)&#123; return 0; &#125; map&lt;int,int&gt; m ; set&lt;int&gt; s; int count = 0; for(int i=0;i&lt;nums.size();i++)&#123; m[nums[i]]++; &#125; for(int i=0;i&lt;nums.size();i++)&#123; if(k==0)&#123; &#123; if(m[nums[i]]&gt;=2)&#123; s.insert(nums[i]); &#125; count = s.size(); &#125; &#125;else&#123; if(m[nums[i]+k]&gt;0)&#123; s.insert(nums[i]); &#125; count = s.size(); &#125; &#125; return count; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-019 悄悄关注（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-019-%E6%82%84%E6%82%84%E5%85%B3%E6%B3%A8%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-019 悄悄关注（25 分）新浪微博上有个“悄悄关注”，一个用户悄悄关注的人，不出现在这个用户的关注列表上，但系统会推送其悄悄关注的人发表的微博给该用户。现在我们来做一回网络侦探，根据某人的关注列表和其对其他用户的点赞情况，扒出有可能被其悄悄关注的人。 输入格式： 输入首先在第一行给出某用户的关注列表，格式如下： 人数N 用户1 用户2 …… 用户N 其中N是不超过5000的正整数，每个“用户i”（i=1, …, N）是被其关注的用户的ID，是长度为4位的由数字和英文字母组成的字符串，各项间以空格分隔。 之后给出该用户点赞的信息：首先给出一个不超过10000的正整数M，随后M行，每行给出一个被其点赞的用户ID和对该用户的点赞次数（不超过1000），以空格分隔。注意：用户ID是一个用户的唯一身份标识。题目保证在关注列表中没有重复用户，在点赞信息中也没有重复用户。 输出格式： 我们认为被该用户点赞次数大于其点赞平均数、且不在其关注列表上的人，很可能是其悄悄关注的人。根据这个假设，请你按用户ID字母序的升序输出可能是其悄悄关注的人，每行1个ID。如果其实并没有这样的人，则输出“Bing Mei You”。 输入样例1： 10 GAO3 Magi Zha1 Sen1 Quan FaMK LSum Eins FatM LLao8Magi 50Pota 30LLao 3Ammy 48Dave 15GAO3 31Zoro 1Cath 60输出样例1： AmmyCathPota输入样例2： 11 GAO3 Magi Zha1 Sen1 Quan FaMK LSum Eins FatM LLao Pota7Magi 50Pota 30LLao 48Ammy 3Dave 15GAO3 31Zoro 29输出样例2： Bing Mei You 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;map&gt;#include&lt;cstring&gt;using namespace std;int main()&#123; int n,m,k,t,sum = 0; string s; scanf("%d",&amp;n); map&lt;string,int&gt; m1,m2; for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;s; m1[s] = 1;//标记为1表示被关注的id &#125; scanf("%d",&amp;m); for(int i=0;i&lt;m;i++)&#123; cin&gt;&gt;s&gt;&gt;k; m2[s] = k; sum += k;//总点赞数 &#125; t = sum/m;//平均点赞数 int flag = 0;//标记有没有悄悄关注的人 map&lt;string,int&gt;::iterator it; for(it=m2.begin();it!=m2.end();it++)&#123; if(it-&gt;second&gt;t&amp;&amp;m1[it-&gt;first]==0)&#123;//满足被该用户点赞次数大于其点赞平均数、且不在其关注列表上的人 cout&lt;&lt;it-&gt;first&lt;&lt;endl; flag = 1; &#125; &#125; if(flag==0)&#123; printf("Bing Mei You\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-017 人以群分（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-017-%E4%BA%BA%E4%BB%A5%E7%BE%A4%E5%88%86%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-017 人以群分（25 分）社交网络中我们给每个人定义了一个“活跃度”，现希望根据这个指标把人群分为两大类，即外向型（outgoing，即活跃度高的）和内向型（introverted，即活跃度低的）。要求两类人群的规模尽可能接近，而他们的总活跃度差距尽可能拉开。 输入格式： 输入第一行给出一个正整数N（2 &lt;= N &lt;= 10^5^）。随后一行给出N个正整数，分别是每个人的活跃度，其间以空格分隔。题目保证这些数字以及它们的和都不会超过2^31^。 输出格式： 按下列格式输出： Outgoing #: N1Introverted #: N2Diff = N3其中 N1 是外向型人的个数；N2 是内向型人的个数；N3 是两群人总活跃度之差的绝对值。 输入样例1： 1023 8 10 99 46 2333 46 1 666 555输出样例1： Outgoing #: 5Introverted #: 5Diff = 3611输入样例2： 13110 79 218 69 3721 100 29 135 2 6 13 5188 85输出样例2： Outgoing #: 7Introverted #: 6Diff = 9359 分析：题目要求两种人群规模尽可能相近，但活跃度相差越大越好，其实只要排个序然后对半分开，求个差值就行12345678910111213141516171819202122232425#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;int a[100001];int main()&#123; int n,m; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a[i]); &#125; sort(a,a+n); int sum1=0,sum2=0; for(int i=0;i&lt;n/2;i++)&#123; sum1+=a[i]; &#125; for(int i=n/2;i&lt;n;i++)&#123; sum2+=a[i]; &#125; printf("Outgoing #: %d\n",(n+1)/2); printf("Introverted #: %d\n",n/2); printf("Diff = %d\n",sum2-sum1); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[455. 分发饼干]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F455-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2%2F</url>
     <content type="text"><![CDATA[假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。对每个孩子 i ，都有一个胃口值 gi ，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j ，都有一个尺寸 sj 。如果 sj &gt;= gi ，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值。 注意： 你可以假设胃口值为正。一个小朋友最多只能拥有一块饼干。 示例 1:12345678输入: [1,2,3], [1,1]输出: 1解释: 你有三个孩子和两块小饼干，3个孩子的胃口值分别是：1,2,3。虽然你有两块小饼干，由于他们的尺寸都是1，你只能让胃口值是1的孩子满足。所以你应该输出1。 示例 2:12345678输入: [1,2], [1,2,3]输出: 2解释: 你有两个孩子和三块小饼干，2个孩子的胃口值分别是1,2。你拥有的饼干数量和尺寸都足以让所有孩子满足。所以你应该输出2. 分析：给定一个关于饼干的数组和一个关于胃口的数组，要求尽可能满足多的孩子，那么需要先对连个数组进行排序，尽可能让小饼干满足小胃口的，而不是那一块大饼干满足小胃口的，以此进行遍历计数 123456789101112131415161718class Solution &#123;public: int findContentChildren(vector&lt;int&gt;&amp; g, vector&lt;int&gt;&amp; s) &#123; int res = 0,index = 0; sort(g.begin(),g.end()); sort(s.begin(),s.end()); for(int i=0;i&lt;s.size();i++)&#123; if(s[i]&gt;=g[index])&#123; res++; index++; if(index&gt;=g.size())&#123; break; &#125; &#125; &#125; return res; &#125;&#125;;]]></content>
@@ -3487,9 +3542,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -3498,9 +3553,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
