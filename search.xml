@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[860. 柠檬水找零]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6%2F</url>
+    <content type="text"><![CDATA[在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1： 输入：[5,5,5,10,20]输出：true解释：前 3 位顾客那里，我们按顺序收取 3 张 5 美元的钞票。第 4 位顾客那里，我们收取一张 10 美元的钞票，并返还 5 美元。第 5 位顾客那里，我们找还一张 10 美元的钞票和一张 5 美元的钞票。由于所有客户都得到了正确的找零，所以我们输出 true。示例 2： 输入：[5,5,10]输出：true示例 3： 输入：[10,10]输出：false示例 4： 输入：[5,5,10,10,20]输出：false解释：前 2 位顾客那里，我们按顺序收取 2 张 5 美元的钞票。对于接下来的 2 位顾客，我们收取一张 10 美元的钞票，然后返还 5 美元。对于最后一位顾客，我们无法退回 15 美元，因为我们现在只有两张 10 美元的钞票。由于不是每位顾客都得到了正确的找零，所以答案是 false。 提示： 0 &lt;= bills.length &lt;= 10000bills[i] 不是 5 就是 10 或是 20 1234567891011121314151617181920212223242526272829class Solution &#123;public: bool lemonadeChange(vector&lt;int&gt;&amp; bills) &#123; int cnt1 = 0,cnt2 = 0; for(int i=0;i&lt;bills.size();i++)&#123; if(bills[i]==5)&#123; cnt1++; &#125; if(bills[i]==10)&#123; cnt2++; cnt1--; &#125; if(bills[i]==20)&#123; cnt1--; if(cnt2==0)&#123; cnt1 -=2; &#125;else&#123; cnt2--; &#125; &#125; if(cnt1&lt;0||cnt2&lt;0)&#123; return false; &#125; &#125; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[441. 排列硬币]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F441-%E6%8E%92%E5%88%97%E7%A1%AC%E5%B8%81%2F</url>
+    <content type="text"><![CDATA[你总共有 n 枚硬币，你需要将它们摆成一个阶梯形状，第 k 行就必须正好有 k 枚硬币。 给定一个数字 n，找出可形成完整阶梯行的总行数。 n 是一个非负整数，并且在32位有符号整型的范围内。 示例 1:123456n = 5硬币可排列成以下几行:¤¤ ¤¤ ¤ 因为第三行不完整，所以返回2.示例 2:1234567n = 8硬币可排列成以下几行:¤¤ ¤¤ ¤ ¤¤ ¤ 因为第四行不完整，所以返回3. 12345678910111213141516171819class Solution &#123;public: int arrangeCoins(int n) &#123; if(n&lt;1)&#123; return n; &#125; int left = 0,right =n; while(left&lt;=right)&#123; long long mid = left+(right-left)/2; long sum = mid*(mid+1)/2; if(sum&gt;n)&#123; right = mid-1; &#125;else&#123; left = mid+1; &#125; &#125; return left-1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[744. 寻找比目标字母大的最小字母]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F744-%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D%2F</url>
+    <content type="text"><![CDATA[给定一个只包含小写字母的有序数组letters 和一个目标字母 target，寻找有序数组里面比目标字母大的最小字母。 数组里字母的顺序是循环的。举个例子，如果目标字母target = ‘z’ 并且有序数组为 letters = [‘a’, ‘b’]，则答案返回 ‘a’。 示例:1234567891011121314151617181920212223242526272829输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;a&quot;输出: &quot;c&quot;输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;c&quot;输出: &quot;f&quot;输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;d&quot;输出: &quot;f&quot;输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;g&quot;输出: &quot;j&quot;输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;j&quot;输出: &quot;c&quot;输入:letters = [&quot;c&quot;, &quot;f&quot;, &quot;j&quot;]target = &quot;k&quot;输出: &quot;c&quot; 注: letters长度范围在[2, 10000]区间内。letters 仅由小写字母组成，最少包含两个不同的字母。目标字母target 是一个小写字母。 123456789101112class Solution &#123;public: char nextGreatestLetter(vector&lt;char&gt;&amp; letters, char target) &#123; if(letters.empty()) return NULL; for(int i = 0; i &lt; letters.size(); i++) &#123; if(letters[i] &gt; target) return letters[i]; &#125; return letters[0]; &#125;&#125;; 这题其实是考察二分查找 12345678910111213141516class Solution &#123;public: char nextGreatestLetter(vector&lt;char&gt;&amp; letters, char target) &#123; int n = letters.size(); int left = 0,right = n; while(left&lt;right)&#123; int mid = left+(right-left)/2; if(letters[mid]&gt;target)&#123; right = mid; &#125;else&#123; left = mid+1; &#125; &#125; return letters[left%n]; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-027 名人堂与代金券（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-027-%E5%90%8D%E4%BA%BA%E5%A0%82%E4%B8%8E%E4%BB%A3%E9%87%91%E5%88%B8%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-027 名人堂与代金券（25 分）对于在中国大学MOOC（http://www.icourse163.org/）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。 输入格式： 输入在第一行给出 3 个整数，分别是 N（不超过 10 000 的正整数，为学生总数）、G（在 (60,100) 区间内的整数，为题面中描述的代金券等级分界线）、K（不超过 100 且不超过 N 的正整数，为进入名人堂的最低名次）。接下来 N 行，每行给出一位学生的账号（长度不超过15位、不带空格的字符串）和总评成绩（区间 [0, 100] 内的整数），其间以空格分隔。题目保证没有重复的账号。 输出格式： 首先在一行中输出发出的 PAT 代金券的总面值。然后按总评成绩非升序输出进入名人堂的学生的名次、账号和成绩，其间以 1 个空格分隔。需要注意的是：成绩相同的学生享有并列的排名，排名并列时，按账号的字母序升序输出。 输入样例：123456789101110 80 5cy@zju.edu.cn 78cy@pat-edu.com 871001@qq.com 65uh-oh@163.com 96test@126.com 39anyone@qq.com 87zoe@mit.edu 80jack@ucla.edu 88bob@cmu.edu 80ken@163.com 70 输出样例：12345673601 uh-oh@163.com 962 jack@ucla.edu 883 anyone@qq.com 873 cy@pat-edu.com 875 bob@cmu.edu 805 zoe@mit.edu 80 模拟 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;struct student&#123; string name; int score,rank;&#125;a[10001];bool cmp(student s1,student s2)&#123; if(s1.score!=s2.score)&#123; return s1.score&gt;s2.score; &#125; return s1.name&lt;s2.name;&#125;int main()&#123; int n,g,k,sum = 0; scanf("%d%d%d",&amp;n,&amp;g,&amp;k); for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;a[i].name&gt;&gt;a[i].score; &#125; sort(a,a+n,cmp); int rank = 1; for(int i=0;i&lt;n;i++)&#123; if(a[i].score&gt;=g)&#123; sum += 50; &#125; if(a[i].score&gt;=60&amp;&amp;a[i].score&lt;g)&#123; sum += 20; &#125; if(a[i].score==a[i-1].score)&#123; a[i].rank = a[i-1].rank; &#125;else&#123; a[i].rank = rank; &#125; rank++; &#125; printf("%d\n",sum); for(int i=0;i&lt;n;i++)&#123; if(a[i].rank&gt;k)&#123; break; &#125; printf("%d %s %d\n",a[i].rank,a[i].name.c_str(),a[i].score); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-022 重排链表（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-022-%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-022 重排链表（25 分）给定一个单链表 L~1~→L~2~→…→L~n-1~→L~n~，请编写程序将链表重新排列为 L~n~→L~1~→L~n-1~→L~2~→…。例如：给定L为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。 输入格式： 每个输入包含1个测试用例。每个测试用例第1行给出第1个结点的地址和结点总个数，即正整数N (&lt;= 10^5^)。结点的地址是5位非负整数，NULL地址用-1表示。 接下来有N行，每行格式为： Address Data Next 其中Address是结点地址；Data是该结点保存的数据，为不超过10^5^的正整数；Next是下一结点的地址。题目保证给出的链表上至少有两个结点。 输出格式： 对每个测试用例，顺序输出重排后的结果链表，其上每个结点占一行，格式与输入相同。 输入样例：123456700100 600000 4 9999900100 1 1230968237 6 -133218 3 0000099999 5 6823712309 2 33218 输出样例：12345668237 6 0010000100 1 9999999999 5 1230912309 2 0000000000 4 3321833218 3 -1 按照要求重置链表，新建一个链表模拟赋值就可以了。 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;vector&gt;using namespace std;struct ListNode&#123; int val; int next;&#125;a[100001];int main()&#123; int s,n; scanf("%d%d",&amp;s,&amp;n); int address,data,nex; for(int i=0;i&lt;n;i++)&#123; scanf("%d%d%d",&amp;address,&amp;data,&amp;nex); a[address].val = data; a[address].next = nex; &#125; int cnt = 0; int res1[100005],res2[100005]; while(s!=-1)&#123;//链表的值赋给res1 res1[cnt++] = s; s = a[s].next; &#125; int left = 0,right = cnt-1; int cnt2 = 0; while(left&lt;=right)&#123;//模拟求出res2 if(left==right)&#123; res2[cnt2++] = res1[right--]; &#125;else&#123; res2[cnt2++] = res1[right--]; res2[cnt2++] = res1[left++]; &#125; &#125; for(int i=0;i&lt;cnt-1;i++)&#123; printf("%05d %d %05d\n",res2[i],a[res2[i]].val,res2[i+1]); &#125; printf("%05d %d -1\n",res2[cnt-1],a[res2[cnt-1]].val); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[747. 至少是其他数字两倍的最大数]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F747-%E8%87%B3%E5%B0%91%E6%98%AF%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E4%B8%A4%E5%80%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%2F</url>
     <content type="text"><![CDATA[在一个给定的数组nums中，总是存在一个最大元素 。 查找数组中的最大元素是否至少是数组中每个其他数字的两倍。 如果是，则返回最大元素的索引，否则返回-1。 示例 1: 输入: nums = [3, 6, 1, 0]输出: 1解释: 6是最大的整数, 对于数组中的其他整数,6大于数组中其他元素的两倍。6的索引是1, 所以我们返回1. 示例 2: 输入: nums = [1, 2, 3, 4]输出: -1解释: 4没有超过3的两倍大, 所以我们返回 -1. 提示: nums 的长度范围在[1, 50].每个 nums[i] 的整数范围在 [0, 99]. 1234567891011121314151617class Solution &#123;public: int dominantIndex(vector&lt;int&gt;&amp; nums) &#123; int maxm =0,x = nums.size(); unordered_map&lt;int,int&gt; m; for(int i=0;i&lt;nums.size();i++)&#123; m[nums[i]] = i; &#125; sort(nums.begin(),nums.end()); maxm = nums[x-1]; if(maxm&gt;=nums[x-2]*2)&#123; return m[maxm]; &#125;else&#123; return -1; &#125; &#125;&#125;;]]></content>
