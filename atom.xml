@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-07-04T11:33:33.910Z</updated>
+  <updated>2018-07-06T12:32:27.710Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>153. 寻找旋转排序数组中的最小值</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/"/>
+    <id>http://huangyiblog.com/题解集/153-寻找旋转排序数组中的最小值/</id>
+    <published>2018-07-06T12:06:50.000Z</published>
+    <updated>2018-07-06T12:32:27.710Z</updated>
+    
+    <content type="html"><![CDATA[<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p><p>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。</p><p>请找出其中最小的元素。</p><p>你可以假设数组中不存在重复元素。</p><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [3,4,5,1,2]</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure></p><p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [4,5,6,7,0,1,2]</span><br><span class="line">输出: 0</span><br></pre></td></tr></table></figure></p><p>这道题乍一看很纳闷，求最小元素不是一个sort就能搞定的吗？</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>后来看下标签，考点是二分查找<br>我们需要知道，对于一个区间A，如果A[start]    &lt;    A[stop]，那么该区间一定是有 序的了。<br>另外，由于不含重复元素，需要分两种情况。<br>对于一个轮转了的排序了的数组，<br>如果nums[mid]&gt;nums[left]，最小值一定在右半区间<br>如果nums[mid]&lt;nums[left]，最小值一定在左半区间</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(size==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(size==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(size==<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> min(nums[<span class="number">0</span>],nums[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>,right = size<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[left]&lt;nums[right])&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[left];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]&lt;nums[left])&#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]&gt;nums[left])&#123;</span><br><span class="line">                left = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min(nums[left],nums[right]);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;假设按照升序排序的数组在预先未知的某个点上进行了旋转。&lt;/p&gt;
+&lt;p&gt;( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。&lt;/p&gt;
+&lt;p&gt;请找出其中最小的元素。&lt;/p&gt;
+&lt;p&gt;你可以假设数组中不存在重复元素。&lt;/p&gt;
+&lt;p&gt;示例 1
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红顶商人胡雪岩</title>
+    <link href="http://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E7%BA%A2%E9%A1%B6%E5%95%86%E4%BA%BA%E8%83%A1%E9%9B%AA%E5%B2%A9/"/>
+    <id>http://huangyiblog.com/随笔/红顶商人胡雪岩/</id>
+    <published>2018-07-06T10:51:46.000Z</published>
+    <updated>2018-07-06T12:04:05.639Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　期末考试最后一考完，吃完午饭，我便急匆匆出了校门，来到学校边上的新生公交站，冒着烈日等公交，当时太阳倒不算狠毒，但着实闷热得很。上午考的概率论很不理想，一道分值最高的计算题明明是送分题却让我看走眼，死心眼的以为老师出错题了，我已经不止一次考完交了卷才发觉自己犯了傻，但事后纠结自知已无用，也就将其抛之脑后罢了。额头上汗一滴滴的往下流，但也只能忍一忍了，因为早就计划好去一个地方参观参观－－胡雪岩故居。<br>　　以前一直没有意识到胡雪岩故居就在河坊街边上，因此即使路过怕是也没怎么在意，但这次想到要专门去访一访也并不是没有缘由的。我大学过的平平淡淡，唯一做的一件事就是养成了读书的习惯，纸质书也好，ｋｉｎｄｌｅ也好，一天不去读个及章节反倒不舒服了。最近一直在读的就是高阳写的《胡雪岩全传》，但有一点我也清楚，这毕竟只是小说，不可能与历史完全相合，因为关于胡雪岩的很多事迹其实本也就无法考证了，因此我也就只谈谈小说里的胡雪岩好了。说起来，读这种小说会让我有一种亲切感，一方面根据真人真事改编，另一方面，故事背景就发生在杭州，浙江一带，作为一个杭州人，哪怕读到一些地名倒也不会陌生。从书中的描述上来看，我对胡雪岩的佩服还是多过反感的，他身上有很多我所极欠缺的品质，总之作为一个商人，他几乎具备了商人所需的大部分优秀品质，被世人尊为商圣也不是毫无来由的。智商极高，于是不慌不乱，脑袋转动极快，一有了思路便快准狠的下手，不光快，而且严峻形势下还能考虑到方方面面，极为严谨不苟。<br>　　<img src="/img/胡雪岩2.jpg" alt="img"><br>　　另一方面，牛逼的就是他的为人处世实在是老到精炼，无论官场，商场，帮派各种地方都混得开，交际甚广。朋友不光多，而且重情重义，绝不都是一帮狗肉朋友！他对自己到算是有很清楚的认识，对做官没兴趣，知道自己生来就是做生意的，不做生意皮就痒痒。关于他做人打交道的漂亮之处，我就举一个例子好了。那是在红顶商人那部里面张太太说的一件事，这位张太太也就是那位钱庄的伙计张胖子的夫人，张胖子后来由于自己的雇主翻脸不认人，到上海开了家杂货店，与红红火火的胡雪岩比起来了算是落魄了，但胡雪岩还是想拉他一把，与他合伙开钱庄，这时张太太透露了多年前的一件事，那时胡雪岩被赶出钱庄，正是穷困潦倒之际，有一天竟跑来找张太太借钱，一问不为别的，还是为了朋友，当时胡雪岩一位朋友重病，急需买药治疗，穷的叮当响的胡雪岩依旧想办法为其筹钱，当时拿了自己的一枚戒指作抵押问张太太借了5两银子，说道“这枚戒指市面上也就值1两，但是我母亲留给我的，所以也看的比较贵重”，后来钱当然退了，但胡雪岩并没有把戒指收回去，因为“今日的5两与当时的5两怎可同日而语”。一件小事，或者一次小小的谈话，可以看出他做人的漂亮之处，因此交际圈拉得开也不是完全没道理的。<br>　　<img src="/img/胡雪岩3.jpg" alt="img"><br>　　当然，他的有些做法在很多人眼中倒并不算光彩，但他经商的能力确实是黑不掉的。从一个一穷二白的小伙计，到王有龄的知遇之恩，30年间平步青云，扶摇直上，甚至到了富可敌国，但悲剧性的一幕确实无法善终，最后一切在眨眼间竟就烟雾般消散，自己一生的经营毁于一旦，几日后抑郁而终，实在凄凉。这道又让我想起来了红楼梦里的贾府，繁华到幻灭，也就是一瞬间的事，简直让人分不清真假。他在元宝街的旧居总体还算方正，在我看来是挺大的了，正门进去假山林立，内湖内桥搭配得当，溶洞内也可方便出入，有许多珍贵的植物，谷物，包括厨房的摆设，都一点点映射出当日清末大户人家的生活景象，几圈逛下来累了，边找了个阴凉处木凳下坐了坐，闲暇之余顺便又看了一章节的小说，总体还算惬意。这里插一句，读书的时候出去逛逛真的不错，至少带着学生证门票可以半价。出了旧居，我便不行来到了另一处与胡雪岩有关的地方，想必你也已经猜到了，胡庆余堂，“大善人胡雪岩”开药店的初心就是想在后世留个好名，这点想必他倒可以知足了，当年威风江浙的胡道台，给人留下的胡庆余堂着实是一笔珍贵的财富。胡庆余堂至今在杭州还有多家门店，每天来看病的人络绎不绝，今天还碰巧有位带着几个老外在胡庆余堂博物馆做介绍的。百年过去，关于这位胡老爷的故事也都成了历史，就让我对这位杭州的实干家表示一份敬意吧，至少一生短暂，他没有稀里糊涂的就浪费过去了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;　　期末考试最后一考完，吃完午饭，我便急匆匆出了校门，来到学校边上的新生公交站，冒着烈日等公交，当时太阳倒不算狠毒，但着实闷热得很。上午考的概率论很不理想，一道分值最高的计算题明明是送分题却让我看走眼，死心眼的以为老师出错题了，我已经不止一次考完交了卷才发觉自己犯了傻，但事
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="阅读" scheme="http://huangyiblog.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>80. 删除排序数组中的重复项 II</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/80-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9-II/"/>
+    <id>http://huangyiblog.com/题解集/80-删除排序数组中的重复项-II/</id>
+    <published>2018-07-06T07:30:40.000Z</published>
+    <updated>2018-07-06T07:37:45.227Z</updated>
+    
+    <content type="html"><![CDATA[<p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素最多出现两次，返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [1,1,1,2,2,3],</span><br><span class="line"></span><br><span class="line">函数应返回新长度 length = 5, 并且原数组的前五个元素被修改为 1, 1, 2, 2, 3 。</span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure></p><p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [0,0,1,1,1,1,2,3,3],</span><br><span class="line"></span><br><span class="line">函数应返回新长度 length = 7, 并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3 。</span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br><span class="line">说明:</span><br></pre></td></tr></table></figure></p><p>为什么返回数值是整数，但输出的答案是数组呢?</p><p><strong>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</strong></p><p>你可以想象内部操作如下:</p><p>// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝<br>int len = removeDuplicates(nums);</p><p>// 在函数里修改输入数组对于调用者是可见的。<br>// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。<br>for (int i = 0; i &lt; len; i++) {<br>    print(nums[i]);<br>}</p><p>分析：要求删除一个排序数组中的中的重复项，每个元素要求最多出现两次。<br>首先，数组为空的时候特殊判断一下。然后用一个num计数标记，如果相邻两个数相等并且num小于2的时候直接后移，如果相邻两个数不相等，则后移完成后将num置为0。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[j]==nums[i])&#123;</span><br><span class="line">                num++;</span><br><span class="line">                <span class="keyword">if</span>(num&lt;<span class="number">2</span>)&#123;</span><br><span class="line">                    nums[++j] = nums[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                nums[++j] = nums[i];</span><br><span class="line">                num = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> j+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素最多出现两次，返回移除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;br&gt;&lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>860. 柠檬水找零</title>
@@ -453,86 +534,6 @@
       
         &lt;p&gt;我们把符合下列属性的数组 A 称作山脉：&lt;/p&gt;
 &lt;p&gt;A.length &amp;gt;= 3&lt;br&gt;存在 0 &amp;lt; i &amp;lt; A.length - 1 使得A[0] &amp;lt; A[1] &amp;lt; … A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; …
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>L2-021 点赞狂魔（25 分）</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/L2-021-%E7%82%B9%E8%B5%9E%E7%8B%82%E9%AD%94%EF%BC%8825-%E5%88%86%EF%BC%89/"/>
-    <id>http://huangyiblog.com/题解集/L2-021-点赞狂魔（25-分）/</id>
-    <published>2018-06-22T03:53:12.000Z</published>
-    <updated>2018-06-22T03:56:50.559Z</updated>
-    
-    <content type="html"><![CDATA[<p>L2-021 点赞狂魔（25 分）<br>微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。</p><p>输入格式：</p><p>输入在第一行给出一个正整数N（&lt;=100），是待统计的用户数。随后N行，每行列出一位用户的点赞标签。格式为“Name K F~1~ … F~K~”，其中 Name 是不超过8个英文小写字母的非空用户名，1&lt;=K&lt;=1000，F~i~（i=1, …, K）是特性标签的编号，我们将所有特性标签从1到10^7^编号。数字间以空格分隔。</p><p>输出格式：</p><p>统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用“-”补齐缺失，例如“mike jenny -”就表示只有2人。</p><p>输入样例：</p><p>5<br>bob 11 101 102 103 104 105 106 107 108 108 107 107<br>peter 8 1 2 3 4 3 2 5 1<br>chris 12 1 2 3 4 5 6 7 8 9 1 2 3<br>john 10 8 7 6 5 4 3 2 1 7 5<br>jack 9 6 7 8 9 10 11 12 13 14<br>输出样例：</p><p>jack chris john<br>分析：创建一个关于点赞人的结构体，然后对其根据不同标签数和出现次数平均值最小进行排序，不同标签数可以用set计算，出现次数平均最小即每次k最小。排序后根据是否满足3人分类输出。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">people</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">int</span> cnt,num;</span><br><span class="line">&#125;a[<span class="number">1111</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(people a,people b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.cnt!=b.cnt)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.cnt&gt;b.cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.num&lt;b.num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k,n,x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,a[i].name);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">            s.insert(x);</span><br><span class="line">        &#125;</span><br><span class="line">        a[i].cnt = s.size();</span><br><span class="line">        a[i].num = k;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+n,cmp);</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;min(n,<span class="number">3</span>);i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s"</span>,a[i].name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;L2-021 点赞狂魔（25 分）&lt;br&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="PAT" scheme="http://huangyiblog.com/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>657. 判断路线成圈</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/657-%E5%88%A4%E6%96%AD%E8%B7%AF%E7%BA%BF%E6%88%90%E5%9C%88/"/>
-    <id>http://huangyiblog.com/题解集/657-判断路线成圈/</id>
-    <published>2018-06-21T05:43:55.000Z</published>
-    <updated>2018-06-21T05:45:23.300Z</updated>
-    
-    <content type="html"><![CDATA[<p>初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。</p><p>移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。</p><p>示例 1:</p><p>输入: “UD”<br>输出: true<br>示例 2:</p><p>输入: “LL”<br>输出: false</p><p>分析：要求能回到原位置，那么左右 和上下所移动的步数必须对应相等。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeCircle</span><span class="params">(<span class="built_in">string</span> moves)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L=<span class="number">0</span>,R=<span class="number">0</span>,U=<span class="number">0</span>,D=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;moves.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(moves[i]==<span class="string">'L'</span>)&#123;</span><br><span class="line">                L++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'R'</span>)&#123;</span><br><span class="line">                R++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'U'</span>)&#123;</span><br><span class="line">                U++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'D'</span>)&#123;</span><br><span class="line">                D++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(L==R&amp;&amp;U==D)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。&lt;/p&gt;
-&lt;p&gt;移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>633. 平方数之和</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/633-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-    <id>http://huangyiblog.com/题解集/633-平方数之和/</id>
-    <published>2018-06-21T05:37:22.000Z</published>
-    <updated>2018-06-21T05:38:36.321Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。</p><p>示例1:</p><p>输入: 5<br>输出: True<br>解释: 1 <em> 1 + 2 </em> 2 = 5</p><p>示例2:</p><p>输入: 3<br>输出: False<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">long</span> i=<span class="number">0</span>;i*i&lt;=c;i++)&#123;</span><br><span class="line">            <span class="keyword">double</span> x = <span class="built_in">sqrt</span>(c-i*i);</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="keyword">int</span>(x))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。&lt;/p&gt;
-&lt;p&gt;示例1:&lt;/p&gt;
-&lt;p&gt;输入: 5&lt;br&gt;输出: True&lt;br&gt;解释: 1 &lt;em&gt; 1 + 2 &lt;/em&gt; 2 = 5&lt;/p&gt;
-&lt;p&gt;示例2:&lt;/p&gt;
-&lt;p&gt;输入
       
     
     </summary>
