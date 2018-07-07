@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[766. 托普利茨矩阵]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F766-%E6%89%98%E6%99%AE%E5%88%A9%E8%8C%A8%E7%9F%A9%E9%98%B5%2F</url>
+    <content type="text"><![CDATA[如果一个矩阵的每一方向由左上到右下的对角线上具有相同元素，那么这个矩阵是托普利茨矩阵。 给定一个 M x N 的矩阵，当且仅当它是托普利茨矩阵时返回 True。 示例 1:1234567891011输入: matrix = [ [1,2,3,4], [5,1,2,3], [9,5,1,2]]输出: True解释:在上述矩阵中, 其对角线为:&quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;。各条对角线上的所有元素均相同, 因此答案是True。 示例 2:12345678输入:matrix = [ [1,2], [2,2]]输出: False解释: 对角线&quot;[1, 2]&quot;上的元素不同。 说明: matrix 是一个包含整数的二维数组。matrix 的行数和列数均在 [1, 20]范围内。matrix[i][j] 包含的整数在 [0, 99]范围内。进阶: 如果矩阵存储在磁盘上，并且磁盘内存是有限的，因此一次最多只能将一行矩阵加载到内存中，该怎么办？如果矩阵太大以至于只能一次将部分行加载到内存中，该怎么办？ 123456789class Solution &#123;public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123; for (int i = 1; i &lt; matrix.size(); ++i) for (int j = 1; j &lt; matrix[0].size(); ++j) if (matrix[i][j] != matrix[i - 1][j - 1]) return false; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[746. 使用最小花费爬楼梯]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F746-%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF%2F</url>
+    <content type="text"><![CDATA[数组的每个索引做为一个阶梯，第 i个阶梯对应着一个非负数的体力花费值 costi。 每当你爬上一个阶梯你都要花费对应的体力花费值，然后你可以选择继续爬一个阶梯或者爬两个阶梯。 您需要找到达到楼层顶部的最低花费。在开始时，你可以选择从索引为 0 或 1 的元素作为初始阶梯。 示例 1:123输入: cost = [10, 15, 20]输出: 15解释: 最低花费是从cost[1]开始，然后走两步即可到阶梯顶，一共花费15。 示例 2:123输入: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]输出: 6解释: 最低花费方式是从cost[0]开始，逐个经过那些1，跳过cost[3]，一共花费6。 注意： cost 的长度将会在 [2, 1000]。每一个 cost[i] 将会是一个Integer类型，范围为 [0, 999]。 求爬楼梯的最小花费，考虑动态规划解法，因为每爬上一个楼梯后你可以选择爬一级或两级楼梯，因此每次都是从前面一级或者是前面两级的位置过来的，因此得出dp转移方程，用dp[i]表示爬到第i层的最小花费dp[i] = min(dp[i-2]+cost[i-2],dp[i-1]+cost[i-1])但是下面的代码测试时显示超时的1234567891011class Solution &#123;public: int minCostClimbingStairs(vector&lt;int&gt;&amp; cost) &#123; int n = cost.size(); vector&lt;int&gt; dp(n+1,0); for(int i=2;i&lt;n+1;i++)&#123; dp[i] = min(dp[i-2]+cost[i-2],dp[i-1]+cost[i-1]); &#125; return dp[n]; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-020 功夫传人（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-020-%E5%8A%9F%E5%A4%AB%E4%BC%A0%E4%BA%BA%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-020 功夫传人（25 分）一门武功能否传承久远并被发扬光大，是要看缘分的。一般来说，师傅传授给徒弟的武功总要打个折扣，于是越往后传，弟子们的功夫就越弱…… 直到某一支的某一代突然出现一个天分特别高的弟子（或者是吃到了灵丹、挖到了特别的秘笈），会将功夫的威力一下子放大N倍 —— 我们称这种弟子为“得道者”。 这里我们来考察某一位祖师爷门下的徒子徒孙家谱：假设家谱中的每个人只有1位师傅（除了祖师爷没有师傅）；每位师傅可以带很多徒弟；并且假设辈分严格有序，即祖师爷这门武功的每个第i代传人只能在第i-1代传人中拜1个师傅。我们假设已知祖师爷的功力值为Z，每向下传承一代，就会减弱r%，除非某一代弟子得道。现给出师门谱系关系，要求你算出所有得道者的功力总值。 输入格式： 输入在第一行给出3个正整数，分别是：N（&lt;=10^5^）——整个师门的总人数（于是每个人从0到N-1编号，祖师爷的编号为0）；Z——祖师爷的功力值（不一定是整数，但起码是正数）；r ——每传一代功夫所打的折扣百分比值（不超过100的正数）。接下来有N行，第i行（i=0, …, N-1）描述编号为i的人所传的徒弟，格式为： K~i~ ID[1] ID[2] … ID[K~i~] 其中K~i~是徒弟的个数，后面跟的是各位徒弟的编号，数字间以空格间隔。K~i~为零表示这是一位得道者，这时后面跟的一个数字表示其武功被放大的倍数。 输出格式： 在一行中输出所有得道者的功力总值，只保留其整数部分。题目保证输入和正确的输出都不超过10^10^。 输入样例：123456789101110 18.0 1.003 2 3 51 91 41 70 72 6 11 80 90 40 3 输出样例：1404 题目要求计算所有得道者功力总和，祖师爷功力为z，每下降一代传授的功力要减r%，根据一代代递归得出每代徒弟的功力，如果是得道者，就将相应功力加起来。 123456789101112131415161718192021222324252627282930313233343536373839#include&lt;vector&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;const int maxm = 100005;vector&lt;int&gt; child[maxm];double val[maxm],z,r,sum;void dfs(int id,double w)&#123; if(val[id])&#123; sum = sum+w*val[id]; &#125;else&#123; for(int i=0;i&lt;child[id].size();i++)&#123; dfs(child[id][i],w*r); &#125; &#125;&#125;int main()&#123; int n,m,k; memset(val,0,sizeof(val)); sum = 0; scanf("%d %lf %lf",&amp;n,&amp;z,&amp;r); r = (100-r)/100; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;m); if(!m)&#123; scanf("%lf",&amp;val[i]); &#125;else&#123; for(int j=0;j&lt;m;j++)&#123; scanf("%d",&amp;k); child[i].push_back(k); &#125; &#125; &#125; dfs(0,z); printf("%d\n",(int)sum); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[L2-012 关于堆的判断（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FL2-012-%E5%85%B3%E4%BA%8E%E5%A0%86%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[L2-012 关于堆的判断（25 分）将一系列给定数字顺序插入一个初始为空的小顶堆H[]。随后判断一系列相关命题是否为真。命题分下列几种： “x is the root”：x是根结点； “x and y are siblings”：x和y是兄弟结点； “x is the parent of y”：x是y的父结点； “x is a child of y”：x是y的一个子结点。输入格式： 每组测试第1行包含2个正整数N（&lt;= 1000）和M（&lt;= 20），分别是插入元素的个数、以及需要判断的命题数。下一行给出区间[-10000, 10000]内的N个要被插入一个初始为空的小顶堆的整数。之后M行，每行给出一个命题。题目保证命题中的结点键值都是存在的。 输出格式： 对输入的每个命题，如果其为真，则在一行中输出“T”，否则输出“F”。 输入样例：1234565 446 23 26 24 1024 is the root26 and 23 are siblings46 is the parent of 2323 is a child of 10 输出样例：1234FTFT 首先提一下概念：堆是一棵完全二叉树，树中每个结点的值都不小于（或不大于）其左右孩子结点的值。小顶堆是指每个父亲结点的值小于等于孩子结点的值，每个结点的值都是以它为根结点的子树的最小值。 题目要求根据给出的数值建立小顶堆，然后根据建立的小顶堆判断相应结点关系是否正确 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;map&gt;using namespace std;const int maxm = 10010;const int inf = 99999999;int a[maxm],cnt;void creat(int x)&#123; a[++cnt] = x; int t = cnt; while(t&gt;1&amp;&amp;(a[t/2]&gt;a[t]))&#123; a[t] = a[t/2]; a[t/2] = x; t /= 2; &#125; a[t] = x;&#125;int main()&#123; int n,m,x,y; string s; map&lt;int,int&gt; p; scanf("%d%d",&amp;n,&amp;m); cnt = 0; for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;x); creat(x); &#125; for(int i=1;i&lt;=n;i++)&#123; p[a[i]] = i; &#125; for(int i=0;i&lt;m;i++)&#123; scanf("%d",&amp;x); cin&gt;&gt;s; if(s[0]=='a')&#123; scanf("%d",&amp;y); getline(cin,s); if(p[x]/2==p[y]/2)&#123; printf("T\n"); &#125;else&#123; printf("F\n"); &#125; &#125;else&#123; cin&gt;&gt;s; cin&gt;&gt;s; if(s[0]=='r')&#123; if(p[x]==1)&#123; printf("T\n"); &#125;else&#123; printf("F\n"); &#125; &#125;else if(s[0]=='p')&#123; cin&gt;&gt;s; cin&gt;&gt;y; if(p[x]==p[y]/2)&#123; printf("T\n"); &#125;else&#123; printf("F\n"); &#125; &#125;else&#123; cin&gt;&gt;s; cin&gt;&gt;y; if(p[x]/2==p[y])&#123; printf("T\n"); &#125;else&#123; printf("F\n"); &#125; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[153. 寻找旋转排序数组中的最小值]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%2F</url>
     <content type="text"><![CDATA[假设按照升序排序的数组在预先未知的某个点上进行了旋转。 ( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。 请找出其中最小的元素。 你可以假设数组中不存在重复元素。 示例 1:12输入: [3,4,5,1,2]输出: 1 示例 2:12输入: [4,5,6,7,0,1,2]输出: 0 这道题乍一看很纳闷，求最小元素不是一个sort就能搞定的吗？ 1234567class Solution &#123;public: int findMin(vector&lt;int&gt;&amp; nums) &#123; sort(nums.begin(),nums.end()); return nums[0]; &#125;&#125;; 后来看下标签，考点是二分查找我们需要知道，对于一个区间A，如果A[start] &lt; A[stop]，那么该区间一定是有 序的了。另外，由于不含重复元素，需要分两种情况。对于一个轮转了的排序了的数组，如果nums[mid]&gt;nums[left]，最小值一定在右半区间如果nums[mid]&lt;nums[left]，最小值一定在左半区间 12345678910111213141516171819202122232425262728class Solution &#123;public: int findMin(vector&lt;int&gt;&amp; nums) &#123; int size = nums.size(); if(size==0)&#123; return 0; &#125;else if(size==1)&#123; return nums[0]; &#125;else if(size==2)&#123; return min(nums[0],nums[1]); &#125; int left = 0,right = size-1; while(left&lt;right-1)&#123; if(nums[left]&lt;nums[right])&#123; return nums[left]; &#125; int mid = left+(right-left)/2; if(nums[mid]&lt;nums[left])&#123; right = mid; &#125; if(nums[mid]&gt;nums[left])&#123; left = mid; &#125; &#125; return min(nums[left],nums[right]); &#125;&#125;;]]></content>
