@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[319. 灯泡开关]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F319-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[初始时有 n 个灯泡关闭。 第 1 轮，你打开所有的灯泡。 第 2 轮，每两个灯泡你关闭一次。 第 3 轮，每三个灯泡切换一次开关（如果关闭则开启，如果开启则关闭）。第 i 轮，每 i 个灯泡切换一次开关。 对于第 n 轮，你只切换最后一个灯泡的开关。 找出 n 轮后有多少个亮着的灯泡。 示例:1234567输入: 3输出: 1 解释: 初始时, 灯泡状态 [关闭, 关闭, 关闭].第一轮后, 灯泡状态 [开启, 开启, 开启].第二轮后, 灯泡状态 [开启, 关闭, 开启].第三轮后, 灯泡状态 [开启, 关闭, 关闭]. 你应该返回 1，因为只有一个灯泡还亮着。一般都是想着直接暴力模拟，不明白为什么开个平方就行了 123456class Solution &#123;public: int bulbSwitch(int n) &#123; return (int)sqrt(n); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[129. 求根到叶子节点数字之和]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F129-%E6%B1%82%E6%A0%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，它的每个结点都存放一个 0-9 的数字，每条从根到叶子节点的路径都代表一个数字。 例如，从根到叶子节点路径 1-&gt;2-&gt;3 代表数字 123。 计算从根到叶子节点生成的所有数字之和。 说明: 叶子节点是指没有子节点的节点。 示例 1:123456789输入: [1,2,3] 1 / \ 2 3输出: 25解释:从根到叶子节点路径 1-&gt;2 代表数字 12.从根到叶子节点路径 1-&gt;3 代表数字 13.因此，数字总和 = 12 + 13 = 25. 示例 2:123456789101112输入: [4,9,0,5,1] 4 / \ 9 0 / \5 1输出: 1026解释:从根到叶子节点路径 4-&gt;9-&gt;5 代表数字 495.从根到叶子节点路径 4-&gt;9-&gt;1 代表数字 491.从根到叶子节点路径 4-&gt;0 代表数字 40.因此，数字总和 = 495 + 491 + 40 = 1026. 12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int sumNumbers(TreeNode* root) &#123; return dfs(root,0); &#125; private: int dfs(TreeNode *root,int sum)&#123; if(root==NULL)&#123; return 0; &#125; if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)&#123; return sum*10+root-&gt;val; &#125; return dfs(root-&gt;left,sum*10+root-&gt;val)+dfs(root-&gt;right,sum*10+root-&gt;val); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[113. 路径总和 II]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F113-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-II%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。 说明: 叶子节点是指没有子节点的节点。 示例: 123456789101112131415给定如下二叉树，以及目标和 sum = 22， 5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1返回:[ [5,4,11,2], [5,8,4,5]] 题目要求很清楚了，要求路径之和与给定值相等的所有路径，分别往左子树，右子树递归遍历所有路径，每次递归就减去相应的节点值，到了叶子结点如果剩余值与叶子结点值相等，则该条路径符合要求，记录下该条路径，不符合的中间结果就pop掉123456789101112131415161718192021222324252627282930313233/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int sum) &#123; vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; cur; pathSum(root,sum,cur,res); return res; &#125; private: void pathSum(TreeNode *root,int gap,vector&lt;int&gt; &amp;cur,vector&lt;vector&lt;int&gt;&gt; &amp;res)&#123; if(root==NULL)&#123; return; &#125; cur.push_back(root-&gt;val); if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)&#123; if(gap==root-&gt;val)&#123; res.push_back(cur); &#125; &#125; pathSum(root-&gt;left,gap-root-&gt;val,cur,res); pathSum(root-&gt;right,gap-root-&gt;val,cur,res); cur.pop_back(); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[102. 二叉树的层次遍历]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。 例如:1234567891011121314给定二叉树: [3,9,20,null,null,15,7], 3 / \ 9 20 / \ 15 7返回其层次遍历结果：[ [3], [9,20], [15,7]] 层序遍历指按层次的顺序从根结点向下逐层进行遍历，且对同一层的节点为从左到右遍历。基本思路：从根结点开始广度优先搜索 将根结点root加入队列 取出队首结点，访问它 如果该结点有左孩子，将左孩子入队。 如果该结点有右孩子，将右孩子入队 返回第二步，直到队列为空 1234567891011121314151617181920212223242526272829303132333435363738/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123; queue&lt;TreeNode*&gt; q; vector&lt;vector&lt;int&gt;&gt; res; q.push(root); if(root==NULL)&#123; return res; &#125; while(!q.empty())&#123; queue&lt;TreeNode*&gt; qt; vector&lt;int&gt; v; while(!q.empty())&#123; TreeNode* now = q.front(); q.pop(); v.push_back(now-&gt;val); if(now-&gt;left!=NULL)&#123; qt.push(now-&gt;left); &#125; if(now-&gt;right!=NULL)&#123; qt.push(now-&gt;right); &#125; &#125; res.push_back(v); q = qt; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[145. 二叉树的后序遍历]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F145-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，返回它的 后序 遍历。 示例:12345678输入: [1,null,2,3] 1 \ 2 / 3 输出: [3,2,1] 进阶: 递归算法很简单，你可以通过迭代算法完成吗？先遍历左子树，再遍历右子树，最后输出根结点递归法：12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; postorder(res,root); return res; &#125; void postorder(vector&lt;int&gt; &amp;res,TreeNode* root)&#123; if(root==NULL)&#123; return; &#125; postorder(res,root-&gt;left); postorder(res,root-&gt;right); res.push_back(root-&gt;val); &#125;&#125;; 迭代法：12345678910111213141516171819202122232425262728293031323334/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; stack&lt;TreeNode *&gt; s; s.push(root); if(root==NULL)&#123; return res; &#125; while(!s.empty())&#123; TreeNode *temp = s.top(); if(temp-&gt;left)&#123; s.push(temp-&gt;left); temp-&gt;left = NULL; &#125;else if(temp-&gt;right)&#123; s.push(temp-&gt;right); temp-&gt;right = NULL; &#125;else&#123; res.push_back(temp-&gt;val); s.pop(); &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[144. 二叉树的前序遍历]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F144-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，返回它的 前序 遍历。 示例:12345678输入: [1,null,2,3] 1 \ 2 / 3 输出: [1,2,3] 进阶: 递归算法很简单，你可以通过迭代算法完成吗？ 递归法：12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; preorder(res,root); return res; &#125; void preorder(vector&lt;int&gt; &amp;res,TreeNode* root)&#123; if(root==NULL)&#123; return ; &#125; res.push_back(root-&gt;val); preorder(res,root-&gt;left); preorder(res,root-&gt;right); &#125;&#125;; 迭代法：1234567891011121314151617181920212223242526272829303132/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; stack&lt;TreeNode *&gt; s; if(root!=NULL)&#123; s.push(root); &#125; while(!s.empty())&#123; TreeNode *p = s.top(); s.pop(); res.push_back(p-&gt;val); if(p-&gt;right!=NULL)&#123; s.push(p-&gt;right); &#125; if(p-&gt;left!=NULL)&#123; s.push(p-&gt;left); &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[94. 二叉树的中序遍历]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F94-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，返回它的中序 遍历。 示例:12345678输入: [1,null,2,3] 1 \ 2 / 3输出: [1,3,2] 进阶: 递归算法很简单，你可以通过迭代算法完成吗？ 遍历顺序：左子树-&gt;根结点-&gt;右子树 递归法：123456789101112131415161718192021222324/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; inorder(res,root); return res; &#125; void inorder(vector&lt;int&gt; &amp;res,TreeNode* root)&#123; if(root)&#123; inorder(res,root-&gt;left); res.push_back(root-&gt;val); inorder(res,root-&gt;right); &#125; &#125;&#125;; 迭代法：用栈来模拟中序遍历123456789101112131415161718192021222324252627282930/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123; vector&lt;int&gt; res; stack&lt;TreeNode*&gt; s; TreeNode* p = root; while(!s.empty()||p!=NULL)&#123;//当栈s为空或p指针不空进行迭代 if(p!=NULL)&#123;//当p不空，将其压入栈，并且指针指向左孩子 s.push(p); p = p-&gt;left; &#125;else&#123;//p为空指针，将栈顶元素赋给p，并弹出栈顶元素，将p push进结果数组，然后p指针指向右孩子 p = s.top(); s.pop(); res.push_back(p-&gt;val); p = p-&gt;right; &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[766. 托普利茨矩阵]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F766-%E6%89%98%E6%99%AE%E5%88%A9%E8%8C%A8%E7%9F%A9%E9%98%B5%2F</url>
     <content type="text"><![CDATA[如果一个矩阵的每一方向由左上到右下的对角线上具有相同元素，那么这个矩阵是托普利茨矩阵。 给定一个 M x N 的矩阵，当且仅当它是托普利茨矩阵时返回 True。 示例 1:1234567891011输入: matrix = [ [1,2,3,4], [5,1,2,3], [9,5,1,2]]输出: True解释:在上述矩阵中, 其对角线为:&quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;。各条对角线上的所有元素均相同, 因此答案是True。 示例 2:12345678输入:matrix = [ [1,2], [2,2]]输出: False解释: 对角线&quot;[1, 2]&quot;上的元素不同。 说明: matrix 是一个包含整数的二维数组。matrix 的行数和列数均在 [1, 20]范围内。matrix[i][j] 包含的整数在 [0, 99]范围内。进阶: 如果矩阵存储在磁盘上，并且磁盘内存是有限的，因此一次最多只能将一行矩阵加载到内存中，该怎么办？如果矩阵太大以至于只能一次将部分行加载到内存中，该怎么办？ 123456789class Solution &#123;public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123; for (int i = 1; i &lt; matrix.size(); ++i) for (int j = 1; j &lt; matrix[0].size(); ++j) if (matrix[i][j] != matrix[i - 1][j - 1]) return false; return true; &#125;&#125;;]]></content>
