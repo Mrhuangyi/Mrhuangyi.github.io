@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[637. 二叉树的层平均值]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F637-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[给定一个非空二叉树, 返回一个由每层节点平均值组成的数组. 示例 1:123456789输入: 3 / \ 9 20 / \ 15 7输出: [3, 14.5, 11]解释:第0层的平均值是 3, 第1层是 14.5, 第2层是 11. 因此返回 [3, 14.5, 11]. 注意： 节点值的范围在32位有符号整数范围内。分析：题目给定一棵二叉树，要求求出该二叉树每层节点值的平均值。 1，先将根结点push进一个队列 ，然后去掉该队列最前面的结点 2，将每个从队列去掉的结点，将他们所有的孩子结点push进一个临时队列 3，继续从这个队列pop结点和add这个结点的孩子结点到临时队列直到队列为空 4，每次队列为空就表示这一层的所有结点都已被访问 5，当push结点到临时队列的时候，保持求和sum，并且求出每层的平均值123456789101112131415161718192021222324252627282930313233343536/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;double&gt; averageOfLevels(TreeNode* root) &#123; vector&lt;double&gt; res; queue&lt;TreeNode*&gt; q; q.push(root); while(!q.empty())&#123; double sum = 0, count = 0; queue&lt;TreeNode*&gt; temp; while(!q.empty())&#123; TreeNode* n = q.front(); q.pop(); sum += n-&gt;val; count++; if(n-&gt;left!=NULL)&#123; temp.push(n-&gt;left); &#125; if(n-&gt;right!=NULL)&#123; temp.push(n-&gt;right); &#125; &#125; q = temp; res.push_back((sum*1.0/count)); &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[812. 最大三角形面积]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F812-%E6%9C%80%E5%A4%A7%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF%2F</url>
+    <content type="text"><![CDATA[给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。 示例:1234输入: points = [[0,0],[0,1],[1,0],[0,2],[2,0]]输出: 2解释: 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。 注意: 3 &lt;= points.length &lt;= 50.不存在重复的点。 -50 &lt;= points[i][j] &lt;= 50.结果误差值在 10^-6 以内都认为是正确答案。 三角形面积公式：A= 1/2 * [ x1(y2-y3) + x2(y3-y1) + x3(y1-y2) ]123456789101112131415class Solution &#123;public: double largestTriangleArea(vector&lt;vector&lt;int&gt;&gt;&amp; points) &#123; double res = 0; int len = points.size(); for(int i=0;i&lt;len;i++)&#123; for(int j=i+1;j&lt;len;j++)&#123; for(int k=j+1;k&lt;len;k++)&#123; res = max(res,0.5*abs(points[i][0]*(points[j][1]-points[k][1])+points[j][0]*(points[k][1]-points[i][1])+points[k][0]*(points[i][1]-points[j][1]))); &#125; &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[693. 交替位二进制数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F693-%E4%BA%A4%E6%9B%BF%E4%BD%8D%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[给定一个正整数，检查他是否为交替位二进制数：换句话说，就是他的二进制数相邻的两个位数永不相等。 示例 1:1234输入: 5输出: True解释:5的二进制数是: 101 示例 2:1234输入: 7输出: False解释:7的二进制数是: 111 示例 3:1234输入: 11输出: False解释:11的二进制数是: 1011 示例 4:1234输入: 10输出: True解释:10的二进制数是: 1010 方法一：将给定数值的二进制数转化为对应的字符串，只要该字符串不存在两个相邻的字符相等，那么就满足条件。1234567891011121314151617class Solution &#123;public: bool hasAlternatingBits(int n) &#123; string s = ""; while( n )&#123; string a = to_string(n%2); s = a + s; n /= 2; &#125; for(int i=0; i&lt;s.size();i++)&#123; if( s[i] == s[i+1] )&#123; return false; &#125; &#125; return true; &#125;&#125;; 方法二：除以二， 123456789101112131415class Solution &#123;public: bool hasAlternatingBits(int n) &#123; int cur = n%2; n = n/2; while(n)&#123; if( cur == n%2 )&#123; return false; &#125; cur = n%2; n = n/2; &#125; return true; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[338. Bit位计数]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F338-Bit%E4%BD%8D%E8%AE%A1%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[给定一个非负整数 num。 对于范围 0 ≤ i ≤ num 中的每个数字 i ，计算其二进制数中的1的数目并将它们作为数组返回。 示例：1比如给定 num = 5 ，应该返回 [0,1,1,2,1,2]. 进阶： 给出时间复杂度为O(n * sizeof(integer)) 的解答非常容易。 但是你可以在线性时间O(n)内用一次遍历做到吗？ 要求算法的空间复杂度为O(n)。 你能进一步完善解法吗？ 在c ++或任何其他语言中不使用任何内置函数（如c++里的 __builtin_popcount）来执行此操作。 方法一：一位一位计算，但是这是完全不符合题目要求的，题目中希望你给出更优化的算法 123456789101112131415161718192021class Solution &#123;public: vector&lt;int&gt; countBits(int num) &#123; vector&lt;int&gt; res; for(int i=0;i&lt;=num;i++)&#123; int x = count(i); res.push_back(x); &#125; return res; &#125; int count(int n)&#123; int cnt = 0; while( n )&#123; if( n%2 == 1 )&#123; cnt++; &#125; n /= 2; &#125; return cnt; &#125;&#125;; 法二：找规律，规律是，从1开始，遇到偶数时，其1的个数和该偶数除以2得到的数字的1的个数相同，遇到奇数时，其1的个数等于该奇数除以2得到的数字的1的个数再加1 1234567891011121314class Solution &#123;public: vector&lt;int&gt; countBits(int num) &#123; vector&lt;int&gt; res&#123;0&#125;; for(int i=1; i &lt;= num; i++)&#123; if( i%2 == 0 )&#123; res.push_back(res[i/2]); &#125;else&#123; res.push_back( res[i/2] + 1 ); &#125; &#125; return res; &#125;&#125;; 方法三：利用i&amp;(i-1),i&amp;(i-1)一方面可以用来判断一个数是否为2的指数，放在这里的规律是，针对结果数组，每个下标i = i&amp;(i-1)+1. 12345678910class Solution &#123;public: vector&lt;int&gt; countBits(int num) &#123; vector&lt;int&gt; res(num+1,0); for(int i=1; i &lt;= num; i++)&#123; res[i] = res[i&amp;(i-1)]+1; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[617. 合并二叉树]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F617-%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
     <content type="text"><![CDATA[给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。 示例 1:123456789101112131415输入: Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7 输出: 合并后的树: 3 / \ 4 5 / \ \ 5 4 7注意: 合并必须从两个树的根节点开始。 首先判断t1和t2是否为空，如果t1为空，那么返回t2，如果t2为空，那么返回t1 新建一个结点t，参数为两个结点值的和，然后分别调用merge函数向左向右递归。 123456789101112131415161718192021222324/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) &#123; if(!t1)&#123; return t2; &#125; if(!t2)&#123; return t1; &#125; TreeNode* t = new TreeNode(t1-&gt;val+t2-&gt;val); t-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left); t-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right); return t; &#125;&#125;;]]></content>
@@ -3938,9 +3982,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -3949,9 +3993,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
