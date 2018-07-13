@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[682. 棒球比赛]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F682-%E6%A3%92%E7%90%83%E6%AF%94%E8%B5%9B%2F</url>
+    <content type="text"><![CDATA[你现在是棒球比赛记录员。给定一个字符串列表，每个字符串可以是以下四种类型之一：1.整数（一轮的得分）：直接表示您在本轮中获得的积分数。 “+”（一轮的得分）：表示本轮获得的得分是前两轮有效 回合得分的总和。 “D”（一轮的得分）：表示本轮获得的得分是前一轮有效 回合得分的两倍。 “C”（一个操作，这不是一个回合的分数）：表示您获得的最后一个有效 回合的分数是无效的，应该被移除。 每一轮的操作都是永久性的，可能会对前一轮和后一轮产生影响。你需要返回你在所有回合中得分的总和。 示例 1:12345678输入: [&quot;5&quot;,&quot;2&quot;,&quot;C&quot;,&quot;D&quot;,&quot;+&quot;]输出: 30解释: 第1轮：你可以得到5分。总和是：5。第2轮：你可以得到2分。总和是：7。操作1：第2轮的数据无效。总和是：5。第3轮：你可以得到10分（第2轮的数据已被删除）。总数是：15。第4轮：你可以得到5 + 10 = 15分。总数是：30。 示例 2:1234567891011输入: [&quot;5&quot;,&quot;-2&quot;,&quot;4&quot;,&quot;C&quot;,&quot;D&quot;,&quot;9&quot;,&quot;+&quot;,&quot;+&quot;]输出: 27解释: 第1轮：你可以得到5分。总和是：5。第2轮：你可以得到-2分。总数是：3。第3轮：你可以得到4分。总和是：7。操作1：第3轮的数据无效。总数是：3。第4轮：你可以得到-4分（第三轮的数据已被删除）。总和是：-1。第5轮：你可以得到9分。总数是：8。第6轮：你可以得到-4 + 9 = 5分。总数是13。第7轮：你可以得到9 + 5 = 14分。总数是27。 注意： 输入列表的大小将介于1和1000之间。列表中的每个整数都将介于-30000和30000之间。 1234567891011121314151617181920212223class Solution &#123;public: int calPoints(vector&lt;string&gt;&amp; ops) &#123; int sum = 0; vector&lt;int&gt; res; int len = res.size(); for(int i=0;i&lt;ops.size();i++)&#123; if(ops[i].compare("+")==0)&#123; res.push_back(res[res.size()-1]+res[res.size()-2]); &#125;else if(ops[i].compare("D")==0)&#123; res.push_back(res[res.size()-1]*2); &#125;else if(ops[i].compare("C")==0)&#123; res.pop_back(); &#125;else&#123; res.push_back(stoi(ops[i])); &#125; &#125; for(int i=0;i&lt;res.size();i++)&#123; sum += res[i]; &#125; return sum; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[605. 种花问题]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F605-%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 示例 1:12输入: flowerbed = [1,0,0,0,1], n = 1输出: True 示例 2:12输入: flowerbed = [1,0,0,0,1], n = 2输出: False 注意: 数组内已种好的花不会违反种植规则。输入的数组长度范围为 [1, 20000]。n 是非负整数，且不会超过输入数组的大小。 要想根据连续0的个数来计算能种多少花，需要考虑边界的问题，为了解决边界问题，可以采取补0的方法，如果第一个元素为0，就在最前面再补一个0，如果最后一个元素为0，就在最后面再补一个012345678910111213141516171819202122232425class Solution &#123;public: bool canPlaceFlowers(vector&lt;int&gt;&amp; flowerbed, int n) &#123; if(flowerbed.empty())&#123; return false; &#125; if(flowerbed[0]==0)&#123; flowerbed.insert(flowerbed.begin(),0); &#125; if(flowerbed.back()==0)&#123; flowerbed.push_back(0); &#125; int sum = 0,cnt = 0; for(int i=0;i&lt;=flowerbed.size();i++)&#123; if(i&lt;flowerbed.size()&amp;&amp;flowerbed[i]==0)&#123; cnt++; &#125;else&#123; sum += (cnt-1)/2; cnt = 0; &#125; &#125; return sum &gt;= n; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[844. 比较含退格的字符串]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F844-%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[给定 S 和 T 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。 示例 1：123输入：S = &quot;ab#c&quot;, T = &quot;ad#c&quot;输出：true解释：S 和 T 都会变成 “ac”。 示例 2：123输入：S = &quot;ab##&quot;, T = &quot;c#d#&quot;输出：true解释：S 和 T 都会变成 “”。 示例 3：123输入：S = &quot;a##c&quot;, T = &quot;#a#c&quot;输出：true解释：S 和 T 都会变成 “c”。 示例 4：12345678910111213141516171819202122232425262728293031输入：S = &quot;a#c&quot;, T = &quot;b&quot;输出：false解释：S 会变成 “c”，但 T 仍然是 “b”。``` 提示：1 &lt;= S.length &lt;= 2001 &lt;= T.length &lt;= 200S 和 T 只含有小写字母以及字符 &apos;#&apos;。```cppclass Solution &#123;public: bool backspaceCompare(string S, string T) &#123; return deal(S)==deal(T); &#125; string deal(string x)&#123; string res; for(int i=0;i&lt;x.size();i++)&#123; if(x[i]==&apos;#&apos;)&#123; if(!res.empty())&#123; res.pop_back(); &#125; &#125;else&#123; res.push_back(x[i]); &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[401. 二进制手表]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F401-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%8B%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[二进制手表顶部有 4 个 LED 代表小时（0-11），底部的 6 个 LED 代表分钟（0-59）。 每个 LED 代表一个 0 或 1，最低位在右侧。 例如，上面的二进制手表读取 “3:25”。 给定一个非负整数 n 代表当前 LED 亮着的数量，返回所有可能的时间。 案例: 输入: n = 1返回: [“1:00”, “2:00”, “4:00”, “8:00”, “0:01”, “0:02”, “0:04”, “0:08”, “0:16”, “0:32”] 注意事项: 输出的顺序没有要求。小时不会以零开头，比如 “01:00” 是不允许的，应为 “1:00”。分钟必须由两位数组成，可能会以零开头，比如 “10:2” 是无效的，应为 “10:02”。 根据二进制中1的个数来计算12345678910class Solution &#123; public List&lt;String&gt; readBinaryWatch(int num) &#123; List&lt;String&gt; times = new ArrayList&lt;&gt;(); for (int h = 0; h &lt; 12; h++) for (int m = 0; m &lt; 60; m++) if (Integer.bitCount(h) + Integer.bitCount(m) == num) times.add(String.format("%d:%02d", h, m)); return times; &#125;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[717. 1比特与2比特字符]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F717-1%E6%AF%94%E7%89%B9%E4%B8%8E2%E6%AF%94%E7%89%B9%E5%AD%97%E7%AC%A6%2F</url>
+    <content type="text"><![CDATA[有两种特殊字符。第一种字符可以用一比特0来表示。第二种字符可以用两比特(10 或 11)来表示。 现给一个由若干比特组成的字符串。问最后一个字符是否必定为一个一比特字符。给定的字符串总是由0结束。 示例 1:12345输入: bits = [1, 0, 0]输出: True解释: 唯一的编码方式是一个两比特字符和一个一比特字符。所以最后一个字符是一比特字符。 示例 2:12345输入: bits = [1, 1, 1, 0]输出: False解释: 唯一的编码方式是两比特字符和两比特字符。所以最后一个字符不是一比特字符。 注意: 1 &lt;= len(bits) &lt;= 1000.bits[i] 总是0 或 1. 利用i作为增量指针，碰到0，增1，碰到1，增2，最后判断i的大小与bits剩余长度是否相等。12345678910111213class Solution &#123;public: bool isOneBitCharacter(vector&lt;int&gt;&amp; bits) &#123; int len = bits.size(); int i; for( i=0;i&lt;len-1;i++)&#123; if(bits[i]==1)&#123; i += 1; &#125; &#125; return i==len-1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[566. 重塑矩阵]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F566-%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B5%2F</url>
+    <content type="text"><![CDATA[在MATLAB中，有一个非常有用的函数 reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。 给出一个由二维数组表示的矩阵，以及两个正整数r和c，分别表示想要的重构的矩阵的行数和列数。 重构后的矩阵需要将原始矩阵的所有元素以相同的行遍历顺序填充。 如果具有给定参数的reshape操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。 示例 1:123456789输入: nums = [[1,2], [3,4]]r = 1, c = 4输出: [[1,2,3,4]]解释:行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 * 4 矩阵, 用之前的元素值一行一行填充新矩阵。 示例 2:12345678910输入: nums = [[1,2], [3,4]]r = 2, c = 4输出: [[1,2], [3,4]]解释:没有办法将 2 * 2 矩阵转化为 2 * 4 矩阵。 所以输出原矩阵。 注意： 给定矩阵的宽和高范围在 [1, 100]。给定的 r 和 c 都是正数。常规思路，首先根据两个矩阵的长乘宽是否相等来判断能否转化，如果能够转化，那么再用一个双重循环，将原矩阵的值按照一行行赋给结果矩阵1234567891011121314151617181920212223class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; matrixReshape(vector&lt;vector&lt;int&gt;&gt;&amp; nums, int r, int c) &#123; vector&lt;vector&lt;int&gt;&gt; res(r,vector&lt;int&gt;(c)); int row = nums.size(); int col = nums[0].size(); int indx1 = 0,indx2 = 0; if( row*col!=r*c )&#123; return nums; &#125;else&#123; for(int i=0;i&lt;row;i++)&#123; for(int j=0;j&lt;col;j++)&#123; res[indx1][indx2++] = nums[i][j]; if( indx2==c)&#123; indx2 = 0; indx1++; &#125; &#125; &#125; &#125; return res; &#125;&#125;; 精简写法，用一个循环搞定123456789101112131415161718class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; matrixReshape(vector&lt;vector&lt;int&gt;&gt; &amp;nums, int r, int c) &#123; if (nums.empty()) &#123; return nums; &#125; int m = nums.size(); int n = nums[0].size(); if (m * n &lt; r * c) &#123; return nums; &#125; vector&lt;vector&lt;int&gt;&gt; newNums(r, vector&lt;int&gt;(c)); for (int i = 0; i &lt; r * c; i++) &#123; newNums[i / c][i % c] = nums[i / n][i % n]; &#125; return newNums; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[637. 二叉树的层平均值]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F637-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
     <content type="text"><![CDATA[给定一个非空二叉树, 返回一个由每层节点平均值组成的数组. 示例 1:123456789输入: 3 / \ 9 20 / \ 15 7输出: [3, 14.5, 11]解释:第0层的平均值是 3, 第1层是 14.5, 第2层是 11. 因此返回 [3, 14.5, 11]. 注意： 节点值的范围在32位有符号整数范围内。分析：题目给定一棵二叉树，要求求出该二叉树每层节点值的平均值。 1，先将根结点push进一个队列 ，然后去掉该队列最前面的结点 2，将每个从队列去掉的结点，将他们所有的孩子结点push进一个临时队列 3，继续从这个队列pop结点和add这个结点的孩子结点到临时队列直到队列为空 4，每次队列为空就表示这一层的所有结点都已被访问 5，当push结点到临时队列的时候，保持求和sum，并且求出每层的平均值123456789101112131415161718192021222324252627282930313233343536/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: vector&lt;double&gt; averageOfLevels(TreeNode* root) &#123; vector&lt;double&gt; res; queue&lt;TreeNode*&gt; q; q.push(root); while(!q.empty())&#123; double sum = 0, count = 0; queue&lt;TreeNode*&gt; temp; while(!q.empty())&#123; TreeNode* n = q.front(); q.pop(); sum += n-&gt;val; count++; if(n-&gt;left!=NULL)&#123; temp.push(n-&gt;left); &#125; if(n-&gt;right!=NULL)&#123; temp.push(n-&gt;right); &#125; &#125; q = temp; res.push_back((sum*1.0/count)); &#125; return res; &#125;&#125;;]]></content>
