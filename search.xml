@@ -1,6 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1082 Read Number in Chinese (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1082-Read-Number-in-Chinese-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1082 Read Number in Chinese (25)（25 分）Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way. Output “Fu” first if it is negative. For example, -123456789 is read as “Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu”. Note: zero (“ling”) must be handled correctly according to the Chinese tradition. For example, 100800 is “yi Shi Wan ling ba Bai”. Input Specification: Each input file contains one test case, which gives an integer with no more than 9 digits. Output Specification: For each test case, print in a line the Chinese way of reading the number. The characters are separated by a space and there must be no extra space at the end of the line. Sample Input 1:1-123456789 Sample Output 1:1Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu Sample Input 2:1100800 Sample Output 2:1yi Shi Wan ling ba Bai 题目大意：按中文发音规则输出一个绝对值在9位以内的整数。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;char num[10][5] = &#123; "ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"&#125;;char wei[5][5] = &#123;"Shi", "Bai", "Qian", "Wan", "Yi"&#125;;int main() &#123; char str[15]; scanf("%s", str); int len = strlen(str); int left = 0, right = len - 1; if(str[0] == '-') &#123; printf("Fu"); left++; &#125; while(left + 4 &lt;= right) &#123; right -= 4; &#125; while(left &lt; len) &#123; bool flag = false; bool isPrint = false; while(left &lt;= right) &#123; if(left &gt; 0 &amp;&amp; str[left] == '0') &#123; flag = true; &#125; else &#123; if(flag) &#123; printf(" ling"); flag = false; &#125; if(left &gt; 0) &#123; printf(" "); &#125; printf("%s", num[str[left] - '0']); isPrint = true; if(left != right) &#123; printf(" %s", wei[right - left - 1]); &#125; &#125; left++; &#125; if(isPrint &amp;&amp; right != len - 1) &#123; printf(" %s", wei[(len - 1 - right) / 4 + 2]); &#125; right += 4; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1077 Kuchiguse (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1077-Kuchiguse-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1077 Kuchiguse (20)（20 分）The Japanese language is notorious for its sentence ending particles. Personal preference of such particles can be considered as a reflection of the speaker’s personality. Such a preference is called “Kuchiguse” and is often exaggerated artistically in Anime and Manga. For example, the artificial sentence ending particle “nyan~” is often used as a stereotype for characters with a cat-like personality: Itai nyan~ (It hurts, nyan~) Ninjin wa iyada nyan~ (I hate carrots, nyan~) Now given a few lines spoken by the same character, can you find her Kuchiguse? Input Specification: Each input file contains one test case. For each case, the first line is an integer N (2&lt;=N&lt;=100). Following are N file lines of 0~256 (inclusive) characters in length, each representing a character’s spoken line. The spoken lines are case sensitive. Output Specification: For each test case, print in one line the kuchiguse of the character, i.e., the longest common suffix of all N lines. If there is no such suffix, write “nai”. Sample Input 1:12343Itai nyan~Ninjin wa iyadanyan~uhhh nyan~ Sample Output 1:1nyan~ Sample Input 2:12343Itai!Ninjinnwaiyada T_TT_T Sample Output 2:1nai 题目大意：给定n个字符串，求它们的公共后缀，如果不存在公共后缀，那么输出“nai”，可以考虑将每个字符串反转，将问题转换为求最大公共前缀。123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;int n, minLen = 256, ans = 0;string s[256];int main() &#123; scanf("%d", &amp;n); getchar(); for(int i = 0; i &lt; n; i++) &#123; getline(cin, s[i]); int len = s[i].size(); if(len &lt; minLen) &#123; minLen = len; &#125; reverse(s[i].begin(),s[i].end()); &#125; for(int i = 0; i &lt; minLen; i++) &#123; char c = s[0][i]; bool same = true; for(int j = 0; j &lt; n; j++) &#123; if(c != s[j][i]) &#123; same = false; break; &#125; &#125; if(same) &#123; ans++; &#125; else &#123; break; &#125; &#125; if(ans) &#123; for(int i = ans - 1; i &gt;= 0; i--) &#123; printf("%c", s[0][i]); &#125; &#125; else &#123; printf("nai"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1035 Password (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1035-Password-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1035 Password (20)（20 分）To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is that there are always some confusing passwords since it is hard to distinguish 1 (one) from l (L in lowercase), or 0 (zero) from O (o in uppercase). One solution is to replace 1 (one) by @, 0 (zero) by %, l by L, and O by o. Now it is your job to write a program to check the accounts generated by the judge, and to help the juge modify the confusing passwords. Input Specification: Each input file contains one test case. Each case contains a positive integer N (&lt;= 1000), followed by N lines of accounts. Each account consists of a user name and a password, both are strings of no more than 10 characters with no space. Output Specification: For each test case, first print the number M of accounts that have been modified, then print in the following M lines the modified accounts info, that is, the user names and the corresponding modified passwords. The accounts must be printed in the same order as they are read in. If no account is modified, print in one line “There are N accounts and no account is modified” where N is the total number of accounts. However, if N is one, you must print “There is 1 account and no account is modified” instead. Sample Input 1:12343Team000002 Rlsp0dfaTeam000003 perfectpwdTeam000001 R1spOdfa Sample Output 1:1232Team000002 RLsp%dfaTeam000001 R@spodfa Sample Input 2:121team110 abcdefg332 Sample Output 2:1There is 1 account and no account is modified Sample Input 3:1232team110 abcdefg222team220 abcdefg333 Sample Output 3:1There are 2 accounts and no account is modified 题目大意：给定n个用户的姓名和密码，按照要求修改密码并按相应格式输出。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;struct node &#123; string name, password; bool ischange;&#125;t[1005];void crypt(node&amp; t, int&amp; cnt) &#123; int len = t.password.size(); for(int i = 0; i &lt; len; i++) &#123; if(t.password[i] == '1') &#123; t.password[i] = '@'; t.ischange = true; &#125; else if(t.password[i] == '0') &#123; t.password[i] = '%'; t.ischange = true; &#125; else if(t.password[i] == 'l') &#123; t.password[i] = 'L'; t.ischange = true; &#125; else if(t.password[i] == 'O') &#123; t.password[i] = 'o'; t.ischange = true; &#125; &#125; if(t.ischange) &#123; cnt++; &#125;&#125;int main() &#123; int n, cnt = 0; cin&gt;&gt;n; for(int i = 0; i &lt; n; i++) &#123; cin&gt;&gt;t[i].name&gt;&gt;t[i].password; t[i].ischange = false; &#125; for(int i = 0; i &lt; n; i++) &#123; crypt(t[i], cnt); &#125; if(cnt == 0) &#123; if(n == 1) &#123; cout&lt;&lt;"There is "&lt;&lt;n&lt;&lt;" account and no account is modified"; &#125; else &#123; cout&lt;&lt;"There are "&lt;&lt;n&lt;&lt;" accounts and no account is modified"; &#125; &#125; else &#123; cout&lt;&lt;cnt&lt;&lt;endl; for(int i = 0; i &lt; n; i++) &#123; if(t[i].ischange) &#123; cout&lt;&lt;t[i].name&lt;&lt;" "&lt;&lt;t[i].password&lt;&lt;endl; &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1005 Spell It Right (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1005-Spell-It-Right-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1005 Spell It Right (20)（20 分）Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English. Input Specification: Each input file contains one test case. Each case occupies one line which contains an N (&lt;= 10^100^). Output Specification: For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line. Sample Input:112345 Sample Output:1one five 题目大意:给定一个非负整数n，求出数位之和，并用英语表示这个总和的每一位。123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;cstring&gt;char num[10][10]=&#123; "zero","one","two","three","four","five","six","seven","eight","nine"&#125;;///数字对应单词char s[111];int digit[10];int main()&#123; gets(s); int len=strlen(s); int sum=0,numLen=0; for(int i=0;i&lt;len;i++)&#123; sum+=(s[i]-'0'); &#125; if(sum==0) &#123; printf("%s",num[0]); &#125; else&#123; while(sum!=0)&#123; digit[numLen++]=sum%10; sum/=10; &#125; for(int i=numLen-1;i&gt;=0;i--)&#123; printf("%s",num[digit[i]]); if(i!=0) printf(" "); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1058 A+B in Hogwarts (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1058-A-B-in-Hogwarts-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1058 A+B in Hogwarts (20)（20 分）If you are a fan of Harry Potter, you would know the world of magic has its own currency system – as Hagrid explained it to Harry, “Seventeen silver Sickles to a Galleon and twenty-nine Knuts to a Sickle, it’s easy enough.” Your job is to write a program to compute A+B where A and B are given in the standard form of “Galleon.Sickle.Knut” (Galleon is an integer in [0, 10^7^], Sickle is an integer in [0, 17), and Knut is an integer in [0, 29)). Input Specification: Each input file contains one test case which occupies a line with A and B in the standard form, separated by one space. Output Specification: For each test case you should output the sum of A and B in one line, with the same format as the input. Sample Input:13.2.1 10.16.27 Sample Output:114.1.28 分析，自定义进制数的求和注意保留进位，最高位没有进位限制123456789101112131415#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;int main() &#123; int a[3], b[3], c[3]; scanf("%d.%d.%d %d.%d.%d", &amp;a[0], &amp;a[1], &amp;a[2], &amp;b[0], &amp;b[1], &amp;b[2]); int carry = 0; c[2] = (a[2] + b[2]) % 29; carry = (a[2] + b[2]) / 29; c[1] = (a[1] + b[1] + carry) % 17; carry = (a[1] + b[1] + carry) / 17; c[0] = a[0] + b[0] + carry; printf("%d.%d.%d", c[0], c[1], c[2]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1027 Colors in Mars (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1027-Colors-in-Mars-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1027 Colors in Mars (20)（20 分）People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color is represented by a 6-digit number, where the first 2 digits are for Red, the middle 2 digits for Green, and the last 2 digits for Blue. The only difference is that they use radix 13 (0-9 and A-C) instead of 16. Now given a color in three decimal numbers (each between 0 and 168), you are supposed to output their Mars RGB values. Input Each input file contains one test case which occupies a line containing the three decimal color values. Output For each test case you should output the Mars RGB value in the following format: first output “#”, then followed by a 6-digit number where all the English characters must be upper-cased. If a single color is only 1-digit long, you must print a “0” to the left. Sample Input115 43 71 Sample Output1#123456 题目大意：给定3个[0,168]范围内的10进制数，将它们转换为13进制数后按顺序输出。由于题目的数据范围为[0,168]，所以x一定可以表示为x = a13^1 + b13^0.a = x/13, b = x %1312345678910111213141516#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;char radix[13] =&#123; '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C'&#125;;int main() &#123; int r, g, b; scanf("%d%d%d", &amp;r, &amp;g, &amp;b); printf("#"); printf("%c%c", radix[r / 13], radix[r % 13]); printf("%c%c", radix[g / 13], radix[g % 13]); printf("%c%c", radix[b / 13], radix[b % 13]); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1019 General Palindromic Number (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1019-General-Palindromic-Number-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1019 General Palindromic Number (20)（20 分）A number that will be the same when it is written forwards or backwards is known as a Palindromic Number. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers. Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number N &gt; 0 in base b &gt;= 2, where it is written in standard notation with k+1 digits a~i~ as the sum of (a~i~b^i^) for i from 0 to k. Here, as usual, 0 &lt;= a~i~ &lt; b for all i and a~k~ is non-zero. Then N is palindromic if and only if a~i~ = a~k-i~ for all i. Zero is written 0 in any base and is also palindromic by definition. Given any non-negative decimal integer N and a base b, you are supposed to tell if N is a palindromic number in base b. Input Specification: Each input file contains one test case. Each case consists of two non-negative numbers N and b, where 0 &lt;= N &lt;= 10^9^ is the decimal number and 2 &lt;= b &lt;= 10^9^ is the base. The numbers are separated by a space. Output Specification: For each test case, first print in one line “Yes” if N is a palindromic number in base b, or “No” if not. Then in the next line, print N as the number in base b in the form “a~k~ a~k-1~ … a~0~”. Notice that there must be no extra space at the end of output. Sample Input 1:127 2 Sample Output 1:12Yes1 1 0 1 1 Sample Input 2:1121 5 Sample Output 2:12No4 4 1 题目大意：给出两个整数n，b，问n在b进制下是否是回文数，并输出n在b进制下的表示。123456789101112131415161718192021222324252627282930313233#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;bool Judge(int z[], int num) &#123; for(int i = 0; i &lt;= num / 2; i++) &#123; if(z[i] != z[num - i - 1]) &#123; return false; &#125; &#125; return true;&#125;int main() &#123; int n, b, z[40], num = 0; scanf("%d %d", &amp;n, &amp;b); do &#123; z[num++] = n % b; n /= b; &#125;while(n != 0); bool flag = Judge(z, num); if(flag) &#123; printf("Yes\n"); &#125; else &#123; printf("No\n"); &#125; for(int i = num - 1; i &gt;= 0; i--) &#123; printf("%d", z[i]); if(i != 0) &#123; printf(" "); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1031 Hello World for U (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1031-Hello-World-for-U-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1031 Hello World for U (20)（20 分）Given any string of N (&gt;=5) characters, you are asked to form the characters into the shape of U. For example, “helloworld” can be printed as:1234h de ll rlowo That is, the characters must be printed in the original order, starting top-down from the left vertical line with n~1~ characters, then left to right along the bottom line with n~2~ characters, and finally bottom-up along the vertical line with n~3~ characters. And more, we would like U to be as squared as possible – that is, it must be satisfied that n~1~ = n~3~ = max { k| k &lt;= n~2~ for all 3 &lt;= n~2~ &lt;= N } with n~1~ n~2~ + n~3~ - 2 = N.Input Specification: Each input file contains one test case. Each case contains one string with no less than 5 and no more than 80 characters in a line. The string contains no white space. Output Specification: For each test case, print the input string in the shape of U as specified in the description. Sample Input:1helloworld! Sample Output:1234h !e dl llowor 题目大意：题目要求将給定字符串按照“U”字形输出。其中n1为左侧字符数，n2为底部字符数，n3为右侧字符数，且均包含拐角处相交字符，且有如下要求： n1 == n3 n2 &gt;= n1 n1 尽可能大 可以找到规律，当两侧的字符数n1,n3总是取(len + 2) / 3时可以满足条件，其中len为字符串长度 二维数组写法：1234567891011121314151617181920212223242526272829303132#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;int main() &#123; char str[100], ans[40][40]; scanf("%s", str); int len = strlen(str); int n1 = (len + 2) / 3, n3 = n1, n2 = len + 2 - n1 - n3; for(int i = 1; i &lt;= n1; i++) &#123; for(int j = 1; j &lt;= n2; j++) &#123; ans[i][j] = ' '; &#125; &#125; int pos = 0; for(int i = 1; i &lt;= n1; i++) &#123; ans[i][1] = str[pos++]; &#125; for(int j = 2; j &lt;= n2; j++) &#123; ans[n1][j] = str[pos++]; &#125; for(int i = n3 - 1; i &gt;= 1; i--) &#123; ans[i][n2] = str[pos++]; &#125; for(int i = 1; i &lt;= n1; i++) &#123; for(int j = 1; j &lt;= n2; j++) &#123; printf("%c", ans[i][j]); &#125; printf("\n"); &#125; return 0;&#125; 直接输出写法： 123456789101112131415161718192021#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;iostream&gt;using namespace std;int main() &#123; char str[100], ans[40][40]; scanf("%s", str); int len = strlen(str); int n1 = (len + 2) / 3, n3 = n1, n2 = len + 2 - n1 - n3; for(int i = 0; i &lt; n1 - 1; i++) &#123; printf("%c", str[i]); for(int j = 0; j &lt; n2 - 2; j++) &#123; printf(" "); &#125; printf("%c\n", str[len - i - 1]); &#125; for(int i = 0; i &lt; n2; i++) &#123; printf("%c", str[n1 + i - 1]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[74. 搜索二维矩阵]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F74-%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%2F</url>
+    <content type="text"><![CDATA[编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性： 每行中的整数从左到右按升序排列。每行的第一个整数大于前一行的最后一个整数。示例 1:12345678输入:matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]]target = 3输出: true 示例 2:12345678输入:matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]]target = 13输出: false 分析：二维矩阵中的查找，采用嵌套循环是可以做出判断的，但这样算法不够高效，也没有利用到题中给出的矩阵特征，我们可以固定右上角的元素，根据每行每列递增的规律优化写法，这题剑指offer里面也有说明1234567891011121314151617181920212223class Solution &#123;public: bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123; if(matrix.size() == 0) &#123; return false; &#125; if(matrix[0].size() == 0) &#123; return false; &#125; int rowNum = 0; int colNum = matrix[0].size() - 1; while(rowNum &lt; matrix.size() &amp;&amp; colNum &gt;= 0) &#123; if(target &lt; matrix[rowNum][colNum]) &#123; --colNum; &#125; else if (target &gt; matrix[rowNum][colNum]) &#123; ++rowNum; &#125; else &#123; return true; &#125; &#125; return false; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[832. 翻转图像]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F832-%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F%2F</url>
+    <content type="text"><![CDATA[给定一个二进制矩阵 A，我们想先水平翻转图像，然后反转图像并返回结果。 水平翻转图片就是将图片的每一行都进行翻转，即逆序。例如，水平翻转 [1, 1, 0] 的结果是 [0, 1, 1]。 反转图片的意思是图片中的 0 全部被 1 替换， 1 全部被 0 替换。例如，反转 [0, 1, 1] 的结果是 [1, 0, 0]。 示例 1:1234输入: [[1,1,0],[1,0,1],[0,0,0]]输出: [[1,0,0],[0,1,0],[1,1,1]]解释: 首先翻转每一行: [[0,1,1],[1,0,1],[0,0,0]]； 然后反转图片: [[1,0,0],[0,1,0],[1,1,1]] 示例 2:1234输入: [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]输出: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]解释: 首先翻转每一行: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]]； 然后反转图片: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]] 说明: 1 &lt;= A.length = A[0].length &lt;= 200 &lt;= A[i][j] &lt;= 1123456789101112class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; flipAndInvertImage(vector&lt;vector&lt;int&gt;&gt;&amp; A) &#123; for(int i = 0; i &lt; A.size(); i++) &#123; reverse(A[i].begin(), A[i].end()); for(int j = 0; j &lt; A[i].size(); j++) &#123; A[i][j] ^= 1; &#125; &#125; return A; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[696. 计数二进制子串]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F696-%E8%AE%A1%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%90%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[给定一个字符串 s，计算具有相同数量0和1的非空(连续)子字符串的数量，并且这些子字符串中的所有0和所有1都是组合在一起的。 重复出现的子串要计算它们出现的次数。 示例 1 :12345输入: &quot;00110011&quot;输出: 6解释: 有6个子串具有相同数量的连续1和0：“0011”，“01”，“1100”，“10”，“0011” 和 “01”。请注意，一些重复出现的子串要计算它们出现的次数。 另外，“00110011”不是有效的子串，因为所有的0（和1）没有组合在一起。示例 2 :1234输入: &quot;10101&quot;输出: 4解释: 有4个子串：“10”，“01”，“10”，“01”，它们具有相同数量的连续1和0。注意： s.length 在1到50,000之间。s 只包含“0”或“1”字符。1234567891011121314151617181920class Solution &#123;public: int countBinarySubstrings(string s) &#123; int preLen = 0; int curLen = 1; int res = 0; for(int i = 1; i &lt; s.size(); i++) &#123; if(s[i] == s[i-1]) &#123; curLen++; &#125; else &#123; preLen = curLen; curLen = 1; &#125; if(preLen &gt;= curLen) &#123; res++; &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[704. Binary Search]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F704-Binary-Search%2F</url>
+    <content type="text"><![CDATA[Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. If target exists, then return its index, otherwise return -1. Example 1:123Input: nums = [-1,0,3,5,9,12], target = 9Output: 4Explanation: 9 exists in nums and its index is 4 Example 2:123Input: nums = [-1,0,3,5,9,12], target = 2Output: -1Explanation: 2 does not exist in nums so return -1 Note: You may assume that all elements in nums are unique.n will be in the range [1, 10000].The value of each element in nums will be in the range [-9999, 9999]. 12345678910111213141516171819class Solution &#123;public: int search(vector&lt;int&gt;&amp; nums, int target) &#123; int left = 0, right = nums.size() - 1; while(left &lt;= right) &#123; int mid = left + (right - left) / 2; if(nums[mid] == target) &#123; return mid; &#125; if(nums[mid] &lt; target) &#123; left += 1; &#125; if(nums[mid] &gt; target) &#123; right -= 1; &#125; &#125; return -1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[868. 二进制间距]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F868-%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%97%B4%E8%B7%9D%2F</url>
+    <content type="text"><![CDATA[给定一个正整数 N，找到并返回 N 的二进制表示中两个连续的 1 之间的最长距离。 如果没有两个连续的 1，返回 0 。 示例 1：12345678输入：22输出：2解释：22 的二进制是 0b10110 。在 22 的二进制表示中，有三个 1，组成两对连续的 1 。第一对连续的 1 中，两个 1 之间的距离为 2 。第二对连续的 1 中，两个 1 之间的距离为 1 。答案取两个距离之中最大的，也就是 2 。 示例 2：1234输入：5输出：2解释：5 的二进制是 0b101 。 示例 3：1234输入：6输出：1解释：6 的二进制是 0b110 。 示例 4：12345输入：8输出：0解释：8 的二进制是 0b1000 。在 8 的二进制表示中没有连续的 1，所以返回 0 。 提示： 1 &lt;= N &lt;= 10^9方法一：记录索引，对给定的二进制数的每一位进行与运算，将为1的那一位的索引记录的a数组中，然后计算a数组相邻元素最大的差值。1234567891011121314151617class Solution &#123;public: int binaryGap(int N) &#123; int a[32] = &#123;0&#125;; int t = 0; for(int i = 0; i &lt; 32; i++) &#123; if(((N&gt;&gt;i) &amp; 1) != 0) &#123; a[t++] = i; &#125; &#125; int ans = 0; for(int i = 0; i &lt; t-1; i++) &#123; ans = max(ans, a[i+1] - a[i]); &#125; return ans; &#125;&#125;; 方法二：一次遍历 123456789101112131415class Solution &#123;public: int binaryGap(int N) &#123; int last = -1, ans = 0; for(int i = 0; i &lt; 32; i++) &#123; if(((N&gt;&gt;i) &amp; 1) != 0) &#123; if(last &gt;= 0) &#123; ans = max(ans, i - last); &#125; last = i; &#125; &#125; return ans; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从《我不是药神》来谈谈穷病]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E4%BB%8E%E3%80%8A%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E%E3%80%8B%E6%9D%A5%E8%B0%88%E8%B0%88%E7%A9%B7%E7%97%85%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>影视</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1036 Boys vs Girls (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1036-Boys-vs-Girls-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1036 Boys vs Girls (25)（25 分）This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of all the female students. Input Specification: Each input file contains one test case. Each case contains a positive integer N, followed by N lines of student information. Each line contains a student’s name, gender, ID and grade, separated by a space, where name and ID are strings of no more than 10 characters with no space, gender is either F (female) or M (male), and grade is an integer between 0 and 100. It is guaranteed that all the grades are distinct. Output Specification: For each test case, output in 3 lines. The first line gives the name and ID of the female student with the highest grade, and the second line gives that of the male student with the lowest grade. The third line gives the difference grade~F~-grade~M~. If one such kind of student is missing, output “Absent” in the corresponding line, and output “NA” in the third line instead. Sample Input 1:12343Joe M Math990112 89Mike M CS991301 100Mary F EE990830 95 Sample Output 1:123Mary EE990830Joe Math9901126 Sample Input 2:1231Jean M AA980920 60Sample Output 2: 123AbsentJean AA980920NA 题目大意：给出n个同学的信息，输出女生中最高分获得者的信息和男生中最低分获得者的信息，并输出他们的差。如果不存在男生或女生在对应位置输出Absent，在分数差的位置输出NA12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;cstdio&gt;struct person &#123; char name[15]; char id[15]; int score;&#125;male, female, temp;void init() &#123; male.score = 101; female.score = -1;&#125;int main() &#123; init(); int n; char gender; scanf("%d", &amp;n); for(int i = 0; i &lt; n; i++) &#123; scanf("%s %c %s %d", temp.name, &amp;gender, &amp;temp.id, &amp;temp.score); if(gender == 'M' &amp;&amp; temp.score &lt; male.score) &#123; male = temp; &#125; else if(gender == 'F' &amp;&amp; temp.score &gt; female.score) &#123; female = temp; &#125; &#125; if(female.score == -1) &#123; printf("Absent\n"); &#125; else &#123; printf("%s %s\n", female.name, female.id); &#125; if(male.score == 101) &#123; printf("Absent\n"); &#125; else &#123; printf("%s %s\n", male.name, male.id); &#125; if(female.score == -1 || male.score == 101) &#123; printf("NA\n"); &#125; else &#123; printf("%d\n", female.score - male.score); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1006 Sign In and Sign Out (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1006-Sign-In-and-Sign-Out-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1006 Sign In and Sign Out (25)（25 分）At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day. Input Specification: Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer M, which is the total number of records, followed by M lines, each in the format: ID_number Sign_in_time Sign_out_timewhere times are given in the format HH:MM:SS, and ID number is a string with no more than 15 characters. Output Specification: For each test case, output in one line the ID numbers of the persons who have unlocked and locked the door on that day. The two ID numbers must be separated by one space. Note: It is guaranteed that the records are consistent. That is, the sign in time must be earlier than the sign out time for each person, and there are no two persons sign in or out at the same moment. Sample Input:12343CS301111 15:30:28 17:00:10SC3021234 08:00:00 11:25:25CS301133 21:45:00 21:58:40 Sample Output:1SC3021234 CS301133 题目大意：给出n个人的机房签到，签离记录，让你找出最早来开门和最晚离开关门的人。分析：可以写一个比较时间大小的函数来判断早到晚到。 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;struct pNode &#123; char id[20]; int hh, mm, ss;&#125;temp, ans1, ans2;bool cmp(pNode node1, pNode node2) &#123; if(node1.hh != node2.hh) &#123; return node1.hh &gt; node2.hh; &#125; if(node1.mm != node2.mm) &#123; return node1.mm &gt; node2.mm; &#125; return node1.ss &gt; node2.ss;&#125;int main() &#123; int n; scanf("%d", &amp;n); ans1.hh = 24, ans1.mm = 60, ans1.ss = 60; ans2.hh = 0, ans2.mm = 0, ans2.ss = 0; for(int i = 0; i &lt; n; i++) &#123; scanf("%s %d:%d:%d", temp.id, &amp;temp.hh, &amp;temp.mm, &amp;temp.ss); if(cmp(temp, ans1) == false) &#123; ans1 = temp; &#125; scanf("%d:%d:%d", &amp;temp.hh, &amp;temp.mm, &amp;temp.ss); if(cmp(temp, ans2)) &#123; ans2 = temp; &#125; &#125; printf("%s %s\n", ans1.id, ans2.id); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1011 World Cup Betting (20)（20 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1011-World-Cup-Betting-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1011 World Cup Betting (20)（20 分）With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best players from the best teams doing battles for the World Cup trophy in South Africa. Similarly, football betting fans were putting their money where their mouths were, by laying all manner of World Cup bets. Chinese Football Lottery provided a “Triple Winning” game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results – namely W for win, T for tie, and L for lose. There was an odd assigned to each result. The winner’s odd would be the product of the three odds times 65%. For example, 3 games’ odds are given as the following: W T L1.1 2.5 1.71.2 3.0 1.64.1 1.2 1.1To obtain the maximum profit, one must buy W for the 3rd game, T for the 2nd game, and T for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.13.02.565%-1)2 = 37.98 yuans (accurate up to 2 decimal places). Input Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to W, T and L. Output For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space. Sample Input1231.1 2.5 1.71.2 3.0 1.64.1 1.2 1.1 Sample Output1T T W 37.98 题目大意：给出三行数据，代表三场比赛。每行3个浮点数，在三行中各自选择最大的一个数，并计算最大收益(abc0.65 -1)2 12345678910111213141516171819202122#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;char s[3] = &#123;'W', 'T', 'L'&#125;;int main() &#123; double ans = 1.0, temp, a; int index; for(int i = 0; i &lt; 3; i++) &#123; temp = 0.0; for(int j = 0; j &lt; 3; j++) &#123; scanf("%lf", &amp;a); if(a &gt; temp) &#123; temp = a; index = j; &#125; &#125; ans *= temp; printf("%c ", s[index]); &#125; printf("%.2f", (ans * 0.65 - 1) * 2); return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1009 Product of Polynomials (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1009-Product-of-Polynomials-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1009 Product of Polynomials (25)（25 分）This time, you are supposed to find A*B where A and B are two polynomials. Input Specification: Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 a~N1~ N2 a~N2~ … NK a~NK~, where K is the number of nonzero terms in the polynomial, Ni and a~Ni~ (i=1, 2, …, K) are the exponents and coefficients, respectively. It is given that 1 &lt;= K &lt;= 10, 0 &lt;= NK &lt; … &lt; N2 &lt; N1 &lt;=1000. Output Specification: For each test case you should output the product of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate up to 1 decimal place. Sample Input122 1 2.4 0 3.22 2 1.5 1 0.5 Sample Output13 3 3.6 2 6.0 1 1.6 题目大意：给定两个多项式，求两个多项式的乘积。分析;先获得第一个多项式的系数，再输入第二个多项式的时候循环相乘，得到所有非零项。 123456789101112131415161718192021222324252627282930313233343536#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;struct Poly &#123; int exp; double cof;&#125;Poly[1001];double ans[2001];int main() &#123; int n, m, number = 0; scanf("%d", &amp;n); for(int i = 0; i &lt; n; i++) &#123; scanf("%d %lf", &amp;Poly[i].exp, &amp;Poly[i].cof); &#125; scanf("%d", &amp;m); for(int i = 0; i &lt; m; i++) &#123; int exp; double cof; scanf("%d %lf", &amp;exp, &amp;cof); for(int j = 0; j &lt; n; j++) &#123; ans[exp + Poly[j].exp] += (cof * Poly[j].cof); &#125; &#125; for(int i = 0; i &lt;= 2000; i++) &#123; if(ans[i] != 0.0) &#123; number++; &#125; &#125; printf("%d", number); for(int i = 2000; i &gt;= 0; i--) &#123; if(ans[i] != 0.0) &#123; printf(" %d %.1f", i, ans[i]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1002 A+B for Polynomials (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1002-A-B-for-Polynomials-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1002 A+B for Polynomials (25)（25 分）This time, you are supposed to find A+B where A and B are two polynomials. Input Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 a~N1~ N2 a~N2~ … NK a~NK~, where K is the number of nonzero terms in the polynomial, Ni and a~Ni~ (i=1, 2, …, K) are the exponents and coefficients, respectively. It is given that 1 &lt;= K &lt;= 10，0 &lt;= NK &lt; … &lt; N2 &lt; N1 &lt;=1000. Output For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place. Sample Input122 1 2.4 0 3.22 2 1.5 1 0.5 Sample Output13 2 1.5 1 2.9 0 3.2 题目大意：两个多项式求和问题，给出两行，一行表示一个多项式，第一个数表示多项式中系数非零项的项数，后面每两个数表示一项，分别指代该项的幂次和系数。分析：可以直接开一个p[maxn]数组来表示多项式，p[n]表示幂次为n的项的系数。输出要求按照幂次从大到小的顺序，格式上保留一位小数。注意正负相抵的情况。 12345678910111213141516171819202122232425262728293031#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;const int maxn = 1111;double p[maxn] = &#123;&#125;;int main() &#123; int k, n, count = 0; double a; scanf("%d", &amp;k); for(int i = 0; i &lt; k; i++) &#123; scanf("%d %lf", &amp;n, &amp;a); p[n] += a; &#125; scanf("%d", &amp;k); for(int i = 0; i &lt; k; i++) &#123; scanf("%d %lf", &amp;n, &amp;a); p[n] += a; &#125; for(int i = 0; i &lt; maxn; i++) &#123; if(p[i] != 0) &#123; count++; &#125; &#125; printf("%d", count); for(int i = maxn; i &gt;= 0; i--) &#123; if(p[i] != 0) &#123; printf(" %d %.1f", i, p[i]); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1065 A+B and C (64bit) (20)（20 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1065-A-B-and-C-64bit-20-%EF%BC%8820-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[1065 A+B and C (64bit) (20)（20 分）Given three integers A, B and C in [-2^63^, 2^63^], you are supposed to tell whether A+B &gt; C. Input Specification: The first line of the input gives the positive number of test cases, T (&lt;=10). Then T test cases follow, each consists of a single line containing three integers A, B and C, separated by single spaces. Output Specification: For each test case, output in one line “Case #X: true” if A+B&amp;gtC, or “Case #X: false” otherwise, where X is the case number (starting from 1). Sample Input:123431 2 32 3 49223372036854775807 -9223372036854775808 0 Sample Output:123Case #1: falseCase #2: trueCase #3: false 题目大意：给出三个整数a, b, c,如果a + b &gt; c，则输出true，否则输出false。 分析，由于给出的整数范围是[-2^63, 2^63],属于long long长整型，因此两数相加可能会发生溢出，这也是这道题的考点。由于不能直接进行大小判断，需要分析溢出后的具体范围。如果两个正数之和等于负数或两个负数之和等于正数，那么就属于发生了溢出 当a+b&gt;2^63时，会超过long long的正向最大值发生正溢出，正溢出后的值区间为[-2^64, -2]，右边界由(2^64-2)%(2^64)得 当a+b&lt;-2^63时，会超过long long的负向最小值发生负溢出，负溢出后的值区间为[0, 2^63]，左边界由(-2^64)%(2^64)得12345678910111213141516171819202122232425262728#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;int main() &#123; int t, tcase = 1; scanf("%d", &amp;t); while(t--) &#123; long long a, b, c; scanf("%lld%lld%lld", &amp;a, &amp;b, &amp;c); long long res = a + b; bool flag; if(a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; res &lt; 0) &#123; //正溢出 flag = true; &#125; else if(a &lt; 0 &amp;&amp; b &lt; 0 &amp;&amp; res &gt;= 0) &#123; //负溢出 flag = false; &#125; else if(res &gt; c) &#123; flag = true; &#125; else &#123; flag = false; &#125; if(flag) &#123; printf("Case #%d: true\n", tcase++); &#125; else &#123; printf("Case #%d: false\n", tcase++); &#125; &#125; return 0;&#125;]]></content>
