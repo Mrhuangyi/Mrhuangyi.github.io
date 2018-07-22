@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[458. 可怜的小猪]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F458-%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E7%8C%AA%2F</url>
+    <content type="text"><![CDATA[有1000只水桶，其中有且只有一桶装的含有毒药，其余装的都是水。它们从外观看起来都一样。如果小猪喝了毒药，它会在15分钟内死去。 问题来了，如果需要你在一小时内，弄清楚哪只水桶含有毒药，你最少需要多少只猪？ 回答这个问题，并为下列的进阶问题编写一个通用算法。 进阶: 假设有 n 只水桶，猪饮水中毒后会在 m 分钟内死亡，你需要多少猪（x）就能在 p 分钟内找出“有毒”水桶？n只水桶里有且仅有一只有毒的桶。参考：http://www.voidcn.com/article/p-vrqdyaov-bpd.html分析：拿到题目乍一看 ~~不知所云，我擦，不是easy类的题吗，怀疑了一波自己的智商然后去Google了。一头猪有五个状态，15min,30,45,60,die or alive.一头猪不光是死活两种状态，而是具有五种状态，所以应该采用五进制进行编码；用这种编码方式去唯一对应一个水桶，当五个回合结束之后通过两头猪在五个状态的状态判断哪一个桶水有毒。所以n个猪能确定的编码数量是5的n次方123456class Solution &#123;public: int poorPigs(int buckets, int minutesToDie, int minutesToTest) &#123; return ceil(log(buckets) / log(minutesToTest / minutesToDie + 1)); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[438. 找到字符串中所有字母异位词]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F438-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%2F</url>
+    <content type="text"><![CDATA[给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。 字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。 说明： 字母异位词指字母相同，但排列不同的字符串。不考虑答案输出的顺序。示例 1:12345输入:s: &quot;cbaebabacd&quot; p: &quot;abc&quot;输出:[0, 6] 解释:起始索引等于 0 的子串是 “cba”, 它是 “abc” 的字母异位词。起始索引等于 6 的子串是 “bac”, 它是 “abc” 的字母异位词。 示例 2:12345输入:s: &quot;abab&quot; p: &quot;ab&quot;输出:[0, 1, 2] 解释:起始索引等于 0 的子串是 “ab”, 它是 “ab” 的字母异位词。起始索引等于 1 的子串是 “ba”, 它是 “ab” 的字母异位词。起始索引等于 2 的子串是 “ab”, 它是 “ab” 的字母异位词。 分析：给一个非空字符串p，找到字符串s中所有p的重组字符串的起始下标。 定义a[26]数组存放字母出现的次数。为了节省时间，每一次循环时，加入新的字符，减去原先的第一个字符。1234567891011121314151617181920212223242526272829303132333435class Solution &#123;public: vector&lt;int&gt; findAnagrams(string s, string p) &#123; vector&lt;int&gt; res; int lens = s.size(); int lenp = p.size(); if(lens == 0 || lenp == 0 || lens &lt; lenp) &#123; return res; &#125; int a[26] = &#123;0&#125;; for(int i = 0; i &lt; lenp; i++) &#123; a[p[i] - 'a']++; &#125; for(int i = 0; i &lt; lenp - 1; i++) &#123; a[s[i] - 'a']--; &#125; for(int i = 0; i &lt; lens - lenp + 1; i++) &#123; a[s[i + lenp - 1] - 'a']--; if(isZero(a)) &#123; res.push_back(i); &#125; a[s[i] - 'a']++; &#125; return res; &#125;private: bool isZero(int a[]) &#123; for(int i = 0; i &lt; 26; i++) &#123; if(a[i] != 0) &#123; return false; &#125; &#125; return true;&#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[447. 回旋镖的数量]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F447-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[给定平面上 n 对不同的点，“回旋镖” 是由点表示的元组 (i, j, k) ，其中 i 和 j 之间的距离和 i 和 k 之间的距离相等（需要考虑元组的顺序）。 找到所有回旋镖的数量。你可以假设 n 最大为 500，所有点的坐标在闭区间 [-10000, 10000] 中。 示例:12输入:[[0,0],[1,0],[2,0]] 输出:12342解释:两个回旋镖为 [[1,0],[0,0],[2,0]] 和 [[1,0],[2,0],[0,0]] 分析：因为要考虑元组间的顺序关系，所以如果有n个点与点a距离相等，那么排列方式一共有n(n-1)种，利用哈希表来记录与某个点相同距离的个数。12345678910111213141516171819202122class Solution &#123;public: int numberOfBoomerangs(vector&lt;pair&lt;int, int&gt;&gt;&amp; points) &#123; int len = points.size(); int res = 0; unordered_map&lt;int, int&gt; m; for(int i = 0; i &lt; len; i++) &#123; for(int j = 0; j &lt; len; j++) &#123; int x = points[i].first - points[j].first; int y = points[i].second - points[j].second; m[x * x + y * y]++; &#125; unordered_map&lt;int, int&gt; :: iterator it; for(it = m.begin(); it != m.end(); it++) &#123; int temp = it-&gt;second; res += temp * (temp - 1); &#125; m.clear(); &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[437. 路径总和 III]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F437-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-III%2F</url>
+    <content type="text"><![CDATA[给定一个二叉树，它的每个结点都存放着一个整数值。 找出路径和等于给定数值的路径总数。 路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。 二叉树不超过1000个节点，且节点数值范围是 [-1000000,1000000] 的整数。 示例：123456789101112131415root = [10,5,-3,3,2,null,11,3,-2,null,1], sum = 8 10 / \ 5 -3 / \ \ 3 2 11 / \ \3 -2 1返回 3。和等于 8 的路径有:1. 5 -&gt; 32. 5 -&gt; 2 -&gt; 13. -3 -&gt; 11 分析：题目要求在以root为根结点的二叉树中，寻找和为sum的路径，返回这样的路径个数。我们可以分两种情况进行递归遍历， 第一种sum包含当前结点，在他的左右子树里面寻找和为sum的路径数量。递归调用dfs 第二种，当前结点不包含在sum里面，直接调用pathSum递归 1234567891011121314151617181920212223242526272829303132333435/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int pathSum(TreeNode* root, int sum) &#123; if(root == NULL) &#123; return 0; &#125; int res = 0; res += dfs(root, sum); res += pathSum(root-&gt;left, sum); res += pathSum(root-&gt;right, sum); return res; &#125;private: int dfs(TreeNode* root, int num) &#123; if(root == NULL) &#123; return 0; &#125; int res = 0; if(root-&gt;val == num) &#123; res += 1; &#125; res += dfs(root-&gt;left, num - root-&gt;val); res += dfs(root-&gt;right, num - root-&gt;val); return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1082 Read Number in Chinese (25)（25 分）]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1082-Read-Number-in-Chinese-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
     <content type="text"><![CDATA[1082 Read Number in Chinese (25)（25 分）Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way. Output “Fu” first if it is negative. For example, -123456789 is read as “Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu”. Note: zero (“ling”) must be handled correctly according to the Chinese tradition. For example, 100800 is “yi Shi Wan ling ba Bai”. Input Specification: Each input file contains one test case, which gives an integer with no more than 9 digits. Output Specification: For each test case, print in a line the Chinese way of reading the number. The characters are separated by a space and there must be no extra space at the end of the line. Sample Input 1:1-123456789 Sample Output 1:1Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu Sample Input 2:1100800 Sample Output 2:1yi Shi Wan ling ba Bai 题目大意：按中文发音规则输出一个绝对值在9位以内的整数。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;char num[10][5] = &#123; "ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"&#125;;char wei[5][5] = &#123;"Shi", "Bai", "Qian", "Wan", "Yi"&#125;;int main() &#123; char str[15]; scanf("%s", str); int len = strlen(str); int left = 0, right = len - 1; if(str[0] == '-') &#123; printf("Fu"); left++; &#125; while(left + 4 &lt;= right) &#123; right -= 4; &#125; while(left &lt; len) &#123; bool flag = false; bool isPrint = false; while(left &lt;= right) &#123; if(left &gt; 0 &amp;&amp; str[left] == '0') &#123; flag = true; &#125; else &#123; if(flag) &#123; printf(" ling"); flag = false; &#125; if(left &gt; 0) &#123; printf(" "); &#125; printf("%s", num[str[left] - '0']); isPrint = true; if(left != right) &#123; printf(" %s", wei[right - left - 1]); &#125; &#125; left++; &#125; if(isPrint &amp;&amp; right != len - 1) &#123; printf(" %s", wei[(len - 1 - right) / 4 + 2]); &#125; right += 4; &#125; return 0;&#125;]]></content>
@@ -4367,9 +4411,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[满江红]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
-    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
+    <title><![CDATA[我的2016书单]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -4378,9 +4422,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我的2016书单]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%88%91%E7%9A%842016%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[你好,这是我的2016书单。1、《一句顶一万句》2、《寻路中国》3、《人类简史》4、《一只特立独行的猪》5、《三国演义》6、《世说新语》7、《战国策》8、《春风沉醉的夜晚》9、《水浒传》10、《茶花女》11、《天黑以后》12、《悟空传》13、《苦妓回忆录》14、《不属于我们的世纪》15、《身份的焦虑》16、《追忆似水年华》17、《约翰克里斯多夫》18、《无名的裘德》19、《高老头》20、《浮生六记》21、《二手时间》22、《洗澡》23、《爱情和其他魔鬼》24、《芳华》25、《冰与火之歌》26、《远山淡影》27、《目送》28、《自深深处》29、《巨人的陨落》30、《余华短篇集》31、《基督山伯爵》32、《三个火枪手》33、《和喜欢的一切在一起》34、《弗兰克尔自传》35、《重新认识你自己》36、《二十四史》37、《长恨歌》38、《面包树上的女人》39、《追随你的心》40、《不能不去爱的两件事》41、《在这复杂世界里》42、《坏小孩》43、《季羡林私人史》44、《金瓶梅》45、《孤独六讲》46、《我们生活在巨大的差距里》47、《分身》48、《宿命》49、《快乐是在心里》50、《我的精神家园》51、《万历十五年》52、《撒切尔夫人传》53、《飞鸟集》54、《幻灭》55、《当我跑步时我谈些什么》56、《富爸爸、穷爸爸》57、《雅舍小品》58、《一个女子恋爱的时候》59、《从一到无穷大》60、《虚无的十字架》61、《资本论》62、《白说》63、《在细雨中呼喊》]]></content>
+    <title><![CDATA[满江红]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%BB%A1%E6%B1%9F%E7%BA%A2%2F</url>
+    <content type="text"><![CDATA[满江红–岳飞 怒发冲冠， 凭栏处，潇潇雨歇。 抬望眼， 仰天长啸， 壮怀激烈。 三十功名尘与土， 八千里路云和月。 某等闲，白了少年头， 空悲切， 靖康耻， 犹未雪。 臣子恨， 何时灭！ 驾长车， 踏破贺兰山缺。 壮志饥餐胡虏肉， 笑谈渴饮匈奴血。 待从头，收拾旧山河， 朝天阙。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
