@@ -1,6 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[695. 岛屿的最大面积]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F695-%E5%B2%9B%E5%B1%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF%2F</url>
+    <content type="text"><![CDATA[给定一个包含了一些 0 和 1的非空二维数组 grid , 一个 岛屿 是由四个方向 (水平或垂直) 的 1 (代表土地) 构成的组合。你可以假设二维矩阵的四个边缘都被水包围着。 找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为0。) 示例 1:1234567891011121314[[0,0,1,0,0,0,0,1,0,0,0,0,0], [0,0,0,0,0,0,0,1,1,1,0,0,0], [0,1,1,0,1,0,0,0,0,0,0,0,0], [0,1,0,0,1,1,0,0,1,0,1,0,0], [0,1,0,0,1,1,0,0,1,1,1,0,0], [0,0,0,0,0,0,0,0,0,0,1,0,0], [0,0,0,0,0,0,0,1,1,1,0,0,0], [0,0,0,0,0,0,0,1,1,0,0,0,0]]对于上面这个给定矩阵应返回 6。注意答案不应该是11，因为岛屿只能包含水平或垂直的四个方向的‘1’。示例 2:[[0,0,0,0,0,0,0,0]]对于上面这个给定的矩阵, 返回 0。 注意: 给定的矩阵grid 的长度和宽度都不超过 50。 用dfs或bfs搜索遍历二维数组。 深度优先搜索借助递归，沿着某找路径往下直到结束。123456789101112131415161718192021222324252627282930313233343536class Solution &#123;public: int maxAreaOfIsland(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123; if(grid.empty()) &#123; return 0; &#125; int res = 0; vector&lt;vector&lt;bool&gt;&gt; mark(grid.size(), vector&lt;bool&gt;(grid[0].size(), false)); int deep = grid.size(); int len = grid[0].size(); for(int i = 0; i &lt; deep; i++) &#123; for(int j = 0; j &lt; len; j++) &#123; if(mark[i][j]) &#123; continue; &#125; int temp = dfs(grid, i, j, mark); res = max(res, temp); &#125; &#125; return res; &#125;private: int dfs(vector&lt;vector&lt;int&gt;&gt;&amp; grid, int x, int y, vector&lt;vector&lt;bool&gt;&gt;&amp; mark) &#123; if(x &gt;= grid.size() || y &gt;= grid[0].size() || x &lt; 0 || y &lt; 0) &#123; return 0; &#125; if(mark[x][y]) &#123; return 0; &#125; if(grid[x][y] == 0) &#123; return 0; &#125; mark[x][y] = true; return 1 + dfs(grid, x + 1, y, mark) + dfs(grid, x - 1, y, mark) + dfs(grid, x, y + 1, mark) + dfs(grid, x, y - 1, mark); &#125;&#125;; bfs需要借助栈进行一层层遍历搜索。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051class Solution &#123;public: int maxAreaOfIsland(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123; if(grid.empty()) &#123; return 0; &#125; int res = 0; vector&lt;vector&lt;bool&gt;&gt; mark(grid.size(), vector&lt;bool&gt;(grid[0].size(), false)); int deep = grid.size(); int len = grid[0].size(); for(int i = 0; i &lt; deep; i++) &#123; for(int j = 0; j &lt; len; j++) &#123; if(mark[i][j]) &#123; continue; &#125; if(grid[i][j] == 0) &#123; continue; &#125; int temp = 0; stack&lt;pair&lt;int, int&gt;&gt; st; st.push(make_pair(i, j)); mark[i][j] = true; while(!st.empty()) &#123; temp++; pair&lt;int, int&gt; cur = st.top(); st.pop(); int x = cur.first; int y = cur.second; if(x - 1 &gt;= 0 &amp;&amp; grid[x - 1][y] == 1 &amp;&amp; mark[x - 1][y] == false) &#123; st.push(make_pair(x - 1, y)); mark[x - 1][y] = true; &#125; if(x + 1 &lt; deep &amp;&amp; grid[x + 1][y] == 1 &amp;&amp; mark[x + 1][y] == false) &#123; st.push(make_pair(x + 1, y)); mark[x + 1][y] = true; &#125; if(y - 1 &gt;= 0 &amp;&amp; grid[x][y - 1] == 1 &amp;&amp; mark[x][y - 1] == false) &#123; st.push(make_pair(x, y - 1)); mark[x][y - 1] = true; &#125; if(y + 1 &lt; len &amp;&amp; grid[x][y + 1] == 1 &amp;&amp; mark[x][y + 1] == false) &#123; st.push(make_pair(x, y + 1)); mark[x][y + 1] = true; &#125; &#125; res = max(res, temp); &#125; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[849. 到最近的人的最大距离]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F849-%E5%88%B0%E6%9C%80%E8%BF%91%E7%9A%84%E4%BA%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%9D%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[在一排座位（ seats）中，1 代表有人坐在座位上，0 代表座位上是空的。 至少有一个空座位，且至少有一人坐在座位上。 亚历克斯希望坐在一个能够使他与离他最近的人之间的距离达到最大化的座位上。 返回他到离他最近的人的最大距离。 示例 1：12345678910输入：[1,0,0,0,1,0,1]输出：2解释：如果亚历克斯坐在第二个空位（seats[2]）上，他到离他最近的人的距离为 2 。如果亚历克斯坐在其它任何一个空位上，他到离他最近的人的距离为 1 。因此，他到离他最近的人的最大距离是 2 。 示例 2：输入：[1,0,0,0]输出：3 解释：如果亚历克斯坐在最后一个座位上，他离最近的人有 3 个座位远。这是可能的最大距离，所以答案是 3 。提示： 1 &lt;= seats.length &lt;= 20000seats 中只含有 0 和 1，至少有一个 0，且至少有一个 1。 考虑三种情况，根据0的个数来计算，最左边或最右边有最多的连续0，那么结果就是相应0的个数，如果连续0在中间，连续0位为偶数个，那么个数/2就行，否则还要加上1。12345678910111213141516171819202122232425262728293031323334353637383940class Solution &#123;public: int maxDistToClosest(vector&lt;int&gt;&amp; seats) &#123; int cnt = 0, res = 0, n = seats.size(); int i = 0; for(; i &lt; n; i++) &#123; if(seats[i] == 0) &#123; cnt++; &#125; else &#123; break; &#125; &#125; res = max(cnt, res); cnt = 0; int j = n - 1; for(; j &gt;= 0; j--) &#123; if(seats[j] == 0) &#123; cnt++; &#125; else &#123; break; &#125; &#125; res = max(cnt, res); cnt = 0; while(i &lt; j) &#123; if(seats[i] == 0) &#123; cnt++; &#125; else &#123; cnt = 0; &#125; if(cnt % 2 == 0) &#123; res = max(res, cnt / 2); &#125; else &#123; res = max(res, cnt / 2 + 1); &#125; i++; &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[821. 字符的最短距离]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F821-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[给定一个字符串 S 和一个字符 C。返回一个代表字符串 S 中每个字符到字符串 S 中的字符 C 的最短距离的数组。 示例 1: 输入: S = “loveleetcode”, C = ‘e’输出: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]说明: 字符串 S 的长度范围为 [1, 10000]。C 是一个单字符，且保证是字符串 S 里的字符。S 和 C 中的所有字母均为小写字母。12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; shortestToChar(string S, char C) &#123; int n = S.size(); vector&lt;int&gt; ans(n, n); for(int i = 0; i &lt; n; i++) &#123; if(S[i] == C) &#123; ans[i] = 0; &#125; &#125; for(int i = 1; i &lt; n; i++) &#123; ans[i] = min(ans[i], ans[i - 1] + 1); &#125; for(int i = n - 2; i &gt;= 0; i--) &#123; ans[i] = min(ans[i], ans[i + 1] + 1); &#125; return ans; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[724. 寻找数组的中心索引]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F724-%E5%AF%BB%E6%89%BE%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E5%BF%83%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。 我们是这样定义数组中心索引的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。 如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。 示例 1:12345678910111213输入: nums = [1, 7, 3, 6, 5, 6]输出: 3解释: 索引3 (nums[3] = 6) 的左侧数之和(1 + 7 + 3 = 11)，与右侧数之和(5 + 6 = 11)相等。同时, 3 也是第一个符合要求的中心索引。示例 2:输入: nums = [1, 2, 3]输出: -1解释: 数组中不存在满足此条件的中心索引。 说明: nums 的长度范围为 [0, 10000]。任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。 思路：先求出数组总和，然后遍历数组，判断左侧和与右侧和是否相等，右侧和可以用总和减去左侧和减去nums[i]表示12345678910111213141516171819class Solution &#123;public: int pivotIndex(vector&lt;int&gt;&amp; nums) &#123; if(nums.size() == 0) &#123; return -1; &#125; int sum = 0, leftsum = 0; for(int i = 0; i &lt; nums.size(); i++) &#123; sum += nums[i]; &#125; for(int i = 0; i &lt; nums.size(); i++) &#123; if(leftsum == sum - leftsum - nums[i]) &#123; return i; &#125; leftsum += nums[i]; &#125; return -1; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[700. 二叉搜索树中的搜索]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F700-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[给定二叉搜索树（BST）的根节点和一个值。 你需要在BST中找到节点值等于给定值的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 NULL。 例如， 给定二叉搜索树: 4 / \ 2 7 / \ 1 3 和值: 2你应该返回如下子树: 2 / \ 1 3 在上述示例中，如果要找的值是 5，但因为没有节点值为 5，我们应该返回 NULL。 123456789101112131415161718192021222324/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* searchBST(TreeNode* root, int val) &#123; if(root == NULL) &#123; return NULL; &#125; if(root-&gt;val == val) &#123; return root; &#125; else if(root-&gt;val &gt; val) &#123; return searchBST(root-&gt;left, val); &#125; else &#123; return searchBST(root-&gt;right, val); &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[783. 二叉搜索树结点最小距离]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F783-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BB%93%E7%82%B9%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[给定一个二叉搜索树的根结点 root, 返回树中任意两节点的差的最小值。 示例：123456789101112输入: root = [4,2,6,1,3,null,null]输出: 1解释:注意，root是树结点对象(TreeNode object)，而不是数组。给定的树 [4,2,6,1,3,null,null] 可表示为下图: 4 / \ 2 6 / \ 1 3 最小的差值是 1, 它是节点1和节点2的差值, 也是节点3和节点2的差值。注意： 二叉树的大小范围在 2 到 100。二叉树总是有效的，每个节点的值都是整数，且不重复。12345678910111213141516171819202122232425262728/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int minDiffInBST(TreeNode* root) &#123; int res = INT_MAX, pre = INT_MAX; getres(root, pre, res); return res; &#125; void getres(TreeNode* root, int&amp; pre, int&amp; res) &#123; if(root==NULL) &#123; return; &#125; getres(root-&gt;left, pre, res); if(pre != INT_MAX) &#123; res = min(res, abs(pre - root-&gt;val)); &#125; pre = root-&gt;val; getres(root-&gt;right, pre, res); &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[671. 二叉树中第二小的节点]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F671-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么这个节点的值不大于它的子节点的值。 给出这样的一个二叉树，你需要输出所有节点中的第二小的值。如果第二小的值不存在的话，输出 -1 。 示例 1:1234567891011121314151617输入: 2 / \ 2 5 / \ 5 7输出: 5说明: 最小的值是 2 ，第二小的值是 5 。示例 2:输入: 2 / \ 2 2输出: -1 说明: 最小的值是 2, 但是不存在第二小的值。12345678910111213141516171819202122232425262728293031323334/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int findSecondMinimumValue(TreeNode* root) &#123; set&lt;int&gt; res; stack&lt;TreeNode* &gt; s; s.push(root); while(!s.empty()) &#123; TreeNode* node = s.top(); s.pop(); res.insert(node-&gt;val); if(node-&gt;left) &#123; s.push(node-&gt;left); &#125; if(node-&gt;right) &#123; s.push(node-&gt;right); &#125; &#125; set&lt;int&gt;::iterator it = res.begin(); if(res.size() &gt; 1) &#123; return *(++it); &#125; else &#123; return -1; &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[669. 修剪二叉搜索树]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F669-%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[给定一个二叉搜索树，同时给定最小边界L 和最大边界 R。通过修剪二叉搜索树，使得所有节点的值在[L, R]中 (R&gt;=L) 。你可能需要改变树的根节点，所以结果应当返回修剪好的二叉搜索树的新的根节点。 示例 1:1234567891011121314151617181920212223242526272829303132输入: 1 / \ 0 2 L = 1 R = 2输出: 1 \ 2示例 2:输入: 3 / \ 0 4 \ 2 / 1 L = 1 R = 3输出: 3 / 2 / 1 先看根节点：如果节点值比L还小，说明根节点和左子树都需要被剪掉，继续对右子树进行修剪。如果节点值比R还大，说明根节点和右子树都需要被剪掉。继续对左子树进行修剪。如果节点值在区间内:则对左子树和右子树再进行修剪。 1234567891011121314151617181920212223242526 /** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* trimBST(TreeNode* root, int L, int R) &#123; if(root == NULL) &#123; return NULL; &#125; if(root-&gt;val &lt; L) &#123; return trimBST(root-&gt;right, L, R); &#125; if(root-&gt;val &gt; R) &#123; return trimBST(root-&gt;left, L, R); &#125; root-&gt;left = trimBST(root-&gt;left, L, R); root-&gt;right = trimBST(root-&gt;right, L, R); return root; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1051 Pop Sequence (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1051-Pop-Sequence-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1051 Pop Sequence (25)（25 分）Given a stack which can keep M numbers at most. Push N numbers in the order of 1, 2, 3, …, N and pop randomly. You are supposed to tell if a given sequence of numbers is a possible pop sequence of the stack. For example, if M is 5 and N is 7, we can obtain 1, 2, 3, 4, 5, 6, 7 from the stack, but not 3, 2, 1, 7, 5, 6, 4. Input Specification: Each input file contains one test case. For each case, the first line contains 3 numbers (all no more than 1000): M (the maximum capacity of the stack), N (the length of push sequence), and K (the number of pop sequences to be checked). Then K lines follow, each contains a pop sequence of N numbers. All the numbers in a line are separated by a space. Output Specification: For each pop sequence, print in one line “YES” if it is indeed a possible pop sequence of the stack, or “NO” if not. Sample Input:1234565 7 51 2 3 4 5 6 73 2 1 7 5 6 47 6 5 4 3 2 15 6 4 3 7 2 11 7 6 5 4 3 2 Sample Output:12345YESNONOYESNO 题目大意：给定一个容量为m的栈，先分别把1，2，3…n依次入栈，并给出一系列出栈顺序，问这些出栈顺序是否可能。 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;#include&lt;set&gt;#include&lt;cstdio&gt;#include&lt;stack&gt;using namespace std;const int maxn = 1010;int arr[maxn];stack&lt;int&gt; st;int main() &#123; int m, n, t; scanf("%d%d%d", &amp;m, &amp;n, &amp;t); while(t--) &#123; while(!st.empty()) &#123; st.pop(); &#125; for(int i = 1; i &lt;= n; i++) &#123; scanf("%d", &amp;arr[i]); &#125; int cur = 1; bool flag = true; for(int i = 1; i &lt;= n; i++) &#123; st.push(i); if(st.size() &gt; m) &#123; flag = false; break; &#125; while(!st.empty() &amp;&amp; st.top() == arr[cur]) &#123; st.pop(); cur++; &#125; &#125; if(st.empty() == true &amp;&amp; flag == true) &#123; printf("YES\n"); &#125; else &#123; printf("NO\n"); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1022 Digital Library (30)（30 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1022-Digital-Library-30-%EF%BC%8830-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1022 Digital Library (30)（30 分）A Digital Library contains millions of books, stored according to their titles, authors, key words of their abstracts, publishers, and published years. Each book is assigned an unique 7-digit number as its ID. Given any query from a reader, you are supposed to output the resulting books, sorted in increasing order of their ID’s. Input Specification: Each input file contains one test case. For each case, the first line contains a positive integer N (&lt;=10000) which is the total number of books. Then N blocks follow, each contains the information of a book in 6 lines: Line #1: the 7-digit ID number;Line #2: the book title – a string of no more than 80 characters;Line #3: the author – a string of no more than 80 characters;Line #4: the key words – each word is a string of no more than 10 characters without any white space, and the keywords are separated by exactly one space;Line #5: the publisher – a string of no more than 80 characters;Line #6: the published year – a 4-digit number which is in the range [1000, 3000].It is assumed that each book belongs to one author only, and contains no more than 5 key words; there are no more than 1000 distinct key words in total; and there are no more than 1000 distinct publishers. After the book information, there is a line containing a positive integer M (&lt;=1000) which is the number of user’s search queries. Then M lines follow, each in one of the formats shown below: 1: a book title2: name of an author3: a key word4: name of a publisher5: a 4-digit number representing the yearOutput Specification: For each query, first print the original query in a line, then output the resulting book ID’s in increasing order, each occupying a line. If no book is found, print “Not Found” instead. Sample Input:123456789101112131415161718192021222324252631111111The Testing BookYue Chentest code debug sort keywordsZUCS Print20113333333Another Testing BookYue Chentest code sort keywordsZUCS Print220122222222The Testing BookCYLLkeywords debug bookZUCS Print2201161: The Testing Book2: Yue Chen3: keywords4: ZUCS Print5: 20113: blablabla Sample Output:12345678910111213141516171: The Testing Book111111122222222: Yue Chen111111133333333: keywords1111111222222233333334: ZUCS Print11111115: 2011111111122222223: blablablaNot Found 题目大意:给出n本书的编号、书名、作者、关键词、出版社、出版年份，然后根据某个除编号外的信息来查询该信息的书的编号，并按要求按编号从小到大顺序输出。 可以用map&lt; string, set &lt; int &gt;&gt; 分别建立书名、作者、关键词、出版社、出版年份与编号的映射 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;#include&lt;set&gt;#include&lt;cstdio&gt;using namespace std;map&lt;string, set&lt;int&gt;&gt; mpTitle, mpAuthor, mpKey, mpPub,mpYear;void query(map&lt;string, set&lt;int&gt;&gt;&amp; mp, string&amp; str) &#123; if(mp.find(str) == mp.end()) &#123; printf("Not Found\n"); &#125; else &#123; for(set&lt;int&gt;::iterator it = mp[str].begin(); it != mp[str].end(); it++) &#123; printf("%07d\n", *it); &#125; &#125;&#125;int main() &#123; int n, m, id, type; string title, author, key, pub, year; scanf("%d", &amp;n); for(int i = 0; i &lt; n; i++) &#123; scanf("%d", &amp;id); char c = getchar(); getline(cin, title); mpTitle[title].insert(id); getline(cin, author); mpAuthor[author].insert(id); while(cin &gt;&gt; key) &#123; mpKey[key].insert(id); c = getchar(); if(c == '\n') &#123; break; &#125; &#125; getline(cin, pub); mpPub[pub].insert(id); getline(cin, year); mpYear[year].insert(id); &#125; string temp; scanf("%d", &amp;m); for(int i = 0; i &lt; m; i++) &#123; scanf("%d: ", &amp;type); getline(cin, temp); cout&lt;&lt;type&lt;&lt;": "&lt;&lt;temp&lt;&lt;endl; if(type == 1) &#123; query(mpTitle, temp); &#125; else if(type == 2) &#123; query(mpAuthor, temp); &#125; else if(type == 3) &#123; query(mpKey, temp); &#125; else if(type == 4) &#123; query(mpPub, temp); &#125; else &#123; query(mpYear, temp); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1071 Speech Patterns (25)（25 分）]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F1071-Speech-Patterns-25-%EF%BC%8825-%E5%88%86%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1071 Speech Patterns (25)（25 分）People often have a preference among synonyms of the same word. For example, some may prefer “the police”, while others may prefer “the cops”. Analyzing such patterns can help to narrow down a speaker’s identity, which is useful when validating, for example, whether it’s still the same person behind an online avatar. Now given a paragraph of text sampled from someone’s speech, can you find the person’s most commonly used word? Input Specification: Each input file contains one test case. For each case, there is one line of text no more than 1048576 characters in length, terminated by a carriage return ‘\n’. The input contains at least one alphanumerical character, i.e., one character from the set [0-9 A-Z a-z]. Output Specification: For each test case, print in one line the most commonly occurring word in the input text, followed by a space and the number of times it has occurred in the input. If there are more than one such words, print the lexicographically smallest one. The word should be printed in all lower case. Here a “word” is defined as a continuous sequence of alphanumerical characters separated by non-alphanumerical characters or the line beginning/end. Note that words are case insensitive. Sample Input:1Can1: &quot;Can a can can a can? It can!&quot; Sample Output:1can 5 题目大意：读入一行字符串，问出现次数最多的单词和出现次数，这个单词可以由大小写字母和数字组成。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;using namespace std;map&lt;string,int&gt;cou;int check(char c)&#123; if(c&gt;='0'&amp;&amp;c&lt;='9')&#123; return 1; &#125; if(c&gt;='a'&amp;&amp;c&lt;='z')&#123; return 1; &#125; if(c&gt;='A'&amp;&amp;c&lt;='Z')&#123; return 1; &#125; return 0;&#125;int main()&#123; int i=0; string str; getline(cin,str); int len=str.length(); while(i&lt;len)&#123; string word; while(i&lt;len&amp;&amp;check(str[i])==0)&#123;//定位到有效单词 i++; &#125; while(i&lt;len&amp;&amp;check(str[i])==1)&#123; if(str[i]&gt;='A'&amp;&amp;str[i]&lt;='Z')&#123; str[i]=str[i]+32; &#125; word=word+str[i]; i++; &#125; if(cou.find(word)==cou.end())&#123; cou[word]=1; &#125; else&#123; cou[word]++; &#125; &#125; map&lt;string,int&gt;::iterator it=cou.begin(); int max=-1; string ans; for(;it!=cou.end();it++)&#123; if(it-&gt;second&gt;max)&#123; max=it-&gt;second; ans=it-&gt;first; &#125; &#125; cout&lt;&lt;ans&lt;&lt;" "&lt;&lt;max&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[479. 最大回文数乘积]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F479-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E6%95%B0%E4%B9%98%E7%A7%AF%2F</url>
+    <content type="text"><![CDATA[你需要找到由两个 n 位数的乘积组成的最大回文数。 由于结果会很大，你只需返回最大回文数 mod 1337得到的结果。 示例:12345输入: 2输出: 987解释: 99 x 91 = 9009, 9009 % 1337 = 987 说明: n 的取值范围为 [1,8]。分析：直接暴力搜索是要超时的。先确定n位数的范围，然后遍历这个区间的数字。当n&gt;1时，两个n位数乘积的最大回文数一定是2n位的。所以将当前数字的前半段反转后拼接到后面，组成一个回文数 12345678910111213141516class Solution &#123;public: int largestPalindrome(int n) &#123; int upper = pow(10, n) - 1, lower = upper / 10; for(int i = upper; i &gt; lower; i--) &#123; string t = to_string(i); long p = stol(t + string(t.rbegin(), t.rend())); for(long j = upper; j * j &gt; p; j--) &#123; if(p % j == 0) &#123; return p % 1337; &#125; &#125; &#125; return 9; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[475. 供暖器]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F475-%E4%BE%9B%E6%9A%96%E5%99%A8%2F</url>
     <content type="text"><![CDATA[冬季已经来临。 你的任务是设计一个有固定加热半径的供暖器向所有房屋供暖。 现在，给出位于一条水平线上的房屋和供暖器的位置，找到可以覆盖所有房屋的最小加热半径。 所以，你的输入将会是房屋和供暖器的位置。你将输出供暖器的最小加热半径。 说明: 给出的房屋和供暖器的数目是非负数且不会超过 25000。给出的房屋和供暖器的位置均是非负数且不会超过10^9。只要房屋位于供暖器的半径内(包括在边缘上)，它就可以得到供暖。所有供暖器都遵循你的半径标准，加热的半径也一样。示例 1: 输入: [1,2,3],[2]输出: 1解释: 仅在位置2上有一个供暖器。如果我们将加热半径设为1，那么所有房屋就都能得到供暖。示例 2: 输入: [1,2,3,4],[1,4]输出: 1解释: 在位置1, 4上有两个供暖器。我们需要将加热半径设为1，这样所有房屋就都能得到供暖。 二分解法：123456789101112131415161718192021222324252627282930313233class Solution &#123;public: int findRadius(vector&lt;int&gt;&amp; houses, vector&lt;int&gt;&amp; heaters) &#123; sort(heaters.begin(), heaters.end()); int radius = 0; for(int h : houses) &#123; radius = max(radius, binarySearch(h, heaters)); &#125; return radius; &#125;private: int binarySearch(int val, vector&lt;int&gt; heaters) &#123; int left = 0; int right = heaters.size() - 1; int diff = INT_MAX; while(left &lt; right) &#123; int mid = left + (right - left) / 2; if(val &lt; heaters[mid]) &#123; right = mid; &#125; else &#123; left = mid + 1; &#125; &#125; if(left &gt; 0) &#123; diff = min(abs(val - heaters[left]), abs(val - heaters[left - 1])); &#125; if(left &lt; heaters.size() - 1) &#123; diff = min(diff, abs(val - heaters[left + 1])); &#125; diff = min(diff, abs(val - heaters[left])); return diff; &#125;&#125;; 双指针法：123456789101112131415class Solution &#123;public: int findRadius(vector&lt;int&gt;&amp; houses, vector&lt;int&gt;&amp; heaters) &#123; sort(houses.begin(), houses.end()); sort(heaters.begin(), heaters.end()); int i = 0, res = 0; for(int house : houses) &#123; while(i &lt; heaters.size() - 1 &amp;&amp; heaters[i] + heaters[i + 1] &lt;= house * 2) &#123; i++; &#125; res = max(res, abs(heaters[i] - house)); &#125; return res; &#125;&#125;;]]></content>
