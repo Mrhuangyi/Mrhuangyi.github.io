@@ -517,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/717-1比特与2比特字符/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/704-Binary-Search/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -536,7 +536,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/717-1比特与2比特字符/" itemprop="url">717. 1比特与2比特字符</a></h1>
+                <a class="post-title-link" href="/题解集/704-Binary-Search/" itemprop="url">704. Binary Search</a></h1>
         
 
         <div class="post-meta">
@@ -548,8 +548,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T15:42:28+08:00">
-                2018-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T22:42:57+08:00">
+                2018-07-20
               </time>
             
 
@@ -590,8 +590,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/717-1比特与2比特字符/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/717-1比特与2比特字符/" class="cy_cmt_count" data-xid="题解集/717-1比特与2比特字符/" itemprop="commentsCount" ></span>
+                <a href="/题解集/704-Binary-Search/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/704-Binary-Search/" class="cy_cmt_count" data-xid="题解集/704-Binary-Search/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -621,13 +621,11 @@
       
         
           
-          有两种特殊字符。第一种字符可以用一比特0来表示。第二种字符可以用两比特(10 或 11)来表示。
-现给一个由若干比特组成的字符串。问最后一个字符是否必定为一个一比特字符。给定的字符串总是由0结束。
-示例 1:12345输入: bits = [1, 0, 0]输出: True解释: 唯一的编码方式是一
+          Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. If target exists, 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/717-1比特与2比特字符/#more" rel="contents">
+            <a class="btn" href="/题解集/704-Binary-Search/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -680,7 +678,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/566-重塑矩阵/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/868-二进制间距/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -699,7 +697,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/566-重塑矩阵/" itemprop="url">566. 重塑矩阵</a></h1>
+                <a class="post-title-link" href="/题解集/868-二进制间距/" itemprop="url">868. 二进制间距</a></h1>
         
 
         <div class="post-meta">
@@ -711,8 +709,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T15:10:30+08:00">
-                2018-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T22:26:09+08:00">
+                2018-07-20
               </time>
             
 
@@ -753,8 +751,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/566-重塑矩阵/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/566-重塑矩阵/" class="cy_cmt_count" data-xid="题解集/566-重塑矩阵/" itemprop="commentsCount" ></span>
+                <a href="/题解集/868-二进制间距/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/868-二进制间距/" class="cy_cmt_count" data-xid="题解集/868-二进制间距/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -784,14 +782,13 @@
       
         
           
-          在MATLAB中，有一个非常有用的函数 reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。
-给出一个由二维数组表示的矩阵，以及两个正整数r和c，分别表示想要的重构的矩阵的行数和列数。
-重构后的矩阵需要将原始矩阵的所有元素以相同的行遍历顺序填充。
-如果具有给定参数的res
+          给定一个正整数 N，找到并返回 N 的二进制表示中两个连续的 1 之间的最长距离。 
+如果没有两个连续的 1，返回 0 。
+示例 1：12345678输入：22输出：2解释：22 的二进制是 0b10110 。在 22 的二进制表示中，有三个 1，组成两对连续的 1 。第一对连续的 1 中，两个 1
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/566-重塑矩阵/#more" rel="contents">
+            <a class="btn" href="/题解集/868-二进制间距/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -844,7 +841,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/637-二叉树的层平均值/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1036-Boys-vs-Girls-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -863,7 +860,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/637-二叉树的层平均值/" itemprop="url">637. 二叉树的层平均值</a></h1>
+                <a class="post-title-link" href="/题解集/1036-Boys-vs-Girls-25-（25-分）/" itemprop="url">1036 Boys vs Girls (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -875,8 +872,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T16:42:16+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T15:31:15+08:00">
+                2018-07-20
               </time>
             
 
@@ -917,8 +914,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/637-二叉树的层平均值/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/637-二叉树的层平均值/" class="cy_cmt_count" data-xid="题解集/637-二叉树的层平均值/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1036-Boys-vs-Girls-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1036-Boys-vs-Girls-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1036-Boys-vs-Girls-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -948,12 +945,11 @@
       
         
           
-          给定一个非空二叉树, 返回一个由每层节点平均值组成的数组.
-示例 1:123456789输入:    3   / \  9  20    /  \   15   7输出: [3, 14.5, 11]解释:第0层的平均值是 3,  第1层是 14.5, 第2层是 11. 因此返回 [3, 14.5, 
+          1036 Boys vs Girls (25)（25 分）This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/637-二叉树的层平均值/#more" rel="contents">
+            <a class="btn" href="/题解集/1036-Boys-vs-Girls-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1006,7 +1002,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/812-最大三角形面积/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1025,7 +1021,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/812-最大三角形面积/" itemprop="url">812. 最大三角形面积</a></h1>
+                <a class="post-title-link" href="/题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/" itemprop="url">1006 Sign In and Sign Out (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1037,8 +1033,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T16:05:31+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T15:14:46+08:00">
+                2018-07-20
               </time>
             
 
@@ -1079,8 +1075,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/812-最大三角形面积/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/812-最大三角形面积/" class="cy_cmt_count" data-xid="题解集/812-最大三角形面积/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1110,15 +1106,11 @@
       
         
           
-          给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
-示例:1234输入: points = [[0,0],[0,1],[1,0],[0,2],[2,0]]输出: 2解释: 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
-
-注意:
-3 &lt;= points.l
+          1006 Sign In and Sign Out (25)（25 分）At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/812-最大三角形面积/#more" rel="contents">
+            <a class="btn" href="/题解集/1006-Sign-In-and-Sign-Out-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1171,7 +1163,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/693-交替位二进制数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1011-World-Cup-Betting-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1190,7 +1182,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/693-交替位二进制数/" itemprop="url">693. 交替位二进制数</a></h1>
+                <a class="post-title-link" href="/题解集/1011-World-Cup-Betting-20-（20-分）/" itemprop="url">1011 World Cup Betting (20)（20 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1202,8 +1194,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T15:26:05+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T14:35:18+08:00">
+                2018-07-20
               </time>
             
 
@@ -1244,8 +1236,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/693-交替位二进制数/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/693-交替位二进制数/" class="cy_cmt_count" data-xid="题解集/693-交替位二进制数/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1011-World-Cup-Betting-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1011-World-Cup-Betting-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1011-World-Cup-Betting-20-（20-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1275,14 +1267,11 @@
       
         
           
-          给定一个正整数，检查他是否为交替位二进制数：换句话说，就是他的二进制数相邻的两个位数永不相等。
-示例 1:1234输入: 5输出: True解释:5的二进制数是: 101
-示例 2:1234输入: 7输出: False解释:7的二进制数是: 111
-示例 3:1234输入: 11输出: False解
+          1011 World Cup Betting (20)（20 分）With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best pla
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/693-交替位二进制数/#more" rel="contents">
+            <a class="btn" href="/题解集/1011-World-Cup-Betting-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1335,7 +1324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/338-Bit位计数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1009-Product-of-Polynomials-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1354,7 +1343,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/338-Bit位计数/" itemprop="url">338. Bit位计数</a></h1>
+                <a class="post-title-link" href="/题解集/1009-Product-of-Polynomials-25-（25-分）/" itemprop="url">1009 Product of Polynomials (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1366,8 +1355,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T14:57:55+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T14:23:07+08:00">
+                2018-07-20
               </time>
             
 
@@ -1408,8 +1397,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/338-Bit位计数/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/338-Bit位计数/" class="cy_cmt_count" data-xid="题解集/338-Bit位计数/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1009-Product-of-Polynomials-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1009-Product-of-Polynomials-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1009-Product-of-Polynomials-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1439,15 +1428,13 @@
       
         
           
-          给定一个非负整数 num。 对于范围 0 ≤ i ≤ num 中的每个数字 i ，计算其二进制数中的1的数目并将它们作为数组返回。
-示例：1比如给定 num = 5 ，应该返回 [0,1,1,2,1,2].
-进阶：
-
-给出时间复杂度为O(n * sizeof(integer)) 的解答非常容易。 但
+          1009 Product of Polynomials (25)（25 分）This time, you are supposed to find A*B where A and B are two polynomials.
+Input Specification:
+Each input file 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/338-Bit位计数/#more" rel="contents">
+            <a class="btn" href="/题解集/1009-Product-of-Polynomials-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1491,7 +1478,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/83/">83</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1541,7 +1528,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">475</span>
+                  <span class="site-state-item-count">496</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
