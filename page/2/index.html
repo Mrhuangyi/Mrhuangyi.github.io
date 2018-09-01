@@ -517,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/686-重复叠加字符串匹配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -536,7 +536,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/" itemprop="url">1106 Lowest Price in Supply Chain（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/686-重复叠加字符串匹配/" itemprop="url">686. 重复叠加字符串匹配</a></h1>
         
 
         <div class="post-meta">
@@ -548,8 +548,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T14:42:40+08:00">
-                2018-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:57:59+08:00">
+                2018-08-21
               </time>
             
 
@@ -590,8 +590,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/" class="cy_cmt_count" data-xid="题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/686-重复叠加字符串匹配/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/686-重复叠加字符串匹配/" class="cy_cmt_count" data-xid="题解集/686-重复叠加字符串匹配/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -621,11 +621,13 @@
       
         
           
-          1106 Lowest Price in Supply Chain（25 分）A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in movi
+          给定两个字符串 A 和 B, 寻找重复叠加字符串A的最小次数，使得字符串B成为叠加后的字符串A的子串，如果不存在则返回 -1。
+举个例子，A = “abcd”，B = “cdabcdab”。
+答案为 3， 因为 A 重复叠加三遍后为 “abcdabcdabcd”，此时 B 是其子串；A 重复叠加两遍
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1106-Lowest-Price-in-Supply-Chain（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/686-重复叠加字符串匹配/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -678,7 +680,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1094-The-Largest-Generation-25-（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/690-员工的重要性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -697,7 +699,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1094-The-Largest-Generation-25-（25-分）/" itemprop="url">1094 The Largest Generation (25)（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/690-员工的重要性/" itemprop="url">690. 员工的重要性</a></h1>
         
 
         <div class="post-meta">
@@ -709,8 +711,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T14:17:13+08:00">
-                2018-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:44:48+08:00">
+                2018-08-21
               </time>
             
 
@@ -751,8 +753,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1094-The-Largest-Generation-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1094-The-Largest-Generation-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1094-The-Largest-Generation-25-（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/690-员工的重要性/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/690-员工的重要性/" class="cy_cmt_count" data-xid="题解集/690-员工的重要性/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -782,11 +784,12 @@
       
         
           
-          1094 The Largest Generation (25)（25 分）A family hierarchy is usually presented by a pedigree tree where all the nodes on the same level belong to the s
+          给定一个保存员工信息的数据结构，它包含了员工唯一的id，重要度 和 直系下属的id。
+比如，员工1是员工2的领导，员工2是员工3的领导。他们相应的重要度为15, 10, 5。那么员工1的数据结构是[1, 15, [2]]，员工2的数据结构是[2, 10, [3]]，员工3的数据结构是[3, 5, [
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1094-The-Largest-Generation-25-（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/690-员工的重要性/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -839,7 +842,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/665-非递减数列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -858,7 +861,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/" itemprop="url">1090 Highest Price in Supply Chain (25)（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/665-非递减数列/" itemprop="url">665. 非递减数列</a></h1>
         
 
         <div class="post-meta">
@@ -870,8 +873,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T16:12:05+08:00">
-                2018-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:12:44+08:00">
+                2018-08-21
               </time>
             
 
@@ -912,8 +915,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/665-非递减数列/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/665-非递减数列/" class="cy_cmt_count" data-xid="题解集/665-非递减数列/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -943,11 +946,13 @@
       
         
           
-          1090 Highest Price in Supply Chain (25)（25 分）A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved i
+          给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。
+我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1]。
+示例 1:12输入: [4,2,
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1090-Highest-Price-in-Supply-Chain-25-（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/665-非递减数列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1000,7 +1005,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1107-Social-Clusters（30-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1019,7 +1024,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/" itemprop="url">1079 Total Sales of Supply Chain (25)（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/1107-Social-Clusters（30-分）/" itemprop="url">1107 Social Clusters（30 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1031,8 +1036,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T15:57:46+08:00">
-                2018-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:52:35+08:00">
+                2018-08-20
               </time>
             
 
@@ -1073,8 +1078,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1107-Social-Clusters（30-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1107-Social-Clusters（30-分）/" class="cy_cmt_count" data-xid="题解集/1107-Social-Clusters（30-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1104,11 +1109,11 @@
       
         
           
-          1079 Total Sales of Supply Chain (25)（25 分）A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in 
+          1107 Social Clusters（30 分）When register on a social network, you are always asked to specify your hobbies in order to find some potential friends with
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1079-Total-Sales-of-Supply-Chain-25-（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/1107-Social-Clusters（30-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1161,7 +1166,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1102-Invert-a-Binary-Tree（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1066-Root-of-AVL-Tree-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1180,7 +1185,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1102-Invert-a-Binary-Tree（25-分）/" itemprop="url">1102 Invert a Binary Tree（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/" itemprop="url">1066 Root of AVL Tree (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1192,8 +1197,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T15:39:27+08:00">
-                2018-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:34:29+08:00">
+                2018-08-20
               </time>
             
 
@@ -1234,8 +1239,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1102-Invert-a-Binary-Tree（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1102-Invert-a-Binary-Tree（25-分）/" class="cy_cmt_count" data-xid="题解集/1102-Invert-a-Binary-Tree（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1066-Root-of-AVL-Tree-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1066-Root-of-AVL-Tree-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1265,12 +1270,11 @@
       
         
           
-          1102 Invert a Binary Tree（25 分）The following is from Max Howell @twitter:
-Google: 90% of our engineers use the software you wrote (Homebrew), but you 
+          1066 Root of AVL Tree (25)（25 分）An AVL tree is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1102-Invert-a-Binary-Tree（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1323,7 +1327,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/706-设计哈希映射/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1099-Build-A-Binary-Search-Tree（30-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1342,7 +1346,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/706-设计哈希映射/" itemprop="url">706. 设计哈希映射</a></h1>
+                <a class="post-title-link" href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/" itemprop="url">1099 Build A Binary Search Tree（30 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1354,8 +1358,8 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T00:35:05+08:00">
-                2018-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:08:19+08:00">
+                2018-08-20
               </time>
             
 
@@ -1396,8 +1400,8 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/706-设计哈希映射/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/706-设计哈希映射/" class="cy_cmt_count" data-xid="题解集/706-设计哈希映射/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1099-Build-A-Binary-Search-Tree（30-分）/" class="cy_cmt_count" data-xid="题解集/1099-Build-A-Binary-Search-Tree（30-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1427,13 +1431,12 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you
       
         
           
-          不使用任何内建的哈希表库设计一个哈希映射
-具体地说，你的设计应该包含以下的功能
-put(key, value)：向哈希映射中插入(键,值)的数值对。如果键对应的值已经存在，更新这个值。get(key)：返回给定的键所对应的值，如果映射中不包含这个键，返回-1。remove(key)：如果映射中存在这
+          1099 Build A Binary Search Tree（30 分）A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:
+The left s
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/706-设计哈希映射/#more" rel="contents">
+            <a class="btn" href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1477,7 +1480,7 @@ put(key, value)：向哈希映射中插入(键,值)的数值对。如果键对�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/83/">83</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1527,7 +1530,7 @@ put(key, value)：向哈希映射中插入(键,值)的数值对。如果键对�
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">496</span>
+                  <span class="site-state-item-count">505</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
