@@ -517,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1078-Hashing-25-（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/501-二叉搜索树中的众数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -536,7 +536,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1078-Hashing-25-（25-分）/" itemprop="url">1078 Hashing (25)（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/501-二叉搜索树中的众数/" itemprop="url">501. 二叉搜索树中的众数</a></h1>
         
 
         <div class="post-meta">
@@ -548,7 +548,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T15:15:24+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T23:13:17+08:00">
                 2018-07-31
               </time>
             
@@ -590,8 +590,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1078-Hashing-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1078-Hashing-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1078-Hashing-25-（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/501-二叉搜索树中的众数/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/501-二叉搜索树中的众数/" class="cy_cmt_count" data-xid="题解集/501-二叉搜索树中的众数/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -621,11 +621,13 @@
       
         
           
-          The task of this problem is simple: insert a sequence of distinct positive integers into a hash table, and output the positions of the input numbers. 
+          给定一个有相同值的二叉搜索树（BST），找出 BST 中的所有众数（出现频率最高的元素）。
+假定 BST 有如下定义：
+结点左子树中所含结点的值小于等于当前结点的值结点右子树中所含结点的值大于等于当前结点的值左子树和右子树都是二叉搜索树例如：给定 BST [1,null,2,2],123456   
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1078-Hashing-25-（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/501-二叉搜索树中的众数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -678,7 +680,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1015-Reversible-Primes-20-（20-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/563-二叉树的坡度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -697,7 +699,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1015-Reversible-Primes-20-（20-分）/" itemprop="url">1015 Reversible Primes (20)（20 分）</a></h1>
+                <a class="post-title-link" href="/题解集/563-二叉树的坡度/" itemprop="url">563. 二叉树的坡度</a></h1>
         
 
         <div class="post-meta">
@@ -709,7 +711,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T14:46:44+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T22:52:11+08:00">
                 2018-07-31
               </time>
             
@@ -751,8 +753,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1015-Reversible-Primes-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1015-Reversible-Primes-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1015-Reversible-Primes-20-（20-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/563-二叉树的坡度/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/563-二叉树的坡度/" class="cy_cmt_count" data-xid="题解集/563-二叉树的坡度/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -782,11 +784,14 @@
       
         
           
-          A reversible prime in any number system is a prime whose “reverse” in that number system is also a prime. For example in the decimal system 73 is a re
+          给定一个二叉树，计算整个树的坡度。
+一个树的节点的坡度定义即为，该节点左子树的结点之和和右子树结点之和的差的绝对值。空结点的的坡度是0。
+整个树的坡度就是其所有节点的坡度之和。
+示例:12345678910输入:          1       /   \      2     3输出: 1解释:
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1015-Reversible-Primes-20-（20-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/563-二叉树的坡度/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -839,7 +844,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1081-Rational-Sum-20-（20-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/606-根据二叉树创建字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -858,7 +863,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1081-Rational-Sum-20-（20-分）/" itemprop="url">1081 Rational Sum (20)（20 分）</a></h1>
+                <a class="post-title-link" href="/题解集/606-根据二叉树创建字符串/" itemprop="url">606. 根据二叉树创建字符串</a></h1>
         
 
         <div class="post-meta">
@@ -870,7 +875,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T14:36:54+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T22:29:07+08:00">
                 2018-07-31
               </time>
             
@@ -912,8 +917,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1081-Rational-Sum-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1081-Rational-Sum-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1081-Rational-Sum-20-（20-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/606-根据二叉树创建字符串/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/606-根据二叉树创建字符串/" class="cy_cmt_count" data-xid="题解集/606-根据二叉树创建字符串/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -943,13 +948,13 @@
       
         
           
-          Given N rational numbers in the form “numerator/denominator”, you are supposed to calculate their sum.
-Input Specification:
-Each input file contains o
+          你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
+空节点则用一对空括号 “()” 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。
+示例 1:12345678输入: 二叉树: [1,2,3,4]       1     /   \    2 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1081-Rational-Sum-20-（20-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/606-根据二叉树创建字符串/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1002,7 +1007,7 @@ Each input file contains o
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1049-Counting-Ones-30-（30-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1023-Have-Fun-with-Numbers-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1021,7 +1026,7 @@ Each input file contains o
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1049-Counting-Ones-30-（30-分）/" itemprop="url">1049 Counting Ones (30)（30 分）</a></h1>
+                <a class="post-title-link" href="/题解集/1023-Have-Fun-with-Numbers-20-（20-分）/" itemprop="url">1023 Have Fun with Numbers (20)（20 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1033,8 +1038,8 @@ Each input file contains o
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T21:57:10+08:00">
-                2018-07-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T16:32:51+08:00">
+                2018-07-31
               </time>
             
 
@@ -1075,8 +1080,8 @@ Each input file contains o
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1049-Counting-Ones-30-（30-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1049-Counting-Ones-30-（30-分）/" class="cy_cmt_count" data-xid="题解集/1049-Counting-Ones-30-（30-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1023-Have-Fun-with-Numbers-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1023-Have-Fun-with-Numbers-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1023-Have-Fun-with-Numbers-20-（20-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1106,11 +1111,11 @@ Each input file contains o
       
         
           
-          The task is simple: given any positive integer N, you are supposed to count the total number of 1’s in the decimal form of the integers from 1 to N. F
+          Notice that the number 123456789 is a 9-digit number consisting exactly the numbers from 1 to 9, with no duplication. Double it we will obtain 2469135
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1049-Counting-Ones-30-（30-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/1023-Have-Fun-with-Numbers-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1163,7 +1168,7 @@ Each input file contains o
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1008-Elevator-20-（20-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1059-Prime-Factors-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1182,7 +1187,7 @@ Each input file contains o
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1008-Elevator-20-（20-分）/" itemprop="url">1008 Elevator (20)（20 分）</a></h1>
+                <a class="post-title-link" href="/题解集/1059-Prime-Factors-25-（25-分）/" itemprop="url">1059 Prime Factors (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1194,8 +1199,8 @@ Each input file contains o
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T18:16:52+08:00">
-                2018-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T16:10:29+08:00">
+                2018-07-31
               </time>
             
 
@@ -1236,8 +1241,8 @@ Each input file contains o
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1008-Elevator-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1008-Elevator-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1008-Elevator-20-（20-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1059-Prime-Factors-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1059-Prime-Factors-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1059-Prime-Factors-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1267,11 +1272,11 @@ Each input file contains o
       
         
           
-          The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elev
+          Given any positive integer N, you are supposed to find all of its prime factors, and write them in the format N = p~1~\^k~1~  p~2~\^k~2~ …*p~m~\^k~m~.
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1008-Elevator-20-（20-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/1059-Prime-Factors-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1324,7 +1329,7 @@ Each input file contains o
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1029-Median（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1096-Consecutive-Factors-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1343,7 +1348,7 @@ Each input file contains o
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1029-Median（25-分）/" itemprop="url">1029 Median（25 分）</a></h1>
+                <a class="post-title-link" href="/题解集/1096-Consecutive-Factors-20-（20-分）/" itemprop="url">1096 Consecutive Factors (20)（20 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1355,8 +1360,8 @@ Each input file contains o
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T18:08:13+08:00">
-                2018-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T15:29:51+08:00">
+                2018-07-31
               </time>
             
 
@@ -1397,8 +1402,8 @@ Each input file contains o
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/1029-Median（25-分）/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/1029-Median（25-分）/" class="cy_cmt_count" data-xid="题解集/1029-Median（25-分）/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1096-Consecutive-Factors-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1096-Consecutive-Factors-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1096-Consecutive-Factors-20-（20-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1428,11 +1433,11 @@ Each input file contains o
       
         
           
-          Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 1
+          Among all the factors of a positive integer N, there may exist several consecutive numbers. For example, 630 can be factored as 356*7, where 5, 6, and
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1029-Median（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/1096-Consecutive-Factors-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1476,7 +1481,7 @@ Each input file contains o
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/86/">86</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1526,7 +1531,7 @@ Each input file contains o
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">505</span>
+                  <span class="site-state-item-count">511</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

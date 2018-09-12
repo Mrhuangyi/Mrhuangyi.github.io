@@ -517,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/872-叶子相似的树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/429-N叉树的层序遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -536,7 +536,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/872-叶子相似的树/" itemprop="url">872. 叶子相似的树</a></h1>
+                <a class="post-title-link" href="/题解集/429-N叉树的层序遍历/" itemprop="url">429. N叉树的层序遍历</a></h1>
         
 
         <div class="post-meta">
@@ -548,8 +548,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T22:17:16+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-28T12:57:47+08:00">
+                2018-07-28
               </time>
             
 
@@ -590,8 +590,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/872-叶子相似的树/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/872-叶子相似的树/" class="cy_cmt_count" data-xid="题解集/872-叶子相似的树/" itemprop="commentsCount" ></span>
+                <a href="/题解集/429-N叉树的层序遍历/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/429-N叉树的层序遍历/" class="cy_cmt_count" data-xid="题解集/429-N叉树的层序遍历/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -621,15 +621,17 @@
       
         
           
-          考虑一个二叉树的所有叶子。这些叶子的值按从左到右的顺序排列形成一个 叶值序列 。
+          给定一个N叉树，返回其节点值的层序遍历。 (即从左到右，逐层遍历)。
+例如，给定一个 3叉树 :
 
-举个例子，给定一个如上图所示的树，其叶值序列为 (6, 7, 4, 9, 8) 。
-如果两个二叉树的叶值序列相同，我们就认为它们是 叶相似的。
-如果给定的两个头结点分别为 root1 和 root2 的树是叶相似的，
+返回其层序遍历:12345[     [1],     [3,2,4],     [5,6]]
+说明:
+树的深度不会超过 1000。树的节点总数不会超过 5000。
+12345678910111213
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/872-叶子相似的树/#more" rel="contents">
+            <a class="btn" href="/题解集/429-N叉树的层序遍历/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -682,7 +684,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/541-反转字符串-II/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1048-Find-Coins-25-（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -701,7 +703,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/541-反转字符串-II/" itemprop="url">541. 反转字符串 II</a></h1>
+                <a class="post-title-link" href="/题解集/1048-Find-Coins-25-（25-分）/" itemprop="url">1048 Find Coins (25)（25 分）</a></h1>
         
 
         <div class="post-meta">
@@ -713,8 +715,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T22:04:15+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T17:51:59+08:00">
+                2018-07-27
               </time>
             
 
@@ -755,8 +757,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/541-反转字符串-II/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/541-反转字符串-II/" class="cy_cmt_count" data-xid="题解集/541-反转字符串-II/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1048-Find-Coins-25-（25-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1048-Find-Coins-25-（25-分）/" class="cy_cmt_count" data-xid="题解集/1048-Find-Coins-25-（25-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -786,12 +788,11 @@
       
         
           
-          给定一个字符串和一个整数 k，你需要对从字符串开头算起的每个 2k 个字符的前k个字符进行反转。如果剩余少于 k 个字符，则将剩余的所有全部反转。如果有小于 2k 但大于或等于 k 个字符，则反转前 k 个字符，并将剩余的字符保持原样。
-示例:12输入: s = &quot;abcdefg&quot
+          Eva loves to collect coins from all over the universe, including some other planets like Mars. One day she visited a universal shopping mall which cou
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/541-反转字符串-II/#more" rel="contents">
+            <a class="btn" href="/题解集/1048-Find-Coins-25-（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -844,7 +845,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/538-把二叉搜索树转换为累加树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1050-String-Subtraction-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -863,7 +864,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/538-把二叉搜索树转换为累加树/" itemprop="url">538. 把二叉搜索树转换为累加树</a></h1>
+                <a class="post-title-link" href="/题解集/1050-String-Subtraction-20-（20-分）/" itemprop="url">1050 String Subtraction (20)（20 分）</a></h1>
         
 
         <div class="post-meta">
@@ -875,8 +876,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T21:38:37+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T17:43:16+08:00">
+                2018-07-27
               </time>
             
 
@@ -917,8 +918,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/538-把二叉搜索树转换为累加树/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/538-把二叉搜索树转换为累加树/" class="cy_cmt_count" data-xid="题解集/538-把二叉搜索树转换为累加树/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1050-String-Subtraction-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1050-String-Subtraction-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1050-String-Subtraction-20-（20-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -948,12 +949,11 @@
       
         
           
-          给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，使得每个节点的值是原来的节点值加上所有大于它的节点值之和。
-例如：123456789输入: 二叉搜索树:              5            /   \           2
+          Given two strings S~1~ and S~2~, S = S~1~ - S~2~ is defined to be the remaining string after taking all the characters in S~2~ from S~1~. Your task is
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/538-把二叉搜索树转换为累加树/#more" rel="contents">
+            <a class="btn" href="/题解集/1050-String-Subtraction-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1006,7 +1006,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/530-二叉搜索树的最小绝对差/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1041-Be-Unique-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1025,7 +1025,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/530-二叉搜索树的最小绝对差/" itemprop="url">530. 二叉搜索树的最小绝对差</a></h1>
+                <a class="post-title-link" href="/题解集/1041-Be-Unique-20-（20-分）/" itemprop="url">1041 Be Unique (20)（20 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1037,8 +1037,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T21:26:44+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T17:34:50+08:00">
+                2018-07-27
               </time>
             
 
@@ -1079,8 +1079,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/530-二叉搜索树的最小绝对差/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/530-二叉搜索树的最小绝对差/" class="cy_cmt_count" data-xid="题解集/530-二叉搜索树的最小绝对差/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1041-Be-Unique-20-（20-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1041-Be-Unique-20-（20-分）/" class="cy_cmt_count" data-xid="题解集/1041-Be-Unique-20-（20-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1110,14 +1110,11 @@
       
         
           
-          给定一个所有节点为非负值的二叉搜索树，求树中任意两节点的差的绝对值的最小值。
-示例 :12345678910输入:   1    \     3    /   2输出:1
-解释:最小绝对差为1，其中 2 和 1 的差的绝对值为 1（或者 2 和 3）。注意: 树中至少有2个节点。
-分析：二叉搜索树的
+          Being unique is so important to people on Mars that even their lottery is designed in a unique way. The rule of winning is simple: one bets on a numbe
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/530-二叉搜索树的最小绝对差/#more" rel="contents">
+            <a class="btn" href="/题解集/1041-Be-Unique-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1170,7 +1167,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/521-最长特殊序列-Ⅰ/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1095-Cars-on-Campus-30-（30-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1189,7 +1186,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/521-最长特殊序列-Ⅰ/" itemprop="url">521. 最长特殊序列 Ⅰ</a></h1>
+                <a class="post-title-link" href="/题解集/1095-Cars-on-Campus-30-（30-分）/" itemprop="url">1095 Cars on Campus (30)（30 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1201,8 +1198,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T20:57:58+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T17:06:37+08:00">
+                2018-07-27
               </time>
             
 
@@ -1243,8 +1240,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/521-最长特殊序列-Ⅰ/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/521-最长特殊序列-Ⅰ/" class="cy_cmt_count" data-xid="题解集/521-最长特殊序列-Ⅰ/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1095-Cars-on-Campus-30-（30-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1095-Cars-on-Campus-30-（30-分）/" class="cy_cmt_count" data-xid="题解集/1095-Cars-on-Campus-30-（30-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1274,13 +1271,11 @@
       
         
           
-          给定两个字符串，你需要从这两个字符串中找出最长的特殊序列。最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。
-子序列可以通过删去字符串中的某些字符实现，但不能改变剩余字符的相对顺序。空序列为所有字符串的子序列，任何字符串为其自身的子序列。
-输入为两个字符串，输出最
+          Zhejiang University has 6 campuses and a lot of gates. From each gate we can collect the in/out times and the plate numbers of the cars crossing the g
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/521-最长特殊序列-Ⅰ/#more" rel="contents">
+            <a class="btn" href="/题解集/1095-Cars-on-Campus-30-（30-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1333,7 +1328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/506-相对名次/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1080-Graduate-Admission-30-（30-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1352,7 +1347,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/506-相对名次/" itemprop="url">506. 相对名次</a></h1>
+                <a class="post-title-link" href="/题解集/1080-Graduate-Admission-30-（30-分）/" itemprop="url">1080 Graduate Admission (30)（30 分）</a></h1>
         
 
         <div class="post-meta">
@@ -1364,8 +1359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T20:43:10+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T16:36:36+08:00">
+                2018-07-27
               </time>
             
 
@@ -1406,8 +1401,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/题解集/506-相对名次/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://huangyiblog.com/题解集/506-相对名次/" class="cy_cmt_count" data-xid="题解集/506-相对名次/" itemprop="commentsCount" ></span>
+                <a href="/题解集/1080-Graduate-Admission-30-（30-分）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://huangyiblog.com/题解集/1080-Graduate-Admission-30-（30-分）/" class="cy_cmt_count" data-xid="题解集/1080-Graduate-Admission-30-（30-分）/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -1437,13 +1432,11 @@
       
         
           
-          给出 N 名运动员的成绩，找出他们的相对名次并授予前三名对应的奖牌。前三名运动员将会被分别授予 “金牌”，“银牌” 和“ 铜牌”（”Gold Medal”, “Silver Medal”, “Bronze Medal”）。
-(注：分数越高的选手，排名越靠前。)
-示例 1:12输入: [5, 4, 3
+          It is said that in 2013, there were about 100 graduate schools ready to proceed over 40,000 applications in Zhejiang Province. It would help a lot if 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/506-相对名次/#more" rel="contents">
+            <a class="btn" href="/题解集/1080-Graduate-Admission-30-（30-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1487,7 +1480,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/86/">86</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1537,7 +1530,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">505</span>
+                  <span class="site-state-item-count">511</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
