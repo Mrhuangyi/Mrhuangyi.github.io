@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/Git-%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2018-09-28T13:33:07.841Z</lastmod>
+    <data>
+        <display>
+        <title>Git 与Ｇithub入门介绍</title>
+        <pubTime>2018-09-27T14:22:17.000Z</pubTime>
+        
+        <tag>Github</tag>
+         
+         
+           
+             
+              <breadCrumb title="业务开发" url="http://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://huangyiblog.com/%E9%9A%8F%E7%AC%94/2018%E4%B8%8A%E5%8D%8A%E5%B9%B4%E7%9A%84%E9%98%85%E8%AF%BB%E6%95%B4%E7%90%86/</loc>
     <lastmod>2018-09-20T11:34:49.744Z</lastmod>
     <data>
@@ -9409,26 +9429,6 @@
            
              
               <breadCrumb title="算法和数据结构" url="http://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/git-it/</loc>
-    <lastmod>2018-05-16T01:16:55.093Z</lastmod>
-    <data>
-        <display>
-        <title>git-it</title>
-        <pubTime>2018-05-16T01:15:10.000Z</pubTime>
-        
-        <tag>Github</tag>
-         
-         
-           
-             
-              <breadCrumb title="业务开发" url="http://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
