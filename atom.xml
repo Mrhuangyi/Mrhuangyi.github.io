@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-10-09T14:43:20.692Z</updated>
+  <updated>2018-10-10T09:16:29.547Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在Windows和Mac平台上协同管理hexo博客</title>
+    <link href="http://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E5%92%8CMac%E5%B9%B3%E5%8F%B0%E4%B8%8A%E5%8D%8F%E5%90%8C%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://huangyiblog.com/业务开发/如何在Windows和Mac平台上协同管理hexo博客/</id>
+    <published>2018-10-10T09:12:56.000Z</published>
+    <updated>2018-10-10T09:16:29.547Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何在多台电脑协同管理hexo博客"><a href="#如何在多台电脑协同管理hexo博客" class="headerlink" title="如何在多台电脑协同管理hexo博客"></a>如何在多台电脑协同管理hexo博客</h1><p>我很早就想搞个个人博客，其实写博客主要有3种选择：</p><ul><li>1 在第三方平台注册账号，直接在平台上写作并发布，例如博客圆，CSDN，新浪，网易等,这种方式最简单方便。</li><li>2 自己搭建博客。这种看个人需求，能力强的，可以完全前后端都自己代码实现，但大多数人一般也是直接采用模版的，简单省事。不过自己搭建的话需要去云服务商购买域名和云服务器，服务器的话学生优惠还是比较大的，阿里云，腾讯云上面都能买。</li><li>3 利用GitHub pages和hexo搭建静态博客，本地编写md文件，然后部署到github转化为html，相当于是托管于github。这种方法至少不用花钱买服务器，当然，你要是想绑定域名的话也可以照样去云服务商买一个，然后绑定到你的XXX.github.io上面。</li></ul><p>现在假设你已经在之前的Windows平台上搭好了hexo博客，并且能够正常部署运行。但因为需要，你要在另一台Mac系统的电脑上也能够管理你的hexo博客，可以利用Git分支来实现。</p><h1 id="在另一设备上管理博客"><a href="#在另一设备上管理博客" class="headerlink" title="在另一设备上管理博客"></a>在另一设备上管理博客</h1><ol><li>配置好环境</li></ol><ul><li>安装Node.js</li><li>安装Git</li><li>安装hexo<br>node.js可以直接去官网下载相应的匹配版本，Git的话，如果你的电脑安装是Mac并且安装了xcode，那么便不用再重新安装，xcode里便已经装有Git。</li></ul><ol start="2"><li>配置GitHub的SSH key<br>在新电脑上使用GitHub都需要先进行SSH key的配置，来获得GitHub的权限，以便本地和服务器之间数据的连接。</li></ol><ul><li>先测试你的电脑上是否已有ssh密钥,打开终端输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></li></ul><p>如果没有，则进入下一步，生成ssh key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></p><ol start="3"><li>将你的ssh key复制到GitHub上，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：将ssh key复制进去。</li><li>最后测试你的ssh是否配置成功<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li></ol><p>具体如何配置hexo博客可以参考：<a href="https://www.titanjun.top/2018/03/08/%E5%9F%BA%E4%BA%8EGitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">使用hexo快速搭建个人博客</a></p><h1 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h1><ol><li><p>进入你的username.github.io仓库主要，新建一个分支，名字可以自定义，下面以hexo为例：<br><img src="http://pc5wd3ju6.bkt.clouddn.com/hexo1.jpg" alt="alt"></p></li><li><p>切换到hexo分支，并将该分支设置为默认分支后并保存。<br><img src="http://pc5wd3ju6.bkt.clouddn.com/hexo2.jpg" alt="alt"></p></li></ol><h1 id="上传配置文件到GitHub"><a href="#上传配置文件到GitHub" class="headerlink" title="上传配置文件到GitHub"></a>上传配置文件到GitHub</h1><ol><li>克隆hexo分支<br>将之前新建的分支克隆到本地<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b hexo git@github.com/username/username.github.io</span><br></pre></td></tr></table></figure></li></ol><p>查看当前所在分支是否为新建的hexo分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p><ol start="2"><li>上传部署文件</li></ol><ul><li><p>将你原先电脑里的配置文件拷贝到你的username.github.io文件目录下，这里的拷贝有几个文件或文件夹是必须要拷贝的：<br><strong>拷贝文件时要注意如果你的themes主题文件下下面有.git文件夹，要先将.git文件夹删除，否则主题文件会上传失败，一个GitHub仓库只能有一个.git</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line"> package.json</span><br><span class="line"> scaffolds/</span><br><span class="line"> source/</span><br><span class="line"> themes/</span><br></pre></td></tr></table></figure></li><li><p>拷贝完以后执行npm install 安装必要的组件</p></li><li><p>执行如下命令更新分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;add new files&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li><li><p>测试是否成功<br>可以执行hexo new “post”,hexo s预览是否有效，之后便用hexo d -g上传部署。</p></li></ul><ul><li>使用Mac系统操作hexo命令是要求在最前面加上sudo，否则会报错，提示你权限不足。<blockquote><p>master分支和hexo分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；hexo分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库内也不会有任何冲突</p></blockquote></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;如何在多台电脑协同管理hexo博客&quot;&gt;&lt;a href=&quot;#如何在多台电脑协同管理hexo博客&quot; class=&quot;headerlink&quot; title=&quot;如何在多台电脑协同管理hexo博客&quot;&gt;&lt;/a&gt;如何在多台电脑协同管理hexo博客&lt;/h1&gt;&lt;p&gt;我很早就想搞个个人博
+      
+    
+    </summary>
+    
+      <category term="业务开发" scheme="http://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Github" scheme="http://huangyiblog.com/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>来普陀山拜观音了</title>
@@ -496,33 +521,6 @@
         &lt;p&gt;给定一个二叉树，找到最长的路径，这个路径中的每个节点具有相同值。 这条路径可以经过也可以不经过根节点。&lt;/p&gt;
 &lt;p&gt;注意：两个节点之间的路径长度由它们之间的边数表示。&lt;/p&gt;
 &lt;p&gt;示例 1:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;tab
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>686. 重复叠加字符串匹配</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/686-%E9%87%8D%E5%A4%8D%E5%8F%A0%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
-    <id>http://huangyiblog.com/题解集/686-重复叠加字符串匹配/</id>
-    <published>2018-08-21T07:57:59.000Z</published>
-    <updated>2018-10-09T14:43:20.655Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定两个字符串 A 和 B, 寻找重复叠加字符串A的最小次数，使得字符串B成为叠加后的字符串A的子串，如果不存在则返回 -1。</p><p>举个例子，A = “abcd”，B = “cdabcdab”。</p><p>答案为 3， 因为 A 重复叠加三遍后为 “abcdabcdabcd”，此时 B 是其子串；A 重复叠加两遍后为”abcdabcd”，B 并不是其子串。</p><p>注意:</p><p> A 与 B 字符串的长度在1和10000区间范围内。</p><p>在字符串b的长度范围内循环累加a并且判断是否存在子串，但要注意边界，所以循环结束后如果不存在，需要在累加一次并进行判断。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">repeatedStringMatch</span><span class="params">(String A, String B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> lenb = B.length();</span><br><span class="line">        String res = A;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(res.length() &lt; lenb) &#123;</span><br><span class="line">            res += A;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res.contains(B)) &#123;</span><br><span class="line">            <span class="keyword">return</span> cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        res += A;</span><br><span class="line">        <span class="keyword">if</span>(res.contains(B)) &#123;</span><br><span class="line">            <span class="keyword">return</span> cnt + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定两个字符串 A 和 B, 寻找重复叠加字符串A的最小次数，使得字符串B成为叠加后的字符串A的子串，如果不存在则返回 -1。&lt;/p&gt;
-&lt;p&gt;举个例子，A = “abcd”，B = “cdabcdab”。&lt;/p&gt;
-&lt;p&gt;答案为 3， 因为 A 重复叠加三遍后为 “abcda
       
     
     </summary>
