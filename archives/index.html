@@ -23,13 +23,6 @@
   </script>
 
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
 
 
 
@@ -124,6 +117,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="你的小黄^_^" type="application/atom+xml" />
 
@@ -151,7 +146,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -212,7 +207,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">做一名有情怀的程序员</p>
+        <h1 class="site-subtitle" itemprop="description">做一名有情怀的程序员</h1>
       
   </div>
 
@@ -526,7 +521,7 @@
         
           
           <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+            <h2 class="archive-year" id="archive-year-2018">2018</h2>
           </div>
         
         
@@ -536,7 +531,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/" itemprop="url">
               
@@ -544,7 +539,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -573,7 +568,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/题解集/来普陀山拜观音了/" itemprop="url">
               
@@ -581,7 +576,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -610,7 +605,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/题解集/128-最长连续序列/" itemprop="url">
               
@@ -618,7 +613,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -647,7 +642,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/题解集/4-两个排序数组的中位数/" itemprop="url">
               
@@ -655,7 +650,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -684,7 +679,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/随笔/关于Ubuntu与win10双系统引导修复的问题/" itemprop="url">
               
@@ -692,7 +687,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -721,7 +716,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/业务开发/JavaWeb开发环境设置/" itemprop="url">
               
@@ -729,7 +724,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -797,7 +792,7 @@
                 alt="Mr.Huangyi" />
             
               <p class="site-author-name" itemprop="name">Mr.Huangyi</p>
-              <p class="site-description motion-element" itemprop="description">终于活成了别人喜欢的样子</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -928,6 +923,8 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
+            <span id="scrollpercent"><span>0</span>%</span>
+          
         </div>
       
 
@@ -945,7 +942,7 @@
 <div class="copyright">&copy; 
 2016 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-send-o"></i>
+    <i class="fa fa-star"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">小黄</span>
 </div>
@@ -954,7 +951,7 @@
 
 
 <div class="powered-by">
-<i class="fa fa-user-md"></i>
+<i class="fa fa-send-o"></i>
 </div>
 
 
