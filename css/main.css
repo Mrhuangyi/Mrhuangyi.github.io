@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4100ff;
+  background: #4563ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3017,6 +3017,7 @@ pre .javascript .function {
   position: absolute;
 }
 .site-overview {
+  margin: 0 2px;
   text-align: left;
 }
 .site-author:before,
@@ -3064,6 +3065,14 @@ pre .javascript .function {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.links-of-author:before,
+.links-of-author:after {
+  content: " ";
+  display: table;
+}
+.links-of-author:after {
+  clear: both;
 }
 .links-of-author-item {
   margin: 5px 0 0;
