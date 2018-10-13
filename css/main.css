@@ -1504,7 +1504,7 @@ pre .javascript .function {
   font-size: 16px;
 }
 .posts-expand .post-meta {
-  margin: 3px 0 60px 0;
+  margin: 3px 0 30px 0;
   color: #999;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1bedff;
+  background: #ffe413;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2757,7 +2757,7 @@ pre .javascript .function {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 1150px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2817,7 +2817,7 @@ pre .javascript .function {
   }
 }
 .container .main-inner {
-  width: 1150px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2882,15 +2882,13 @@ pre .javascript .function {
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-inner {
     width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
   }
 }
 @media (max-width: 767px) {
   .footer-inner {
     width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
   }
 }
 .sidebar-position-right .header-inner {
@@ -3007,7 +3005,6 @@ pre .javascript .function {
   opacity: 1;
 }
 .sidebar {
-  margin-left: -100%;
   display: none;
   right: auto;
   bottom: auto;
@@ -3020,14 +3017,10 @@ pre .javascript .function {
   background: #fff;
   box-shadow: initial;
   border-radius: initial;
-  opacity: 0;
 }
 .sidebar-inner.affix {
   position: fixed;
   top: $sidebar-offset-float;
-}
-.sidebar-inner.affix-bottom {
-  position: absolute;
 }
 .site-overview {
   margin: 0 2px;
@@ -3046,9 +3039,6 @@ pre .javascript .function {
 }
 .sidebar a:hover {
   color: #222;
-}
-.site-state-item {
-  padding: 0 10px;
 }
 .links-of-author-item a:before {
   display: none;
@@ -3073,11 +3063,6 @@ pre .javascript .function {
 }
 .feed-link a:hover i {
   color: #e34603;
-}
-.links-of-author {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 .links-of-author:before,
 .links-of-author:after {
@@ -3118,7 +3103,6 @@ pre .javascript .function {
   font-size: 15px;
 }
 .links-of-blogroll {
-  text-align: center;
   margin-top: 20px;
   padding: 3px 0 0;
   border-top: 1px dotted #ccc;
@@ -3140,8 +3124,6 @@ pre .javascript .function {
 .links-of-blogroll-inline .links-of-blogroll-item {
   margin: 5px 0 0;
   width: 50%;
-  display: inline-block;
-  width: unset;
 }
 .links-of-blogroll-inline .links-of-blogroll-item a {
   max-width: 216px;
