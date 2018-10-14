@@ -577,6 +577,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/414-第三大的数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/414-第三大的数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -753,6 +763,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/412-Fizz-Buzz/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/412-Fizz-Buzz/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -933,6 +953,16 @@ n = 15,
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/389-找不同/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/389-找不同/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1109,6 +1139,16 @@ n = 15,
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/374-猜数字大小/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/374-猜数字大小/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1279,6 +1319,16 @@ n = 15,
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/算法和数据结构/链表常见题型整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/算法和数据结构/链表常见题型整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1448,6 +1498,16 @@ n = 15,
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/1060-爱丁顿数-25-（25-分）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/1060-爱丁顿数-25-（25-分）/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1789,6 +1849,13 @@ n = 15,
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 
@@ -1923,21 +1990,30 @@ n = 15,
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'q8Iy2g5hmWBfyk3asBluc3G6-gzGzoHsz',
+        appKey: 'N2jnTnFkHWAgXgLQkAmlnK9I',
+        placeholder: '😎看了这么多，不想说点什么嘛😉',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

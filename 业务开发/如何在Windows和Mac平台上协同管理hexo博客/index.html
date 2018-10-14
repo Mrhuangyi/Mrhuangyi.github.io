@@ -135,7 +135,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/hexo1.jpg">
 <meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/hexo2.jpg">
-<meta property="og:updated_time" content="2018-10-10T09:16:29.547Z">
+<meta property="og:updated_time" content="2018-10-14T04:38:08.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在Windows和Mac平台上协同管理hexo博客">
 <meta name="twitter:description" content="如何在多台电脑协同管理hexo博客我很早就想搞个个人博客，其实写博客主要有3种选择：  1 在第三方平台注册账号，直接在平台上写作并发布，例如博客圆，CSDN，新浪，网易等,这种方式最简单方便。 2 自己搭建博客。这种看个人需求，能力强的，可以完全前后端都自己代码实现，但大多数人一般也是直接采用模版的，简单省事。不过自己搭建的话需要去云服务商购买域名和云服务器，服务器的话学生优惠还是比较大的，阿里">
@@ -585,7 +585,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1070,6 +1070,13 @@
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 
@@ -1208,51 +1215,30 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: '1539162776000', 
-            owner: 'Mrhuangyi',
-            repo: 'Mrhuangyi.github.io',
-            
-            lang: "auto" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-                redirect_protocol: '[object Object]',
-            
-            
-                client_secret: 'b1d53f9e121c51282c9420d45fff21204756b06e',
-            
-                client_id: '11c6e0e28ffb3784335a'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'q8Iy2g5hmWBfyk3asBluc3G6-gzGzoHsz',
+        appKey: 'N2jnTnFkHWAgXgLQkAmlnK9I',
+        placeholder: '😎看了这么多，不想说点什么嘛😉',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

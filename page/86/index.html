@@ -577,6 +577,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/ZCMU-1620/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/ZCMU-1620/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -747,6 +757,16 @@ In
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/随笔/《控方证人》观后感/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/随笔/《控方证人》观后感/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -793,7 +813,7 @@ In
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/1522739023761.png" rel="gallery_cjn7n588r0135z01ybrixj6g3"
+                 href="/img/1522739023761.png" rel="gallery_cjn8ex7fr01354ahx0k0v5037"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/1522739023761.png" itemprop="contentUrl"/>
               </a>
@@ -931,6 +951,16 @@ In
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/随笔/我的2017书单/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/随笔/我的2017书单/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1101,6 +1131,16 @@ In
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/语言/C++字符串操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/语言/C++字符串操作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1270,6 +1310,16 @@ In
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/随笔/我的2016电影/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/随笔/我的2016电影/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1438,6 +1488,16 @@ In
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/随笔/我的2016书单/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/随笔/我的2016书单/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1776,6 +1836,13 @@ In
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 
@@ -1910,21 +1977,30 @@ In
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'q8Iy2g5hmWBfyk3asBluc3G6-gzGzoHsz',
+        appKey: 'N2jnTnFkHWAgXgLQkAmlnK9I',
+        placeholder: '😎看了这么多，不想说点什么嘛😉',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

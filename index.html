@@ -577,6 +577,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/业务开发/如何在Windows和Mac平台上协同管理hexo博客/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -749,6 +759,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/来普陀山拜观音了/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/来普陀山拜观音了/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -795,7 +815,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://pc5wd3ju6.bkt.clouddn.com/zs1.jpg" rel="gallery_cjn7n58by016gz01yx8bz0rvn"
+                 href="http://pc5wd3ju6.bkt.clouddn.com/zs1.jpg" rel="gallery_cjn8ex7j4016g4ahx9pxc299p"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://pc5wd3ju6.bkt.clouddn.com/zs1.jpg" itemprop="contentUrl"/>
               </a>
@@ -933,6 +953,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/128-最长连续序列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/128-最长连续序列/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1105,6 +1135,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/题解集/4-两个排序数组的中位数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/4-两个排序数组的中位数/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1279,6 +1319,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/随笔/关于Ubuntu与win10双系统引导修复的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/随笔/关于Ubuntu与win10双系统引导修复的问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1447,6 +1497,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/业务开发/JavaWeb开发环境设置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/业务开发/JavaWeb开发环境设置/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1788,6 +1848,13 @@ java jdk下载：ht
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 
@@ -1922,21 +1989,30 @@ java jdk下载：ht
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'q8Iy2g5hmWBfyk3asBluc3G6-gzGzoHsz',
+        appKey: 'N2jnTnFkHWAgXgLQkAmlnK9I',
+        placeholder: '😎看了这么多，不想说点什么嘛😉',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
