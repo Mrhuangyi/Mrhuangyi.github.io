@@ -148,7 +148,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -167,8 +167,6 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://huangyiblog.com/译文集/面向Google的学习手册/"/>
 
 
 
@@ -285,6 +283,26 @@
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
             公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-media">
+          <a href="/categories/影音/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            影音
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-read">
+          <a href="/categories/阅读/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            阅读
           </a>
         </li>
       
@@ -639,7 +657,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/futuregoogle.png" rel="gallery_cjn8ex7nb01704ahxzc6h27xr"
+                 href="/img/futuregoogle.png" rel="gallery_cjn8pxdcq017518hxrxewd1uu"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/futuregoogle.png" itemprop="contentUrl"/>
               </a>
@@ -2683,7 +2701,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/随笔/技术书单系列1/" rel="next" title="技术书单系列1">
+              <a href="/阅读/技术书单系列1/" rel="next" title="技术书单系列1">
                 <i class="fa fa-chevron-left"></i> 技术书单系列1
               </a>
             
@@ -2693,7 +2711,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/随笔/技术书单系列2/" rel="prev" title="技术书单系列2">
+              <a href="/阅读/技术书单系列2/" rel="prev" title="技术书单系列2">
                 技术书单系列2 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -2800,7 +2818,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2811,7 +2829,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2869,7 +2887,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll motion-element links-of-blogroll-blocks">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
                 推荐阅读
@@ -2923,13 +2941,6 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -2956,6 +2967,7 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
 <div class="powered-by">
 <i class="fa fa-send-o"></i>
 </div>
+
 
 
 
@@ -2996,13 +3008,6 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     
@@ -3502,6 +3507,28 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
