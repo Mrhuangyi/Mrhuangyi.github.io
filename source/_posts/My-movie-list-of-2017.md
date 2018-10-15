@@ -1,8 +1,8 @@
 ---
 title: My movie list of 2017
 date: 2018-04-16 16:18:54
-categories: 随笔
-tags: 影视
+categories: 影音
+tags: 电影
 ---
 
 1. 《肖申克的救赎》
