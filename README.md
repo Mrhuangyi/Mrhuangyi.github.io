@@ -1,4 +1,4 @@
-# [我的博客](www.huangyiblog.com)
+# [我的博客](https://www.huangyiblog.com)
 
 
 <p align="right"><a title="New «NexT» 6.0.0 version [Reloaded]" href="https://github.com/theme-next/hexo-theme-next">NexT v6.0.0 here :triangular_flag_on_post:</a></p>
