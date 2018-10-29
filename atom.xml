@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-10-26T14:09:44.492Z</updated>
+  <updated>2018-10-29T14:57:40.766Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回顾自己部署hexo博客的血泪史</title>
+    <link href="http://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E5%9B%9E%E9%A1%BE%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%A1%80%E6%B3%AA%E5%8F%B2/"/>
+    <id>http://huangyiblog.com/随笔/回顾自己部署hexo博客的血泪史/</id>
+    <published>2018-10-29T14:52:02.000Z</published>
+    <updated>2018-10-29T14:57:40.766Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="回顾下自己使用hexo博客踩过的坑"><a href="#回顾下自己使用hexo博客踩过的坑" class="headerlink" title="回顾下自己使用hexo博客踩过的坑"></a>回顾下自己使用hexo博客踩过的坑</h1><blockquote><p>从一开始接触hexo博客到现在也过去好几个月了，在很多大佬看来搭建部署个个人博客是个很小儿科的事情，但对我这样一个菜鸟来说陆陆续续的几乎是采坑无数，现在回想起来都是泪啊，尤其是碰到一些bug，百度谷歌都找不到你想要的解答时，真的绝望的感觉。我这次虽然是坐个总结，但时间过去很久了，一些具体的bug，以及处理代码我就不写出来了，所以如果你想在这里看到一些实操干货的话，可能要失望了，毕竟我写的不是教程。</p></blockquote><p>我使用hexo博客主要经历了如下几个阶段：</p><ul><li>下载hexo，选择主题，编辑配置文件，部署到GitHub</li><li>想优化主题，自定义了一些css样式，加入了一些插件</li><li>后面换了电脑，想要在多终端协同管理hexo</li><li>纠结于GitHub pages 访问速度不给力，考虑CDN，最后还是想部署到阿里云服务器。　<a id="more"></a></li></ul><p>　　一开始和很多人一样活跃于博客园，ＣＳＤＮ等第三方博客平台，那是还是大学刚开学的时候吧，还不怎么写博客，到了后面偶尔也学一些大佬写点题解啥的，但也并不积极。到了大二，学的东西、课程越来越多，内容越积越多，但显而易见的是，我们不可能记住所有内容，如何有效的总结知识点，最好将书上的变成自己的，如何深入理解，如何提升自己的写作水平，总的来说，写博客还是一个不错的提升自己的方式。可这时，可能是想追求个性，想有一个自己的个人博客，当时主要就想到了ＷｏｒｄＰｒｅｓｓ和ｈｅｘｏ，但是用ＷｏｒｄＰｒｅｓｓ还是要买域名和云服务器，虽说阿里云和腾讯云等服务商对学生的优惠力度都很大，但我最初并不是很想花钱，于是选择了ｈｅｘｏ。选择ｈｅｘｏ其实也有很多好处，帮我入门了ｇｉｔ和ＧｉｔＨｕｂ。决定以后，边去网上找各种教程，下载ｎｏｄｅ、ｈｅｘｏ、ｎｅｘｔ主题等等，之后配置文件，然后ｈｅｘｏ　ｎｅｗ　ｐｏｓｔ，ｈｅｘｏ　ｓ，测试效果，这个过程中，出过一些小问题，但最后都能够成功部署，只是有一个小ｂｕｇ。部署成果后，导航栏的几个主要图标无法正常显示，我一直不明白到底是哪里出了问题，因为每一步都是按照网上的教程操作的，谷歌了好久也没解决。当时没辙，我就去问了我们的ｗｅｂ老师，然而老师说他也没搞过这个，所以并不了解，但是还是给出了建议，因为大部分ｂｕｇ，９９％前人肯定都遇到过，可以先去谷歌百度搜，实在不行可以去知乎等社区提问。我后面就去知乎发表提问，并要求了几位内行人回答，期初也没得到我想要的解答，但几天过去，总算是等来了我想要的。问题其实很简单，还是配置文件上没有填正确，之所以没有填正确。有两个主要原因：１版本问题，２自己不注意看官方注释。首先网上给出的教程并没有问题，但我完全照搬就出了问题，因为他们针对的版本与我再用的版本并不一样，而恰好我的版本在导航栏配置哪里格式有所区别，导致最后图标无法正常显示。总之，倒腾了半天，最后总算还顺利，我发布了自己的第一篇博客并且成功部署到了ＧｉｔＨｕｂ，网页上也能正常浏览。<br>　　我当时选择的是ｎｅｘｔ主题，我很喜欢这样简约大方的风格，大量留白，不花里胡哨，同时也能够满足我的需求，我只想写写东西，这样的就已经足够。但是还不够，我想往里面加点东西，改点东西。这个过程，也很心累，因为我前端没好好学，而页面设计这方面涉及的主要都是前端的点。我修改了一些样式，字体，颜色什么的，接了网易云嵌入式链接，开头评论功能，增加友链，用七牛做图床等等，总之就是各种折腾。有时看了自己改的很不满意又得想办法改回去。这个过程有一点很重要，就是了解ｈｅｘｏ主题的整体框架配置，知道哪个文件夹，哪个文件主要是负责哪一块的！<br>　　后面我买了台二手ＭＢＰ，想在这台电脑上也能管理发布ｈｅｘｏ博客，于是又想办法，在网上各种搜教程，如何在两台电脑上管理ｈｅｘｏ。最后的解决方案是利用ＧｉｔＨｕｂ分支，新建一个分支，然后将原电脑上所需的本地文件拷到新电脑，在新电脑上把内容ｐｕｓｈ到相应分支。这个过程也很不容易，主要是我不怎么理解ＧｉｔＨｕｂ的分支操作，哎，但还算好吧，没有花太多时间。<br>　　又过了一段时间，随之我发布的博客内容越来越多，而ＧｉｔＨｕｂ　ｐａｇｅｓ的访问速度又不稳定，有时还很令人纠结，这我就受不了了，我想着怎么才能加速访问，比较ＧｉｔＨｕｂ是国外的服务器，虽然免费给你一定空间使用，但访问速度我真的不满意。网上有说把博客再部署到ＣＯＤｉｎｇ上面的，也有说用ＣＤＮ的，我考虑过ＣＤＮ，当时选的是加速乐，但是生效要很久，我也没测试效果如何。最后想着趁现在自己还是学生，干脆去阿里云买个云服务器得了。服务器买了以后，问题又来了，如何将本地博客迁移到云服务器上了，这个过程有时让我掉了一堆头发。一开始就出了问题，按照网上的教程，我装好ｎｏｄｅ，ｇｉｔ，ｈｅｘｏ，Ｎｇｉｎｘ等等所需的软件，但是当我启动Ｎｇｉｎｘ的时候一直出错，无法启动，最初人物是自己在编辑．ｃｏｎｆ文件的时候可能哪里多了分号点号啥的，一直没搞清楚问题是啥，到后面干脆重置了虚拟机，将各种软件重新装了一遍。这是再次启动Ｎｇｉｎｘ，还是启动不了，真是崩溃的心都有了，没辙，只好按照命令行的提示，查看日志提示是哪里有ｂｕｇ，你别说，我这种菜鸟一开始看提示都还不大看得懂，只好又将提示代码复制到谷歌搜解答，但是这还不能马上搜到，因为有些时候一段提示信息可能会对应一堆可能的ｂｕｇ，但我这次还算运气可以吧。最后的结论是我的服务器上８０端口ｈｔｔｐｄ被占用，也就是说Ａｐａｃｈｅ和Ｎｇｉｎｘ不能同时启用吧，之后便停用８０端口，然后重新加载Ｎｇｉｎｘ，在游览器输入服务器ＩＰ，总算是见到了ｗｅｌｃｏｍｅ的页面了，松了一口气呀。之后要做的就是新建ｇｉｔ库，配置ｇｉｔｈｏｏｋｓ，配置Ｎｇｉｎｘ的ｓｅｒｖｅｒ的ｌｏｃａｔｉｏｎ等等，然后修改本地ｈｅｘｏ的．ｃｏｎｆｉｇ文件，然后将博客部署到服务器上。到这里你在输入ＩＰ到游览器便能够看到你的博客了。<br>　　上面就是我倒腾ｈｅｘｏ的主要历程，但是还有个问题要讲下，那就是域名，域名我很早就买了，也是在阿里云上买的，当时就是解析到了ＧｉｔＨｕｂ的ＸＸＸ．ｇｉｔｈｕｂ．ｉｏ，这样输入域名也能访问我的博客，另外由于访问的是国外服务器，所以我的域名也没有备案，换句话说，其实我也备不了案，因为我没有买服务器，也就没有备案服务号。后来我买了服务器就想着干脆也去备案下吧．．结果一开始我就觉得好烦，得我自己去打印核验单邮寄到贵州，还得用阿里云的幕布拍照，总觉得麻烦。现在还在备案中．．．　　</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;回顾下自己使用hexo博客踩过的坑&quot;&gt;&lt;a href=&quot;#回顾下自己使用hexo博客踩过的坑&quot; class=&quot;headerlink&quot; title=&quot;回顾下自己使用hexo博客踩过的坑&quot;&gt;&lt;/a&gt;回顾下自己使用hexo博客踩过的坑&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;从一开始接触hexo博客到现在也过去好几个月了，在很多大佬看来搭建部署个个人博客是个很小儿科的事情，但对我这样一个菜鸟来说陆陆续续的几乎是采坑无数，现在回想起来都是泪啊，尤其是碰到一些bug，百度谷歌都找不到你想要的解答时，真的绝望的感觉。我这次虽然是坐个总结，但时间过去很久了，一些具体的bug，以及处理代码我就不写出来了，所以如果你想在这里看到一些实操干货的话，可能要失望了，毕竟我写的不是教程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我使用hexo博客主要经历了如下几个阶段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载hexo，选择主题，编辑配置文件，部署到GitHub&lt;/li&gt;
+&lt;li&gt;想优化主题，自定义了一些css样式，加入了一些插件&lt;/li&gt;
+&lt;li&gt;后面换了电脑，想要在多终端协同管理hexo&lt;/li&gt;
+&lt;li&gt;纠结于GitHub pages 访问速度不给力，考虑CDN，最后还是想部署到阿里云服务器。
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Github" scheme="http://huangyiblog.com/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>《软技能》代码之外的生存指南读后思考</title>
@@ -513,33 +543,6 @@
       
         &lt;p&gt;给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。&lt;/p&gt;
 &lt;p&gt;例如，给定数组 nums = [-1，2，1，-4], 和 target
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>15. 三数之和</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-    <id>http://huangyiblog.com/题解集/15-三数之和/</id>
-    <published>2018-09-06T05:45:08.000Z</published>
-    <updated>2018-10-09T14:43:20.628Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。</p><p>注意：答案中不可以包含重复的三元组。</p><p>例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</p><p>满足要求的三元组集合为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>分析：双指针思想，定位其中两个指针，根据和的大小来移动第三个指针。由于要求每个答案数组中的元素是升序排列的，所以在开始要对原数组进行排序，另外题目要求不能包含重复的答案数组，所以要有相应的去重操作。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; threeSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> k = nums.size() - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; k) &#123;</span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; curr;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] + nums[j] + nums[k] == <span class="number">0</span>) &#123;</span><br><span class="line">                    curr.push_back(nums[i]);</span><br><span class="line">                    curr.push_back(nums[j]);</span><br><span class="line">                    curr.push_back(nums[k]);</span><br><span class="line">                    res.push_back(curr);</span><br><span class="line">                    ++j;</span><br><span class="line">                    --k;</span><br><span class="line">                    <span class="keyword">while</span>(j &lt; k &amp;&amp; nums[j - <span class="number">1</span>] == nums[j]) &#123;</span><br><span class="line">                        ++j;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">while</span>(j &lt; k &amp;&amp; nums[k] == nums[k + <span class="number">1</span>]) &#123;</span><br><span class="line">                        --k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] + nums[j] + nums[k] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    ++j;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    --k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; nums.size() - <span class="number">1</span> &amp;&amp; nums[i] == nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                ++i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。&lt;/p&gt;
-&lt;p&gt;注意：答案中不可以包含重复的三元组。&lt;/p&gt;
-&lt;p&gt;例如, 给定数组 nums = [-1, 0
       
     
     </summary>
