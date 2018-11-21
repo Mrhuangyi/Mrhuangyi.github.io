@@ -133,7 +133,7 @@
 <meta property="og:description" content="如何为Nginx服务器配置ssl证书&amp;emsp;&amp;emsp;我前不久才把自己的hexo博客部署到阿里云服务器上，买的学生机LAMP6.0.1,操作系统是centos，部署成功后就去申请备案，备案前期的资料审核还是快的，最后一步管局审核写着不超过20天，结果真的过了20天才发信息来审核通过…&amp;emsp;&amp;emsp;之前的审核过程中，你的域名是不能进行访问，只能通过IP地址访问网站。审核通过后你可以通">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/3/26/a480d891b7240325055da1e6b2f75ac3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2018-11-21T14:17:25.355Z">
+<meta property="og:updated_time" content="2018-11-21T14:47:31.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何为Nginx服务器配置ssl证书">
 <meta name="twitter:description" content="如何为Nginx服务器配置ssl证书&amp;emsp;&amp;emsp;我前不久才把自己的hexo博客部署到阿里云服务器上，买的学生机LAMP6.0.1,操作系统是centos，部署成功后就去申请备案，备案前期的资料审核还是快的，最后一步管局审核写着不超过20天，结果真的过了20天才发信息来审核通过…&amp;emsp;&amp;emsp;之前的审核过程中，你的域名是不能进行访问，只能通过IP地址访问网站。审核通过后你可以通">
@@ -638,7 +638,7 @@
       
 
       
-        <h1 id="如何为Nginx服务器配置ssl证书"><a href="#如何为Nginx服务器配置ssl证书" class="headerlink" title="如何为Nginx服务器配置ssl证书"></a>如何为Nginx服务器配置ssl证书</h1><p>&emsp;&emsp;我前不久才把自己的hexo博客部署到阿里云服务器上，买的学生机LAMP6.0.1,操作系统是centos，部署成功后就去申请备案，备案前期的资料审核还是快的，最后一步管局审核写着不超过20天，结果真的过了20天才发信息来审核通过…<br>&emsp;&emsp;之前的审核过程中，你的域名是不能进行访问，只能通过IP地址访问网站。审核通过后你可以通过http:// <a href="http://www.xxx.com进行访问,但是不能通过进行https://" target="_blank" rel="noopener">www.xxx.com进行访问,但是不能通过进行https://</a> <a href="http://www.xxxxcom进行访问。所以我们先来看看这两者的区别。" target="_blank" rel="noopener">www.xxxxcom进行访问。所以我们先来看看这两者的区别。</a></p>
+        <h1 id="如何为Nginx服务器配置ssl证书"><a href="#如何为Nginx服务器配置ssl证书" class="headerlink" title="如何为Nginx服务器配置ssl证书"></a>如何为Nginx服务器配置ssl证书</h1><p>&emsp;&emsp;我前不久才把自己的hexo博客部署到阿里云服务器上，买的学生机LAMP6.0.1,操作系统是centos，部署成功后就去申请备案，备案前期的资料审核还是快的，最后一步管局审核写着不超过20天，结果真的过了20天才发信息来审核通过…<br>&emsp;&emsp;之前的审核过程中，你的域名是不能进行访问，只能通过IP地址访问网站。审核通过后你可以通过http进行访问,但是不能通过进行https:进行访问。所以我们先来看看这两者的区别。</p>
 <h2 id="http与https的基本定义"><a href="#http与https的基本定义" class="headerlink" title="http与https的基本定义"></a>http与https的基本定义</h2><p>HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
 <p>HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
 <p>HTTPS协议的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
