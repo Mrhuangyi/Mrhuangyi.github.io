@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：给定二叉树 [3,9,20,null,null,15,7]， 3    / \  9  20    /  \   15   7返回它的最大深度 3 。1234567891011121314151617/** * Definition for a binary t">
+<meta name="description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：12345678给定二叉树 [3,9,20,null,null,15,7]，    3   / \  9  20    /  \   15   7返回它的最大深度 3 。 1234567891011121314151617/** * Definition for">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode104. 二叉树的最大深度">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode104-二叉树的最大深度/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：给定二叉树 [3,9,20,null,null,15,7]， 3    / \  9  20    /  \   15   7返回它的最大深度 3 。1234567891011121314151617/** * Definition for a binary t">
+<meta property="og:description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：12345678给定二叉树 [3,9,20,null,null,15,7]，    3   / \  9  20    /  \   15   7返回它的最大深度 3 。 1234567891011121314151617/** * Definition for">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.682Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode104. 二叉树的最大深度">
-<meta name="twitter:description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：给定二叉树 [3,9,20,null,null,15,7]， 3    / \  9  20    /  \   15   7返回它的最大深度 3 。1234567891011121314151617/** * Definition for a binary t">
+<meta name="twitter:description" content="给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 示例：12345678给定二叉树 [3,9,20,null,null,15,7]，    3   / \  9  20    /  \   15   7返回它的最大深度 3 。 1234567891011121314151617/** * Definition for">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  140
+                  141
                 </span>
               
 
@@ -640,9 +640,8 @@
         <p>给定一个二叉树，找出其最大深度。</p>
 <p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
 <p>说明: 叶子节点是指没有子节点的节点。</p>
-<p>示例：<br>给定二叉树 [3,9,20,null,null,15,7]，</p>
-<pre><code>3
-</code></pre><p>   / \<br>  9  20<br>    /  \<br>   15   7<br>返回它的最大深度 3 。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left),maxDepth(root-&gt;right))+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">给定二叉树 [3,9,20,null,null,15,7]，</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">返回它的最大深度 3 。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left),maxDepth(root-&gt;right))+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -954,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

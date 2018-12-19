@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 输入: 4输出: 2示例 2: 输入: 8输出: 2说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 123456">
+<meta name="description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1:12输入: 4输出: 2 示例 2:12输入: 8输出: 2 说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 12">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 69. x 的平方根">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-69-x-的平方根/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 输入: 4输出: 2示例 2: 输入: 8输出: 2说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 123456">
+<meta property="og:description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1:12输入: 4输出: 2 示例 2:12输入: 8输出: 2 说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.680Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 69. x 的平方根">
-<meta name="twitter:description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 输入: 4输出: 2示例 2: 输入: 8输出: 2说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 123456">
+<meta name="twitter:description" content="实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1:12输入: 4输出: 2 示例 2:12输入: 8输出: 2 说明: 8 的平方根是 2.82842…,     由于返回类型是整数，小数部分将被舍去。 这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧 12">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  213
+                  215
                 </span>
               
 
@@ -640,9 +640,9 @@
         <p>实现 int sqrt(int x) 函数。</p>
 <p>计算并返回 x 的平方根，其中 x 是非负整数。</p>
 <p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
-<p>示例 1:</p>
-<p>输入: 4<br>输出: 2<br>示例 2:</p>
-<p>输入: 8<br>输出: 2<br>说明: 8 的平方根是 2.82842…,<br>     由于返回类型是整数，小数部分将被舍去。</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure></p>
+<p>说明: 8 的平方根是 2.82842…,<br>     由于返回类型是整数，小数部分将被舍去。</p>
 <p>这道题明显就是考察二分，面试时你总不可能给面试官直接调用下sqrt函数吧</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">     <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sqrt</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>,right = x/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> last_mid;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">2</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            <span class="keyword">const</span> <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(x/mid&gt;mid)&#123;</span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">                last_mid = mid;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(x/mid&lt;mid)&#123;</span><br><span class="line">                right = mid<span class="number">-1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> last_mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -956,7 +956,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

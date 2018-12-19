@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1: 输入: [3,0,1]输出: 2示例 2: 输入: [9,6,4,2,3,5,7,0,1]输出: 8说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
+<meta name="description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1:12输入: [3,0,1]输出: 2 示例 2:12输入: [9,6,4,2,3,5,7,0,1]输出: 8 说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="268. 缺失数字">
 <meta property="og:url" content="http://huangyiblog.com/题解集/268-缺失数字/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1: 输入: [3,0,1]输出: 2示例 2: 输入: [9,6,4,2,3,5,7,0,1]输出: 8说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
+<meta property="og:description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1:12输入: [3,0,1]输出: 2 示例 2:12输入: [9,6,4,2,3,5,7,0,1]输出: 8 说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.635Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="268. 缺失数字">
-<meta name="twitter:description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1: 输入: [3,0,1]输出: 2示例 2: 输入: [9,6,4,2,3,5,7,0,1]输出: 8说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
+<meta name="twitter:description" content="给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1:12输入: [3,0,1]输出: 2 示例 2:12输入: [9,6,4,2,3,5,7,0,1]输出: 8 说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &amp;#123;public:">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  139
+                  141
                 </span>
               
 
@@ -638,10 +638,11 @@
 
       
         <p>给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。</p>
-<p>示例 1:</p>
-<p>输入: [3,0,1]<br>输出: 2<br>示例 2:</p>
-<p>输入: [9,6,4,2,3,5,7,0,1]<br>输出: 8<br>说明:<br>你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现?</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">      </span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">int</span> j;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=i)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">            j=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> j+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [3,0,1]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [9,6,4,2,3,5,7,0,1]</span><br><span class="line">输出: 8</span><br></pre></td></tr></table></figure></p>
+<p>说明:<br>你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现?</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">int</span> j;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=i)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">            j=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> j+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -952,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

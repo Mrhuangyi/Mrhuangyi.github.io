@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例: 输入：s = “abcd”t = “abcde” 输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1234567891011121314class">
+<meta name="description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例:123456输入：s = &amp;quot;abcd&amp;quot;t = &amp;quot;abcde&amp;quot;输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="389. 找不同">
 <meta property="og:url" content="http://huangyiblog.com/题解集/389-找不同/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例: 输入：s = “abcd”t = “abcde” 输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1234567891011121314class">
+<meta property="og:description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例:123456输入：s = &amp;quot;abcd&amp;quot;t = &amp;quot;abcde&amp;quot;输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.639Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="389. 找不同">
-<meta name="twitter:description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例: 输入：s = “abcd”t = “abcde” 输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1234567891011121314class">
+<meta name="twitter:description" content="给定两个字符串 s 和 t，它们只包含小写字母。 字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例:123456输入：s = &amp;quot;abcd&amp;quot;t = &amp;quot;abcde&amp;quot;输出：e 解释：‘e’ 是那个被添加的字母。 分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。 1">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  171
+                  176
                 </span>
               
 
@@ -640,12 +640,11 @@
         <p>给定两个字符串 s 和 t，它们只包含小写字母。</p>
 <p>字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。</p>
 <p>请找出在 t 中被添加的字母。</p>
-<p>示例:</p>
-<p>输入：<br>s = “abcd”<br>t = “abcde”</p>
-<p>输出：<br>e</p>
+<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">s = &quot;abcd&quot;</span><br><span class="line">t = &quot;abcde&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">e</span><br></pre></td></tr></table></figure></p>
 <p>解释：<br>‘e’ 是那个被添加的字母。</p>
 <p>分析：可以求出两个字符串的ASCII总和的差值，而这个差值就对应着被添加的字母的ASCII数值。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">char</span> <span class="title">findTheDifference</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum1 = <span class="number">0</span>,sum2 = <span class="number">0</span>,dif = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            sum1 += s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;t.size();i++)&#123;</span><br><span class="line">            sum2 += t[i];</span><br><span class="line">        &#125;</span><br><span class="line">        dif = sum2-sum1;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">char</span>)dif;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -956,7 +955,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

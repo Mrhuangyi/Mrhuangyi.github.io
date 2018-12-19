@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1: 输入: “A man, a plan, a canal: Panama”输出: true示例 2: 输入: “race a car”输出: false transform函数的作用是：将某操作应用于指定范围的每个元素123456789101112//C++">
+<meta name="description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1:12输入: &amp;quot;A man, a plan, a canal: Panama&amp;quot;输出: true 示例 2:12输入: &amp;quot;race a car&amp;quot;输出: false transform函数的作用是：将某操作应用于指定范围的每">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="125. 验证回文串">
 <meta property="og:url" content="http://huangyiblog.com/题解集/125-验证回文串/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1: 输入: “A man, a plan, a canal: Panama”输出: true示例 2: 输入: “race a car”输出: false transform函数的作用是：将某操作应用于指定范围的每个元素123456789101112//C++">
+<meta property="og:description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1:12输入: &amp;quot;A man, a plan, a canal: Panama&amp;quot;输出: true 示例 2:12输入: &amp;quot;race a car&amp;quot;输出: false transform函数的作用是：将某操作应用于指定范围的每">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.627Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="125. 验证回文串">
-<meta name="twitter:description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1: 输入: “A man, a plan, a canal: Panama”输出: true示例 2: 输入: “race a car”输出: false transform函数的作用是：将某操作应用于指定范围的每个元素123456789101112//C++">
+<meta name="twitter:description" content="给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。 示例 1:12输入: &amp;quot;A man, a plan, a canal: Panama&amp;quot;输出: true 示例 2:12输入: &amp;quot;race a car&amp;quot;输出: false transform函数的作用是：将某操作应用于指定范围的每">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  293
+                  299
                 </span>
               
 
@@ -639,11 +639,11 @@
       
         <p>给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。</p>
 <p>说明：本题中，我们将空字符串定义为有效的回文串。</p>
-<p>示例 1:</p>
-<p>输入: “A man, a plan, a canal: Panama”<br>输出: true<br>示例 2:</p>
-<p>输入: “race a car”<br>输出: false</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure></p>
 <p><strong>transform函数的作用是：将某操作应用于指定范围的每个元素</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C++transform|C++tolower|C++toupper|C++字母转大写|C++字母转小写</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line">usingnamespacestd;</span><br><span class="line">voidmain()</span><br><span class="line">&#123;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"WelcomeToWebSite!"</span>)</span></span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;transform(s.begin(),s.end(),s.begin(),::<span class="built_in">tolower</span>);<span class="comment">//字母转小写</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;transform(s.begin(),s.end(),s.begin(),::<span class="built_in">toupper</span>);<span class="comment">//字母转大写</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(s.size()==<span class="number">0</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">       &#125;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>((s[i]&gt;=<span class="string">'0'</span>&amp;&amp;s[i]&lt;=<span class="string">'9'</span>)||(s[i]&gt;=<span class="string">'a'</span>&amp;&amp;s[i]&lt;=<span class="string">'z'</span>)||(s[i]&gt;=<span class="string">'A'</span>&amp;&amp;s[i]&lt;=<span class="string">'Z'</span>))&#123;</span><br><span class="line">                res+=s[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        transform(res.begin(),res.end(),res.begin(),::<span class="built_in">tolower</span>);</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=res.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(res[i]!=res[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -954,7 +954,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定两个数组，写一个函数来计算它们的交集。 例子:  给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;">
+<meta name="description" content="给定两个数组，写一个函数来计算它们的交集。 例子:1给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;l">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="349. 两个数组的交集">
 <meta property="og:url" content="http://huangyiblog.com/题解集/349-两个数组的交集/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定两个数组，写一个函数来计算它们的交集。 例子:  给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;">
+<meta property="og:description" content="给定两个数组，写一个函数来计算它们的交集。 例子:1给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.637Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="349. 两个数组的交集">
-<meta name="twitter:description" content="给定两个数组，写一个函数来计算它们的交集。 例子:  给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;">
+<meta name="twitter:description" content="给定两个数组，写一个函数来计算它们的交集。 例子:1给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2]. 提示: 每个在结果中的元素必定是唯一的。我们可以不考虑输出结果的顺序。123456789101112131415class Solution &amp;#123;public:    vector&amp;lt;int&amp;gt; intersection(vector&amp;l">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  142
                 </span>
               
 
@@ -638,8 +638,7 @@
 
       
         <p>给定两个数组，写一个函数来计算它们的交集。</p>
-<p>例子:</p>
-<p> 给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2].</p>
+<p>例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定 num1= [1, 2, 2, 1], nums2 = [2, 2], 返回 [2].</span><br></pre></td></tr></table></figure></p>
 <p>提示:</p>
 <p>每个在结果中的元素必定是唯一的。<br>我们可以不考虑输出结果的顺序。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersection(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s,res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums1.size();i++)&#123;</span><br><span class="line">            s.insert(nums1[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums2.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s.count(nums2[i]))&#123;</span><br><span class="line">                res.insert(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(res.begin(),res.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
@@ -953,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

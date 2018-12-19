@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例: 输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,5,6]">
+<meta name="description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 88. 合并两个有序数组">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-88-合并两个有序数组/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例: 输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,5,6]">
+<meta property="og:description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.681Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 88. 合并两个有序数组">
-<meta name="twitter:description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例: 输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,5,6]">
+<meta name="twitter:description" content="给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  185
+                  186
                 </span>
               
 
@@ -639,11 +639,10 @@
       
         <p>给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。</p>
 <p>说明:</p>
-<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。<br>示例:</p>
-<p>输入:<br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3</p>
-<p>输出: [1,2,2,3,5,6]</p>
+<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。<br>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">nums1 = [1,2,3,0,0,0], m = 3</span><br><span class="line">nums2 = [2,5,6],       n = 3</span><br><span class="line"></span><br><span class="line">输出: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure></p>
 <p>由于题目已经假定nums1有足够的空间，所以就很好解决了</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=m,j=<span class="number">0</span>;i&lt;m+n,j&lt;n;i++,j++)&#123;</span><br><span class="line">            nums1[i] = nums2[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> k = m+n;</span><br><span class="line">        sort(nums1.begin(),nums1.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -954,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

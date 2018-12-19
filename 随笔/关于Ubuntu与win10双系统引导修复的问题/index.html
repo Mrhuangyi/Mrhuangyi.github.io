@@ -132,15 +132,15 @@
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="问题来源我的电脑之前是在Windows10系统上装了一个Fedora版本的linux，基本上使用都没什么问题，说实话，因为我大部分软件或开发工具啥的主要都装在Windows系统上，所以平时还是win10用的比较多。但最近听说国内有一款仿Ubuntu的深度deepin系统也挺不错的，而且界面还挺像mac，所以就急着将自己电脑上的Fedora换成了deepin，但估计就是在安装deepin的时候出了叉">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/dg1.PNG">
-<meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/dg2.png">
-<meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/dg3.PNG">
-<meta property="og:image" content="http://pc5wd3ju6.bkt.clouddn.com/dg4.PNG">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.687Z">
+<meta property="og:image" content="http://huangyiblog.com/dg1.PNG">
+<meta property="og:image" content="http://huangyiblog.com/dg2.png">
+<meta property="og:image" content="http://huangyiblog.com/dg3.PNG">
+<meta property="og:image" content="http://huangyiblog.com/dg4.PNG">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Ubuntu与win10双系统引导修复的问题">
 <meta name="twitter:description" content="问题来源我的电脑之前是在Windows10系统上装了一个Fedora版本的linux，基本上使用都没什么问题，说实话，因为我大部分软件或开发工具啥的主要都装在Windows系统上，所以平时还是win10用的比较多。但最近听说国内有一款仿Ubuntu的深度deepin系统也挺不错的，而且界面还挺像mac，所以就急着将自己电脑上的Fedora换成了deepin，但估计就是在安装deepin的时候出了叉">
-<meta name="twitter:image" content="http://pc5wd3ju6.bkt.clouddn.com/dg1.PNG">
+<meta name="twitter:image" content="http://huangyiblog.com/dg1.PNG">
 
 
 
@@ -647,29 +647,28 @@
 <li>首先你得有个win64位的PE系统启动U盘，在开机的时候按下ESC键进入系统选择界面（我的电脑是ESC，这个不同版本电脑可能有所不同，也有可能你是F11，F12）,之后选择你的U盘启动系统进入。</li>
 <li>进入系统后，打开你的DG（DiskGenuis）分区工具</li>
 </ul>
-<p><img src="http://pc5wd3ju6.bkt.clouddn.com/dg1.PNG" alt="alt"></p>
+<p><img src="http://huangyiblog.com/dg1.PNG" alt="alt"></p>
 <p>使用这个工具之前需要注意一个问题，那就是你的硬盘是什么格式的，是GPT还是MBR？<br>-</p>
 <p>很多人写的修复方法都是针对硬盘类型为mbr的，就是直接选中的系统盘，如下图：点击硬盘选项下的重建主引导记录。</p>
-<p><img src="http://pc5wd3ju6.bkt.clouddn.com/dg2.png" alt="alt"></p>
+<p><img src="http://huangyiblog.com/dg2.png" alt="alt"></p>
 <p>然而问题出现了，当我点击 硬盘选项后，重建主引导记录这一栏是灰色的，无法选中。原因就是我的硬盘类型是GPT的。</p>
 <ul>
-<li><p>接下来要做的就是修复GPT格式的引导，首先我们注意到ESP分区没有盘符，我们需要给他指定一个盘符：<br><img src="http://pc5wd3ju6.bkt.clouddn.com/dg3.PNG" alt="alt"></p>
+<li><p>接下来要做的就是修复GPT格式的引导，首先我们注意到ESP分区没有盘符，我们需要给他指定一个盘符：<br><img src="http://huangyiblog.com/dg3.PNG" alt="alt"></p>
 </li>
 <li><p>指派好了就关闭DG工具，回到桌面，</p>
 </li>
 </ul>
-<p>打开cmd命令行，输入以下命令并运行</p>
-<p>　　bcdboot c:\windows /s g: /f uefi /l zh-cn</p>
-<p>　　其中：c:\windows  硬盘系统目录，根据实际情况修改</p>
+<p>打开cmd命令行，输入以下命令并运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　bcdboot c:\windows /s g: /f uefi /l zh-cn</span><br></pre></td></tr></table></figure></p>
+<p>　　其中：<br>   c:\windows  硬盘系统目录，根据实际情况修改</p>
 <p>　　/s g:     指定esp分区所在磁盘，根据实际情况修改</p>
 <p>　　/f uefi   指定启动方式为uefi</p>
 <p>　　/l zh-cn  指定uefi启动界面语言为简体中文</p>
 <p>　　注：64位7PE不带/s参数，故7PE不支持bios启动下修复</p>
-<p><img src="http://pc5wd3ju6.bkt.clouddn.com/dg4.PNG" alt="alt"></p>
+<p><img src="http://huangyiblog.com/dg4.PNG" alt="alt"></p>
 <ul>
 <li>创建成功后重新启动电脑，选择Windows boot manager进入系统，到这里win10的引导也就修复完成。</li>
 </ul>
-<h1 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h1><p>win10引导修复完成后的结果是，每次开机都是默认直接进入Windows，如果想要进入Ubuntu，还是要刚开机时按下ESC手动选择进入，而不是和之前一样，出现一个双系统选择界面供你直接选择。我进入Ubuntu之后尝试修复此问题，主要进行了如下操作：<br>1 进入Ubuntu终端，输入如下命令利用bootrepair修复引导<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 进入root用户</span><br><span class="line">sudo -i </span><br><span class="line"># 添加软件源并更新</span><br><span class="line">add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp;　apt-get update</span><br><span class="line">＃　安装boot-repair并启动软件</span><br><span class="line">apt-get install -y boot-repair &amp;&amp; boot-repair</span><br></pre></td></tr></table></figure></p>
+<h1 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h1><p>win10引导修复完成后的结果是，每次开机都是默认直接进入Windows，如果想要进入Ubuntu，还是要刚开机时按下ESC手动选择进入，而不是和之前一样，出现一个双系统选择界面供你直接选择。我进入Ubuntu之后尝试修复此问题，主要进行了如下操作：<br>1 进入Ubuntu终端，输入如下命令利用bootrepair修复引导<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 进入root用户</span><br><span class="line">sudo -i</span><br><span class="line"># 添加软件源并更新</span><br><span class="line">add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp;　apt-get update</span><br><span class="line">＃　安装boot-repair并启动软件</span><br><span class="line">apt-get install -y boot-repair &amp;&amp; boot-repair</span><br></pre></td></tr></table></figure></p>
 <p>2 查看Windows10磁盘所在引导，然后继续进入Ubuntu终端，修改引导</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">vim /boot/grub/grub.cfg</span><br><span class="line">//再该文件末尾修改win10引导信息。</span><br><span class="line">//之后再更新引导</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 <p>3 庆幸的是更新引导之后的确出现了found Windows的字眼，但是当我重启电脑，发现并没有改变什么，还是只能直接进入Windows，所以挺困惑的。</p>
@@ -1003,7 +1002,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

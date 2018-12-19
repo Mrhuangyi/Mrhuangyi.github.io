@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,3,2]输出: 3示例 2: 输入: [0,1,0,1,0,1,99]输出: 99解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count[i]来">
+<meta name="description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,3,2]输出: 3 示例 2:12输入: [0,1,0,1,0,1,99]输出: 99 解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="137. 只出现一次的数字 II">
 <meta property="og:url" content="http://huangyiblog.com/题解集/137-只出现一次的数字-II/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,3,2]输出: 3示例 2: 输入: [0,1,0,1,0,1,99]输出: 99解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count[i]来">
+<meta property="og:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,3,2]输出: 3 示例 2:12输入: [0,1,0,1,0,1,99]输出: 99 解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T13:17:49.969Z">
+<meta property="og:updated_time" content="2018-12-19T15:13:02.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="137. 只出现一次的数字 II">
-<meta name="twitter:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,3,2]输出: 3示例 2: 输入: [0,1,0,1,0,1,99]输出: 99解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count[i]来">
+<meta name="twitter:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,3,2]输出: 3 示例 2:12输入: [0,1,0,1,0,1,99]输出: 99 解法一：创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  684
+                  686
                 </span>
               
 
@@ -640,9 +640,9 @@
         <p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
 <p>说明：</p>
 <p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:</p>
-<p>输入: [2,2,3,2]<br>输出: 3<br>示例 2:</p>
-<p>输入: [0,1,0,1,0,1,99]<br>输出: 99<br>解法一：<br>创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count[i]来表示在i位出现的1的次数，如果count[i]是3的倍数，跳过，否则，取出该位。<br>时间复杂度O(n),空间复杂度O(1)</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [2,2,3,2]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [0,1,0,1,0,1,99]</span><br><span class="line">输出: 99</span><br></pre></td></tr></table></figure></p>
+<p>解法一：<br>创建一个长度为sizeof(int)的数组count[sizeof(int)]，用count[i]来表示在i位出现的1的次数，如果count[i]是3的倍数，跳过，否则，取出该位。<br>时间复杂度O(n),空间复杂度O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> w = <span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">8</span>;</span><br><span class="line">        <span class="keyword">int</span> count[w];</span><br><span class="line">        fill_n(&amp;count[<span class="number">0</span>], w, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; w; j++) &#123;</span><br><span class="line">                count[j] += (nums[i] &gt;&gt; j) &amp; <span class="number">1</span>;</span><br><span class="line">                count[j] %= <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; w; i++) &#123;</span><br><span class="line">            res += count[i] &lt;&lt; i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>解法二：<br>用二进制模拟三进制运算。<br>用one记录到当前处理的元素为止，二进制1出现“1次”（mod 3 之后的 1）的有哪些二进制位；用two记录到当前计算的变量为止，二进制1出现“2次”（mod 3 之后的 2）的有哪些二进制位。当one和two中的某一位同时为1时表示该二进制位上1出现了3次，此时需要清零。<br>时间复杂度O(n),空间复杂度O(1)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> one  = <span class="number">0</span>, two = <span class="number">0</span>, three = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i : nums) &#123;</span><br><span class="line">            two |= (one &amp; i);</span><br><span class="line">            one ^= i;</span><br><span class="line">            three = ~(one &amp; two);</span><br><span class="line">            one &amp;= three;</span><br><span class="line">            two &amp;= three;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> one;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>解法三：<br>我们把数组中数字的每一位累加起来对3取余，剩下的结果就是那个单独数组该位上的数字.<br>用二进制表示的过程为00-&gt;01-&gt;10-&gt;00,用a 和 b来表示一开始的状态的十位和个位：<br>b = b ^ r &amp; ~a;<br>a = a ^ r &amp; ~b;<br>刚开始的时候，a和b都是0，当遇到数字1的时候，b更新为1，a更新为0，就是01的状态；再次遇到1的时候，b更新为0，a更新为1，就是10的状态；再次遇到1的时候，b更新为0，a更新为0，就是00的状态，相当于重置了；所以最后的结果保存在b中。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            b = (b ^ nums[i]) &amp; ~a;</span><br><span class="line">            a = (a ^ nums[i]) &amp; ~b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -959,7 +959,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

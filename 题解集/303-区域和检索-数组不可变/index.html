@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例： 给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange() sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3说明: 你可以假设数组不可变。会多次调">
+<meta name="description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例：12345给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3 说明: 你可以假设数组不可变。">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="303. 区域和检索 - 数组不可变">
 <meta property="og:url" content="http://huangyiblog.com/题解集/303-区域和检索-数组不可变/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例： 给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange() sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3说明: 你可以假设数组不可变。会多次调">
+<meta property="og:description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例：12345给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3 说明: 你可以假设数组不可变。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.636Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="303. 区域和检索 - 数组不可变">
-<meta name="twitter:description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例： 给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange() sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3说明: 你可以假设数组不可变。会多次调">
+<meta name="twitter:description" content="给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。 示例：12345给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()sumRange(0, 2) -&amp;gt; 1sumRange(2, 5) -&amp;gt; -1sumRange(0, 5) -&amp;gt; -3 说明: 你可以假设数组不可变。">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  182
+                  183
                 </span>
               
 
@@ -638,12 +638,12 @@
 
       
         <p>给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。</p>
-<p>示例：</p>
-<p>给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()</p>
-<p>sumRange(0, 2) -&gt; 1<br>sumRange(2, 5) -&gt; -1<br>sumRange(0, 5) -&gt; -3<br>说明:</p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()</span><br><span class="line"></span><br><span class="line">sumRange(0, 2) -&gt; 1</span><br><span class="line">sumRange(2, 5) -&gt; -1</span><br><span class="line">sumRange(0, 5) -&gt; -3</span><br></pre></td></tr></table></figure></p>
+<p>说明:</p>
 <p>你可以假设数组不可变。<br>会多次调用 sumRange 方法。</p>
 <p>新建一个dp数组，用来保存相应前个数的和</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    NumArray(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums) &#123;</span><br><span class="line">        dp.resize(nums.size()+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nums.size();++i)&#123;</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>]+nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dp[j+<span class="number">1</span>]-dp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your NumArray object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * NumArray obj = new NumArray(nums);</span></span><br><span class="line"><span class="comment"> * int param_1 = obj.sumRange(i,j);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumArray</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    NumArray(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums) &#123;</span><br><span class="line">        dp.resize(nums.size()+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nums.size();++i)&#123;</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>]+nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dp[j+<span class="number">1</span>]-dp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your NumArray object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * NumArray obj = new NumArray(nums);</span></span><br><span class="line"><span class="comment"> * int param_1 = obj.sumRange(i,j);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -954,7 +954,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

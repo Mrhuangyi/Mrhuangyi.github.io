@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="统计所有小于非负数整数 n 的质数的数量。 示例: 输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vector&amp;">
+<meta name="description" content="统计所有小于非负数整数 n 的质数的数量。 示例:123输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vecto">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 204. 计数质数">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-204-计数质数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="统计所有小于非负数整数 n 的质数的数量。 示例: 输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vector&amp;">
+<meta property="og:description" content="统计所有小于非负数整数 n 的质数的数量。 示例:123输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vecto">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.678Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 204. 计数质数">
-<meta name="twitter:description" content="统计所有小于非负数整数 n 的质数的数量。 示例: 输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vector&amp;">
+<meta name="twitter:description" content="统计所有小于非负数整数 n 的质数的数量。 示例:123输入: 10输出: 4解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。 先预处理，不是素数的就标记出来123456789101112131415161718192021class Solution &amp;#123;public:    int countPrimes(int n) &amp;#123;        vecto">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  130
+                  131
                 </span>
               
 
@@ -638,9 +638,8 @@
 
       
         <p>统计所有小于非负数整数 n 的质数的数量。</p>
-<p>示例:</p>
-<p>输入: 10<br>输出: 4<br>解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。</p>
-<p>先预处理，不是素数的就标记出来<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; isPrime(n,<span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(isPrime[i])&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i*i;j&lt;n;j+=i)&#123;</span><br><span class="line">                    isPrime[j] = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(isPrime[i])&#123;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。</span><br></pre></td></tr></table></figure></p>
+<p>先预处理，不是素数的就标记出来<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; isPrime(n,<span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(isPrime[i])&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i*i;j&lt;n;j+=i)&#123;</span><br><span class="line">                    isPrime[j] = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(isPrime[i])&#123;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -952,7 +951,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1: 输入: s = “egg”, t = “add”输出: true示例 2: 输入: s = “foo”, t = “bar”输出: false示例 3:">
+<meta name="description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1:12输入: s = &amp;quot;egg&amp;quot;, t = &amp;quot;add&amp;quot;输出: true 示例 2:12输入: s = &amp;quot;f">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="205. 同构字符串">
 <meta property="og:url" content="http://huangyiblog.com/题解集/205-同构字符串/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1: 输入: s = “egg”, t = “add”输出: true示例 2: 输入: s = “foo”, t = “bar”输出: false示例 3:">
+<meta property="og:description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1:12输入: s = &amp;quot;egg&amp;quot;, t = &amp;quot;add&amp;quot;输出: true 示例 2:12输入: s = &amp;quot;f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.632Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="205. 同构字符串">
-<meta name="twitter:description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1: 输入: s = “egg”, t = “add”输出: true示例 2: 输入: s = “foo”, t = “bar”输出: false示例 3:">
+<meta name="twitter:description" content="给定两个字符串 s 和 t，判断它们是否是同构的。 如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。 所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。 示例 1:12输入: s = &amp;quot;egg&amp;quot;, t = &amp;quot;add&amp;quot;输出: true 示例 2:12输入: s = &amp;quot;f">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  302
                 </span>
               
 
@@ -640,10 +640,10 @@
         <p>给定两个字符串 s 和 t，判断它们是否是同构的。</p>
 <p>如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。</p>
 <p>所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。两个字符不能映射到同一个字符上，但字符可以映射自己本身。</p>
-<p>示例 1:</p>
-<p>输入: s = “egg”, t = “add”<br>输出: true<br>示例 2:</p>
-<p>输入: s = “foo”, t = “bar”<br>输出: false<br>示例 3:</p>
-<p>输入: s = “paper”, t = “title”<br>输出: true<br>说明:<br>你可以假设 s 和 t 具有相同的长度。</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;egg&quot;, t = &quot;add&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;foo&quot;, t = &quot;bar&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure></p>
+<p>示例 3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;paper&quot;, t = &quot;title&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p>
+<p>说明:<br>你可以假设 s 和 t 具有相同的长度。</p>
 <p>用两个HashMap维护字符的映射关系，时间复杂度O(n)，空间复杂度O(n)。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIsomorphic</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length()!=t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">final</span> Map&lt;Character,Character&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">final</span> Map&lt;Character,Character&gt; map2 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">char</span> c1 = s.charAt(i);</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">char</span> c2 = t.charAt(i);</span><br><span class="line">            <span class="keyword">if</span>(map1.containsKey(c1))&#123;</span><br><span class="line">                <span class="keyword">if</span>(map1.get(c1)!=c2) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                map1.put(c1,c2);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(map2.containsKey(c2))&#123;</span><br><span class="line">                <span class="keyword">if</span>(map2.get(c2)!=c1) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                map2.put(c2,c1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -956,7 +956,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

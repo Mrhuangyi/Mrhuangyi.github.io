@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1： 输入： 16 输出： True 示例 2： 输入： 14 输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPerfe">
+<meta name="description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1：123输入： 16输出： True 示例 2：123输入： 14输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPer">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="367. 有效的完全平方数">
 <meta property="og:url" content="http://huangyiblog.com/题解集/367-有效的完全平方数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1： 输入： 16 输出： True 示例 2： 输入： 14 输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPerfe">
+<meta property="og:description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1：123输入： 16输出： True 示例 2：123输入： 14输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.637Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="367. 有效的完全平方数">
-<meta name="twitter:description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1： 输入： 16 输出： True 示例 2： 输入： 14 输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPerfe">
+<meta name="twitter:description" content="给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。 注意：不要使用任何内置的库函数，如  sqrt。 示例 1：123输入： 16输出： True 示例 2：123输入： 14输出： False 法一：二分1234567891011121314151617class Solution &amp;#123;public:    bool isPer">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178
+                  180
                 </span>
               
 
@@ -639,12 +639,8 @@
       
         <p>给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。</p>
 <p>注意：不要使用任何内置的库函数，如  sqrt。</p>
-<p>示例 1：</p>
-<p>输入： 16</p>
-<p>输出： True</p>
-<p>示例 2：</p>
-<p>输入： 14</p>
-<p>输出： False</p>
+<p>示例 1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入： 16</span><br><span class="line"></span><br><span class="line">输出： True</span><br></pre></td></tr></table></figure></p>
+<p>示例 2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入： 14</span><br><span class="line"></span><br><span class="line">输出： False</span><br></pre></td></tr></table></figure></p>
 <p>法一：二分<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPerfectSquare</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> left = <span class="number">0</span>,right = num;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> mid = left+(right-left)/<span class="number">2</span>,t=mid*mid;</span><br><span class="line">            <span class="keyword">if</span>(t==num)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(t&lt;num)&#123;</span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                right = mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>法二：<br>任意完全平方数都可以表示成连续的奇数和<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPerfectSquare</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(num&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            num -= i;</span><br><span class="line">            i += <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
@@ -958,7 +954,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

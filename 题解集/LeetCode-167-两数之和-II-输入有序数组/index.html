@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例: 输入: numbers = [2, 7, 11, 15], target">
+<meta name="description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例:123输入: numbers = [2, 7, 11, 15], targe">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 167. 两数之和 II - 输入有序数组">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-167-两数之和-II-输入有序数组/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例: 输入: numbers = [2, 7, 11, 15], target">
+<meta property="og:description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例:123输入: numbers = [2, 7, 11, 15], targe">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.678Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 167. 两数之和 II - 输入有序数组">
-<meta name="twitter:description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例: 输入: numbers = [2, 7, 11, 15], target">
+<meta name="twitter:description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例:123输入: numbers = [2, 7, 11, 15], targe">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  230
+                  231
                 </span>
               
 
@@ -640,8 +640,8 @@
         <p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。</p>
 <p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
 <p>说明:</p>
-<p>返回的下标值（index1 和 index2）不是从零开始的。<br>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br>示例:</p>
-<p>输入: numbers = [2, 7, 11, 15], target = 9<br>输出: [1,2]<br>解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">            <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.size();i++)&#123;</span><br><span class="line">            m[numbers[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.size();i++)&#123;</span><br><span class="line">           <span class="keyword">const</span> <span class="keyword">int</span> gap = target-numbers[i];</span><br><span class="line">            <span class="keyword">if</span>(m.find(gap)!=m.end()&amp;&amp;m[gap]&gt;i)&#123;</span><br><span class="line">                result.push_back(i+<span class="number">1</span>);</span><br><span class="line">                result.push_back(m[gap]+<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>返回的下标值（index1 和 index2）不是从零开始的。<br>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。<br>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: numbers = [2, 7, 11, 15], target = 9</span><br><span class="line">输出: [1,2]</span><br><span class="line">解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">            <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.size();i++)&#123;</span><br><span class="line">            m[numbers[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.size();i++)&#123;</span><br><span class="line">           <span class="keyword">const</span> <span class="keyword">int</span> gap = target-numbers[i];</span><br><span class="line">            <span class="keyword">if</span>(m.find(gap)!=m.end()&amp;&amp;m[gap]&gt;i)&#123;</span><br><span class="line">                result.push_back(i+<span class="number">1</span>);</span><br><span class="line">                result.push_back(m[gap]+<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -953,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

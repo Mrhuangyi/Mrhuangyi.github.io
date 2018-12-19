@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="Given a singly linked list, determine if it is a palindrome. Example 1: Input: 1-&amp;gt;2Output: falseExample 2: Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1) spac">
+<meta name="description" content="Given a singly linked list, determine if it is a palindrome. Example 1:12Input: 1-&amp;gt;2Output: false Example 2:1234Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1)">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="234. Palindrome Linked List">
 <meta property="og:url" content="http://huangyiblog.com/题解集/234-Palindrome-Linked-List/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="Given a singly linked list, determine if it is a palindrome. Example 1: Input: 1-&amp;gt;2Output: falseExample 2: Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1) spac">
+<meta property="og:description" content="Given a singly linked list, determine if it is a palindrome. Example 1:12Input: 1-&amp;gt;2Output: false Example 2:1234Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.634Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="234. Palindrome Linked List">
-<meta name="twitter:description" content="Given a singly linked list, determine if it is a palindrome. Example 1: Input: 1-&amp;gt;2Output: falseExample 2: Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1) spac">
+<meta name="twitter:description" content="Given a singly linked list, determine if it is a palindrome. Example 1:12Input: 1-&amp;gt;2Output: false Example 2:1234Input: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1Output: trueFollow up:Could you do it in O(n) time and O(1)">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  379
+                  380
                 </span>
               
 
@@ -638,9 +638,8 @@
 
       
         <p>Given a singly linked list, determine if it is a palindrome.</p>
-<p>Example 1:</p>
-<p>Input: 1-&gt;2<br>Output: false<br>Example 2:</p>
-<p>Input: 1-&gt;2-&gt;2-&gt;1<br>Output: true<br>Follow up:<br>Could you do it in O(n) time and O(1) space?</p>
+<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
+<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;2-&gt;1</span><br><span class="line">Output: true</span><br><span class="line">Follow up:</span><br><span class="line">Could you do it in O(n) time and O(1) space?</span><br></pre></td></tr></table></figure></p>
 <p>题目要求就是给定一个单链表，让你判断是不是回文链表，最好时间复杂度控制在O(n),空间复杂度控制在O(1)</p>
 <p>思路：<br>第一步：两个指针都从头出发，快指针每次两步，慢指针每次一步，这样快指针的下一个或下下个为空时，慢指针就在链表正中间那个节点了（如果链表有偶数个节点则在靠近头那侧的）。<br>第二步：从慢指针的下一个开始，把后面的链表都反转（Reverse Linked List），<br>第三步：然后我们再从头和从尾同时向中间前进，就可以判断该链表是不是回文了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">NULL</span>||head-&gt;next==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* mid = findMid(head);</span><br><span class="line">        mid-&gt;next = reverse(mid-&gt;next);</span><br><span class="line">        mid = mid-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="literal">NULL</span>&amp;&amp;mid!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;val!=mid-&gt;val)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            mid = mid-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ListNode* <span class="title">findMid</span><span class="params">(ListNode* now)</span></span>&#123;</span><br><span class="line">        ListNode* slow = now;</span><br><span class="line">        ListNode* fast = now-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(fast!=<span class="literal">NULL</span>&amp;&amp;fast-&gt;next!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverse</span><span class="params">(ListNode* now)</span></span>&#123;</span><br><span class="line">        ListNode* pre = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(now!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            ListNode* temp = now-&gt;next;</span><br><span class="line">            now-&gt;next = pre;</span><br><span class="line">            pre = now;</span><br><span class="line">            now = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
@@ -954,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

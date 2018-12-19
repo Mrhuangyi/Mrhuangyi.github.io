@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.634Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="235. Lowest Common Ancestor of a Binary Search Tree">
 <meta name="twitter:description" content="Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between t">
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  722
+                  724
                 </span>
               
 
@@ -639,13 +639,10 @@
       
         <p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
 <p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
-<p>Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
-<pre><code>    _______6______
-   /              \
-___2__          ___8__
-</code></pre><p>   /      \        /      \<br>   0      _4       7       9<br>         /  \<br>         3   5<br>Example 1:</p>
-<p>Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8<br>Output: 6<br>Explanation: The LCA of nodes 2 and 8 is 6.<br>Example 2:</p>
-<p>Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4<br>Output: 2<br>Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself<br>             according to the LCA definition.<br>Note:</p>
+<p>Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     _______6______</span><br><span class="line">    /              \</span><br><span class="line"> ___2__          ___8__</span><br><span class="line">/      \        /      \</span><br><span class="line">0      _4       7       9</span><br><span class="line">      /  \</span><br><span class="line">      3   5</span><br></pre></td></tr></table></figure></p>
+<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: The LCA of nodes 2 and 8 is 6.</span><br></pre></td></tr></table></figure></p>
+<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself</span><br><span class="line">             according to the LCA definition.</span><br></pre></td></tr></table></figure></p>
+<p>Note:</p>
 <p>All of the nodes’ values will be unique.<br>p and q are different and both values will exist in the BST.</p>
 <p>LCA问题，题目要求你求出给定结点的最近公共祖先。<br>我们先来看下维基百科中关于LCA的定义：<br>在图论和计算机科学中，最近公共祖先（英语：lowest common ancestor）是指在一个树或者有向无环图中同时拥有v和w作为后代的最深的节点。在这里，我们定义一个节点也是其自己的后代，因此如果v是w的后代，那么w就是v和w的最近公共祖先。</p>
 <p>最近公共祖先是两个节点所有公共祖先中离根节点最远的，计算最近公共祖先和根节点的长度往往是有用的。比如为了计算树中两个节点v和w之间的距离，可以使用以下方法：分别计算由v到根节点和w到根节点的距离，两者之和减去最近公共祖先到根节点的距离的两倍即可得到v到w的距离。</p>
@@ -963,7 +960,7 @@ ___2__          ___8__
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

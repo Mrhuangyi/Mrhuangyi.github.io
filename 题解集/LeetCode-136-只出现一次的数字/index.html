@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,1]输出: 1示例 2: 输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一">
+<meta name="description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,1]输出: 1 示例 2:12输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 136.只出现一次的数字">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-136-只出现一次的数字/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,1]输出: 1示例 2: 输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一">
+<meta property="og:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,1]输出: 1 示例 2:12输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.678Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 136.只出现一次的数字">
-<meta name="twitter:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,1]输出: 1示例 2: 输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一">
+<meta name="twitter:description" content="给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,1]输出: 1 示例 2:12输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  194
+                  196
                 </span>
               
 
@@ -640,9 +640,8 @@
         <p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 <p>说明：</p>
 <p>你的算法应该具有<strong>线性时间复杂度</strong>。 你可以<strong>不使用额外空间</strong>来实现吗？</p>
-<p>示例 1:</p>
-<p>输入: [2,2,1]<br>输出: 1<br>示例 2:</p>
-<p>输入: [4,1,2,1,2]<br>输出: 4</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [2,2,1]</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [4,1,2,1,2]</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure></p>
 <p>分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，<br>遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一次的。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            x^=nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -955,7 +954,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1    / \  2   2 / \ / \3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1    / \  2   2   \   \   3    3说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789101112">
+<meta name="description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3 说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="101. 对称二叉树">
 <meta property="og:url" content="http://huangyiblog.com/题解集/101-对称二叉树/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1    / \  2   2 / \ / \3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1    / \  2   2   \   \   3    3说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789101112">
+<meta property="og:description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3 说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.588Z">
+<meta property="og:updated_time" content="2018-12-19T14:03:19.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="101. 对称二叉树">
-<meta name="twitter:description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1    / \  2   2 / \ / \3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1    / \  2   2   \   \   3    3说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789101112">
+<meta name="twitter:description" content="给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。12345    1   / \  2   2 / \ / \3  4 4  3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:12345  1 / \2   2 \   \ 3    3 说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。123456789">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  321
+                  323
                 </span>
               
 
@@ -638,13 +638,12 @@
 
       
         <p>给定一个二叉树，检查它是否是镜像对称的。</p>
-<p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
-<pre><code>1
-</code></pre><p>   / \<br>  2   2<br> / \ / \<br>3  4 4  3<br>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
-<pre><code>1
-</code></pre><p>   / \<br>  2   2<br>   \   \<br>   3    3<br>说明:</p>
+<p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line"> / \ / \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></table></figure></p>
+<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  1</span><br><span class="line"> / \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></table></figure></p>
+<p>说明:</p>
 <p>如果你可以运用递归和迭代两种方法解决这个问题，会很加分。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">递归写法：</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root-&gt;left,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode *p,TreeNode *q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">nullptr</span>&amp;&amp;q==<span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">nullptr</span>||q==<span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> p-&gt;val==q-&gt;val&amp;&amp;isSymmetric(p-&gt;left,q-&gt;right)&amp;&amp;isSymmetric(p-&gt;right,q-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">迭代写法：</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">        s.push(root-&gt;left);</span><br><span class="line">        s.push(root-&gt;right);</span><br><span class="line">        <span class="keyword">while</span>(!s.empty())&#123;</span><br><span class="line">            <span class="keyword">auto</span> p = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="keyword">auto</span> q = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="keyword">if</span>(!q&amp;&amp;!p) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(!p||!q) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;val!=q-&gt;val) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            s.push(p-&gt;left);</span><br><span class="line">            s.push(q-&gt;right);</span><br><span class="line">            s.push(p-&gt;right);</span><br><span class="line">            s.push(q-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -955,7 +954,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1: 输入: “UD”输出: true示例 2: 输入: “L">
+<meta name="description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1:12输入: &amp;quot;UD&amp;quot;输出: true">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="657. 判断路线成圈">
 <meta property="og:url" content="http://huangyiblog.com/题解集/657-判断路线成圈/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1: 输入: “UD”输出: true示例 2: 输入: “L">
+<meta property="og:description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1:12输入: &amp;quot;UD&amp;quot;输出: true">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.653Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="657. 判断路线成圈">
-<meta name="twitter:description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1: 输入: “UD”输出: true示例 2: 输入: “L">
+<meta name="twitter:description" content="初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。 移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。 示例 1:12输入: &amp;quot;UD&amp;quot;输出: true">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  252
+                  258
                 </span>
               
 
@@ -639,9 +639,8 @@
       
         <p>初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。</p>
 <p>移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false，表示机器人移动路线是否成圈。</p>
-<p>示例 1:</p>
-<p>输入: “UD”<br>输出: true<br>示例 2:</p>
-<p>输入: “LL”<br>输出: false</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;UD&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p>
+<p>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;LL&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure></p>
 <p>分析：要求能回到原位置，那么左右 和上下所移动的步数必须对应相等。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeCircle</span><span class="params">(<span class="built_in">string</span> moves)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L=<span class="number">0</span>,R=<span class="number">0</span>,U=<span class="number">0</span>,D=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;moves.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(moves[i]==<span class="string">'L'</span>)&#123;</span><br><span class="line">                L++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'R'</span>)&#123;</span><br><span class="line">                R++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'U'</span>)&#123;</span><br><span class="line">                U++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(moves[i]==<span class="string">'D'</span>)&#123;</span><br><span class="line">                D++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(L==R&amp;&amp;U==D)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -954,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

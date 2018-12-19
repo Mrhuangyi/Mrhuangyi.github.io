@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例: s = “leetcode”返回 0. s = “loveleetcode”,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firstUniqChar(string s) &amp;#1">
+<meta name="description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例:12345s = &amp;quot;leetcode&amp;quot;返回 0.s = &amp;quot;loveleetcode&amp;quot;,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firs">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="387. 字符串中的第一个唯一字符">
 <meta property="og:url" content="http://huangyiblog.com/题解集/387-字符串中的第一个唯一字符/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例: s = “leetcode”返回 0. s = “loveleetcode”,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firstUniqChar(string s) &amp;#1">
+<meta property="og:description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例:12345s = &amp;quot;leetcode&amp;quot;返回 0.s = &amp;quot;loveleetcode&amp;quot;,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firs">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.638Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="387. 字符串中的第一个唯一字符">
-<meta name="twitter:description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例: s = “leetcode”返回 0. s = “loveleetcode”,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firstUniqChar(string s) &amp;#1">
+<meta name="twitter:description" content="给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。 案例:12345s = &amp;quot;leetcode&amp;quot;返回 0.s = &amp;quot;loveleetcode&amp;quot;,返回 2. 注意事项：您可以假定该字符串只包含小写字母。 123456789101112131415class Solution &amp;#123;public:    int firs">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  121
+                  125
                 </span>
               
 
@@ -638,11 +638,10 @@
 
       
         <p>给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。</p>
-<p>案例:</p>
-<p>s = “leetcode”<br>返回 0.</p>
-<p>s = “loveleetcode”,<br>返回 2.</p>
+<p>案例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &quot;leetcode&quot;</span><br><span class="line">返回 0.</span><br><span class="line"></span><br><span class="line">s = &quot;loveleetcode&quot;,</span><br><span class="line">返回 2.</span><br></pre></td></tr></table></figure></p>
 <p>注意事项：您可以假定该字符串只包含小写字母。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">300</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            a[s[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[s[i]]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -953,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:  输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1 我们可以">
+<meta name="description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:1234567输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="202. 快乐数">
 <meta property="og:url" content="http://huangyiblog.com/题解集/202-快乐数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:  输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1 我们可以">
+<meta property="og:description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:1234567输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.631Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="202. 快乐数">
-<meta name="twitter:description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:  输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1 我们可以">
+<meta name="twitter:description" content="编写一个算法来判断一个数是不是“快乐数”。 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。 示例:1234567输入: 19输出: true解释:12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  312
+                  313
                 </span>
               
 
@@ -639,8 +639,7 @@
       
         <p>编写一个算法来判断一个数是不是“快乐数”。</p>
 <p>一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。</p>
-<p>示例: </p>
-<p>输入: 19<br>输出: true<br>解释:<br>12 + 92 = 82<br>82 + 22 = 68<br>62 + 82 = 100<br>12 + 02 + 02 = 1</p>
+<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: 19</span><br><span class="line">输出: true</span><br><span class="line">解释:</span><br><span class="line">12 + 92 = 82</span><br><span class="line">82 + 22 = 68</span><br><span class="line">62 + 82 = 100</span><br><span class="line">12 + 02 + 02 = 1</span><br></pre></td></tr></table></figure></p>
 <p>我们可以建立一个集合，将循环中计算得到的数组存入集合，如果算得结果为1，则为快乐数，相反如果有某个数重复出现，那么必然不是快乐数</p>
 <p><strong>不是快乐数的数称为不快乐数（unhappy number），所有不快乐数的数位平方和计算，最后都会进入 4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4 的循环中。</strong><br>维基百科中有关于快乐数比较详细的介绍<br><a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank" rel="noopener">快乐数</a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            n = numSquareSum(n);</span><br><span class="line">            <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(st.find(n)!=st.end())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            st.insert(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSquareSum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> squareSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            squareSum +=(n%<span class="number">10</span>)*(n%<span class="number">10</span>);</span><br><span class="line">            n /=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> squareSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
@@ -954,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

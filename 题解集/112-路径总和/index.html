@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，       5      / \     4   8    /   / \   11  13  4  /  \      \ 7    2      1 返回 true, 因为存在目标和为 22 的">
+<meta name="description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，12345678              5             / \            4   8           /   / \          11  13  4">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="112. 路径总和">
 <meta property="og:url" content="http://huangyiblog.com/题解集/112-路径总和/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，       5      / \     4   8    /   / \   11  13  4  /  \      \ 7    2      1 返回 true, 因为存在目标和为 22 的">
+<meta property="og:description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，12345678              5             / \            4   8           /   / \          11  13  4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.626Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="112. 路径总和">
-<meta name="twitter:description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，       5      / \     4   8    /   / \   11  13  4  /  \      \ 7    2      1 返回 true, 因为存在目标和为 22 的">
+<meta name="twitter:description" content="给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。 说明: 叶子节点是指没有子节点的节点。 示例:给定如下二叉树，以及目标和 sum = 22，12345678              5             / \            4   8           /   / \          11  13  4">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  244
+                  245
                 </span>
               
 
@@ -639,15 +639,7 @@
       
         <p>给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。</p>
 <p>说明: 叶子节点是指没有子节点的节点。</p>
-<p>示例:<br>给定如下二叉树，以及目标和 sum = 22，</p>
-<pre><code>      5
-     / \
-    4   8
-   /   / \
-  11  13  4
- /  \      \
-7    2      1
-</code></pre><p>返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5-&gt;4-&gt;11-&gt;2。</p>
+<p>示例:<br>给定如下二叉树，以及目标和 sum = 22，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">              5</span><br><span class="line">             / \</span><br><span class="line">            4   8</span><br><span class="line">           /   / \</span><br><span class="line">          11  13  4</span><br><span class="line">         /  \      \</span><br><span class="line">        7    2      1</span><br><span class="line">返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5-&gt;4-&gt;11-&gt;2。</span><br></pre></td></tr></table></figure></p>
 <p>直接深搜<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dfs(sum,<span class="number">0</span>,root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> target,<span class="keyword">int</span> sum,TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum+=root-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right==<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum==target)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">bool</span> leftp = dfs(target,sum,root-&gt;left);</span><br><span class="line">        <span class="keyword">bool</span> rightp = dfs(target,sum,root-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> leftp||rightp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -960,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

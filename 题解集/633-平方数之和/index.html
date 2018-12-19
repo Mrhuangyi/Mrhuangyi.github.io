@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1: 输入: 5输出: True解释: 1  1 + 2  2 = 5 示例2: 输入: 3输出: False123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        for(long">
+<meta name="description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1:123输入: 5输出: True解释: 1 * 1 + 2 * 2 = 5 示例2:12输入: 3输出: False 123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        fo">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="633. 平方数之和">
 <meta property="og:url" content="http://huangyiblog.com/题解集/633-平方数之和/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1: 输入: 5输出: True解释: 1  1 + 2  2 = 5 示例2: 输入: 3输出: False123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        for(long">
+<meta property="og:description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1:123输入: 5输出: True解释: 1 * 1 + 2 * 2 = 5 示例2:12输入: 3输出: False 123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        fo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.651Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="633. 平方数之和">
-<meta name="twitter:description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1: 输入: 5输出: True解释: 1  1 + 2  2 = 5 示例2: 输入: 3输出: False123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        for(long">
+<meta name="twitter:description" content="给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。 示例1:123输入: 5输出: True解释: 1 * 1 + 2 * 2 = 5 示例2:12输入: 3输出: False 123456789101112class Solution &amp;#123;public:    bool judgeSquareSum(int c) &amp;#123;        fo">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  91
+                  94
                 </span>
               
 
@@ -638,10 +638,9 @@
 
       
         <p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。</p>
-<p>示例1:</p>
-<p>输入: 5<br>输出: True<br>解释: 1 <em> 1 + 2 </em> 2 = 5</p>
-<p>示例2:</p>
-<p>输入: 3<br>输出: False<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">long</span> i=<span class="number">0</span>;i*i&lt;=c;i++)&#123;</span><br><span class="line">            <span class="keyword">double</span> x = <span class="built_in">sqrt</span>(c-i*i);</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="keyword">int</span>(x))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>示例1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 5</span><br><span class="line">输出: True</span><br><span class="line">解释: 1 * 1 + 2 * 2 = 5</span><br></pre></td></tr></table></figure></p>
+<p>示例2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 3</span><br><span class="line">输出: False</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">long</span> i=<span class="number">0</span>;i*i&lt;=c;i++)&#123;</span><br><span class="line">            <span class="keyword">double</span> x = <span class="built_in">sqrt</span>(c-i*i);</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="keyword">int</span>(x))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -953,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

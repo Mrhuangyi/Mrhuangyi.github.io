@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1: 输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int find">
+<meta name="description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1:123输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3. 注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int f">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="485. 最大连续1的个数">
 <meta property="og:url" content="http://huangyiblog.com/题解集/485-最大连续1的个数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1: 输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int find">
+<meta property="og:description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1:123输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3. 注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.645Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="485. 最大连续1的个数">
-<meta name="twitter:description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1: 输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int find">
+<meta name="twitter:description" content="给定一个二进制数组， 计算其中最大连续1的个数。 示例 1:123输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3. 注意： 输入的数组只包含 0 和1。输入数组的长度是正整数，且不超过 10,000。 12345678910111213141516171819class Solution &amp;#123;public:    int f">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  152
+                  153
                 </span>
               
 
@@ -638,10 +638,11 @@
 
       
         <p>给定一个二进制数组， 计算其中最大连续1的个数。</p>
-<p>示例 1:</p>
-<p>输入: [1,1,0,1,1,1]<br>输出: 3<br>解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.<br>注意：</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,1,0,1,1,1]</span><br><span class="line">输出: 3</span><br><span class="line">解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.</span><br></pre></td></tr></table></figure></p>
+<p>注意：</p>
 <p>输入的数组只包含 0 和1。<br>输入数组的长度是正整数，且不超过 10,000。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxm = <span class="number">0</span>,cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">1</span>)&#123;</span><br><span class="line">                cnt++;</span><br><span class="line">                </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(cnt&gt;maxm)&#123;</span><br><span class="line">                    maxm = cnt;</span><br><span class="line">                &#125;</span><br><span class="line">                cnt = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maxm = max(maxm,cnt);</span><br><span class="line">        <span class="keyword">return</span> maxm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxm = <span class="number">0</span>,cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">1</span>)&#123;</span><br><span class="line">                cnt++;</span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(cnt&gt;maxm)&#123;</span><br><span class="line">                    maxm = cnt;</span><br><span class="line">                &#125;</span><br><span class="line">                cnt = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maxm = max(maxm,cnt);</span><br><span class="line">        <span class="keyword">return</span> maxm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -952,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

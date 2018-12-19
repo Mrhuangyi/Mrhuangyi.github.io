@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例: 输入: “Hello World”输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int lengthOfLastWo">
+<meta name="description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例:12输入: &amp;quot;Hello World&amp;quot;输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int len">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 58. 最后一个单词的长度">
 <meta property="og:url" content="http://huangyiblog.com/题解集/LeetCode-58-最后一个单词的长度/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例: 输入: “Hello World”输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int lengthOfLastWo">
+<meta property="og:description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例:12输入: &amp;quot;Hello World&amp;quot;输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int len">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.680Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 58. 最后一个单词的长度">
-<meta name="twitter:description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例: 输入: “Hello World”输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int lengthOfLastWo">
+<meta name="twitter:description" content="给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。 如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例:12输入: &amp;quot;Hello World&amp;quot;输出: 5 12345678910111213141516171819202122class Solution &amp;#123;public:    int len">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  144
                 </span>
               
 
@@ -640,9 +640,9 @@
         <p>给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。</p>
 <p>如果不存在最后一个单词，请返回 0 。</p>
 <p>说明：一个单词是指由字母组成，但不包含任何空格的字符串。</p>
-<p>示例:</p>
-<p>输入: “Hello World”<br>输出: 5</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>,tag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=s.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=<span class="string">' '</span>)&#123;</span><br><span class="line">                len++;</span><br><span class="line">              </span><br><span class="line">            &#125;</span><br><span class="line">               <span class="keyword">if</span>((s[i]==<span class="string">' '</span>||i==<span class="number">0</span>)&amp;&amp;len!=<span class="number">0</span>)&#123;          </span><br><span class="line">                <span class="keyword">return</span> len;</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;Hello World&quot;</span><br><span class="line">输出: 5</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>,tag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=s.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=<span class="string">' '</span>)&#123;</span><br><span class="line">                len++;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">               <span class="keyword">if</span>((s[i]==<span class="string">' '</span>||i==<span class="number">0</span>)&amp;&amp;len!=<span class="number">0</span>)&#123;          </span><br><span class="line">                <span class="keyword">return</span> len;</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -953,7 +953,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

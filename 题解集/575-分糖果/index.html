@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1: 输入: candies = [1,1,2,2,3,3]输出: 3解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示例">
+<meta name="description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1:12输入: candies = [1,1,2,2,3,3]输出: 3 解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="575. 分糖果">
 <meta property="og:url" content="http://huangyiblog.com/题解集/575-分糖果/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1: 输入: candies = [1,1,2,2,3,3]输出: 3解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示例">
+<meta property="og:description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1:12输入: candies = [1,1,2,2,3,3]输出: 3 解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.649Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="575. 分糖果">
-<meta name="twitter:description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1: 输入: candies = [1,1,2,2,3,3]输出: 3解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示例">
+<meta name="twitter:description" content="给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。 示例 1:12输入: candies = [1,1,2,2,3,3]输出: 3 解析: 一共有三种种类的糖果，每一种都有两个。     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。示">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  463
+                  465
                 </span>
               
 
@@ -638,12 +638,13 @@
 
       
         <p>给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。</p>
-<p>示例 1:</p>
-<p>输入: candies = [1,1,2,2,3,3]<br>输出: 3<br>解析: 一共有三种种类的糖果，每一种都有两个。<br>     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。<br>示例 2 :</p>
-<p>输入: candies = [1,1,2,3]<br>输出: 2<br>解析: 妹妹获得糖果[2,3],弟弟获得糖果[1,1]，妹妹有两种不同的糖果，弟弟只有一种。这样使得妹妹可以获得的糖果种类数最多。<br>注意:</p>
+<p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: candies = [1,1,2,2,3,3]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure></p>
+<p>解析: 一共有三种种类的糖果，每一种都有两个。<br>     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。<br>示例 2 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: candies = [1,1,2,3]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure></p>
+<p>解析: 妹妹获得糖果[2,3],弟弟获得糖果[1,1]，妹妹有两种不同的糖果，弟弟只有一种。这样使得妹妹可以获得的糖果种类数最多。<br>注意:</p>
 <p>数组的长度为[2, 10,000]，并且确定为偶数。<br>数组中数字的大小在范围[-100,000, 100,000]内。</p>
 <p>分析：题目给定偶数n个种类不确定的糖果，要求平均分给弟弟和妹妹，并且妹妹分得的糖果种类要求尽可能多。首先因为给定的是偶数个，所以两人分得的糖果数必然相等，都为n/2,我们只需考虑原先糖果总的种类数，显然如果总的种类大于等于n/2,那么妹妹最大种类便是n/2，否则妹妹的最大种类数就是原先糖果的最大种类总数。而获取原先糖果的最大种类，利用set的去重就行了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">distributeCandies</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candies)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; sum;</span><br><span class="line">        <span class="keyword">int</span> n = candies.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            sum.insert(candies[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> m = sum.size();</span><br><span class="line">        <span class="keyword">if</span>(m&gt;=n/<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> n/<span class="number">2</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -954,7 +955,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

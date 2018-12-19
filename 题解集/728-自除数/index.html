@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1： 输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7, 8,">
+<meta name="description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1：123输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="728. 自除数">
 <meta property="og:url" content="http://huangyiblog.com/题解集/728-自除数/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1： 输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7, 8,">
+<meta property="og:description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1：123输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.657Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="728. 自除数">
-<meta name="twitter:description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1： 输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7, 8,">
+<meta name="twitter:description" content="自除数 是指可以被它包含的每一位数除尽的数。 例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。 还有，自除数不允许包含 0 。 给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。 示例 1：123输入：上边界left = 1, 下边界right = 22输出： [1, 2, 3, 4, 5, 6, 7,">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  260
+                  261
                 </span>
               
 
@@ -641,8 +641,8 @@
 <p>例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。</p>
 <p>还有，自除数不允许包含 0 。</p>
 <p>给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。</p>
-<p>示例 1：</p>
-<p>输入：<br>上边界left = 1, 下边界right = 22<br>输出： [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]<br>注意：</p>
+<p>示例 1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">上边界left = 1, 下边界right = 22</span><br><span class="line">输出： [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]</span><br></pre></td></tr></table></figure></p>
+<p>注意：</p>
 <p>每个输入参数的边界满足 1 &lt;= left &lt;= right &lt;= 10000。</p>
 <p>题目要求求出某个区间内的自除数，直接遍历整个区间就可以，并根据定义写一个判断是否为自除数的函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; selfDividingNumbers(<span class="keyword">int</span> left, <span class="keyword">int</span> right) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n = left;n &lt;= right;n++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(selfDividing(n))&#123;</span><br><span class="line">                res.push_back(n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span>: <span class="function"><span class="keyword">bool</span> <span class="title">selfDividing</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="built_in">string</span> s = to_string(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">'0'</span>||(n%(s[i]-<span class="string">'0'</span>)&gt;<span class="number">0</span>))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
@@ -956,7 +956,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 

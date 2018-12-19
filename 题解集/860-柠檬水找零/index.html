@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1： 输入：[5,5,5">
+<meta name="description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1：12输入：[5,5,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="860. 柠檬水找零">
 <meta property="og:url" content="http://huangyiblog.com/题解集/860-柠檬水找零/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1： 输入：[5,5,5">
+<meta property="og:description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1：12输入：[5,5,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.660Z">
+<meta property="og:updated_time" content="2018-12-19T15:12:55.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="860. 柠檬水找零">
-<meta name="twitter:description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1： 输入：[5,5,5">
+<meta name="twitter:description" content="在柠檬水摊上，每一杯柠檬水的售价为 5 美元。 顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。 注意，一开始你手头没有任何零钱。 如果你能给每位顾客正确找零，返回 true ，否则返回 false 。 示例 1：12输入：[5,5,">
 
 
 
@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  486
+                  487
                 </span>
               
 
@@ -642,14 +642,15 @@
 <p>每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。</p>
 <p>注意，一开始你手头没有任何零钱。</p>
 <p>如果你能给每位顾客正确找零，返回 true ，否则返回 false 。</p>
-<p>示例 1：</p>
-<p>输入：[5,5,5,10,20]<br>输出：true<br>解释：<br>前 3 位顾客那里，我们按顺序收取 3 张 5 美元的钞票。<br>第 4 位顾客那里，我们收取一张 10 美元的钞票，并返还 5 美元。<br>第 5 位顾客那里，我们找还一张 10 美元的钞票和一张 5 美元的钞票。<br>由于所有客户都得到了正确的找零，所以我们输出 true。<br>示例 2：</p>
+<p>示例 1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：[5,5,5,10,20]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure></p>
+<p>解释：<br>前 3 位顾客那里，我们按顺序收取 3 张 5 美元的钞票。<br>第 4 位顾客那里，我们收取一张 10 美元的钞票，并返还 5 美元。<br>第 5 位顾客那里，我们找还一张 10 美元的钞票和一张 5 美元的钞票。<br>由于所有客户都得到了正确的找零，所以我们输出 true。<br>示例 2：</p>
 <p>输入：[5,5,10]<br>输出：true<br>示例 3：</p>
 <p>输入：[10,10]<br>输出：false<br>示例 4：</p>
 <p>输入：[5,5,10,10,20]<br>输出：false<br>解释：<br>前 2 位顾客那里，我们按顺序收取 2 张 5 美元的钞票。<br>对于接下来的 2 位顾客，我们收取一张 10 美元的钞票，然后返还 5 美元。<br>对于最后一位顾客，我们无法退回 15 美元，因为我们现在只有两张 10 美元的钞票。<br>由于不是每位顾客都得到了正确的找零，所以答案是 false。</p>
 <p>提示：</p>
-<p>0 &lt;= bills.length &lt;= 10000<br>bills[i] 不是 5 就是 10 或是 20 </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">lemonadeChange</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bills)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cnt1 = <span class="number">0</span>,cnt2 = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;bills.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">5</span>)&#123;</span><br><span class="line">                cnt1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">10</span>)&#123;</span><br><span class="line">                cnt2++;</span><br><span class="line">                cnt1--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">20</span>)&#123;</span><br><span class="line">                cnt1--;</span><br><span class="line">                <span class="keyword">if</span>(cnt2==<span class="number">0</span>)&#123;</span><br><span class="line">                    cnt1 -=<span class="number">2</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    cnt2--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="keyword">if</span>(cnt1&lt;<span class="number">0</span>||cnt2&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>0 &lt;= bills.length &lt;= 10000<br>bills[i] 不是 5 就是 10 或是 20</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">lemonadeChange</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bills)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cnt1 = <span class="number">0</span>,cnt2 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;bills.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">5</span>)&#123;</span><br><span class="line">                cnt1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">10</span>)&#123;</span><br><span class="line">                cnt2++;</span><br><span class="line">                cnt1--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(bills[i]==<span class="number">20</span>)&#123;</span><br><span class="line">                cnt1--;</span><br><span class="line">                <span class="keyword">if</span>(cnt2==<span class="number">0</span>)&#123;</span><br><span class="line">                    cnt1 -=<span class="number">2</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    cnt2--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="keyword">if</span>(cnt1&lt;<span class="number">0</span>||cnt2&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -960,7 +961,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">187.3k</span>
   
 </div>
 
