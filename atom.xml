@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2018-11-28T12:49:33.413Z</updated>
+  <updated>2018-12-22T13:04:23.398Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maven入门指南</title>
+    <link href="http://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/Maven%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://huangyiblog.com/业务开发/Maven入门指南/</id>
+    <published>2018-12-22T08:12:21.000Z</published>
+    <updated>2018-12-22T13:04:23.398Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Maven是什么？"><a href="#Maven是什么？" class="headerlink" title="Maven是什么？"></a>Maven是什么？</h1><p>Maven是一个项目管理工具，当然也有很多人称它为一个构建工具。<br>它包含了一个项 目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在 生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。   </p><p>其实Maven主要的作用就是解析一些XML文档，管理生命周期和插件。<br>其他的主要职责基本都是被委派给Maven插件，这些仓库可以从中央Maven核心仓库获取。这些插件有专人维护，你可以从远处仓库下载得到，这又体现了Maven插件的全局性重用。  </p><p>Maven维护了项目的模型，实现了如下重要特征：</p><ul><li>依赖管理</li></ul><p>由于项目是根据一个包含组标识符，构件标识符和版本的唯一的坐标定义的。项<br>        目间可以使用这些坐标来声明依赖。  </p><ul><li>远程仓库</li></ul><p>和项目依赖相关的，我们可以使用定义在项目对象模型(POM)中的坐标来创建 Maven 构件的仓库。</p><ul><li>全局性构建逻辑重用</li></ul><p>插件被编写成和项目模型对象(POM)一起工作，它们没有被设计成操作某一个 已知位置的特定文件。一切都被抽象到模型中，插件配置和自定义行为都在模型 中进行。</p><ul><li>工具可移植性/集成</li></ul><p>像 Eclipse，NetBeans，和 InteliJ 这样的工具现在有共同的地方来找到项目 的信息。</p><ul><li>便于搜索和过滤构件</li></ul><p>像 Nexus 这样的工具允许你使用存储在 POM 中的信息对仓库中的内容进行索引 和搜索。</p><h1 id="Maven的安装和配置"><a href="#Maven的安装和配置" class="headerlink" title="Maven的安装和配置"></a>Maven的安装和配置</h1><h3 id="下载Maven"><a href="#下载Maven" class="headerlink" title="下载Maven"></a>下载Maven</h3><p>首先从Apache Maven项目的web站点下载Maven:<a href="http://maven.apache.org/download.html" target="_blank" rel="noopener">http://maven.apache.org/download.html</a>.<br>注意选择好你所需的版本</p><h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><ul><li>在Mac上安装Maven</li></ul><p>1 如果你的操作系统是MAC OSX ，首先还是到官网下载好Maven的二进制版本。<br>2 解压下载的安装包到某一目录，比如：/Users/xxx/Documents/maven<br>3 配置环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile 打开.bash_profile文件，在该文件中添加设置环境变量的命令</span><br><span class="line">export M2_HOME=/Users/xxx/Documents/maven/apache-maven-3.5.0</span><br><span class="line">export PATH=$PATH:$M2_HOME/bin</span><br><span class="line">添加之后保存并推出，执行以下命令使配置生效：</span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></p><p>4 输入：mvn -v命令查看配置是否生效。</p><ul><li>在Windows上安装Maven<br>其实操作都差不多，包括Linux也是。都是先去官网下载压缩包，然后解压到某一目录，之后配置环境变量，然后输入mvn -v验证是否成功。<br>在这里假设Maven安装目录是 c:\Program Files\maven-2.0.9<br>当你把Maven解 压到安装目录后，你需要设置两个环境变量——PATH和M2_M2_HOME。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\tobrien &gt; set M2_HOME=c:\Program Files\maven-2.0.9</span><br><span class="line">C:\Users\tobrien &gt; set PATH=%PATH%;%M2_HOME%\bin</span><br></pre></td></tr></table></figure></li></ul><p>或者你也可以直接修改settings.xml文件。<br>打开%M2_HOME%/conifg/settings.xml文件，在文件中可以看到localRepository配置的就是本地仓库，本地仓库地址的目录最好是全英文格式，不要包含汉字空格等其他特殊字符。<br><img src="http://huangyiblog.com/maven.png" alt="alt"></p><h1 id="在eclipse上配置Maven"><a href="#在eclipse上配置Maven" class="headerlink" title="在eclipse上配置Maven"></a>在eclipse上配置Maven</h1><p><strong>打开Eclipse点击window&gt;prferences</strong></p><p><img src="https://images2017.cnblogs.com/blog/1196650/201711/1196650-20171101153146201-1619143316.png" alt="alt"></p><p><img src="https://images2017.cnblogs.com/blog/1196650/201711/1196650-20171101153604576-2057741024.png" alt="alt"></p><p><strong>之后继续finsh，apply就是了</strong></p><h3 id="连接到本地仓库"><a href="#连接到本地仓库" class="headerlink" title="连接到本地仓库"></a>连接到本地仓库</h3><p>还是回到maven选项下：<br>点击user settings在用户配置界面中，有两个设置框，一个是Global Settings（全局配置信息）和User Settings（只针对这个工作空间进行设置）。根据自己的实际情况设置相应的settings文件。</p><p><img src="https://images2017.cnblogs.com/blog/1196650/201711/1196650-20171101160920951-1995380760.png" alt="alt"></p><h3 id="新建maven-WEB项目"><a href="#新建maven-WEB项目" class="headerlink" title="新建maven WEB项目"></a>新建maven WEB项目</h3><ul><li><p>1.开启eclipse，右键new——&gt;other<br><img src="https://img-blog.csdn.net/20161220154404611?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVuZGFuXzUyMDUyMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="alt"></p></li><li><p>2.选择maven project，显示创建maven项目的窗口<br><img src="https://img-blog.csdn.net/20161220154417033?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVuZGFuXzUyMDUyMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="alt"></p></li><li><p>3.在搜索框中搜索“web”，选择next<br><img src="https://img-blog.csdn.net/20161220154427167?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVuZGFuXzUyMDUyMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="alt"></p></li><li><p>4.输入maven项目的基本信息<br><img src="https://img-blog.csdn.net/20161220154437345?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVuZGFuXzUyMDUyMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="alt"></p></li></ul><h1 id="在IDEA上配置maven"><a href="#在IDEA上配置maven" class="headerlink" title="在IDEA上配置maven"></a>在IDEA上配置maven</h1><p><strong>首先打开IDEA 选择File——Settings</strong></p><p><img src="http://img.blog.csdn.net/20160520145500957" alt="alt"></p><h3 id="新建maven-WEB项目-1"><a href="#新建maven-WEB项目-1" class="headerlink" title="新建maven WEB项目"></a>新建maven WEB项目</h3><p><img src="http://img.blog.csdn.net/20160520154034969" alt="alt"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Maven是什么？&quot;&gt;&lt;a href=&quot;#Maven是什么？&quot; class=&quot;headerlink&quot; title=&quot;Maven是什么？&quot;&gt;&lt;/a&gt;Maven是什么？&lt;/h1&gt;&lt;p&gt;Maven是一个项目管理工具，当然也有很多人称它为一个构建工具。&lt;br&gt;它包含了一个
+      
+    
+    </summary>
+    
+      <category term="业务开发" scheme="http://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Java" scheme="http://huangyiblog.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>215数组中的第K个最大元素</title>
@@ -511,31 +536,6 @@
     
     
       <category term="Github" scheme="http://huangyiblog.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018上半年的阅读整理</title>
-    <link href="http://huangyiblog.com/%E9%98%85%E8%AF%BB/2018%E4%B8%8A%E5%8D%8A%E5%B9%B4%E7%9A%84%E9%98%85%E8%AF%BB%E6%95%B4%E7%90%86/"/>
-    <id>http://huangyiblog.com/阅读/2018上半年的阅读整理/</id>
-    <published>2018-09-20T02:52:28.000Z</published>
-    <updated>2018-12-19T15:12:55.485Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　转眼间，２０１８大半年就过去了，今天想把自己这半年来的一些阅读整理下,看看哪些书自个感觉还不错，哪些书虽不错但因自己能力有限无法深读，哪些书只是为了消遣时间。<br>　　１《卑鄙的圣人：曹操》<br>　　这本书姑且可算作是本历史书吧，至少让我从另一个视角了解到了曹操，其实说起来，读三国的时候，其他人暂且不提，你若是问我曹操和刘备你喜欢哪个，毫无疑问我更看好曹操。三国乱世，枭雄方能立足，假仁假义的君子有何用。你说曹操奸诈也好，卑鄙也好，但你得承认他很牛，对用兵为政有自己的一套见解，作诗也是一把好手。曹操若非奸雄，别说后来的三国鼎立，怕是都活不到那时就已命丧黄泉了。<br>　　２《包法利夫人》<br>　　《包法利夫人》是法国作家福楼拜创作的长篇小说。<br>　　小说描写包法利夫人爱玛为摆脱不幸婚姻，追求不正当爱情而导致堕落毁灭的悲剧。表面上是一个淫妇不满婚后情感而渴望爱情因此通奸偷晴，但确实一个真正可怜的角色，不光是情感上的，同时也是当时所处社会的悲剧。<br>　　３《红楼梦评论》王国维<br>　　因为对红楼梦特别着迷，所以有些人写的一些关于红楼梦我的看法我也会去了解下，这本书或许也不算不上是本书吧，有点像是一篇论文，简要的论述了红楼梦在伦理，美术，艺术、哲学等方面的价值。<br>　　４《依偎》<br>　　依偎是丁捷写的一部爱情小说，有点悲剧色彩。这本小说剧情展开也挺特别，主要根据安芬和小天互相讲故事来展开，最后一步步发现两人之间竟然还有着不为人知的联系并且深深相爱。<br>　　５《陪安东尼度过漫长岁月》<br>　　这本书的写法也挺奇葩，至少很少看到，算是挺治愈的一本书。<br>　　６《罗密欧与朱丽叶》<br>　　莎士比亚的一部很经典的悲剧。<br>　　７《奥赛罗》<br>　　同样是莎士比亚的一部悲剧<br>　　８《道德经》<br>　　．．．篇幅不长，我看的是一段古文后面一段白话文解释的，有些倒还能理解，有些看着就有点玄乎了，或许是自己水平太差。<br>　　９《伊豆的舞女》<br>　　《伊豆的舞女》是川端康成早期的代表作和成名作，也是一篇杰出的中篇小说。<br>　　展现了少男少女初恋时的朦胧与美好，挺清新的。<br>　　１０《告白》<br>　　挺好的剧情小说，人物角色多面性，而不是单的纯谁善谁恶，刻画出人性的复杂多面。<br>　　１１《少年的你，如此美丽》<br>　　玖月晞写的一本青春言情小说吧，剧情上感觉有一些地方有点雷同《白夜行》，但这部小说还是很大胆的刻画了青少年女生的校园欺凌事件，反映了弱势群体如何自保以及法律相关的问题。<br>　　１２《妻妾成群》<br>　　《妻妾成群》是作家苏童创作的一部中篇小说。这部作品通过描写一个“受过新时代教育”的女学生颂莲，自愿嫁入到高墙深院秩序井然的封建家族陈府，最终又在“妻妾成群”明争暗斗中走向精神崩溃的悲惨命运，艺术化地再现了中国封建礼教吞噬人性的恐怖景象。<br>　　１３《老婆，跟我回家吧》<br>　　酒小七写的网络言情小说，还算有点幽默吧<br>　　１４《魔道祖师》<br>　　这部小说是因为先看了动漫，好奇剧情发展而去看的。我是挺喜欢的，故事线完整，人物性格分明。最开始夷陵老祖魏无羡复活，我以为受尽冤屈与不公的他会走浩浩荡荡的复仇路线，但却并没有，内心依旧洒脱，和蓝忘机一同维护心中的正义。<br>　　１５《窦娥冤》<br>　　窦娥冤的冤情今天动地，但我一直不清楚窦娥冤在何处，但现在总算明白了。<br>　　１６《莺莺传》<br>　　读了西厢记，就顺便把元稹的莺莺传也读了<br>　　１７《斗破苍穹》<br>　　玄幻小说<br>　　１８《基都山伯爵》<br>　　复仇曲。我爱爱我的人，我很恨我的人。<br>　　１９《人间失格》太宰治<br>　　２０《我的晃荡的青春》<br>　　东野圭吾的故事<br>　　２１《富爸爸，穷爸爸》<br>　　这本书倒是略为提到了理财的方面，钱的重要性在现今社会不言而喻。<br>　　富爸爸喜欢买入资产，穷爸爸喜欢买入负债。<br>　　２２《堂吉诃德》<br>　　骑士小说<br>　　２３《罗生门》<br>　　《罗生门》以风雨不透的布局将人推向生死抉择的极限，从而展示了“恶”的无可回避，第一次传递出作者对人的理解，对人的无奈与绝望。<br>　　２４《爱情和其他魔鬼》<br>　　加西亚马尔克斯眼中魔鬼般的爱情。<br>　　２５《红顶商人胡雪岩》<br>　　商圣的传奇人生<br>　　２６《韩寒的ｏｎｅ系列》<br>　　２７《半小时漫画中国史》<br>　　有意思的漫画历史作品<br>　　２８《死刑今夜执行》<br>　　思婷写的一部推理小说<br>　　２９《革命时期的爱情》<br>　　３０《杨绛传》</p><p>　　３１《蒋勋说红楼梦》</p><pre><code>也算是一个理解红楼梦的视角吧，只是蒋勋眼中的红楼梦我不能全都苟同，有些地方我怀疑作者的想法如你所说吗，我无从得知，但是蒋勋明显读的比我细比我深，还是学到了很多。</code></pre><p>   ３２《理想国》</p><p>　　３３《婉约词》<br>　　一本词集，只有词，没有注释解释啥的，你可以把自己想象成古人，嘻嘻，陶冶一番。<br>　　３４《小王子的领悟》<br>    周保松理解的小王子，可以帮助理解。<br>　　３５《邻人之妻》<br>　　由两性视角，诸多人物实例，反映美国社会这些年的发展。<br>　　３６古典四大名剧《西厢记》《牡丹亭》《桃花扇》《长生殿》<br>　　３７《战国策》<br>　　３８《资治通鉴》原著<br>　　３９《红手指》<br>　　东野圭吾较早的一部推理小说，但是也反映了家庭关系之间出现的一些问题<br>　　４０《聊斋志异》<br>以上主要是上半年看的一些书，其他的还有一些是关于编程的专业技能书，以及修仙玄幻言情等等网络小说，说白了，很多时候也就是为了消磨消磨时间，阅读就是挺能满足我的方式之一，嘻嘻。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;　　转眼间，２０１８大半年就过去了，今天想把自己这半年来的一些阅读整理下,看看哪些书自个感觉还不错，哪些书虽不错但因自己能力有限无法深读，哪些书只是为了消遣时间。&lt;br&gt;　　１《卑鄙的圣人：曹操》&lt;br&gt;　　这本书姑且可算作是本历史书吧，至少让我从另一个视角了解到了曹操，其
-      
-    
-    </summary>
-    
-      <category term="阅读" scheme="http://huangyiblog.com/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="书单" scheme="http://huangyiblog.com/tags/%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
