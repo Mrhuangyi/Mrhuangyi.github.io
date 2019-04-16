@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyiblog.com/"/>
-  <updated>2019-04-10T07:08:02.412Z</updated>
+  <updated>2019-04-16T14:04:17.616Z</updated>
   <id>http://huangyiblog.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蘑菇街Java实习凉面</title>
+    <link href="http://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E8%98%91%E8%8F%87%E8%A1%97Java%E5%AE%9E%E4%B9%A0%E5%87%89%E9%9D%A2/"/>
+    <id>http://huangyiblog.com/业务开发/蘑菇街Java实习凉面/</id>
+    <published>2019-04-16T13:55:11.000Z</published>
+    <updated>2019-04-16T14:04:17.616Z</updated>
+    
+    <content type="html"><![CDATA[<p>清明前就接到了蘑菇街hr的电话，约我去现场面试，当时时间有冲突，就约了清明后的一天上午去面试。当天一大早起来就去赶公交车前往城西。</p><p>总体来说面试体验很好，我没想到蘑菇街面试这么看重项目，太菜的我被怼的很惨呀！！面试官人很好，问题一点点展开，没思路也会给你提示，但我还是答不上来….</p><p>1 先做个自我介绍吧</p><p>2 项目介绍，你负责了哪一块？</p><p>3 你在项目中碰到最困难的点是什么？讲讲看</p><p>4 看到你有负责前后端之间的数据通信，是怎么实现的？<br>后面针对具体场景说我这一系列操作可能时延会较长，有没有想过怎么设计让交互速度更快？数据通信的安全问题考虑过吗？怎么解决安全隐患，比如客户端提交数据被人中途篡改？你平时有自己去学过安全相关的资料吗？</p><p>5 redis有哪些数据结构？set集合底层怎么实现的？Redis平时用的多吗？怎么用Redis实现点赞功能？Redis除了缓存，还有哪些地方用到？我们怎么确保Redis缓存和db中的数据一致性？</p><p>6 spring的aop用过吗？哪些地方用到了？现在假设我们需要对各种接口的权限管理采用aop编程，我们可以怎么设计？切点怎么确定？</p><p>7 mysql的索引底层为什么要用B+树而不用B树？除了时间效率方面，在存储方面有哪些优势？后面给了一个场景让我设计索引…我真的不太会..索引有哪几类当时都不清楚。。</p><p>8 后面又是一个场景问题，给了一个一直发邮件的场景？假设中途邮件发送中断了，可以怎么设计解决发送中断问题？你可以先思考几分钟，考虑两三个方案解释下。</p><p>9 mybatis了解吗？mybatis是怎么防止sql注入的？sql语句里的#和 \$ 到底有什么区别？你觉得什么时候应该用#，什么时候应该用 $</p><p>10 你有什么想问我的？</p><p>最后我就凉凉了…..</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;清明前就接到了蘑菇街hr的电话，约我去现场面试，当时时间有冲突，就约了清明后的一天上午去面试。当天一大早起来就去赶公交车前往城西。&lt;/p&gt;
+&lt;p&gt;总体来说面试体验很好，我没想到蘑菇街面试这么看重项目，太菜的我被怼的很惨呀！！面试官人很好，问题一点点展开，没思路也会给你提示，
+      
+    
+    </summary>
+    
+      <category term="业务开发" scheme="http://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Java" scheme="http://huangyiblog.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>中通软Java实习面试</title>
@@ -496,32 +522,6 @@
     
     
       <category term="动漫" scheme="http://huangyiblog.com/tags/%E5%8A%A8%E6%BC%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>19. 删除链表的倒数第N个节点</title>
-    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"/>
-    <id>http://huangyiblog.com/题解集/19-删除链表的倒数第N个节点/</id>
-    <published>2018-10-14T14:06:13.000Z</published>
-    <updated>2018-12-19T14:03:48.023Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</span><br><span class="line"></span><br><span class="line">当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</span><br></pre></td></tr></table></figure></p><p>说明：</p><p>给定的 n 保证是有效的。</p><p>进阶：</p><p><strong>你能尝试使用一趟扫描实现吗？</strong></p><p>分析：删除倒数第n个链表结点，两种想法。<br>解法一：正向扫描，删除倒数第n个结点，就是删除第(len - n + 1)个结点（len 为链表长度）,可以先扫描整个链表，求出链表长度，然后再次扫描链表，找到len - n 的位置，最后删除该位置的后一个结点。</p><p>解法二：双指针，定义两个指针都指向链表首结点，第一个指针先走n + 1步，之后两个指针同步前进，当第一个指针到达表尾时，第二个指针指向的就是要删除的倒数第n个结点</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> leetcode;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> val;</span><br><span class="line">ListNode next;</span><br><span class="line">ListNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoveNthFromEnd</span> </span>&#123;</span><br><span class="line"><span class="keyword">static</span> ListNode head = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">        addVal(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//ListNode res = removeNth(head, 3);</span></span><br><span class="line">        ListNode res = removeNth2(head, <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">while</span>(res != <span class="keyword">null</span>) &#123;</span><br><span class="line">        System.out.print(res.val + <span class="string">" "</span>);</span><br><span class="line">        res = res.next;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addVal</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">ListNode node = <span class="keyword">new</span> ListNode(val);</span><br><span class="line">ListNode current = head;</span><br><span class="line"><span class="keyword">while</span>(current.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">current = current.next;</span><br><span class="line">&#125;</span><br><span class="line">current.next = node;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">removeNth</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 时间复杂度O(n)，空间复杂度O(1）</span></span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    ListNode first = dummy;</span><br><span class="line">    ListNode second = dummy;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n + <span class="number">1</span>; i++) &#123;</span><br><span class="line">    first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(first != <span class="keyword">null</span>) &#123;</span><br><span class="line">    first = first.next;</span><br><span class="line">    second = second.next;</span><br><span class="line">    &#125;</span><br><span class="line">    second.next = second.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">removeNth2</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 时间复杂度O(n),空间复杂度O(1)</span></span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    ListNode first = head;</span><br><span class="line">    <span class="keyword">while</span>(first != <span class="keyword">null</span>) &#123;</span><br><span class="line">    len++;</span><br><span class="line">    first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    len = len - n;</span><br><span class="line">    first = dummy;</span><br><span class="line">    <span class="keyword">while</span>(len &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    len--;</span><br><span class="line">    first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    first.next = first.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。&lt;/p&gt;
-&lt;p&gt;示例：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
-      
-    
-    </summary>
-    
-      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
-    
-    
-      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
     
   </entry>
   
