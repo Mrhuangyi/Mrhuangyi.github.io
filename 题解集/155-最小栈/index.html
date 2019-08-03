@@ -117,18 +117,18 @@
 
 
 
-<meta name="description" content="设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minStack.push(0);minStack.pu">
+<meta name="description" content="腾讯LeetCode50题 155. 最小栈设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minSta">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="155. 最小栈">
+<meta property="og:title" content="腾讯LeetCode50题 155. 最小栈">
 <meta property="og:url" content="http://huangyiblog.com/题解集/155-最小栈/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minStack.push(0);minStack.pu">
+<meta property="og:description" content="腾讯LeetCode50题 155. 最小栈设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minSta">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T14:43:20.629Z">
+<meta property="og:updated_time" content="2019-08-03T11:44:58.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="155. 最小栈">
-<meta name="twitter:description" content="设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minStack.push(0);minStack.pu">
+<meta name="twitter:title" content="腾讯LeetCode50题 155. 最小栈">
+<meta name="twitter:description" content="腾讯LeetCode50题 155. 最小栈设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。 push(x) – 将元素 x 推入栈中。pop() – 删除栈顶的元素。top() – 获取栈顶元素。getMin() – 检索栈中的最小元素。示例: MinStack minStack = new MinStack();minStack.push(-2);minSta">
 
 
 
@@ -162,7 +162,7 @@
 
 
 
-  <title>155. 最小栈 | 你的小黄^_^</title>
+  <title>腾讯LeetCode50题 155. 最小栈 | 你的小黄^_^</title>
   
 
 
@@ -528,7 +528,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">155. 最小栈</h2>
+          <h2 class="post-title" itemprop="name headline">腾讯LeetCode50题 155. 最小栈</h2>
         
 
         <div class="post-meta">
@@ -540,8 +540,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T17:03:39+08:00">
-                2018-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T19:23:39+08:00">
+                2019-08-03
               </time>
             
 
@@ -604,7 +604,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  244
+                  596
                 </span>
               
 
@@ -629,9 +629,18 @@
       
 
       
-        <p>设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p>
+        <h1 id="腾讯LeetCode50题-155-最小栈"><a href="#腾讯LeetCode50题-155-最小栈" class="headerlink" title="腾讯LeetCode50题 155. 最小栈"></a>腾讯LeetCode50题 155. 最小栈</h1><p>设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p>
 <p>push(x) – 将元素 x 推入栈中。<br>pop() – 删除栈顶的元素。<br>top() – 获取栈顶元素。<br>getMin() – 检索栈中的最小元素。<br>示例:</p>
 <p>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin();   –&gt; 返回 -3.<br>minStack.pop();<br>minStack.top();      –&gt; 返回 0.<br>minStack.getMin();   –&gt; 返回 -2.</p>
+<p>解题思路：</p>
+<ul>
+<li>我们开两个栈，一个普通栈进行正常的进栈出栈，一个最小栈用来记录当前栈里面的最小值</li>
+<li>push操作时，普通栈就正常push，同时如果最小栈为空或者当前元素比最小栈的栈顶元素更小，那么也将该元素push进最小栈</li>
+<li>pop操作时，如果普通栈不为空，并且两个栈的栈顶元素相同，那么同时执行pop，否则只需要普通栈进行pop</li>
+<li>top操作只需返回普通栈的栈顶元素即可</li>
+<li>getMin操作只需返回最小栈的栈顶元素即可</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st1;</span><br><span class="line">    <span class="comment">//开一个辅助栈记录最小值</span></span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st2;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    MinStack() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        st1.push(x);</span><br><span class="line">        <span class="comment">//若果辅助栈是空的或者当前元素比辅助栈栈顶元素要小，那么一起push进去</span></span><br><span class="line">        <span class="keyword">if</span>(st2.empty() || x &lt;= st2.top()) &#123;</span><br><span class="line">            st2.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!st1.empty()) &#123;</span><br><span class="line">            <span class="comment">//如果栈1不空，并且两个栈的栈顶元素相同，那么同时执行pop</span></span><br><span class="line">            <span class="keyword">if</span>(st1.top() == st2.top()) &#123;</span><br><span class="line">                st2.pop();</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            st1.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> st1.top();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> st2.top();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack* obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; minSt;</span><br><span class="line">    MinStack() &#123;</span><br><span class="line">        <span class="keyword">while</span>(!st.empty())&#123;</span><br><span class="line">            st.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!minSt.empty())&#123;</span><br><span class="line">            minSt.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        st.push(x);</span><br><span class="line">        <span class="keyword">if</span>(minSt.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            minSt.push(x);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(x&lt;=minSt.top())&#123;</span><br><span class="line">                minSt.push(x);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                minSt.push(minSt.top());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(st.size()!=<span class="number">0</span>)&#123;</span><br><span class="line">            st.pop();</span><br><span class="line">            minSt.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(st.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.top();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(minSt.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> minSt.top();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
       
     </div>
@@ -682,7 +691,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://huangyiblog.com/题解集/155-最小栈/" title="155. 最小栈">http://huangyiblog.com/题解集/155-最小栈/</a>
+    <a href="http://huangyiblog.com/题解集/155-最小栈/" title="腾讯LeetCode50题 155. 最小栈">http://huangyiblog.com/题解集/155-最小栈/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -712,8 +721,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/题解集/205-同构字符串/" rel="next" title="205. 同构字符串">
-                <i class="fa fa-chevron-left"></i> 205. 同构字符串
+              <a href="/题解集/字节跳动提前批第二批笔试题/" rel="next" title="字节跳动提前批第二批笔试题">
+                <i class="fa fa-chevron-left"></i> 字节跳动提前批第二批笔试题
               </a>
             
           </div>
@@ -721,10 +730,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/题解集/67-二进制求和/" rel="prev" title="67. 二进制求和">
-                67. 二进制求和 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -787,8 +792,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -807,7 +821,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -916,6 +930,22 @@
   <div class="widget" id="CloudCalendar"></div>
 </div>
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#腾讯LeetCode50题-155-最小栈"><span class="nav-number">1.</span> <span class="nav-text">腾讯LeetCode50题 155. 最小栈</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -951,7 +981,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

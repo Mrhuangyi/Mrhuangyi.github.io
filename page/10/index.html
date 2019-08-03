@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/674-最长连续递增序列/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/581-最短无序连续子数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/674-最长连续递增序列/" itemprop="url">674. 最长连续递增序列</a></h2>
+                <a class="post-title-link" href="/题解集/581-最短无序连续子数组/" itemprop="url">581. 最短无序连续子数组</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T17:53:05+08:00">
-                2018-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T16:36:35+08:00">
+                2018-08-01
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/674-最长连续递增序列/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/674-最长连续递增序列/" itemprop="commentCount"></span>
+                <a href="/题解集/581-最短无序连续子数组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/581-最短无序连续子数组/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  232
+                  397
                 </span>
               
 
@@ -632,13 +632,13 @@
       
         
           
-          给定一个未经排序的整数数组，找到最长且连续的的递增序列。
-示例 1:12输入: [1,3,5,4,7]输出: 3
-解释: 最长连续递增序列是 [1,3,5], 长度为3。尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为5和7在原数组里被4隔开。示例 2:12输入: [2,2,2,2
+          给定一个整数数组，你需要寻找一个连续的子数组，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
+你找到的子数组应是最短的，请输出它的长度。
+示例 1:123输入: [2, 6, 4, 8, 10, 9, 15]输出: 5解释: 你只需要对 [6, 4, 8, 10, 9] 进行升序排序，
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/674-最长连续递增序列/#more" rel="contents">
+            <a class="btn" href="/题解集/581-最短无序连续子数组/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +693,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/661-图片平滑器/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/876-链表的中间结点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -712,7 +712,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/661-图片平滑器/" itemprop="url">661. 图片平滑器</a></h2>
+                <a class="post-title-link" href="/题解集/876-链表的中间结点/" itemprop="url">876. 链表的中间结点</a></h2>
         
 
         <div class="post-meta">
@@ -724,8 +724,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T17:45:14+08:00">
-                2018-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T15:04:24+08:00">
+                2018-08-01
               </time>
             
 
@@ -765,8 +765,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/661-图片平滑器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/661-图片平滑器/" itemprop="commentCount"></span>
+                <a href="/题解集/876-链表的中间结点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/876-链表的中间结点/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -788,7 +788,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  338
+                  358
                 </span>
               
 
@@ -815,12 +815,13 @@
       
         
           
-          包含整数的二维矩阵 M 表示一个图片的灰度。你需要设计一个平滑器来让每一个单元的灰度成为平均灰度 (向下舍入) ，平均灰度的计算是周围的8个单元和它本身的值求平均，如果周围的单元格不足八个，则尽可能多的利用它们。
-示例 1:123456789101112输入:[[1,1,1], [1,0,1], [
+          给定一个带有头结点 head 的非空单链表，返回链表的中间结点。
+如果有两个中间结点，则返回第二个中间结点。
+示例 1：12345输入：[1,2,3,4,5]输出：此列表中的结点 3 (序列化形式：[3,4,5])返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。注意，我们返
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/661-图片平滑器/#more" rel="contents">
+            <a class="btn" href="/题解集/876-链表的中间结点/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -875,7 +876,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/836-矩形重叠/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/501-二叉搜索树中的众数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -894,7 +895,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/836-矩形重叠/" itemprop="url">836. 矩形重叠</a></h2>
+                <a class="post-title-link" href="/题解集/501-二叉搜索树中的众数/" itemprop="url">501. 二叉搜索树中的众数</a></h2>
         
 
         <div class="post-meta">
@@ -906,8 +907,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T13:10:18+08:00">
-                2018-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T23:13:17+08:00">
+                2018-07-31
               </time>
             
 
@@ -947,8 +948,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/836-矩形重叠/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/836-矩形重叠/" itemprop="commentCount"></span>
+                <a href="/题解集/501-二叉搜索树中的众数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/501-二叉搜索树中的众数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -970,7 +971,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  251
+                  363
                 </span>
               
 
@@ -997,14 +998,13 @@
       
         
           
-          矩形以列表 [x1, y1, x2, y2] 的形式表示，其中 (x1, y1) 为左下角的坐标，(x2, y2) 是右上角的坐标。
-如果相交的面积为正，则称两矩形重叠。需要明确的是，只在角或边接触的两个矩形不构成重叠。
-给出两个矩形，判断它们是否重叠并返回结果。
-示例 1：12输入：rec1 = 
+          给定一个有相同值的二叉搜索树（BST），找出 BST 中的所有众数（出现频率最高的元素）。
+假定 BST 有如下定义：
+结点左子树中所含结点的值小于等于当前结点的值结点右子树中所含结点的值大于等于当前结点的值左子树和右子树都是二叉搜索树例如：给定 BST [1,null,2,2],123456   
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/836-矩形重叠/#more" rel="contents">
+            <a class="btn" href="/题解集/501-二叉搜索树中的众数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1059,7 +1059,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/695-岛屿的最大面积/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/563-二叉树的坡度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1078,7 +1078,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/695-岛屿的最大面积/" itemprop="url">695. 岛屿的最大面积</a></h2>
+                <a class="post-title-link" href="/题解集/563-二叉树的坡度/" itemprop="url">563. 二叉树的坡度</a></h2>
         
 
         <div class="post-meta">
@@ -1090,8 +1090,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T22:48:56+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T22:52:11+08:00">
+                2018-07-31
               </time>
             
 
@@ -1131,8 +1131,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/695-岛屿的最大面积/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/695-岛屿的最大面积/" itemprop="commentCount"></span>
+                <a href="/题解集/563-二叉树的坡度/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/563-二叉树的坡度/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1154,7 +1154,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  797
+                  277
                 </span>
               
 
@@ -1181,13 +1181,14 @@
       
         
           
-          给定一个包含了一些 0 和 1的非空二维数组 grid , 一个 岛屿 是由四个方向 (水平或垂直) 的 1 (代表土地) 构成的组合。你可以假设二维矩阵的四个边缘都被水包围着。
-找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为0。)
-示例 1:1234567891011121314
+          给定一个二叉树，计算整个树的坡度。
+一个树的节点的坡度定义即为，该节点左子树的结点之和和右子树结点之和的差的绝对值。空结点的的坡度是0。
+整个树的坡度就是其所有节点的坡度之和。
+示例:12345678910输入:          1       /   \      2     3输出: 1解释:
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/695-岛屿的最大面积/#more" rel="contents">
+            <a class="btn" href="/题解集/563-二叉树的坡度/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1242,7 +1243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/849-到最近的人的最大距离/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/606-根据二叉树创建字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1261,7 +1262,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/849-到最近的人的最大距离/" itemprop="url">849. 到最近的人的最大距离</a></h2>
+                <a class="post-title-link" href="/题解集/606-根据二叉树创建字符串/" itemprop="url">606. 根据二叉树创建字符串</a></h2>
         
 
         <div class="post-meta">
@@ -1273,8 +1274,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T20:44:52+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T22:29:07+08:00">
+                2018-07-31
               </time>
             
 
@@ -1314,8 +1315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/849-到最近的人的最大距离/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/849-到最近的人的最大距离/" itemprop="commentCount"></span>
+                <a href="/题解集/606-根据二叉树创建字符串/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/606-根据二叉树创建字符串/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1337,7 +1338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  463
+                  356
                 </span>
               
 
@@ -1364,15 +1365,13 @@
       
         
           
-          在一排座位（ seats）中，1 代表有人坐在座位上，0 代表座位上是空的。
-至少有一个空座位，且至少有一人坐在座位上。
-亚历克斯希望坐在一个能够使他与离他最近的人之间的距离达到最大化的座位上。
-返回他到离他最近的人的最大距离。
-示例 1：12345678910输入：[1,0,0,0,1,0,1]输
+          你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
+空节点则用一对空括号 “()” 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。
+示例 1:12345678输入: 二叉树: [1,2,3,4]       1     /   \    2 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/849-到最近的人的最大距离/#more" rel="contents">
+            <a class="btn" href="/题解集/606-根据二叉树创建字符串/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1427,7 +1426,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/821-字符的最短距离/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1096-Consecutive-Factors-20-（20-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1446,7 +1445,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/821-字符的最短距离/" itemprop="url">821. 字符的最短距离</a></h2>
+                <a class="post-title-link" href="/题解集/1096-Consecutive-Factors-20-（20-分）/" itemprop="url">1096 Consecutive Factors (20)（20 分）</a></h2>
         
 
         <div class="post-meta">
@@ -1458,8 +1457,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T14:43:46+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T15:29:51+08:00">
+                2018-07-31
               </time>
             
 
@@ -1499,8 +1498,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/821-字符的最短距离/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/821-字符的最短距离/" itemprop="commentCount"></span>
+                <a href="/题解集/1096-Consecutive-Factors-20-（20-分）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/1096-Consecutive-Factors-20-（20-分）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1522,7 +1521,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  210
+                  459
                 </span>
               
 
@@ -1549,12 +1548,11 @@
       
         
           
-          给定一个字符串 S 和一个字符 C。返回一个代表字符串 S 中每个字符到字符串 S 中的字符 C 的最短距离的数组。
-示例 1:12输入: S = &quot;loveleetcode&quot;, C = &apos;e&apos;输出: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2
+          Among all the factors of a positive integer N, there may exist several consecutive numbers. For example, 630 can be factored as 356*7, where 5, 6, and
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/821-字符的最短距离/#more" rel="contents">
+            <a class="btn" href="/题解集/1096-Consecutive-Factors-20-（20-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1600,7 +1598,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1650,7 +1648,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1794,7 +1792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

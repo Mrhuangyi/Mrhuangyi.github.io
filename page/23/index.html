@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/46-全排列/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/771-宝石与石头/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/46-全排列/" itemprop="url">46. 全排列</a></h2>
+                <a class="post-title-link" href="/题解集/771-宝石与石头/" itemprop="url">771. 宝石与石头</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T16:39:51+08:00">
-                2018-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T12:35:56+08:00">
+                2018-06-22
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/46-全排列/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/46-全排列/" itemprop="commentCount"></span>
+                <a href="/题解集/771-宝石与石头/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/771-宝石与石头/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  220
+                  219
                 </span>
               
 
@@ -632,13 +632,13 @@
       
         
           
-          给定一个没有重复数字的序列，返回其所有可能的全排列。
-示例:12345678910输入: [1,2,3]输出:[  [1,2,3],  [1,3,2],  [2,1,3],  [2,3,1],  [3,1,2],  [3,2,1]]
-法一：偷懒的写法，直接调用求下一个排列的库函数1234567891
+          给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。
+J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。
+示例 1:12输入: J = &quot;a
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/46-全排列/#more" rel="contents">
+            <a class="btn" href="/题解集/771-宝石与石头/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +693,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/31-下一个排列/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/728-自除数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -712,7 +712,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/31-下一个排列/" itemprop="url">31. 下一个排列</a></h2>
+                <a class="post-title-link" href="/题解集/728-自除数/" itemprop="url">728. 自除数</a></h2>
         
 
         <div class="post-meta">
@@ -724,8 +724,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T16:24:54+08:00">
-                2018-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T12:23:12+08:00">
+                2018-06-22
               </time>
             
 
@@ -765,8 +765,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/31-下一个排列/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/31-下一个排列/" itemprop="commentCount"></span>
+                <a href="/题解集/728-自除数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/728-自除数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -788,7 +788,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  327
+                  261
                 </span>
               
 
@@ -815,13 +815,15 @@
       
         
           
-          实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
-如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
-必须原地修改，只允许使用额外常数空间。1234以下是一些例子，输入位于左侧列，其相应输出位于右侧列。1,2,3 → 1,3,23,2,1 →
+          自除数 是指可以被它包含的每一位数除尽的数。
+例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。
+还有，自除数不允许包含 0 。
+给定上边界和下边界数字，输出一个列表，列表的元素是边界（含边界）内所有的自除数。
+示例 1：123输入：上边
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/31-下一个排列/#more" rel="contents">
+            <a class="btn" href="/题解集/728-自除数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -876,7 +878,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/868-转置矩阵/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/852-山脉数组的峰顶索引/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -895,7 +897,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/868-转置矩阵/" itemprop="url">868. 转置矩阵</a></h2>
+                <a class="post-title-link" href="/题解集/852-山脉数组的峰顶索引/" itemprop="url">852. 山脉数组的峰顶索引</a></h2>
         
 
         <div class="post-meta">
@@ -907,8 +909,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T17:33:31+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T12:10:45+08:00">
+                2018-06-22
               </time>
             
 
@@ -948,8 +950,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/868-转置矩阵/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/868-转置矩阵/" itemprop="commentCount"></span>
+                <a href="/题解集/852-山脉数组的峰顶索引/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/852-山脉数组的峰顶索引/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -971,7 +973,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  182
+                  188
                 </span>
               
 
@@ -998,14 +1000,12 @@
       
         
           
-          给定一个矩阵 A， 返回 A 的转置矩阵。
-矩阵的转置是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。
-示例 1：12输入：[[1,2,3],[4,5,6],[7,8,9]]输出：[[1,4,7],[2,5,8],[3,6,9]]
-示例 2：12输入：[[1,2,3],[4,5,6]]输出：[[
+          我们把符合下列属性的数组 A 称作山脉：
+A.length &gt;= 3存在 0 &lt; i &lt; A.length - 1 使得A[0] &lt; A[1] &lt; … A[i-1] &lt; A[i] &gt; A[i+1] &gt; … &gt; A[A.length - 1]给定一
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/868-转置矩阵/#more" rel="contents">
+            <a class="btn" href="/题解集/852-山脉数组的峰顶索引/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1060,7 +1060,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/504-七进制数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/L2-021-点赞狂魔（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1079,7 +1079,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/504-七进制数/" itemprop="url">504. 七进制数</a></h2>
+                <a class="post-title-link" href="/题解集/L2-021-点赞狂魔（25-分）/" itemprop="url">L2-021 点赞狂魔（25 分）</a></h2>
         
 
         <div class="post-meta">
@@ -1091,8 +1091,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T16:40:14+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T11:53:12+08:00">
+                2018-06-22
               </time>
             
 
@@ -1132,8 +1132,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/504-七进制数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/504-七进制数/" itemprop="commentCount"></span>
+                <a href="/题解集/L2-021-点赞狂魔（25-分）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/L2-021-点赞狂魔（25-分）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1155,7 +1155,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  108
+                  728
                 </span>
               
 
@@ -1182,14 +1182,11 @@
       
         
           
-          给定一个整数，将其转化为7进制，并以字符串形式输出。
-示例 1:12输入: 100输出: &quot;202&quot;
-示例 2:12输入: -7输出: &quot;-10&quot;
-注意: 输入范围是 [-1e7, 1e7] 。123456789101112131415161718192021
+          L2-021 点赞狂魔（25 分）微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/504-七进制数/#more" rel="contents">
+            <a class="btn" href="/题解集/L2-021-点赞狂魔（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1244,7 +1241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/500-键盘行/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/657-判断路线成圈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1263,7 +1260,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/500-键盘行/" itemprop="url">500. 键盘行</a></h2>
+                <a class="post-title-link" href="/题解集/657-判断路线成圈/" itemprop="url">657. 判断路线成圈</a></h2>
         
 
         <div class="post-meta">
@@ -1275,8 +1272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T16:28:28+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T13:43:55+08:00">
+                2018-06-21
               </time>
             
 
@@ -1316,8 +1313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/500-键盘行/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/500-键盘行/" itemprop="commentCount"></span>
+                <a href="/题解集/657-判断路线成圈/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/657-判断路线成圈/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1339,7 +1336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  250
+                  258
                 </span>
               
 
@@ -1366,12 +1363,12 @@
       
         
           
-          给定一个单词列表，只返回可以使用在键盘同一行的字母打印出来的单词。键盘如下图所
-示例1:12输入: [&quot;Hello&quot;, &quot;Alaska&quot;, &quot;Dad&quot;, &quot;Peace&quot;]输出: [&quot;Alaska&quot;, 
+          初始位置 (0, 0) 处有一个机器人。给出它的一系列动作，判断这个机器人的移动路线是否形成一个圆圈，换言之就是判断它是否会移回到原来的位置。
+移动顺序由一个字符串表示。每一个动作都是由一个字符来表示的。机器人有效的动作有 R（右），L（左），U（上）和 D（下）。输出应为 true 或 false
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/500-键盘行/#more" rel="contents">
+            <a class="btn" href="/题解集/657-判断路线成圈/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1426,7 +1423,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/496-下一个更大元素-I/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/633-平方数之和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1445,7 +1442,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/496-下一个更大元素-I/" itemprop="url">496. 下一个更大元素 I</a></h2>
+                <a class="post-title-link" href="/题解集/633-平方数之和/" itemprop="url">633. 平方数之和</a></h2>
         
 
         <div class="post-meta">
@@ -1457,8 +1454,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T11:26:41+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T13:37:22+08:00">
+                2018-06-21
               </time>
             
 
@@ -1498,8 +1495,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/496-下一个更大元素-I/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/496-下一个更大元素-I/" itemprop="commentCount"></span>
+                <a href="/题解集/633-平方数之和/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/633-平方数之和/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1521,7 +1518,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  498
+                  94
                 </span>
               
 
@@ -1548,12 +1545,14 @@
       
         
           
-          给定两个没有重复元素的数组 nums1 和 nums2 ，其中nums1 是 nums2 的子集。找到 nums1 中每个元素在 nums2 中的下一个比其大的值。
-nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出-
+          给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。
+示例1:123输入: 5输出: True解释: 1 * 1 + 2 * 2 = 5
+示例2:12输入: 3输出: False
+123456789101112class Solution &#123;publ
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/496-下一个更大元素-I/#more" rel="contents">
+            <a class="btn" href="/题解集/633-平方数之和/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1599,7 +1598,7 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1649,7 +1648,7 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的�
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1793,7 +1792,7 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

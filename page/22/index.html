@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/566-重塑矩阵/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/561-数组拆分-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/566-重塑矩阵/" itemprop="url">566. 重塑矩阵</a></h2>
+                <a class="post-title-link" href="/题解集/561-数组拆分-I/" itemprop="url">561. 数组拆分 I</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T15:10:30+08:00">
-                2018-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T20:49:09+08:00">
+                2018-06-27
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/566-重塑矩阵/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/566-重塑矩阵/" itemprop="commentCount"></span>
+                <a href="/题解集/561-数组拆分-I/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/561-数组拆分-I/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  547
+                  146
                 </span>
               
 
@@ -632,14 +632,12 @@
       
         
           
-          在MATLAB中，有一个非常有用的函数 reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。
-给出一个由二维数组表示的矩阵，以及两个正整数r和c，分别表示想要的重构的矩阵的行数和列数。
-重构后的矩阵需要将原始矩阵的所有元素以相同的行遍历顺序填充。
-如果具有给定参数的res
+          给定长度为 2n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), …, (an, bn) ，使得从1 到 n 的 min(ai, bi) 总和最大。
+示例 1:1234输入: [1,4,3,2]输出: 4解释: n 等于 2, 最大总和为 4 = min(1
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/566-重塑矩阵/#more" rel="contents">
+            <a class="btn" href="/题解集/561-数组拆分-I/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -694,7 +692,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/637-二叉树的层平均值/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/532-数组中的K-diff数对/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -713,7 +711,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/637-二叉树的层平均值/" itemprop="url">637. 二叉树的层平均值</a></h2>
+                <a class="post-title-link" href="/题解集/532-数组中的K-diff数对/" itemprop="url">532. 数组中的K-diff数对</a></h2>
         
 
         <div class="post-meta">
@@ -725,8 +723,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T16:42:16+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T20:34:28+08:00">
+                2018-06-27
               </time>
             
 
@@ -766,8 +764,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/637-二叉树的层平均值/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/637-二叉树的层平均值/" itemprop="commentCount"></span>
+                <a href="/题解集/532-数组中的K-diff数对/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/532-数组中的K-diff数对/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -789,7 +787,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  378
+                  418
                 </span>
               
 
@@ -816,12 +814,12 @@
       
         
           
-          给定一个非空二叉树, 返回一个由每层节点平均值组成的数组.
-示例 1:123456789输入:    3   / \  9  20    /  \   15   7输出: [3, 14.5, 11]解释:第0层的平均值是 3,  第1层是 14.5, 第2层是 11. 因此返回 [3, 14.5, 
+          给定一个整数数组和一个整数 k, 你需要在数组里找到不同的 k-diff 数对。这里将 k-diff 数对定义为一个整数对 (i, j), 其中 i 和 j 都是数组中的数字，且两数之差的绝对值是 k.
+示例 1:123输入: [3, 1, 4, 1, 5], k = 2输出: 2解释: 数组中有两
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/637-二叉树的层平均值/#more" rel="contents">
+            <a class="btn" href="/题解集/532-数组中的K-diff数对/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -876,7 +874,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/812-最大三角形面积/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/455-分发饼干/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -895,7 +893,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/812-最大三角形面积/" itemprop="url">812. 最大三角形面积</a></h2>
+                <a class="post-title-link" href="/题解集/455-分发饼干/" itemprop="url">455. 分发饼干</a></h2>
         
 
         <div class="post-meta">
@@ -907,8 +905,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T16:05:31+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T12:34:21+08:00">
+                2018-06-23
               </time>
             
 
@@ -948,8 +946,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/812-最大三角形面积/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/812-最大三角形面积/" itemprop="commentCount"></span>
+                <a href="/题解集/455-分发饼干/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/455-分发饼干/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -971,7 +969,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  233
+                  472
                 </span>
               
 
@@ -998,15 +996,11 @@
       
         
           
-          给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
-示例:1234输入: points = [[0,0],[0,1],[1,0],[0,2],[2,0]]输出: 2解释: 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
-
-注意:
-3 &lt;= points.l
+          假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。对每个孩子 i ，都有一个胃口值 gi ，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j ，都有一个尺寸 sj 。如果 sj &gt;= gi ，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/812-最大三角形面积/#more" rel="contents">
+            <a class="btn" href="/题解集/455-分发饼干/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1061,7 +1055,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/693-交替位二进制数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/453-最小移动次数使数组元素相等/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1080,7 +1074,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/693-交替位二进制数/" itemprop="url">693. 交替位二进制数</a></h2>
+                <a class="post-title-link" href="/题解集/453-最小移动次数使数组元素相等/" itemprop="url">453. 最小移动次数使数组元素相等</a></h2>
         
 
         <div class="post-meta">
@@ -1092,8 +1086,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T15:26:05+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T12:23:02+08:00">
+                2018-06-23
               </time>
             
 
@@ -1133,8 +1127,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/693-交替位二进制数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/693-交替位二进制数/" itemprop="commentCount"></span>
+                <a href="/题解集/453-最小移动次数使数组元素相等/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/453-最小移动次数使数组元素相等/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1156,7 +1150,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  264
+                  208
                 </span>
               
 
@@ -1183,14 +1177,12 @@
       
         
           
-          给定一个正整数，检查他是否为交替位二进制数：换句话说，就是他的二进制数相邻的两个位数永不相等。
-示例 1:1234输入: 5输出: True解释:5的二进制数是: 101
-示例 2:1234输入: 7输出: False解释:7的二进制数是: 111
-示例 3:1234输入: 11输出: False解
+          给定一个长度为 n 的非空整数数组，找到让数组所有元素相等的最小移动次数。每次移动可以使 n - 1 个元素增加 1。
+示例:12345678910输入:[1,2,3]输出:3解释:只需要3次移动（注意每次移动会增加两个元素的值）：[1,2,3]  =&gt;  [2,3,3]  =&gt;  [3
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/693-交替位二进制数/#more" rel="contents">
+            <a class="btn" href="/题解集/453-最小移动次数使数组元素相等/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1245,7 +1237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/338-Bit位计数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/L2-013-红色警报（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1264,7 +1256,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/338-Bit位计数/" itemprop="url">338. Bit位计数</a></h2>
+                <a class="post-title-link" href="/题解集/L2-013-红色警报（25-分）/" itemprop="url">L2-013 红色警报（25 分）</a></h2>
         
 
         <div class="post-meta">
@@ -1276,8 +1268,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T14:57:55+08:00">
-                2018-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T12:06:52+08:00">
+                2018-06-23
               </time>
             
 
@@ -1317,8 +1309,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/338-Bit位计数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/338-Bit位计数/" itemprop="commentCount"></span>
+                <a href="/题解集/L2-013-红色警报（25-分）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/L2-013-红色警报（25-分）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1340,7 +1332,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  478
+                  978
                 </span>
               
 
@@ -1367,15 +1359,13 @@
       
         
           
-          给定一个非负整数 num。 对于范围 0 ≤ i ≤ num 中的每个数字 i ，计算其二进制数中的1的数目并将它们作为数组返回。
-示例：1比如给定 num = 5 ，应该返回 [0,1,1,2,1,2].
-进阶：
-
-给出时间复杂度为O(n * sizeof(integer)) 的解答非常容易。 但
+          L2-013 红色警报（25 分）战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。
+输入格式：
+输入在第一
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/338-Bit位计数/#more" rel="contents">
+            <a class="btn" href="/题解集/L2-013-红色警报（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1430,7 +1420,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/617-合并二叉树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/L2-014-列车调度（25-分）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1449,7 +1439,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/617-合并二叉树/" itemprop="url">617. 合并二叉树</a></h2>
+                <a class="post-title-link" href="/题解集/L2-014-列车调度（25-分）/" itemprop="url">L2-014 列车调度（25 分）</a></h2>
         
 
         <div class="post-meta">
@@ -1461,8 +1451,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T17:22:50+08:00">
-                2018-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T11:08:10+08:00">
+                2018-06-23
               </time>
             
 
@@ -1502,8 +1492,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/617-合并二叉树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/617-合并二叉树/" itemprop="commentCount"></span>
+                <a href="/题解集/L2-014-列车调度（25-分）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/L2-014-列车调度（25-分）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1525,7 +1515,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  304
+                  685
                 </span>
               
 
@@ -1552,13 +1542,13 @@
       
         
           
-          给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
-你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。
-示例 1:123456789101112131415输
+          L2-014 列车调度（25 分）火车站的列车调度铁轨的结构如下图所示。
+\ Figure
+两端分别是一条入口（Entrance）轨道和一条出口（Exit）轨道，它们之间有N条平行的轨道。每趟列车从入口可以选择任意一条轨道进入，最后从出口离开。在图中有9趟列车，在入口处按照{8，4，2，5，3，9，
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/617-合并二叉树/#more" rel="contents">
+            <a class="btn" href="/题解集/L2-014-列车调度（25-分）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1604,7 +1594,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1654,7 +1644,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1798,7 +1788,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

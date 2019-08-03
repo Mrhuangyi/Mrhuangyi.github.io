@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/405-数字转换为十六进制数/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/190-颠倒二进制位/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/405-数字转换为十六进制数/" itemprop="url">405. 数字转换为十六进制数</a></h2>
+                <a class="post-title-link" href="/题解集/190-颠倒二进制位/" itemprop="url">190. 颠倒二进制位</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-18T15:10:38+08:00">
-                2018-06-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T15:12:06+08:00">
+                2018-05-31
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/405-数字转换为十六进制数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/405-数字转换为十六进制数/" itemprop="commentCount"></span>
+                <a href="/题解集/190-颠倒二进制位/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/190-颠倒二进制位/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  414
+                  283
                 </span>
               
 
@@ -632,13 +632,12 @@
       
         
           
-          给定一个整数，编写一个算法将这个数转换为十六进制数。对于负整数，我们通常使用 补码运算 方法。
-注意:
-十六进制中所有字母(a-f)都必须是小写。十六进制字符串中不能包含多余的前导零。如果要转化的数为0，那么以单个字符’0’来表示；对于其他情况，十六进制字符串中的第一个字符将不会是0字符。给定的数确
+          颠倒给定的 32 位无符号整数的二进制位。
+示例:1234输入: 43261596输出: 964176192解释: 43261596 的二进制表示形式为 00000010100101000001111010011100 ，     返回 964176192，其二进制表示形式为 00111001011
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/405-数字转换为十六进制数/#more" rel="contents">
+            <a class="btn" href="/题解集/190-颠倒二进制位/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +692,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/404-左叶子之和/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/160-相交链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -712,7 +711,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/404-左叶子之和/" itemprop="url">404. 左叶子之和</a></h2>
+                <a class="post-title-link" href="/题解集/160-相交链表/" itemprop="url">160. 相交链表</a></h2>
         
 
         <div class="post-meta">
@@ -724,8 +723,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-18T13:27:43+08:00">
-                2018-06-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T14:45:33+08:00">
+                2018-05-31
               </time>
             
 
@@ -765,8 +764,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/404-左叶子之和/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/404-左叶子之和/" itemprop="commentCount"></span>
+                <a href="/题解集/160-相交链表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/160-相交链表/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -788,7 +787,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  269
+                  284
                 </span>
               
 
@@ -815,14 +814,12 @@
       
         
           
-          计算给定二叉树的所有左叶子之和。
-示例：12345  3 / \9  20  /  \ 15   7
-在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24
-递归写法：12345678910111213141516171819202122232425/** * Definition fo
+          编写一个程序，找到两个单链表相交的起始节点。
+例如，下面的两个链表：12345A:          a1 → a2                   ↘                     c1 → c2 → c3                   ↗            B:     
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/404-左叶子之和/#more" rel="contents">
+            <a class="btn" href="/题解集/160-相交链表/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -877,7 +874,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/387-字符串中的第一个唯一字符/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/141-环形链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -896,7 +893,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/387-字符串中的第一个唯一字符/" itemprop="url">387. 字符串中的第一个唯一字符</a></h2>
+                <a class="post-title-link" href="/题解集/141-环形链表/" itemprop="url">141. 环形链表</a></h2>
         
 
         <div class="post-meta">
@@ -908,8 +905,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T20:54:03+08:00">
-                2018-06-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T11:34:57+08:00">
+                2018-05-30
               </time>
             
 
@@ -949,8 +946,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/387-字符串中的第一个唯一字符/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/387-字符串中的第一个唯一字符/" itemprop="commentCount"></span>
+                <a href="/题解集/141-环形链表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/141-环形链表/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -972,7 +969,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  125
+                  198
                 </span>
               
 
@@ -999,14 +996,15 @@
       
         
           
-          给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
-案例:12345s = &quot;leetcode&quot;返回 0.s = &quot;loveleetcode&quot;,返回 2.
-注意事项：您可以假定该字符串只包含小写字母。
-12345678910
+          给定一个链表，判断链表中是否有环。
+进阶：你能否不使用额外空间解决此题？
+可以用一个哈希表···cpp
+unordered_map&lt; int,bool&gt; visited···来标记每个元素是否被访问过，若某个元素被重复访问，则存在环。
+最好的方法是用快慢指针，快指针每次走两步，慢指针每次
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/387-字符串中的第一个唯一字符/#more" rel="contents">
+            <a class="btn" href="/题解集/141-环形链表/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1061,7 +1059,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/303-区域和检索-数组不可变/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/112-路径总和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1080,7 +1078,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/303-区域和检索-数组不可变/" itemprop="url">303. 区域和检索 - 数组不可变</a></h2>
+                <a class="post-title-link" href="/题解集/112-路径总和/" itemprop="url">112. 路径总和</a></h2>
         
 
         <div class="post-meta">
@@ -1092,8 +1090,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T19:25:29+08:00">
-                2018-06-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T11:21:34+08:00">
+                2018-05-30
               </time>
             
 
@@ -1133,8 +1131,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/303-区域和检索-数组不可变/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/303-区域和检索-数组不可变/" itemprop="commentCount"></span>
+                <a href="/题解集/112-路径总和/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/112-路径总和/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1156,7 +1154,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  183
+                  245
                 </span>
               
 
@@ -1183,12 +1181,13 @@
       
         
           
-          给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。
-示例：12345给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()sumRange(0, 2) -&gt; 1sumRange(2, 
+          给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
+说明: 叶子节点是指没有子节点的节点。
+示例:给定如下二叉树，以及目标和 sum = 22，12345678              5             / \           
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/303-区域和检索-数组不可变/#more" rel="contents">
+            <a class="btn" href="/题解集/112-路径总和/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1243,7 +1242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/290-单词模式/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/阅读/卖米/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1262,7 +1261,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/290-单词模式/" itemprop="url">290. 单词模式</a></h2>
+                <a class="post-title-link" href="/阅读/卖米/" itemprop="url">卖米</a></h2>
         
 
         <div class="post-meta">
@@ -1274,8 +1273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T17:40:10+08:00">
-                2018-06-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T08:16:57+08:00">
+                2018-05-30
               </time>
             
 
@@ -1297,8 +1296,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/题解集/" itemprop="url" rel="index">
-                    <span itemprop="name">题解集</span>
+                  <a href="/categories/阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">阅读</span>
                   </a>
                 </span>
 
@@ -1315,8 +1314,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/290-单词模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/290-单词模式/" itemprop="commentCount"></span>
+                <a href="/阅读/卖米/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/阅读/卖米/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1338,7 +1337,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  262
+                  3.7k
                 </span>
               
 
@@ -1365,13 +1364,12 @@
       
         
           
-          给定一种 pattern(模式) 和一个字符串 str ，判断 str 是否遵循相同的模式。
-这里的遵循指完全匹配，例如， pattern 里的每个字母和字符串 str 中的每个非空单词之间存在着双向连接的对应模式。
-示例1:12输入: pattern = &quot;abba&quot;, str
+          01《卖米》作者飞花，原名张培祥，1979年，出生于湖南醴陵一个山区农民家庭。自小于贫寒中刻苦学习，1997年考入北京大学法学院，2001年攻读法学硕士。2003年非典期间，年仅24岁的张培祥就已身患白血病离开了人世。
+天刚蒙蒙亮，母亲就把我叫起来了：“琼宝，明天是这里的场，咱们担点米到场上卖了，好
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/290-单词模式/#more" rel="contents">
+            <a class="btn" href="/阅读/卖米/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1426,7 +1424,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/278-第一个错误的版本/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/算法和数据结构/红黑树简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1445,7 +1443,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/278-第一个错误的版本/" itemprop="url">278. 第一个错误的版本</a></h2>
+                <a class="post-title-link" href="/算法和数据结构/红黑树简介/" itemprop="url">红黑树简介</a></h2>
         
 
         <div class="post-meta">
@@ -1457,8 +1455,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T17:26:13+08:00">
-                2018-06-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T16:27:17+08:00">
+                2018-05-29
               </time>
             
 
@@ -1480,8 +1478,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/题解集/" itemprop="url" rel="index">
-                    <span itemprop="name">题解集</span>
+                  <a href="/categories/算法和数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">算法和数据结构</span>
                   </a>
                 </span>
 
@@ -1498,8 +1496,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/278-第一个错误的版本/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/278-第一个错误的版本/" itemprop="commentCount"></span>
+                <a href="/算法和数据结构/红黑树简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/算法和数据结构/红黑树简介/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1521,7 +1519,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  2.1k
                 </span>
               
 
@@ -1544,17 +1542,31 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e51aebc244086e066aa8384d3a331cc9/9358d109b3de9c828cdb8e7c6481800a18d84382.jpg" rel="gallery_cjyvh0bhe00lh7eusgj8wfv7v"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e51aebc244086e066aa8384d3a331cc9/9358d109b3de9c828cdb8e7c6481800a18d84382.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
           
-          你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
-假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。
-你可以通过调用 bool is
+          红黑树简介红黑树（Red Black Tree）是一种自平衡的二叉查找树，它是在1972年由Rudolf Bayer发明的，当时被称为平衡二叉B树。后来，在1978年被Leo J.Guibas和Robert Sedgewick修改为如今的“红黑树”。红黑树应用非常广泛，比如C++ STL库中的map
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/278-第一个错误的版本/#more" rel="contents">
+            <a class="btn" href="/算法和数据结构/红黑树简介/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1600,7 +1612,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/31/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/33/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/31/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/33/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1650,7 +1662,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1794,7 +1806,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/872-叶子相似的树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/31-下一个排列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/872-叶子相似的树/" itemprop="url">872. 叶子相似的树</a></h2>
+                <a class="post-title-link" href="/题解集/31-下一个排列/" itemprop="url">31. 下一个排列</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T22:17:16+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T16:24:54+08:00">
+                2018-07-11
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/872-叶子相似的树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/872-叶子相似的树/" itemprop="commentCount"></span>
+                <a href="/题解集/31-下一个排列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/31-下一个排列/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  326
+                  327
                 </span>
               
 
@@ -632,15 +632,13 @@
       
         
           
-          考虑一个二叉树的所有叶子。这些叶子的值按从左到右的顺序排列形成一个 叶值序列 。
-
-举个例子，给定一个如上图所示的树，其叶值序列为 (6, 7, 4, 9, 8) 。
-如果两个二叉树的叶值序列相同，我们就认为它们是 叶相似的。
-如果给定的两个头结点分别为 root1 和 root2 的树是叶相似的，
+          实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
+如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+必须原地修改，只允许使用额外常数空间。1234以下是一些例子，输入位于左侧列，其相应输出位于右侧列。1,2,3 → 1,3,23,2,1 →
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/872-叶子相似的树/#more" rel="contents">
+            <a class="btn" href="/题解集/31-下一个排列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -695,7 +693,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/541-反转字符串-II/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/868-转置矩阵/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -714,7 +712,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/541-反转字符串-II/" itemprop="url">541. 反转字符串 II</a></h2>
+                <a class="post-title-link" href="/题解集/868-转置矩阵/" itemprop="url">868. 转置矩阵</a></h2>
         
 
         <div class="post-meta">
@@ -726,8 +724,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T22:04:15+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T17:33:31+08:00">
+                2018-07-10
               </time>
             
 
@@ -767,8 +765,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/541-反转字符串-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/541-反转字符串-II/" itemprop="commentCount"></span>
+                <a href="/题解集/868-转置矩阵/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/868-转置矩阵/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -790,7 +788,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  213
+                  182
                 </span>
               
 
@@ -817,12 +815,14 @@
       
         
           
-          给定一个字符串和一个整数 k，你需要对从字符串开头算起的每个 2k 个字符的前k个字符进行反转。如果剩余少于 k 个字符，则将剩余的所有全部反转。如果有小于 2k 但大于或等于 k 个字符，则反转前 k 个字符，并将剩余的字符保持原样。
-示例:12输入: s = &quot;abcdefg&quot
+          给定一个矩阵 A， 返回 A 的转置矩阵。
+矩阵的转置是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。
+示例 1：12输入：[[1,2,3],[4,5,6],[7,8,9]]输出：[[1,4,7],[2,5,8],[3,6,9]]
+示例 2：12输入：[[1,2,3],[4,5,6]]输出：[[
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/541-反转字符串-II/#more" rel="contents">
+            <a class="btn" href="/题解集/868-转置矩阵/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -877,7 +877,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/538-把二叉搜索树转换为累加树/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/504-七进制数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -896,7 +896,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/538-把二叉搜索树转换为累加树/" itemprop="url">538. 把二叉搜索树转换为累加树</a></h2>
+                <a class="post-title-link" href="/题解集/504-七进制数/" itemprop="url">504. 七进制数</a></h2>
         
 
         <div class="post-meta">
@@ -908,8 +908,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T21:38:37+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T16:40:14+08:00">
+                2018-07-10
               </time>
             
 
@@ -949,8 +949,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/538-把二叉搜索树转换为累加树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/538-把二叉搜索树转换为累加树/" itemprop="commentCount"></span>
+                <a href="/题解集/504-七进制数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/504-七进制数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -972,7 +972,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  172
+                  108
                 </span>
               
 
@@ -999,12 +999,14 @@
       
         
           
-          给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，使得每个节点的值是原来的节点值加上所有大于它的节点值之和。
-例如：123456789输入: 二叉搜索树:              5            /   \           2
+          给定一个整数，将其转化为7进制，并以字符串形式输出。
+示例 1:12输入: 100输出: &quot;202&quot;
+示例 2:12输入: -7输出: &quot;-10&quot;
+注意: 输入范围是 [-1e7, 1e7] 。123456789101112131415161718192021
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/538-把二叉搜索树转换为累加树/#more" rel="contents">
+            <a class="btn" href="/题解集/504-七进制数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1059,7 +1061,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/530-二叉搜索树的最小绝对差/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/500-键盘行/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1078,7 +1080,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/530-二叉搜索树的最小绝对差/" itemprop="url">530. 二叉搜索树的最小绝对差</a></h2>
+                <a class="post-title-link" href="/题解集/500-键盘行/" itemprop="url">500. 键盘行</a></h2>
         
 
         <div class="post-meta">
@@ -1090,8 +1092,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T21:26:44+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T16:28:28+08:00">
+                2018-07-10
               </time>
             
 
@@ -1131,8 +1133,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/530-二叉搜索树的最小绝对差/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/530-二叉搜索树的最小绝对差/" itemprop="commentCount"></span>
+                <a href="/题解集/500-键盘行/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/500-键盘行/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1154,7 +1156,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  223
+                  250
                 </span>
               
 
@@ -1181,14 +1183,12 @@
       
         
           
-          给定一个所有节点为非负值的二叉搜索树，求树中任意两节点的差的绝对值的最小值。
-示例 :12345678910输入:   1    \     3    /   2输出:1
-解释:最小绝对差为1，其中 2 和 1 的差的绝对值为 1（或者 2 和 3）。注意: 树中至少有2个节点。
-分析：二叉搜索树的
+          给定一个单词列表，只返回可以使用在键盘同一行的字母打印出来的单词。键盘如下图所
+示例1:12输入: [&quot;Hello&quot;, &quot;Alaska&quot;, &quot;Dad&quot;, &quot;Peace&quot;]输出: [&quot;Alaska&quot;, 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/530-二叉搜索树的最小绝对差/#more" rel="contents">
+            <a class="btn" href="/题解集/500-键盘行/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1243,7 +1243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/521-最长特殊序列-Ⅰ/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/496-下一个更大元素-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1262,7 +1262,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/521-最长特殊序列-Ⅰ/" itemprop="url">521. 最长特殊序列 Ⅰ</a></h2>
+                <a class="post-title-link" href="/题解集/496-下一个更大元素-I/" itemprop="url">496. 下一个更大元素 I</a></h2>
         
 
         <div class="post-meta">
@@ -1274,8 +1274,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T20:57:58+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T11:26:41+08:00">
+                2018-07-10
               </time>
             
 
@@ -1315,8 +1315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/521-最长特殊序列-Ⅰ/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/521-最长特殊序列-Ⅰ/" itemprop="commentCount"></span>
+                <a href="/题解集/496-下一个更大元素-I/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/496-下一个更大元素-I/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1338,7 +1338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  362
+                  498
                 </span>
               
 
@@ -1365,13 +1365,12 @@
       
         
           
-          给定两个字符串，你需要从这两个字符串中找出最长的特殊序列。最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。
-子序列可以通过删去字符串中的某些字符实现，但不能改变剩余字符的相对顺序。空序列为所有字符串的子序列，任何字符串为其自身的子序列。
-输入为两个字符串，输出最
+          给定两个没有重复元素的数组 nums1 和 nums2 ，其中nums1 是 nums2 的子集。找到 nums1 中每个元素在 nums2 中的下一个比其大的值。
+nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出-
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/521-最长特殊序列-Ⅰ/#more" rel="contents">
+            <a class="btn" href="/题解集/496-下一个更大元素-I/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1426,7 +1425,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/506-相对名次/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/492-构造矩形/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1445,7 +1444,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/506-相对名次/" itemprop="url">506. 相对名次</a></h2>
+                <a class="post-title-link" href="/题解集/492-构造矩形/" itemprop="url">492. 构造矩形</a></h2>
         
 
         <div class="post-meta">
@@ -1457,8 +1456,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T20:43:10+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T10:37:51+08:00">
+                2018-07-10
               </time>
             
 
@@ -1498,8 +1497,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/506-相对名次/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/506-相对名次/" itemprop="commentCount"></span>
+                <a href="/题解集/492-构造矩形/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/492-构造矩形/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1521,7 +1520,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  403
+                  385
                 </span>
               
 
@@ -1548,13 +1547,17 @@
       
         
           
-          给出 N 名运动员的成绩，找出他们的相对名次并授予前三名对应的奖牌。前三名运动员将会被分别授予 “金牌”，“银牌” 和“ 铜牌”（”Gold Medal”, “Silver Medal”, “Bronze Medal”）。
-(注：分数越高的选手，排名越靠前。)
-示例 1:12输入: [5, 4, 3
+          作为一位web开发者， 懂得怎样去规划一个页面的尺寸是很重要的。 现给定一个具体的矩形页面面积，你的任务是设计一个长度为 L 和宽度为 W 且满足以下要求的矩形的页面。要求：
+
+你设计的矩形页面必须等于给定的目标面积。
+
+宽度 W 不应大于长度 L，换言之，要求 L &gt;= W 。
+
+长度 L 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/506-相对名次/#more" rel="contents">
+            <a class="btn" href="/题解集/492-构造矩形/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1600,7 +1603,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1650,7 +1653,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1794,7 +1797,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 

@@ -510,7 +510,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/686-重复叠加字符串匹配/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/705-设计哈希集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -529,7 +529,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/686-重复叠加字符串匹配/" itemprop="url">686. 重复叠加字符串匹配</a></h2>
+                <a class="post-title-link" href="/题解集/705-设计哈希集合/" itemprop="url">705. 设计哈希集合</a></h2>
         
 
         <div class="post-meta">
@@ -541,8 +541,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:57:59+08:00">
-                2018-08-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T00:24:27+08:00">
+                2018-08-14
               </time>
             
 
@@ -582,8 +582,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/686-重复叠加字符串匹配/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/686-重复叠加字符串匹配/" itemprop="commentCount"></span>
+                <a href="/题解集/705-设计哈希集合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/705-设计哈希集合/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -605,7 +605,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  229
+                  281
                 </span>
               
 
@@ -632,13 +632,14 @@
       
         
           
-          给定两个字符串 A 和 B, 寻找重复叠加字符串A的最小次数，使得字符串B成为叠加后的字符串A的子串，如果不存在则返回 -1。
-举个例子，A = “abcd”，B = “cdabcdab”。
-答案为 3， 因为 A 重复叠加三遍后为 “abcdabcdabcd”，此时 B 是其子串；A 重复叠加两遍
+          不使用任何内建的哈希表库设计一个哈希集合
+具体地说，你的设计应该包含以下的功能
+add(value)：向哈希集合中插入一个值。contains(value) ：返回哈希集合中是否存在这个值。remove(value)：将给定值从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。
+示例:12345
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/686-重复叠加字符串匹配/#more" rel="contents">
+            <a class="btn" href="/题解集/705-设计哈希集合/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +694,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/690-员工的重要性/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/680-验证回文字符串-Ⅱ/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -712,7 +713,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/690-员工的重要性/" itemprop="url">690. 员工的重要性</a></h2>
+                <a class="post-title-link" href="/题解集/680-验证回文字符串-Ⅱ/" itemprop="url">680. 验证回文字符串 Ⅱ</a></h2>
         
 
         <div class="post-meta">
@@ -724,8 +725,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:44:48+08:00">
-                2018-08-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T22:48:02+08:00">
+                2018-08-12
               </time>
             
 
@@ -765,8 +766,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/690-员工的重要性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/690-员工的重要性/" itemprop="commentCount"></span>
+                <a href="/题解集/680-验证回文字符串-Ⅱ/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/680-验证回文字符串-Ⅱ/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -788,7 +789,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  514
+                  218
                 </span>
               
 
@@ -815,12 +816,15 @@
       
         
           
-          给定一个保存员工信息的数据结构，它包含了员工唯一的id，重要度 和 直系下属的id。
-比如，员工1是员工2的领导，员工2是员工3的领导。他们相应的重要度为15, 10, 5。那么员工1的数据结构是[1, 15, [2]]，员工2的数据结构是[2, 10, [3]]，员工3的数据结构是[3, 5, [
+          给定一个非空字符串 s，最多删除一个字符。判断是否能成为回文字符串。
+示例 1:12输入: &quot;aba&quot;输出: True
+示例 2:12输入: &quot;abca&quot;输出: True
+解释: 你可以删除c字符。注意:
+字符串只包含从 a-z 的小写字母。字符串的最大长度是
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/690-员工的重要性/#more" rel="contents">
+            <a class="btn" href="/题解集/680-验证回文字符串-Ⅱ/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -875,7 +879,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/665-非递减数列/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/674-最长连续递增序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -894,7 +898,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/665-非递减数列/" itemprop="url">665. 非递减数列</a></h2>
+                <a class="post-title-link" href="/题解集/674-最长连续递增序列/" itemprop="url">674. 最长连续递增序列</a></h2>
         
 
         <div class="post-meta">
@@ -906,8 +910,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:12:44+08:00">
-                2018-08-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T17:53:05+08:00">
+                2018-08-12
               </time>
             
 
@@ -947,8 +951,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/665-非递减数列/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/665-非递减数列/" itemprop="commentCount"></span>
+                <a href="/题解集/674-最长连续递增序列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/674-最长连续递增序列/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -970,7 +974,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  376
+                  232
                 </span>
               
 
@@ -997,13 +1001,13 @@
       
         
           
-          给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。
-我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1]。
-示例 1:12输入: [4,2,
+          给定一个未经排序的整数数组，找到最长且连续的的递增序列。
+示例 1:12输入: [1,3,5,4,7]输出: 3
+解释: 最长连续递增序列是 [1,3,5], 长度为3。尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为5和7在原数组里被4隔开。示例 2:12输入: [2,2,2,2
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/665-非递减数列/#more" rel="contents">
+            <a class="btn" href="/题解集/674-最长连续递增序列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1058,7 +1062,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1107-Social-Clusters（30-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/661-图片平滑器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1077,7 +1081,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1107-Social-Clusters（30-分）/" itemprop="url">1107 Social Clusters（30 分）</a></h2>
+                <a class="post-title-link" href="/题解集/661-图片平滑器/" itemprop="url">661. 图片平滑器</a></h2>
         
 
         <div class="post-meta">
@@ -1089,8 +1093,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:52:35+08:00">
-                2018-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T17:45:14+08:00">
+                2018-08-12
               </time>
             
 
@@ -1130,8 +1134,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/1107-Social-Clusters（30-分）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/1107-Social-Clusters（30-分）/" itemprop="commentCount"></span>
+                <a href="/题解集/661-图片平滑器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/661-图片平滑器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1153,7 +1157,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  614
+                  338
                 </span>
               
 
@@ -1180,11 +1184,12 @@
       
         
           
-          1107 Social Clusters（30 分）When register on a social network, you are always asked to specify your hobbies in order to find some potential friends with
+          包含整数的二维矩阵 M 表示一个图片的灰度。你需要设计一个平滑器来让每一个单元的灰度成为平均灰度 (向下舍入) ，平均灰度的计算是周围的8个单元和它本身的值求平均，如果周围的单元格不足八个，则尽可能多的利用它们。
+示例 1:123456789101112输入:[[1,1,1], [1,0,1], [
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1107-Social-Clusters（30-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/661-图片平滑器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1239,7 +1244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1066-Root-of-AVL-Tree-25-（25-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/836-矩形重叠/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1258,7 +1263,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/" itemprop="url">1066 Root of AVL Tree (25)（25 分）</a></h2>
+                <a class="post-title-link" href="/题解集/836-矩形重叠/" itemprop="url">836. 矩形重叠</a></h2>
         
 
         <div class="post-meta">
@@ -1270,8 +1275,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:34:29+08:00">
-                2018-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-12T13:10:18+08:00">
+                2018-08-12
               </time>
             
 
@@ -1311,8 +1316,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/" itemprop="commentCount"></span>
+                <a href="/题解集/836-矩形重叠/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/836-矩形重叠/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1334,7 +1339,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  545
+                  251
                 </span>
               
 
@@ -1361,11 +1366,14 @@
       
         
           
-          1066 Root of AVL Tree (25)（25 分）An AVL tree is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node 
+          矩形以列表 [x1, y1, x2, y2] 的形式表示，其中 (x1, y1) 为左下角的坐标，(x2, y2) 是右上角的坐标。
+如果相交的面积为正，则称两矩形重叠。需要明确的是，只在角或边接触的两个矩形不构成重叠。
+给出两个矩形，判断它们是否重叠并返回结果。
+示例 1：12输入：rec1 = 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1066-Root-of-AVL-Tree-25-（25-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/836-矩形重叠/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1420,7 +1428,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/1099-Build-A-Binary-Search-Tree（30-分）/">
+    <link itemprop="mainEntityOfPage" href="http://huangyiblog.com/题解集/695-岛屿的最大面积/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -1439,7 +1447,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/" itemprop="url">1099 Build A Binary Search Tree（30 分）</a></h2>
+                <a class="post-title-link" href="/题解集/695-岛屿的最大面积/" itemprop="url">695. 岛屿的最大面积</a></h2>
         
 
         <div class="post-meta">
@@ -1451,8 +1459,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:08:19+08:00">
-                2018-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T22:48:56+08:00">
+                2018-08-11
               </time>
             
 
@@ -1492,8 +1500,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/" itemprop="commentCount"></span>
+                <a href="/题解集/695-岛屿的最大面积/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/题解集/695-岛屿的最大面积/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1515,7 +1523,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  680
+                  797
                 </span>
               
 
@@ -1542,12 +1550,13 @@
       
         
           
-          1099 Build A Binary Search Tree（30 分）A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:
-The left s
+          给定一个包含了一些 0 和 1的非空二维数组 grid , 一个 岛屿 是由四个方向 (水平或垂直) 的 1 (代表土地) 构成的组合。你可以假设二维矩阵的四个边缘都被水包围着。
+找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为0。)
+示例 1:1234567891011121314
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/题解集/1099-Build-A-Binary-Search-Tree（30-分）/#more" rel="contents">
+            <a class="btn" href="/题解集/695-岛屿的最大面积/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1593,7 +1602,7 @@ The left s
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1643,7 +1652,7 @@ The left s
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">316</span>
+                  <span class="site-state-item-count">277</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1787,7 +1796,7 @@ The left s
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">182.9k</span>
+    <span title="Site words total count">160.2k</span>
   
 </div>
 
