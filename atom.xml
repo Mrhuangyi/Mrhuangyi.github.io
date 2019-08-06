@@ -42,6 +42,31 @@
   </entry>
   
   <entry>
+    <title>腾讯精选50题 122. 买卖股票的最佳时机 II</title>
+    <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/122-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-II/"/>
+    <id>http://huangyiblog.com/题解集/122-买卖股票的最佳时机-II/</id>
+    <published>2019-08-06T08:10:07.000Z</published>
+    <updated>2019-08-06T13:01:13.663Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="腾讯精选50题-122-买卖股票的最佳时机-II"><a href="#腾讯精选50题-122-买卖股票的最佳时机-II" class="headerlink" title="腾讯精选50题 122. 买卖股票的最佳时机 II"></a>腾讯精选50题 122. 买卖股票的最佳时机 II</h1><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p><p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p><p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p><p>示例 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 7</span><br></pre></td></tr></table></figure></p><p>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。<br>示例 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,4,5]</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure></p><p>解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。<br>     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。<br>示例 3:</p><p>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</p><p>用贪心的思想，低进高出，只要相邻两天有差价就相加，因为题中没有限制交易次数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = prices.size();</span><br><span class="line">        <span class="keyword">if</span>(len&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] - prices[i<span class="number">-1</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                sum += prices[i]-prices[i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;腾讯精选50题-122-买卖股票的最佳时机-II&quot;&gt;&lt;a href=&quot;#腾讯精选50题-122-买卖股票的最佳时机-II&quot; class=&quot;headerlink&quot; title=&quot;腾讯精选50题 122. 买卖股票的最佳时机 II&quot;&gt;&lt;/a&gt;腾讯精选50题 122. 
+      
+    
+    </summary>
+    
+      <category term="题解集" scheme="http://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+    
+    
+      <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>腾讯LeetCode50题 215数组中的第K个最大元素</title>
     <link href="http://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/215%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/"/>
     <id>http://huangyiblog.com/题解集/215数组中的第K个最大元素/</id>
@@ -507,35 +532,6 @@
     
     
       <category term="LeetCode" scheme="http://huangyiblog.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈一部争议较大的日漫《缘之空》</title>
-    <link href="http://huangyiblog.com/%E5%BD%B1%E9%9F%B3/%E8%B0%88%E8%B0%88%E4%B8%80%E9%83%A8%E4%BA%89%E8%AE%AE%E8%BE%83%E5%A4%A7%E7%9A%84%E6%97%A5%E6%BC%AB%E3%80%8A%E7%BC%98%E4%B9%8B%E7%A9%BA%E3%80%8B/"/>
-    <id>http://huangyiblog.com/影音/谈谈一部争议较大的日漫《缘之空》/</id>
-    <published>2018-10-16T08:33:45.000Z</published>
-    <updated>2018-12-19T15:13:23.344Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="我先给出自己的主要观点："><a href="#我先给出自己的主要观点：" class="headerlink" title="我先给出自己的主要观点："></a>我先给出自己的主要观点：</h2><ul><li>我不认为悠是渣男，恰恰相反，整部番里我觉得悠才是内心最纠结的可怜人。</li><li>我不支持兄妹乱伦的爱情，但我相信可能会有这样真实的感情。</li><li>我支持平行世界的剧情设计。</li><li>对我而言这部番吸引我的是BGM。</li><li>我不赞同有人纯粹拿这部番当里番来看，我不觉得这是部里番。</li><li>我不相信柏拉图式的爱情，完全没有性的爱情我觉得不存在。</li></ul><a id="more"></a><p>　　日本动漫产业一直以来都是其他国家难以匹敌的一块，我平时看的动漫虽然不能说很少吧，但多是完全谈不上，你可能无法想象一些宅男腐女追番有多么疯狂，其实在其他方面我也是这种状况，看书，看电影，似乎各种都有所投入，但都只是了解很少一部分。动漫能吸引人主要有几个点：剧情、画风、配音、ＢＧＭ。有时我是真佩服那些声优和作曲家，明明剧情狗血的要命，也能让我感动起来．．．我这次想写关于缘之空的故事，其实是因为三轮学创作的ｂｇｍ太好听了（×……————……×）　嘻嘻……<br>　　缘之空算是一部比较早期的作品了，是根据游戏改变过来的。当初游戏本就是分线路展开剧情的。所以后面改编成动画采用平行世界也没什么好奇怪的。游戏里主要有５条线，分别是宆悠线（也就是争议最大的兄妹线）、奈绪线、一叶线、悠瑛线、班长线。不过动漫里好像把班长那条线去掉了，只讲述了４条线。首先我们先来科普下平行世界的问题，我是在看之前就已经了解了剧情的构造，所以很多地方并不会觉得很奇怪或是难以理解。百度百科的定义如下：多元宇宙是一个理论上的无限个或有限个可能的宇宙的集合，包括了一切存在和可能存在的事物：所有的空间、时间、物质、能量以及描述它们的物理定律和物理常数。多元宇宙所包含的各个宇宙被称为平行宇宙（parallel universes）。好吧说实话我没怎么看明白，平行世界是否存在我也不知道，我这种物理渣渣还是就不要太纠结于这个了，一部动漫而已，太较真吃不消。按照字面意思来理解，缘之空其实就是讲述了男主悠在不同宇宙和一群相同的人之间发生的不同的故事。有和穹之间的故事，和奈绪之间的故事，和一叶之间的故事，还有瑛。<br>　　也许是改编成动漫时衔接的处理有些瑕疵，很多人认为悠是个渣男，脚踩都不止两只船了，可其实按照剧情设计，悠并没有脚踩两只船，他有同时在和两个女生交往吗？他有花心般的欺骗吗？和其他几个女生的交集更像是普通中学少男少女的青涩的爱情，只是到后来悠才意识的自己真正喜欢的是谁。穹妹给人的感觉有种红楼梦里林黛玉的影子，柔弱，多病，少话，内心却又感情丰富，有脾气有个性。这双胞胎兄妹的父母死于交通事故，两人相依为命，一起来到了祖父曾经生活过的奥木尔町生活，也是在这里发生了一系列的故事。<br>　　穹悠线饱受争议，就是因为双胞胎兄妹之间产生了情愫并甚至接受这样的情感。现实生活中包括我自己，想必很多人也是一样，很难想象或者说理解亲兄妹之间怎么能萌生出爱情的火花呢，从小一起长大。不知道你们有没有了解过韦斯特马效应，韦斯特马效应由芬兰人类学家爱德华·韦斯特马克在他的著作《The History of Human Marriage》（人类婚姻史）中提出，指出两个早年共同长大的儿童在成年后通常不会对彼此产生性吸引力：有血缘关系者也会存在亲缘监测机制（亲缘监测机制异常除外，三代以内越近越明显。）来保护；无血缘关系者由于生活在一起或可不会成年后产生性吸引；出生后六年的成长环境是一个关键时间点，其间生活在一起二者性吸引几率全会大大降低。但穹和悠却并不满足韦斯特马效应的前提，之前穹生病，兄妹二人长时间并未生活在一起，但突然间双亲离世，两人再次相遇，也许真有可能产生喜欢的情愫也说不定。但是兄妹恋终究是不被人认可的，所以可以感受悠的挣扎，悠和穹不一样，穹什么都不在乎，在乎的只有悠而已，悠作为哥哥，需要负起的应当是父亲般的责任，但却喜欢上了自己的妹妹，说出来谁能接受，不光会被人以异样的眼光看待，也没有做好一个哥哥的本分。动漫最后的处理是两人从湖中死里逃生最后一起移居他乡。我不知道这样的结局如何，如何确实互相爱慕，即使是兄妹，那么该不该在一起呢？我不知道，我不支持乱伦恋，但真实的感情并不能由外力改变，这是我相信的。<br>　　最后关于尺度问题，的确，这部动漫里有一些暴露的镜头，但我个人觉得并不过分，如果是爱情的话，这本也就是爱情的一部分，何必去特意躲闪。我大一暑假花了很长时间看完《金瓶梅》，好吧，我没那么纯洁，做不到看金瓶梅看出圣经来，但还是不否认这是一部伟大的文化作品，很多人认为金瓶梅的格调不如红楼梦，红楼梦当之无愧是我国古典文学的巅峰，但如果仅仅只是因为一个重点讲情、一个重点讲欲来评判高低那就太不公平了。缘之空很多人还是无法接受的，被禁我觉得也正常，有时也不能一天到晚黑广电，从国家层面来说，还是需要宣扬社会主义核心价值观比较好~~</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;我先给出自己的主要观点：&quot;&gt;&lt;a href=&quot;#我先给出自己的主要观点：&quot; class=&quot;headerlink&quot; title=&quot;我先给出自己的主要观点：&quot;&gt;&lt;/a&gt;我先给出自己的主要观点：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;我不认为悠是渣男，恰恰相反，整部番里我觉得悠才是内心最纠结的可怜人。&lt;/li&gt;
-&lt;li&gt;我不支持兄妹乱伦的爱情，但我相信可能会有这样真实的感情。&lt;/li&gt;
-&lt;li&gt;我支持平行世界的剧情设计。&lt;/li&gt;
-&lt;li&gt;对我而言这部番吸引我的是BGM。&lt;/li&gt;
-&lt;li&gt;我不赞同有人纯粹拿这部番当里番来看，我不觉得这是部里番。&lt;/li&gt;
-&lt;li&gt;我不相信柏拉图式的爱情，完全没有性的爱情我觉得不存在。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="影音" scheme="http://huangyiblog.com/categories/%E5%BD%B1%E9%9F%B3/"/>
-    
-    
-      <category term="动漫" scheme="http://huangyiblog.com/tags/%E5%8A%A8%E6%BC%AB/"/>
     
   </entry>
   
