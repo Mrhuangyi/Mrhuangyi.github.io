@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode 136.只出现一次的数字]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FLeetCode-136-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[腾讯精选50题136.只出现一次的数字给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,1]输出: 1 示例 2:12输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一次的。12345678910class Solution &#123;public: int singleNumber(vector&lt;int&gt;&amp; nums) &#123; int x = 0; for(int i=0;i&lt;nums.size();i++)&#123; x^=nums[i]; &#125; return x; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[腾讯精选50题 78. 子集]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98-78-%E5%AD%90%E9%9B%86%2F</url>
     <content type="text"><![CDATA[给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。 说明：解集不能包含重复的子集。 示例:123456789101112输入: nums = [1,2,3]输出:[ [3], [1], [2], [1,2,3], [1,3], [2,3], [1,2], []] 考虑回溯算法1234567891011121314151617181920class Solution &#123;public: vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) &#123; vector&lt;vector&lt;int&gt;&gt; res; vector&lt;int&gt; temp; helper(res, temp, nums, 0); return res; &#125; void helper(vector&lt;vector&lt;int&gt;&gt;&amp; res, vector&lt;int&gt; temp, vector&lt;int&gt;&amp; nums, int level) &#123; if(temp.size() &lt;= nums.size()) &#123; res.push_back(temp); &#125; for(int i = level; i &lt; nums.size(); i++) &#123; temp.push_back(nums[i]); helper(res, temp, nums, i + 1); temp.pop_back(); &#125; &#125;&#125;;]]></content>
@@ -2609,17 +2620,6 @@
     <title><![CDATA[LeetCode 167. 两数之和 II - 输入有序数组]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FLeetCode-167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-II-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%2F</url>
     <content type="text"><![CDATA[给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明: 返回的下标值（index1 和 index2）不是从零开始的。你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。示例:123输入: numbers = [2, 7, 11, 15], target = 9输出: [1,2]解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。 12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; numbers, int target) &#123; map&lt;int,int&gt; m; vector&lt;int&gt; result; for(int i=0;i&lt;numbers.size();i++)&#123; m[numbers[i]]=i; &#125; for(int i=0;i&lt;numbers.size();i++)&#123; const int gap = target-numbers[i]; if(m.find(gap)!=m.end()&amp;&amp;m[gap]&gt;i)&#123; result.push_back(i+1); result.push_back(m[gap]+1); break; &#125; &#125; return result; &#125;&#125;;]]></content>
-      <categories>
-        <category>题解集</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LeetCode 136.只出现一次的数字]]></title>
-    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2FLeetCode-136-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1:12输入: [2,2,1]输出: 1 示例 2:12输入: [4,1,2,1,2]输出: 4 分析，只有一个元素出现一次，其余均出现两次，可以想到异或运算符，遍历整个数组，出现两次的异或以后为0，最后自然只剩下了出现一次的。12345678910class Solution &#123;public: int singleNumber(vector&lt;int&gt;&amp; nums) &#123; int x = 0; for(int i=0;i&lt;nums.size();i++)&#123; x^=nums[i]; &#125; return x; &#125;&#125;;]]></content>
       <categories>
         <category>题解集</category>
       </categories>
