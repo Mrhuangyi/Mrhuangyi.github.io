@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[腾讯精选50题 231. 2的幂]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F231-2%E7%9A%84%E5%B9%82%2F</url>
+    <content type="text"><![CDATA[腾讯精选50题 231. 2的幂给定一个整数，写一个函数来判断它是否是 2 的幂次方。 示例 1:12输入: 1输出: true 示例 2:12输入: 16输出: true 示例 3:12输入: 218输出: false 分析：解法一：最常规的想法是对这个数一直除2，判断最后剩下的是不是1 解法二：巧用位运算：举两个例子，4的二进制为：100 3的二进制为：011 2的二进制为：10 1的二进制为：01 所以我们只需要判断下 n &amp; (n - 1)是否等于0即可下面的代码里有个地方要注意下：那就是 n &amp; (n - 1) 外面还要加个括号，因为==优先级比&amp;要高。 123456789101112class Solution &#123;public: bool isPowerOfTwo(int n) &#123; if(n &lt;= 0) &#123; return false; &#125; if(n == 1) &#123; return true; &#125; return (n &amp; (n-1)) == 0 ? true : false; &#125;&#125;; 解法二： 负数一定不是2的幂 2的整数次幂对应的二进制数只含有0个或者1个1 时间复杂度：O(n) 空间复杂度：O(1) 123456789101112131415161718class Solution &#123;public: bool isPowerOfTwo(int n) &#123; if(n&lt;0) return false; bool hasOne = false; while(n&gt;0)&#123; if(n&amp;1)&#123; if(hasOne)&#123; return false; &#125;else&#123; hasOne = true; &#125; &#125; n&gt;&gt;=1; &#125; return hasOne; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[腾讯精选50题169. 求众数]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98169-%E6%B1%82%E4%BC%97%E6%95%B0%2F</url>
     <content type="text"><![CDATA[腾讯精选50题169. 求众数给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。 你可以假设数组是非空的，并且给定的数组总是存在众数。 示例 1:12输入: [3,2,3]输出: 3 示例 2:12输入: [2,2,1,1,1,2,2]输出: 2 对数组进行排序，数组中间的元素即为众数1234567class Solution &#123;public: int majorityElement(vector&lt;int&gt;&amp; nums) &#123; sort(nums.begin(), nums.end()); return nums[nums.size()&gt;&gt;1]; &#125;&#125;;]]></content>
@@ -2238,17 +2249,6 @@
     <title><![CDATA[268. 缺失数字]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F268-%E7%BC%BA%E5%A4%B1%E6%95%B0%E5%AD%97%2F</url>
     <content type="text"><![CDATA[给定一个包含 0, 1, 2, …, n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。 示例 1:12输入: [3,0,1]输出: 2 示例 2:12输入: [9,6,4,2,3,5,7,0,1]输出: 8 说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现? 123456789101112131415class Solution &#123;public: int missingNumber(vector&lt;int&gt;&amp; nums) &#123; sort(nums.begin(),nums.end()); int j; for(int i=0;i&lt;nums.size();i++)&#123; if(nums[i]!=i)&#123; return i; &#125; j=i; &#125; return j+1; &#125;&#125;;]]></content>
-      <categories>
-        <category>题解集</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[231. 2的幂]]></title>
-    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F231-2%E7%9A%84%E5%B9%82%2F</url>
-    <content type="text"><![CDATA[给定一个整数，写一个函数来判断它是否是 2 的幂次方。 示例 1:12输入: 1输出: true 示例 2:12输入: 16输出: true 示例 3:12输入: 218输出: false 分析： 负数一定不是2的幂 2的整数次幂对应的二进制数只含有0个或者1个1 时间复杂度：O(n) 空间复杂度：O(1) 123456789101112131415161718class Solution &#123;public: bool isPowerOfTwo(int n) &#123; if(n&lt;0) return false; bool hasOne = false; while(n&gt;0)&#123; if(n&amp;1)&#123; if(hasOne)&#123; return false; &#125;else&#123; hasOne = true; &#125; &#125; n&gt;&gt;=1; &#125; return hasOne; &#125;&#125;;]]></content>
       <categories>
         <category>题解集</category>
       </categories>
