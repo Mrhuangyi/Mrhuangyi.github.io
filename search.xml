@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[腾讯精选50题 236. 二叉树的最近公共祖先]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98-236-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。” 例如，给定如下二叉树: root = [3,5,1,6,2,0,8,null,null,7,4] 示例 1:123输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1输出: 3解释: 节点 5 和节点 1 的最近公共祖先是节点 3。 示例 2:123输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4输出: 5解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。 说明: 所有节点的值都是唯一的。p、q 为不同节点且均存在于给定的二叉树中。 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 解题思路这题要注意跟235题求二叉搜索树的公共祖先作区分，这题只是普通二叉树，结点之间无序考虑递归解法递归边界：如果 root == NULL 返回NULL从根节点递归的后续遍历整棵树，定义两个结点left和right来存放p和q在左右子树的位置。如果p，q在root的左右子树，那么root就是LCA，如果p结点在q节点的子树，那么q就是LCA 具体代码123456789101112131415161718192021222324252627282930/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123; if(root == NULL) &#123; return NULL; &#125; if(root == p || root == q) &#123; return root; &#125; TreeNode* left = lowestCommonAncestor(root-&gt;left, p, q); TreeNode* right = lowestCommonAncestor(root-&gt;right, p, q); if(left != NULL &amp;&amp; right != NULL) &#123; return root; &#125; else if(left != NULL) &#123; return left; &#125; else &#123; return right; &#125; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[腾讯精选50题 235. 二叉搜索树的最近公共祖先]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98-235-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。” 例如，给定如下二叉搜索树: root = [6,2,8,0,4,7,9,null,null,3,5] 示例 1:123输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8输出: 6 解释: 节点 2 和节点 8 的最近公共祖先是 6。 示例 2:123输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4输出: 2解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。 说明: 所有节点的值都是唯一的。p、q 为不同节点且均存在于给定的二叉搜索树中。 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 解题思路考虑递归解法：递归边界：如果 root == NULL 那么返回NULL递归函数：如果当前结点的值比p和q的值都要小，那么最近公共祖先必然在该结点的右子树里面如果当前结点的值比p和q的值都要大，那么最近公共祖先必然在该结点的左子树里面 如果上述都不满足，那么当前结点就是p和q的最近公共祖先 具体代码 递归写法 12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123; if(root == NULL) &#123; return NULL; &#125; if(root-&gt;val &lt; p-&gt;val &amp;&amp; root-&gt;val &lt; q-&gt;val) &#123; return lowestCommonAncestor(root-&gt;right, p, q); &#125; if(root-&gt;val &gt; p-&gt;val &amp;&amp; root-&gt;val &gt; q-&gt;val) &#123; return lowestCommonAncestor(root-&gt;left, p, q); &#125; return root; &#125;&#125;; 迭代写法 12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123; while(root != NULL) &#123; if(root-&gt;val &lt; p-&gt;val &amp;&amp; root-&gt;val &lt; q-&gt;val) &#123; root = root-&gt;right; &#125; else if(root-&gt;val &gt; p-&gt;val &amp;&amp; root-&gt;val &gt; q-&gt;val) &#123; root = root-&gt;left; &#125; else &#123; break; &#125; &#125; return root; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[腾讯精选50题 230. 二叉搜索树中第K小的元素]]></title>
+    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98-230-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个二叉搜索树，编写一个函数 kthSmallest 来查找其中第 k 个最小的元素。 说明：你可以假设 k 总是有效的，1 ≤ k ≤ 二叉搜索树元素个数。 示例 1:1234567输入: root = [3,1,4,null,2], k = 1 3 / \ 1 4 \ 2输出: 1 示例 2:123456789输入: root = [5,3,6,2,4,null,null,1], k = 3 5 / \ 3 6 / \ 2 4 / 1输出: 3 进阶：如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化 kthSmallest 函数？ 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 解题思路这题还是比较好想的，关键点就是二叉搜索树的中序遍历后的序列为升序序列。所以我们只需要定义一个cnt变量用作计数，在中序遍历每次访问结点，cnt + 1当cnt == k ，返回当前结点值，就是当前二叉搜索树中第k小的值 具体代码1234567891011121314151617181920212223242526272829303132/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int kthSmallest(TreeNode* root, int k) &#123; int cnt = 0; stack&lt;TreeNode* &gt; s; TreeNode* p = root; while(p || !s.empty()) &#123; while(p) &#123; s.push(p); p = p-&gt;left; &#125; p = s.top(); s.pop(); cnt++; if(cnt == k) &#123; return p-&gt;val; &#125; p = p-&gt;right; &#125; return 0; &#125;&#125;;]]></content>
+      <categories>
+        <category>题解集</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[腾讯精选50题 124. 二叉树中的最大路径和]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98-124-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C%2F</url>
     <content type="text"><![CDATA[题目描述给定一个非空二叉树，返回其最大路径和。 本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。 示例 1:1234567输入: [1,2,3] 1 / \ 2 3输出: 6 示例 2:123456789输入: [-10,9,20,null,null,15,7] -10 / \ 9 20 / \ 15 7输出: 42 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 解题思路大家有没有发现这题和之前那到求二叉树最大深度很相似，只不过这题需要加上节点值考虑递归写法：递归边界为：node == NULL 返回0中间定义left 和 right 分别存放当前结点左子树最大和与右子树最大和，注意和为负数的情况递归时用一个res变量记录最大值，如果当前节点的子树和更大，则更新这个最大值 具体代码12345678910111213141516171819202122232425262728/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int res = INT_MIN; int getSum(TreeNode* node) &#123; if(node == NULL) &#123; return 0; &#125; //考虑子树和为负的情况，所以需要和0相比取最大值 int left = max(getSum(node-&gt;left), 0); int right = max(getSum(node-&gt;right), 0); res = max(res, node-&gt;val + left + right); return max(left, right) + node-&gt;val; &#125; int maxPathSum(TreeNode* root) &#123; getSum(root); return res; &#125; &#125;;]]></content>
@@ -1900,17 +1933,6 @@
     <title><![CDATA[326. 3的幂]]></title>
     <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F326-3%E7%9A%84%E5%B9%82%2F</url>
     <content type="text"><![CDATA[给定一个整数，写一个函数来判断它是否是 3 的幂次方。 示例 1:12输入: 27输出: true 示例 2:12输入: 0输出: false 示例 3:12输入: 9输出: true 示例 4:12输入: 45输出: false 进阶：你能不使用循环或者递归来完成本题吗？ 循环写法：123456789101112131415class Solution &#123;public: bool isPowerOfThree(int n) &#123; if(n&lt;=0)&#123; return false; &#125; while(n&gt;1)&#123; if(n%3!=0)&#123; return false; &#125; n/=3; &#125; return true; &#125;&#125;; 递归写法：123456789101112class Solution &#123;public: bool isPowerOfThree(int n) &#123; if(n&lt;=0)&#123; return false; &#125; if(n==1)&#123; return true; &#125; return (n%3==0)&amp;&amp;isPowerOfThree(n/3); &#125;&#125;; 可以采用取对数求解，如果一个数是3的幂，那么以3为底取对数结果必然是一个整数。1234567class Solution &#123;public: bool isPowerOfThree(int n) &#123; double result = log10(n)/log10(3); return (result==int(result))?true:false; &#125;&#125;;]]></content>
-      <categories>
-        <category>题解集</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[235. Lowest Common Ancestor of a Binary Search Tree]]></title>
-    <url>%2F%E9%A2%98%E8%A7%A3%E9%9B%86%2F235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree%2F</url>
-    <content type="text"><![CDATA[Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).” Given binary search tree: root = [6,2,8,0,4,7,9,null,null,3,5]1234567 _______6______ / \ ___2__ ___8__/ \ / \0 _4 7 9 / \ 3 5 Example 1:123Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8Output: 6Explanation: The LCA of nodes 2 and 8 is 6. Example 2:1234Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4Output: 2Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition. Note: All of the nodes’ values will be unique.p and q are different and both values will exist in the BST. LCA问题，题目要求你求出给定结点的最近公共祖先。我们先来看下维基百科中关于LCA的定义：在图论和计算机科学中，最近公共祖先（英语：lowest common ancestor）是指在一个树或者有向无环图中同时拥有v和w作为后代的最深的节点。在这里，我们定义一个节点也是其自己的后代，因此如果v是w的后代，那么w就是v和w的最近公共祖先。 最近公共祖先是两个节点所有公共祖先中离根节点最远的，计算最近公共祖先和根节点的长度往往是有用的。比如为了计算树中两个节点v和w之间的距离，可以使用以下方法：分别计算由v到根节点和w到根节点的距离，两者之和减去最近公共祖先到根节点的距离的两倍即可得到v到w的距离。 我们只需要遍历二叉搜索树，如果结点的值比p和q都要大，那么LCA肯定在该结点的左边，反之，如果结点的值比p和q都要小，那么LCA肯定在该结点的右边，如果都不是，那么root其实就是LCA了。 递归写法：123456789101112131415161718192021222324/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123; if(root==NULL)&#123; return NULL; &#125; if(root-&gt;val&gt;p-&gt;val&amp;&amp;root-&gt;val&gt;q-&gt;val)&#123; return lowestCommonAncestor(root-&gt;left,p,q); &#125; if(root-&gt;val&lt;p-&gt;val&amp;&amp;root-&gt;val&lt;q-&gt;val)&#123; return lowestCommonAncestor(root-&gt;right,p,q); &#125; return root; &#125;&#125;; 迭代写法：12345678910111213141516171819202122232425/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123; while(root!=NULL)&#123; if(root-&gt;val&gt;p-&gt;val&amp;&amp;root-&gt;val&gt;q-&gt;val)&#123; root=root-&gt;left; &#125; else if(root-&gt;val&lt;p-&gt;val&amp;&amp;root-&gt;val&lt;q-&gt;val)&#123; root=root-&gt;right; &#125;else&#123; break; &#125; &#125; return root; &#125;&#125;;]]></content>
       <categories>
         <category>题解集</category>
       </categories>
