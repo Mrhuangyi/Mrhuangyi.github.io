@@ -86,7 +86,7 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vector源码阅读">
-<meta property="og:url" content="https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/index.html">
+<meta property="og:url" content="https://huangyiblog.com/uncategorized/Vector源码阅读/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="Vector源码阅读(基于jdk1.8)前几天看了ArrayList，今天再来看看Vector，这两个其实大同小异，基本结构都差不多，只是一些细节上有区别：比如线程安全与否，扩容的大小等，Vector的线程安全通过在方法上直接加synchronized实现。扩容默认扩大为原来的2倍。 还是先来看类的定义，搞清类的结构层次：可以看到Vector继承了AbstractList，实现了List，Rand">
 <meta property="og:locale" content="zh-Hans">
@@ -103,7 +103,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/"/>
+  <link rel="canonical" href="https://huangyiblog.com/uncategorized/Vector源码阅读/"/>
 
 
 
@@ -470,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/uncategorized/Vector源码阅读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -642,7 +642,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/" title="Vector源码阅读">https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/</a>
+    <a href="https://huangyiblog.com/uncategorized/Vector源码阅读/" title="Vector源码阅读">https://huangyiblog.com/uncategorized/Vector源码阅读/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -903,13 +903,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -943,6 +936,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -974,13 +973,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

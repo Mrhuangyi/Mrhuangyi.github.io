@@ -86,7 +86,7 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashMap源码阅读">
-<meta property="og:url" content="https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/index.html">
+<meta property="og:url" content="https://huangyiblog.com/uncategorized/HashMap源码阅读/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="HashMap源码分析(基于jdk1.8)底层数据结构分析虽然我看的源码是jdk1.8的，但我还是想先提一提jdk1.7的底层实现。jdk1.8对HashMap做了很多优化，但无疑对源码理解增加了不少难度，举个例子，光红黑树就够你研究的了。所以如果是初步学习的话，我倒是推荐先看看jdk1.7的实现。 1.7HashMap的底层实现底层结构数组 + 单链表内部包含一个Entry类型的数组table">
 <meta property="og:locale" content="zh-Hans">
@@ -106,7 +106,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/"/>
+  <link rel="canonical" href="https://huangyiblog.com/uncategorized/HashMap源码阅读/"/>
 
 
 
@@ -473,7 +473,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/uncategorized/HashMap源码阅读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -667,7 +667,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/" title="HashMap源码阅读">https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/</a>
+    <a href="https://huangyiblog.com/uncategorized/HashMap源码阅读/" title="HashMap源码阅读">https://huangyiblog.com/uncategorized/HashMap源码阅读/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -928,13 +928,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -968,6 +961,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -999,13 +998,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

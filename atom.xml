@@ -5,9 +5,9 @@
   <subtitle>码奴生来就只知道前进</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://Mrhuangyi.github.io/"/>
+  <link href="https://huangyiblog.com/"/>
   <updated>2019-12-22T12:20:26.547Z</updated>
-  <id>https://Mrhuangyi.github.io/</id>
+  <id>https://huangyiblog.com/</id>
   
   <author>
     <name>Mr.Huangyi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>重温海上钢琴师</title>
-    <link href="https://Mrhuangyi.github.io/%E5%BD%B1%E9%9F%B3/%E9%87%8D%E6%B8%A9%E6%B5%B7%E4%B8%8A%E9%92%A2%E7%90%B4%E5%B8%88/"/>
-    <id>https://Mrhuangyi.github.io/影音/重温海上钢琴师/</id>
+    <link href="https://huangyiblog.com/%E5%BD%B1%E9%9F%B3/%E9%87%8D%E6%B8%A9%E6%B5%B7%E4%B8%8A%E9%92%A2%E7%90%B4%E5%B8%88/"/>
+    <id>https://huangyiblog.com/影音/重温海上钢琴师/</id>
     <published>2019-11-19T14:00:22.000Z</published>
     <updated>2019-12-22T12:20:26.547Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="影音" scheme="https://Mrhuangyi.github.io/categories/%E5%BD%B1%E9%9F%B3/"/>
+      <category term="影音" scheme="https://huangyiblog.com/categories/%E5%BD%B1%E9%9F%B3/"/>
     
     
-      <category term="电影" scheme="https://Mrhuangyi.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
+      <category term="电影" scheme="https://huangyiblog.com/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>HashMap源码阅读</title>
-    <link href="https://Mrhuangyi.github.io/uncategorized/HashMap%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
-    <id>https://Mrhuangyi.github.io/uncategorized/HashMap源码阅读/</id>
+    <link href="https://huangyiblog.com/uncategorized/HashMap%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    <id>https://huangyiblog.com/uncategorized/HashMap源码阅读/</id>
     <published>2019-09-02T05:20:35.000Z</published>
     <updated>2019-09-02T05:21:42.831Z</updated>
     
@@ -58,14 +58,14 @@
     </summary>
     
     
-      <category term="Java" scheme="https://Mrhuangyi.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://huangyiblog.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>LinkedList源码阅读</title>
-    <link href="https://Mrhuangyi.github.io/uncategorized/LinkedList%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
-    <id>https://Mrhuangyi.github.io/uncategorized/LinkedList源码阅读/</id>
+    <link href="https://huangyiblog.com/uncategorized/LinkedList%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    <id>https://huangyiblog.com/uncategorized/LinkedList源码阅读/</id>
     <published>2019-09-02T05:18:43.000Z</published>
     <updated>2019-09-02T05:19:50.132Z</updated>
     
@@ -81,14 +81,14 @@
     </summary>
     
     
-      <category term="Java" scheme="https://Mrhuangyi.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://huangyiblog.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Vector源码阅读</title>
-    <link href="https://Mrhuangyi.github.io/uncategorized/Vector%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
-    <id>https://Mrhuangyi.github.io/uncategorized/Vector源码阅读/</id>
+    <link href="https://huangyiblog.com/uncategorized/Vector%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    <id>https://huangyiblog.com/uncategorized/Vector源码阅读/</id>
     <published>2019-09-02T05:15:22.000Z</published>
     <updated>2019-09-02T05:18:07.312Z</updated>
     
@@ -104,14 +104,14 @@
     </summary>
     
     
-      <category term="Java" scheme="https://Mrhuangyi.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://huangyiblog.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>字节跳动提前批第二批笔试题</title>
-    <link href="https://Mrhuangyi.github.io/%E9%A2%98%E8%A7%A3%E9%9B%86/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%8F%90%E5%89%8D%E6%89%B9%E7%AC%AC%E4%BA%8C%E6%89%B9%E7%AC%94%E8%AF%95%E9%A2%98/"/>
-    <id>https://Mrhuangyi.github.io/题解集/字节跳动提前批第二批笔试题/</id>
+    <link href="https://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%8F%90%E5%89%8D%E6%89%B9%E7%AC%AC%E4%BA%8C%E6%89%B9%E7%AC%94%E8%AF%95%E9%A2%98/"/>
+    <id>https://huangyiblog.com/题解集/字节跳动提前批第二批笔试题/</id>
     <published>2019-07-16T05:11:27.000Z</published>
     <updated>2019-07-16T05:16:55.451Z</updated>
     
@@ -129,15 +129,15 @@
     
     </summary>
     
-      <category term="题解集" scheme="https://Mrhuangyi.github.io/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+      <category term="题解集" scheme="https://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>ArrayList源码阅读</title>
-    <link href="https://Mrhuangyi.github.io/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/ArrayList%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
-    <id>https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/</id>
+    <link href="https://huangyiblog.com/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/ArrayList%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    <id>https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/</id>
     <published>2019-06-23T06:04:41.000Z</published>
     <updated>2019-09-02T05:13:27.289Z</updated>
     
@@ -152,17 +152,17 @@
     
     </summary>
     
-      <category term="算法和数据结构" scheme="https://Mrhuangyi.github.io/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="算法和数据结构" scheme="https://huangyiblog.com/categories/%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Java" scheme="https://Mrhuangyi.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://huangyiblog.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>redis数据结构入门</title>
-    <link href="https://Mrhuangyi.github.io/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%85%A5%E9%97%A8/"/>
-    <id>https://Mrhuangyi.github.io/业务开发/redis数据结构入门/</id>
+    <link href="https://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangyiblog.com/业务开发/redis数据结构入门/</id>
     <published>2019-04-27T12:35:16.000Z</published>
     <updated>2019-04-27T12:51:19.127Z</updated>
     
@@ -184,17 +184,17 @@
     
     </summary>
     
-      <category term="业务开发" scheme="https://Mrhuangyi.github.io/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+      <category term="业务开发" scheme="https://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Redis" scheme="https://Mrhuangyi.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="https://huangyiblog.com/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>一个成功的git分支模型</title>
-    <link href="https://Mrhuangyi.github.io/%E8%AF%91%E6%96%87%E9%9B%86/%E4%B8%80%E4%B8%AA%E6%88%90%E5%8A%9F%E7%9A%84git%E5%88%86%E6%94%AF%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://Mrhuangyi.github.io/译文集/一个成功的git分支模型/</id>
+    <link href="https://huangyiblog.com/%E8%AF%91%E6%96%87%E9%9B%86/%E4%B8%80%E4%B8%AA%E6%88%90%E5%8A%9F%E7%9A%84git%E5%88%86%E6%94%AF%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://huangyiblog.com/译文集/一个成功的git分支模型/</id>
     <published>2019-03-16T11:20:45.000Z</published>
     <updated>2019-04-27T12:50:54.163Z</updated>
     
@@ -210,15 +210,15 @@
     
     </summary>
     
-      <category term="译文集" scheme="https://Mrhuangyi.github.io/categories/%E8%AF%91%E6%96%87%E9%9B%86/"/>
+      <category term="译文集" scheme="https://huangyiblog.com/categories/%E8%AF%91%E6%96%87%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>风口过了，猪还是猪</title>
-    <link href="https://Mrhuangyi.github.io/%E9%9A%8F%E7%AC%94/%E9%A3%8E%E5%8F%A3%E8%BF%87%E4%BA%86%EF%BC%8C%E7%8C%AA%E8%BF%98%E6%98%AF%E7%8C%AA/"/>
-    <id>https://Mrhuangyi.github.io/随笔/风口过了，猪还是猪/</id>
+    <link href="https://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E9%A3%8E%E5%8F%A3%E8%BF%87%E4%BA%86%EF%BC%8C%E7%8C%AA%E8%BF%98%E6%98%AF%E7%8C%AA/"/>
+    <id>https://huangyiblog.com/随笔/风口过了，猪还是猪/</id>
     <published>2019-03-02T04:08:27.000Z</published>
     <updated>2019-03-02T04:45:44.528Z</updated>
     
@@ -233,15 +233,15 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://Mrhuangyi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
     <title>为什么我说考验人性多半会令你失望</title>
-    <link href="https://Mrhuangyi.github.io/%E9%9A%8F%E7%AC%94/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%AF%B4%E8%80%83%E9%AA%8C%E4%BA%BA%E6%80%A7%E5%A4%9A%E5%8D%8A%E4%BC%9A%E4%BB%A4%E4%BD%A0%E5%A4%B1%E6%9C%9B/"/>
-    <id>https://Mrhuangyi.github.io/随笔/为什么我说考验人性多半会令你失望/</id>
+    <link href="https://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%AF%B4%E8%80%83%E9%AA%8C%E4%BA%BA%E6%80%A7%E5%A4%9A%E5%8D%8A%E4%BC%9A%E4%BB%A4%E4%BD%A0%E5%A4%B1%E6%9C%9B/"/>
+    <id>https://huangyiblog.com/随笔/为什么我说考验人性多半会令你失望/</id>
     <published>2018-12-25T07:42:51.000Z</published>
     <updated>2018-12-30T13:58:23.953Z</updated>
     
@@ -255,15 +255,15 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://Mrhuangyi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
     <title>如何为Nginx服务器配置ssl证书</title>
-    <link href="https://Mrhuangyi.github.io/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E5%A6%82%E4%BD%95%E4%B8%BANginx%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6/"/>
-    <id>https://Mrhuangyi.github.io/业务开发/如何为Nginx服务器配置ssl证书/</id>
+    <link href="https://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E5%A6%82%E4%BD%95%E4%B8%BANginx%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6/"/>
+    <id>https://huangyiblog.com/业务开发/如何为Nginx服务器配置ssl证书/</id>
     <published>2018-11-21T13:14:42.000Z</published>
     <updated>2018-11-21T14:47:31.960Z</updated>
     
@@ -278,15 +278,15 @@
     
     </summary>
     
-      <category term="业务开发" scheme="https://Mrhuangyi.github.io/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+      <category term="业务开发" scheme="https://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
     
     
   </entry>
   
   <entry>
     <title>普通人如何稳固对自我价值的认同感</title>
-    <link href="https://Mrhuangyi.github.io/%E9%9A%8F%E7%AC%94/%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%A8%B3%E5%9B%BA%E5%AF%B9%E8%87%AA%E6%88%91%E4%BB%B7%E5%80%BC%E7%9A%84%E8%AE%A4%E5%90%8C%E6%84%9F/"/>
-    <id>https://Mrhuangyi.github.io/随笔/普通人如何稳固对自我价值的认同感/</id>
+    <link href="https://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%A8%B3%E5%9B%BA%E5%AF%B9%E8%87%AA%E6%88%91%E4%BB%B7%E5%80%BC%E7%9A%84%E8%AE%A4%E5%90%8C%E6%84%9F/"/>
+    <id>https://huangyiblog.com/随笔/普通人如何稳固对自我价值的认同感/</id>
     <published>2018-11-07T06:01:18.000Z</published>
     <updated>2018-11-07T07:35:06.232Z</updated>
     
@@ -301,15 +301,15 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://Mrhuangyi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
     <title>回顾自己部署hexo博客的血泪史</title>
-    <link href="https://Mrhuangyi.github.io/%E9%9A%8F%E7%AC%94/%E5%9B%9E%E9%A1%BE%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%A1%80%E6%B3%AA%E5%8F%B2/"/>
-    <id>https://Mrhuangyi.github.io/随笔/回顾自己部署hexo博客的血泪史/</id>
+    <link href="https://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E5%9B%9E%E9%A1%BE%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%A1%80%E6%B3%AA%E5%8F%B2/"/>
+    <id>https://huangyiblog.com/随笔/回顾自己部署hexo博客的血泪史/</id>
     <published>2018-10-29T14:52:02.000Z</published>
     <updated>2018-12-25T07:48:02.392Z</updated>
     
@@ -329,17 +329,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://Mrhuangyi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="Github" scheme="https://Mrhuangyi.github.io/tags/Github/"/>
+      <category term="Github" scheme="https://huangyiblog.com/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Java容器概述</title>
-    <link href="https://Mrhuangyi.github.io/%E8%AF%AD%E8%A8%80/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/"/>
-    <id>https://Mrhuangyi.github.io/语言/Java容器概述/</id>
+    <link href="https://huangyiblog.com/%E8%AF%AD%E8%A8%80/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/"/>
+    <id>https://huangyiblog.com/语言/Java容器概述/</id>
     <published>2018-10-22T08:39:48.000Z</published>
     <updated>2018-12-19T15:13:02.005Z</updated>
     
@@ -354,17 +354,17 @@
     
     </summary>
     
-      <category term="语言" scheme="https://Mrhuangyi.github.io/categories/%E8%AF%AD%E8%A8%80/"/>
+      <category term="语言" scheme="https://huangyiblog.com/categories/%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="Java" scheme="https://Mrhuangyi.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://huangyiblog.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>支持推理小说家紫金陈</title>
-    <link href="https://Mrhuangyi.github.io/%E9%98%85%E8%AF%BB/%E6%94%AF%E6%8C%81%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E5%AE%B6%E7%B4%AB%E9%87%91%E9%99%88/"/>
-    <id>https://Mrhuangyi.github.io/阅读/支持推理小说家紫金陈/</id>
+    <link href="https://huangyiblog.com/%E9%98%85%E8%AF%BB/%E6%94%AF%E6%8C%81%E6%8E%A8%E7%90%86%E5%B0%8F%E8%AF%B4%E5%AE%B6%E7%B4%AB%E9%87%91%E9%99%88/"/>
+    <id>https://huangyiblog.com/阅读/支持推理小说家紫金陈/</id>
     <published>2018-10-19T06:29:55.000Z</published>
     <updated>2019-04-27T12:58:05.437Z</updated>
     
@@ -389,17 +389,17 @@
     
     </summary>
     
-      <category term="阅读" scheme="https://Mrhuangyi.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="https://huangyiblog.com/categories/%E9%98%85%E8%AF%BB/"/>
     
     
-      <category term="小说" scheme="https://Mrhuangyi.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="小说" scheme="https://huangyiblog.com/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>谈谈一部争议较大的日漫《缘之空》</title>
-    <link href="https://Mrhuangyi.github.io/%E5%BD%B1%E9%9F%B3/%E8%B0%88%E8%B0%88%E4%B8%80%E9%83%A8%E4%BA%89%E8%AE%AE%E8%BE%83%E5%A4%A7%E7%9A%84%E6%97%A5%E6%BC%AB%E3%80%8A%E7%BC%98%E4%B9%8B%E7%A9%BA%E3%80%8B/"/>
-    <id>https://Mrhuangyi.github.io/影音/谈谈一部争议较大的日漫《缘之空》/</id>
+    <link href="https://huangyiblog.com/%E5%BD%B1%E9%9F%B3/%E8%B0%88%E8%B0%88%E4%B8%80%E9%83%A8%E4%BA%89%E8%AE%AE%E8%BE%83%E5%A4%A7%E7%9A%84%E6%97%A5%E6%BC%AB%E3%80%8A%E7%BC%98%E4%B9%8B%E7%A9%BA%E3%80%8B/"/>
+    <id>https://huangyiblog.com/影音/谈谈一部争议较大的日漫《缘之空》/</id>
     <published>2018-10-16T08:33:45.000Z</published>
     <updated>2018-12-19T15:13:23.344Z</updated>
     
@@ -418,17 +418,17 @@
     
     </summary>
     
-      <category term="影音" scheme="https://Mrhuangyi.github.io/categories/%E5%BD%B1%E9%9F%B3/"/>
+      <category term="影音" scheme="https://huangyiblog.com/categories/%E5%BD%B1%E9%9F%B3/"/>
     
     
-      <category term="动漫" scheme="https://Mrhuangyi.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+      <category term="动漫" scheme="https://huangyiblog.com/tags/%E5%8A%A8%E6%BC%AB/"/>
     
   </entry>
   
   <entry>
     <title>如何在Windows和Mac平台上协同管理hexo博客</title>
-    <link href="https://Mrhuangyi.github.io/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E5%92%8CMac%E5%B9%B3%E5%8F%B0%E4%B8%8A%E5%8D%8F%E5%90%8C%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://Mrhuangyi.github.io/业务开发/如何在Windows和Mac平台上协同管理hexo博客/</id>
+    <link href="https://huangyiblog.com/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E5%92%8CMac%E5%B9%B3%E5%8F%B0%E4%B8%8A%E5%8D%8F%E5%90%8C%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://huangyiblog.com/业务开发/如何在Windows和Mac平台上协同管理hexo博客/</id>
     <published>2018-10-10T09:12:56.000Z</published>
     <updated>2018-12-19T15:13:02.360Z</updated>
     
@@ -445,17 +445,17 @@
     
     </summary>
     
-      <category term="业务开发" scheme="https://Mrhuangyi.github.io/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
+      <category term="业务开发" scheme="https://huangyiblog.com/categories/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Github" scheme="https://Mrhuangyi.github.io/tags/Github/"/>
+      <category term="Github" scheme="https://huangyiblog.com/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>来普陀山拜观音了</title>
-    <link href="https://Mrhuangyi.github.io/%E9%9A%8F%E7%AC%94/%E6%9D%A5%E6%99%AE%E9%99%80%E5%B1%B1%E6%8B%9C%E8%A7%82%E9%9F%B3%E4%BA%86/"/>
-    <id>https://Mrhuangyi.github.io/随笔/来普陀山拜观音了/</id>
+    <link href="https://huangyiblog.com/%E9%9A%8F%E7%AC%94/%E6%9D%A5%E6%99%AE%E9%99%80%E5%B1%B1%E6%8B%9C%E8%A7%82%E9%9F%B3%E4%BA%86/"/>
+    <id>https://huangyiblog.com/随笔/来普陀山拜观音了/</id>
     <published>2018-10-04T10:48:41.000Z</published>
     <updated>2018-12-19T15:12:55.493Z</updated>
     
@@ -470,17 +470,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://Mrhuangyi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://huangyiblog.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="旅游记" scheme="https://Mrhuangyi.github.io/tags/%E6%97%85%E6%B8%B8%E8%AE%B0/"/>
+      <category term="旅游记" scheme="https://huangyiblog.com/tags/%E6%97%85%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>腾讯精选50题146. LRU缓存机制</title>
-    <link href="https://Mrhuangyi.github.io/%E9%A2%98%E8%A7%A3%E9%9B%86/%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98146-LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
-    <id>https://Mrhuangyi.github.io/题解集/腾讯精选50题146-LRU缓存机制/</id>
+    <link href="https://huangyiblog.com/%E9%A2%98%E8%A7%A3%E9%9B%86/%E8%85%BE%E8%AE%AF%E7%B2%BE%E9%80%8950%E9%A2%98146-LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
+    <id>https://huangyiblog.com/题解集/腾讯精选50题146-LRU缓存机制/</id>
     <published>2018-08-25T08:44:21.000Z</published>
     <updated>2019-09-02T05:01:36.376Z</updated>
     
@@ -495,17 +495,17 @@
     
     </summary>
     
-      <category term="题解集" scheme="https://Mrhuangyi.github.io/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
+      <category term="题解集" scheme="https://huangyiblog.com/categories/%E9%A2%98%E8%A7%A3%E9%9B%86/"/>
     
     
-      <category term="LeetCode" scheme="https://Mrhuangyi.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://huangyiblog.com/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>红顶商人胡雪岩</title>
-    <link href="https://Mrhuangyi.github.io/%E9%98%85%E8%AF%BB/%E7%BA%A2%E9%A1%B6%E5%95%86%E4%BA%BA%E8%83%A1%E9%9B%AA%E5%B2%A9/"/>
-    <id>https://Mrhuangyi.github.io/阅读/红顶商人胡雪岩/</id>
+    <link href="https://huangyiblog.com/%E9%98%85%E8%AF%BB/%E7%BA%A2%E9%A1%B6%E5%95%86%E4%BA%BA%E8%83%A1%E9%9B%AA%E5%B2%A9/"/>
+    <id>https://huangyiblog.com/阅读/红顶商人胡雪岩/</id>
     <published>2018-07-06T10:51:46.000Z</published>
     <updated>2019-12-22T12:11:11.108Z</updated>
     
@@ -520,10 +520,10 @@
     
     </summary>
     
-      <category term="阅读" scheme="https://Mrhuangyi.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="https://huangyiblog.com/categories/%E9%98%85%E8%AF%BB/"/>
     
     
-      <category term="文学" scheme="https://Mrhuangyi.github.io/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="https://huangyiblog.com/tags/%E6%96%87%E5%AD%A6/"/>
     
   </entry>
   

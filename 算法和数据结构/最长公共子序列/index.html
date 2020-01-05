@@ -85,7 +85,7 @@
 <meta name="description" content="最长公共子序列最长公共子序列问题描述：给定两个字符串（或数字序列）A和B,求一个字符串，使得这个字符串是A和B的最长公共部分（子序列可以不连续） 暴力解法设字符串A和B的长度分别是n和m，那么对两个字符串中的每个字符，分别有选与不选两个决策，而得到子序列后比较两个子序列是否相同有需要O(max(m,n))，这样总的复杂度就会达到O(2^(m+n)*max(m,n))，无法承受较大数据 动态规划解法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最长公共子序列">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/最长公共子序列/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/最长公共子序列/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="最长公共子序列最长公共子序列问题描述：给定两个字符串（或数字序列）A和B,求一个字符串，使得这个字符串是A和B的最长公共部分（子序列可以不连续） 暴力解法设字符串A和B的长度分别是n和m，那么对两个字符串中的每个字符，分别有选与不选两个决策，而得到子序列后比较两个子序列是否相同有需要O(max(m,n))，这样总的复杂度就会达到O(2^(m+n)*max(m,n))，无法承受较大数据 动态规划解法">
 <meta property="og:locale" content="zh-Hans">
@@ -102,7 +102,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/最长公共子序列/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/最长公共子序列/"/>
 
 
 
@@ -469,7 +469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/最长公共子序列/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/最长公共子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -647,7 +647,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/最长公共子序列/" title="最长公共子序列">https://Mrhuangyi.github.io/算法和数据结构/最长公共子序列/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/最长公共子序列/" title="最长公共子序列">https://huangyiblog.com/算法和数据结构/最长公共子序列/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -902,13 +902,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -942,6 +935,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -973,13 +972,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

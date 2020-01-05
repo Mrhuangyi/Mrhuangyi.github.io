@@ -85,7 +85,7 @@
 <meta name="description" content="最长不下降子序列LIS问题：在一个数字序列中，找到一个最长的子序列（可以不连续），使得这个子序列是不下降的 原始方法枚举每种情况，即对于每个元素有取和不取两种选择，然后判断序列是否为不下降序列。如果是不下降序列，则更新最大长度，直到枚举完所有情况并得到最大长度。但这种做法时间复杂度将达到O(2^n)显然不可取 动态规划解法用dp[i]表示以A[i]结尾的最长不下降子序列长度，则A[i]有两种情况">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最长不下降子序列">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/最长不下降子序列/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/最长不下降子序列/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="最长不下降子序列LIS问题：在一个数字序列中，找到一个最长的子序列（可以不连续），使得这个子序列是不下降的 原始方法枚举每种情况，即对于每个元素有取和不取两种选择，然后判断序列是否为不下降序列。如果是不下降序列，则更新最大长度，直到枚举完所有情况并得到最大长度。但这种做法时间复杂度将达到O(2^n)显然不可取 动态规划解法用dp[i]表示以A[i]结尾的最长不下降子序列长度，则A[i]有两种情况">
 <meta property="og:locale" content="zh-Hans">
@@ -102,7 +102,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/最长不下降子序列/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/最长不下降子序列/"/>
 
 
 
@@ -469,7 +469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/最长不下降子序列/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/最长不下降子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -646,7 +646,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/最长不下降子序列/" title="最长不下降子序列">https://Mrhuangyi.github.io/算法和数据结构/最长不下降子序列/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/最长不下降子序列/" title="最长不下降子序列">https://huangyiblog.com/算法和数据结构/最长不下降子序列/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -901,13 +901,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -941,6 +934,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -972,13 +971,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

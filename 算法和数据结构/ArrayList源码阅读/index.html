@@ -86,7 +86,7 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList源码阅读">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="ArrayList源码阅读（基于jdk1.8）我们先来看看类的定义： 12public class ArrayList&amp;lt;E&amp;gt; extends AbstractList&amp;lt;E&amp;gt;        implements List&amp;lt;E&amp;gt;, RandomAccess, Cloneable, java.io.Serializable `用的都是Java泛型，继承了Abstrac">
 <meta property="og:locale" content="zh-Hans">
@@ -103,7 +103,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/"/>
 
 
 
@@ -470,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -662,7 +662,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/" title="ArrayList源码阅读">https://Mrhuangyi.github.io/算法和数据结构/ArrayList源码阅读/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/" title="ArrayList源码阅读">https://huangyiblog.com/算法和数据结构/ArrayList源码阅读/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -923,13 +923,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -963,6 +956,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -994,13 +993,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

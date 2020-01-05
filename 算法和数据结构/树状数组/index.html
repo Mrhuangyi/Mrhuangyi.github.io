@@ -85,7 +85,7 @@
 <meta name="description" content="lowbit运算lowbit运算属于二进制的一个经典应用：lowbit(x) = x &amp;amp; (-x) 整数在计算机中一般采用的是补码存储，而把一个补码表示的整数x变成其相反数-x的过程相当于把x的二进制的每一位都取反，然后末位+1.这又等价于直接把x的二进制最右边的1左边的每一位都取反。 所以lowbit(x) = x &amp;amp; (-x)其实就是取x的二进制最右边的1和它右边所有0.low">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树状数组">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/树状数组/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/树状数组/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="lowbit运算lowbit运算属于二进制的一个经典应用：lowbit(x) = x &amp;amp; (-x) 整数在计算机中一般采用的是补码存储，而把一个补码表示的整数x变成其相反数-x的过程相当于把x的二进制的每一位都取反，然后末位+1.这又等价于直接把x的二进制最右边的1左边的每一位都取反。 所以lowbit(x) = x &amp;amp; (-x)其实就是取x的二进制最右边的1和它右边所有0.low">
 <meta property="og:locale" content="zh-Hans">
@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/树状数组/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/树状数组/"/>
 
 
 
@@ -471,7 +471,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/树状数组/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/树状数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -651,7 +651,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/树状数组/" title="树状数组">https://Mrhuangyi.github.io/算法和数据结构/树状数组/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/树状数组/" title="树状数组">https://huangyiblog.com/算法和数据结构/树状数组/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -906,13 +906,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -946,6 +939,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -977,13 +976,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

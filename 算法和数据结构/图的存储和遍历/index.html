@@ -85,7 +85,7 @@
 <meta name="description" content="图的存储图的存储一般有两种方式：邻接矩阵和邻接表 邻接矩阵设图G(V,E)的顶点标号为0,1，……n-1，则令二维数组G[n][n]的两维分别表示图的顶点标号。即如果G[i][j]等于1，指顶点i和顶点j之间有边，如果G[i][j]等于0，指顶点i和顶点j之间没有边，如果为有权图，则令G[i][j]存放边权。但如果题目中顶点数过大，可能会造成内存超限。 邻接表图的常用储存结构之一，由表头结点和表结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图的存储和遍历">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/图的存储和遍历/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/图的存储和遍历/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="图的存储图的存储一般有两种方式：邻接矩阵和邻接表 邻接矩阵设图G(V,E)的顶点标号为0,1，……n-1，则令二维数组G[n][n]的两维分别表示图的顶点标号。即如果G[i][j]等于1，指顶点i和顶点j之间有边，如果G[i][j]等于0，指顶点i和顶点j之间没有边，如果为有权图，则令G[i][j]存放边权。但如果题目中顶点数过大，可能会造成内存超限。 邻接表图的常用储存结构之一，由表头结点和表结">
 <meta property="og:locale" content="zh-Hans">
@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/图的存储和遍历/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/图的存储和遍历/"/>
 
 
 
@@ -471,7 +471,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/图的存储和遍历/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/图的存储和遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -651,7 +651,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/图的存储和遍历/" title="图的存储和遍历">https://Mrhuangyi.github.io/算法和数据结构/图的存储和遍历/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/图的存储和遍历/" title="图的存储和遍历">https://huangyiblog.com/算法和数据结构/图的存储和遍历/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -906,13 +906,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -946,6 +939,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -977,13 +976,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     

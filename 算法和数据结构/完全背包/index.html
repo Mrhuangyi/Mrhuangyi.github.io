@@ -85,7 +85,7 @@
 <meta name="description" content="完全背包问题有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件。 完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。 令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值 对每种物品有两种策略：  不放第i件物品，那么dp[i]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="完全背包">
-<meta property="og:url" content="https://Mrhuangyi.github.io/算法和数据结构/完全背包/index.html">
+<meta property="og:url" content="https://huangyiblog.com/算法和数据结构/完全背包/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
 <meta property="og:description" content="完全背包问题有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件。 完全背包与01背包的唯一区别：完全背包的物品数量每种有无穷件，而01背包的物品数量每种只有1件。 令dp[i][v]表示前i件物品恰好放入容量为v的背包中能获得的最大价值 对每种物品有两种策略：  不放第i件物品，那么dp[i]">
 <meta property="og:locale" content="zh-Hans">
@@ -102,7 +102,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://Mrhuangyi.github.io/算法和数据结构/完全背包/"/>
+  <link rel="canonical" href="https://huangyiblog.com/算法和数据结构/完全背包/"/>
 
 
 
@@ -469,7 +469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrhuangyi.github.io/算法和数据结构/完全背包/">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/算法和数据结构/完全背包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Huangyi">
@@ -668,7 +668,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Mrhuangyi.github.io/算法和数据结构/完全背包/" title="完全背包">https://Mrhuangyi.github.io/算法和数据结构/完全背包/</a>
+    <a href="https://huangyiblog.com/算法和数据结构/完全背包/" title="完全背包">https://huangyiblog.com/算法和数据结构/完全背包/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -923,13 +923,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -963,6 +956,12 @@
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/images/scrollup.png"/></a>
+</div>
+
+<script src="/src/js/src/totop.js"></script>
+
 
 
 
@@ -994,13 +993,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
     
