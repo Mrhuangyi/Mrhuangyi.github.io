@@ -1977,7 +1977,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #46008e;
+  background: #63ffed;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3167,12 +3167,6 @@ pre .javascript .function {
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0);
-}
-* {
-  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
-}
-:active {
-  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
 }
 .post {
   margin-top: 60px;
