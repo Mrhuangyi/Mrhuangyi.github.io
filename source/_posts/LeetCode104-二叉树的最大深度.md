@@ -1,9 +1,11 @@
 ---
-title: LeetCode104. 二叉树的最大深度
-date: 2018-05-20 13:40:30
+title: 腾讯精选50题LeetCode104. 二叉树的最大深度
+date: 2017-08-13 13:40:30
 categories: 题解集
 tags: LeetCode
 ---
+
+# 题目描述
 
 给定一个二叉树，找出其最大深度。
 
@@ -12,6 +14,7 @@ tags: LeetCode
 说明: 叶子节点是指没有子节点的节点。
 
 示例：
+```
 给定二叉树 [3,9,20,null,null,15,7]，
 
     3
@@ -20,6 +23,22 @@ tags: LeetCode
     /  \
    15   7
 返回它的最大深度 3 。
+```
+
+# 解题思路
+
+我们借助递归来求：
+递归边界为：root为NULL，那么返回0
+在递归函数中分别定义结点左右子树的高度：
+left = maxDepth(root->left);
+right = maxDepth(root->right);
+最后返回：max(left, right) + 1;
+求出最大深度
+
+
+
+# 具体代码
+
 ```cpp
 /**
  * Definition for a binary tree node.

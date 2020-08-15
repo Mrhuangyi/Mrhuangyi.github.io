@@ -138,7 +138,10 @@
           {% include '../_custom/sidebar.swig' %}
         </div>
       </section>
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: $sidebar-desktop;margin-left: auto;margin-right: auto; opacity: 0.97;">
+  <div class="widget" id="CloudCalendar"></div>
+</div>
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">

@@ -43,10 +43,10 @@ ssh -T git@github.com
 
 # 创建分支
 1. 进入你的username.github.io仓库主要，新建一个分支，名字可以自定义，下面以hexo为例：
-![alt](http://pc5wd3ju6.bkt.clouddn.com/hexo1.jpg)
+![alt](http://huangyiblog.com/hexo1.jpg)
 
 2. 切换到hexo分支，并将该分支设置为默认分支后并保存。
-![alt](http://pc5wd3ju6.bkt.clouddn.com/hexo2.jpg)
+![alt](http://huangyiblog.com/hexo2.jpg)
 
 # 上传配置文件到GitHub
 1. 克隆hexo分支

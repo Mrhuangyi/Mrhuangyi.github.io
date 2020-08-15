@@ -4,52 +4,53 @@ date: 2018-03-31 16:55:28
 tags: C++
 categories: 语言
 ---
-# 1）字符串操作 
-strcpy(p, p1) 复制字符串 
-strncpy(p, p1, n) 复制指定长度字符串 
-strcat(p, p1) 附加字符串 
-strncat(p, p1, n) 附加指定长度字符串 
-strlen(p) 取字符串长度 
-strcmp(p, p1) 比较字符串 
+# 1）字符串操作
+strcpy(p, p1) 复制字符串
+strncpy(p, p1, n) 复制指定长度字符串
+strcat(p, p1) 附加字符串
+strncat(p, p1, n) 附加指定长度字符串
+strlen(p) 取字符串长度
+strcmp(p, p1) 比较字符串
 strcasecmp忽略大小写比较字符串
-strncmp(p, p1, n) 比较指定长度字符串 
-strchr(p, c) 在字符串中查找指定字符 
-strrchr(p, c) 在字符串中反向查找 
-strstr(p, p1) 查找字符串 
-strpbrk(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找该集合的任一元素 
-strspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找不属于该集合的任一元素的偏移 
+strncmp(p, p1, n) 比较指定长度字符串
+strchr(p, c) 在字符串中查找指定字符
+strrchr(p, c) 在字符串中反向查找
+strstr(p, p1) 查找字符串
+strpbrk(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找该集合的任一元素
+strspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找不属于该集合的任一元素的偏移
 strcspn(p, p1) 以目标字符串的所有字符作为集合，在当前字符串查找属于该集合的任一元素的偏移  
-* 具有指定长度的字符串处理函数在已处理的字符串之后填补零结尾符 
+* 具有指定长度的字符串处理函数在已处理的字符串之后填补零结尾符
 
-# 2）字符串到数值类型的转换 
+# 2）字符串到数值类型的转换
 strtod(p, ppend) 从字符串 p 中转换 double 类型数值，并将后续的字符串指针存储到 ppend 指向的 char* 类型存储。
 strtol(p, ppend, base) 从字符串 p 中转换 long 类型整型数值，base 显式设置转换的整型进制，设置为 0 以根据特定格式判断所用进制，0x, 0X 前缀以解释为十六进制格式整型，0    前缀以解释为八进制格式整型
-atoi(p) 字符串转换到 int 整型 
-atof(p) 字符串转换到 double 符点数 
-atol(p) 字符串转换到 long 整型 
+atoi(p) 字符串转换到 int 整型
+atof(p) 字符串转换到 double 符点数
+atol(p) 字符串转换到 long 整型
 
 
 
-```cpp
+```
 void *memset(void *dest, int c, size_t count);  
-将dest前面count个字符置为字符c.  返回dest的值. 
+将dest前面count个字符置为字符c.  返回dest的值.
 
 void *memmove(void *dest, const void *src, size_t count);  
-从src复制count字节的字符到dest. 如果src和dest出现重叠, 函数会自动处理.  返回dest的值. 
+从src复制count字节的字符到dest. 如果src和dest出现重叠, 函数会自动处理.  返回dest的值.
 
 void *memcpy(void *dest, const void *src, size_t count);  
-从src复制count字节的字符到dest. 与memmove功能一样, 只是不能处理src和dest出现重叠.  返回dest的值. 
+从src复制count字节的字符到dest. 与memmove功能一样, 只是不能处理src和dest出现重叠.  返回dest的值.
 
 void *memchr(const void *buf, int c, size_t count);  
-在buf前面count字节中查找首次出现字符c的位置. 找到了字符c或者已经搜寻了count个字节, 查找即停止. 操作成功则返回buf中首次出现c的位置指针, 否则返回NULL. 
+在buf前面count字节中查找首次出现字符c的位置. 找到了字符c或者已经搜寻了count个字节, 查找即停止. 操作成功则返回buf中首次出现c的位置指针, 否则返回NULL.
 
 void *_memccpy(void *dest, const void *src, int c, size_t count);  
-从src复制0个或多个字节的字符到dest. 当字符c被复制或者count个字符被复制时, 复制停止. 
+从src复制0个或多个字节的字符到dest. 当字符c被复制或者count个字符被复制时, 复制停止.
 
-如果字符c被复制, 函数返回这个字符后面紧挨一个字符位置的指针. 否则返回NULL. 
+如果字符c被复制, 函数返回这个字符后面紧挨一个字符位置的指针. 否则返回NULL.
 ```
 
 ```cpp
+
 实现strcpy函数,将源串strSrc的内容复制到目标串strDest，返回值为指向目标串的指针
 char *strcpy(char *strDest,const char *strSrc)//源字符串+const，表明其为输入参数
 {
@@ -99,7 +100,9 @@ void memcpy(void *dest,const void *src,size_t n)//从源src所指的内存地址
         *tmpdest++=*tmpsrc++;
     return dest;
 }
+
 ```
+
 ## 实现C的strstr
 功能：从字符串str1中查找是否有字符串str2，
 	-如果有，从str1中的str2位置起，返回str1中str2起始位置的指针，如果没有，返回null。
@@ -219,7 +222,7 @@ char *reverse(char *str)
     {     
         return NULL;  
     }     
-    
+
     int len = strlen(str);     
     if( len > 1 )     
     {     
@@ -229,10 +232,10 @@ char *reverse(char *str)
         reverse(str+1); // 递归调用     
         str[len-1] = ctemp;     
     }     
-    
+
     return str;     
 }  
-  
+
 // 非递归实现字符串反转  
 char *reverse(char *str)     
 {     
@@ -240,7 +243,7 @@ char *reverse(char *str)
     {     
         return NULL;  
     }     
-    
+
     int len = strlen(str);     
     char temp;     
     for( int i = 0; i < len / 2; i++ )     
@@ -250,18 +253,18 @@ char *reverse(char *str)
         *(str + i) = *(str + len - 1 - i);     
         *(str + len - 1 - i) = temp;     
     }     
-    
+
     return str;     
 }  
-  
+
 int _tmain(int argc, _TCHAR* argv[])  
 {  
-  
+
     char src[] = {"abcdef"};  
     char *pdest = reverse(src);  
-  
+
     getchar();  
-  
+
     return 0;  
 }  
 ```

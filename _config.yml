@@ -4,7 +4,7 @@
 
 # Site
 title: 你的小黄^_^
-subtitle: 做一名有情怀的程序员
+subtitle: 码奴生来就只知道前进
 description: 终于活成了别人喜欢的样子
 keywords: 
 author: Mr.Huangyi
@@ -14,7 +14,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://huangyiblog.com
+url: https://huangyiblog.com
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -85,9 +85,10 @@ baidusitemap:
 deploy:
   type: git
   repository: https://github.com/Mrhuangyi/Mrhuangyi.github.io.git
+  #repository: git@101.132.36.156:hexo.git
   branch: master
 
-avatar: /uploads/avatar.png
+avatar: https://xiaohuangyi.oss-cn-hongkong.aliyuncs.com/WechatIMG1.jpeg
 search:
   path: search.xml
   field: post
@@ -95,18 +96,6 @@ search:
   limit: 10000
   
 # Online contact 
-daovoice: true
+daovoice: false
 daovoice_app_id: 015defa6
 
-# 添加萌妹子效果
-live2d:
-  enable: false
-  scriptFrom: local  
-  model:
-    use: live2d-widget-model-wanko    //妹子有很多个，叫名字他才出来
-  display:    
-    position: right   //位置
-    width: 150    //妹子宽度
-    height: 300    //妹子高度
-  mobile:
-    show: true

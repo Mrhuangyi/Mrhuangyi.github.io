@@ -23,7 +23,7 @@ Java内部的容器类主要分为两类：Collection(集合)与Map(图)
 
 ### Collection
 
-![alt](http://pc5wd3ju6.bkt.clouddn.com/java-collections.png)
+![alt](http://huangyiblog.com/java-collections.png)
 
 **Set**
 
@@ -67,7 +67,7 @@ LinkedList 是基于链表实现的（通过名字也能区分开来），
 可以用于实现优先队列。优先队列的作用是能保证每次取出的元素都是队列中权值最小的（Java的优先队列每次取最小元素，C++的优先队列每次取最大元素）。
 ### Map(用于映射（键值对）问题处理)
 
-![alt](http://pc5wd3ju6.bkt.clouddn.com/java-collections1.png)
+![alt](http://huangyiblog.com/java-collections1.png)
 
 **HashMap**
 1. HashMap根据键的HashCode来实现，访问速度较快，遍历顺序并不确定。

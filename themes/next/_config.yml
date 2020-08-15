@@ -55,13 +55,13 @@ footer:
   copyright: 小黄
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: false
+  powered: true
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: false
+    enable: true
     # Version info of NexT after scheme info (vX.X.X).
-    version: false
+    version: true
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -73,7 +73,7 @@ footer:
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
-canonical: false
+canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
 seo: true
@@ -99,7 +99,7 @@ menu:
   tags: /tags||tags
   about: /about||user
   #search: /search
-  commonweal: /404.html||heartbeat
+  #commonweal: /404.html||heartbeat
   media: /categories/影音/ || music
   read: /categories/阅读/ || book
   #something: /有料
@@ -116,7 +116,7 @@ menu_icons:
   media: music
   read: book
   #search: search
-  commonweal: heartbeat
+  #commonweal: heartbeat
   #something: something
 
 # ---------------------------------------------------------------
@@ -145,7 +145,6 @@ social:
   ituring: http://www.ituring.com.cn/||book
   Github: https://github.com/Mrhuangyi||github
   CSDN: https://blog.csdn.net/hy971216||bookmark
-  知乎: https://www.zhihu.com/||modx
   Google: https://plus.google.com/ || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -159,7 +158,6 @@ social_icons:
   enable: true
   Github: github
   ituring: book
-  知乎: modx
   Google: Google
   CSDN: bookmark
   transition: false
@@ -174,7 +172,6 @@ links:
   并发编程: http://ifeve.com/
   开源中国: https://www.oschina.net/
   stackoverflow: https://stackoverflow.com
-  不太灵电影: http://bt0.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -220,7 +217,7 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: true
+  b2t: false
 
   # Scroll percent label in b2t button.
   scrollpercent: true
@@ -273,12 +270,12 @@ post_wordcount:
 # Reward
 reward_comment: 您的支持将鼓励我继续创作！
 #wechatpay: /images/wechatpay.jpg
-alipay: /images/alipay.jpg
+alipay: https://xiaohuangyi.oss-cn-hongkong.aliyuncs.com/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -322,7 +319,7 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -370,7 +367,7 @@ font:
 
 # MathJax Support
 mathjax:
-  enable: true
+  enable: false
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -472,7 +469,7 @@ add_this_id: ra-5ac1ddccf8800ae7
 #           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
     enable: false
     options:
@@ -577,18 +574,18 @@ firestore:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: true
+  enable: flase
   # custom uv span for the whole site
-  site_uv: true
+  #site_uv: false
   #site_uv_header: <i class="fa fa-user"></i>
-  site_uv_footer: <i class="fa fa-user"></i>
+  #site_uv_footer: <i class="fa fa-user"></i>
   # custom pv span for the whole site
-  site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i>
-  site_pv_footer: <i class="fa fa-eye"></i>
+  #site_pv: false
+  #site_pv_header: <i class="fa fa-eye"></i>
+  #site_pv_footer: <i class="fa fa-eye"></i>
   # custom pv span for one page only
-  page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i>
+  #page_pv: false
+  #page_pv_header: <i class="fa fa-file-o"></i>
   #page_pv_footer:
 
 
@@ -727,7 +724,7 @@ pace_theme: pace-theme-minimal
 canvas_nest: false
 
 # three_waves
-three_waves: true
+three_waves: false
 
 # canvas_lines
 canvas_lines: false
@@ -840,9 +837,12 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+
 passage_end_tag:
-  enabled: true
+  enabled: false
 
-
-
+custom_file_path:
+  sidebar: source/_data/sidebar.swig
+  styles: source/_data/calendar.styl
 
