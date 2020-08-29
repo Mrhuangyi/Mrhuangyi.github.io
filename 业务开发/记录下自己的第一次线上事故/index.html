@@ -82,16 +82,17 @@
 
 
 
-<meta name="description" content="终于活成了别人喜欢的样子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="你的小黄^_^">
-<meta property="og:url" content="https://huangyiblog.com/tags/Redis/index.html">
+<meta name="description" content="新手刚上路就翻车了说起来我作为应届生入职也有一个多月了，前两周刚接了个真真意义上要改代码的需求，结果一上线就出事了，今天也记录下吧。 需求内容其实蛮简单的，不然leader应该也不放心分给我。公司这边某系统调用部门其他项目组的接口之前都是采用grpc调用方式，后来对方认为grpc调用方式不是很稳定，现在希望我们改为http调用，这就是我这次的需求内容。从代码实现上来说是不难的，因为我只是改一下调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录下自己的第一次线上事故">
+<meta property="og:url" content="https://huangyiblog.com/业务开发/记录下自己的第一次线上事故/index.html">
 <meta property="og:site_name" content="你的小黄^_^">
-<meta property="og:description" content="终于活成了别人喜欢的样子">
+<meta property="og:description" content="新手刚上路就翻车了说起来我作为应届生入职也有一个多月了，前两周刚接了个真真意义上要改代码的需求，结果一上线就出事了，今天也记录下吧。 需求内容其实蛮简单的，不然leader应该也不放心分给我。公司这边某系统调用部门其他项目组的接口之前都是采用grpc调用方式，后来对方认为grpc调用方式不是很稳定，现在希望我们改为http调用，这就是我这次的需求内容。从代码实现上来说是不难的，因为我只是改一下调用">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-08-29T09:04:15.997Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你的小黄^_^">
-<meta name="twitter:description" content="终于活成了别人喜欢的样子">
+<meta name="twitter:title" content="记录下自己的第一次线上事故">
+<meta name="twitter:description" content="新手刚上路就翻车了说起来我作为应届生入职也有一个多月了，前两周刚接了个真真意义上要改代码的需求，结果一上线就出事了，今天也记录下吧。 需求内容其实蛮简单的，不然leader应该也不放心分给我。公司这边某系统调用部门其他项目组的接口之前都是采用grpc调用方式，后来对方认为grpc调用方式不是很稳定，现在希望我们改为http调用，这就是我这次的需求内容。从代码实现上来说是不难的，因为我只是改一下调用">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://huangyiblog.com/tags/Redis/"/>
+  <link rel="canonical" href="https://huangyiblog.com/业务开发/记录下自己的第一次线上事故/"/>
 
 
 
 
 
-  <title>标签: Redis | 你的小黄^_^</title>
+  <title>记录下自己的第一次线上事故 | 你的小黄^_^</title>
   
 
 
@@ -146,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Mrhuangyi" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -454,54 +455,251 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Redis<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangyiblog.com/业务开发/记录下自己的第一次线上事故/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Huangyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://xiaohuangyi.oss-cn-hongkong.aliyuncs.com/WechatIMG1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你的小黄^_^">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/业务开发/redis数据结构入门/" itemprop="url">
-              
-                <span itemprop="name">redis数据结构入门</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">记录下自己的第一次线上事故</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-04-27T20:35:16+08:00"
-              content="2019-04-27" >
-          04-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-29T16:35:26+08:00">
+                2020-08-29
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/业务开发/" itemprop="url" rel="index">
+                    <span itemprop="name">业务开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/业务开发/记录下自己的第一次线上事故/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/业务开发/记录下自己的第一次线上事故/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  682
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="新手刚上路就翻车了"><a href="#新手刚上路就翻车了" class="headerlink" title="新手刚上路就翻车了"></a>新手刚上路就翻车了</h1><p>说起来我作为应届生入职也有一个多月了，前两周刚接了个真真意义上要改代码的需求，结果一上线就出事了，今天也记录下吧。</p>
+<p>需求内容其实蛮简单的，不然leader应该也不放心分给我。公司这边某系统调用部门其他项目组的接口之前都是采用grpc调用方式，后来对方认为grpc调用方式不是很稳定，现在希望我们改为http调用，这就是我这次的需求内容。从代码实现上来说是不难的，因为我只是改一下调用方式，业务逻辑不用变，只要检查下参数之类的是否对应。有点难的可能还是这几个接口调用所在的整个前后链路逻辑，应为对方提供的这几个是基础接口，我们系统很多地方都会触发相关的异步任务进行调用，这也是为什么一旦出错，会有很多订单的数据收到影响。</p>
+<p>周五晚上上线，到周六就有业务开始报问题了，leader排查了下很快就发现我代码缺了很重要的一个判断，就是第三方接口调用返回失败时我没有做判断抛出异常，只有抛了异常的才会报错并且重推celery异步任务，之前自测和qa都没有发现这个重大bug，上线之后由于对方项目组限流等场景，导致很多调用失败了而我这边却作为成功进行返回。结果双边系统的状态数据等就前后对不上，不一致。发现问题后leader马上相应，让一位同事赶紧改下代码，让qa重新验证后发布，这一块倒还算容易，真正麻烦的是修数据，重新发布代码后，由另一位同事编写脚本，从es中捞数据然后选择相应的时间段到容器去跑脚本，将故障期间的所有请求放到队列重新尝试推送，因为你也无法区分哪些请求成功了，哪些请求失败了。我的一个失误害几位同事一个个好好的周末都在修数据了，真是一次惨痛的教训。</p>
+<p>周一回公司上班，我就开始写故障报告了，按照leader的要求需要进行一个复盘，明确下此次事故的影响面，发生原因，后续如何改进等等。希望自己以后写代码谨慎点，尽量少贡献一点bug吧。</p>
 
       
     </div>
+    
+    
+    
+	  <div>
+ <div>
+  
+    
+  
+</div>
+</div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://xiaohuangyi.oss-cn-hongkong.aliyuncs.com/alipay.jpg" alt="Mr.Huangyi 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Mr.Huangyi  |  你的小黄
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://huangyiblog.com/业务开发/记录下自己的第一次线上事故/" title="记录下自己的第一次线上事故">https://huangyiblog.com/业务开发/记录下自己的第一次线上事故/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+  <li class="post-copyright-license">
+    感谢您的阅读和支持！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/随笔/黄山游记/" rel="next" title="黄山游记">
+                <i class="fa fa-chevron-left"></i> 黄山游记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ac1ddccf8800ae7" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -509,6 +707,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -529,8 +736,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -657,6 +873,22 @@
 <div class="widget-wrap" style="width: $sidebar-desktop;margin-left: auto;margin-right: auto; opacity: 0.97;">
   <div class="widget" id="CloudCalendar"></div>
 </div>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新手刚上路就翻车了"><span class="nav-number">1.</span> <span class="nav-text">新手刚上路就翻车了</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -815,6 +1047,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
